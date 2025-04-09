@@ -27803,6 +27803,7 @@ __metadata:
     typescript: "npm:5.6.2"
     unplugin-auto-import: "npm:0.18.3"
     vite: "npm:5.4.16"
+    vite-plugin-node-polyfills: "npm:0.23.0"
   peerDependencies:
     "@redwoodjs/project-config": 8.6.1
     "@redwoodjs/router": 8.6.1
