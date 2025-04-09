@@ -58,7 +58,7 @@ const config: Config = {
           position: 'left',
         },
         {
-          href: 'https://github.com/redwoodjs/redwood',
+          href: 'https://github.com/redmix-run/redmix',
           position: 'right',
           className: 'github-logo',
           'aria-label': 'GitHub repository',
@@ -106,7 +106,7 @@ const config: Config = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/redwoodjs/redwood',
+              href: 'https://github.com/redmix-run/redmix',
             },
           ],
         },
@@ -121,7 +121,7 @@ const config: Config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // ? — blob? tree?
-          editUrl: 'https://github.com/redwoodjs/redwood/blob/main/docs', // base path for repo edit pages
+          editUrl: 'https://github.com/redmix-run/redmix/blob/main/docs', // base path for repo edit pages
           editCurrentVersion: true,
           remarkPlugins: [autoImportTabs, fileExtSwitcher],
           versions: {

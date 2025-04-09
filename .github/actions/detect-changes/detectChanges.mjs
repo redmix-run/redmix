@@ -9,7 +9,7 @@ import { codeChanges } from './cases/code_changes.mjs'
 import { rscChanged } from './cases/rsc.mjs'
 import { ssrChanged } from './cases/ssr.mjs'
 
-const BASE_URL = 'https://api.github.com/repos/redwoodjs/redwood'
+const BASE_URL = 'https://api.github.com/repos/redmix-run/redmix'
 
 const getPrNumber = () => {
   // Example GITHUB_REF refs/pull/9544/merge
@@ -71,7 +71,7 @@ async function getLatestCompletedWorkflowRun(branchName) {
 
   // 24294187 is the ID of the CI workflow (ci.yml). If it changes, or you want
   // to use a different workflow, go to
-  // https://api.github.com/repos/redwoodjs/redwood/actions/workflows to get a
+  // https://api.github.com/repos/redmix-run/redmix/actions/workflows to get a
   // list of all workflows and their IDs
   const workflowId = '24294187'
   const url = `${BASE_URL}/actions/workflows/${workflowId}/runs?branch=${branchName}`
@@ -211,12 +211,12 @@ async function fetchJson(url, retries = 0) {
 // commits we've already run CI for
 //
 // 1. Get the PR branch name
-//    https://api.github.com/repos/redwoodjs/redwood/pulls/10374  .head.ref
+//    https://api.github.com/repos/redmix-run/redmx/pulls/10374  .head.ref
 // 2. Get CI workflow runs for that branch
-//    https://api.github.com/repos/redwoodjs/redwood/actions/workflows/24294187/runs?branch=tobbe-redirect-docs
+//    https://api.github.com/repos/redmix-run/redmx/actions/workflows/24294187/runs?branch=tobbe-redirect-docs
 // 3. Get the `updated_at` timestamp for the newest completed run (`status` === 'completed')
 // 4. Get all commits for the PR
-//      https://api.github.com/repos/redwoodjs/redwood/pulls/10374/commits
+//      https://api.github.com/repos/redmix-run/redmx/pulls/10374/commits
 // 5. Filter out all commits that are newer than the timestamp from step 3
 // 6. Gather up all files changed in the commits from step 5
 // 7. Use those files in the checks we do in this action

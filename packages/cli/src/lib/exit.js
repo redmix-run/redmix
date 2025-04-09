@@ -15,7 +15,7 @@ const DEFAULT_ERROR_EPILOGUE = [
   )}`,
   ` - Think you've found a bug? Open an issue on our ${terminalLink(
     'GitHub',
-    'https://github.com/redwoodjs/redwood',
+    'https://github.com/redmix-run/redmix',
   )}`,
 ].join('\n')
 

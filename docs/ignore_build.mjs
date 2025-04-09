@@ -20,7 +20,7 @@ async function main() {
   }
 
   // Query the GithHub API to get the changed files in the PR
-  const url = `https://api.github.com/repos/redwoodjs/redwood/pulls/${process.env.REVIEW_ID}/files?per_page=100`
+  const url = `https://api.github.com/repos/redmix-run/redmix/pulls/${process.env.REVIEW_ID}/files?per_page=100`
   const resp = await fetch(url, {
     headers: {
       Authorization: `Bearer ${process.env.RW_GITHUB_TOKEN}`,

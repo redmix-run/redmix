@@ -363,7 +363,7 @@ export const handler = async ({ force, verbose }) => {
         task: async () => {
           // Fetch the web package.json from the main branch
           const canaryWebPackageJsonUrl =
-            'https://raw.githubusercontent.com/redwoodjs/redwood/main/packages/create-redwood-app/templates/ts/web/package.json'
+            'https://raw.githubusercontent.com/redmix-run/redmix/main/packages/create-redwood-app/templates/ts/web/package.json'
           const response = await fetch(canaryWebPackageJsonUrl)
           const canaryPackageJson = await response.json()
 
