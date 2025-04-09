@@ -60,7 +60,7 @@ export const builder = (yargs) => {
         'https://redwoodjs.com/docs/cli-commands#upgrade',
       )}.\nAnd the ${terminalLink(
         'GitHub releases page',
-        'https://github.com/redwoodjs/redwood/releases',
+        'https://github.com/redmix-run/redmix/releases',
       )} for more information on the current release.`,
     )
 }
@@ -191,7 +191,7 @@ export const handler = async ({ dryRun, tag, verbose, dedupe, yes }) => {
                 `https://community.redwoodjs.com/c/announcements/releases-and-upgrade-guides/`,
               )}\n   ❖ ${terminalLink(
                 `GitHub Release notes`,
-                `https://github.com/redwoodjs/redwood/releases`, // intentionally not linking to specific version
+                `https://github.com/redmix-run/redmix/releases`, // intentionally not linking to specific version
               )} \n\n`,
             )
           }
@@ -353,15 +353,15 @@ async function updatePackageVersionsFromTemplate(ctx, { dryRun, verbose }) {
   const packageJsons = [
     {
       basePath: getPaths().base,
-      url: 'https://raw.githubusercontent.com/redwoodjs/redwood/main/packages/create-redwood-app/templates/ts/package.json',
+      url: 'https://raw.githubusercontent.com/redmix-run/redmix/main/packages/create-redwood-app/templates/ts/package.json',
     },
     {
       basePath: getPaths().api.base,
-      url: 'https://raw.githubusercontent.com/redwoodjs/redwood/main/packages/create-redwood-app/templates/ts/api/package.json',
+      url: 'https://raw.githubusercontent.com/redmix-run/redmix/main/packages/create-redwood-app/templates/ts/api/package.json',
     },
     {
       basePath: getPaths().web.base,
-      url: 'https://raw.githubusercontent.com/redwoodjs/redwood/main/packages/create-redwood-app/templates/ts/web/package.json',
+      url: 'https://raw.githubusercontent.com/redmix-run/redmix/main/packages/create-redwood-app/templates/ts/web/package.json',
     },
   ]
 
@@ -433,7 +433,7 @@ async function downloadYarnPatches(ctx, { dryRun, verbose }) {
     process.env.REDWOOD_GITHUB_TOKEN
 
   const res = await fetch(
-    'https://api.github.com/repos/redwoodjs/redwood/git/trees/main?recursive=1',
+    'https://api.github.com/repos/redmix-run/redmix/git/trees/main?recursive=1',
     {
       headers: {
         Authorization: githubToken ? `Bearer ${githubToken}` : undefined,

@@ -16,7 +16,7 @@ const RWFW_PATH =
 
 if (!RWFW_PATH) {
   console.error('Error: You must specify the path to Redwood Framework')
-  console.error('Usage: `RWFW_PATH=~/gh/redwoodjs/redwood yarn rwfw <command>')
+  console.error('Usage: `RWFW_PATH=~/gh/redmix-run/redmix yarn rwfw <command>')
   process.exit(1)
 }
 
@@ -24,7 +24,7 @@ if (!fs.existsSync(RWFW_PATH)) {
   console.error(
     `Error: The specified path to Redwood Framework (${RWFW_PATH}) does not exist.`,
   )
-  console.error('Usage: `RWFW_PATH=~/gh/redwoodjs/redwood yarn rwfw <command>')
+  console.error('Usage: `RWFW_PATH=~/gh/redmix-run/redmix yarn rwfw <command>')
   process.exit(1)
 }
 

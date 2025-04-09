@@ -50,7 +50,7 @@ export async function resolveArgv() {
     const currentBranch = await getStdout($`git branch --show-current`)
 
     const url =
-      'https://api.github.com/repos/redwoodjs/redwood/pulls?state=open&sort=updated&direction=desc&per_page=100'
+      'https://api.github.com/repos/redmix-run/redmix/pulls?state=open&sort=updated&direction=desc&per_page=100'
     const res = await fetch(url, {
       headers: {
         Authorization: `Bearer ${getGitHubToken()}`,

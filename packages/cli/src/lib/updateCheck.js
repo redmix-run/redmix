@@ -195,7 +195,7 @@ function getUpdateMessage() {
     }
   })
   message +=
-    '\n\n See release notes at: https://github.com/redwoodjs/redwood/releases '
+    '\n\n See release notes at: https://github.com/redmix-run/redmix/releases '
   message = message.replace('#REPLACEME#', updateCount > 1 ? ' -t [tag]' : '')
 
   return boxen(message, {

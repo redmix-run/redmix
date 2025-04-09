@@ -4,7 +4,7 @@
   "description": "Redwood's server for the Web side",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/redwoodjs/redwood.git",
+    "url": "git+https://github.com/redmix-run/redmix.git",
     "directory": "packages/web-server"
   },
   "license": "MIT",

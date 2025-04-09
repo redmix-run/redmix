@@ -4,7 +4,7 @@
   "description": "Codemods to ease upgrading a RedwoodJS Project",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/redwoodjs/redwood.git",
+    "url": "git+https://github.com/redmix-run/redmix.git",
     "directory": "packages/codemods"
   },
   "license": "MIT",

@@ -8,7 +8,7 @@ import type { Config } from './config.js'
 export async function downloadTemplate(config: Config) {
   console.log('📥 Downloading RedwoodJS RSC template')
 
-  const url = 'https://github.com/redwoodjs/redwood/archive/refs/heads/main.zip'
+  const url = 'https://github.com/redmix-run/redmix/archive/refs/heads/main.zip'
 
   const tmpDir = path.join(
     os.tmpdir(),
