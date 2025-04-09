@@ -711,7 +711,7 @@ describe('deployTasks', () => {
     )
   })
 
-  it('throws an error if there is less available space on the server than freeSpaceRequired', () => {
+  it('throws an error if there is less available space on the server than freeSpaceRequired', async () => {
     const ssh = {
       exec: () => ({ stdout: 'df:1875' }),
     }
@@ -723,7 +723,7 @@ describe('deployTasks', () => {
       {}, // lifecycle
     )
 
-    expect(() => tasks[0].task({}, {})).rejects.toThrowError(
+    await expect(() => tasks[0].task({}, {})).rejects.toThrowError(
       /Not enough disk space/,
     )
   })
