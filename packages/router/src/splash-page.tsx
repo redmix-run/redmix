@@ -484,7 +484,7 @@ export const SplashPage = ({
               <div className="social">
                 <a
                   className="social-link"
-                  href="https://github.com/redwoodjs/redwood"
+                  href="https://github.com/redmix-run/redmix"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Go to RedwoodJS GitHub repo"
@@ -543,7 +543,7 @@ export const SplashPage = ({
                 <>
                   RedwoodJS version{' '}
                   <a
-                    href="https://github.com/redwoodjs/redwood/releases"
+                    href="https://github.com/redmix-run/redmix/releases"
                     target="_blank"
                     rel="noreferrer"
                   >

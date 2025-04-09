@@ -28,7 +28,7 @@ type RedwoodUser = Record<string, unknown> & { roles?: string[] }
  * fields to the return object only once you've decided they are safe to be seen
  * if someone were to open the Web Inspector in their browser.
  *
- * @see https://github.com/redwoodjs/redwood/tree/main/packages/auth for examples
+ * @see https://github.com/redmix-run/redmix/tree/main/packages/auth for examples
  *
  * @returns RedwoodUser
  */
@@ -123,7 +123,7 @@ export const hasRole = (roles: AllowedRoles): boolean => {
  * @throws {@link AuthenticationError} - If the currentUser is not authenticated
  * @throws {@link ForbiddenError} - If the currentUser is not allowed due to role permissions
  *
- * @see https://github.com/redwoodjs/redwood/tree/main/packages/auth for examples
+ * @see https://github.com/redmix-run/redmix/tree/main/packages/auth for examples
  */
 export const requireAuth = ({ roles }: { roles?: AllowedRoles } = {}) => {
   if (!isAuthenticated()) {

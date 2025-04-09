@@ -174,7 +174,7 @@ module.exports = defineConfig({
     enforceFieldsWithValuesOnAllWorkspaces(ctx, {
       license: 'MIT',
       ['repository.type']: 'git',
-      ['repository.url']: 'git+https://github.com/redwoodjs/redwood.git',
+      ['repository.url']: 'git+https://github.com/redmix-run/redmix.git',
       ['repository.directory']: (workspace) => workspace.cwd,
     })
   },
