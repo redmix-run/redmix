@@ -65,7 +65,7 @@
     "prettier-plugin-sh": "^0.14.0",
     "publint": "0.3.11",
     "rimraf": "^6.0.1",
-    "tsx": "^4.16.2",
+    "tsx": "4.19.3",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.0",
     "zx": "^8.1.4"
