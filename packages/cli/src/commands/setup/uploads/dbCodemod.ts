@@ -11,7 +11,7 @@ module.exports = function transform(fileInfo: j.FileInfo) {
     .insertAfter(
       j.importDeclaration(
         [j.importSpecifier(j.identifier('storagePrismaExtension'))],
-        j.literal('./uploads'),
+        j.literal('./uploads.js'),
       ),
     )
 

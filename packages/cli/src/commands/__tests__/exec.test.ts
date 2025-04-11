@@ -2,8 +2,8 @@ import path from 'node:path'
 
 import { vi, afterEach, beforeEach, describe, it, expect } from 'vitest'
 
-import '../../lib/mockTelemetry'
-import { handler } from '../execHandler'
+import '../../lib/mockTelemetry.js'
+import { handler } from '../execHandler.js'
 
 vi.mock('@redwoodjs/project-config', () => ({
   getPaths: () => ({
