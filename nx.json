@@ -34,5 +34,6 @@
       "outputs": ["{projectRoot}/*.tgz"],
       "cache": true
     }
-  }
+  },
+  "nxCloudId": "67f96419000e9059b9b7a441"
 }
