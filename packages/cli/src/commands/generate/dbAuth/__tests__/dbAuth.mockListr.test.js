@@ -20,9 +20,12 @@ import {
   afterAll,
 } from 'vitest'
 
+// Can't use .js when importing TS files from JS files in Vitest
+// TODO: Add .js when we've upgraded to Vite 6.1.0
+// https://github.com/vitest-dev/vitest/issues/5999
 import { Listr2Mock } from '../../../../__tests__/Listr2Mock'
-import { getPaths } from '../../../../lib'
-import * as dbAuth from '../dbAuth'
+import { getPaths } from '../../../../lib/index.js'
+import * as dbAuth from '../dbAuth.js'
 
 vi.mock('listr2', () => ({
   Listr: Listr2Mock,
