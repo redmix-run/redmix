@@ -1,9 +1,7 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "namedInputs": {
-    "default": [
-      "{projectRoot}/**/*"
-    ],
+    "default": ["{projectRoot}/**/*"],
     "prod": [
       "!{projectRoot}/**/*.test.{js,jsx,ts,tsx}",
       "{workspaceRoot}/babel.config.js",
@@ -18,29 +16,17 @@
   },
   "targetDefaults": {
     "build": {
-      "inputs": [
-        "prod",
-        "^prod"
-      ],
-      "dependsOn": [
-        "^build"
-      ],
+      "inputs": ["prod", "^prod"],
+      "dependsOn": ["^build"],
       "cache": true
     },
     "test": {
-      "inputs": [
-        "default",
-        "^prod"
-      ],
+      "inputs": ["default", "^prod"],
       "cache": true
     },
     "build:pack": {
-      "dependsOn": [
-        "build"
-      ],
-      "outputs": [
-        "{projectRoot}/*.tgz"
-      ],
+      "dependsOn": ["build"],
+      "outputs": ["{projectRoot}/*.tgz"],
       "cache": true
     }
   },
