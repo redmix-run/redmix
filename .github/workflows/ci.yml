@@ -151,12 +151,12 @@ jobs:
       - name: 🌲 Install Cypress
         run: yarn cypress install
 
-      - name: 🌲 Create a Redwood App
+      - name: 🌲 Create a Redmix App
         id: crwa
         env:
           YARN_ENABLE_IMMUTABLE_INSTALLS: false
         run: |
-          project_path=$(mktemp -d -t redwood.XXXXXX)
+          project_path=$(mktemp -d -t redmix.XXXXXX)
           echo "project-path=$project_path" >> $GITHUB_OUTPUT
 
           git config --global user.email "you@example.com"

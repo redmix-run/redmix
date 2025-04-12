@@ -9,8 +9,6 @@ body:
       value: >
         Thanks for taking the time to open an RFC!
         Please note that this is for detailed proposals.
-        If you have a feature request, or would like to brainstorm,
-        the [forums](https://community.redwoodjs.com/) is a better place to start.
 
   - type: textarea
     attributes:
@@ -41,7 +39,7 @@ body:
 
         - What's this about? (The CLI? The web side? The api side? Both?)
         - What's the design in detail?
-        - Is this a breaking change? How easy will it be for existing Redwood apps to adopt? Can we write a codemod for it?
+        - Is this a breaking change? How easy will it be for existing Redmix apps to adopt? Can we write a codemod for it?
         - What parts of the design are still TBD?
 
         Lastly, consider reading some great examples:
@@ -57,7 +55,7 @@ body:
       label: Are you interested in working on this?
       description: >
         No pressure—this is totally optional!
-        We just want to invite you to contribute to Redwood.
+        We just want to invite you to contribute to Redmix.
         If you choose to contribute, the core team will be there to help you the whole way.
 
 

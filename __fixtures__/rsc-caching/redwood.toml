@@ -6,26 +6,26 @@
 # https://redwoodjs.com/docs/app-configuration-redwood-toml
 
 [web]
-  title = "Redwood App"
-  port = 8910
-  apiUrl = "/.redwood/functions" # You can customize graphql and dbauth urls individually too: see https://redwoodjs.com/docs/app-configuration-redwood-toml#api-paths
-  includeEnvironmentVariables = [
+title = "Redmix App"
+port = 8910
+apiUrl = "/.redwood/functions" # You can customize graphql and dbauth urls individually too: see https://redwoodjs.com/docs/app-configuration-redwood-toml#api-paths
+includeEnvironmentVariables = [
     # Add any ENV vars that should be available to the web side to this array
     # See https://redwoodjs.com/docs/environment-variables#web
-  ]
+]
 [api]
-  port = 8911
+port = 8911
 [browser]
-  open = true
+open = true
 [notifications]
-  versionUpdates = ["latest"]
+versionUpdates = ["latest"]
 
 [generate]
-  tests = false
-  stories = false
+tests = false
+stories = false
 
 [experimental.streamingSsr]
-  enabled = true
+enabled = true
 
 [experimental.rsc]
-  enabled = true
+enabled = true
