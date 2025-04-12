@@ -6,11 +6,7 @@ import {
   getApiSideBabelPlugins,
   transformWithBabel,
 } from '@redmix/babel-config'
-import {
-  getConfig,
-  getPaths,
-  projectSideIsEsm,
-} from '@redmix/project-config'
+import { getConfig, getPaths, projectSideIsEsm } from '@redmix/project-config'
 
 import { findApiFiles } from '../files'
 
