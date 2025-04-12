@@ -42,7 +42,7 @@ efforts of the RedwoodJS founders, maintainers and community.
   <tr>
     <td align="center" valign="center" width="20%"><a href="https://groddapp.com"><img src="https://github.com/user-attachments/assets/2d3a9e3a-2fa5-4c72-a3cc-4dc4584ffcfa" width="100px;" alt="Grodd"/></a></td>
     <td align="center" valign="center" width="20%"><a href="https://acm.se"><img src="https://github.com/user-attachments/assets/d710c7bc-a312-4f9c-a5a4-51a0d7645fc0" width="100px;" alt="ACM"/></a></td>
-    <td align="center" valign="center" width="20%"><a href="https://aerafarms.com"><img src="https://umsousercontent.com/lib_spHIafSFjsByroeG/07huta025gqqnbw0.png?w=100" width="100px;" alt="Aera"/></a></td>
+    <td align="center" valign="center" width="20%"><a href="https://aerafarms.com"><img src="https://github.com/user-attachments/assets/89824de7-e2cd-4b39-a6d3-e6f729debb8e" width="100px;" alt="Aera"/></a></td>
     <td align="center" valign="center" width="20%"><img src="https://placehold.co/400x400?text=Your\nCompany?" width="100px;" alt=""/></td>
     <td align="center" valign="center" width="20%"><img src="https://placehold.co/400x400?text=Your\nCompany?" width="100px;" alt=""/></td>
   </tr>
