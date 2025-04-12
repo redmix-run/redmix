@@ -40,7 +40,7 @@ efforts of the RedwoodJS founders, maintainers and community.
 
 <table>
   <tr>
-    <td align="center" valign="center" width="20%"><a href="https://groddapp.com"><img src="https://static.wixstatic.com/media/cc7718_720ec4bbdbe24762812011e69098b9fb~mv2.png/v1/fill/w_100,h_101,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Grodd%20-%20app.png" width="100px;" alt="Grodd"/></a></td>
+    <td align="center" valign="center" width="20%"><a href="https://groddapp.com"><img src="https://github.com/user-attachments/assets/2d3a9e3a-2fa5-4c72-a3cc-4dc4584ffcfa" width="100px;" alt="Grodd"/></a></td>
     <td align="center" valign="center" width="20%"><a href="https://acm.se"><img src="https://github.com/user-attachments/assets/d710c7bc-a312-4f9c-a5a4-51a0d7645fc0" width="100px;" alt="ACM"/></a></td>
     <td align="center" valign="center" width="20%"><a href="https://aerafarms.com"><img src="https://umsousercontent.com/lib_spHIafSFjsByroeG/07huta025gqqnbw0.png?w=100" width="100px;" alt="Aera"/></a></td>
     <td align="center" valign="center" width="20%"><img src="https://placehold.co/400x400?text=Your\nCompany?" width="100px;" alt=""/></td>
