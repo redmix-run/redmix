@@ -6,14 +6,13 @@ description: Redwood is the full-stack web framework designed to help you grow f
 
 Redwood is the full-stack web framework designed to help you grow from side project to startup.
 Redwood features an end-to-end development workflow that weaves together the best parts of [React](https://react.dev/), [GraphQL](https://graphql.org/), [Prisma](https://www.prisma.io/), [TypeScript](https://www.typescriptlang.org/), [Jest](https://jestjs.io/), and [Storybook](https://storybook.js.org/).
-For full inspiration and vision, see Redwood's [README](https://github.com/redwoodjs/redwood/blob/main/README.md).
+For full inspiration and vision, see Redwood's [README](https://github.com/redmix-run/redmix/blob/main/README.md).
 
-Development on Redwood happens in the [redwoodjs/redwood repo on GitHub](https://github.com/redwoodjs/redwood).
-The docs are [there too](https://github.com/redwoodjs/redwood/tree/main/docs).
-While Redwood's [leadership and maintainers](https://github.com/redwoodjs/redwood#core-team-leadership)
-handle most of the high-priority items and the day-to-day, Redwood wouldn't be
-where it is without [all its contributors](https://github.com/redwoodjs/redwood#all-contributors)!
-Feel free to reach out to us on the [forums](https://community.redwoodjs.com) or on [Discord](https://discord.gg/redwoodjs), and follow us on [Twitter](https://twitter.com/redwoodjs) for updates.
+Development on Redmix happens in the [redmix-run/redmix repo on GitHub](https://github.com/redmix-run/redmix).
+The docs are [there too](https://github.com/redmix-run/redmix/tree/main/docs).
+While the [Redmix Team](https://github.com/redmix-run/redmix#redmix-team)
+handle most of the high-priority items and the day-to-day, Redmix wouldn't be
+where it is without [all its contributors](https://github.com/redmix-run/redmix#all-contributors)!
 
 ## Getting the Most out of Redwood
 

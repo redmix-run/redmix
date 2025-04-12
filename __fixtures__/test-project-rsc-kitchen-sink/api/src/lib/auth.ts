@@ -110,7 +110,7 @@ export const hasRole = (roles: AllowedRoles): boolean => {
  * @throws {@link AuthenticationError} - If the currentUser is not authenticated
  * @throws {@link ForbiddenError} If the currentUser is not allowed due to role permissions
  *
- * @see https://github.com/redwoodjs/redwood/tree/main/packages/auth for examples
+ * @see https://github.com/redmix-run/redmix/tree/main/packages/auth for examples
  */
 export const requireAuth = ({ roles }: { roles?: AllowedRoles } = {}) => {
   if (!isAuthenticated()) {

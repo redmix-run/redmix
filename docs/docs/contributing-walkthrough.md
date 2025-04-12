@@ -10,7 +10,7 @@ description: Watch a video of the contributing process
 > There are several contributing docs and references, each covering specific topics:
 >
 > 1. 🧭 [Overview and Orientation](contributing-overview.md)
-> 2. 📓 [Reference: Contributing to the Framework Packages](https://github.com/redwoodjs/redwood/blob/main/CONTRIBUTING.md)
+> 2. 📓 [Reference: Contributing to the Framework Packages](https://github.com/redmix-run/redmix/blob/main/CONTRIBUTING.md)
 > 3. 🪜 **Step-by-step Walkthrough** (👈 you are here)
 > 4. 📈 [Current Project Status: v1 Release Board](https://github.com/orgs/redwoodjs/projects/6)
 > 5. 🤔 What should I work on?
@@ -39,7 +39,7 @@ The best (and most fun) way to learn Redwood and the underlying tools and techno
 
 **Docs and How To**
 
-- Start with the [Introduction](https://github.com/redwoodjs/redwood/blob/main/README.md) Doc
+- Start with the [Introduction](https://github.com/redmix-run/redmix/blob/main/README.md) Doc
 - And browse through [How To's](how-to/index)
 
 ### GitHub (and Git)
@@ -58,13 +58,13 @@ Diving into Git and the GitHub workflow can feel intimidating if you haven’t e
 
 We refer to the codebase of a Redwood application as a Project. This is what you install when you run `yarn create redwood-app <path-to-directory>`. It’s the thing you are building with Redwood.
 
-Lastly, you’ll find the template used to create a new project (when you run create redwood-app) here in GitHub: [redwoodjs/redwood/packages/create-redwood-app/template/](https://github.com/redwoodjs/redwood/tree/main/packages/create-redwood-app/template)
+Lastly, you’ll find the template used to create a new project (when you run create redwood-app) here in GitHub: [redmix-run/redmix/packages/create-redwood-app/template/](https://github.com/redmix-run/redmix/tree/main/packages/create-redwood-app/template)
 
 We refer to this as the **CRWA Template or Project Template**.
 
 #### Redwood “Framework”
 
-The Framework is the codebase containing all the packages (and other code) that is published on NPMjs.com as `@redmix/<package-name>`. The Framework repository on GitHub is here: [https://github.com/redwoodjs/redwood](https://github.com/redwoodjs/redwood)
+The Framework is the codebase containing all the packages (and other code) that is published on NPMjs.com as `@redmix/<package-name>`. The Framework repository on GitHub is here: [https://github.com/redmix-run/redmix](https://github.com/redmix-run/redmix)
 
 ### Development tools
 
@@ -103,7 +103,7 @@ But when you’re ready, learn how to use it in the section at the end [“GitPo
 
 #### Step 1: Redwood Framework
 
-1. **Fork the [Redwood Framework](https://github.com/redwoodjs/redwood)** into a personal repo
+1. **Fork the [Redwood Framework](https://github.com/redmix-run/redmix)** into a personal repo
 2. Using GitHub Desktop, **open the Framework Codebase** in a VS Code workspace
 3. Commands to “**start fresh**” when working on the Framework
    - `yarn install`: This installs the package dependencies in /node_modules using Yarn package manager. This command is the same as just typing `yarn`. Also, if you ever switch branches and want to make sure the install dependencies are correct, you can run `yarn install --force` (shorthand `yarn -f`).
@@ -268,8 +268,8 @@ https://gitpod.io/#<URL for branch or project>
 
 For example, this link will start a workspace using the RedwoodJS main branch:
 
-- https://gitpod.io/#https://github.com/redwoodjs/redwood
+- https://gitpod.io/#https://github.com/redmix-run/redmix
 
 And this link will start a workspace for a PR #3434:
 
-- https://gitpod.io/#https://github.com/redwoodjs/redwood/pull/3434
+- https://gitpod.io/#https://github.com/redmix-run/redmix/pull/3434

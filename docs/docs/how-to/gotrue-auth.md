@@ -703,4 +703,4 @@ We've configured GoTrue with Redwood Auth, created a Sign Up page, a Sign In pag
 
 Thanks for tuning in!
 
-> If you spot an error or have trouble completing any part of this recipe, please feel free to open an issue on [Github](https://github.com/redwoodjs/redwood) or create a topic on our [community forum](https://community.redwoodjs.com/).
+> If you spot an error or have trouble completing any part of this recipe, please feel free to open an issue on [Github](https://github.com/redmix-run/redmix) or create a topic on our [community forum](https://community.redwoodjs.com/).

@@ -8,7 +8,7 @@ If you do prefer to set this up manually or are just curious how OAuth and dbAut
 
 ## Prerequisites
 
-This article assumes you have an app set up and are using dbAuth. We're going to make use of the dbAuth system to validate that you're who you say you are. If you just want to try this code out in a sandbox app, you can create a test blog app from scratch by checking out the [Redwood codebase](https://github.com/redwoodjs/redwood) itself and then running a couple of commands:
+This article assumes you have an app set up and are using dbAuth. We're going to make use of the dbAuth system to validate that you're who you say you are. If you just want to try this code out in a sandbox app, you can create a test blog app from scratch by checking out the [Redwood codebase](https://github.com/redmix-run/redmix) itself and then running a couple of commands:
 
 ```bash
 yarn install

@@ -14,8 +14,6 @@ Love Redmix and want to get involved? You're in the right place! A perfect place
 >    - ["Help Wanted" v1 Triage Board](https://redwoodjs.com/good-first-issue)
 >    - [Discovery Process and Open Issues](https://redwoodjs.com/docs/contributing#what-should-i-work-on)
 
-_Before interacting with the Redwood community, please read and understand our [Code of Conduct](https://github.com/redwoodjs/redwood/blob/main/CODE_OF_CONDUCT.md)._
-
 ## Table of Contents
 
 - [Code Organization: Project and Framework](#code-organization-project-and-framework)
@@ -38,7 +36,7 @@ _Before interacting with the Redwood community, please read and understand our [
 
 As a Redwood developer, you're already familiar with the codebase created by `yarn create redwood-app`. In this document, we'll refer to that codebase as a **Redwood Project**.
 
-As a contributor, you'll have to familiarize yourself with one more codebase: the **Redwood Framework**. The Redwood Framework lives in the monorepo [redwoodjs/redwood](https://github.com/redwoodjs/redwood) (which is where you're probably reading this). It contains all the packages that make Redwood Projects work the way they do. In a Redwood Project, you can find the Redwood Framework in `node_modules/@redmix`.
+As a contributor, you'll have to familiarize yourself with one more codebase: the **Redmix Framework**. The Redmix Framework lives in the monorepo [redmix-run/redmix](https://github.com/redmix-run/redmix) (which is where you're probably reading this). It contains all the packages that make Redwood Projects work the way they do. In a Redwood Project, you can find the Redwood Framework in `node_modules/@redmix`.
 
 Here we'll assume your local copy of the Redwood Framework is in a directory called `redwood` and your Redwood Project is in a directory called `redwood-project`.
 
@@ -50,7 +48,7 @@ Chances are that you'll have more than a few VS Codes open when you're contribut
 
 ### Redwood Framework
 
-To submit PRs, you will need to Fork the redwoodjs/redwood codebase. You can [do this from GitHub.com or by using GitHub Desktop.](https://docs.github.com/en/desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop#forking-a-repository) Use `git clone` on your fork to get a local copy of the Redwood Framework. If you've already got a local copy, make sure you've got the `main` branch's latest changes using `git pull`. Then run `yarn install` in the root directory to install the dependencies:
+To submit PRs, you will need to Fork the redmix-run/redmix codebase. You can [do this from GitHub.com or by using GitHub Desktop.](https://docs.github.com/en/desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop#forking-a-repository) Use `git clone` on your fork to get a local copy of the Redwood Framework. If you've already got a local copy, make sure you've got the `main` branch's latest changes using `git pull`. Then run `yarn install` in the root directory to install the dependencies:
 
 Replace `your-username` with your GitHub username below:
 
@@ -67,7 +65,7 @@ You'll almost always want to test the functionality of your changes to the Redwo
 
 - [***Recommended for 90% of cases***] Create a functional test project. See section below for steps.
 - Run `yarn create redwood-app <project directory>`
-- `git clone` the [RedwoodJS Tutorial Blog](https://github.com/redwoodjs/redwood-tutorial)
+- `git clone` the [Redmix Tutorial Blog](https://github.com/redmix-run/redmix-tutorial)
 - Use a project you've already created
 
 **Using the functional test project might be the fastest and easiest way to test your changes.**
@@ -185,7 +183,7 @@ This generates a functional test project and links it with the Redwood Framework
 
 > Note: if you make changes to the framework, you will need to run `yarn rwfw project:sync` in the terminal, so that your changes are watched and reflected in the test project
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/redwoodjs/redwood)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/redmix-run/redmix)
 
 ## Local QA and Integration Tests
 
@@ -297,7 +295,7 @@ Here's a quick overview of some of the new yarn-related files in this repo:
 
 #### Advanced Cases
 
-If needed, there's more information in [this PR #3154 comment](https://github.com/redwoodjs/redwood/pull/3154#issue-957115489) about special cases:
+If needed, there's more information in [this PR #3154 comment](https://github.com/redmix-run/redmix/pull/3154#issue-957115489) about special cases:
 
 - "Binary hoisting" is no longer allowed
 - Specifying Yarn v1 binary (when necessary)
