@@ -272,4 +272,4 @@ For example, this link will start a workspace using the RedwoodJS main branch:
 
 And this link will start a workspace for a PR #3434:
 
-- https://gitpod.io/#https://github.com/redmix-run/redmix/pull/3434
+- https://gitpod.io/#https://github.com/redwoodjs/redwood/pull/3434

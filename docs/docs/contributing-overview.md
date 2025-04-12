@@ -172,6 +172,6 @@ The best thing you can do is look through existing PRs, which will give you a fe
 
 If you’re looking for an example of “what makes a good PR”, look no further than this one by Kim-Adeline:
 
-- [Convert component generator to TS #632](https://github.com/redmix-run/redmix/pull/632)
+- [Convert component generator to TS #632](https://github.com/redwoodjs/redwood/pull/632)
 
 Not every PR needs this much information. But it’s definitely helpful when it does!

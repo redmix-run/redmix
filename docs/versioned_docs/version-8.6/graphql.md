@@ -242,7 +242,7 @@ For example, if you have a query named `search` that supports [Apollo's offset p
 
 ### Swapping out the RedwoodApolloProvider
 
-As long as you're willing to do a bit of configuring yourself, you can swap out `RedwoodApolloProvider` with your GraphQL Client of choice. You'll just have to get to know a bit of the make up of the [RedwoodApolloProvider](https://github.com/redwoodjs/redwood/blob/main/packages/web/src/apollo/index.tsx#L71-L84); it's actually composed of a few more Providers and hooks:
+As long as you're willing to do a bit of configuring yourself, you can swap out `RedwoodApolloProvider` with your GraphQL Client of choice. You'll just have to get to know a bit of the make up of the [RedwoodApolloProvider](https://github.com/redmix-run/redmix/blob/main/packages/web/src/apollo/index.tsx#L71-L84); it's actually composed of a few more Providers and hooks:
 
 - `FetchConfigProvider`
 - `useFetchConfig`
@@ -427,7 +427,7 @@ query {
 }
 ```
 
-How is this possible? Via Redwood's [root schema](https://github.com/redwoodjs/redwood/blob/main/packages/graphql-server/src/rootSchema.ts). The root schema is where things like currentUser are defined:
+How is this possible? Via Redwood's [root schema](https://github.com/redmix-run/redmix/blob/main/packages/graphql-server/src/rootSchema.ts). The root schema is where things like currentUser are defined:
 
 ```graphql
 scalar BigInt
@@ -448,7 +448,7 @@ type Query {
 }
 ```
 
-Now that you've seen the sdl, be sure to check out [the resolvers](https://github.com/redwoodjs/redwood/blob/main/packages/graphql-server/src/rootSchema.ts):
+Now that you've seen the sdl, be sure to check out [the resolvers](https://github.com/redmix-run/redmix/blob/main/packages/graphql-server/src/rootSchema.ts):
 
 ```ts
 export const resolvers: Resolvers = {

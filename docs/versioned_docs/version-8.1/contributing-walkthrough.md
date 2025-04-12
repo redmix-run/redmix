@@ -10,7 +10,7 @@ description: Watch a video of the contributing process
 > There are several contributing docs and references, each covering specific topics:
 >
 > 1. 🧭 [Overview and Orientation](contributing-overview.md)
-> 2. 📓 [Reference: Contributing to the Framework Packages](https://github.com/redwoodjs/redwood/blob/main/CONTRIBUTING.md)
+> 2. 📓 [Reference: Contributing to the Framework Packages](https://github.com/redmix-run/redmix/blob/main/CONTRIBUTING.md)
 > 3. 🪜 **Step-by-step Walkthrough** (👈 you are here)
 > 4. 📈 [Current Project Status: v1 Release Board](https://github.com/orgs/redwoodjs/projects/6)
 > 5. 🤔 What should I work on?
@@ -39,7 +39,7 @@ The best (and most fun) way to learn Redwood and the underlying tools and techno
 
 **Docs and How To**
 
-- Start with the [Introduction](https://github.com/redwoodjs/redwood/blob/main/README.md) Doc
+- Start with the [Introduction](https://github.com/redmix-run/redmix/blob/main/README.md) Doc
 - And browse through [How To's](how-to/index)
 
 ### GitHub (and Git)
@@ -58,7 +58,7 @@ Diving into Git and the GitHub workflow can feel intimidating if you haven’t e
 
 We refer to the codebase of a Redwood application as a Project. This is what you install when you run `yarn create redwood-app <path-to-directory>`. It’s the thing you are building with Redwood.
 
-Lastly, you’ll find the template used to create a new project (when you run create redwood-app) here in GitHub: [redwoodjs/redwood/packages/create-redwood-app/template/](https://github.com/redwoodjs/redwood/tree/main/packages/create-redwood-app/template)
+Lastly, you’ll find the template used to create a new project (when you run create redwood-app) here in GitHub: [redwoodjs/redwood/packages/create-redwood-app/template/](https://github.com/redmix-run/redmix/tree/main/packages/create-redwood-app/template)
 
 We refer to this as the **CRWA Template or Project Template**.
 

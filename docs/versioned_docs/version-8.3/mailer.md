@@ -27,8 +27,8 @@ A **renderer** transforms your React components into strings of text or HTML tha
 
 Mailer currently offers the following renderers:
 
-- [@redmix/mailer-renderer-react-email](https://github.com/redwoodjs/redwood/tree/main/packages/mailer/renderers/react-email) based on [React Email](https://react.email/)
-- [@redmix/mailer-renderer-mjml-react](https://github.com/redwoodjs/redwood/tree/main/packages/mailer/renderers/mjml-react) based on [MJML](https://github.com/Faire/mjml-react)
+- [@redmix/mailer-renderer-react-email](https://github.com/redmix-run/redmix/tree/main/packages/mailer/renderers/react-email) based on [React Email](https://react.email/)
+- [@redmix/mailer-renderer-mjml-react](https://github.com/redmix-run/redmix/tree/main/packages/mailer/renderers/mjml-react) based on [MJML](https://github.com/Faire/mjml-react)
 
 You can find community-maintained renderers by searching across npm, our forums, and other community spaces.
 
@@ -44,10 +44,10 @@ A **handler** is responsible for taking your rendered content and passing it on 
 
 Mailer currently offers the following handlers:
 
-- [@redmix/mailer-handler-in-memory](https://github.com/redwoodjs/redwood/tree/main/packages/mailer/handlers/in-memory), a simple in-memory handler typically used for testing.
-- [@redmix/mailer-handler-nodemailer](https://github.com/redwoodjs/redwood/tree/main/packages/mailer/handlers/nodemailer), which uses [Nodemailer](https://nodemailer.com/).
-- [@redmix/mailer-handler-studio](https://github.com/redwoodjs/redwood/tree/main/packages/mailer/handlers/studio), which sends emails to the RedwoodJS Studio using nodemailer internally.
-- [@redmix/mailer-handler-resend](https://github.com/redwoodjs/redwood/tree/main/packages/mailer/handlers/resend), which uses [Resend](https://resend.com/).
+- [@redmix/mailer-handler-in-memory](https://github.com/redmix-run/redmix/tree/main/packages/mailer/handlers/in-memory), a simple in-memory handler typically used for testing.
+- [@redmix/mailer-handler-nodemailer](https://github.com/redmix-run/redmix/tree/main/packages/mailer/handlers/nodemailer), which uses [Nodemailer](https://nodemailer.com/).
+- [@redmix/mailer-handler-studio](https://github.com/redmix-run/redmix/tree/main/packages/mailer/handlers/studio), which sends emails to the RedwoodJS Studio using nodemailer internally.
+- [@redmix/mailer-handler-resend](https://github.com/redmix-run/redmix/tree/main/packages/mailer/handlers/resend), which uses [Resend](https://resend.com/).
 
 You can find community-maintained handlers by searching across npm, our forums, and other community spaces.
 
@@ -283,6 +283,6 @@ When running in development mode, using the default `@redmix/mailer-handler-stud
 
 If the Mailer does not currenly provide a [handler](notion://www.notion.so/redwoodjs/133467eb46b744fd8ae60df2d493d7d0#handlers) or [renderer](notion://www.notion.so/redwoodjs/133467eb46b744fd8ae60df2d493d7d0#renderers) for the service or technology you wish to use, this doesn't prevent you from using the Mailer. Instead, you can create your own handler or renderer which you can then open source to the wider RedwoodJS community.
 
-To do this, read over the existing implementations for handlers [here](https://github.com/redwoodjs/redwood/tree/main/packages/mailer/handlers) and renderers [here](https://github.com/redwoodjs/redwood/tree/main/packages/mailer/renderers). You can also find the interfaces that a handler or mailer must satisfy [here](https://github.com/redwoodjs/redwood/tree/main/packages/mailer/core) in the `@redmix/mailer-core` package.
+To do this, read over the existing implementations for handlers [here](https://github.com/redmix-run/redmix/tree/main/packages/mailer/handlers) and renderers [here](https://github.com/redmix-run/redmix/tree/main/packages/mailer/renderers). You can also find the interfaces that a handler or mailer must satisfy [here](https://github.com/redmix-run/redmix/tree/main/packages/mailer/core) in the `@redmix/mailer-core` package.
 
 Be sure to check out the community forum for people working on similar work, to document your own creations, or to get help on anything.

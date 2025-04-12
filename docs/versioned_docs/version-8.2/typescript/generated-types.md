@@ -151,7 +151,7 @@ While the default settings are configured so that things just work️, you can c
 
 :::info Curious about the defaults?
 
-You can find them [here](https://github.com/redwoodjs/redwood/blob/main/packages/internal/src/generate/graphqlCodeGen.ts) in Redwood's source. Look for the `generateTypeDefGraphQLWeb` and `generateTypeDefGraphQLApi` functions.
+You can find them [here](https://github.com/redmix-run/redmix/blob/main/packages/internal/src/generate/graphqlCodeGen.ts) in Redwood's source. Look for the `generateTypeDefGraphQLWeb` and `generateTypeDefGraphQLApi` functions.
 
 :::
 

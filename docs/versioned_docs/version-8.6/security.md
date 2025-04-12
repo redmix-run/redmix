@@ -6,7 +6,7 @@ description: Build and deploy secure applications
 
 RedwoodJS wants you to be able build and deploy secure applications and takes the topic of security seriously.
 
-- [RedwoodJS Security](https://github.com/redwoodjs/redwood/security) on GitHub
+- [RedwoodJS Security](https://github.com/redmix-run/redmix/security) on GitHub
 - [CodeQL code scanning](https://github.com/features/security)
 - [Authentication](authentication.md)
 - [Webhook signature verification](webhooks.md)
@@ -17,7 +17,7 @@ RedwoodJS wants you to be able build and deploy secure applications and takes th
 > While Redwood offers the tools, practices, and information to keep your application secure, it remains your responsibility to put these in place. Proper password, token, and key protection using disciplined communication, password management systems, and environment management services like [Doppler](https://www.doppler.com) are strongly encouraged.
 
 > **Security Policy and Contact Information**
-> The RedwoodJS Security Policy is located [in the codebase repository on GitHub](https://github.com/redwoodjs/redwood/security/policy).
+> The RedwoodJS Security Policy is located [in the codebase repository on GitHub](https://github.com/redmix-run/redmix/security/policy).
 >
 > To report a potential security vulnerability, contact us at [security@redmix.com](mailto:security@redmix.com).
 
@@ -35,7 +35,7 @@ RedwoodJS wants you to be able build and deploy secure applications and takes th
 - Supabase
 - Nhost
 
-For example implementations, please see [Authentication](https://github.com/redwoodjs/redwood/tree/main/packages/auth) and the use of the `getCurrentUser` and `requireAuth` helpers.
+For example implementations, please see [Authentication](https://github.com/redmix-run/redmix/tree/main/packages/auth) and the use of the `getCurrentUser` and `requireAuth` helpers.
 
 For a demonstration, check out the [Auth Playground](https://redwood-playground-auth.netlify.app).
 

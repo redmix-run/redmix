@@ -679,7 +679,7 @@ As you continue refining your app, the following resources may come in handy:
 
 - [Redwood Supabase Auth Installation & Setup](../authentication.md#supabase)
 - [Redwood Auth Playground](https://redwood-playground-auth.netlify.app/supabase)
-- [Redwood Supabase Auth Client Implementation](https://github.com/redwoodjs/redwood/blob/main/packages/auth/src/authClients/supabase.ts)
+- [Redwood Supabase Auth Client Implementation](https://github.com/redmix-run/redmix/blob/main/packages/auth/src/authClients/supabase.ts)
 - [Supabase GoTrue client implementation](https://github.com/supabase/gotrue-js/blob/d7b334a4283027c65814aa81715ffead262f0bfa/src/GoTrueClient.ts)
 
 Finally, keep the following features in mind (future how to's could go deep into any of these):

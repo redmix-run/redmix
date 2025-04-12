@@ -11,7 +11,7 @@ The Redwood CLI has two entry-point commands:
 1. **redwood** (alias `rw`), which is for developing an application, and
 2. **redwood-tools** (alias `rwt`), which is for contributing to the framework.
 
-This document covers the `redwood` command . For `redwood-tools`, see [Contributing](https://github.com/redwoodjs/redwood/blob/main/CONTRIBUTING.md#cli-reference-redwood-tools) in the Redwood repo.
+This document covers the `redwood` command . For `redwood-tools`, see [Contributing](https://github.com/redmix-run/redmix/blob/main/CONTRIBUTING.md#cli-reference-redwood-tools) in the Redwood repo.
 
 **A Quick Note on Syntax**
 
@@ -1525,7 +1525,7 @@ Lint your files.
 yarn redwood lint
 ```
 
-[Our ESLint configuration](https://github.com/redwoodjs/redwood/blob/master/packages/eslint-config/index.js) is a mix of [ESLint's recommended rules](https://eslint.org/docs/rules/), [React's recommended rules](https://www.npmjs.com/package/eslint-plugin-react#list-of-supported-rules), and a bit of our own stylistic flair:
+[Our ESLint configuration](https://github.com/redmix-run/redmix/blob/master/packages/eslint-config/index.js) is a mix of [ESLint's recommended rules](https://eslint.org/docs/rules/), [React's recommended rules](https://www.npmjs.com/package/eslint-plugin-react#list-of-supported-rules), and a bit of our own stylistic flair:
 
 - no semicolons
 - comma dangle when multiline
@@ -1767,7 +1767,7 @@ yarn rw record init
 
 ## redwood-tools (alias rwt)
 
-Redwood's companion CLI development tool. You'll be using this if you're contributing to Redwood. See [Contributing](https://github.com/redwoodjs/redwood/blob/main/CONTRIBUTING.md#cli-reference-redwood-tools) in the Redwood repo.
+Redwood's companion CLI development tool. You'll be using this if you're contributing to Redwood. See [Contributing](https://github.com/redmix-run/redmix/blob/main/CONTRIBUTING.md#cli-reference-redwood-tools) in the Redwood repo.
 
 ## setup
 

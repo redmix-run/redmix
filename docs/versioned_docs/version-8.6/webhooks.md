@@ -38,7 +38,7 @@ That is, you need to **verify your incoming webhooks**.
 
 ## Verifying Webhooks with RedwoodJS Made Easy
 
-The RedwoodJS [`api/webhooks` package](https://github.com/redwoodjs/redwood/blob/main/packages/api/src/webhooks/index.ts) makes it easy to receive and verify incoming webhooks by implementing many of the most commonly used Webhook signature verifiers.
+The RedwoodJS [`api/webhooks` package](https://github.com/redmix-run/redmix/blob/main/packages/api/src/webhooks/index.ts) makes it easy to receive and verify incoming webhooks by implementing many of the most commonly used Webhook signature verifiers.
 
 ### Webhook Verification
 
@@ -59,7 +59,7 @@ RedwoodJS adds a way to do no verification as well of testing or in the case you
 
 - SkipVerifier (bypass verification, or no verification)
 
-RedwoodJS implements [signatureVerifiers](https://github.com/redwoodjs/redwood/tree/main/packages/api/src/auth/verifiers) for each of these so you can get started integrating your app with third-parties right away.
+RedwoodJS implements [signatureVerifiers](https://github.com/redmix-run/redmix/tree/main/packages/api/src/auth/verifiers) for each of these so you can get started integrating your app with third-parties right away.
 
 ```jsx
 export type SupportedVerifiers =
@@ -75,7 +75,7 @@ export type SupportedVerifiers =
 
 Each `SupportedVerifier` implements a method to `sign` and `verify` a payload with a secret (if needed).
 
-When the webhook needs [creates a verifier](https://github.com/redwoodjs/redwood/blob/main/packages/api/src/auth/verifiers/index.ts#L12) in order to `verifyEvent`, `verifySignature` or `signPayload` it does so via:
+When the webhook needs [creates a verifier](https://github.com/redmix-run/redmix/blob/main/packages/api/src/auth/verifiers/index.ts#L12) in order to `verifyEvent`, `verifySignature` or `signPayload` it does so via:
 
 ```jsx
 createVerifier(type, options)
@@ -116,7 +116,7 @@ export interface VerifyOptions {
 
 ## How to Receive and Verify an Incoming Webhook
 
-The `api/webhooks` package exports [verifyEvent and verifySignature](https://github.com/redwoodjs/redwood/blob/main/packages/api/src/webhooks/index.ts) to apply [verification methods](https://github.com/redwoodjs/redwood/tree/main/packages/api/src/auth/verifiers) and verify the event or some portion of the event payload with a signature as defined in its [VerifyOptions](https://github.com/redwoodjs/redwood/blob/main/packages/api/src/webhooks/common.ts).
+The `api/webhooks` package exports [verifyEvent and verifySignature](https://github.com/redmix-run/redmix/blob/main/packages/api/src/webhooks/index.ts) to apply [verification methods](https://github.com/redmix-run/redmix/tree/main/packages/api/src/auth/verifiers) and verify the event or some portion of the event payload with a signature as defined in its [VerifyOptions](https://github.com/redmix-run/redmix/blob/main/packages/api/src/webhooks/common.ts).
 If the signature fails verification, a `WebhookSignError` is raised which can be caught to return a `401` unauthorized.
 
 Typically, for each integration you'll define 1) the events that triggers the webhook or the schedule via cron/conditions to send the webhook, 2) a secret, and 3) the endpoint to send the webhook to (ie, your endpoint).
@@ -390,9 +390,9 @@ The TimestampScheme verifier not only signs the payload with a secret (SHA256), 
 
 A replay attack is when an attacker intercepts a valid payload and its signature, then re-transmits them. To mitigate such attacks, third-parties like Stripe includes a timestamp in the Stripe-Signature header. Because this timestamp is part of the signed payload, it is also verified by the signature, so an attacker cannot change the timestamp without invalidating the signature. If the signature is valid but the timestamp is too old, you can have your application reject the payload.
 
-When verifying, there is a default tolerance of five minutes between the event timestamp and the current time but you can override this default by setting the [`tolerance` option](https://github.com/redwoodjs/redwood/blob/main/packages/api/src/auth/verifiers/timestampSchemeVerifier.ts) in the `VerifyOptions` passed to the verifier to another value (in milliseconds).
+When verifying, there is a default tolerance of five minutes between the event timestamp and the current time but you can override this default by setting the [`tolerance` option](https://github.com/redmix-run/redmix/blob/main/packages/api/src/auth/verifiers/timestampSchemeVerifier.ts) in the `VerifyOptions` passed to the verifier to another value (in milliseconds).
 
-Also, if for some reason you need to adjust the timestamp used to compare the tolerance to a different time (say in the past), then you may override this by setting the [`currentTimestampOverride` option](https://github.com/redwoodjs/redwood/blob/main/packages/api/src/auth/verifiers/timestampSchemeVerifier.ts) in the `VerifyOptions` passed to the verifier.
+Also, if for some reason you need to adjust the timestamp used to compare the tolerance to a different time (say in the past), then you may override this by setting the [`currentTimestampOverride` option](https://github.com/redmix-run/redmix/blob/main/packages/api/src/auth/verifiers/timestampSchemeVerifier.ts) in the `VerifyOptions` passed to the verifier.
 
 - [Stripe](https://stripe.com/docs/webhooks/best-practices)
 - Used in a Cron Job that triggers a Webhook periodically to background task via a serverless function
@@ -773,7 +773,7 @@ export const handler = async (event: APIGatewayEvent) => {
 
 ## Signing a Payload for an Outgoing Webhook
 
-To sign a payload for an outgoing webhook, the `api/webhooks` package exports [signPayload](https://github.com/redwoodjs/redwood/blob/main/packages/api/src/webhooks/index.ts), a function that signs a payload using a [verification method](https://github.com/redwoodjs/redwood/tree/main/packages/api/src/auth/verifiers), creating your "webhook signature". Once you have the signature, you can add it to your request's http headers with a name of your choosing, and then post the request to the endpoint:
+To sign a payload for an outgoing webhook, the `api/webhooks` package exports [signPayload](https://github.com/redmix-run/redmix/blob/main/packages/api/src/webhooks/index.ts), a function that signs a payload using a [verification method](https://github.com/redmix-run/redmix/tree/main/packages/api/src/auth/verifiers), creating your "webhook signature". Once you have the signature, you can add it to your request's http headers with a name of your choosing, and then post the request to the endpoint:
 
 ```jsx
 import got from 'got'

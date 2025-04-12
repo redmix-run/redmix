@@ -50,7 +50,7 @@ yarn rw setup ui tailwindcss
 Redwood uses Vite's preview server for local development.
 When you run `yarn rw dev`, keys in your `redwood.toml`'s `[web]` table—like `port` and `apiUrl`—are used as vite preview server options (in this case, [preview.port](https://vitejs.dev/config/preview-options.html#preview-port) and [preview.proxy](https://vitejs.dev/config/preview-options.html#preview-proxy) respectively).
 
-> You can peek at all the out-of-the-box configuration for your Vite preview server in the [RedwoodJS Vite plugin](https://github.com/redwoodjs/redwood/blob/main/packages/vite/src/index.ts)
+> You can peek at all the out-of-the-box configuration for your Vite preview server in the [RedwoodJS Vite plugin](https://github.com/redmix-run/redmix/blob/main/packages/vite/src/index.ts)
 
 ### Using `--forward`
 

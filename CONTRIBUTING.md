@@ -295,7 +295,7 @@ Here's a quick overview of some of the new yarn-related files in this repo:
 
 #### Advanced Cases
 
-If needed, there's more information in [this PR #3154 comment](https://github.com/redmix-run/redmix/pull/3154#issue-957115489) about special cases:
+If needed, there's more information in [this PR #3154 comment](https://github.com/redwoodjs/redwood/pull/3154#issue-957115489) about special cases:
 
 - "Binary hoisting" is no longer allowed
 - Specifying Yarn v1 binary (when necessary)

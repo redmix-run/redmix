@@ -60,7 +60,7 @@ If you are using a [Server File](server-file.md) then you should [change the com
 ## Dockerfile
 
 The documentation here goes through and explains every line of Redwood's Dockerfile.
-If you'd like to see the whole Dockerfile for reference, you can find it [here](https://github.com/redwoodjs/redwood/tree/main/packages/cli/src/commands/setup/docker/templates/Dockerfile) or by setting it up in your project: `yarn rw setup docker`.
+If you'd like to see the whole Dockerfile for reference, you can find it [here](https://github.com/redmix-run/redmix/tree/main/packages/cli/src/commands/setup/docker/templates/Dockerfile) or by setting it up in your project: `yarn rw setup docker`.
 
 Redwood takes advantage of [Docker's multi-stage build support](https://docs.docker.com/build/building/multi-stage/) to keep the final production images lean.
 
