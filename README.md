@@ -33,9 +33,53 @@ Documentation](https://redwoodjs.com/docs/introduction) for extensive reference
 docs and guides.
 
 The only thing you'll have to adjust are the package names and replace every
-`@redwood` package with a `@redmix` package of the same name.
+`@redwoodjs` package with a `@redmix` package of the same name.
 
-### The Redmix Team
+## Roadmap
+
+### Cleanup
+
+These are things I want to remove to make the surface area of things I need to
+maintain smaller. Notice that UI libraries you already have setup will continue
+to work. Just new projects won't have the setup support for them. Auth and
+deploy providers are more difficult. I'll leave those in longer. Let me know
+what you use so I know what to keep and what to remove!
+
+- [ ] Mantine and Chakra-UI setup
+- [ ] Redwood Record
+- [ ] Telemetry
+- [ ] Auth providers I don't know of anyone using
+- [ ] Deploy providers I don't know of anyone using
+- [x] Old docs versions
+- [ ] Old codemods
+- [ ] The structure package
+
+### Future Proofing
+
+- [ ] Make all packages ESM only where possible and ESM+CJS where needed to
+      keep compatibility with existing RW apps
+- [ ] Future major version: Make all packages ESM only      
+- [ ] Future major version: Make new Redmix apps ESM only
+- [ ] Future major version: Make it possible to switch existing Redmix apps to
+      ESM
+- [ ] Enable strict mode for new Redmix TypeScript apps.
+- [ ] Upgrade to Node 24
+
+### Package Updates
+
+- [ ] Update packages we use to their latest versions. Notable examples:
+  - [ ] `react`
+  - [ ] `prisma`
+  - [ ] `apollo`
+  - [ ] `vite`
+  - [ ] `fastify`
+
+### Docs
+
+- [ ] Mirror the RedwoodJS docs to make sure they don't get deleted
+- [ ] Document where Redmix diverges from RedwoodJS. (Future major version.)
+
+## The Redmix Team
 
 <table>
   <tr>
@@ -46,7 +90,7 @@ The only thing you'll have to adjust are the package names and replace every
   </tr>
 </table>
 
-### Sponsors
+## Sponsors
 
 <table>
   <tr>
