@@ -10,7 +10,7 @@ For full inspiration and vision, see Redwood's [README](https://github.com/redmi
 
 Development on Redmix happens in the [redmix-run/redmix repo on GitHub](https://github.com/redmix-run/redmix).
 The docs are [there too](https://github.com/redmix-run/redmix/tree/main/docs).
-While the [Redmix Team](https://github.com/redmix-run/redmix#redmix-team)
+While the [Redmix Team](https://github.com/redmix-run/redmix#the-redmix-team)
 handle most of the high-priority items and the day-to-day, Redmix wouldn't be
 where it is without [all its contributors](https://github.com/redmix-run/redmix#all-contributors)!
 
