@@ -45,8 +45,8 @@ export function rscSsrRouterImport(): Plugin {
       traverse(ast, {
         ImportDeclaration(path) {
           const source = path.node.source.value
-          if (source === '@redwoodjs/router/RscRouter') {
-            path.node.source = t.stringLiteral('@redwoodjs/router/SsrRouter')
+          if (source === '@redmix/router/RscRouter') {
+            path.node.source = t.stringLiteral('@redmix/router/SsrRouter')
           }
         },
       })

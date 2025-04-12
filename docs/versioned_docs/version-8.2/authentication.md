@@ -30,12 +30,12 @@ Redwood has a simple API to integrate any auth provider you can think of. But to
 
 :::tip how to tell if an integration is official
 
-To tell if an integration is official, look for the `@redwoodjs` scope.
-For example, Redwood's Auth0 integration comprises two npm packages: `@redwoodjs/auth-auth0-web` and `@redwoodjs/auth-auth0-api`.
+To tell if an integration is official, look for the `@redmix` scope.
+For example, Redwood's Auth0 integration comprises two npm packages: `@redmix/auth-auth0-web` and `@redmix/auth-auth0-api`.
 
 :::
 
-Other than bearing the `@redwoodjs` scope, the reason these providers are official is that we're committed to keeping them up to date.
+Other than bearing the `@redmix` scope, the reason these providers are official is that we're committed to keeping them up to date.
 You can set up any of them via the corresponding auth setup command:
 
 ```
@@ -185,7 +185,7 @@ export const handler = createGraphQLHandler({
 })
 ```
 
-If you're using one of Redwood's official integrations, `authDecoder` comes from the corresponding integration package (in auth0's case, `@redwoodjs/auth-auth0-api`):
+If you're using one of Redwood's official integrations, `authDecoder` comes from the corresponding integration package (in auth0's case, `@redmix/auth-auth0-api`):
 
 ```ts
 import { authDecoder } from '@redmix/auth-auth0-api'

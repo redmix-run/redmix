@@ -10,7 +10,7 @@ import plugin from '../babel-plugin-redwood-prerender-media-imports'
 let mockDistDir
 let mockSrcDir
 
-vi.mock('@redwoodjs/project-config', async (importOriginal) => {
+vi.mock('@redmix/project-config', async (importOriginal) => {
   const originalProjectConfig = await importOriginal<typeof projectConfig>()
   return {
     ...originalProjectConfig,

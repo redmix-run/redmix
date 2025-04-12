@@ -69,16 +69,16 @@ export async function handler({ force }) {
         },
       },
       {
-        title: 'Adding @redwoodjs/api-server and @redwoodjs/web-server...',
+        title: 'Adding @redmix/api-server and @redmix/web-server...',
         task: async (_ctx, task) => {
-          const apiServerPackageName = '@redwoodjs/api-server'
+          const apiServerPackageName = '@redmix/api-server'
           const { dependencies: apiDependencies } = fs.readJSONSync(
             path.join(getPaths().api.base, 'package.json'),
           )
           const hasApiServerPackage =
             Object.keys(apiDependencies).includes(apiServerPackageName)
 
-          const webServerPackageName = '@redwoodjs/web-server'
+          const webServerPackageName = '@redmix/web-server'
           const { dependencies: webDependencies } = fs.readJSONSync(
             path.join(getPaths().web.base, 'package.json'),
           )
@@ -284,7 +284,7 @@ export async function handler({ force }) {
 }
 
 export async function getVersionOfRedwoodPackageToInstall(module) {
-  const packageJsonPath = require.resolve('@redwoodjs/cli/package.json', {
+  const packageJsonPath = require.resolve('@redmix/cli/package.json', {
     paths: [getPaths().base],
   })
   let { version } = fs.readJSONSync(packageJsonPath)

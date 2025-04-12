@@ -54,7 +54,7 @@ vi.mock('../shared', () => ({
   libPath: () => redwoodProjectPath + '/api/src/lib',
 }))
 
-vi.mock('@redwoodjs/cli-helpers', () => {
+vi.mock('@redmix/cli-helpers', () => {
   return {
     getGraphqlPath: () => {
       return redwoodProjectPath + '/api/src/functions/graphql.ts'
@@ -72,7 +72,7 @@ vi.mock('@redwoodjs/cli-helpers', () => {
       underline: (str: string) => str,
     },
     // I wish I could have used something like
-    // vi.requireActual(@redwoodjs/cli-helpers) here, but I couldn't because
+    // vi.requireActual(@redmix/cli-helpers) here, but I couldn't because
     // jest doesn't support ESM
     standardAuthHandler: async (args: AuthHandlerArgs) => {
       if (args.notes) {

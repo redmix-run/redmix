@@ -10,7 +10,7 @@ import * as ogImage from '../ogImage.js'
 
 vi.mock('fs', () => ({ ...memfs, default: { ...memfs } }))
 vi.mock('node:fs', () => ({ ...memfs, default: { ...memfs } }))
-vi.mock('@redwoodjs/project-config', async (importOriginal) => {
+vi.mock('@redmix/project-config', async (importOriginal) => {
   const actual = await importOriginal()
 
   return {

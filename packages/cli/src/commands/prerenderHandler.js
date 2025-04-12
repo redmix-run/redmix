@@ -251,9 +251,9 @@ const diagnosticCheck = () => {
       ),
     },
     {
-      message: 'Duplicate @redwoodjs/web version found in web/node_modules',
+      message: 'Duplicate @redmix/web version found in web/node_modules',
       failure: fs.existsSync(
-        path.join(getPaths().web.base, 'node_modules/@redwoodjs/web'),
+        path.join(getPaths().web.base, 'node_modules/@redmix/web'),
       ),
     },
   ]

@@ -15,9 +15,9 @@ export const handler = async ({ force: forceArg }: Args) => {
     forceArg,
     provider: 'supabase',
     authDecoderImport: `import { authDecoder } from '@redmix/auth-supabase-api'`,
-    apiPackages: [`@redwoodjs/auth-supabase-api@${version}`],
+    apiPackages: [`@redmix/auth-supabase-api@${version}`],
     webPackages: [
-      `@redwoodjs/auth-supabase-web@${version}`,
+      `@redmix/auth-supabase-web@${version}`,
       '@supabase/supabase-js@^2',
     ],
     notes: [

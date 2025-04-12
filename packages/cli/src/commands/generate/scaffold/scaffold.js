@@ -676,8 +676,8 @@ const addLayoutImport = () => {
 
   if (!routesContent.match(importLayout)) {
     const newRoutesContent = routesContent.replace(
-      /['"]@redwoodjs\/router['"](\s*)/,
-      `'@redwoodjs/router'\n\n${importLayout}$1`,
+      /['"]@redmix\/router['"](\s*)/,
+      `'@redmix/router'\n\n${importLayout}$1`,
     )
     writeFile(routesPath, newRoutesContent, { overwriteExisting: true })
 
@@ -710,13 +710,11 @@ const addSetImport = (task) => {
   const routesContent = readFile(routesPath).toString()
   const [redwoodRouterImport, importStart, spacing, importContent, importEnd] =
     routesContent.match(
-      /(import {)(\s*)([^]*)(} from ['"]@redwoodjs\/router['"])/,
+      /(import {)(\s*)([^]*)(} from ['"]@redmix\/router['"])/,
     ) || []
 
   if (!redwoodRouterImport) {
-    task.skip(
-      "Couldn't add Set import from @redwoodjs/router to Routes.{jsx,tsx}",
-    )
+    task.skip("Couldn't add Set import from @redmix/router to Routes.{jsx,tsx}")
     return undefined
   }
 

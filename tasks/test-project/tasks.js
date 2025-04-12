@@ -355,7 +355,7 @@ async function apiTasks(outputPath, { verbose, linkWithLatestFwBuild }) {
     const dbAuthSetupPath = path.join(
       outputPath,
       'node_modules',
-      '@redwoodjs',
+      '@redmix',
       'auth-dbauth-setup',
     )
 

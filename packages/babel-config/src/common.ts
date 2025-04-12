@@ -169,8 +169,8 @@ export const getPathsFromTypeScriptConfig = (
     // "src/*"
     // "$api/*"
     // "types/*"
-    // "@redwoodjs/testing"
-    if (key.match(/src\/|\$api\/\*|types\/\*|\@redwoodjs\/.*/g)) {
+    // "@redmix/testing"
+    if (key.match(/src\/|\$api\/\*|types\/\*|\@redmix\/.*/g)) {
       continue
     }
     const aliasKey = key.replace('/*', '')

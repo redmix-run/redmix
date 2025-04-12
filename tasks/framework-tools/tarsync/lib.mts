@@ -125,7 +125,7 @@ export async function updateResolutions(projectPath: string) {
     .reduce((resolutions, { name }) => {
       return {
         ...resolutions,
-        // Turn a Redwood package name like `@redwoodjs/project-config` into `redwoodjs-project-config.tgz`.
+        // Turn a Redwood package name like `@redmix/project-config` into `redwoodjs-project-config.tgz`.
         [name]: `./${TARBALL_DEST_DIRNAME}/${
           name.replace('@', '').replaceAll('/', '-') + '.tgz'
         }`,
@@ -161,7 +161,7 @@ export async function getReactResolutions() {
 
   if (!react || !reactDom) {
     throw new Error(
-      "Couldn't find react or react-dom in @redwoodjs/web's peerDependencies",
+      "Couldn't find react or react-dom in @redmix/web's peerDependencies",
     )
   }
 

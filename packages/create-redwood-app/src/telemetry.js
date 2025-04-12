@@ -40,7 +40,7 @@ export async function startTelemetry() {
       {
         System: ['OS', 'Shell'],
         Binaries: ['Node', 'Yarn', 'npm'],
-        npmPackages: '@redwoodjs/*',
+        npmPackages: '@redmix/*',
         IDEs: ['VSCode'],
       },
       { json: true },

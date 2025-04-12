@@ -13,7 +13,7 @@ export default function ({ types: t }: { types: typeof types }): PluginObj {
         // import { DevFatalErrorPage } from '@redmix/web/dist/components/DevFatalErrorPage'
         if (
           path.node.source.value ===
-          '@redwoodjs/web/dist/components/DevFatalErrorPage'
+          '@redmix/web/dist/components/DevFatalErrorPage'
         ) {
           // const DevFatalErrorPage = undefined
           const variableDeclaration = t.variableDeclaration('const', [

@@ -16,7 +16,7 @@ export const handler = async ({ force }) => {
   const projectIsTypescript = isTypeScriptProject()
   const redwoodVersion =
     require(path.join(getPaths().base, 'package.json')).devDependencies[
-      '@redwoodjs/core'
+      '@redmix/core'
     ] ?? 'latest'
 
   const tasks = new Listr(
@@ -76,7 +76,7 @@ export const handler = async ({ force }) => {
         },
       },
       {
-        ...addApiPackages([`@redwoodjs/storage@${redwoodVersion}`]),
+        ...addApiPackages([`@redmix/storage@${redwoodVersion}`]),
         title: 'Adding dependencies to your api side...',
       },
       {

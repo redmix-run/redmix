@@ -78,7 +78,7 @@ export async function check() {
     const packageJson = JSON.parse(
       fs.readFileSync(path.join(getPaths().base, 'package.json')),
     )
-    let localVersion = packageJson.devDependencies['@redwoodjs/core']
+    let localVersion = packageJson.devDependencies['@redmix/core']
 
     // Remove any leading non-digits, i.e. ^ or ~
     while (!/\d/.test(localVersion.charAt(0))) {
@@ -92,7 +92,7 @@ export async function check() {
       try {
         remoteVersions.set(
           tag,
-          await latestVersion('@redwoodjs/core', { version: tag }),
+          await latestVersion('@redmix/core', { version: tag }),
         )
       } catch (error) {
         // This error may result as the ability of the user to specify arbitrary tags within their config file

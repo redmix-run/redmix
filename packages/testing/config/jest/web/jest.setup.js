@@ -3,7 +3,7 @@
 require('@testing-library/jest-dom')
 require('whatwg-fetch')
 
-const { findCellMocks } = require('@redwoodjs/testing/dist/web/findCellMocks')
+const { findCellMocks } = require('@redmix/testing/dist/web/findCellMocks')
 const {
   startMSW,
   setupRequestHandlers,
@@ -11,7 +11,7 @@ const {
   mockGraphQLMutation,
   mockGraphQLQuery,
   mockCurrentUser,
-} = require('@redwoodjs/testing/dist/web/mockRequests')
+} = require('@redmix/testing/dist/web/mockRequests')
 
 global.mockGraphQLQuery = mockGraphQLQuery
 global.mockGraphQLMutation = mockGraphQLMutation

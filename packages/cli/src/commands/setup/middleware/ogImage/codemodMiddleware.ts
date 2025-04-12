@@ -16,7 +16,7 @@ export default function transform(file: FileInfo, api: API) {
         },
       ],
       source: {
-        value: '@redwoodjs/ogimage-gen/middleware',
+        value: '@redmix/ogimage-gen/middleware',
         type: 'StringLiteral',
       },
     }).length === 0
@@ -27,7 +27,7 @@ export default function transform(file: FileInfo, api: API) {
       .insertBefore(
         j.importDeclaration(
           [j.importDefaultSpecifier(j.identifier('OgImageMiddleware'))],
-          j.stringLiteral('@redwoodjs/ogimage-gen/middleware'),
+          j.stringLiteral('@redmix/ogimage-gen/middleware'),
         ),
       )
   }

@@ -30,14 +30,14 @@ vi.mock('@prisma/internals', async () => ({
   }),
 }))
 
-vi.mock('@redwoodjs/cli-helpers', () => ({
+vi.mock('@redmix/cli-helpers', () => ({
   addApiPackages: () => ({
     title: 'Adding required api packages...',
     task: async () => {},
   }),
 }))
 
-vi.mock('@redwoodjs/project-config', async (importOriginal) => {
+vi.mock('@redmix/project-config', async (importOriginal) => {
   const path = require('path')
   const originalProjectConfig = await importOriginal<typeof ProjectConfig>()
   return {

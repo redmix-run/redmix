@@ -42,7 +42,7 @@ export default function ({ types: t }: { types: typeof types }): PluginObj {
           ImportDeclaration(p) {
             if (
               t.isStringLiteral(p.node.source, {
-                value: '@redwoodjs/graphql-server',
+                value: '@redmix/graphql-server',
               })
             ) {
               for (const specifier of p.node.specifiers) {

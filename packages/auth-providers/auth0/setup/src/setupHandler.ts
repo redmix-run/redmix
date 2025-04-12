@@ -14,12 +14,11 @@ export async function handler({ force: forceArg }: Args) {
     basedir: __dirname,
     forceArg,
     provider: 'auth0',
-    authDecoderImport:
-      "import { authDecoder } from '@redmix/auth-auth0-api'",
-    apiPackages: [`@redwoodjs/auth-auth0-api@${version}`],
+    authDecoderImport: "import { authDecoder } from '@redmix/auth-auth0-api'",
+    apiPackages: [`@redmix/auth-auth0-api@${version}`],
     webPackages: [
       '@auth0/auth0-spa-js@^2',
-      `@redwoodjs/auth-auth0-web@${version}`,
+      `@redmix/auth-auth0-web@${version}`,
     ],
     notes: [
       "You'll need to add four env vars to your .env file:",

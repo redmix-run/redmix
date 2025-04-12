@@ -12,7 +12,7 @@ import { runTransform } from '../../../../lib/runTransform.js'
 export async function handler({ force }: { force: boolean }) {
   const rwPaths = getPaths()
   const rootPkgJson = fs.readJSONSync(path.join(rwPaths.base, 'package.json'))
-  const currentProjectVersion = rootPkgJson.devDependencies['@redwoodjs/core']
+  const currentProjectVersion = rootPkgJson.devDependencies['@redmix/core']
 
   const notes: string[] = ['']
   const tasks = new Listr(
@@ -28,7 +28,7 @@ export async function handler({ force }: { force: boolean }) {
           }
         },
       },
-      addWebPackages([`@redwoodjs/ogimage-gen@${currentProjectVersion}`]),
+      addWebPackages([`@redmix/ogimage-gen@${currentProjectVersion}`]),
       {
         title: 'Add OG Image middleware ...',
         task: async () => {

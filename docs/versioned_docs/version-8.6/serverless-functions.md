@@ -763,7 +763,7 @@ If you need to protect an endpoint via authentication that isn't user-based, you
 
 The `useRequireAuth` wrapper configures your handler's `context` so that you can use any of the `requireAuth`-related authentication helpers in your serverless function:
 
-- import `useRequireAuth` from `@redwoodjs/graphql-server`
+- import `useRequireAuth` from `@redmix/graphql-server`
 - import your app's custom `getCurrentUser` and the `isAuthenticated` check from `src/lib/auth`
 - import your auth provider's `authDecoder`
 - implement your serverless function as you would, but do not `export` it (see `myHandler` below).

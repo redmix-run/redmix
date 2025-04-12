@@ -39,7 +39,7 @@ const removeSetImport = () => {
   }
 
   const [redwoodRouterImport] = routesContent.match(
-    /import {[^]*} from '@redwoodjs\/router'/,
+    /import {[^]*} from '@redmix\/router'/,
   )
   const removedSetImport = redwoodRouterImport.replace(/,*\s*Set,*/, '')
   const newRoutesContent = routesContent.replace(

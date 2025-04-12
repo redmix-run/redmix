@@ -9,7 +9,7 @@ import { handler } from '../commands/storybookHandler'
 
 vi.mock('fs')
 
-vi.mock('@redwoodjs/project-config', async (importOriginal) => {
+vi.mock('@redmix/project-config', async (importOriginal) => {
   const actual: any = await importOriginal()
   return {
     ...actual,

@@ -108,7 +108,7 @@ export const handler = async ({ force }: Args) => {
           .split('\n')
 
         const webImportIndex = contentLines.findLastIndex((line) =>
-          /^import { FatalErrorBoundary, RedwoodProvider } from '@redwoodjs\/web'$/.test(
+          /^import { FatalErrorBoundary, RedwoodProvider } from '@redmix\/web'$/.test(
             line,
           ),
         )

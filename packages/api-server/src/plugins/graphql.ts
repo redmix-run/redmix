@@ -65,7 +65,7 @@ export async function redwoodFastifyGraphQLServer(
     //
     // These would be plugins that need a server instance such as Redwood Realtime
     if (graphqlOptions?.realtime) {
-      const { useRedwoodRealtime } = await import('@redwoodjs/realtime')
+      const { useRedwoodRealtime } = await import('@redmix/realtime')
 
       const originalExtraPlugins = graphqlOptions.extraPlugins ?? []
       // @ts-expect-error TODO(jgmw): Fix this type issue introduced after switching to Node16 module resolution

@@ -733,8 +733,8 @@ create({
   variables: {
     input: {
       name: 'Rob',
-      email: 'rob@redwoodjs.com',
-      message: 'I love Redwood!',
+      email: 'rob@redmix.com',
+      message: 'I love Redmix!',
     },
   },
 })

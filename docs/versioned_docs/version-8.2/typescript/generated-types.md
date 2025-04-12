@@ -180,7 +180,7 @@ Running `yarn rw g types` will generate types for your resolvers on a per-file b
 
 ```diff title="package.json"
    "eslintConfig": {
-     "extends": "@redwoodjs/eslint-config",
+     "extends": "@redmix/eslint-config",
      "root": true,
      "parserOptions": {
        "warnOnUnsupportedTypeScriptVersion": false
@@ -191,7 +191,7 @@ Running `yarn rw g types` will generate types for your resolvers on a per-file b
 +          "api/src/services/**/*.ts"
 +        ],
 +        "rules": {
-+          "@redwoodjs/service-type-annotations": "error"
++          "@redmix/service-type-annotations": "error"
 +        }
 +      }
      ]

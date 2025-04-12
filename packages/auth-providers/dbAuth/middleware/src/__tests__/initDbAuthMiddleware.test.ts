@@ -21,7 +21,7 @@ beforeAll(() => {
   process.env.RWJS_CWD = FIXTURE_PATH
 
   // Mock the session decryption
-  vi.mock('@redwoodjs/auth-dbauth-api', async (importOriginal) => {
+  vi.mock('@redmix/auth-dbauth-api', async (importOriginal) => {
     const original = (await importOriginal()) as any
     return {
       default: {

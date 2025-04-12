@@ -221,7 +221,7 @@ describe('api', () => {
             },
             {
               members: ['context'],
-              path: '@redwoodjs/context',
+              path: '@redmix/context',
             },
           ],
         },

@@ -81,7 +81,7 @@ So: I use the User model to find a given user in the database, and, assuming the
 You'll want to add RedwoodRecord's package to the api side:
 
 ```
-yarn workspace api add @redwoodjs/record
+yarn workspace api add @redmix/record
 ```
 
 First you'll need to create a model to represent the database table you want to access. In our blog example, let's create a User model:
@@ -118,11 +118,11 @@ And now we can start querying and modifying our data:
 
 ```jsx
 await User.all()
-const newUser = await User.create({ name: 'Rob', email: 'rob@redwoodjs.com' })
+const newUser = await User.create({ name: 'Rob', email: 'rob@redmix.com' })
 newUser.name = 'Robert'
 await newUser.save()
 await User.find(1)
-await User.findBy({ email: 'rob@redwoodjs.com' })
+await User.findBy({ email: 'rob@redmix.com' })
 await newUser.destroy()
 ```
 
@@ -178,7 +178,7 @@ const user = User.build({ username: 'r' })
 await user.save() // => false
 user.errors.email = ['must be present']
 user.errors.username = ['must be at least 2 characters']
-user.email = 'rob@redwoodjs.com'
+user.email = 'rob@redmix.com'
 user.username = 'rob'
 await user.save()
 ```
@@ -227,7 +227,7 @@ await User.find(123)
 Finds a single record by certain criteria. Similar to `where()`, but will only return the first record that matches. The first argument is the properties that you would normally set as the `where` value to Prisma's [`findFirst()` function](https://www.prisma.io/docs/reference/api-reference/prisma-client-reference#findmany). The second argument (optional) is any additional properties (like ordering or limiting) that you want to perform on the resulting records before selecting one:
 
 ```jsx
-await User.findBy({ email: 'rob@redwoodjs.com' })
+await User.findBy({ email: 'rob@redmix.com' })
 await User.findBy({ email: { endsWith: { 'redwoodjs.com' } } }, { orderBy: { lastName: 'asc' }, take: 10 })
 ```
 
@@ -254,7 +254,7 @@ The first argument is the data that would be given to Prisma's `create()` functi
 ```jsx
 await User.create({ name: 'Tom Preston-Werner' })
 await User.create(
-  { firstName: 'Rob', email: 'rob@redwoodjs.com' },
+  { firstName: 'Rob', email: 'rob@redmix.com' },
   { select: ['email'] }
 )
 ```
@@ -285,9 +285,9 @@ Call `update()` on a record, including the attributes to change as the first arg
 
 ```jsx
 const user = await User.find(123)
-await user.update({ email: 'rob.cameron@redwoodjs.com' })
+await user.update({ email: 'rob.cameron@redmix.com' })
 // or
-await user.update({ email: 'rob.cameron@redwoodjs.com' }, { throw: true })
+await user.update({ email: 'rob.cameron@redmix.com' }, { throw: true })
 ```
 
 #### save()
@@ -296,7 +296,7 @@ Save changes made to a record. The first (optional) argument includes any proper
 
 ```jsx
 const user = await User.find(123)
-user.email = 'rob.cameron@redwoodjs.com'
+user.email = 'rob.cameron@redmix.com'
 await user.save()
 // or
 await user.save({ throw: true })

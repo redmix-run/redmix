@@ -1,4 +1,4 @@
-vi.mock('@redwoodjs/project-config', () => {
+vi.mock('@redmix/project-config', () => {
   return {
     getPaths: () => {
       const path = require('path')
@@ -8,7 +8,7 @@ vi.mock('@redwoodjs/project-config', () => {
     },
   }
 })
-vi.mock('@redwoodjs/cli-helpers', () => {
+vi.mock('@redmix/cli-helpers', () => {
   return {
     getCompatibilityData: vi.fn(() => {
       throw new Error('Mock Not Implemented')
@@ -56,7 +56,7 @@ describe('packageHandler', () => {
     vol.fromJSON({
       ['package.json']: JSON.stringify({
         devDependencies: {
-          '@redwoodjs/core': '1.0.0',
+          '@redmix/core': '1.0.0',
         },
       }),
     })

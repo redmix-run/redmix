@@ -6,7 +6,7 @@ import { handler, builder } from '../flightcontrol.js'
 vi.mock('path')
 vi.mock('execa')
 vi.mock('fs-extra')
-vi.mock('@redwoodjs/project-config', async (importOriginal) => {
+vi.mock('@redmix/project-config', async (importOriginal) => {
   const originalProjectConfig: object = await importOriginal()
 
   return {
@@ -16,7 +16,7 @@ vi.mock('@redwoodjs/project-config', async (importOriginal) => {
     }),
   }
 })
-vi.mock('@redwoodjs/cli-helpers', async (importOriginal) => {
+vi.mock('@redmix/cli-helpers', async (importOriginal) => {
   const originalCliHelpers: object = await importOriginal()
 
   return {
@@ -73,9 +73,7 @@ describe('handler', () => {
         dm: false,
       })
 
-      const { recordTelemetryAttributes } = await import(
-        '@redwoodjs/cli-helpers'
-      )
+      const { recordTelemetryAttributes } = await import('@redmix/cli-helpers')
       expect(recordTelemetryAttributes).toHaveBeenCalled()
     })
 

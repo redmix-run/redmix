@@ -84,11 +84,11 @@ export async function handler({
       "import { createAuthDecoder } from '@redmix/auth-dbauth-api'",
     webAuthn,
     webPackages: [
-      `@redwoodjs/auth-dbauth-web@${version}`,
+      `@redmix/auth-dbauth-web@${version}`,
       ...(webAuthn ? webAuthnWebPackages : []),
     ],
     apiPackages: [
-      `@redwoodjs/auth-dbauth-api@${version}`,
+      `@redmix/auth-dbauth-api@${version}`,
       ...(webAuthn ? webAuthnApiPackages : []),
     ],
     extraTasks: [

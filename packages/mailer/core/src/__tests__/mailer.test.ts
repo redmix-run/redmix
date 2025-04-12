@@ -368,7 +368,7 @@ describe('Uses the correct modes', () => {
         },
       })
       expect(console.warn).toBeCalledWith(
-        "Automatically loaded the '@redwoodjs/mailer-handler-in-memory' handler, this will be used to process mail in test mode",
+        "Automatically loaded the '@redmix/mailer-handler-in-memory' handler, this will be used to process mail in test mode",
       )
     })
 
@@ -382,7 +382,7 @@ describe('Uses the correct modes', () => {
         },
       })
       expect(console.warn).toBeCalledWith(
-        "Automatically loaded the '@redwoodjs/mailer-handler-studio' handler, this will be used to process mail in development mode",
+        "Automatically loaded the '@redmix/mailer-handler-studio' handler, this will be used to process mail in development mode",
       )
     })
   })

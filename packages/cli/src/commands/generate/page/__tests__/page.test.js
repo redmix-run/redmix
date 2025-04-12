@@ -69,7 +69,7 @@ import { vi, describe, it, test, expect, beforeEach, afterEach } from 'vitest'
 
 import '../../../../lib/mockTelemetry'
 
-vi.mock('@redwoodjs/project-config', async (importOriginal) => {
+vi.mock('@redmix/project-config', async (importOriginal) => {
   const path = require('path')
   const originalProjectConfig = await importOriginal()
   return {
@@ -91,7 +91,7 @@ vi.mock('@redwoodjs/project-config', async (importOriginal) => {
   }
 })
 
-vi.mock('@redwoodjs/cli-helpers', async (importOriginal) => {
+vi.mock('@redmix/cli-helpers', async (importOriginal) => {
   const originalCliHelpers = await importOriginal()
 
   return {
@@ -100,7 +100,7 @@ vi.mock('@redwoodjs/cli-helpers', async (importOriginal) => {
   }
 })
 
-vi.mock('@redwoodjs/internal/dist/generate/generate', () => {
+vi.mock('@redmix/internal/dist/generate/generate', () => {
   return {
     generate: () => {
       return { errors: [] }

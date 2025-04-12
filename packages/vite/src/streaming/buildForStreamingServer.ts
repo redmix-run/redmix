@@ -21,10 +21,10 @@ export async function buildForStreamingServer({
       cjsInterop({
         dependencies: [
           // Skip ESM modules: rwjs/auth, rwjs/web, rwjs/auth-*-middleware, rwjs/router
-          '@redwoodjs/forms',
-          '@redwoodjs/prerender/*',
-          '@redwoodjs/auth-*-api',
-          '@redwoodjs/auth-*-web',
+          '@redmix/forms',
+          '@redmix/prerender/*',
+          '@redmix/auth-*-api',
+          '@redmix/auth-*-web',
         ],
       }),
     ],

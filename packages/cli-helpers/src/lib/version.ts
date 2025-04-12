@@ -24,14 +24,14 @@ export async function getCompatibilityData(
   packageName: string,
   preferredVersionOrTag: string,
 ) {
-  // Get the project's version of RedwoodJS from the root package.json's @redwoodjs/core dev dependency
+  // Get the project's version of RedwoodJS from the root package.json's @redmix/core dev dependency
   const projectPackageJson = JSON.parse(
     fs.readFileSync(path.join(getPaths().base, 'package.json'), {
       encoding: 'utf8',
     }),
   )
   const projectRedwoodVersion =
-    projectPackageJson.devDependencies['@redwoodjs/core']
+    projectPackageJson.devDependencies['@redmix/core']
 
   // Parse the version, we'll assume it's a tag if it's not a valid semver version
   const semverVersion = semver.parse(preferredVersionOrTag)

@@ -11,10 +11,7 @@ import type { RouteSpec } from '@redmix/internal/dist/routes.js'
 import { getProjectRoutes } from '@redmix/internal/dist/routes.js'
 import type { Paths } from '@redmix/project-config'
 import { getConfig, getPaths } from '@redmix/project-config'
-import {
-  createPerRequestMap,
-  createServerStorage,
-} from '@redmix/server-store'
+import { createPerRequestMap, createServerStorage } from '@redmix/server-store'
 import type { Middleware } from '@redmix/web/middleware'
 
 import { registerFwGlobalsAndShims } from './lib/registerFwGlobalsAndShims.js'
@@ -118,9 +115,9 @@ async function createServer() {
         '@prisma/client',
         '@prisma/fetch-engine',
         '@prisma/internals',
-        '@redwoodjs/auth-dbauth-api',
-        '@redwoodjs/cookie-jar',
-        '@redwoodjs/server-store',
+        '@redmix/auth-dbauth-api',
+        '@redmix/cookie-jar',
+        '@redmix/server-store',
         '@simplewebauthn/server',
         'graphql-scalars',
         'minimatch',
@@ -166,10 +163,10 @@ async function createServer() {
       cjsInterop({
         dependencies: [
           // Skip ESM modules: rwjs/auth, rwjs/web, rwjs/auth-*-middleware, rwjs/router
-          '@redwoodjs/forms',
-          '@redwoodjs/prerender/*',
-          '@redwoodjs/auth-*-api',
-          '@redwoodjs/auth-*-web',
+          '@redmix/forms',
+          '@redmix/prerender/*',
+          '@redmix/auth-*-api',
+          '@redmix/auth-*-web',
         ],
       }),
       rscEnabled && rscRoutesAutoLoader(),
@@ -215,10 +212,10 @@ async function createServer() {
         '@prisma/client',
         '@prisma/fetch-engine',
         '@prisma/internals',
-        '@redwoodjs/auth-dbauth-api',
-        '@redwoodjs/cookie-jar',
-        '@redwoodjs/server-store',
-        '@redwoodjs/structure',
+        '@redmix/auth-dbauth-api',
+        '@redmix/cookie-jar',
+        '@redmix/server-store',
+        '@redmix/structure',
         '@simplewebauthn/server',
         'graphql-scalars',
         'minimatch',

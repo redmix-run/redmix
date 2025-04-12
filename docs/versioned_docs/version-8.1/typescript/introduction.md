@@ -45,7 +45,7 @@ You can always run `yarn rw g types` to make sure you have all the types you nee
 
 ### 2. Use generators to learn about available utility types
 
-Let's say you generate a Cell using the command `yarn rw g cell Post`. If your project is in TypeScript, the generated files will contain a bunch of utility types (imported from `@redwoodjs/web`), as well as types specific to your project (imported from `types/graphql`).
+Let's say you generate a Cell using the command `yarn rw g cell Post`. If your project is in TypeScript, the generated files will contain a bunch of utility types (imported from `@redmix/web`), as well as types specific to your project (imported from `types/graphql`).
 You don't need to learn all the utility types up front, but they're documented in detail in the [Utility Types](/typescript/utility-types.md) doc when you're ready.
 
 ### 3. Redwood won't force you to type everything
@@ -106,7 +106,7 @@ Add you custom `@adminUI` alias to your `tsconfig.json` file:
       ],
 
       "types/*": ["./types/*", "../types/*"],
-      "@redwoodjs/testing": ["../node_modules/@redwoodjs/testing/api"]
+      "@redmix/testing": ["../node_modules/@redmix/testing/api"]
     }
   }
 ...
@@ -138,7 +138,7 @@ When you start writing tests for components that contain alias paths, you will n
 ```js
 const config = {
   rootDir: '../',
-  preset: '@redwoodjs/testing/config/jest/web',
+  preset: '@redmix/testing/config/jest/web',
   moduleNameMapper: {
     '^@adminUI/(.*)$':
       '<rootDir>/web/src/components/modules/admin/common/ui/$1',

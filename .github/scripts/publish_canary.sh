@@ -54,23 +54,23 @@ fi
 
 # Update create-redwood-app templates to use canary packages
 
-sed "s/\"@redwoodjs\/\(.*\)\": \".*\"/\"@redwoodjs\/\1\": \"$(cat canary_version)\"/" \
+sed "s/\"@redmix\/\(.*\)\": \".*\"/\"@redmix\/\1\": \"$(cat canary_version)\"/" \
   packages/create-redwood-app/templates/js/package.json > tmpfile \
   && mv tmpfile packages/create-redwood-app/templates/js/package.json
-sed "s/\"@redwoodjs\/\(.*\)\": \".*\"/\"@redwoodjs\/\1\": \"$(cat canary_version)\"/" \
+sed "s/\"@redmix\/\(.*\)\": \".*\"/\"@redmix\/\1\": \"$(cat canary_version)\"/" \
   packages/create-redwood-app/templates/js/api/package.json > tmpfile \
   && mv tmpfile packages/create-redwood-app/templates/js/api/package.json
-sed "s/\"@redwoodjs\/\(.*\)\": \".*\"/\"@redwoodjs\/\1\": \"$(cat canary_version)\"/" \
+sed "s/\"@redmix\/\(.*\)\": \".*\"/\"@redmix\/\1\": \"$(cat canary_version)\"/" \
   packages/create-redwood-app/templates/js/web/package.json > tmpfile \
   && mv tmpfile packages/create-redwood-app/templates/js/web/package.json
 
-sed "s/\"@redwoodjs\/\(.*\)\": \".*\"/\"@redwoodjs\/\1\": \"$(cat canary_version)\"/" \
+sed "s/\"@redmix\/\(.*\)\": \".*\"/\"@redmix\/\1\": \"$(cat canary_version)\"/" \
   packages/create-redwood-app/templates/ts/package.json > tmpfile \
   && mv tmpfile packages/create-redwood-app/templates/ts/package.json
-sed "s/\"@redwoodjs\/\(.*\)\": \".*\"/\"@redwoodjs\/\1\": \"$(cat canary_version)\"/" \
+sed "s/\"@redmix\/\(.*\)\": \".*\"/\"@redmix\/\1\": \"$(cat canary_version)\"/" \
   packages/create-redwood-app/templates/ts/api/package.json > tmpfile \
   && mv tmpfile packages/create-redwood-app/templates/ts/api/package.json
-sed "s/\"@redwoodjs\/\(.*\)\": \".*\"/\"@redwoodjs\/\1\": \"$(cat canary_version)\"/" \
+sed "s/\"@redmix\/\(.*\)\": \".*\"/\"@redmix\/\1\": \"$(cat canary_version)\"/" \
   packages/create-redwood-app/templates/ts/web/package.json > tmpfile \
   && mv tmpfile packages/create-redwood-app/templates/ts/web/package.json
 

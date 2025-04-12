@@ -1,12 +1,12 @@
 // mock Telemetry for CLI commands so they don't try to spawn a process
-vi.mock('@redwoodjs/telemetry', () => {
+vi.mock('@redmix/telemetry', () => {
   return {
     errorTelemetry: () => vi.fn(),
     timedTelemetry: () => vi.fn(),
   }
 })
 
-vi.mock('@redwoodjs/cli-helpers', () => {
+vi.mock('@redmix/cli-helpers', () => {
   return {
     getPaths: () => {
       return {

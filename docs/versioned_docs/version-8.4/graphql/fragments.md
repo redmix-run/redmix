@@ -56,7 +56,7 @@ First, RedwoodJS instructs the VS Code GraphQL Plugin where to look for fragment
 ```js
 // graphql.config.js
 
-const { getPaths } = require('@redwoodjs/internal')
+const { getPaths } = require('@redmix/internal')
 
 module.exports = {
   schema: getPaths().generated.schema,
@@ -66,7 +66,7 @@ module.exports = {
 
 Second, RedwoodJS automatically creates the [fragmentRegistry](https://www.apollographql.com/docs/react/data/fragments/#registering-named-fragments-using-createfragmentregistry) needed for Apollo to know about the fragments in your project without needing to interpolate their declarations.
 
-Redwood exports ways to interact with fragments in the `@redwoodjs/web/apollo` package.
+Redwood exports ways to interact with fragments in the `@redmix/web/apollo` package.
 
 ```
 import { fragmentRegistry, registerFragment } from '@redmix/web/apollo'

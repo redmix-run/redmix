@@ -21,14 +21,14 @@ vi.mock('fs-extra', async () => {
   }
 })
 
-vi.mock('@redwoodjs/internal/dist/dev', () => {
+vi.mock('@redmix/internal/dist/dev', () => {
   return {
     shutdownPort: vi.fn(),
   }
 })
 
-vi.mock('@redwoodjs/project-config', async () => {
-  const actualProjectConfig = await vi.importActual('@redwoodjs/project-config')
+vi.mock('@redmix/project-config', async () => {
+  const actualProjectConfig = await vi.importActual('@redmix/project-config')
 
   return {
     getConfig: vi.fn(),

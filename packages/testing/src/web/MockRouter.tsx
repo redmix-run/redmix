@@ -1,7 +1,7 @@
 import type React from 'react'
 
 import { flattenAll } from '@redmix/router/dist/react-util'
-// Bypass the `main` field in `package.json` because we alias `@redwoodjs/router`
+// Bypass the `main` field in `package.json` because we alias `@redmix/router`
 // for jest and Storybook. Not doing so would cause an infinite loop.
 // See: ./packages/testing/config/jest/web/jest-preset.js
 import { isValidRoute } from '@redmix/router/dist/route-validators'
@@ -13,7 +13,7 @@ export const routes: { [routeName: string]: () => string } = {}
 
 /**
  * We overwrite the default `Router` export (see jest-preset). So every import
- * of @redwoodjs/router will import this Router instead
+ * of @redmix/router will import this Router instead
  *
  * This router populates the `routes.<pageName>()` utility object.
  */

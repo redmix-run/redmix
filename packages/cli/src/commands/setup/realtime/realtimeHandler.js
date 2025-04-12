@@ -27,7 +27,7 @@ export async function handler({ force, includeExamples, verbose }) {
 
   const tasks = new Listr(
     [
-      addApiPackages(['ioredis@^5', `@redwoodjs/realtime@${version}`]),
+      addApiPackages(['ioredis@^5', `@redmix/realtime@${version}`]),
       {
         title: 'Adding the realtime api lib ...',
         task: async () => {

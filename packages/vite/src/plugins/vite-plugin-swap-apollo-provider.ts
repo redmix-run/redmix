@@ -15,8 +15,8 @@ export function swapApolloProvider(): PluginOption {
     async transform(code: string, id: string) {
       if (/web\/src\/App\.(ts|tsx|js|jsx)$/.test(id)) {
         return code.replace(
-          '@redwoodjs/web/apollo',
-          '@redwoodjs/web/dist/apollo/suspense',
+          '@redmix/web/apollo',
+          '@redmix/web/dist/apollo/suspense',
         )
       }
 

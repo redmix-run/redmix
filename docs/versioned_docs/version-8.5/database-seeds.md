@@ -96,8 +96,8 @@ export default async () => {
   try {
     // highlight-next-line
     const users: Prisma.UserCreateArgs['data'][] = [
-      { name: 'Alice', email: 'alice@redwoodjs.com },
-      { name: 'Bob', email: 'bob@redwoodjs.com },
+      { name: 'Alice', email: 'alice@redmix.com },
+      { name: 'Bob', email: 'bob@redmix.com },
     ]
 
     await db.user.createMany({ data: users })
@@ -120,8 +120,8 @@ export default async () => {
     // Create your database records here! For example, seed some users:
     //
     // const users = [
-    //   { name: 'Alice', email: 'alice@redwoodjs.com },
-    //   { name: 'Bob', email: 'bob@redwoodjs.com },
+    //   { name: 'Alice', email: 'alice@redmix.com },
+    //   { name: 'Bob', email: 'bob@redmix.com },
     // ]
     //
     // await db.user.createMany({ data: users })

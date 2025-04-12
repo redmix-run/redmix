@@ -15,9 +15,9 @@ export async function handler({ force: forceArg }: Args) {
     forceArg,
     provider: 'netlify',
     authDecoderImport: `import { authDecoder } from '@redmix/auth-netlify-api'`,
-    apiPackages: [`@redwoodjs/auth-netlify-api@${version}`],
+    apiPackages: [`@redmix/auth-netlify-api@${version}`],
     webPackages: [
-      `@redwoodjs/auth-netlify-web@${version}`,
+      `@redmix/auth-netlify-web@${version}`,
       'netlify-identity-widget@^1',
     ],
     notes: [

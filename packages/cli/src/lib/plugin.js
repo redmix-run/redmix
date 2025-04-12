@@ -24,14 +24,14 @@ export const PLUGIN_CACHE_FILENAME = 'commandCache.json'
  * incorrect.
  */
 export const PLUGIN_CACHE_DEFAULT = {
-  '@redwoodjs/cli-storybook-vite': {
+  '@redmix/cli-storybook-vite': {
     storybook: {
       aliases: ['sb'],
       description:
         'Launch Storybook: a tool for building UI components and pages in isolation',
     },
   },
-  '@redwoodjs/cli-data-migrate': {
+  '@redmix/cli-data-migrate': {
     'data-migrate <command>': {
       aliases: ['dataMigrate', 'dm'],
       description: 'Migrate the data in your database',
@@ -218,7 +218,7 @@ async function installPluginPackage(packageName, packageVersion) {
   // when no version is specified.
 
   let versionToInstall = packageVersion
-  const isRedwoodPackage = packageName.startsWith('@redwoodjs/')
+  const isRedwoodPackage = packageName.startsWith('@redmix/')
   if (!isRedwoodPackage && versionToInstall === undefined) {
     versionToInstall = 'latest'
     try {

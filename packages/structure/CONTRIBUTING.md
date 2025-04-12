@@ -40,7 +40,7 @@ And here's what happens every time the IDE starts:
 - It creates an output channel called `decoupled.redwoodjs-ide-x.x.x`
 - It will look for a `redwood.toml` in the workspace
 - If it finds one, then it needs to start the Redwood Language Server in the backend (the one that actually parses the project, detects errors, etc)
-- The Language Server is bundled with Redwood itself (to prevent version mismatch issues), so the extension looks for a file in node_modules: `node_modules/@redwoodjs/structure/dist/language_server/start.js`
+- The Language Server is bundled with Redwood itself (to prevent version mismatch issues), so the extension looks for a file in node_modules: `node_modules/@redmix/structure/dist/language_server/start.js`
 - If this file is found, the Redwood IDE extension tries to start it as a Language Server
 - However, the actual Language Server might not start until a file is open in the editor (this is managed by VSCode)
 - When started, the Language Server creates an output channel called `Redwood Language Server`

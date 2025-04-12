@@ -506,7 +506,7 @@ export const addPackagesTask = ({
   devDependency = false,
 }) => {
   const packagesWithSameRWVersion = packages.map((pkg) => {
-    if (pkg.includes('@redwoodjs')) {
+    if (pkg.includes('@redmix')) {
       return `${pkg}@${getInstalledRedwoodVersion()}`
     } else {
       return pkg

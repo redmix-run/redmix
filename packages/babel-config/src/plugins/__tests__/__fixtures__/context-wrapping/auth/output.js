@@ -104,7 +104,7 @@ const __rw_handler = async (event, context) => {
     },
     // Include any format checks for password here. Return `true` if the
     // password is valid, otherwise throw a `PasswordValidationError`.
-    // Import the error along with `DbAuthHandler` from `@redwoodjs/api` above.
+    // Import the error along with `DbAuthHandler` from `@redmix/api` above.
     passwordValidation: (_password) => {
       return true
     },

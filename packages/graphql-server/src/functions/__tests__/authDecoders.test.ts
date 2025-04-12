@@ -30,7 +30,7 @@ vi.mock('../../makeMergedSchema', () => {
         resolvers: {
           Query: {
             me: async () => {
-              const globalContext = (await import('@redwoodjs/context')).context
+              const globalContext = (await import('@redmix/context')).context
               const currentUser = globalContext.currentUser as Awaited<
                 ReturnType<GetCurrentUser>
               >

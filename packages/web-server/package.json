@@ -1,7 +1,7 @@
 {
   "name": "@redmix/web-server",
   "version": "8.0.0",
-  "description": "Redwood's server for the Web side",
+  "description": "Redmix's server for the Web side",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/redmix-run/redmix.git",

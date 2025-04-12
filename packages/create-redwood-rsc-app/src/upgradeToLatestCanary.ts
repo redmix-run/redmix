@@ -10,7 +10,7 @@ export async function upgradeToLatestCanary(config: Config) {
     path.join(config.installationDir, 'api', 'package.json'),
     path.join(config.installationDir, 'web', 'package.json'),
   ]
-  const latestCanary = await getLatestCanary(config, '@redwoodjs/core')
+  const latestCanary = await getLatestCanary(config, '@redmix/core')
 
   updatePackageJsons(config, packageJsons, latestCanary)
 }
@@ -62,7 +62,7 @@ function updatePackageJsons(
 
     if (dependencies) {
       Object.keys(dependencies).forEach((name) => {
-        if (name.startsWith('@redwoodjs/')) {
+        if (name.startsWith('@redmix/')) {
           dependencies[name] = latestRwCanary
         }
       })
@@ -70,7 +70,7 @@ function updatePackageJsons(
 
     if (devDependencies) {
       Object.keys(devDependencies).forEach((name) => {
-        if (name.startsWith('@redwoodjs/')) {
+        if (name.startsWith('@redmix/')) {
           devDependencies[name] = latestRwCanary
         }
       })

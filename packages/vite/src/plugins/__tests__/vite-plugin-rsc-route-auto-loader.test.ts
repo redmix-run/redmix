@@ -24,7 +24,7 @@ const TEST_RWJS_CWD = '/Users/mojombo/rw-app/'
 const RWJS_CWD = process.env.RWJS_CWD
 process.env.RWJS_CWD = TEST_RWJS_CWD
 
-vi.mock('@redwoodjs/project-config', async (importOriginal) => {
+vi.mock('@redmix/project-config', async (importOriginal) => {
   const originalProjectConfig = await importOriginal<typeof ProjectConfig>()
   return {
     ...originalProjectConfig,
@@ -106,7 +106,7 @@ describe('rscRoutesAutoLoader', () => {
 
     // What we are interested in seeing here is:
     // - Creation of `const EmptyUserNewEmptyUserPage = () => null;` etc for each page
-    // - The import of `dummyComponent` from `@redwoodjs/router/dist/dummyComponent`
+    // - The import of `dummyComponent` from `@redmix/router/dist/dummyComponent`
     expect(output).toMatchInlineSnapshot(`
       "const EmptyUserNewEmptyUserPage = () => null;
       const EmptyUserEmptyUsersPage = () => null;

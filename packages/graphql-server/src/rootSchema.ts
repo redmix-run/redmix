@@ -17,7 +17,7 @@ import type { GlobalContext } from '@redmix/context'
  * This also adds a root Query type which is needed to start the GraphQL server on a fresh install.
  *
  * NOTE: When you add a new Scalar type you must add it to
- * "generateTypeDefGraphQL" in @redwoodjs/internal.
+ * "generateTypeDefGraphQL" in @redmix/internal.
  */
 export const schema = gql`
   scalar BigInt

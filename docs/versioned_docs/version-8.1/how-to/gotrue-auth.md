@@ -330,7 +330,7 @@ const SigninPage = () => {
 export default SigninPage
 ```
 
-Then we'll need to import `useAuth` from `@redwoodjs/auth` and destructure `logIn` so that we can use it in our `onSubmit` function:
+Then we'll need to import `useAuth` from `@redmix/auth` and destructure `logIn` so that we can use it in our `onSubmit` function:
 
 ```jsx {2,5} title="web/src/pages/SigninPage/SigninPage.js"
 import { Form, TextField, PasswordField, Submit } from '@redmix/forms'
@@ -402,7 +402,7 @@ Now then, upon a successful login let's redirect our user back to the home page.
 yarn redwood generate page Home /
 ```
 
-In our `SigninPage`, import `navigate` and `routes` from [`@redwoodjs/router`](../router.md) and add them to the `then` function:
+In our `SigninPage`, import `navigate` and `routes` from [`@redmix/router`](../router.md) and add them to the `then` function:
 
 ```jsx {3,12} title="web/src/pages/SigninPage/SigninPage.js"
 import { Form, TextField, PasswordField, Submit } from '@redmix/forms'
@@ -461,7 +461,7 @@ const SignoutBtn = () => {
 export default SignoutBtn
 ```
 
-Now we can import [`useAuth` from `@redwoodjs/auth`](../authentication.md#api). We'll destructure its `logOut` method and invoke it in the `onClick` function:
+Now we can import [`useAuth` from `@redmix/auth`](../authentication.md#api). We'll destructure its `logOut` method and invoke it in the `onClick` function:
 
 ```jsx {1,4,7} title="web/src/components/SignoutBtn/SignoutBtn.js"
 import { useAuth } from '@redmix/auth'
@@ -513,7 +513,7 @@ Let's start by [generating a navigation component](../cli-commands.md#generate-c
 yarn redwood generate component Navigation
 ```
 
-This creates `web/src/components/Navigation/Navigation.js`. In that file, let's import [the `Link` component and the `routes` object](../router.md#link-and-named-route-functions) from `@redwoodjs/router`.
+This creates `web/src/components/Navigation/Navigation.js`. In that file, let's import [the `Link` component and the `routes` object](../router.md#link-and-named-route-functions) from `@redmix/router`.
 
 We'll also import [`useAuth`](../authentication.md#api) since we'll need to subscribe to the auth state in order for our components to decide what to render:
 

@@ -15,7 +15,7 @@ const { mockedGetConfig } = vi.hoisted(() => {
   }
 })
 
-vi.mock('@redwoodjs/project-config', async (importOriginal) => {
+vi.mock('@redmix/project-config', async (importOriginal) => {
   const projectConfig = await importOriginal<typeof ProjectConfig>()
   return {
     ...projectConfig,

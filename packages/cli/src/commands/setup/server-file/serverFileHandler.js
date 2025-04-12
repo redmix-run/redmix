@@ -42,7 +42,7 @@ export function setupServerFileTasks({ force = false } = {}) {
         ]
       },
     },
-    addApiPackages([`@redwoodjs/api-server@${version}`]),
+    addApiPackages([`@redmix/api-server@${version}`]),
   ]
 }
 

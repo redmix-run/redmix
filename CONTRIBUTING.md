@@ -38,7 +38,7 @@ _Before interacting with the Redwood community, please read and understand our [
 
 As a Redwood developer, you're already familiar with the codebase created by `yarn create redwood-app`. In this document, we'll refer to that codebase as a **Redwood Project**.
 
-As a contributor, you'll have to familiarize yourself with one more codebase: the **Redwood Framework**. The Redwood Framework lives in the monorepo [redwoodjs/redwood](https://github.com/redwoodjs/redwood) (which is where you're probably reading this). It contains all the packages that make Redwood Projects work the way they do. In a Redwood Project, you can find the Redwood Framework in `node_modules/@redwoodjs`.
+As a contributor, you'll have to familiarize yourself with one more codebase: the **Redwood Framework**. The Redwood Framework lives in the monorepo [redwoodjs/redwood](https://github.com/redwoodjs/redwood) (which is where you're probably reading this). It contains all the packages that make Redwood Projects work the way they do. In a Redwood Project, you can find the Redwood Framework in `node_modules/@redmix`.
 
 Here we'll assume your local copy of the Redwood Framework is in a directory called `redwood` and your Redwood Project is in a directory called `redwood-project`.
 
@@ -252,7 +252,7 @@ For example, if we're using `yarn add` to add a dependency to a workspace (say `
 ```
 redwood/packages/codemods$ yarn add yargs
 ? Which range do you want to use? …
-❯ Reuse yargs@16.2.0 (originally used by @redwoodjs/api-server@0.37.2 and 2 others)
+❯ Reuse yargs@16.2.0 (originally used by @redmix/api-server@0.37.2 and 2 others)
   Use yargs@^17.2.1 (resolved from latest)
 ```
 

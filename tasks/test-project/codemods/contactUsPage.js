@@ -122,7 +122,7 @@ export default (file, api) => {
         ),
         j.importSpecifier(j.identifier('Label'), j.identifier('Label')),
       ],
-      j.stringLiteral('@redwoodjs/forms'),
+      j.stringLiteral('@redmix/forms'),
     ),
     j.importDeclaration(
       [
@@ -131,14 +131,14 @@ export default (file, api) => {
           j.identifier('useMutation'),
         ),
       ],
-      j.stringLiteral('@redwoodjs/web'),
+      j.stringLiteral('@redmix/web'),
     ),
     j.importDeclaration(
       [
         j.importSpecifier(j.identifier('toast'), j.identifier('toast')),
         j.importSpecifier(j.identifier('Toaster'), j.identifier('Toaster')),
       ],
-      j.stringLiteral('@redwoodjs/web/toast'),
+      j.stringLiteral('@redmix/web/toast'),
     ),
     j.importDeclaration(
       [j.importSpecifier(j.identifier('useForm'), j.identifier('useForm'))],
@@ -155,7 +155,7 @@ export default (file, api) => {
           j.identifier('useBlocker'),
         ),
       ],
-      j.stringLiteral('@redwoodjs/router'),
+      j.stringLiteral('@redmix/router'),
     ),
   ]
 
@@ -164,7 +164,7 @@ export default (file, api) => {
     .find(j.ImportDeclaration, {
       source: {
         type: 'StringLiteral',
-        value: '@redwoodjs/router',
+        value: '@redmix/router',
       },
     })
     .remove()
@@ -173,7 +173,7 @@ export default (file, api) => {
     .find(j.ImportDeclaration, {
       source: {
         type: 'StringLiteral',
-        value: '@redwoodjs/web',
+        value: '@redmix/web',
       },
     })
     .remove()

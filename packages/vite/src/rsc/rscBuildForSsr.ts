@@ -51,9 +51,9 @@ export async function rscBuildForSsr({
         '@prisma/client',
         '@prisma/fetch-engine',
         '@prisma/internals',
-        '@redwoodjs/auth-dbauth-api',
-        '@redwoodjs/cookie-jar',
-        '@redwoodjs/server-store',
+        '@redmix/auth-dbauth-api',
+        '@redmix/cookie-jar',
+        '@redmix/server-store',
         '@simplewebauthn/server',
         'graphql-scalars',
         'minimatch',
@@ -64,10 +64,10 @@ export async function rscBuildForSsr({
       cjsInterop({
         dependencies: [
           // Skip ESM modules: rwjs/auth, rwjs/web, rwjs/auth-*-middleware, rwjs/router
-          '@redwoodjs/forms',
-          '@redwoodjs/prerender/*',
-          '@redwoodjs/auth-*-api',
-          '@redwoodjs/auth-*-web',
+          '@redmix/forms',
+          '@redmix/prerender/*',
+          '@redmix/auth-*-api',
+          '@redmix/auth-*-web',
         ],
       }),
       rscRoutesAutoLoader(),
@@ -94,9 +94,9 @@ export async function rscBuildForSsr({
           ...clientEntryFiles,
           // These import redirections are so that we don't bundle multiple versions of react
           __rwjs__react: 'react',
-          __rwjs__location: '@redwoodjs/router/location',
-          __rwjs__server_auth_provider: '@redwoodjs/auth/ServerAuthProvider',
-          __rwjs__server_inject: '@redwoodjs/web/serverInject',
+          __rwjs__location: '@redmix/router/location',
+          __rwjs__server_auth_provider: '@redmix/auth/ServerAuthProvider',
+          __rwjs__server_inject: '@redmix/web/serverInject',
           '__rwjs__rsdw-client': 'react-server-dom-webpack/client.edge',
           // TODO (RSC): add __rwjs__ prefix to the entry below
           'rd-server': 'react-dom/server.edge',

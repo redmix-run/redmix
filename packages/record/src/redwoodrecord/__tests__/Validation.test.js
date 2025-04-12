@@ -55,7 +55,7 @@ describe('isValid', () => {
     }
 
     const record = new TestClass()
-    record.email = 'rob@redwoodjs.com'
+    record.email = 'rob@redmix.com'
 
     expect(record.isValid).toEqual(true)
   })
@@ -90,7 +90,7 @@ describe('validate', () => {
       email: { presence: true },
     }
     const record = new TestClass()
-    record.email = 'rob@redwoodjs.com'
+    record.email = 'rob@redmix.com'
 
     expect(record.validate()).toEqual(true)
   })
@@ -100,7 +100,7 @@ describe('validate', () => {
       email: { presence: true },
     }
     const record = new TestClass()
-    record.email = 'rob@redwoodjs.com'
+    record.email = 'rob@redmix.com'
     record.validate()
 
     expect(record.errors).toEqual({ base: [] })
@@ -111,7 +111,7 @@ describe('validate', () => {
       email: { presence: true, email: true },
     }
     const record = new TestClass()
-    record.email = 'rob@redwoodjs.com'
+    record.email = 'rob@redmix.com'
 
     expect(record.validate()).toEqual(true)
   })

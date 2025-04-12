@@ -176,7 +176,7 @@ describe('JS template', () => {
  * - the yarn lint edge case
  *
  *   We run `yarn lint` before `yarn test` in CI.
- *   Running `yarn lint` leads to a call to `getPaths` from `@redwoodjs/internal` which creates the `.redwood` directory.
+ *   Running `yarn lint` leads to a call to `getPaths` from `@redmix/internal` which creates the `.redwood` directory.
  *   That directory and its contents aren't part of the template,
  *   but will be picked up by this test and lead to a false negative without this.
  *

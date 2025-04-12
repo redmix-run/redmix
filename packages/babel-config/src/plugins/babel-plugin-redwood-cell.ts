@@ -94,8 +94,8 @@ export default function ({ types: t }: { types: typeof types }): PluginObj {
             ? 'createServerCell'
             : 'createCell'
           const importFrom = exportNames.includes('data')
-            ? '@redwoodjs/web/dist/components/cell/createServerCell'
-            : '@redwoodjs/web'
+            ? '@redmix/web/dist/components/cell/createServerCell'
+            : '@redmix/web'
 
           // Insert at the top of the file:
           // + import { createCell } from '@redmix/web'

@@ -2,7 +2,7 @@ import type { PluginOption } from 'vite'
 
 export function mockAuth(): PluginOption {
   return {
-    name: 'mock-@redwoodjs/auth',
+    name: 'mock-@redmix/auth',
     enforce: 'pre',
     transform(code: string, id: string) {
       if (id.includes('web/src/auth')) {

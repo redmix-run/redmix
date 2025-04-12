@@ -16,13 +16,13 @@ import { getPaths } from '../lib/index.js'
 import { PLUGIN_CACHE_FILENAME } from '../lib/plugin.js'
 
 export const command = 'upgrade'
-export const description = 'Upgrade all @redwoodjs packages via interactive CLI'
+export const description = 'Upgrade all @redmix packages via interactive CLI'
 
 export const builder = (yargs) => {
   yargs
     .example(
       'rw upgrade -t 0.20.1-canary.5',
-      'Specify a version. URL for Version History:\nhttps://www.npmjs.com/package/@redwoodjs/core',
+      'Specify a version. URL for Version History:\nhttps://www.npmjs.com/package/@redmix/core',
     )
     .option('dry-run', {
       alias: 'd',
@@ -251,7 +251,7 @@ async function yarnInstall({ verbose }) {
 
 /**
  * Removes the CLI plugin cache. This prevents the CLI from using outdated versions of the plugin,
- * when the plugins share the same alias. e.g. `rw sb` used to point to `@redwoodjs/cli-storybook` but now points to `@redwoodjs/cli-storybook-vite`
+ * when the plugins share the same alias. e.g. `rw sb` used to point to `@redmix/cli-storybook` but now points to `@redmix/cli-storybook-vite`
  */
 async function removeCliCache(ctx, { dryRun, verbose }) {
   const cliCacheDir = path.join(
@@ -271,7 +271,7 @@ async function removeCliCache(ctx, { dryRun, verbose }) {
 async function setLatestVersionToContext(ctx, tag) {
   try {
     const foundVersion = await latestVersion(
-      '@redwoodjs/core',
+      '@redmix/core',
       tag ? { version: tag } : {},
     )
 
@@ -292,7 +292,7 @@ function updatePackageJsonVersion(pkgPath, version, { dryRun, verbose }) {
 
   if (pkg.dependencies) {
     for (const depName of Object.keys(pkg.dependencies).filter(
-      (x) => x.startsWith('@redwoodjs/') && x !== '@redwoodjs/studio',
+      (x) => x.startsWith('@redmix/') && x !== '@redmix/studio',
     )) {
       if (verbose || dryRun) {
         console.log(` - ${depName}: ${pkg.dependencies[depName]} => ${version}`)
@@ -302,7 +302,7 @@ function updatePackageJsonVersion(pkgPath, version, { dryRun, verbose }) {
   }
   if (pkg.devDependencies) {
     for (const depName of Object.keys(pkg.devDependencies).filter(
-      (x) => x.startsWith('@redwoodjs/') && x !== '@redwoodjs/studio',
+      (x) => x.startsWith('@redmix/') && x !== '@redmix/studio',
     )) {
       if (verbose || dryRun) {
         console.log(
@@ -382,7 +382,7 @@ async function updatePackageVersionsFromTemplate(ctx, { dryRun, verbose }) {
           Object.entries(templatePackageJson.dependencies || {}).forEach(
             ([depName, depVersion]) => {
               // Redwood packages are handled in another task
-              if (!depName.startsWith('@redwoodjs/')) {
+              if (!depName.startsWith('@redmix/')) {
                 if (verbose || dryRun) {
                   console.log(
                     ` - ${depName}: ${localPackageJson.dependencies[depName]} => ${depVersion}`,
@@ -397,7 +397,7 @@ async function updatePackageVersionsFromTemplate(ctx, { dryRun, verbose }) {
           Object.entries(templatePackageJson.devDependencies || {}).forEach(
             ([depName, depVersion]) => {
               // Redwood packages are handled in another task
-              if (!depName.startsWith('@redwoodjs/')) {
+              if (!depName.startsWith('@redmix/')) {
                 if (verbose || dryRun) {
                   console.log(
                     ` - ${depName}: ${localPackageJson.devDependencies[depName]} => ${depVersion}`,

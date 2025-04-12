@@ -15,7 +15,7 @@ export const handler = () => {
   // Deep dive
   //
   // It seems like we have to use `require` here instead of `await import`
-  // because of how Babel builds the `DiagnosticSeverity` export in `@redwoodjs/structure`:
+  // because of how Babel builds the `DiagnosticSeverity` export in `@redmix/structure`:
   //
   // ```js
   // _Object$defineProperty(exports, "DiagnosticSeverity", {
@@ -28,10 +28,7 @@ export const handler = () => {
   //
   // I'm not sure why, but with `await import`, `DiagnosticSeverity` is `undefined`
   // so it seems like `await import` doesn't execute the getter function.
-  const {
-    printDiagnostics,
-    DiagnosticSeverity,
-  } = require('@redwoodjs/structure')
+  const { printDiagnostics, DiagnosticSeverity } = require('@redmix/structure')
 
   printDiagnostics(getPaths().base, {
     getSeverityLabel: (severity) => {

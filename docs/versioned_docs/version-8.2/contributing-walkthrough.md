@@ -64,7 +64,7 @@ We refer to this as the **CRWA Template or Project Template**.
 
 #### Redwood “Framework”
 
-The Framework is the codebase containing all the packages (and other code) that is published on NPMjs.com as `@redwoodjs/<package-name>`. The Framework repository on GitHub is here: [https://github.com/redwoodjs/redwood](https://github.com/redwoodjs/redwood)
+The Framework is the codebase containing all the packages (and other code) that is published on NPMjs.com as `@redmix/<package-name>`. The Framework repository on GitHub is here: [https://github.com/redwoodjs/redwood](https://github.com/redwoodjs/redwood)
 
 ### Development tools
 
@@ -142,7 +142,7 @@ yarn babel-node packages/create-redwood-app/src/create-redwood-app.js <path/to/p
 
 #### Step 3: Link the local Framework with the local test Project
 
-Once you work on the Framework code, you’ll most often want to run the code in a Redwood app for testing. However, the Redwood Project you created for testing is currently using the latest version (or canary) packages of Redwood published on NPMjs.com, e.g. [@redwoodjs/core](https://www.npmjs.com/package/@redwoodjs/core)
+Once you work on the Framework code, you’ll most often want to run the code in a Redwood app for testing. However, the Redwood Project you created for testing is currently using the latest version (or canary) packages of Redwood published on NPMjs.com, e.g. [@redmix/core](https://www.npmjs.com/package/@redmix/core)
 
 So we’ll use the Redwood Framework (rwfw) command to connect our local Framework and test Projects, which allows the Project to run on the code for Packages we are currently developing.
 

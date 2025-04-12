@@ -7348,18 +7348,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redwoodjs/api-server@workspace:*, @redwoodjs/api-server@workspace:packages/api-server":
+"@redmix/api-server@workspace:*, @redmix/api-server@workspace:packages/api-server":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/api-server@workspace:packages/api-server"
+  resolution: "@redmix/api-server@workspace:packages/api-server"
   dependencies:
     "@fastify/multipart": "npm:8.3.1"
     "@fastify/url-data": "npm:5.4.0"
-    "@redwoodjs/context": "workspace:*"
-    "@redwoodjs/fastify-web": "workspace:*"
-    "@redwoodjs/framework-tools": "workspace:*"
-    "@redwoodjs/internal": "workspace:*"
-    "@redwoodjs/project-config": "workspace:*"
-    "@redwoodjs/web-server": "workspace:*"
+    "@redmix/context": "workspace:*"
+    "@redmix/fastify-web": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
+    "@redmix/internal": "workspace:*"
+    "@redmix/project-config": "workspace:*"
+    "@redmix/web-server": "workspace:*"
     "@types/aws-lambda": "npm:8.10.145"
     "@types/lodash": "npm:4.17.15"
     "@types/qs": "npm:6.9.16"
@@ -7383,9 +7383,9 @@ __metadata:
     vitest: "npm:2.1.9"
     yargs: "npm:17.7.2"
   peerDependencies:
-    "@redwoodjs/graphql-server": "workspace:*"
+    "@redmix/graphql-server": "workspace:*"
   peerDependenciesMeta:
-    "@redwoodjs/graphql-server":
+    "@redmix/graphql-server":
       optional: true
   bin:
     rw-api-server-watch: ./dist/watch.js
@@ -7394,12 +7394,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/api@workspace:*, @redwoodjs/api@workspace:packages/api":
+"@redmix/api@workspace:*, @redmix/api@workspace:packages/api":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/api@workspace:packages/api"
+  resolution: "@redmix/api@workspace:packages/api"
   dependencies:
     "@prisma/client": "npm:5.20.0"
-    "@redwoodjs/framework-tools": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
     "@types/aws-lambda": "npm:8.10.145"
     "@types/jsonwebtoken": "npm:9.0.8"
     "@types/memjs": "npm:1"
@@ -7437,13 +7437,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/auth-auth0-api@workspace:packages/auth-providers/auth0/api":
+"@redmix/auth-auth0-api@workspace:packages/auth-providers/auth0/api":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/auth-auth0-api@workspace:packages/auth-providers/auth0/api"
+  resolution: "@redmix/auth-auth0-api@workspace:packages/auth-providers/auth0/api"
   dependencies:
     "@arethetypeswrong/cli": "npm:0.16.4"
-    "@redwoodjs/api": "workspace:*"
-    "@redwoodjs/framework-tools": "workspace:*"
+    "@redmix/api": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
     "@types/jsonwebtoken": "npm:9.0.8"
     concurrently: "npm:8.2.2"
     jsonwebtoken: "npm:9.0.2"
@@ -7455,13 +7455,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/auth-auth0-setup@workspace:packages/auth-providers/auth0/setup":
+"@redmix/auth-auth0-setup@workspace:packages/auth-providers/auth0/setup":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/auth-auth0-setup@workspace:packages/auth-providers/auth0/setup"
+  resolution: "@redmix/auth-auth0-setup@workspace:packages/auth-providers/auth0/setup"
   dependencies:
     "@arethetypeswrong/cli": "npm:0.16.4"
-    "@redwoodjs/cli-helpers": "workspace:*"
-    "@redwoodjs/framework-tools": "workspace:*"
+    "@redmix/cli-helpers": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
     "@types/yargs": "npm:17.0.33"
     concurrently: "npm:8.2.2"
     publint: "npm:0.3.11"
@@ -7471,13 +7471,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/auth-auth0-web@workspace:packages/auth-providers/auth0/web":
+"@redmix/auth-auth0-web@workspace:packages/auth-providers/auth0/web":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/auth-auth0-web@workspace:packages/auth-providers/auth0/web"
+  resolution: "@redmix/auth-auth0-web@workspace:packages/auth-providers/auth0/web"
   dependencies:
     "@auth0/auth0-spa-js": "npm:2.1.3"
-    "@redwoodjs/auth": "workspace:*"
-    "@redwoodjs/framework-tools": "workspace:*"
+    "@redmix/auth": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
     "@types/react": "npm:^18.2.55"
     concurrently: "npm:8.2.2"
     publint: "npm:0.3.11"
@@ -7490,13 +7490,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/auth-azure-active-directory-api@workspace:packages/auth-providers/azureActiveDirectory/api":
+"@redmix/auth-azure-active-directory-api@workspace:packages/auth-providers/azureActiveDirectory/api":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/auth-azure-active-directory-api@workspace:packages/auth-providers/azureActiveDirectory/api"
+  resolution: "@redmix/auth-azure-active-directory-api@workspace:packages/auth-providers/azureActiveDirectory/api"
   dependencies:
     "@arethetypeswrong/cli": "npm:0.16.4"
-    "@redwoodjs/api": "workspace:*"
-    "@redwoodjs/framework-tools": "workspace:*"
+    "@redmix/api": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
     "@types/aws-lambda": "npm:8.10.145"
     "@types/jsonwebtoken": "npm:9.0.8"
     concurrently: "npm:8.2.2"
@@ -7509,13 +7509,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/auth-azure-active-directory-setup@workspace:packages/auth-providers/azureActiveDirectory/setup":
+"@redmix/auth-azure-active-directory-setup@workspace:packages/auth-providers/azureActiveDirectory/setup":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/auth-azure-active-directory-setup@workspace:packages/auth-providers/azureActiveDirectory/setup"
+  resolution: "@redmix/auth-azure-active-directory-setup@workspace:packages/auth-providers/azureActiveDirectory/setup"
   dependencies:
     "@arethetypeswrong/cli": "npm:0.16.4"
-    "@redwoodjs/cli-helpers": "workspace:*"
-    "@redwoodjs/framework-tools": "workspace:*"
+    "@redmix/cli-helpers": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
     "@types/yargs": "npm:17.0.33"
     concurrently: "npm:8.2.2"
     publint: "npm:0.3.11"
@@ -7525,13 +7525,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/auth-azure-active-directory-web@workspace:packages/auth-providers/azureActiveDirectory/web":
+"@redmix/auth-azure-active-directory-web@workspace:packages/auth-providers/azureActiveDirectory/web":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/auth-azure-active-directory-web@workspace:packages/auth-providers/azureActiveDirectory/web"
+  resolution: "@redmix/auth-azure-active-directory-web@workspace:packages/auth-providers/azureActiveDirectory/web"
   dependencies:
     "@azure/msal-browser": "npm:2.39.0"
-    "@redwoodjs/auth": "workspace:*"
-    "@redwoodjs/framework-tools": "workspace:*"
+    "@redmix/auth": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
     "@types/netlify-identity-widget": "npm:1.9.6"
     "@types/react": "npm:^18.2.55"
     concurrently: "npm:8.2.2"
@@ -7545,14 +7545,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/auth-clerk-api@workspace:packages/auth-providers/clerk/api":
+"@redmix/auth-clerk-api@workspace:packages/auth-providers/clerk/api":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/auth-clerk-api@workspace:packages/auth-providers/clerk/api"
+  resolution: "@redmix/auth-clerk-api@workspace:packages/auth-providers/clerk/api"
   dependencies:
     "@arethetypeswrong/cli": "npm:0.16.4"
     "@clerk/clerk-sdk-node": "npm:4.13.21"
-    "@redwoodjs/api": "workspace:*"
-    "@redwoodjs/framework-tools": "workspace:*"
+    "@redmix/api": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
     "@types/aws-lambda": "npm:8.10.145"
     concurrently: "npm:8.2.2"
     publint: "npm:0.3.11"
@@ -7562,13 +7562,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/auth-clerk-setup@workspace:packages/auth-providers/clerk/setup":
+"@redmix/auth-clerk-setup@workspace:packages/auth-providers/clerk/setup":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/auth-clerk-setup@workspace:packages/auth-providers/clerk/setup"
+  resolution: "@redmix/auth-clerk-setup@workspace:packages/auth-providers/clerk/setup"
   dependencies:
     "@arethetypeswrong/cli": "npm:0.16.4"
-    "@redwoodjs/cli-helpers": "workspace:*"
-    "@redwoodjs/framework-tools": "workspace:*"
+    "@redmix/cli-helpers": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
     "@types/yargs": "npm:17.0.33"
     concurrently: "npm:8.2.2"
     publint: "npm:0.3.11"
@@ -7577,14 +7577,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/auth-clerk-web@workspace:packages/auth-providers/clerk/web":
+"@redmix/auth-clerk-web@workspace:packages/auth-providers/clerk/web":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/auth-clerk-web@workspace:packages/auth-providers/clerk/web"
+  resolution: "@redmix/auth-clerk-web@workspace:packages/auth-providers/clerk/web"
   dependencies:
     "@clerk/clerk-react": "npm:4.32.4"
     "@clerk/types": "npm:3.65.4"
-    "@redwoodjs/auth": "workspace:*"
-    "@redwoodjs/framework-tools": "workspace:*"
+    "@redmix/auth": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
     "@types/react": "npm:^18.2.55"
     concurrently: "npm:8.2.2"
     publint: "npm:0.3.11"
@@ -7597,13 +7597,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/auth-custom-setup@workspace:packages/auth-providers/custom/setup":
+"@redmix/auth-custom-setup@workspace:packages/auth-providers/custom/setup":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/auth-custom-setup@workspace:packages/auth-providers/custom/setup"
+  resolution: "@redmix/auth-custom-setup@workspace:packages/auth-providers/custom/setup"
   dependencies:
     "@arethetypeswrong/cli": "npm:0.16.4"
-    "@redwoodjs/cli-helpers": "workspace:*"
-    "@redwoodjs/framework-tools": "workspace:*"
+    "@redmix/cli-helpers": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
     "@types/yargs": "npm:17.0.33"
     concurrently: "npm:8.2.2"
     publint: "npm:0.3.11"
@@ -7613,14 +7613,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/auth-dbauth-api@workspace:*, @redwoodjs/auth-dbauth-api@workspace:packages/auth-providers/dbAuth/api":
+"@redmix/auth-dbauth-api@workspace:*, @redmix/auth-dbauth-api@workspace:packages/auth-providers/dbAuth/api":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/auth-dbauth-api@workspace:packages/auth-providers/dbAuth/api"
+  resolution: "@redmix/auth-dbauth-api@workspace:packages/auth-providers/dbAuth/api"
   dependencies:
     "@arethetypeswrong/cli": "npm:0.16.4"
-    "@redwoodjs/api": "workspace:*"
-    "@redwoodjs/framework-tools": "workspace:*"
-    "@redwoodjs/project-config": "workspace:*"
+    "@redmix/api": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
+    "@redmix/project-config": "workspace:*"
     "@simplewebauthn/server": "npm:7.4.0"
     "@types/md5": "npm:2.3.5"
     "@types/uuid": "npm:10.0.0"
@@ -7635,16 +7635,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/auth-dbauth-middleware@workspace:packages/auth-providers/dbAuth/middleware":
+"@redmix/auth-dbauth-middleware@workspace:packages/auth-providers/dbAuth/middleware":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/auth-dbauth-middleware@workspace:packages/auth-providers/dbAuth/middleware"
+  resolution: "@redmix/auth-dbauth-middleware@workspace:packages/auth-providers/dbAuth/middleware"
   dependencies:
     "@arethetypeswrong/cli": "npm:0.16.4"
-    "@redwoodjs/api": "workspace:*"
-    "@redwoodjs/auth-dbauth-api": "workspace:*"
-    "@redwoodjs/framework-tools": "workspace:*"
-    "@redwoodjs/graphql-server": "workspace:*"
-    "@redwoodjs/web": "workspace:*"
+    "@redmix/api": "workspace:*"
+    "@redmix/auth-dbauth-api": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
+    "@redmix/graphql-server": "workspace:*"
+    "@redmix/web": "workspace:*"
     "@types/aws-lambda": "npm:8.10.145"
     concurrently: "npm:8.2.2"
     publint: "npm:0.3.11"
@@ -7655,15 +7655,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/auth-dbauth-setup@workspace:packages/auth-providers/dbAuth/setup":
+"@redmix/auth-dbauth-setup@workspace:packages/auth-providers/dbAuth/setup":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/auth-dbauth-setup@workspace:packages/auth-providers/dbAuth/setup"
+  resolution: "@redmix/auth-dbauth-setup@workspace:packages/auth-providers/dbAuth/setup"
   dependencies:
     "@babel/cli": "npm:7.26.4"
     "@babel/core": "npm:^7.26.10"
     "@babel/runtime-corejs3": "npm:7.26.10"
     "@prisma/internals": "npm:5.20.0"
-    "@redwoodjs/cli-helpers": "workspace:*"
+    "@redmix/cli-helpers": "workspace:*"
     "@simplewebauthn/browser": "npm:7.4.0"
     "@simplewebauthn/typescript-types": "npm:7.4.0"
     "@types/yargs": "npm:17.0.33"
@@ -7675,14 +7675,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/auth-dbauth-web@workspace:packages/auth-providers/dbAuth/web":
+"@redmix/auth-dbauth-web@workspace:packages/auth-providers/dbAuth/web":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/auth-dbauth-web@workspace:packages/auth-providers/dbAuth/web"
+  resolution: "@redmix/auth-dbauth-web@workspace:packages/auth-providers/dbAuth/web"
   dependencies:
     "@babel/cli": "npm:7.26.4"
     "@babel/core": "npm:^7.26.10"
     "@babel/runtime-corejs3": "npm:7.26.10"
-    "@redwoodjs/auth": "workspace:*"
+    "@redmix/auth": "workspace:*"
     "@simplewebauthn/browser": "npm:7.4.0"
     "@simplewebauthn/typescript-types": "npm:7.4.0"
     "@types/react": "npm:^18.2.55"
@@ -7693,13 +7693,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/auth-firebase-api@workspace:packages/auth-providers/firebase/api":
+"@redmix/auth-firebase-api@workspace:packages/auth-providers/firebase/api":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/auth-firebase-api@workspace:packages/auth-providers/firebase/api"
+  resolution: "@redmix/auth-firebase-api@workspace:packages/auth-providers/firebase/api"
   dependencies:
     "@arethetypeswrong/cli": "npm:0.16.4"
-    "@redwoodjs/api": "workspace:*"
-    "@redwoodjs/framework-tools": "workspace:*"
+    "@redmix/api": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
     "@types/aws-lambda": "npm:8.10.145"
     concurrently: "npm:8.2.2"
     firebase-admin: "npm:12.6.0"
@@ -7710,13 +7710,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/auth-firebase-setup@workspace:packages/auth-providers/firebase/setup":
+"@redmix/auth-firebase-setup@workspace:packages/auth-providers/firebase/setup":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/auth-firebase-setup@workspace:packages/auth-providers/firebase/setup"
+  resolution: "@redmix/auth-firebase-setup@workspace:packages/auth-providers/firebase/setup"
   dependencies:
     "@arethetypeswrong/cli": "npm:0.16.4"
-    "@redwoodjs/cli-helpers": "workspace:*"
-    "@redwoodjs/framework-tools": "workspace:*"
+    "@redmix/cli-helpers": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
     "@types/yargs": "npm:17.0.33"
     concurrently: "npm:8.2.2"
     publint: "npm:0.3.11"
@@ -7726,12 +7726,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/auth-firebase-web@workspace:packages/auth-providers/firebase/web":
+"@redmix/auth-firebase-web@workspace:packages/auth-providers/firebase/web":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/auth-firebase-web@workspace:packages/auth-providers/firebase/web"
+  resolution: "@redmix/auth-firebase-web@workspace:packages/auth-providers/firebase/web"
   dependencies:
-    "@redwoodjs/auth": "workspace:*"
-    "@redwoodjs/framework-tools": "workspace:*"
+    "@redmix/auth": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
     "@types/react": "npm:^18.2.55"
     concurrently: "npm:8.2.2"
     firebase: "npm:10.14.1"
@@ -7745,13 +7745,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/auth-netlify-api@workspace:packages/auth-providers/netlify/api":
+"@redmix/auth-netlify-api@workspace:packages/auth-providers/netlify/api":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/auth-netlify-api@workspace:packages/auth-providers/netlify/api"
+  resolution: "@redmix/auth-netlify-api@workspace:packages/auth-providers/netlify/api"
   dependencies:
     "@arethetypeswrong/cli": "npm:0.16.4"
-    "@redwoodjs/api": "workspace:*"
-    "@redwoodjs/framework-tools": "workspace:*"
+    "@redmix/api": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
     "@types/aws-lambda": "npm:8.10.145"
     "@types/jsonwebtoken": "npm:9.0.8"
     concurrently: "npm:8.2.2"
@@ -7763,13 +7763,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/auth-netlify-setup@workspace:packages/auth-providers/netlify/setup":
+"@redmix/auth-netlify-setup@workspace:packages/auth-providers/netlify/setup":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/auth-netlify-setup@workspace:packages/auth-providers/netlify/setup"
+  resolution: "@redmix/auth-netlify-setup@workspace:packages/auth-providers/netlify/setup"
   dependencies:
     "@arethetypeswrong/cli": "npm:0.16.4"
-    "@redwoodjs/cli-helpers": "workspace:*"
-    "@redwoodjs/framework-tools": "workspace:*"
+    "@redmix/cli-helpers": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
     "@types/yargs": "npm:17.0.33"
     concurrently: "npm:8.2.2"
     publint: "npm:0.3.11"
@@ -7779,12 +7779,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/auth-netlify-web@workspace:packages/auth-providers/netlify/web":
+"@redmix/auth-netlify-web@workspace:packages/auth-providers/netlify/web":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/auth-netlify-web@workspace:packages/auth-providers/netlify/web"
+  resolution: "@redmix/auth-netlify-web@workspace:packages/auth-providers/netlify/web"
   dependencies:
-    "@redwoodjs/auth": "workspace:*"
-    "@redwoodjs/framework-tools": "workspace:*"
+    "@redmix/auth": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
     "@types/netlify-identity-widget": "npm:1.9.6"
     "@types/react": "npm:^18.2.55"
     concurrently: "npm:8.2.2"
@@ -7798,13 +7798,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/auth-supabase-api@workspace:*, @redwoodjs/auth-supabase-api@workspace:packages/auth-providers/supabase/api":
+"@redmix/auth-supabase-api@workspace:*, @redmix/auth-supabase-api@workspace:packages/auth-providers/supabase/api":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/auth-supabase-api@workspace:packages/auth-providers/supabase/api"
+  resolution: "@redmix/auth-supabase-api@workspace:packages/auth-providers/supabase/api"
   dependencies:
     "@arethetypeswrong/cli": "npm:0.16.4"
-    "@redwoodjs/api": "workspace:*"
-    "@redwoodjs/framework-tools": "workspace:*"
+    "@redmix/api": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
     "@supabase/ssr": "npm:0.5.1"
     "@types/aws-lambda": "npm:8.10.145"
     "@types/jsonwebtoken": "npm:9.0.8"
@@ -7817,17 +7817,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/auth-supabase-middleware@workspace:packages/auth-providers/supabase/middleware":
+"@redmix/auth-supabase-middleware@workspace:packages/auth-providers/supabase/middleware":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/auth-supabase-middleware@workspace:packages/auth-providers/supabase/middleware"
+  resolution: "@redmix/auth-supabase-middleware@workspace:packages/auth-providers/supabase/middleware"
   dependencies:
     "@arethetypeswrong/cli": "npm:0.16.4"
-    "@redwoodjs/api": "workspace:*"
-    "@redwoodjs/auth": "workspace:*"
-    "@redwoodjs/auth-supabase-api": "workspace:*"
-    "@redwoodjs/framework-tools": "workspace:*"
-    "@redwoodjs/graphql-server": "workspace:*"
-    "@redwoodjs/web": "workspace:*"
+    "@redmix/api": "workspace:*"
+    "@redmix/auth": "workspace:*"
+    "@redmix/auth-supabase-api": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
+    "@redmix/graphql-server": "workspace:*"
+    "@redmix/web": "workspace:*"
     "@supabase/ssr": "npm:0.5.1"
     "@types/aws-lambda": "npm:8.10.145"
     concurrently: "npm:8.2.2"
@@ -7839,13 +7839,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/auth-supabase-setup@workspace:packages/auth-providers/supabase/setup":
+"@redmix/auth-supabase-setup@workspace:packages/auth-providers/supabase/setup":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/auth-supabase-setup@workspace:packages/auth-providers/supabase/setup"
+  resolution: "@redmix/auth-supabase-setup@workspace:packages/auth-providers/supabase/setup"
   dependencies:
     "@arethetypeswrong/cli": "npm:0.16.4"
-    "@redwoodjs/cli-helpers": "workspace:*"
-    "@redwoodjs/framework-tools": "workspace:*"
+    "@redmix/cli-helpers": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
     "@types/yargs": "npm:17.0.33"
     concurrently: "npm:8.2.2"
     publint: "npm:0.3.11"
@@ -7854,12 +7854,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/auth-supabase-web@workspace:packages/auth-providers/supabase/web":
+"@redmix/auth-supabase-web@workspace:packages/auth-providers/supabase/web":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/auth-supabase-web@workspace:packages/auth-providers/supabase/web"
+  resolution: "@redmix/auth-supabase-web@workspace:packages/auth-providers/supabase/web"
   dependencies:
-    "@redwoodjs/auth": "workspace:*"
-    "@redwoodjs/framework-tools": "workspace:*"
+    "@redmix/auth": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
     "@supabase/ssr": "npm:0.5.1"
     "@supabase/supabase-js": "npm:2.45.4"
     "@types/react": "npm:^18.2.55"
@@ -7874,13 +7874,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/auth-supertokens-api@workspace:packages/auth-providers/supertokens/api":
+"@redmix/auth-supertokens-api@workspace:packages/auth-providers/supertokens/api":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/auth-supertokens-api@workspace:packages/auth-providers/supertokens/api"
+  resolution: "@redmix/auth-supertokens-api@workspace:packages/auth-providers/supertokens/api"
   dependencies:
     "@arethetypeswrong/cli": "npm:0.16.4"
-    "@redwoodjs/api": "workspace:*"
-    "@redwoodjs/framework-tools": "workspace:*"
+    "@redmix/api": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
     "@types/jsonwebtoken": "npm:9.0.8"
     concurrently: "npm:8.2.2"
     jsonwebtoken: "npm:9.0.2"
@@ -7894,13 +7894,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/auth-supertokens-setup@workspace:packages/auth-providers/supertokens/setup":
+"@redmix/auth-supertokens-setup@workspace:packages/auth-providers/supertokens/setup":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/auth-supertokens-setup@workspace:packages/auth-providers/supertokens/setup"
+  resolution: "@redmix/auth-supertokens-setup@workspace:packages/auth-providers/supertokens/setup"
   dependencies:
     "@arethetypeswrong/cli": "npm:0.16.4"
-    "@redwoodjs/cli-helpers": "workspace:*"
-    "@redwoodjs/framework-tools": "workspace:*"
+    "@redmix/cli-helpers": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
     "@types/yargs": "npm:17.0.33"
     concurrently: "npm:8.2.2"
     memfs: "npm:4.17.0"
@@ -7911,12 +7911,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/auth-supertokens-web@workspace:packages/auth-providers/supertokens/web":
+"@redmix/auth-supertokens-web@workspace:packages/auth-providers/supertokens/web":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/auth-supertokens-web@workspace:packages/auth-providers/supertokens/web"
+  resolution: "@redmix/auth-supertokens-web@workspace:packages/auth-providers/supertokens/web"
   dependencies:
-    "@redwoodjs/auth": "workspace:*"
-    "@redwoodjs/framework-tools": "workspace:*"
+    "@redmix/auth": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
     "@types/react": "npm:^18.2.55"
     concurrently: "npm:8.2.2"
     publint: "npm:0.3.11"
@@ -7930,12 +7930,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/auth@workspace:*, @redwoodjs/auth@workspace:packages/auth":
+"@redmix/auth@workspace:*, @redmix/auth@workspace:packages/auth":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/auth@workspace:packages/auth"
+  resolution: "@redmix/auth@workspace:packages/auth"
   dependencies:
     "@arethetypeswrong/cli": "npm:0.16.4"
-    "@redwoodjs/framework-tools": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
     "@testing-library/jest-dom": "npm:6.5.0"
     "@testing-library/react": "npm:14.3.1"
     concurrently: "npm:8.2.2"
@@ -7950,9 +7950,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/babel-config@workspace:*, @redwoodjs/babel-config@workspace:packages/babel-config":
+"@redmix/babel-config@workspace:*, @redmix/babel-config@workspace:packages/babel-config":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/babel-config@workspace:packages/babel-config"
+  resolution: "@redmix/babel-config@workspace:packages/babel-config"
   dependencies:
     "@babel/core": "npm:^7.26.10"
     "@babel/parser": "npm:7.26.10"
@@ -7967,8 +7967,8 @@ __metadata:
     "@babel/register": "npm:7.25.9"
     "@babel/runtime-corejs3": "npm:7.26.10"
     "@babel/traverse": "npm:7.26.10"
-    "@redwoodjs/framework-tools": "workspace:*"
-    "@redwoodjs/project-config": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
+    "@redmix/project-config": "workspace:*"
     "@types/babel-plugin-tester": "npm:9.0.10"
     "@types/babel__core": "npm:7.20.5"
     "@types/node": "npm:20.17.10"
@@ -7985,14 +7985,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/cli-data-migrate@workspace:packages/cli-packages/dataMigrate":
+"@redmix/cli-data-migrate@workspace:packages/cli-packages/dataMigrate":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/cli-data-migrate@workspace:packages/cli-packages/dataMigrate"
+  resolution: "@redmix/cli-data-migrate@workspace:packages/cli-packages/dataMigrate"
   dependencies:
     "@prisma/client": "npm:5.20.0"
-    "@redwoodjs/babel-config": "workspace:*"
-    "@redwoodjs/framework-tools": "workspace:*"
-    "@redwoodjs/project-config": "workspace:*"
+    "@redmix/babel-config": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
+    "@redmix/project-config": "workspace:*"
     "@types/fs-extra": "npm:11.0.4"
     "@types/yargs": "npm:17.0.33"
     chalk: "npm:4.1.2"
@@ -8011,15 +8011,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/cli-helpers@workspace:*, @redwoodjs/cli-helpers@workspace:packages/cli-helpers":
+"@redmix/cli-helpers@workspace:*, @redmix/cli-helpers@workspace:packages/cli-helpers":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/cli-helpers@workspace:packages/cli-helpers"
+  resolution: "@redmix/cli-helpers@workspace:packages/cli-helpers"
   dependencies:
     "@babel/core": "npm:^7.26.10"
     "@opentelemetry/api": "npm:1.8.0"
-    "@redwoodjs/framework-tools": "workspace:*"
-    "@redwoodjs/project-config": "workspace:*"
-    "@redwoodjs/telemetry": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
+    "@redmix/project-config": "workspace:*"
+    "@redmix/telemetry": "workspace:*"
     "@types/dotenv-defaults": "npm:^2.0.4"
     "@types/lodash": "npm:4.17.15"
     "@types/pascalcase": "npm:1.0.3"
@@ -8045,14 +8045,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/cli-storybook-vite@workspace:packages/cli-packages/storybook-vite":
+"@redmix/cli-storybook-vite@workspace:packages/cli-packages/storybook-vite":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/cli-storybook-vite@workspace:packages/cli-packages/storybook-vite"
+  resolution: "@redmix/cli-storybook-vite@workspace:packages/cli-packages/storybook-vite"
   dependencies:
-    "@redwoodjs/cli-helpers": "workspace:*"
-    "@redwoodjs/framework-tools": "workspace:*"
-    "@redwoodjs/project-config": "workspace:*"
-    "@redwoodjs/telemetry": "workspace:*"
+    "@redmix/cli-helpers": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
+    "@redmix/project-config": "workspace:*"
+    "@redmix/telemetry": "workspace:*"
     "@types/semver": "npm:^7"
     "@types/yargs": "npm:17.0.33"
     chalk: "npm:4.1.2"
@@ -8068,9 +8068,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/cli@workspace:*, @redwoodjs/cli@workspace:packages/cli":
+"@redmix/cli@workspace:*, @redmix/cli@workspace:packages/cli":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/cli@workspace:packages/cli"
+  resolution: "@redmix/cli@workspace:packages/cli"
   dependencies:
     "@babel/cli": "npm:7.26.4"
     "@babel/core": "npm:^7.26.10"
@@ -8083,15 +8083,15 @@ __metadata:
     "@opentelemetry/sdk-trace-node": "npm:1.22.0"
     "@opentelemetry/semantic-conventions": "npm:1.22.0"
     "@prisma/internals": "npm:5.20.0"
-    "@redwoodjs/api-server": "workspace:*"
-    "@redwoodjs/cli-helpers": "workspace:*"
-    "@redwoodjs/fastify-web": "workspace:*"
-    "@redwoodjs/internal": "workspace:*"
-    "@redwoodjs/prerender": "workspace:*"
-    "@redwoodjs/project-config": "workspace:*"
-    "@redwoodjs/structure": "workspace:*"
-    "@redwoodjs/telemetry": "workspace:*"
-    "@redwoodjs/web-server": "workspace:*"
+    "@redmix/api-server": "workspace:*"
+    "@redmix/cli-helpers": "workspace:*"
+    "@redmix/fastify-web": "workspace:*"
+    "@redmix/internal": "workspace:*"
+    "@redmix/prerender": "workspace:*"
+    "@redmix/project-config": "workspace:*"
+    "@redmix/structure": "workspace:*"
+    "@redmix/telemetry": "workspace:*"
+    "@redmix/web-server": "workspace:*"
     "@types/archiver": "npm:^6"
     archiver: "npm:7.0.1"
     boxen: "npm:5.1.2"
@@ -8142,9 +8142,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/codemods@workspace:packages/codemods":
+"@redmix/codemods@workspace:packages/codemods":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/codemods@workspace:packages/codemods"
+  resolution: "@redmix/codemods@workspace:packages/codemods"
   dependencies:
     "@babel/cli": "npm:7.26.4"
     "@babel/core": "npm:^7.26.10"
@@ -8152,8 +8152,8 @@ __metadata:
     "@babel/plugin-transform-typescript": "npm:^7.26.8"
     "@babel/runtime-corejs3": "npm:7.26.10"
     "@babel/traverse": "npm:7.26.10"
-    "@redwoodjs/framework-tools": "workspace:*"
-    "@redwoodjs/project-config": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
+    "@redmix/project-config": "workspace:*"
     "@svgr/core": "npm:8.1.0"
     "@svgr/plugin-jsx": "npm:8.1.0"
     "@types/babel__core": "npm:7.20.5"
@@ -8184,12 +8184,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/context@workspace:*, @redwoodjs/context@workspace:packages/context":
+"@redmix/context@workspace:*, @redmix/context@workspace:packages/context":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/context@workspace:packages/context"
+  resolution: "@redmix/context@workspace:packages/context"
   dependencies:
     "@arethetypeswrong/cli": "npm:0.16.4"
-    "@redwoodjs/framework-tools": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
     concurrently: "npm:8.2.2"
     publint: "npm:0.3.11"
     tsx: "npm:4.19.3"
@@ -8197,11 +8197,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/cookie-jar@workspace:*, @redwoodjs/cookie-jar@workspace:packages/cookie-jar":
+"@redmix/cookie-jar@workspace:*, @redmix/cookie-jar@workspace:packages/cookie-jar":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/cookie-jar@workspace:packages/cookie-jar"
+  resolution: "@redmix/cookie-jar@workspace:packages/cookie-jar"
   dependencies:
-    "@redwoodjs/framework-tools": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
     "@types/fs-extra": "npm:11.0.4"
     cookie: "npm:1.0.2"
     esbuild: "npm:0.24.2"
@@ -8213,19 +8213,19 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/core@workspace:packages/core":
+"@redmix/core@workspace:packages/core":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/core@workspace:packages/core"
+  resolution: "@redmix/core@workspace:packages/core"
   dependencies:
     "@babel/cli": "npm:7.26.4"
-    "@redwoodjs/api-server": "workspace:*"
-    "@redwoodjs/cli": "workspace:*"
-    "@redwoodjs/eslint-config": "workspace:*"
-    "@redwoodjs/framework-tools": "workspace:*"
-    "@redwoodjs/internal": "workspace:*"
-    "@redwoodjs/project-config": "workspace:*"
-    "@redwoodjs/testing": "workspace:*"
-    "@redwoodjs/web-server": "workspace:*"
+    "@redmix/api-server": "workspace:*"
+    "@redmix/cli": "workspace:*"
+    "@redmix/eslint-config": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
+    "@redmix/internal": "workspace:*"
+    "@redmix/project-config": "workspace:*"
+    "@redmix/testing": "workspace:*"
+    "@redmix/web-server": "workspace:*"
     "@types/lodash": "npm:4.17.15"
     graphql-tag: "npm:2.12.6"
     lodash: "npm:4.17.21"
@@ -8256,17 +8256,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/eslint-config@workspace:*, @redwoodjs/eslint-config@workspace:packages/eslint-config":
+"@redmix/eslint-config@workspace:*, @redmix/eslint-config@workspace:packages/eslint-config":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/eslint-config@workspace:packages/eslint-config"
+  resolution: "@redmix/eslint-config@workspace:packages/eslint-config"
   dependencies:
     "@babel/cli": "npm:7.26.4"
     "@babel/core": "npm:^7.26.10"
     "@babel/eslint-parser": "npm:7.25.7"
     "@babel/eslint-plugin": "npm:7.25.7"
-    "@redwoodjs/eslint-plugin": "workspace:*"
-    "@redwoodjs/internal": "workspace:*"
-    "@redwoodjs/project-config": "workspace:*"
+    "@redmix/eslint-plugin": "workspace:*"
+    "@redmix/internal": "workspace:*"
+    "@redmix/project-config": "workspace:*"
     "@typescript-eslint/eslint-plugin": "npm:8.19.1"
     "@typescript-eslint/parser": "npm:8.19.1"
     eslint: "npm:8.57.1"
@@ -8284,11 +8284,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/eslint-plugin@workspace:*, @redwoodjs/eslint-plugin@workspace:packages/eslint-plugin":
+"@redmix/eslint-plugin@workspace:*, @redmix/eslint-plugin@workspace:packages/eslint-plugin":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/eslint-plugin@workspace:packages/eslint-plugin"
+  resolution: "@redmix/eslint-plugin@workspace:packages/eslint-plugin"
   dependencies:
-    "@redwoodjs/framework-tools": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
     "@types/eslint": "npm:8.56.12"
     "@types/estree": "npm:1.0.6"
     "@typescript-eslint/parser": "npm:8.19.1"
@@ -8301,15 +8301,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/fastify-web@workspace:*, @redwoodjs/fastify-web@workspace:packages/adapters/fastify/web":
+"@redmix/fastify-web@workspace:*, @redmix/fastify-web@workspace:packages/adapters/fastify/web":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/fastify-web@workspace:packages/adapters/fastify/web"
+  resolution: "@redmix/fastify-web@workspace:packages/adapters/fastify/web"
   dependencies:
     "@fastify/http-proxy": "npm:9.5.0"
     "@fastify/static": "npm:6.12.0"
     "@fastify/url-data": "npm:5.4.0"
-    "@redwoodjs/framework-tools": "workspace:*"
-    "@redwoodjs/project-config": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
+    "@redmix/project-config": "workspace:*"
     fast-glob: "npm:3.3.2"
     fastify: "npm:4.28.1"
     tsx: "npm:4.19.3"
@@ -8318,11 +8318,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/forms@workspace:packages/forms":
+"@redmix/forms@workspace:packages/forms":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/forms@workspace:packages/forms"
+  resolution: "@redmix/forms@workspace:packages/forms"
   dependencies:
-    "@redwoodjs/framework-tools": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
     "@testing-library/dom": "npm:9.3.4"
     "@testing-library/jest-dom": "npm:6.5.0"
     "@testing-library/react": "npm:14.3.1"
@@ -8346,9 +8346,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/framework-tools@workspace:*, @redwoodjs/framework-tools@workspace:packages/framework-tools":
+"@redmix/framework-tools@workspace:*, @redmix/framework-tools@workspace:packages/framework-tools":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/framework-tools@workspace:packages/framework-tools"
+  resolution: "@redmix/framework-tools@workspace:packages/framework-tools"
   dependencies:
     "@arethetypeswrong/cli": "npm:0.16.4"
     "@types/fs-extra": "npm:11.0.4"
@@ -8364,9 +8364,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/graphql-server@workspace:*, @redwoodjs/graphql-server@workspace:packages/graphql-server":
+"@redmix/graphql-server@workspace:*, @redmix/graphql-server@workspace:packages/graphql-server":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/graphql-server@workspace:packages/graphql-server"
+  resolution: "@redmix/graphql-server@workspace:packages/graphql-server"
   dependencies:
     "@babel/cli": "npm:7.26.4"
     "@babel/core": "npm:^7.26.10"
@@ -8383,11 +8383,11 @@ __metadata:
     "@graphql-tools/utils": "npm:10.5.4"
     "@graphql-yoga/plugin-persisted-operations": "npm:3.7.0"
     "@opentelemetry/api": "npm:1.8.0"
-    "@redwoodjs/api": "workspace:*"
-    "@redwoodjs/context": "workspace:*"
-    "@redwoodjs/framework-tools": "workspace:*"
-    "@redwoodjs/project-config": "workspace:*"
-    "@redwoodjs/realtime": "workspace:*"
+    "@redmix/api": "workspace:*"
+    "@redmix/context": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
+    "@redmix/project-config": "workspace:*"
+    "@redmix/realtime": "workspace:*"
     "@types/aws-lambda": "npm:8.10.145"
     "@types/jsonwebtoken": "npm:9.0.8"
     "@types/lodash": "npm:4.17.15"
@@ -8408,9 +8408,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/internal@workspace:*, @redwoodjs/internal@workspace:packages/internal":
+"@redmix/internal@workspace:*, @redmix/internal@workspace:packages/internal":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/internal@workspace:packages/internal"
+  resolution: "@redmix/internal@workspace:packages/internal"
   dependencies:
     "@arethetypeswrong/cli": "npm:0.16.4"
     "@babel/core": "npm:^7.26.10"
@@ -8431,11 +8431,11 @@ __metadata:
     "@graphql-codegen/typescript-react-apollo": "npm:3.3.7"
     "@graphql-codegen/typescript-resolvers": "npm:3.2.1"
     "@graphql-tools/documents": "npm:1.0.1"
-    "@redwoodjs/babel-config": "workspace:*"
-    "@redwoodjs/framework-tools": "workspace:*"
-    "@redwoodjs/graphql-server": "workspace:*"
-    "@redwoodjs/project-config": "workspace:*"
-    "@redwoodjs/router": "workspace:*"
+    "@redmix/babel-config": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
+    "@redmix/graphql-server": "workspace:*"
+    "@redmix/project-config": "workspace:*"
+    "@redmix/router": "workspace:*"
     "@sdl-codegen/node": "npm:2.0.1"
     "@types/fs-extra": "npm:11.0.4"
     chalk: "npm:4.1.2"
@@ -8465,14 +8465,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/jobs@workspace:packages/jobs":
+"@redmix/jobs@workspace:packages/jobs":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/jobs@workspace:packages/jobs"
+  resolution: "@redmix/jobs@workspace:packages/jobs"
   dependencies:
     "@prisma/client": "npm:5.20.0"
-    "@redwoodjs/cli-helpers": "workspace:*"
-    "@redwoodjs/framework-tools": "workspace:*"
-    "@redwoodjs/project-config": "workspace:*"
+    "@redmix/cli-helpers": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
+    "@redmix/project-config": "workspace:*"
     concurrently: "npm:8.2.2"
     publint: "npm:0.3.11"
     tsx: "npm:4.19.3"
@@ -8485,35 +8485,35 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/mailer-core@workspace:*, @redwoodjs/mailer-core@workspace:packages/mailer/core":
+"@redmix/mailer-core@workspace:*, @redmix/mailer-core@workspace:packages/mailer/core":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/mailer-core@workspace:packages/mailer/core"
+  resolution: "@redmix/mailer-core@workspace:packages/mailer/core"
   dependencies:
-    "@redwoodjs/api": "workspace:*"
-    "@redwoodjs/framework-tools": "workspace:*"
+    "@redmix/api": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
     tsx: "npm:4.19.3"
     typescript: "npm:5.6.2"
     vitest: "npm:2.1.9"
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/mailer-handler-in-memory@workspace:packages/mailer/handlers/in-memory":
+"@redmix/mailer-handler-in-memory@workspace:packages/mailer/handlers/in-memory":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/mailer-handler-in-memory@workspace:packages/mailer/handlers/in-memory"
+  resolution: "@redmix/mailer-handler-in-memory@workspace:packages/mailer/handlers/in-memory"
   dependencies:
-    "@redwoodjs/framework-tools": "workspace:*"
-    "@redwoodjs/mailer-core": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
+    "@redmix/mailer-core": "workspace:*"
     tsx: "npm:4.19.3"
     typescript: "npm:5.6.2"
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/mailer-handler-nodemailer@workspace:*, @redwoodjs/mailer-handler-nodemailer@workspace:packages/mailer/handlers/nodemailer":
+"@redmix/mailer-handler-nodemailer@workspace:*, @redmix/mailer-handler-nodemailer@workspace:packages/mailer/handlers/nodemailer":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/mailer-handler-nodemailer@workspace:packages/mailer/handlers/nodemailer"
+  resolution: "@redmix/mailer-handler-nodemailer@workspace:packages/mailer/handlers/nodemailer"
   dependencies:
-    "@redwoodjs/framework-tools": "workspace:*"
-    "@redwoodjs/mailer-core": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
+    "@redmix/mailer-core": "workspace:*"
     "@types/nodemailer": "npm:^6"
     nodemailer: "npm:6.9.16"
     tsx: "npm:4.19.3"
@@ -8521,38 +8521,38 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/mailer-handler-resend@workspace:packages/mailer/handlers/resend":
+"@redmix/mailer-handler-resend@workspace:packages/mailer/handlers/resend":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/mailer-handler-resend@workspace:packages/mailer/handlers/resend"
+  resolution: "@redmix/mailer-handler-resend@workspace:packages/mailer/handlers/resend"
   dependencies:
-    "@redwoodjs/framework-tools": "workspace:*"
-    "@redwoodjs/mailer-core": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
+    "@redmix/mailer-core": "workspace:*"
     resend: "npm:3.5.0"
     tsx: "npm:4.19.3"
     typescript: "npm:5.6.2"
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/mailer-handler-studio@workspace:packages/mailer/handlers/studio":
+"@redmix/mailer-handler-studio@workspace:packages/mailer/handlers/studio":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/mailer-handler-studio@workspace:packages/mailer/handlers/studio"
+  resolution: "@redmix/mailer-handler-studio@workspace:packages/mailer/handlers/studio"
   dependencies:
-    "@redwoodjs/framework-tools": "workspace:*"
-    "@redwoodjs/mailer-core": "workspace:*"
-    "@redwoodjs/mailer-handler-nodemailer": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
+    "@redmix/mailer-core": "workspace:*"
+    "@redmix/mailer-handler-nodemailer": "workspace:*"
     "@types/nodemailer": "npm:^6"
     tsx: "npm:4.19.3"
     typescript: "npm:5.6.2"
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/mailer-renderer-mjml-react@workspace:packages/mailer/renderers/mjml-react":
+"@redmix/mailer-renderer-mjml-react@workspace:packages/mailer/renderers/mjml-react":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/mailer-renderer-mjml-react@workspace:packages/mailer/renderers/mjml-react"
+  resolution: "@redmix/mailer-renderer-mjml-react@workspace:packages/mailer/renderers/mjml-react"
   dependencies:
     "@faire/mjml-react": "npm:3.4.0"
-    "@redwoodjs/framework-tools": "workspace:*"
-    "@redwoodjs/mailer-core": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
+    "@redmix/mailer-core": "workspace:*"
     "@types/mjml": "npm:4"
     mjml: "npm:4.15.3"
     tsx: "npm:4.19.3"
@@ -8560,28 +8560,28 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/mailer-renderer-react-email@workspace:packages/mailer/renderers/react-email":
+"@redmix/mailer-renderer-react-email@workspace:packages/mailer/renderers/react-email":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/mailer-renderer-react-email@workspace:packages/mailer/renderers/react-email"
+  resolution: "@redmix/mailer-renderer-react-email@workspace:packages/mailer/renderers/react-email"
   dependencies:
     "@react-email/render": "npm:0.0.17"
-    "@redwoodjs/framework-tools": "workspace:*"
-    "@redwoodjs/mailer-core": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
+    "@redmix/mailer-core": "workspace:*"
     tsx: "npm:4.19.3"
     typescript: "npm:5.6.2"
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/ogimage-gen@workspace:packages/ogimage-gen":
+"@redmix/ogimage-gen@workspace:packages/ogimage-gen":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/ogimage-gen@workspace:packages/ogimage-gen"
+  resolution: "@redmix/ogimage-gen@workspace:packages/ogimage-gen"
   dependencies:
     "@playwright/test": "npm:1.49.1"
-    "@redwoodjs/framework-tools": "workspace:*"
-    "@redwoodjs/internal": "workspace:*"
-    "@redwoodjs/project-config": "workspace:*"
-    "@redwoodjs/router": "workspace:*"
-    "@redwoodjs/web": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
+    "@redmix/internal": "workspace:*"
+    "@redmix/project-config": "workspace:*"
+    "@redmix/router": "workspace:*"
+    "@redmix/web": "workspace:*"
     fast-glob: "npm:3.3.2"
     lodash: "npm:4.17.21"
     react: "npm:19.0.0-rc-f2df5694-20240916"
@@ -8594,16 +8594,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/prerender@workspace:*, @redwoodjs/prerender@workspace:packages/prerender":
+"@redmix/prerender@workspace:*, @redmix/prerender@workspace:packages/prerender":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/prerender@workspace:packages/prerender"
+  resolution: "@redmix/prerender@workspace:packages/prerender"
   dependencies:
-    "@redwoodjs/babel-config": "workspace:*"
-    "@redwoodjs/framework-tools": "workspace:*"
-    "@redwoodjs/project-config": "workspace:*"
-    "@redwoodjs/router": "workspace:*"
-    "@redwoodjs/structure": "workspace:*"
-    "@redwoodjs/web": "workspace:*"
+    "@redmix/babel-config": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
+    "@redmix/project-config": "workspace:*"
+    "@redmix/router": "workspace:*"
+    "@redmix/structure": "workspace:*"
+    "@redmix/web": "workspace:*"
     "@types/mime-types": "npm:2.1.4"
     "@whatwg-node/fetch": "npm:0.9.21"
     babel-plugin-ignore-html-and-css-imports: "npm:0.1.0"
@@ -8622,12 +8622,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/project-config@workspace:*, @redwoodjs/project-config@workspace:packages/project-config":
+"@redmix/project-config@workspace:*, @redmix/project-config@workspace:packages/project-config":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/project-config@workspace:packages/project-config"
+  resolution: "@redmix/project-config@workspace:packages/project-config"
   dependencies:
     "@arethetypeswrong/cli": "npm:0.16.4"
-    "@redwoodjs/framework-tools": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
     concurrently: "npm:8.2.2"
     deepmerge: "npm:4.3.1"
     fast-glob: "npm:3.3.2"
@@ -8641,9 +8641,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/realtime@workspace:*, @redwoodjs/realtime@workspace:packages/realtime":
+"@redmix/realtime@workspace:*, @redmix/realtime@workspace:packages/realtime":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/realtime@workspace:packages/realtime"
+  resolution: "@redmix/realtime@workspace:packages/realtime"
   dependencies:
     "@envelop/core": "npm:5.0.2"
     "@envelop/live-query": "npm:7.0.0"
@@ -8657,7 +8657,7 @@ __metadata:
     "@graphql-yoga/subscription": "npm:5.0.1"
     "@n1ru4l/graphql-live-query": "npm:0.10.0"
     "@n1ru4l/in-memory-live-query-store": "npm:0.10.0"
-    "@redwoodjs/framework-tools": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
     graphql: "npm:16.9.0"
     ioredis: "npm:5.6.0"
     nodemon: "npm:3.1.9"
@@ -8672,15 +8672,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/record@workspace:packages/record":
+"@redmix/record@workspace:packages/record":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/record@workspace:packages/record"
+  resolution: "@redmix/record@workspace:packages/record"
   dependencies:
     "@prisma/client": "npm:5.20.0"
     "@prisma/internals": "npm:5.20.0"
-    "@redwoodjs/api": "workspace:*"
-    "@redwoodjs/framework-tools": "workspace:*"
-    "@redwoodjs/project-config": "workspace:*"
+    "@redmix/api": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
+    "@redmix/project-config": "workspace:*"
     camelcase: "npm:6.3.0"
     esbuild: "npm:0.24.2"
     publint: "npm:0.3.11"
@@ -8689,17 +8689,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/router@workspace:*, @redwoodjs/router@workspace:packages/router":
+"@redmix/router@workspace:*, @redmix/router@workspace:packages/router":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/router@workspace:packages/router"
+  resolution: "@redmix/router@workspace:packages/router"
   dependencies:
     "@arethetypeswrong/cli": "npm:0.16.4"
     "@babel/cli": "npm:7.26.4"
     "@babel/core": "npm:^7.26.10"
     "@babel/runtime-corejs3": "npm:7.26.10"
-    "@redwoodjs/auth": "workspace:*"
-    "@redwoodjs/framework-tools": "workspace:*"
-    "@redwoodjs/server-store": "workspace:*"
+    "@redmix/auth": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
+    "@redmix/server-store": "workspace:*"
     "@testing-library/jest-dom": "npm:6.5.0"
     "@types/react": "npm:^18.2.55"
     "@types/react-dom": "npm:^18.2.19"
@@ -8719,13 +8719,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/server-store@workspace:*, @redwoodjs/server-store@workspace:packages/server-store":
+"@redmix/server-store@workspace:*, @redmix/server-store@workspace:packages/server-store":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/server-store@workspace:packages/server-store"
+  resolution: "@redmix/server-store@workspace:packages/server-store"
   dependencies:
-    "@redwoodjs/auth": "workspace:*"
-    "@redwoodjs/cookie-jar": "workspace:*"
-    "@redwoodjs/framework-tools": "workspace:*"
+    "@redmix/auth": "workspace:*"
+    "@redmix/cookie-jar": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
     "@types/fs-extra": "npm:11.0.4"
     esbuild: "npm:0.24.2"
     fast-glob: "npm:3.3.2"
@@ -8735,14 +8735,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/storage@workspace:packages/storage":
+"@redmix/storage@workspace:packages/storage":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/storage@workspace:packages/storage"
+  resolution: "@redmix/storage@workspace:packages/storage"
   dependencies:
     "@arethetypeswrong/cli": "npm:0.16.4"
     "@prisma/client": "npm:5.20.0"
-    "@redwoodjs/framework-tools": "workspace:*"
-    "@redwoodjs/project-config": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
+    "@redmix/project-config": "workspace:*"
     "@types/mime-types": "npm:2.1.4"
     concurrently: "npm:8.2.2"
     esbuild: "npm:0.24.2"
@@ -8756,15 +8756,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/structure@workspace:*, @redwoodjs/structure@workspace:packages/structure":
+"@redmix/structure@workspace:*, @redmix/structure@workspace:packages/structure":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/structure@workspace:packages/structure"
+  resolution: "@redmix/structure@workspace:packages/structure"
   dependencies:
     "@babel/cli": "npm:7.26.4"
     "@babel/core": "npm:^7.26.10"
     "@babel/runtime-corejs3": "npm:7.26.10"
     "@prisma/internals": "npm:5.20.0"
-    "@redwoodjs/project-config": "workspace:*"
+    "@redmix/project-config": "workspace:*"
     "@types/fs-extra": "npm:11.0.4"
     "@types/line-column": "npm:1.0.2"
     "@types/lodash": "npm:4.17.15"
@@ -8795,12 +8795,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/telemetry@workspace:*, @redwoodjs/telemetry@workspace:packages/telemetry":
+"@redmix/telemetry@workspace:*, @redmix/telemetry@workspace:packages/telemetry":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/telemetry@workspace:packages/telemetry"
+  resolution: "@redmix/telemetry@workspace:packages/telemetry"
   dependencies:
-    "@redwoodjs/project-config": "workspace:*"
-    "@redwoodjs/structure": "workspace:*"
+    "@redmix/project-config": "workspace:*"
+    "@redmix/structure": "workspace:*"
     "@types/envinfo": "npm:7.8.4"
     "@types/uuid": "npm:10.0.0"
     "@types/yargs": "npm:17.0.33"
@@ -8816,18 +8816,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/testing@workspace:*, @redwoodjs/testing@workspace:packages/testing":
+"@redmix/testing@workspace:*, @redmix/testing@workspace:packages/testing":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/testing@workspace:packages/testing"
+  resolution: "@redmix/testing@workspace:packages/testing"
   dependencies:
-    "@redwoodjs/auth": "workspace:*"
-    "@redwoodjs/babel-config": "workspace:*"
-    "@redwoodjs/context": "workspace:*"
-    "@redwoodjs/framework-tools": "workspace:*"
-    "@redwoodjs/graphql-server": "workspace:*"
-    "@redwoodjs/project-config": "workspace:*"
-    "@redwoodjs/router": "workspace:*"
-    "@redwoodjs/web": "workspace:*"
+    "@redmix/auth": "workspace:*"
+    "@redmix/babel-config": "workspace:*"
+    "@redmix/context": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
+    "@redmix/graphql-server": "workspace:*"
+    "@redmix/project-config": "workspace:*"
+    "@redmix/router": "workspace:*"
+    "@redmix/web": "workspace:*"
     "@testing-library/jest-dom": "npm:6.5.0"
     "@testing-library/react": "npm:14.3.1"
     "@testing-library/user-event": "npm:14.5.2"
@@ -8852,11 +8852,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/tui@workspace:*, @redwoodjs/tui@workspace:packages/tui":
+"@redmix/tui@workspace:*, @redmix/tui@workspace:packages/tui":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/tui@workspace:packages/tui"
+  resolution: "@redmix/tui@workspace:packages/tui"
   dependencies:
-    "@redwoodjs/framework-tools": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
     boxen: "npm:5.1.2"
     chalk: "npm:4.1.2"
     enquirer: "npm:2.4.1"
@@ -8866,22 +8866,22 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/vite@workspace:packages/vite":
+"@redmix/vite@workspace:packages/vite":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/vite@workspace:packages/vite"
+  resolution: "@redmix/vite@workspace:packages/vite"
   dependencies:
     "@arethetypeswrong/cli": "npm:0.16.4"
     "@babel/generator": "npm:7.26.10"
     "@babel/parser": "npm:7.26.10"
     "@babel/traverse": "npm:7.26.10"
     "@hyrious/esbuild-plugin-commonjs": "npm:0.2.4"
-    "@redwoodjs/auth": "workspace:*"
-    "@redwoodjs/babel-config": "workspace:*"
-    "@redwoodjs/cookie-jar": "workspace:*"
-    "@redwoodjs/internal": "workspace:*"
-    "@redwoodjs/project-config": "workspace:*"
-    "@redwoodjs/server-store": "workspace:*"
-    "@redwoodjs/web": "workspace:*"
+    "@redmix/auth": "workspace:*"
+    "@redmix/babel-config": "workspace:*"
+    "@redmix/cookie-jar": "workspace:*"
+    "@redmix/internal": "workspace:*"
+    "@redmix/project-config": "workspace:*"
+    "@redmix/server-store": "workspace:*"
+    "@redmix/web": "workspace:*"
     "@swc/core": "npm:1.7.28"
     "@types/busboy": "npm:^1"
     "@types/express": "npm:4"
@@ -8929,13 +8929,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/web-server@workspace:*, @redwoodjs/web-server@workspace:packages/web-server":
+"@redmix/web-server@workspace:*, @redmix/web-server@workspace:packages/web-server":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/web-server@workspace:packages/web-server"
+  resolution: "@redmix/web-server@workspace:packages/web-server"
   dependencies:
-    "@redwoodjs/fastify-web": "workspace:*"
-    "@redwoodjs/framework-tools": "workspace:*"
-    "@redwoodjs/project-config": "workspace:*"
+    "@redmix/fastify-web": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
+    "@redmix/project-config": "workspace:*"
     chalk: "npm:4.1.2"
     dotenv-defaults: "npm:5.0.2"
     fastify: "npm:4.28.1"
@@ -8948,9 +8948,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redwoodjs/web@workspace:*, @redwoodjs/web@workspace:packages/web":
+"@redmix/web@workspace:*, @redmix/web@workspace:packages/web":
   version: 0.0.0-use.local
-  resolution: "@redwoodjs/web@workspace:packages/web"
+  resolution: "@redmix/web@workspace:packages/web"
   dependencies:
     "@apollo/client": "npm:3.11.1"
     "@apollo/client-react-streaming": "npm:0.10.0"
@@ -8960,10 +8960,10 @@ __metadata:
     "@babel/plugin-transform-runtime": "npm:7.26.10"
     "@babel/runtime": "npm:7.25.7"
     "@babel/runtime-corejs3": "npm:7.26.10"
-    "@redwoodjs/auth": "workspace:*"
-    "@redwoodjs/framework-tools": "workspace:*"
-    "@redwoodjs/internal": "workspace:*"
-    "@redwoodjs/server-store": "workspace:*"
+    "@redmix/auth": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
+    "@redmix/internal": "workspace:*"
+    "@redmix/server-store": "workspace:*"
     "@rollup/plugin-babel": "npm:6.0.4"
     "@testing-library/jest-dom": "npm:6.5.0"
     "@testing-library/react": "npm:14.3.1"
@@ -14879,8 +14879,8 @@ __metadata:
     "@opentelemetry/resources": "npm:1.22.0"
     "@opentelemetry/sdk-trace-node": "npm:1.22.0"
     "@opentelemetry/semantic-conventions": "npm:1.22.0"
-    "@redwoodjs/framework-tools": "workspace:*"
-    "@redwoodjs/tui": "workspace:*"
+    "@redmix/framework-tools": "workspace:*"
+    "@redmix/tui": "workspace:*"
     "@types/babel__core": "npm:7.20.5"
     chalk: "npm:4.1.2"
     check-node-version: "npm:4.2.1"
@@ -27764,7 +27764,7 @@ __metadata:
   resolution: "storybook-framework-redwoodjs-vite@workspace:packages/storybook"
   dependencies:
     "@joshwooding/vite-plugin-react-docgen-typescript": "npm:0.4.2"
-    "@redwoodjs/testing": "workspace:*"
+    "@redmix/testing": "workspace:*"
     "@rollup/pluginutils": "npm:5.1.4"
     "@storybook/addon-essentials": "npm:7.6.20"
     "@storybook/builder-vite": "npm:7.6.20"
@@ -27778,8 +27778,8 @@ __metadata:
     vite: "npm:5.4.16"
     vite-plugin-node-polyfills: "npm:0.23.0"
   peerDependencies:
-    "@redwoodjs/project-config": "workspace:*"
-    "@redwoodjs/router": "workspace:*"
+    "@redmix/project-config": "workspace:*"
+    "@redmix/router": "workspace:*"
     react: 19.0.0-rc-f2df5694-20240916
     react-dom: 19.0.0-rc-f2df5694-20240916
     storybook: 7.6.20

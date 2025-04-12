@@ -187,7 +187,7 @@ export const handler = async ({ name, force, ...rest }) => {
             'eslint',
             '--fix',
             '--config',
-            `${getPaths().base}/node_modules/@redwoodjs/eslint-config/shared.js`,
+            `${getPaths().base}/node_modules/@redmix/eslint-config/shared.js`,
             `${getPaths().api.jobsConfig}`,
           ])
         },

@@ -122,7 +122,7 @@ export const getApiSideBabelPlugins = ({
           {
             // import { context } from '@redmix/context'
             members: ['context'],
-            path: '@redwoodjs/context',
+            path: '@redmix/context',
           },
         ],
       },

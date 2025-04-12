@@ -15,11 +15,8 @@ export const handler = async ({ force: forceArg }: Args) => {
     forceArg,
     authDecoderImport: `import { clerkAuthDecoder as authDecoder } from '@redmix/auth-clerk-api'`,
     provider: 'clerk',
-    webPackages: [
-      '@clerk/clerk-react@^4',
-      `@redwoodjs/auth-clerk-web@${version}`,
-    ],
-    apiPackages: [`@redwoodjs/auth-clerk-api@${version}`],
+    webPackages: ['@clerk/clerk-react@^4', `@redmix/auth-clerk-web@${version}`],
+    apiPackages: [`@redmix/auth-clerk-api@${version}`],
     notes: [
       "You'll need to add two env vars to your .env file:",
       '',

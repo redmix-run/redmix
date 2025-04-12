@@ -131,7 +131,7 @@ export const { AuthProvider, useAuth } = createAuth(dbAuthClient)
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "@redwoodjs/auth-dbauth-web": "7.0.0",
+    "@redmix/auth-dbauth-web": "7.0.0",
     "@simplewebauthn/browser": "7.4.0"
   }
 }
@@ -166,7 +166,7 @@ export const { AuthProvider, useAuth } = createAuth(dbAuthClient)
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "@redwoodjs/auth-dbauth-web": "7.0.0",
+    "@redmix/auth-dbauth-web": "7.0.0",
   }
 }
 `

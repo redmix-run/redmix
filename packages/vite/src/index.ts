@@ -36,7 +36,7 @@ export default function redwoodPluginVite(): PluginOption[] {
   const apiPackageJsonPath = path.join(rwPaths.api.base, 'package.json')
   const realtimeEnabled =
     fs.existsSync(apiPackageJsonPath) &&
-    fs.readFileSync(apiPackageJsonPath, 'utf-8').includes('@redwoodjs/realtime')
+    fs.readFileSync(apiPackageJsonPath, 'utf-8').includes('@redmix/realtime')
 
   const streamingEnabled = rwConfig.experimental.streamingSsr.enabled
   const rscEnabled = rwConfig.experimental?.rsc?.enabled
@@ -170,7 +170,7 @@ export default function redwoodPluginVite(): PluginOption[] {
     removeFromBundle(
       [
         {
-          id: /@redwoodjs\/router\/dist\/splash-page/,
+          id: /@redmix\/router\/dist\/splash-page/,
         },
       ],
       ['SplashPage'],
@@ -178,7 +178,7 @@ export default function redwoodPluginVite(): PluginOption[] {
     !realtimeEnabled &&
       removeFromBundle([
         {
-          id: /@redwoodjs\/web\/dist\/apollo\/sseLink/,
+          id: /@redmix\/web\/dist\/apollo\/sseLink/,
         },
       ]),
     react({

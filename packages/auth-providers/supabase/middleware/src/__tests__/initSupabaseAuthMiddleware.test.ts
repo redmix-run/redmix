@@ -28,7 +28,7 @@ vi.mock('jsonwebtoken', () => {
   }
 })
 
-vi.mock('@redwoodjs/auth-supabase-api', () => {
+vi.mock('@redmix/auth-supabase-api', () => {
   return {
     authDecoder: vi.fn(() => {
       return {

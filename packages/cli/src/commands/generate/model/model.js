@@ -70,7 +70,7 @@ export const handler = async ({ force, ...args }) => {
       {
         title: 'Parsing datamodel, generating api/src/models/index.js...',
         task: async () => {
-          const redwoodRecordModule = await import('@redwoodjs/record')
+          const redwoodRecordModule = await import('@redmix/record')
           await redwoodRecordModule.default.parseDatamodel()
         },
       },

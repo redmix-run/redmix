@@ -50,7 +50,7 @@ body:
           Chrome: 102.0.5005.115
           Safari: 15.4
         npmPackages:
-          @redwoodjs/core: 1.5.2 => 1.5.2
+          @redmix/core: 1.5.2 => 1.5.2
     validations:
       required: false
 

@@ -66,7 +66,7 @@ async function run() {
 }
 
 /**
- * Iterates over `@redwoodjs/*` dependencies in a package.json and updates their version.
+ * Iterates over `@redmix/*` dependencies in a package.json and updates their version.
  *
  * @param {string} pkgPath
  * @param {string} version
@@ -87,6 +87,6 @@ function updateRWJSPkgsVersion(pkgPath, version) {
   fs.writeJSONSync(path.join(pkgPath, 'package.json'), pkg, { spaces: 2 })
 }
 
-const isRWJSPkg = (pkg) => pkg.startsWith('@redwoodjs/')
+const isRWJSPkg = (pkg) => pkg.startsWith('@redmix/')
 
 run()

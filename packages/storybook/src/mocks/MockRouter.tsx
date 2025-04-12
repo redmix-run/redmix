@@ -1,5 +1,5 @@
 /*
- * We use a Vite plugin to swap out imports from `@redwoodjs/router` to this
+ * We use a Vite plugin to swap out imports from `@redmix/router` to this
  * file. See ../plugins/mock-router.ts
  *
  * It's therefore important to reexport everything that we *don't* want to mock.

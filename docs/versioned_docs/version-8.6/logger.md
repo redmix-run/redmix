@@ -695,7 +695,7 @@ If you wish to remove `info` logging, then you can define a set of levels, such 
 
 To configure Prisma logging, you first create the client and set the `log` options to emit the levels you wish to be logged via `emitLogLevels`. Second, you instruct the `logger` to handle the events emitted by the Prisma client in `handlePrismaLogging` setting the instance of the Prisma Client you've created in `db`, the `logger` instances, and then the same levels you've told the client to emit.
 
-Both `emitLogLevels` and `handlePrismaLogging` are `@redwoodjs/api/logger` package exports.
+Both `emitLogLevels` and `handlePrismaLogging` are `@redmix/api/logger` package exports.
 
 ```jsx
 /*

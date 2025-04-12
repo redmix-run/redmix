@@ -102,8 +102,8 @@ export default function (
             ],
             t.stringLiteral(
               projectIsEsm
-                ? '@redwoodjs/context/dist/store.js'
-                : '@redwoodjs/context/dist/store',
+                ? '@redmix/context/dist/store.js'
+                : '@redmix/context/dist/store',
             ),
           ),
         )

@@ -4,7 +4,7 @@ import type { RWRoute } from '@redmix/structure/dist/model/RWRoute'
 
 import { detectPrerenderRoutes } from '../detection'
 
-vi.mock('@redwoodjs/project-config', () => {
+vi.mock('@redmix/project-config', () => {
   return {
     getPaths: vi.fn(() => {
       return {
@@ -16,10 +16,10 @@ vi.mock('@redwoodjs/project-config', () => {
   }
 })
 
-// Mock route detection, tested in @redwoodjs/structure separately
+// Mock route detection, tested in @redmix/structure separately
 
 let mockedRoutes: Partial<RWRoute>[] = []
-vi.mock('@redwoodjs/structure', () => {
+vi.mock('@redmix/structure', () => {
   return {
     getProject: vi.fn(() => {
       return {

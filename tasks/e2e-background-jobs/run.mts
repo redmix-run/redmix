@@ -73,9 +73,9 @@ async function main() {
   const apiPackageJson = await import(
     makeFilePath(path.join(projectPath, 'api/package.json'))
   )
-  if (!apiPackageJson.dependencies['@redwoodjs/jobs']) {
+  if (!apiPackageJson.dependencies['@redmix/jobs']) {
     console.error(
-      "Expected dependency '@redwoodjs/jobs' not found in 'api/package.json'",
+      "Expected dependency '@redmix/jobs' not found in 'api/package.json'",
     )
     process.exit(1)
   }

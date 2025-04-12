@@ -258,7 +258,7 @@ Because as far as we can tell there's no easy way to simply render to a string. 
 
 Note that Redwood's `render` function is based on React Testing Library's. The only difference is that Redwood's wraps everything with mock providers for the various providers in Redwood, such as auth, the GraphQL client, the router, etc.
 
-If you were to use React Testing Library's `render` function, you'd need to provide your own wrapper function. In this case you probably want to compose the mock providers from `@redwoodjs/testing/web`:
+If you were to use React Testing Library's `render` function, you'd need to provide your own wrapper function. In this case you probably want to compose the mock providers from `@redmix/testing/web`:
 
 ```jsx
 import { render, MockProviders } from '@redmix/testing/web'
@@ -780,12 +780,12 @@ Some schools of thought say you should keep your test files flat (that is, no ne
 ## Testing Custom Hooks
 
 Custom hooks are a great way to encapsulate non-presentational code.
-To test custom hooks, we'll use the `renderHook` function from `@redwoodjs/testing/web`.
+To test custom hooks, we'll use the `renderHook` function from `@redmix/testing/web`.
 
 :::info
 Note that Redwood's `renderHook` function is based on React Testing Library's. The only difference is that Redwood's wraps everything with mock providers for the various providers in Redwood, such as auth, the GraphQL client, the router, etc.
 
-If you were to use React Testing Library's `renderHook` function, you'd need to provide your own wrapper function. In this case you probably want to compose the mock providers from `@redwoodjs/testing/web`:
+If you were to use React Testing Library's `renderHook` function, you'd need to provide your own wrapper function. In this case you probably want to compose the mock providers from `@redmix/testing/web`:
 
 ```jsx
 import { renderHook, MockProviders } from '@redmix/testing/web'
@@ -1131,7 +1131,7 @@ yarn workspace web add -D @testing-library/user-event
 
 ### Building a Form
 
-Let's assume you've already created a component using `yarn rw g component`. This component is built using the `@redwoodjs/forms` package and provides a simple interface for using the form: we subscribe to changes via an `onSubmit` callback-prop.
+Let's assume you've already created a component using `yarn rw g component`. This component is built using the `@redmix/forms` package and provides a simple interface for using the form: we subscribe to changes via an `onSubmit` callback-prop.
 
 ```jsx title="NameForm.js"
 import { Form, Submit, TextField } from '@redmix/forms'
@@ -1165,7 +1165,7 @@ export default NameForm
 
 Now, we can extend the `test` file which Redwood generated. We're going to want to:
 
-1. Import `waitFor` from the `@redwoodjs/testing/web` library.
+1. Import `waitFor` from the `@redmix/testing/web` library.
 2. Add an import to `@testing-library/user-event` for its `default`.
 3. Provide an `onSubmit` prop to our "renders successfully" test.
 
@@ -1401,13 +1401,13 @@ export const standard = defineScenario({
     anthony: {
       data: {
         name: 'Anthony Campolo',
-        email: 'anthony@redwoodjs.com',
+        email: 'anthony@redmix.com',
       },
     },
     dom: {
       data: {
         name: 'Dom Saadi',
-        email: 'dom@redwoodjs.com',
+        email: 'dom@redmix.com',
       },
     },
   },
@@ -1444,13 +1444,13 @@ export const standard = defineScenario({
     anthony: {
       data: {
         name: 'Anthony Campolo',
-        email: 'anthony@redwoodjs.com',
+        email: 'anthony@redmix.com',
       },
     },
     dom: {
       data: {
         name: 'Dom Saadi',
-        email: 'dom@redwoodjs.com',
+        email: 'dom@redmix.com',
       },
     },
   },
@@ -1461,13 +1461,13 @@ export const incomplete = defineScenario({
     david: {
       data: {
         name: 'David Thyresson',
-        email: 'dt@redwoodjs.com',
+        email: 'dt@redmix.com',
       },
     },
     forrest: {
       data: {
         name: '',
-        email: 'forrest@redwoodjs.com',
+        email: 'forrest@redmix.com',
       },
     },
   },
@@ -1947,7 +1947,7 @@ We have a custom Jest matcher included in Redwood to make things a little easier
 
 ```ts
 // highlight-next-line
-import '@redwoodjs/testing/cache'
+import '@redmix/testing/cache'
 // ^^ make `.toHaveCached` available
 ```
 

@@ -1,8 +1,8 @@
-// TODO (STREAMING) Move this to a new package called @redwoodjs/fe-server (goes
-// well in naming with @redwoodjs/api-server)
-// Only things used during dev can be in @redwoodjs/vite. Everything else has
+// TODO (STREAMING) Move this to a new package called @redmix/fe-server (goes
+// well in naming with @redmix/api-server)
+// Only things used during dev can be in @redmix/vite. Everything else has
 // to go in fe-server
-// UPDATE: We decided to name the package @redwoodjs/web-server instead of
+// UPDATE: We decided to name the package @redmix/web-server instead of
 // fe-server. And it's already created, but this hasn't been moved over yet.
 
 import path from 'node:path'
@@ -17,10 +17,7 @@ import type { Manifest as ViteBuildManifest } from 'vite'
 
 import { getConfig, getPaths } from '@redmix/project-config'
 import { getRscStylesheetLinkGenerator } from '@redmix/router/rscCss'
-import {
-  createPerRequestMap,
-  createServerStorage,
-} from '@redmix/server-store'
+import { createPerRequestMap, createServerStorage } from '@redmix/server-store'
 import type { Middleware } from '@redmix/web/dist/server/middleware'
 
 import { registerFwGlobalsAndShims } from './lib/registerFwGlobalsAndShims.js'

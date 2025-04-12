@@ -19,8 +19,8 @@
         "./types/*",
         "../types/*"
       ],
-      "@redwoodjs/testing": [
-        "../node_modules/@redwoodjs/testing/api"
+      "@redmix/testing": [
+        "../node_modules/@redmix/testing/api"
       ]
     },
     "typeRoots": [

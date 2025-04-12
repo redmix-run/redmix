@@ -104,7 +104,7 @@ export const handler = async ({
         process.env.VITE_CJS_IGNORE_WARNING = 'true'
         await execa(
           `node ${require.resolve(
-            '@redwoodjs/vite/bins/rw-vite-build.mjs',
+            '@redmix/vite/bins/rw-vite-build.mjs',
           )} --webDir="${rwjsPaths.web.base}" --verbose=${verbose}`,
           {
             stdio: verbose ? 'inherit' : 'pipe',

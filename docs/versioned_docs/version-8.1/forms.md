@@ -7,7 +7,7 @@ description: Redwood makes building forms easier with helper components
 Redwood provides several helpers to make building forms easier.
 All of Redwood's helpers are simple wrappers around [React Hook Form](https://react-hook-form.com/) (RHF) that make it even easier to use in most cases.
 
-If Redwood's helpers aren't flexible enough for you, you can use React Hook Form directly. `@redwoodjs/forms` exports everything it does:
+If Redwood's helpers aren't flexible enough for you, you can use React Hook Form directly. `@redmix/forms` exports everything it does:
 
 ```jsx
 import {
@@ -23,7 +23,7 @@ import {
 
 ## Overview
 
-`@redwoodjs/forms` exports the following components:
+`@redmix/forms` exports the following components:
 
 | Component         | Description                                                                                                                                        |
 | :---------------- | :------------------------------------------------------------------------------------------------------------------------------------------------- |

@@ -3,7 +3,7 @@ global.__dirname = __dirname
 vi.mock('fs-extra')
 vi.mock('latest-version')
 
-vi.mock('@redwoodjs/project-config', async (importOriginal) => {
+vi.mock('@redmix/project-config', async (importOriginal) => {
   const originalProjectConfig = await importOriginal()
   return {
     ...originalProjectConfig,
@@ -77,7 +77,7 @@ describe('Update is not available (1.0.0 -> 1.0.0)', () => {
       // Users package.json containing the redwood version
       'package.json': JSON.stringify({
         devDependencies: {
-          '@redwoodjs/core': '^1.0.0',
+          '@redmix/core': '^1.0.0',
         },
       }),
     })
@@ -156,7 +156,7 @@ describe('Update is available (1.0.0 -> 2.0.0)', () => {
       // Users package.json containing the redwood version
       'package.json': JSON.stringify({
         devDependencies: {
-          '@redwoodjs/core': '^1.0.0',
+          '@redmix/core': '^1.0.0',
         },
       }),
     })
@@ -235,7 +235,7 @@ describe('Update is available with rc tag (1.0.0-rc.1 -> 1.0.1-rc.58)', () => {
       // Users package.json containing the redwood version
       'package.json': JSON.stringify({
         devDependencies: {
-          '@redwoodjs/core': '^1.0.0-rc.1',
+          '@redmix/core': '^1.0.0-rc.1',
         },
       }),
     })

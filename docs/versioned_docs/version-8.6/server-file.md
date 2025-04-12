@@ -32,7 +32,7 @@ async function main() {
 main()
 ```
 
-Without the server file, to start the api side, you'd use binaries provided by `@redwoodjs/api-server` such as `yarn rw-server api` (you may also see this as `./node_modules/.bin/rw-server api`).
+Without the server file, to start the api side, you'd use binaries provided by `@redmix/api-server` such as `yarn rw-server api` (you may also see this as `./node_modules/.bin/rw-server api`).
 
 With the server file, there's no indirection. Just use `node`:
 

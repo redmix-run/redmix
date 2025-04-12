@@ -1,4 +1,4 @@
-// This just proxies the `@redwoodjs/server-store` package.
+// This just proxies the `@redmix/server-store` package.
 // Our builds are specifically configured _not_ to bundle server-store
 
 // This is mainly so that the import looks clean to the user e.g.

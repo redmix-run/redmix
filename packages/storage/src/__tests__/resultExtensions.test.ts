@@ -7,7 +7,7 @@ import { UrlSigner } from '../UrlSigner.js'
 // @MARK: use the local prisma client in the test
 import { PrismaClient } from './prisma-client/index.js'
 
-vi.mock('@redwoodjs/project-config', async (importOriginal) => {
+vi.mock('@redmix/project-config', async (importOriginal) => {
   const originalProjectConfig = (await importOriginal()) as any
   return {
     ...originalProjectConfig,

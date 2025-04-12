@@ -475,9 +475,9 @@ export async function apiTasks(
     projectPackageJson.resolutions ??= {}
     projectPackageJson.resolutions = {
       ...projectPackageJson.resolutions,
-      '@redwoodjs/auth-dbauth-setup': './redwoodjs-auth-dbauth-setup.tgz',
-      '@redwoodjs/auth-dbauth-api': './redwoodjs-auth-dbauth-api.tgz',
-      '@redwoodjs/auth-dbauth-web': './redwoodjs-auth-dbauth-web.tgz',
+      '@redmix/auth-dbauth-setup': './redwoodjs-auth-dbauth-setup.tgz',
+      '@redmix/auth-dbauth-api': './redwoodjs-auth-dbauth-api.tgz',
+      '@redmix/auth-dbauth-web': './redwoodjs-auth-dbauth-web.tgz',
     }
 
     fs.writeFileSync(

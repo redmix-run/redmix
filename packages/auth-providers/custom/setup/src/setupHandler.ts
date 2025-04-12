@@ -16,7 +16,7 @@ export async function handler({ force: forceArg }: Args) {
     basedir: __dirname,
     forceArg,
     provider: 'custom',
-    webPackages: [`@redwoodjs/auth@${version}`],
+    webPackages: [`@redmix/auth@${version}`],
     notes: [
       'Done! But you have a little more work to do.',
       "You'll have to write the actual implementation yourself.",

@@ -42,7 +42,7 @@ export default (file: FileInfo, api: API) => {
     .find(j.ImportDeclaration, {
       source: {
         type: 'StringLiteral',
-        value: '@redwoodjs/router',
+        value: '@redmix/router',
       },
     })
     .replaceWith(
@@ -64,7 +64,7 @@ export default (file: FileInfo, api: API) => {
     .find(j.ImportDeclaration, {
       source: {
         type: 'StringLiteral',
-        value: '@redwoodjs/web',
+        value: '@redmix/web',
       },
     })
     .replaceWith((nodePath) => {
@@ -83,7 +83,7 @@ export default (file: FileInfo, api: API) => {
     .find(j.ImportDeclaration, {
       source: {
         type: 'StringLiteral',
-        value: '@redwoodjs/web',
+        value: '@redmix/web',
       },
     })
     .insertAfter(() => {

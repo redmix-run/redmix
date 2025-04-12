@@ -1,5 +1,5 @@
 // The excess of exports here is for backwards compatibility
-// since `@redwoodjs/internal` exported everything from babel/api, web, and common.
+// since `@redmix/internal` exported everything from babel/api, web, and common.
 // See https://github.com/redwoodjs/redwood/blob/44b4a9023ac3a14b5f56b071052bdf49c410bb8b/packages/internal/src/index.ts#L13-L16.
 
 export {

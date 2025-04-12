@@ -442,7 +442,7 @@ export default SigninPage
 
 Let's redirect our user back to the home page upon a successful login.
 
-In our `SigninPage`, import `navigate` and `routes` from [`@redwoodjs/router`](../router.md) and add them after awaiting `logIn`:
+In our `SigninPage`, import `navigate` and `routes` from [`@redmix/router`](../router.md) and add them after awaiting `logIn`:
 
 ```jsx {10-16} title="web/src/pages/SigninPage/SigninPage.js"
 import { Form, TextField, PasswordField, Submit } from '@redmix/forms'
@@ -558,7 +558,7 @@ Let's start by [generating a navigation component](../cli-commands.md#generate-c
 yarn redwood generate component navigation
 ```
 
-This creates `web/src/components/Navigation/Navigation.js`. In that file, let's import [the `Link` component and the `routes` object](../router.md#link-and-named-route-functions) from `@redwoodjs/router`.
+This creates `web/src/components/Navigation/Navigation.js`. In that file, let's import [the `Link` component and the `routes` object](../router.md#link-and-named-route-functions) from `@redmix/router`.
 We'll also import [`useAuth`](../authentication.md#api) since we'll need to subscribe to the auth state for our component to decide what to render:
 
 ```jsx title="web/src/components/Navigation/Navigation.js"

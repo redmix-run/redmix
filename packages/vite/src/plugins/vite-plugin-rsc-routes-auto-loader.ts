@@ -177,7 +177,7 @@ export function rscRoutesAutoLoader(): Plugin {
           // This will turn all wrapper imports into something like
           // import NavigationLayout from "@redmix/router/dist/dummyComponent";
           // which is all we need for client side routing
-          wrapperImport.source.value = '@redwoodjs/router/dist/dummyComponent'
+          wrapperImport.source.value = '@redmix/router/dist/dummyComponent'
         }
       })
 

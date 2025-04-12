@@ -16,10 +16,10 @@ vi.mock('../../makeMergedSchema', () => {
   const {
     ForbiddenError,
     RedwoodGraphQLError,
-  } = require('@redwoodjs/graphql-server/dist/errors')
+  } = require('@redmix/graphql-server/dist/errors')
 
   const { CurrencyResolver } = require('graphql-scalars')
-  const { RedwoodError, EmailValidationError } = require('@redwoodjs/api') as {
+  const { RedwoodError, EmailValidationError } = require('@redmix/api') as {
     RedwoodError: typeof RedwoodErrorType
     EmailValidationError: typeof EmailValidationErrorType
   }

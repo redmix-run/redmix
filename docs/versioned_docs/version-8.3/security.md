@@ -19,11 +19,11 @@ RedwoodJS wants you to be able build and deploy secure applications and takes th
 > **Security Policy and Contact Information**
 > The RedwoodJS Security Policy is located [in the codebase repository on GitHub](https://github.com/redwoodjs/redwood/security/policy).
 >
-> To report a potential security vulnerability, contact us at [security@redwoodjs.com](mailto:security@redwoodjs.com).
+> To report a potential security vulnerability, contact us at [security@redmix.com](mailto:security@redmix.com).
 
 ## Authentication
 
-`@redwoodjs/auth` is a lightweight wrapper around popular SPA authentication libraries. We currently support [the following authentication providers](authentication.md) as well as a self-hosted solution ([dbAuth](auth/dbauth.md)):
+`@redmix/auth` is a lightweight wrapper around popular SPA authentication libraries. We currently support [the following authentication providers](authentication.md) as well as a self-hosted solution ([dbAuth](auth/dbauth.md)):
 
 - Netlify Identity Widget
 - Auth0

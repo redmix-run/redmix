@@ -132,7 +132,7 @@ const ContactPage = () => {
 
 ### Importing
 
-You'll import the three functions below from `@redwoodjs/api`:
+You'll import the three functions below from `@redmix/api`:
 
 ```jsx
 import { validate, validateWith, validateUniqueness } from '@redmix/api'
@@ -705,7 +705,7 @@ So `validateUniqueness()` first tries to find a record with the given fields, an
 #### Arguments
 
 1. The name of the db table accessor that will be checked (what you would call on `db` in a normal Prisma call). If you'd call `db.user` then this value is `"user"`.
-2. An object, containing the db fields/values to check for uniqueness, like `{ email: 'rob@redwoodjs.com' }`. Can also include additional options explained below that provide for a narrower scope for uniqueness requirements, and a way for the record to identify itself and not create a false positive for an existing record.
+2. An object, containing the db fields/values to check for uniqueness, like `{ email: 'rob@redmix.com' }`. Can also include additional options explained below that provide for a narrower scope for uniqueness requirements, and a way for the record to identify itself and not create a false positive for an existing record.
 3. [Optional] An object with options. `message` - custom error message. `db` - custom instance of the PrismaClient to use
 4. Callback to be invoked if record is found to be unique.
 

@@ -10,7 +10,7 @@ vi.mock('@vercel/nft', () => {
   }
 })
 
-vi.mock('@redwoodjs/internal/dist/files', () => {
+vi.mock('@redmix/internal/dist/files', () => {
   return {
     findApiDistFunctions: () => {
       return [
@@ -24,7 +24,7 @@ vi.mock('@redwoodjs/internal/dist/files', () => {
   }
 })
 
-vi.mock('@redwoodjs/project-config', () => {
+vi.mock('@redmix/project-config', () => {
   return {
     getPaths: () => {
       return {

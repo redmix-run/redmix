@@ -16,7 +16,7 @@ export default function transform(file: FileInfo, api: API) {
         },
       ],
       source: {
-        value: '@redwoodjs/ogimage-gen/plugin',
+        value: '@redmix/ogimage-gen/plugin',
         type: 'StringLiteral',
       },
     }).length === 0
@@ -27,7 +27,7 @@ export default function transform(file: FileInfo, api: API) {
       .insertBefore(
         j.importDeclaration(
           [j.importDefaultSpecifier(j.identifier('vitePluginOgImageGen'))],
-          j.stringLiteral('@redwoodjs/ogimage-gen/plugin'),
+          j.stringLiteral('@redmix/ogimage-gen/plugin'),
         ),
       )
   }

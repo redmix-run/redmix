@@ -13,7 +13,7 @@ import { useRedwoodAuthContext } from '../useRedwoodAuthContext'
 
 const authDecoder = async (token: string) => ({ token })
 
-vi.mock('@redwoodjs/api', async (importOriginal) => {
+vi.mock('@redmix/api', async (importOriginal) => {
   const originalApi = await importOriginal<typeof Api>()
   return {
     ...originalApi,

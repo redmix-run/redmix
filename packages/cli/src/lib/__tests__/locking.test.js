@@ -1,5 +1,5 @@
 global.__dirname = __dirname
-vi.mock('@redwoodjs/project-config', async (importOriginal) => {
+vi.mock('@redmix/project-config', async (importOriginal) => {
   const originalProjectConfig = await importOriginal()
   return {
     ...originalProjectConfig,

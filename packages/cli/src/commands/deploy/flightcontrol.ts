@@ -111,7 +111,7 @@ export const handler = async ({
       execa(`yarn node ${serverFilePath}`, execaConfig)
     } else {
       const { handler } = await import(
-        '@redwoodjs/api-server/dist/apiCLIConfigHandler.js'
+        '@redmix/api-server/dist/apiCLIConfigHandler.js'
       )
       handler()
     }

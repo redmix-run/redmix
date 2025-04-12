@@ -483,7 +483,7 @@ function isDbAuthSetup() {
       'auth.' + webAuthExtension,
     )
 
-    return /^import (.*) from ['"]@redwoodjs\/auth-dbauth-web['"]/m.test(
+    return /^import (.*) from ['"]@redmix\/auth-dbauth-web['"]/m.test(
       fs.readFileSync(webAuthPath),
     )
   }

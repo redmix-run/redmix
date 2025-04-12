@@ -301,7 +301,7 @@ This should allow you to create a fairly full-featured set of `<meta>` tags with
   twitter={{
     card: 'summary',
     site: '@mysite',
-    creator: '@redwoodjs'
+    creator: '@redmix'
   }}
 />
 ```

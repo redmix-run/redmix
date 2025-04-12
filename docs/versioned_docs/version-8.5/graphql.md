@@ -186,7 +186,7 @@ const App = () => (
 // ...
 ```
 
-You can use Apollo's `useQuery` and `useMutation` hooks by importing them from `@redwoodjs/web`, though if you're using `useQuery`, we recommend that you use a [Cell](cells.md):
+You can use Apollo's `useQuery` and `useMutation` hooks by importing them from `@redmix/web`, though if you're using `useQuery`, we recommend that you use a [Cell](cells.md):
 
 ```jsx title="web/src/components/MutateButton.js"
 import { useMutation } from '@redmix/web'
@@ -365,7 +365,7 @@ Of the four, you'll see `args` and `root` being used a lot.
 
 ### Context
 
-In Redwood, the `context` object that's passed to resolvers is actually available to all your Services, whether or not they're serving as resolvers. Just import it from `@redwoodjs/graphql-server`:
+In Redwood, the `context` object that's passed to resolvers is actually available to all your Services, whether or not they're serving as resolvers. Just import it from `@redmix/graphql-server`:
 
 ```jsx
 import { context } from '@redmix/graphql-server'
@@ -2125,7 +2125,7 @@ export const handler = createGraphQLHandler({
 
 Redwood Errors are inspired from [Apollo Server Error codes](https://www.apollographql.com/docs/apollo-server/data/errors/#error-codes) for common use cases:
 
-To use a Redwood Error, import each from `@redwoodjs/graphql-server`.
+To use a Redwood Error, import each from `@redmix/graphql-server`.
 
 - `SyntaxError` - An unspecified error occurred
 - `ValidationError` - Invalid input to a service
