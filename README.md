@@ -3,27 +3,37 @@
   <h1 align="center">Redmix</h1>
 </p>
 
-> **TUTORIAL:** The best way to get to know Redmix is by going through the
-> extensive [Redmix Tutorial](https://redwoodjs.com/docs/tutorial). Have fun!
-
-> **QUICK START:** You can install and run a full-stack Redwood application on
-> your machine with only a couple commands. Check out the [Quick
-> Start](https://redwoodjs.com/docs/quick-start) guide to get started.
-
-> **DOCS:** Visit the full [RedwoodJS
-> Documentation](https://redwoodjs.com/docs/introduction) for extensive
-> reference docs and guides.
-
 ## About
 
 Redmix is a TypeScript Web App Framework that gives you all the tools you need
 to build web applications quickly and efficiently.
 
 Redmix is a fork of the [RedwoodJS](https://redwoodjs.com/) framework with the
-goal of taking it into the modern era.
+goal of taking it into the modern web development era with a smooth transition
+for existing RedwoodJS applications.
 
 Redmix would obviously not be where it is today without the vision and heroic
 efforts of the RedwoodJS founders, maintainers and community.
+
+## Learning Redmix
+
+The best documentation for Redmix is actually the RedwoodJS documentation.
+The first version of Redmix will be fully compatible with RedwoodJS v8.6 and
+there will be no specific documentation written for Redmix for now.
+
+RedwoodJS **TUTORIAL:** The best way to get to know Redmix is by going through
+the extensive [RedwoodJS Tutorial](https://redwoodjs.com/docs/tutorial). Have fun!
+
+RedwoodJS **QUICK START:** You can install and run a full-stack Redmix
+application on your machine with only a couple commands. Check out the [Quick
+Start](https://redwoodjs.com/docs/quick-start) guide to get started.
+
+RedwoodJS **DOCS:** Visit the full [RedwoodJS
+Documentation](https://redwoodjs.com/docs/introduction) for extensive reference
+docs and guides.
+
+The only thing you'll have to adjust are the package names and replace every
+`@redwood` package with a `@redmix` package of the same name.
 
 ### The Redmix Team
 
