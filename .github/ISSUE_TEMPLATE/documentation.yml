@@ -2,7 +2,7 @@ name: '📖 Documentation'
 description: 'A catch-all template for issues about documentation'
 
 title: '[Docs]: '
-labels: topic/docs
+labels: [topic/docs]
 
 body:
   - type: textarea

@@ -2,7 +2,7 @@ name: '🐛 Bug report'
 description: 'Something not working the way it should be?'
 
 title: '[Bug?]: '
-labels: bug/needs-info
+labels: [bug/needs-info]
 
 body:
   - type: textarea
