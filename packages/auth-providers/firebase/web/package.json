@@ -1,5 +1,5 @@
 {
-  "name": "@redwoodjs/auth-firebase-web",
+  "name": "@redmix/auth-firebase-web",
   "version": "8.0.0",
   "repository": {
     "type": "git",
@@ -49,10 +49,10 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@redwoodjs/auth": "workspace:*"
+    "@redmix/auth": "workspace:*"
   },
   "devDependencies": {
-    "@redwoodjs/framework-tools": "workspace:*",
+    "@redmix/framework-tools": "workspace:*",
     "@types/react": "^18.2.55",
     "concurrently": "8.2.2",
     "firebase": "10.14.1",

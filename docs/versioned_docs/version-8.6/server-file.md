@@ -17,7 +17,7 @@ yarn rw setup server-file
 This should give you a new file at `api/src/server.ts`:
 
 ```typescript title="api/src/server.ts"
-import { createServer } from '@redwoodjs/api-server'
+import { createServer } from '@redmix/api-server'
 
 import { logger } from 'src/lib/logger'
 

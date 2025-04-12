@@ -2,7 +2,7 @@ import { useEngine } from '@envelop/core'
 import * as GraphQLJS from 'graphql'
 import { beforeEach, vi, describe, expect, it } from 'vitest'
 
-import type * as Api from '@redwoodjs/api'
+import type * as Api from '@redmix/api'
 
 import { testSchema, testQuery } from '../__fixtures__/common'
 import {

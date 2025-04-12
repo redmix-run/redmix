@@ -1,8 +1,8 @@
 import { vi, describe, afterEach, it, expect } from 'vitest'
 import yargs from 'yargs/yargs'
 
-import * as apiServerCLIConfig from '@redwoodjs/api-server/dist/apiCLIConfig'
-import * as bothServerCLIConfig from '@redwoodjs/api-server/dist/bothCLIConfig'
+import * as apiServerCLIConfig from '@redmix/api-server/dist/apiCLIConfig'
+import * as bothServerCLIConfig from '@redmix/api-server/dist/bothCLIConfig'
 
 import { builder } from '../serve.js'
 

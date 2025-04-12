@@ -1,4 +1,4 @@
-import { mockRedwoodDirective, getDirectiveName } from '@redwoodjs/testing/api'
+import { mockRedwoodDirective, getDirectiveName } from '@redmix/testing/api'
 
 import requireAuth from './requireAuth'
 

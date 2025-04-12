@@ -146,7 +146,7 @@ import {
   verifyEvent,
   VerifyOptions,
   WebhookVerificationError,
-} from '@redwoodjs/api/webhooks'
+} from '@redmix/api/webhooks'
 
 import { logger } from 'src/lib/logger'
 
@@ -229,7 +229,7 @@ import {
   verifyEvent,
   VerifyOptions,
   WebhookVerificationError,
-} from '@redwoodjs/api/webhooks'
+} from '@redmix/api/webhooks'
 
 import { logger } from 'src/lib/logger'
 
@@ -322,7 +322,7 @@ import {
   verifyEvent,
   VerifyOptions,
   WebhookVerificationError,
-} from '@redwoodjs/api/webhooks'
+} from '@redmix/api/webhooks'
 
 import { logger } from 'src/lib/logger'
 
@@ -406,7 +406,7 @@ import {
   verifyEvent,
   VerifyOptions,
   WebhookVerificationError,
-} from '@redwoodjs/api/webhooks'
+} from '@redmix/api/webhooks'
 import { logger } from 'src/lib/logger'
 import { perform } from 'src/lib/orbit/jobs/loadActivitiesJob'
 
@@ -503,7 +503,7 @@ import {
   verifyEvent,
   VerifyOptions,
   WebhookVerificationError,
-} from '@redwoodjs/api/webhooks'
+} from '@redmix/api/webhooks'
 
 import { logger } from 'src/lib/logger'
 
@@ -586,7 +586,7 @@ import {
   verifyEvent,
   // VerifyOptions,
   WebhookVerificationError,
-} from '@redwoodjs/api/webhooks'
+} from '@redmix/api/webhooks'
 
 import { deserialize } from 'deserialize-json-api'
 import { parser, persister } from 'src/lib/orbit/loaders/activityLoader'
@@ -706,7 +706,7 @@ In that case, you might set `WEBHOOK_VERIFICATION=skipVerifier` and use the enva
 
 ```jsx
 import type { APIGatewayEvent } from 'aws-lambda'
-import { verifyEvent, WebhookVerificationError } from '@redwoodjs/api/webhooks'
+import { verifyEvent, WebhookVerificationError } from '@redmix/api/webhooks'
 
 import { logger } from 'src/lib/logger'
 
@@ -777,7 +777,7 @@ To sign a payload for an outgoing webhook, the `api/webhooks` package exports [s
 
 ```jsx
 import got from 'got'
-import { signPayload } from '@redwoodjs/api/webhooks'
+import { signPayload } from '@redmix/api/webhooks'
 
 const YOUR_OUTGOING_WEBHOOK_DESTINATION_URL = 'https://example.com/receive'
 const YOUR_WEBHOOK_SIGNATURE = process.env.WEBHOOK_SIGNATURE

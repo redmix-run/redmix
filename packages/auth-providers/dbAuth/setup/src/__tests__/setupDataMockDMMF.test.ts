@@ -14,8 +14,8 @@ import {
   expect,
 } from 'vitest'
 
-import type { AuthHandlerArgs } from '@redwoodjs/cli-helpers'
-import type { AuthGeneratorCtx } from '@redwoodjs/cli-helpers/src/auth/authTasks'
+import type { AuthHandlerArgs } from '@redmix/cli-helpers'
+import type { AuthGeneratorCtx } from '@redmix/cli-helpers/src/auth/authTasks'
 
 vi.mock('fs', async () => ({ ...memfs, default: memfs }))
 vi.mock('node:fs', async () => ({ ...memfs, default: memfs }))
@@ -251,7 +251,7 @@ model Post {
       {
         [packageJsonPath]: '{ "version": "0.0.0" }',
         'api/src/functions/graphql.ts': `
-import { createGraphQLHandler } from "@redwoodjs/graphql-server"
+import { createGraphQLHandler } from "@redmix/graphql-server"
 
 import { getCurrentUser } from 'src/lib/auth'
 `,
@@ -305,7 +305,7 @@ model UserExample {
       {
         [packageJsonPath]: '{ "version": "0.0.0" }',
         'api/src/functions/graphql.ts': `
-import { createGraphQLHandler } from "@redwoodjs/graphql-server"
+import { createGraphQLHandler } from "@redmix/graphql-server"
 
 import { getCurrentUser } from 'src/lib/auth'
 `,
@@ -350,7 +350,7 @@ import { getCurrentUser } from 'src/lib/auth'
       {
         [packageJsonPath]: '{ "version": "0.0.0" }',
         'api/src/functions/graphql.ts': `
-import { createGraphQLHandler } from "@redwoodjs/graphql-server"
+import { createGraphQLHandler } from "@redmix/graphql-server"
 
 import { getCurrentUser } from 'src/lib/auth'
 `,

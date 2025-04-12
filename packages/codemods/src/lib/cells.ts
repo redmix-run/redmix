@@ -15,7 +15,7 @@ import type {
 } from 'graphql'
 import { Kind, parse, visit } from 'graphql'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@redmix/project-config'
 
 export const findCells = (cwd: string = getPaths().web.src) => {
   const modules = fg.sync('**/*Cell.{js,jsx,ts,tsx}', {

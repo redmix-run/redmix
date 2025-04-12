@@ -15,9 +15,9 @@ In `api/src/uploads.ts` - setup uploads - processors, storage and the prisma ext
 ```ts
 // api/src/lib/uploads.ts
 nua
-import { setupUploads, UploadsConfig } from '@redwoodjs/storage'
-import { FileSystemStorage } from '@redwoodjs/storage/FileSystemStorage'
-import { UrlSigner } from '@redwoodjs/storage/UrlSigner'
+import { setupUploads, UploadsConfig } from '@redmix/storage'
+import { FileSystemStorage } from '@redmix/storage/FileSystemStorage'
+import { UrlSigner } from '@redmix/storage/UrlSigner'
 
 const uploadsConfig: UploadsConfig = {
   // 👇 prisma model
@@ -55,7 +55,7 @@ export { saveFiles, storagePrismaExtension }
 
 import { PrismaClient } from '@prisma/client'
 
-import { emitLogLevels, handlePrismaLogging } from '@redwoodjs/api/logger'
+import { emitLogLevels, handlePrismaLogging } from '@redmix/api/logger'
 
 import { logger } from './logger'
 import { storagePrismaExtension } from './uploads'

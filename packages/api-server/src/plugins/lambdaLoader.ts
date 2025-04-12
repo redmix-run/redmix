@@ -11,7 +11,7 @@ import type {
 } from 'fastify'
 import { escape } from 'lodash'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@redmix/project-config'
 
 import { requestHandler } from '../requestHandlers/awsLambdaFastify'
 
@@ -75,7 +75,7 @@ export const loadFunctionsFromDist = async (
 }
 
 // NOTE: Copied from @redwoodjs/internal/dist/files to avoid depending on @redwoodjs/internal.
-// import { findApiDistFunctions } from '@redwoodjs/internal/dist/files'
+// import { findApiDistFunctions } from '@redmix/internal/dist/files'
 function findApiDistFunctions(
   cwd: string = getPaths().api.base,
   options: FastGlobOptions = {},

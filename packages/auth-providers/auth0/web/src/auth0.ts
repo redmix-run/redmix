@@ -4,8 +4,8 @@ import type {
   RedirectLoginOptions,
 } from '@auth0/auth0-spa-js'
 
-import type { CurrentUser } from '@redwoodjs/auth'
-import { createAuthentication } from '@redwoodjs/auth'
+import type { CurrentUser } from '@redmix/auth'
+import { createAuthentication } from '@redmix/auth'
 
 // TODO: Map out this user properly.
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type

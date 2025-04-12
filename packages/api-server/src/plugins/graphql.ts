@@ -8,12 +8,12 @@ import type {
   FastifyRequest,
 } from 'fastify'
 
-import type { GlobalContext } from '@redwoodjs/context'
-import { getAsyncStoreInstance } from '@redwoodjs/context/dist/store'
-import { coerceRootPath } from '@redwoodjs/fastify-web/dist/helpers'
-import { createGraphQLYoga } from '@redwoodjs/graphql-server'
-import type { GraphQLYogaOptions } from '@redwoodjs/graphql-server'
-import { getPaths } from '@redwoodjs/project-config'
+import type { GlobalContext } from '@redmix/context'
+import { getAsyncStoreInstance } from '@redmix/context/dist/store'
+import { coerceRootPath } from '@redmix/fastify-web/dist/helpers'
+import { createGraphQLYoga } from '@redmix/graphql-server'
+import type { GraphQLYogaOptions } from '@redmix/graphql-server'
+import { getPaths } from '@redmix/project-config'
 
 import { lambdaEventForFastifyRequest } from '../requestHandlers/awsLambdaFastify'
 

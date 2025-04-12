@@ -1,6 +1,6 @@
 import { vi, describe, it, expect } from 'vitest'
 
-import type { RWRoute } from '@redwoodjs/structure/dist/model/RWRoute'
+import type { RWRoute } from '@redmix/structure/dist/model/RWRoute'
 
 import { detectPrerenderRoutes } from '../detection'
 

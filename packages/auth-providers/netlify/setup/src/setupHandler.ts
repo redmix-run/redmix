@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 
-import { standardAuthHandler } from '@redwoodjs/cli-helpers'
+import { standardAuthHandler } from '@redmix/cli-helpers'
 
 import type { Args } from './setup'
 
@@ -14,7 +14,7 @@ export async function handler({ force: forceArg }: Args) {
     basedir: __dirname,
     forceArg,
     provider: 'netlify',
-    authDecoderImport: `import { authDecoder } from '@redwoodjs/auth-netlify-api'`,
+    authDecoderImport: `import { authDecoder } from '@redmix/auth-netlify-api'`,
     apiPackages: [`@redwoodjs/auth-netlify-api@${version}`],
     webPackages: [
       `@redwoodjs/auth-netlify-web@${version}`,

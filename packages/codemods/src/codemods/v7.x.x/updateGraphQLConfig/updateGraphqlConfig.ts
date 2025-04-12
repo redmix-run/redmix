@@ -3,7 +3,7 @@ import path from 'path'
 
 import { fetch } from '@whatwg-node/fetch'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@redmix/project-config'
 
 export const updateGraphqlConfig = async () => {
   const res = await fetch(

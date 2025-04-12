@@ -14,7 +14,7 @@ import {
   assert,
 } from 'vitest'
 
-import { type AuthHandlerArgs } from '@redwoodjs/cli-helpers'
+import { type AuthHandlerArgs } from '@redmix/cli-helpers'
 
 vi.mock('fs', async () => ({ ...memfs, default: memfs }))
 vi.mock('node:fs', async () => ({ ...memfs, default: memfs }))
@@ -108,7 +108,7 @@ describe('dbAuth setup command', () => {
       {
         [packageJsonPath]: '{ "version": "0.0.0" }',
         [graphqlTsPath]: `
-import { createGraphQLHandler } from '@redwoodjs/graphql-server'
+import { createGraphQLHandler } from '@redmix/graphql-server'
 
 import directives from 'src/directives/**/*.{js,ts}'
 import sdls from 'src/graphql/**/*.sdl.{js,ts}'

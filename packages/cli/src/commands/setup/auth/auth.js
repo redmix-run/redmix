@@ -7,7 +7,7 @@ import terminalLink from 'terminal-link'
 import {
   recordTelemetryAttributes,
   standardAuthBuilder,
-} from '@redwoodjs/cli-helpers'
+} from '@redmix/cli-helpers'
 
 import { getPaths } from '../../../lib/index.js'
 

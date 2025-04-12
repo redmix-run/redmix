@@ -12,9 +12,9 @@ import type { DocumentNode } from 'graphql'
 import { print } from 'graphql'
 import terminalLink from 'terminal-link'
 
-import { rootSchema } from '@redwoodjs/graphql-server'
-import type { ScalarSchemaKeys } from '@redwoodjs/graphql-server/src/rootSchema'
-import { getPaths, getConfig, resolveFile } from '@redwoodjs/project-config'
+import { rootSchema } from '@redmix/graphql-server'
+import type { ScalarSchemaKeys } from '@redmix/graphql-server/src/rootSchema'
+import { getPaths, getConfig, resolveFile } from '@redmix/project-config'
 
 export const generateGraphQLSchema = async () => {
   const redwoodProjectPaths = getPaths()

@@ -1,6 +1,6 @@
 import { build as viteBuild } from 'vite'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@redmix/project-config'
 
 import { getEntries } from '../lib/entries.js'
 import { onWarn } from '../lib/onWarn.js'

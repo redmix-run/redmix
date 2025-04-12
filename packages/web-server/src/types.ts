@@ -1,4 +1,4 @@
-import type { RedwoodFastifyWebOptions } from '@redwoodjs/fastify-web'
+import type { RedwoodFastifyWebOptions } from '@redmix/fastify-web'
 
 export type ParsedOptions = {
   port?: number

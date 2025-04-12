@@ -5,8 +5,8 @@ import fs from 'fs-extra'
 import terminalLink from 'terminal-link'
 import type { Argv } from 'yargs'
 
-import { recordTelemetryAttributes } from '@redwoodjs/cli-helpers'
-import { getPaths } from '@redwoodjs/project-config'
+import { recordTelemetryAttributes } from '@redmix/cli-helpers'
+import { getPaths } from '@redmix/project-config'
 
 export const command = 'flightcontrol <side>'
 export const alias = 'fc'

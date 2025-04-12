@@ -3,7 +3,7 @@ import path from 'path'
 
 import semver from 'semver'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@redmix/project-config'
 
 function getCorrespondingTag(
   version: string,

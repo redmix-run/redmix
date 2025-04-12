@@ -1,6 +1,6 @@
 import gql from 'graphql-tag'
 
-import type { PubSub } from '@redwoodjs/realtime'
+import type { PubSub } from '@redmix/realtime'
 
 import { logger } from 'src/lib/logger'
 

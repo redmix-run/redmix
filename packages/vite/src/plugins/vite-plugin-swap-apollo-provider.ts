@@ -5,8 +5,8 @@ import type { PluginOption } from 'vite'
  * Temporary plugin, that swaps the ApolloProvider import with the Suspense enabled one,
  * until it becomes stable.
  *
- * import { RedwoodApolloProvider } from "@redwoodjs/web/apollo" ->
- * import { RedwoodApolloProvider } from "@redwoodjs/web/dist/apollo/suspense"
+ * import { RedwoodApolloProvider } from "@redmix/web/apollo" ->
+ * import { RedwoodApolloProvider } from "@redmix/web/dist/apollo/suspense"
  *
  */
 export function swapApolloProvider(): PluginOption {

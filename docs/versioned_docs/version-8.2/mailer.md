@@ -56,9 +56,9 @@ You can find community-maintained handlers by searching across npm, our forums, 
 The core file for the Mailer functions is `api/src/lib/mailer.ts`. This file contains configuration defining which handlers and renderers to use and when. It starts out looking like this:
 
 ```ts title=api/src/lib/mailer.ts
-import { Mailer } from '@redwoodjs/mailer-core'
-import { NodemailerMailHandler } from '@redwoodjs/mailer-handler-nodemailer'
-import { ReactEmailRenderer } from '@redwoodjs/mailer-renderer-react-email'
+import { Mailer } from '@redmix/mailer-core'
+import { NodemailerMailHandler } from '@redmix/mailer-handler-nodemailer'
+import { ReactEmailRenderer } from '@redmix/mailer-renderer-react-email'
 
 import { logger } from 'src/lib/logger'
 

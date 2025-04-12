@@ -10,7 +10,7 @@ describe('storybook config file fixtures', () => {
     expect(mainTemplate).toMatchInlineSnapshot(`
       "import type { StorybookConfig } from 'storybook-framework-redwoodjs-vite'
 
-      import { getPaths, importStatementPath } from '@redwoodjs/project-config'
+      import { getPaths, importStatementPath } from '@redmix/project-config'
 
       const redwoodProjectPaths = getPaths()
 

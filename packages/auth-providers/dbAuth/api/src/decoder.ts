@@ -1,6 +1,6 @@
 import type { APIGatewayProxyEvent } from 'aws-lambda'
 
-import type { Decoder } from '@redwoodjs/api'
+import type { Decoder } from '@redmix/api'
 
 import { dbAuthSession } from './shared'
 

@@ -5,8 +5,8 @@ import { vi, describe, expect, it } from 'vitest'
 import type {
   RedwoodError as RedwoodErrorType,
   EmailValidationError as EmailValidationErrorType,
-} from '@redwoodjs/api'
-import { createLogger } from '@redwoodjs/api/logger'
+} from '@redmix/api'
+import { createLogger } from '@redmix/api/logger'
 
 import { createGraphQLHandler } from '../../functions/graphql'
 

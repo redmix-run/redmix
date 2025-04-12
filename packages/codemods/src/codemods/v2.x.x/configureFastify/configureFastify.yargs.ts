@@ -5,7 +5,7 @@ import { fetch } from '@whatwg-node/fetch'
 import fg from 'fast-glob'
 import task from 'tasuku'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@redmix/project-config'
 
 import prettify from '../../../lib/prettify'
 import runTransform from '../../../lib/runTransform'

@@ -3,7 +3,7 @@ import path from 'path'
 import chalk from 'chalk'
 import fs from 'fs-extra'
 
-import { getCompatibilityData } from '@redwoodjs/cli-helpers'
+import { getCompatibilityData } from '@redmix/cli-helpers'
 
 import { installModule, isModuleInstalled } from './packages.js'
 

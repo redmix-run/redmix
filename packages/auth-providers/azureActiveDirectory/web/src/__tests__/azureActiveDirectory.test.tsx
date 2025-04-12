@@ -6,7 +6,7 @@ import type {
 import { renderHook, act } from '@testing-library/react'
 import { vi, it, expect, describe, beforeAll, beforeEach } from 'vitest'
 
-import type { CurrentUser } from '@redwoodjs/auth'
+import type { CurrentUser } from '@redmix/auth'
 
 import { createAuth } from '../azureActiveDirectory.js'
 

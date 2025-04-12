@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 
-import { getPaths, standardAuthHandler } from '@redwoodjs/cli-helpers'
+import { getPaths, standardAuthHandler } from '@redmix/cli-helpers'
 
 import type { Args } from './setup'
 
@@ -15,7 +15,7 @@ export async function handler({ force: forceArg }: Args) {
     forceArg,
     provider: 'supertokens',
     authDecoderImport:
-      "import { authDecoder } from '@redwoodjs/auth-supertokens-api'",
+      "import { authDecoder } from '@redmix/auth-supertokens-api'",
     apiPackages: [
       `@redwoodjs/auth-supertokens-api@${version}`,
       'supertokens-node@^15',

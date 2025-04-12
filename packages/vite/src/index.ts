@@ -6,8 +6,8 @@ import type { PluginOption } from 'vite'
 import { normalizePath } from 'vite'
 import { nodePolyfills } from 'vite-plugin-node-polyfills'
 
-import { getWebSideDefaultBabelConfig } from '@redwoodjs/babel-config'
-import { getConfig, getPaths } from '@redwoodjs/project-config'
+import { getWebSideDefaultBabelConfig } from '@redmix/babel-config'
+import { getConfig, getPaths } from '@redmix/project-config'
 
 import { getMergedConfig } from './lib/getMergedConfig.js'
 import { handleJsAsJsx } from './plugins/vite-plugin-jsx-loader.js'

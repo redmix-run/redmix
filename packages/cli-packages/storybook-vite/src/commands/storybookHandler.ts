@@ -6,9 +6,9 @@ import type { ExecaError } from 'execa'
 import execa from 'execa'
 import semver from 'semver'
 
-import { isTypeScriptProject, transformTSToJS } from '@redwoodjs/cli-helpers'
-import { getPaths } from '@redwoodjs/project-config'
-import { errorTelemetry } from '@redwoodjs/telemetry'
+import { isTypeScriptProject, transformTSToJS } from '@redmix/cli-helpers'
+import { getPaths } from '@redmix/project-config'
+import { errorTelemetry } from '@redmix/telemetry'
 
 import c from '../lib/colors'
 import type { StorybookYargsOptions } from '../types'

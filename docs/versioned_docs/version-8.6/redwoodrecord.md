@@ -87,7 +87,7 @@ yarn workspace api add @redwoodjs/record
 First you'll need to create a model to represent the database table you want to access. In our blog example, let's create a User model:
 
 ```jsx title="api/src/models/User.js"
-import { RedwoodRecord } from '@redwoodjs/record'
+import { RedwoodRecord } from '@redmix/record'
 
 export default class User extends RedwoodRecord {}
 ```

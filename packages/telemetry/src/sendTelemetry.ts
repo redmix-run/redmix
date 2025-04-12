@@ -8,8 +8,8 @@ import envinfo from 'envinfo'
 import system from 'systeminformation'
 import { v4 as uuidv4 } from 'uuid'
 
-import { getRawConfig } from '@redwoodjs/project-config'
-import type { RWRoute } from '@redwoodjs/structure/dist/model/RWRoute'
+import { getRawConfig } from '@redmix/project-config'
+import type { RWRoute } from '@redmix/structure/dist/model/RWRoute'
 
 // circular dependency when trying to import @redwoodjs/structure so lets do it
 // the old fashioned way

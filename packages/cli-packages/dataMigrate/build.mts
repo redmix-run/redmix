@@ -2,7 +2,7 @@ import {
   build,
   defaultBuildOptions,
   defaultIgnorePatterns,
-} from '@redwoodjs/framework-tools'
+} from '@redmix/framework-tools'
 
 // Build the package
 await build({

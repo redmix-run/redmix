@@ -4,8 +4,8 @@ import execa from 'execa'
 import fs from 'fs-extra'
 import terminalLink from 'terminal-link'
 
-import { recordTelemetryAttributes } from '@redwoodjs/cli-helpers'
-import { getPaths } from '@redwoodjs/project-config'
+import { recordTelemetryAttributes } from '@redmix/cli-helpers'
+import { getPaths } from '@redmix/project-config'
 
 // It's easy for the api side to exceed Render's free-plan limit.
 // Because telemetryMiddleware is added to Yargs as middleware,

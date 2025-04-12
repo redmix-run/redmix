@@ -49,7 +49,7 @@ For most cases however, you probably want to convert nulls to undefined - one wa
 
 ```ts title="api/src/services/users.ts"
 // highlight-next-line
-import { removeNulls } from '@redwoodjs/api'
+import { removeNulls } from '@redmix/api'
 
 export const updateUser: MutationResolvers['updateUser'] = ({ id, input }) => {
   return db.user.update({
@@ -246,7 +246,7 @@ So you'll have to make sure that the `getCurrentUser` function is typed.
 To help you get started, the comments above the `getCurrentUser` function describe its parameters' types. We recommend typing `decoded` without using imported types from Redwood, as this may be a little too generic!
 
 ```ts title='api/src/lib/auth.ts'
-import type { AuthContextPayload } from '@redwoodjs/api'
+import type { AuthContextPayload } from '@redmix/api'
 
 // Example 1: typing directly
 export const getCurrentUser: CurrentUserFunc = async (

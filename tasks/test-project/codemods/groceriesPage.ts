@@ -35,7 +35,7 @@ export default (file: FileInfo, api: API) => {
   const root = j(file.source)
 
   // Replace
-  // import { Link, routes } from '@redwoodjs/router'
+  // import { Link, routes } from '@redmix/router'
   // with
   // import type { GetGroceries, GetProduce } from 'types/graphql'
   root
@@ -57,9 +57,9 @@ export default (file: FileInfo, api: API) => {
     )
 
   // Replace
-  // import { Metadata } from '@redwoodjs/web'
+  // import { Metadata } from '@redmix/web'
   // with
-  // import { Metadata, useQuery } from '@redwoodjs/web'
+  // import { Metadata, useQuery } from '@redmix/web'
   root
     .find(j.ImportDeclaration, {
       source: {
@@ -78,7 +78,7 @@ export default (file: FileInfo, api: API) => {
   // import ProduceInfo from 'src/components/ProduceInfo'
   // import VegetableInfo from 'src/components/VegetableInfo'
   // after
-  // import { Metadata, useQuery } from '@redwoodjs/web'
+  // import { Metadata, useQuery } from '@redmix/web'
   root
     .find(j.ImportDeclaration, {
       source: {

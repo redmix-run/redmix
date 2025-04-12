@@ -1,5 +1,5 @@
 {
-  "name": "@redwoodjs/project-config",
+  "name": "@redmix/project-config",
   "version": "8.0.0",
   "repository": {
     "type": "git",
@@ -43,7 +43,7 @@
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "0.16.4",
-    "@redwoodjs/framework-tools": "workspace:*",
+    "@redmix/framework-tools": "workspace:*",
     "concurrently": "8.2.2",
     "publint": "0.3.11",
     "rimraf": "6.0.1",

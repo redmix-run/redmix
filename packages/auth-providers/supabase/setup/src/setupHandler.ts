@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 
-import { standardAuthHandler } from '@redwoodjs/cli-helpers'
+import { standardAuthHandler } from '@redmix/cli-helpers'
 
 import type { Args } from './setup'
 
@@ -14,7 +14,7 @@ export const handler = async ({ force: forceArg }: Args) => {
     basedir: __dirname,
     forceArg,
     provider: 'supabase',
-    authDecoderImport: `import { authDecoder } from '@redwoodjs/auth-supabase-api'`,
+    authDecoderImport: `import { authDecoder } from '@redmix/auth-supabase-api'`,
     apiPackages: [`@redwoodjs/auth-supabase-api@${version}`],
     webPackages: [
       `@redwoodjs/auth-supabase-web@${version}`,

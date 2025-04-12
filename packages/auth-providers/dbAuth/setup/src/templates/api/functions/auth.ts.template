@@ -1,7 +1,7 @@
 import type { APIGatewayProxyEvent, Context } from 'aws-lambda'
 
-import { DbAuthHandler } from '@redwoodjs/auth-dbauth-api'
-import type { DbAuthHandlerOptions, UserType } from '@redwoodjs/auth-dbauth-api'
+import { DbAuthHandler } from '@redmix/auth-dbauth-api'
+import type { DbAuthHandlerOptions, UserType } from '@redmix/auth-dbauth-api'
 
 import { cookieName } from 'src/lib/auth'
 import { db } from 'src/lib/db'

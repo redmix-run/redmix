@@ -4,10 +4,10 @@ import type {
   FindPostById,
 } from 'types/graphql'
 
-import { Link, routes, navigate } from '@redwoodjs/router'
-import { useMutation } from '@redwoodjs/web'
-import type { TypedDocumentNode } from '@redwoodjs/web'
-import { toast } from '@redwoodjs/web/toast'
+import { Link, routes, navigate } from '@redmix/router'
+import { useMutation } from '@redmix/web'
+import type { TypedDocumentNode } from '@redmix/web'
+import { toast } from '@redmix/web/toast'
 
 import { timeTag } from 'src/lib/formatters'
 

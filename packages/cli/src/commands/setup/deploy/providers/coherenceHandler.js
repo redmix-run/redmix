@@ -9,8 +9,8 @@ import {
   colors as c,
   getPaths,
   isTypeScriptProject,
-} from '@redwoodjs/cli-helpers'
-import { errorTelemetry } from '@redwoodjs/telemetry'
+} from '@redmix/cli-helpers'
+import { errorTelemetry } from '@redmix/telemetry'
 
 import { printSetupNotes } from '../../../../lib/index.js'
 import { serverFileExists } from '../../../../lib/project.js'

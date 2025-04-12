@@ -4,7 +4,7 @@ import path from 'path'
 
 import fs from 'fs-extra'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@redmix/project-config'
 
 /**
  * Spawn a background process with the stdout/stderr redirected to log files within the `.redwood` directory.

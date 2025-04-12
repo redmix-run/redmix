@@ -1,7 +1,7 @@
 export default `
 // web/src/components/BlogPostCell/BlogPostCell.test.js
 
-import { render, screen } from '@redwoodjs/testing'
+import { render, screen } from '@redmix/testing'
 import { Loading, Empty, Failure, Success } from './BlogPostCell'
 import { standard } from './BlogPostCell.mock'
 

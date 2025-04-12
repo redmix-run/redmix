@@ -9,9 +9,9 @@ import terminalLink from 'terminal-link'
 import {
   recordTelemetryAttributes,
   isTypeScriptProject,
-} from '@redwoodjs/cli-helpers'
-import { getConfig, ensurePosixPath } from '@redwoodjs/project-config'
-import { errorTelemetry } from '@redwoodjs/telemetry'
+} from '@redmix/cli-helpers'
+import { getConfig, ensurePosixPath } from '@redmix/project-config'
+import { errorTelemetry } from '@redmix/telemetry'
 
 import c from '../../lib/colors.js'
 import { generateTemplate, getPaths, writeFilesTask } from '../../lib/index.js'

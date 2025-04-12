@@ -1,5 +1,5 @@
 {
-  "name": "@redwoodjs/telemetry",
+  "name": "@redmix/telemetry",
   "version": "8.0.0",
   "repository": {
     "type": "git",
@@ -21,8 +21,8 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@redwoodjs/project-config": "workspace:*",
-    "@redwoodjs/structure": "workspace:*",
+    "@redmix/project-config": "workspace:*",
+    "@redmix/structure": "workspace:*",
     "@whatwg-node/fetch": "0.9.21",
     "ci-info": "4.0.0",
     "envinfo": "7.14.0",

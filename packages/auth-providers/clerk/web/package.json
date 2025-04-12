@@ -1,5 +1,5 @@
 {
-  "name": "@redwoodjs/auth-clerk-web",
+  "name": "@redmix/auth-clerk-web",
   "version": "8.0.0",
   "repository": {
     "type": "git",
@@ -49,12 +49,12 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@redwoodjs/auth": "workspace:*"
+    "@redmix/auth": "workspace:*"
   },
   "devDependencies": {
     "@clerk/clerk-react": "4.32.4",
     "@clerk/types": "3.65.4",
-    "@redwoodjs/framework-tools": "workspace:*",
+    "@redmix/framework-tools": "workspace:*",
     "@types/react": "^18.2.55",
     "concurrently": "8.2.2",
     "publint": "0.3.11",

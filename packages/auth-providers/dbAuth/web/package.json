@@ -1,5 +1,5 @@
 {
-  "name": "@redwoodjs/auth-dbauth-web",
+  "name": "@redmix/auth-dbauth-web",
   "version": "8.0.0",
   "repository": {
     "type": "git",
@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "@babel/runtime-corejs3": "7.26.10",
-    "@redwoodjs/auth": "workspace:*",
+    "@redmix/auth": "workspace:*",
     "@simplewebauthn/browser": "7.4.0",
     "core-js": "3.38.1"
   },

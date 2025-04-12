@@ -1,6 +1,6 @@
 import { beforeEach, describe, it, expect } from 'vitest'
 
-import { PresenceValidationError } from '@redwoodjs/api'
+import { PresenceValidationError } from '@redmix/api'
 
 import Validation from '../ValidationMixin'
 

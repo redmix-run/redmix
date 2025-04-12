@@ -1,6 +1,6 @@
 import gql from 'graphql-tag'
 
-import { createValidatorDirective } from '@redwoodjs/graphql-server'
+import { createValidatorDirective } from '@redmix/graphql-server'
 
 import { requireAuth as applicationRequireAuth } from 'src/lib/auth'
 

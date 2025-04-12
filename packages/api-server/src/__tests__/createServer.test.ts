@@ -13,7 +13,7 @@ import {
 } from 'vitest'
 import type { MockInstance } from 'vitest'
 
-import { getConfig } from '@redwoodjs/project-config'
+import { getConfig } from '@redmix/project-config'
 
 import type { createServer as tCreateServer } from '../createServer.js'
 import {

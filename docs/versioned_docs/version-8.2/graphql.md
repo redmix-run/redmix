@@ -173,7 +173,7 @@ All this gets us closer to Redwood's goal of being able to deploy to a "generic 
 By default, Redwood Apps come ready-to-query with the `RedwoodApolloProvider`. As you can tell from the name, this Provider wraps [ApolloProvider](https://www.apollographql.com/docs/react/api/react/hooks/#the-apolloprovider-component). Omitting a few things, this is what you'll normally see in Redwood Apps:
 
 ```jsx title="web/src/App.js"
-import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
+import { RedwoodApolloProvider } from '@redmix/web/apollo'
 
 // ...
 
@@ -189,7 +189,7 @@ const App = () => (
 You can use Apollo's `useQuery` and `useMutation` hooks by importing them from `@redwoodjs/web`, though if you're using `useQuery`, we recommend that you use a [Cell](cells.md):
 
 ```jsx title="web/src/components/MutateButton.js"
-import { useMutation } from '@redwoodjs/web'
+import { useMutation } from '@redmix/web'
 
 const MUTATION = gql`
   # your mutation...
@@ -368,7 +368,7 @@ Of the four, you'll see `args` and `root` being used a lot.
 In Redwood, the `context` object that's passed to resolvers is actually available to all your Services, whether or not they're serving as resolvers. Just import it from `@redwoodjs/graphql-server`:
 
 ```jsx
-import { context } from '@redwoodjs/graphql-server'
+import { context } from '@redmix/graphql-server'
 ```
 
 #### How to Modify the Context
@@ -880,7 +880,7 @@ useCache is a custom hook that returns the cache object and some useful methods 
 - [clearStore](#clearstore)
 
 ```ts
-import { useCache } from '@redwoodjs/web/apollo'
+import { useCache } from '@redmix/web/apollo'
 ```
 
 ### cache
@@ -888,7 +888,7 @@ import { useCache } from '@redwoodjs/web/apollo'
 Returns the normalized, in-memory cache.
 
 ```ts
-import { useCache } from '@redwoodjs/web/apollo'
+import { useCache } from '@redmix/web/apollo'
 
 const { cache } = useCache()
 ```
@@ -898,7 +898,7 @@ const { cache } = useCache()
 Either removes a normalized object from the cache or removes a specific field from a normalized object in the cache.
 
 ```ts
-import { useCache } from '@redwoodjs/web/apollo'
+import { useCache } from '@redmix/web/apollo'
 
 const Fruit = ({ id }: { id: FragmentIdentifier }) => {
   const { evict } = useCache()
@@ -913,7 +913,7 @@ const Fruit = ({ id }: { id: FragmentIdentifier }) => {
 Returns a serialized representation of the cache's current contents
 
 ```ts
-import { useCache } from '@redwoodjs/web/apollo'
+import { useCache } from '@redmix/web/apollo'
 
 const Fruit = ({ id }: { id: FragmentIdentifier }) => {
   const { extract } = useCache()
@@ -926,7 +926,7 @@ const Fruit = ({ id }: { id: FragmentIdentifier }) => {
 ### identify
 
 ```ts
-import { useCache } from '@redwoodjs/web/apollo'
+import { useCache } from '@redmix/web/apollo'
 
 const Fruit = ({ id }: { id: FragmentIdentifier }) => {
   const { identify } = useCache()
@@ -944,7 +944,7 @@ Modifies one or more field values of a cached object. Must provide a modifier fu
 Returns true if the cache was modified successfully and false otherwise.
 
 ```ts
-import { useCache } from '@redwoodjs/web/apollo'
+import { useCache } from '@redmix/web/apollo'
 
 const Fruit = ({ id }: { id: FragmentIdentifier }) => {
   const { modify } = useCache()
@@ -968,7 +968,7 @@ const Fruit = ({ id }: { id: FragmentIdentifier }) => {
 To reset the cache without refetching active queries, use the clearStore method.
 
 ```ts
-import { useCache } from '@redwoodjs/web/apollo'
+import { useCache } from '@redmix/web/apollo'
 
 const Fruit = ({ id }: { id: FragmentIdentifier }) => {
   const { clearStore } = useCache()
@@ -982,7 +982,7 @@ const Fruit = ({ id }: { id: FragmentIdentifier }) => {
 Reset the cache entirely, such as when a user logs out.
 
 ```ts
-import { useCache } from '@redwoodjs/web/apollo'
+import { useCache } from '@redmix/web/apollo'
 
 const Fruit = ({ id }: { id: FragmentIdentifier }) => {
   const { resetStore } = useCache()
@@ -1122,7 +1122,7 @@ Redwood makes it easy to code, organize, and map your directives into the GraphQ
 You simply add them to the `directives` directory and the `createGraphQLHandler` will do all the work.
 
 ```tsx title="api/src/functions/graphql.ts"
-import { createGraphQLHandler } from '@redwoodjs/graphql-server'
+import { createGraphQLHandler } from '@redmix/graphql-server'
 
 import directives from 'src/directives/**/*.{js,ts}' // 👈 directives live here
 import sdls from 'src/graphql/**/*.sdl.{js,ts}'
@@ -1339,7 +1339,7 @@ For example, you have chosen to log `data` return by each request, then you may 
 Here is an example of an application `/api/src/lib/logger.ts` configured to redact email addresses. Take note of the path `data.users[*].email` as this says, in the `data` attribute, redact the `email` from every `user`:
 
 ```jsx title="/api/src/lib/logger.ts"
-import { createLogger, redactionsList } from '@redwoodjs/api/logger'
+import { createLogger, redactionsList } from '@redmix/api/logger'
 
 export const logger = createLogger({
   options: {
@@ -2099,7 +2099,7 @@ To use a Redwood Error, import each from `@redwoodjs/graphql-server`.
 If you use one of the errors, then the message provided will not be masked and will be shared in the GraphQL response:
 
 ```tsx
-import { UserInputError } from '@redwoodjs/graphql-server'
+import { UserInputError } from '@redmix/graphql-server'
 // ...
 throw new UserInputError('An email is required.')
 ```

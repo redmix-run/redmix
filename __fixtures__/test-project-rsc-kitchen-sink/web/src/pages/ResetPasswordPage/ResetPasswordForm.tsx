@@ -8,9 +8,9 @@ import {
   PasswordField,
   Submit,
   FieldError,
-} from '@redwoodjs/forms'
-import { navigate, routes } from '@redwoodjs/router'
-import { toast } from '@redwoodjs/web/toast'
+} from '@redmix/forms'
+import { navigate, routes } from '@redmix/router'
+import { toast } from '@redmix/web/toast'
 
 import { useAuth } from 'src/auth'
 

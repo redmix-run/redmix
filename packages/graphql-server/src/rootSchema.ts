@@ -9,8 +9,8 @@ import {
 } from 'graphql-scalars'
 import gql from 'graphql-tag'
 
-import { prismaVersion, redwoodVersion } from '@redwoodjs/api'
-import type { GlobalContext } from '@redwoodjs/context'
+import { prismaVersion, redwoodVersion } from '@redmix/api'
+import type { GlobalContext } from '@redmix/context'
 
 /**
  * This adds scalar types for dealing with Date, Time, DateTime, and JSON.

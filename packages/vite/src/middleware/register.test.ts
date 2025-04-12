@@ -1,10 +1,10 @@
 import { afterEach, beforeEach, describe, expect, it, vi, vitest } from 'vitest'
 
-import type { Middleware, MiddlewareClass } from '@redwoodjs/web/middleware'
+import type { Middleware, MiddlewareClass } from '@redmix/web/middleware'
 import {
   MiddlewareRequest,
   MiddlewareResponse,
-} from '@redwoodjs/web/middleware'
+} from '@redmix/web/middleware'
 
 import {
   addMiddlewareHandlers,

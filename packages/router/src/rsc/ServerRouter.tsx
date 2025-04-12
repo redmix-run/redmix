@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 import React from 'react'
 
-import { getAuthState, getLocation } from '@redwoodjs/server-store'
+import { getAuthState, getLocation } from '@redmix/server-store'
 
 import { analyzeRoutes } from '../analyzeRoutes.js'
 import type { Wrappers } from '../analyzeRoutes.js'

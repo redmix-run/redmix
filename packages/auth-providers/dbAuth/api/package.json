@@ -1,5 +1,5 @@
 {
-  "name": "@redwoodjs/auth-dbauth-api",
+  "name": "@redmix/auth-dbauth-api",
   "version": "8.0.0",
   "repository": {
     "type": "git",
@@ -57,15 +57,15 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@redwoodjs/project-config": "workspace:*",
+    "@redmix/project-config": "workspace:*",
     "base64url": "3.0.1",
     "md5": "2.3.0",
     "uuid": "10.0.0"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "0.16.4",
-    "@redwoodjs/api": "workspace:*",
-    "@redwoodjs/framework-tools": "workspace:*",
+    "@redmix/api": "workspace:*",
+    "@redmix/framework-tools": "workspace:*",
     "@simplewebauthn/server": "7.4.0",
     "@types/md5": "2.3.5",
     "@types/uuid": "10.0.0",

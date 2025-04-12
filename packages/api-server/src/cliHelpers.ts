@@ -1,4 +1,4 @@
-import { getConfig } from '@redwoodjs/project-config'
+import { getConfig } from '@redmix/project-config'
 
 export function getAPIHost() {
   let host = process.env.REDWOOD_API_HOST

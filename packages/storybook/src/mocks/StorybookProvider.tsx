@@ -5,7 +5,7 @@ import {
   setupRequestHandlers,
   startMSW,
   mockCurrentUser,
-} from '@redwoodjs/testing/web'
+} from '@redmix/testing/web'
 
 import { MockProviders } from './MockProviders'
 

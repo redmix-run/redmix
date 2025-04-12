@@ -216,7 +216,7 @@ Let's look at a series of tests that mock the event with different information i
 First, let's write a test that divides 20 by 5 and we'll expect to get 4 as the quotient:
 
 ```jsx title="api/src/functions/divideBy/divide.test.ts"
-import { mockHttpEvent } from '@redwoodjs/testing/api'
+import { mockHttpEvent } from '@redmix/testing/api'
 import { handler } from './divide'
 
 describe('divide serverless function',  () => {
@@ -327,7 +327,7 @@ api
 Let's define a fixture for a new test case: when the function is invoked, but it is missing a divisor:
 
 ```jsx title="api/src/functions/divide/divide.fixtures.ts"
-import { mockHttpEvent } from '@redwoodjs/testing/api'
+import { mockHttpEvent } from '@redmix/testing/api'
 
 export const missingDivisor = () =>
   mockHttpEvent({
@@ -438,7 +438,7 @@ import {
   verifyEvent,
   VerifyOptions,
   WebhookVerificationError,
-} from '@redwoodjs/api/webhooks'
+} from '@redmix/api/webhooks'
 import { db } from 'src/lib/db'
 
 export const handler = async (event: APIGatewayEvent) => {
@@ -554,7 +554,7 @@ In each test scenario we will:
 In our first scenario, we'll use the shipped order to test that we can update the order given a valid tracking number and change its status to delivered:
 
 ```tsx title="api/src/functions/updateOrderStatus/updateOrderStatus.test.ts"
-import { mockSignedWebhook } from '@redwoodjs/testing/api'
+import { mockSignedWebhook } from '@redmix/testing/api'
 import { handler } from './updateOrderStatus'
 
 describe('updates an order via a webhook', () => {
@@ -774,9 +774,9 @@ The `useRequireAuth` wrapper configures your handler's `context` so that you can
 import type { APIGatewayEvent, Context } from 'aws-lambda'
 
 // highlight-next-line
-import { authDecoder } from '@redwoodjs/auth-dbauth-api'
+import { authDecoder } from '@redmix/auth-dbauth-api'
 // highlight-next-line
-import { useRequireAuth } from '@redwoodjs/graphql-server'
+import { useRequireAuth } from '@redmix/graphql-server'
 
 // highlight-next-line
 import { getCurrentUser, isAuthenticated } from 'src/lib/auth'

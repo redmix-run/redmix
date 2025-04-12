@@ -243,7 +243,7 @@ Let's add a sample comment to the test and check that the various parts are bein
 
 ```jsx title="web/src/components/Comment.test.jsx"
 // highlight-next-line
-import { render, screen } from '@redwoodjs/testing'
+import { render, screen } from '@redmix/testing'
 
 import Comment from './Comment'
 
@@ -273,7 +273,7 @@ describe('Comment', () => {
 
 ```tsx title="web/src/components/Comment.test.tsx"
 // highlight-next-line
-import { render, screen } from '@redwoodjs/testing'
+import { render, screen } from '@redmix/testing'
 
 import Comment from './Comment'
 

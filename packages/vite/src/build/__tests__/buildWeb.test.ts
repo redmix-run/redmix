@@ -2,8 +2,8 @@ import path from 'path'
 
 import { beforeEach, test, expect, afterAll } from 'vitest'
 
-import { findWebFiles } from '@redwoodjs/internal/dist/files.js'
-import { ensurePosixPath, getPaths } from '@redwoodjs/project-config'
+import { findWebFiles } from '@redmix/internal/dist/files.js'
+import { ensurePosixPath, getPaths } from '@redmix/project-config'
 
 import { prebuildWebFiles, prebuildWebFile, cleanWebBuild } from '../build.js'
 

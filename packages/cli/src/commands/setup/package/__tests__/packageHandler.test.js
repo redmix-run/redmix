@@ -44,7 +44,7 @@ import execa from 'execa'
 import { vol } from 'memfs'
 import { vi, describe, beforeEach, afterEach, test, expect } from 'vitest'
 
-import { getCompatibilityData } from '@redwoodjs/cli-helpers'
+import { getCompatibilityData } from '@redmix/cli-helpers'
 
 import { handler } from '../packageHandler.js'
 

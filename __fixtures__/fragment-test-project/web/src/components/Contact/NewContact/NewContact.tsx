@@ -4,10 +4,10 @@ import type {
   CreateContactMutationVariables,
 } from 'types/graphql'
 
-import { navigate, routes } from '@redwoodjs/router'
-import { useMutation } from '@redwoodjs/web'
-import type { TypedDocumentNode } from '@redwoodjs/web'
-import { toast } from '@redwoodjs/web/toast'
+import { navigate, routes } from '@redmix/router'
+import { useMutation } from '@redmix/web'
+import type { TypedDocumentNode } from '@redmix/web'
+import { toast } from '@redmix/web/toast'
 
 import ContactForm from 'src/components/Contact/ContactForm'
 

@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid'
 import {
   recordTelemetryAttributes,
   recordTelemetryError,
-} from '@redwoodjs/cli-helpers'
+} from '@redmix/cli-helpers'
 
 const DEFAULT_ERROR_EPILOGUE = [
   'Need help?',

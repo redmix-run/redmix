@@ -1,10 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 
-import {
-  isTypeScriptProject,
-  standardAuthHandler,
-} from '@redwoodjs/cli-helpers'
+import { isTypeScriptProject, standardAuthHandler } from '@redmix/cli-helpers'
 
 import type { Args } from './setup'
 

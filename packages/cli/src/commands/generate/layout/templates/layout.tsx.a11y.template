@@ -1,4 +1,4 @@
-import { SkipNavLink, SkipNavContent } from '@redwoodjs/router'
+import { SkipNavLink, SkipNavContent } from '@redmix/router'
 import '@redwoodjs/router/skip-nav.css'
 
 /**

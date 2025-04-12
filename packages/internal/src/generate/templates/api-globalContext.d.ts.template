@@ -1,4 +1,4 @@
-import type { GlobalContext } from "@redwoodjs/context"
+import type { GlobalContext } from "@redmix/context"
 
 export {}
 

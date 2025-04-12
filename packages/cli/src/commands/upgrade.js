@@ -7,8 +7,8 @@ import latestVersion from 'latest-version'
 import { Listr } from 'listr2'
 import terminalLink from 'terminal-link'
 
-import { recordTelemetryAttributes } from '@redwoodjs/cli-helpers'
-import { getConfig } from '@redwoodjs/project-config'
+import { recordTelemetryAttributes } from '@redmix/cli-helpers'
+import { getConfig } from '@redmix/project-config'
 
 import c from '../lib/colors.js'
 import { generatePrismaClient } from '../lib/generatePrismaClient.js'

@@ -10,13 +10,13 @@ import * as t from '@babel/types'
 import type { Plugin } from 'vite'
 import { normalizePath } from 'vite'
 
-import type { PagesDependency } from '@redwoodjs/project-config'
+import type { PagesDependency } from '@redmix/project-config'
 import {
   ensurePosixPath,
   getPaths,
   importStatementPath,
   processPagesDir,
-} from '@redwoodjs/project-config'
+} from '@redmix/project-config'
 
 const getPathRelativeToSrc = (maybeAbsolutePath: string) => {
   // If the path is already relative

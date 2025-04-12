@@ -1,6 +1,6 @@
 //@ts-nocheck
-import { parseJWT } from '@redwoodjs/api'
-import { AuthenticationError, ForbiddenError } from '@redwoodjs/graphql-server'
+import { parseJWT } from '@redmix/api'
+import { AuthenticationError, ForbiddenError } from '@redmix/graphql-server'
 
 import { logger } from 'src/lib/logger'
 

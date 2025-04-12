@@ -1,5 +1,5 @@
 {
-  "name": "@redwoodjs/server-store",
+  "name": "@redmix/server-store",
   "version": "8.0.0",
   "repository": {
     "type": "git",
@@ -22,14 +22,14 @@
     "build:types": "tsc --build --verbose"
   },
   "dependencies": {
-    "@redwoodjs/auth": "workspace:*",
-    "@redwoodjs/cookie-jar": "workspace:*",
+    "@redmix/auth": "workspace:*",
+    "@redmix/cookie-jar": "workspace:*",
     "esbuild": "0.24.2",
     "fast-glob": "3.3.2",
     "fs-extra": "11.2.0"
   },
   "devDependencies": {
-    "@redwoodjs/framework-tools": "workspace:*",
+    "@redmix/framework-tools": "workspace:*",
     "@types/fs-extra": "11.0.4",
     "tsx": "4.19.3",
     "typescript": "5.6.2"

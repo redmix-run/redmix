@@ -1,5 +1,5 @@
 {
-  "name": "@redwoodjs/record",
+  "name": "@redmix/record",
   "version": "8.0.0",
   "repository": {
     "type": "git",
@@ -30,13 +30,13 @@
   },
   "dependencies": {
     "@prisma/client": "5.20.0",
-    "@redwoodjs/api": "workspace:*",
-    "@redwoodjs/project-config": "workspace:*",
+    "@redmix/api": "workspace:*",
+    "@redmix/project-config": "workspace:*",
     "camelcase": "6.3.0"
   },
   "devDependencies": {
     "@prisma/internals": "5.20.0",
-    "@redwoodjs/framework-tools": "workspace:*",
+    "@redmix/framework-tools": "workspace:*",
     "esbuild": "0.24.2",
     "publint": "0.3.11",
     "tsx": "4.19.3",

@@ -1,5 +1,5 @@
 {
-  "name": "@redwoodjs/jobs",
+  "name": "@redmix/jobs",
   "version": "8.0.0",
   "repository": {
     "type": "git",
@@ -38,13 +38,13 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "@redwoodjs/cli-helpers": "workspace:*",
-    "@redwoodjs/project-config": "workspace:*",
+    "@redmix/cli-helpers": "workspace:*",
+    "@redmix/project-config": "workspace:*",
     "type-fest": "4.26.1"
   },
   "devDependencies": {
     "@prisma/client": "5.20.0",
-    "@redwoodjs/framework-tools": "workspace:*",
+    "@redmix/framework-tools": "workspace:*",
     "concurrently": "8.2.2",
     "publint": "0.3.11",
     "tsx": "4.19.3",

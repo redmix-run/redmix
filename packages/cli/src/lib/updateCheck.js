@@ -6,7 +6,7 @@ import fs from 'fs-extra'
 import latestVersion from 'latest-version'
 import semver from 'semver'
 
-import { getConfig } from '@redwoodjs/project-config'
+import { getConfig } from '@redmix/project-config'
 
 import { spawnBackgroundProcess } from './background.js'
 import { isLockSet, setLock, unsetLock } from './locking.js'

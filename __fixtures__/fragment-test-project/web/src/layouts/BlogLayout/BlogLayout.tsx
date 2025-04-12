@@ -2,7 +2,7 @@ type BlogLayoutProps = {
   children?: React.ReactNode
 }
 
-import { Link, routes } from '@redwoodjs/router'
+import { Link, routes } from '@redmix/router'
 
 import { useAuth } from 'src/auth'
 

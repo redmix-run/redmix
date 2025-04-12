@@ -35,7 +35,7 @@ To start 🌲🪓 api-side logging, just
 - use `logger` with the level just as you might have with `console`
 
 ```jsx title="api/lib/logger.ts"
-import { createLogger } from '@redwoodjs/api/logger'
+import { createLogger } from '@redmix/api/logger'
 
 /**
  * Creates a logger. Options define how to log. Destination defines where to log.
@@ -97,7 +97,7 @@ The 'silent' level disables logging.
 > If you are not seeing log output when deployed, consider setting the level to `info` or `debug`.
 
 ```jsx
-import { createLogger } from '@redwoodjs/api/logger'
+import { createLogger } from '@redmix/api/logger'
 
 /**
  * Creates a logger with RedwoodLoggerOptions
@@ -146,7 +146,7 @@ You may wish to augment these defaults via the `redact` configuration setting, h
 /**
  * Custom redaction list
  */
-import { redactionsList } from '@redwoodjs/api/logger'
+import { redactionsList } from '@redmix/api/logger'
 
 //...
 
@@ -410,7 +410,7 @@ Please see [pino's redaction documentation](https://github.com/pinojs/pino/blob/
 /**
  * Customize a redactions list to add `my_secret_key`
  */
-import { redactionsList } from '@redwoodjs/api/logger'
+import { redactionsList } from '@redmix/api/logger'
 
 export const logger = createLogger({
   options: { redact: [...redactionsList, 'my_secret_key'] },
@@ -452,7 +452,7 @@ yarn workspace api add @honeybadger-io/js
 - Import both `stream` and `@honeybadger-io/js` into `api/src/lib/logger.ts`
 
 ```jsx
-import { createLogger } from '@redwoodjs/api/logger'
+import { createLogger } from '@redmix/api/logger'
 import { Writable } from 'stream'
 
 const Honeybadger = require('@honeybadger-io/js')

@@ -3,7 +3,7 @@ import path from 'node:path'
 import fs from 'fs-extra'
 import semver from 'semver'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@redmix/project-config'
 
 import { isModuleInstalled, installModule } from '../lib/packages.js'
 

@@ -1,4 +1,4 @@
-import { useLocation } from '@redwoodjs/router'
+import { useLocation } from '@redmix/router'
 
 export type OgImageUrlOptions = {
   extension?: 'png' | 'jpg'

@@ -5,8 +5,8 @@ import fs from 'node:fs'
 import envinfo from 'envinfo'
 import terminalLink from 'terminal-link'
 
-import { recordTelemetryAttributes } from '@redwoodjs/cli-helpers'
-import { getPaths } from '@redwoodjs/project-config'
+import { recordTelemetryAttributes } from '@redmix/cli-helpers'
+import { getPaths } from '@redmix/project-config'
 
 export const command = 'info'
 export const description = 'Print your system environment information'

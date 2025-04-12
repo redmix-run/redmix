@@ -1,6 +1,6 @@
 import { Listr } from 'listr2'
 
-import { recordTelemetryAttributes } from '@redwoodjs/cli-helpers'
+import { recordTelemetryAttributes } from '@redmix/cli-helpers'
 
 import { deleteFilesTask } from '../../lib/index.js'
 

@@ -8,7 +8,7 @@ First let's update the `Article` component to contain that functionality:
 <TabItem value="js" label="JavaScript">
 
 ```jsx title="web/src/components/Article/Article.jsx"
-import { Link, routes } from '@redwoodjs/router'
+import { Link, routes } from '@redmix/router'
 
 // highlight-start
 const truncate = (text, length) => {
@@ -40,7 +40,7 @@ export default Article
 <TabItem value="ts" label="TypeScript">
 
 ```tsx title="web/src/components/Article/Article.tsx"
-import { Link, routes } from '@redwoodjs/router'
+import { Link, routes } from '@redmix/router'
 
 import type { Post } from 'types/graphql'
 
@@ -195,7 +195,7 @@ export const Success = ({ articles }) => {
 import Article from 'src/components/Article'
 
 import type { ArticlesQuery } from 'types/graphql'
-import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
+import type { CellSuccessProps, CellFailureProps } from '@redmix/web'
 
 export const QUERY = gql`
   query ArticlesQuery {

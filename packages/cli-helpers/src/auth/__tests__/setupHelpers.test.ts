@@ -54,7 +54,7 @@ import prompts from 'prompts'
 import { vi, describe, afterEach, it, expect } from 'vitest'
 import type { Mock, MockedFunction } from 'vitest'
 
-import type * as ProjectConfig from '@redwoodjs/project-config'
+import type * as ProjectConfig from '@redmix/project-config'
 
 import { standardAuthHandler } from '../setupHelpers.js'
 

@@ -1,4 +1,4 @@
-import type { InMemoryClient } from '@redwoodjs/api/cache'
+import type { InMemoryClient } from '@redmix/api/cache'
 
 type AsymmetricMatcher = {
   $$typeof: symbol

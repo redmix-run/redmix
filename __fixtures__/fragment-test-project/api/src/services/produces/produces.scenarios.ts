@@ -1,5 +1,5 @@
 import type { Prisma, Produce } from '@prisma/client'
-import type { ScenarioData } from '@redwoodjs/testing/api'
+import type { ScenarioData } from '@redmix/testing/api'
 
 export const standard = defineScenario<Prisma.ProduceCreateArgs>({
   produce: {

@@ -52,7 +52,7 @@ import {
   validateWith,
   validateWithSync,
   validateUniqueness,
-} from '@redwoodjs/api'
+} from '@redmix/api'
 
 export const createUser = async ({ input }) => {
   validate(input.firstName, 'First name', {
@@ -101,8 +101,8 @@ If you're using [Redwood's scaffolds](cli-commands.md#generate-scaffold) then yo
 Otherwise you'll need to use the `error` property that you can [destructure](https://www.apollographql.com/docs/react/data/mutations/#executing-a-mutation) from `useMutation()` and display an element containing the error message (Redwood's [form helpers](/docs/forms) will do some of the heavy lifting for you for displaying the error):
 
 ```jsx {13,21}
-import { Form, FormError, Label, TextField, Submit } from '@redwoodjs/forms'
-import { useMutation } from '@redwoodjs/web'
+import { Form, FormError, Label, TextField, Submit } from '@redmix/forms'
+import { useMutation } from '@redmix/web'
 
 const CREATE_CONTACT = gql`
   mutation CreateContactMutation($input: ContactInput!) {
@@ -135,7 +135,7 @@ const ContactPage = () => {
 You'll import the three functions below from `@redwoodjs/api`:
 
 ```jsx
-import { validate, validateWith, validateUniqueness } from '@redwoodjs/api'
+import { validate, validateWith, validateUniqueness } from '@redmix/api'
 ```
 
 ### validate()
@@ -973,7 +973,7 @@ yarn rw setup cache redis
 This generates the following (memcached example shown):
 
 ```js title="api/src/lib/cache.js"
-import { createCache, MemcachedClient } from '@redwoodjs/api/cache'
+import { createCache, MemcachedClient } from '@redmix/api/cache'
 
 import { logger } from './logger'
 

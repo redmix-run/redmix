@@ -1,5 +1,5 @@
 {
-  "name": "@redwoodjs/structure",
+  "name": "@redmix/structure",
   "version": "8.0.0",
   "description": "noun: the arrangement of and relations between the parts or elements of something complex",
   "repository": {
@@ -27,7 +27,7 @@
   "dependencies": {
     "@babel/runtime-corejs3": "7.26.10",
     "@prisma/internals": "5.20.0",
-    "@redwoodjs/project-config": "workspace:*",
+    "@redmix/project-config": "workspace:*",
     "@types/line-column": "1.0.2",
     "camelcase": "6.3.0",
     "core-js": "3.38.1",

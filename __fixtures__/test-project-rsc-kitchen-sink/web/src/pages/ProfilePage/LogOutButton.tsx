@@ -1,6 +1,6 @@
 'use client'
 
-import { navigate, routes } from '@redwoodjs/router'
+import { navigate, routes } from '@redmix/router'
 
 import { useAuth } from 'src/auth'
 

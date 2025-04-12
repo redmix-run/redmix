@@ -1,4 +1,4 @@
-import { loadEnvFiles } from '@redwoodjs/cli-helpers/loadEnvFiles'
+import { loadEnvFiles } from '@redmix/cli-helpers/loadEnvFiles'
 
 export const setupEnv = () => {
   loadEnvFiles()

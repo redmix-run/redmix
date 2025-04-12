@@ -1,7 +1,7 @@
 import type { APIGatewayProxyEvent, Context } from 'aws-lambda'
 import { vi, describe, expect, it } from 'vitest'
 
-import { createLogger } from '@redwoodjs/api/logger'
+import { createLogger } from '@redmix/api/logger'
 
 import { createGraphQLHandler } from '../functions/graphql'
 

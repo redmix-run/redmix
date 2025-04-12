@@ -2,8 +2,8 @@ import {
   createGraphQLHandler,
   makeMergedSchema,
   makeServices,
-} from '@redwoodjs/api'
-import importAll from '@redwoodjs/api/importAll.macro'
+} from '@redmix/api'
+import importAll from '@redmix/api/importAll.macro'
 
 import { db } from 'src/lib/db'
 

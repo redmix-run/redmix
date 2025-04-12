@@ -8,8 +8,8 @@ import {
   getApiSideBabelPlugins,
   getApiSideDefaultBabelConfig,
   transformWithBabel,
-} from '@redwoodjs/babel-config'
-import { ensurePosixPath, getPaths } from '@redwoodjs/project-config'
+} from '@redmix/babel-config'
+import { ensurePosixPath, getPaths } from '@redmix/project-config'
 
 import { cleanApiBuild } from '../build/api'
 import { findApiFiles } from '../files'

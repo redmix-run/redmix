@@ -4,8 +4,8 @@ import fs from 'fs-extra'
 import { Listr } from 'listr2'
 import { format } from 'prettier'
 
-import { addWebPackages, getPrettierOptions } from '@redwoodjs/cli-helpers'
-import { getConfig, getPaths } from '@redwoodjs/project-config'
+import { addWebPackages, getPrettierOptions } from '@redmix/cli-helpers'
+import { getConfig, getPaths } from '@redmix/project-config'
 
 import { runTransform } from '../../../../lib/runTransform.js'
 

@@ -120,7 +120,7 @@ describe('dbAuth handler WebAuthn task title', () => {
   it("does not prompt for WebAuthn if it's already set up", async () => {
     const localMockFiles = { ...mockFiles }
     localMockFiles[path.join(getPaths().web.src, 'auth.ts')] = `
-import { createDbAuthClient, createAuth } from '@redwoodjs/auth-dbauth-web'
+import { createDbAuthClient, createAuth } from '@redmix/auth-dbauth-web'
 
 const dbAuthClient = createDbAuthClient()
 
@@ -155,7 +155,7 @@ export const { AuthProvider, useAuth } = createAuth(dbAuthClient)
   it('does not prompt for WebAuthn if dbAuth is set up', async () => {
     const localMockFiles = { ...mockFiles }
     localMockFiles[path.join(getPaths().web.src, 'auth.ts')] = `
-import { createDbAuthClient, createAuth } from '@redwoodjs/auth-dbauth-web'
+import { createDbAuthClient, createAuth } from '@redmix/auth-dbauth-web'
 
 const dbAuthClient = createDbAuthClient()
 

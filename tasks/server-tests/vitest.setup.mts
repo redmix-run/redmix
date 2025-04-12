@@ -4,7 +4,7 @@ import { afterAll, afterEach, beforeAll, expect } from 'vitest'
 import { fs, path, $ } from 'zx'
 import type { ProcessPromise } from 'zx'
 
-import { getConfig } from '@redwoodjs/project-config'
+import { getConfig } from '@redmix/project-config'
 
 $.verbose = !!process.env.VERBOSE
 

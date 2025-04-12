@@ -4,7 +4,7 @@ import path from 'node:path'
 import type { PluginOptions, PluginTarget, TransformOptions } from '@babel/core'
 import { transformAsync } from '@babel/core'
 
-import { getPaths, projectSideIsEsm } from '@redwoodjs/project-config'
+import { getPaths, projectSideIsEsm } from '@redmix/project-config'
 
 import type { RegisterHookOptions } from './common'
 import {
@@ -120,7 +120,7 @@ export const getApiSideBabelPlugins = ({
             path: 'graphql-tag',
           },
           {
-            // import { context } from '@redwoodjs/context'
+            // import { context } from '@redmix/context'
             members: ['context'],
             path: '@redwoodjs/context',
           },

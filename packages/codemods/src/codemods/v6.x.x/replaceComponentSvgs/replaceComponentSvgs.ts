@@ -5,7 +5,7 @@ import { transform as svgrTransform } from '@svgr/core'
 import type { API, FileInfo, StringLiteral } from 'jscodeshift'
 import pascalcase from 'pascalcase'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@redmix/project-config'
 
 /**
  * @param svgFilePath Full path to the existing svg file

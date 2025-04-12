@@ -1,7 +1,7 @@
 import url from 'node:url'
 
-import type { RWRouteManifestItem } from '@redwoodjs/internal'
-import { getPaths } from '@redwoodjs/project-config'
+import type { RWRouteManifestItem } from '@redmix/internal'
+import { getPaths } from '@redmix/project-config'
 
 export const getRoutesList = async () => {
   const rwPaths = getPaths()

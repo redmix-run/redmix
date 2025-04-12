@@ -4,8 +4,8 @@ import type {
   MailRenderedContent,
   MailUtilities,
   MailRendererOptions,
-} from '@redwoodjs/mailer-core'
-import { AbstractMailRenderer } from '@redwoodjs/mailer-core'
+} from '@redmix/mailer-core'
+import { AbstractMailRenderer } from '@redmix/mailer-core'
 
 export type SupportedOutputFormats = 'both' | 'html' | 'text'
 export type RendererOptions = MailRendererOptions<SupportedOutputFormats> &

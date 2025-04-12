@@ -14,7 +14,7 @@ Regardless, there'll probably come a time when you have to configure Vite. All t
 ```js
 import dns from 'dns'
 import { defineConfig } from 'vite'
-import redwood from '@redwoodjs/vite'
+import redwood from '@redmix/vite'
 
 dns.setDefaultResultOrder('verbatim')
 

@@ -48,7 +48,7 @@ Assuming you've built a [Form](forms.md) for your profile let's add a
 
 ```tsx title="web/src/components/ProfileForm.tsx"
 // highlight-next-line
-import { FileField, TextField, FieldError } from '@redwoodjs/forms'
+import { FileField, TextField, FieldError } from '@redmix/forms'
 
 export const ProfileForm = ({ onSubmit }) => {
   return {
@@ -77,7 +77,7 @@ A `FileField` is just a standard `<input type="file">` - that's integrated with 
 Now we need to send the file as a mutation!
 
 ```tsx title="web/src/components/EditProfile.tsx"
-import { useMutation } from '@redwoodjs/web'
+import { useMutation } from '@redmix/web'
 
 const UPDATE_PROFILE_MUTATION = gql`
   // This is the Input type we setup with File earlier!
@@ -209,9 +209,9 @@ This will do three things:
 Let's break down the key components of the configuration.
 
 ```ts title="api/src/lib/uploads.ts"
-import { createUploadsConfig, setupStorage } from '@redwoodjs/storage'
-import { FileSystemStorage } from '@redwoodjs/storage/FileSystemStorage'
-import { UrlSigner } from '@redwoodjs/storage/signedUrl'
+import { createUploadsConfig, setupStorage } from '@redmix/storage'
+import { FileSystemStorage } from '@redmix/storage/FileSystemStorage'
+import { UrlSigner } from '@redmix/storage/signedUrl'
 
 // ⭐ (1)
 const uploadConfig = createUploadsConfig({
@@ -279,7 +279,7 @@ Now we need to extend our db client in `api/src/lib/db.{js,ts}` to use the confi
 ```ts title="api/src/lib/db.ts"
 import { PrismaClient } from '@prisma/client'
 
-import { emitLogLevels, handlePrismaLogging } from '@redwoodjs/api/logger'
+import { emitLogLevels, handlePrismaLogging } from '@redmix/api/logger'
 
 import { logger } from './logger'
 // highlight-next-line
@@ -588,7 +588,7 @@ The extension is determined by the name of the uploaded file.
 When you setup uploads, we also generate an API function (an endpoint) for you - by default at `/signedUrl`. You can use this in conjunction with the `.withSignedUrl` helper. For example:
 
 ```ts title="api/src/services/profiles/profiles.ts"
-import { EXPIRES_IN } from '@redwoodjs/storage/UrlSigner'
+import { EXPIRES_IN } from '@redmix/storage/UrlSigner'
 
 export const profile = async ({ id }) => {
   const profile = await db.profile.findUnique({
@@ -628,7 +628,7 @@ This will generate a URL that will expire in 2 days (from the point of query). L
 This function is automatically generated for you, but let's take a quick look at how it works:
 
 ```ts title="api/src/functions/signedUrl/signedUrl.ts"
-import type { SignatureValidationArgs } from '@redwoodjs/storage/UrlSigner'
+import type { SignatureValidationArgs } from '@redmix/storage/UrlSigner'
 
 // The urlSigner and fsStorage instances were configured when we setup uploads
 // highlight-next-line
@@ -759,7 +759,7 @@ import path from 'path'
 // highlight-next-line
 import fastifyStatic from '@fastify/static'
 
-import { createServer } from '@redwoodjs/api-server'
+import { createServer } from '@redmix/api-server'
 import { logger } from 'src/lib/logger'
 
 async function main() {
@@ -814,7 +814,7 @@ The default body size limit for the Redwood API server is 100MB (per request). D
 You can configure the `bodyLimit` option to increase or decrease the default limit.
 
 ```js title="api/server.js"
-import { createServer } from '@redwoodjs/api-server'
+import { createServer } from '@redmix/api-server'
 
 import { logger } from 'src/lib/logger'
 

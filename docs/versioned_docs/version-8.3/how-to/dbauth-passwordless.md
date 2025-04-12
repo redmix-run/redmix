@@ -60,7 +60,7 @@ Now that you have the file, let's add the `generateToken` function.
 ```javascript title="/api/src/services/users/users.js"
 // add the following two imports to the top of the file
 import crypto from 'node:crypto'
-import { hashPassword } from '@redwoodjs/auth-dbauth-api'
+import { hashPassword } from '@redmix/auth-dbauth-api'
 
 // add this to the bottom of the file
 export const generateLoginToken = async ({ email }) => {
@@ -216,10 +216,10 @@ import {
   PasswordField,
   Submit,
   FieldError,
-} from '@redwoodjs/forms'
-import { navigate, routes, Link } from '@redwoodjs/router'
-import { Metadata, useMutation } from '@redwoodjs/web'
-import { Toaster, toast } from '@redwoodjs/web/toast'
+} from '@redmix/forms'
+import { navigate, routes, Link } from '@redmix/router'
+import { Metadata, useMutation } from '@redmix/web'
+import { Toaster, toast } from '@redmix/web/toast'
 const GENERATE_LOGIN_TOKEN = gql`
   mutation generateLoginToken($email: String!) {
     generateLoginToken(email: $email) {
@@ -329,10 +329,10 @@ import {
   PasswordField,
   Submit,
   FieldError,
-} from '@redwoodjs/forms'
-import { navigate, routes, Link } from '@redwoodjs/router'
-import { Metadata, useMutation } from '@redwoodjs/web'
-import { Toaster, toast } from '@redwoodjs/web/toast'
+} from '@redmix/forms'
+import { navigate, routes, Link } from '@redmix/router'
+import { Metadata, useMutation } from '@redmix/web'
+import { Toaster, toast } from '@redmix/web/toast'
 
 import { useAuth } from 'src/auth'
 
@@ -451,8 +451,8 @@ yarn rw g page LoginPasswordless
 ```jsx title="/web/pages/LoginPasswordlessPage/LoginPasswordlessPage.js"
 import { useEffect, useState } from 'react'
 
-import { useLocation } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
+import { useLocation } from '@redmix/router'
+import { Metadata } from '@redmix/web'
 
 import LoginPasswordlessForm from 'src/components/LoginPasswordlessForm/LoginPasswordlessForm'
 import LoginPasswordlessTokenForm from 'src/components/LoginPasswordlessTokenForm/LoginPasswordlessTokenForm'
@@ -520,10 +520,10 @@ import {
   PasswordField,
   FieldError,
   Submit,
-} from '@redwoodjs/forms'
-import { Link, navigate, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
-import { toast, Toaster } from '@redwoodjs/web/toast'
+} from '@redmix/forms'
+import { Link, navigate, routes } from '@redmix/router'
+import { Metadata } from '@redmix/web'
+import { toast, Toaster } from '@redmix/web/toast'
 
 import { useAuth } from 'src/auth'
 

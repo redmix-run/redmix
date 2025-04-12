@@ -72,7 +72,7 @@ import concurrently from 'concurrently'
 import { find } from 'lodash'
 import { vi, describe, afterEach, it, expect } from 'vitest'
 
-import { getConfig } from '@redwoodjs/project-config'
+import { getConfig } from '@redmix/project-config'
 
 import { generatePrismaClient } from '../../lib/generatePrismaClient.js'
 import { handler } from '../dev.js'

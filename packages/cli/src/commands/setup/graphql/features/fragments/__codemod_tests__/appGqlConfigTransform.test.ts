@@ -3,7 +3,7 @@ import path from 'node:path'
 
 import { describe, test } from 'vitest'
 
-import { findUp } from '@redwoodjs/project-config'
+import { findUp } from '@redmix/project-config'
 
 describe('fragments graphQLClientConfig', () => {
   test('App.tsx with no graphQLClientConfig', async () => {

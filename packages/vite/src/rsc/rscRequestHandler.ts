@@ -11,7 +11,7 @@ import type Router from 'find-my-way'
 import type { HTTPMethod } from 'find-my-way'
 import type { ViteDevServer } from 'vite'
 
-import type { Middleware } from '@redwoodjs/web/dist/server/middleware'
+import type { Middleware } from '@redmix/web/dist/server/middleware'
 
 import {
   decodeReply,

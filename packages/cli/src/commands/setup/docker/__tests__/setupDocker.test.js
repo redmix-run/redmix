@@ -1,6 +1,6 @@
 import { vi, test, describe, expect } from 'vitest'
 
-import { recordTelemetryAttributes } from '@redwoodjs/cli-helpers'
+import { recordTelemetryAttributes } from '@redmix/cli-helpers'
 
 import { command, description, builder, handler } from '../docker.js'
 

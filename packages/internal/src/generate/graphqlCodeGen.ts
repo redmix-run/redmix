@@ -17,7 +17,7 @@ import type { LoadTypedefsOptions } from '@graphql-tools/load'
 import execa from 'execa'
 import { Kind, type DocumentNode } from 'graphql'
 
-import { getPaths, getConfig } from '@redwoodjs/project-config'
+import { getPaths, getConfig } from '@redmix/project-config'
 
 import { getTsConfigs } from '../project'
 
@@ -72,7 +72,7 @@ export const generateTypeDefGraphQLApi = async (): Promise<TypeDefResult> => {
       options: {
         content: [
           'import { Prisma } from "@prisma/client"',
-          "import { MergePrismaWithSdlTypes, MakeRelationsOptional } from '@redwoodjs/api'",
+          "import { MergePrismaWithSdlTypes, MakeRelationsOptional } from '@redmix/api'",
           `import { ${prismaImports.join(', ')} } from '@prisma/client'`,
         ],
         placement: 'prepend',

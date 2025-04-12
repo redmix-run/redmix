@@ -8,7 +8,7 @@ import { rimraf } from 'rimraf'
 import { hideBin } from 'yargs/helpers'
 import yargs from 'yargs/yargs'
 
-import { RedwoodTUI, ReactiveTUIContent, RedwoodStyling } from '@redwoodjs/tui'
+import { RedwoodTUI, ReactiveTUIContent, RedwoodStyling } from '@redmix/tui'
 
 import {
   addFrameworkDepsToProject,

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { getConfig, getPaths } from '@redwoodjs/project-config'
+import { getConfig, getPaths } from '@redmix/project-config'
 
 import { generateClientPreset } from './clientPreset'
 import { generateGraphQLSchema } from './graphqlSchema'

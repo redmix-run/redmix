@@ -15,13 +15,13 @@ import type { HTTPMethod } from 'find-my-way'
 import { createProxyMiddleware } from 'http-proxy-middleware'
 import type { Manifest as ViteBuildManifest } from 'vite'
 
-import { getConfig, getPaths } from '@redwoodjs/project-config'
-import { getRscStylesheetLinkGenerator } from '@redwoodjs/router/rscCss'
+import { getConfig, getPaths } from '@redmix/project-config'
+import { getRscStylesheetLinkGenerator } from '@redmix/router/rscCss'
 import {
   createPerRequestMap,
   createServerStorage,
-} from '@redwoodjs/server-store'
-import type { Middleware } from '@redwoodjs/web/dist/server/middleware'
+} from '@redmix/server-store'
+import type { Middleware } from '@redmix/web/dist/server/middleware'
 
 import { registerFwGlobalsAndShims } from './lib/registerFwGlobalsAndShims.js'
 import { invoke } from './middleware/invokeMiddleware.js'

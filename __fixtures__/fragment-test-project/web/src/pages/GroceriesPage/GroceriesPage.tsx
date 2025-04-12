@@ -1,5 +1,5 @@
 import type { GetGroceries, GetProduce } from "types/graphql";
-import { Metadata, useQuery } from '@redwoodjs/web';
+import { Metadata, useQuery } from '@redmix/web';
 
 import FruitInfo from "src/components/FruitInfo";
 import ProduceInfo from "src/components/ProduceInfo";

@@ -1,5 +1,5 @@
 {
-  "name": "@redwoodjs/tui",
+  "name": "@redmix/tui",
   "version": "8.0.0",
   "repository": {
     "type": "git",
@@ -26,7 +26,7 @@
     "stdout-update": "1.6.8"
   },
   "devDependencies": {
-    "@redwoodjs/framework-tools": "workspace:*",
+    "@redmix/framework-tools": "workspace:*",
     "tsx": "4.19.3",
     "typescript": "5.6.2"
   },

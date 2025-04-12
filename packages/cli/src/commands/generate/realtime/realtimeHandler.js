@@ -6,8 +6,8 @@ import pascalcase from 'pascalcase'
 import pluralize, { singular } from 'pluralize'
 import prompts from 'prompts'
 
-import { generate as generateTypes } from '@redwoodjs/internal/dist/generate/generate'
-import { errorTelemetry } from '@redwoodjs/telemetry'
+import { generate as generateTypes } from '@redmix/internal/dist/generate/generate'
+import { errorTelemetry } from '@redmix/telemetry'
 
 // Move this check out of experimental when server file is moved as well
 import c from '../../../lib/colors.js'

@@ -4,9 +4,9 @@ import execa from 'execa'
 import fs from 'fs-extra'
 import { Listr } from 'listr2'
 
-import { writeFile } from '@redwoodjs/cli-helpers'
-import { getConfig, getConfigPath, getPaths } from '@redwoodjs/project-config'
-import { errorTelemetry } from '@redwoodjs/telemetry'
+import { writeFile } from '@redmix/cli-helpers'
+import { getConfig, getConfigPath, getPaths } from '@redmix/project-config'
+import { errorTelemetry } from '@redmix/telemetry'
 
 import c from '../../../lib/colors.js'
 

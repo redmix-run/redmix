@@ -4,7 +4,7 @@ import path from 'path'
 import { ListrEnquirerPromptAdapter } from '@listr2/prompt-adapter-enquirer'
 import type { ListrRenderer, ListrTask, ListrTaskWrapper } from 'listr2'
 
-import { getConfig, resolveFile } from '@redwoodjs/project-config'
+import { getConfig, resolveFile } from '@redmix/project-config'
 
 import { colors } from '../lib/colors.js'
 import type { ExistingFiles } from '../lib/index.js'
@@ -58,7 +58,7 @@ function addAuthDecoderToCreateGraphQLHandler(content: string) {
  *
  * @param content - The contents of api/src/functions/graphql.ts
  * @param decoderImport - Something like
- *   `import { authDecoder } from '@redwoodjs/auth-clerk-api'`
+ *   `import { authDecoder } from '@redmix/auth-clerk-api'`
  * @returns content with the authDecoder import replaced with the new import
  */
 function replaceAuthDecoderImport(content: string, decoderImport: string) {
@@ -315,7 +315,7 @@ export const addConfigToWebApp = <
       if (ctx.setupMode === 'REPLACE' || ctx.setupMode === 'FORCE') {
         // Remove legacy AuthProvider import
         content = content.replace(
-          "import { AuthProvider } from '@redwoodjs/auth'\n",
+          "import { AuthProvider } from '@redmix/auth'\n",
           '',
         )
       }

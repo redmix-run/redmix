@@ -1,5 +1,5 @@
-import type { Decoded } from '@redwoodjs/api'
-import { AuthenticationError, ForbiddenError } from '@redwoodjs/graphql-server'
+import type { Decoded } from '@redmix/api'
+import { AuthenticationError, ForbiddenError } from '@redmix/graphql-server'
 
 import { db } from './db'
 

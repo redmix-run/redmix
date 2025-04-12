@@ -7,7 +7,7 @@ import execa from 'execa'
 import fs from 'fs-extra'
 import TerminalLink from 'terminal-link'
 
-import { getConfigPath } from '@redwoodjs/project-config'
+import { getConfigPath } from '@redmix/project-config'
 
 const config = new Configstore('@redwoodjs/cli')
 

@@ -15,7 +15,7 @@ export function mockAuth(): PluginOption {
         )
         // Add import to mocked `createAuth` at the top of the file.
         code =
-          "import { createAuthentication as createAuth } from '@redwoodjs/testing/dist/web/mockAuth.js'\n" +
+          "import { createAuthentication as createAuth } from '@redmix/testing/dist/web/mockAuth.js'\n" +
           code
       }
       return code

@@ -4,7 +4,7 @@ import * as path from 'node:path'
 import { getDMMF } from '@prisma/internals'
 import { Listr } from 'listr2'
 
-import { addApiPackages } from '@redwoodjs/cli-helpers'
+import { addApiPackages } from '@redmix/cli-helpers'
 
 import c from '../../../lib/colors.js'
 import { getPaths, transformTSToJS, writeFile } from '../../../lib/index.js'

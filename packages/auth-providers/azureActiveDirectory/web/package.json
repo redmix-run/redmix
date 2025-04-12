@@ -1,5 +1,5 @@
 {
-  "name": "@redwoodjs/auth-azure-active-directory-web",
+  "name": "@redmix/auth-azure-active-directory-web",
   "version": "8.0.0",
   "repository": {
     "type": "git",
@@ -49,11 +49,11 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@redwoodjs/auth": "workspace:*"
+    "@redmix/auth": "workspace:*"
   },
   "devDependencies": {
     "@azure/msal-browser": "2.39.0",
-    "@redwoodjs/framework-tools": "workspace:*",
+    "@redmix/framework-tools": "workspace:*",
     "@types/netlify-identity-widget": "1.9.6",
     "@types/react": "^18.2.55",
     "concurrently": "8.2.2",

@@ -13,7 +13,7 @@ Now let's link the title of the post on the homepage to the detail page (and inc
 
 ```jsx title="web/src/components/ArticlesCell/ArticlesCell.jsx"
 // highlight-next-line
-import { Link, routes } from '@redwoodjs/router'
+import { Link, routes } from '@redmix/router'
 
 // QUERY, Loading, Empty and Failure definitions...
 
@@ -42,7 +42,7 @@ export const Success = ({ articles }) => {
 
 ```jsx title="web/src/components/ArticlesCell/ArticlesCell.tsx"
 // highlight-next-line
-import { Link, routes } from '@redwoodjs/router'
+import { Link, routes } from '@redmix/router'
 
 // QUERY, Loading, Empty and Failure definitions...
 
@@ -100,7 +100,7 @@ Notice the `{id}`. Redwood calls these _route parameters_. They say "whatever va
 <TabItem value="js" label="JavaScript">
 
 ```jsx title="web/src/Routes.jsx"
-import { Router, Route, Set } from '@redwoodjs/router'
+import { Router, Route, Set } from '@redmix/router'
 import ScaffoldLayout from 'src/layouts/ScaffoldLayout'
 import BlogLayout from 'src/layouts/BlogLayout'
 
@@ -131,7 +131,7 @@ export default Routes
 <TabItem value="ts" label="TypeScript">
 
 ```jsx title="web/src/Routes.tsx"
-import { Router, Route, Set } from '@redwoodjs/router'
+import { Router, Route, Set } from '@redmix/router'
 import ScaffoldLayout from 'src/layouts/ScaffoldLayout'
 import BlogLayout from 'src/layouts/BlogLayout'
 
@@ -203,8 +203,8 @@ You may have noticed that when trying to view the new single-article page that y
 <TabItem value="js" label="JavaScript">
 
 ```diff title="web/src/pages/ArticlePage.js"
-- import { Link, routes } from '@redwoodjs/router'
-  import { Metadata } from '@redwoodjs/web'
+- import { Link, routes } from '@redmix/router'
+  import { Metadata } from '@redmix/web'
 
   const ArticlePage = () => {
     return (
@@ -230,8 +230,8 @@ You may have noticed that when trying to view the new single-article page that y
 <TabItem value="ts" label="TypeScript">
 
 ```diff title="web/src/pages/ArticlePage.tsx"
-- import { Link, routes } from '@redwoodjs/router'
-  import { Metadata } from '@redwoodjs/web'
+- import { Link, routes } from '@redmix/router'
+  import { Metadata } from '@redmix/web'
 
   const ArticlePage = () => {
     return (
@@ -270,7 +270,7 @@ And then we'll use that cell in `ArticlePage`:
 <TabItem value="js" label="JavaScript">
 
 ```jsx title="web/src/pages/ArticlePage/ArticlePage.jsx"
-import { Metadata } from '@redwoodjs/web'
+import { Metadata } from '@redmix/web'
 // highlight-next-line
 import ArticleCell from 'src/components/ArticleCell'
 
@@ -292,7 +292,7 @@ export default ArticlePage
 <TabItem value="ts" label="TypeScript">
 
 ```jsx title="web/src/pages/ArticlePage/ArticlePage.tsx"
-import { Metadata } from '@redwoodjs/web'
+import { Metadata } from '@redmix/web'
 // highlight-next-line
 import ArticleCell from 'src/components/ArticleCell'
 
@@ -356,7 +356,7 @@ import type {
   CellFailureProps,
   CellSuccessProps,
   TypedDocumentNode,
-} from '@redwoodjs/web'
+} from '@redmix/web'
 
 export const QUERY: TypedDocumentNode<
   FindArticleQuery,
@@ -401,7 +401,7 @@ Okay, we're getting closer. Still, where will that `$id` come from? Redwood has 
 <TabItem value="js" label="JavaScript">
 
 ```jsx title="web/src/pages/ArticlePage/ArticlePage.jsx"
-import { Metadata } from '@redwoodjs/web'
+import { Metadata } from '@redmix/web'
 import ArticleCell from 'src/components/ArticleCell'
 
 // highlight-next-line
@@ -423,7 +423,7 @@ export default ArticlePage
 <TabItem value="ts" label="TypeScript">
 
 ```tsx title="web/src/pages/ArticlePage/ArticlePage.tsx"
-import { Metadata } from '@redwoodjs/web'
+import { Metadata } from '@redmix/web'
 import ArticleCell from 'src/components/ArticleCell'
 
 // highlight-start
@@ -602,7 +602,7 @@ Let's copy the `<article>` section from `ArticlesCell` and put it here instead, 
 
 ```jsx title="web/src/components/Article/Article.jsx"
 // highlight-next-line
-import { Link, routes } from '@redwoodjs/router'
+import { Link, routes } from '@redmix/router'
 
 // highlight-next-line
 const Article = ({ article }) => {
@@ -629,7 +629,7 @@ export default Article
 
 ```tsx title="web/src/components/Article/Article.tsx"
 // highlight-next-line
-import { Link, routes } from '@redwoodjs/router'
+import { Link, routes } from '@redmix/router'
 
 // highlight-next-line
 import type { Post } from 'types/graphql'
@@ -713,7 +713,7 @@ import type {
   CellFailureProps,
   CellSuccessProps,
   TypedDocumentNode,
-} from '@redwoodjs/web'
+} from '@redmix/web'
 
 // highlight-next-line
 import Article from 'src/components/Article'
@@ -801,7 +801,7 @@ import type {
   CellFailureProps,
   CellSuccessProps,
   TypedDocumentNode,
-} from '@redwoodjs/web'
+} from '@redmix/web'
 
 // highlight-next-line
 import Article from 'src/components/Article'

@@ -9,10 +9,10 @@ import {
   Submit,
   FieldError,
   Label,
-} from '@redwoodjs/forms'
-import { useBlocker } from '@redwoodjs/router'
-import { useMutation } from '@redwoodjs/web'
-import { toast, Toaster } from '@redwoodjs/web/toast'
+} from '@redmix/forms'
+import { useBlocker } from '@redmix/router'
+import { useMutation } from '@redmix/web'
+import { toast, Toaster } from '@redmix/web/toast'
 
 const CREATE_CONTACT = gql`
   mutation CreateContactMutation($input: CreateContactInput!) {

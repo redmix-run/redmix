@@ -566,7 +566,7 @@ We'll use the [Netlify Identity](https://github.com/redwoodjs/redwood/blob/main/
 export const config = {
   imports: [
     `import netlifyIdentity from 'netlify-identity-widget'`,
-    `import { isBrowser } from '@redwoodjs/prerender/browserUtils'`,
+    `import { isBrowser } from '@redmix/prerender/browserUtils'`,
   ],
   init: 'isBrowser && netlifyIdentity.init()',
   authProvider: {

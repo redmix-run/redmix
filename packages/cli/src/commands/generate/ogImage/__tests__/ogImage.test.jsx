@@ -4,7 +4,7 @@ globalThis.__dirname = __dirname
 import { vol, fs as memfs } from 'memfs'
 import { afterEach, beforeEach, describe, test, expect, vi } from 'vitest'
 
-import { ensurePosixPath } from '@redwoodjs/project-config'
+import { ensurePosixPath } from '@redmix/project-config'
 
 import * as ogImage from '../ogImage.js'
 

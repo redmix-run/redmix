@@ -1,7 +1,7 @@
 import { vol, fs as memfs } from 'memfs'
 import { vi } from 'vitest'
 
-import { ensurePosixPath, getPaths } from '@redwoodjs/project-config'
+import { ensurePosixPath, getPaths } from '@redmix/project-config'
 
 import type { PluginList } from '../api'
 import {

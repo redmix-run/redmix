@@ -1,4 +1,4 @@
-import { build, defaultBuildOptions } from '@redwoodjs/framework-tools'
+import { build, defaultBuildOptions } from '@redmix/framework-tools'
 
 const jsBanner = `\
 #!/usr/bin/env node

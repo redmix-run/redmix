@@ -1,5 +1,5 @@
 {
-  "name": "@redwoodjs/forms",
+  "name": "@redmix/forms",
   "version": "8.0.0",
   "repository": {
     "type": "git",
@@ -38,7 +38,7 @@
     "react-hook-form": "7.54.2"
   },
   "devDependencies": {
-    "@redwoodjs/framework-tools": "workspace:*",
+    "@redmix/framework-tools": "workspace:*",
     "@testing-library/dom": "9.3.4",
     "@testing-library/jest-dom": "6.5.0",
     "@testing-library/react": "14.3.1",

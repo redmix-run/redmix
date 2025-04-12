@@ -1,4 +1,4 @@
-import { render } from '@redwoodjs/testing/web'
+import { render } from '@redmix/testing/web'
 
 import ContactUsPage from './ContactUsPage'
 

@@ -1,5 +1,5 @@
 {
-  "name": "@redwoodjs/auth-netlify-setup",
+  "name": "@redmix/auth-netlify-setup",
   "version": "8.0.0",
   "repository": {
     "type": "git",
@@ -39,11 +39,11 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@redwoodjs/cli-helpers": "workspace:*"
+    "@redmix/cli-helpers": "workspace:*"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "0.16.4",
-    "@redwoodjs/framework-tools": "workspace:*",
+    "@redmix/framework-tools": "workspace:*",
     "@types/yargs": "17.0.33",
     "concurrently": "8.2.2",
     "publint": "0.3.11",

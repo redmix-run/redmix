@@ -177,7 +177,7 @@ If using dbAuth and seeding users, you'll need to add a `hashedPassword` and
 do that:
 
 ```javascript title="scripts/seed.js"
-import { hashPassword } from '@redwoodjs/auth-dbauth-api'
+import { hashPassword } from '@redmix/auth-dbauth-api'
 
 export default async () => {
   const users = [

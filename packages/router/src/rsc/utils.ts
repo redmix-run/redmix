@@ -4,7 +4,7 @@ import { pathToFileURL } from 'node:url'
 import type { default as RSDWClientModule } from 'react-server-dom-webpack/client.edge'
 import type { default as RSDWServerModule } from 'react-server-dom-webpack/server.edge'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@redmix/project-config'
 
 type RSDWClientType = typeof RSDWClientModule
 type RSDWServerType = typeof RSDWServerModule

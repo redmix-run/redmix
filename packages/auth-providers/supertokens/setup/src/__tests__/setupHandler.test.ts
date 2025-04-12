@@ -37,7 +37,7 @@ describe('addRoutingLogic', () => {
       'Routes.tsx':
         "// In this file, all Page components from 'src/pages' are auto-imported.\n" +
         `
-import { Router, Route } from '@redwoodjs/router'
+import { Router, Route } from '@redmix/router'
 
 import { useAuth } from './auth'
 
@@ -62,7 +62,7 @@ export default Routes
 
           import { canHandleRoute, getRoutingComponent } from 'supertokens-auth-react/ui'
 
-          import { Router, Route } from '@redwoodjs/router'
+          import { Router, Route } from '@redmix/router'
 
           import { useAuth, PreBuiltUI } from './auth'
 
@@ -92,7 +92,7 @@ export default Routes
         `
 import SuperTokens from 'supertokens-auth-react'
 
-import { Router, Route } from '@redwoodjs/router'
+import { Router, Route } from '@redmix/router'
 
 import { useAuth } from './auth'
 
@@ -123,7 +123,7 @@ export default Routes
 
       import { canHandleRoute, getRoutingComponent } from 'supertokens-auth-react/ui'
 
-      import { Router, Route } from '@redwoodjs/router'
+      import { Router, Route } from '@redmix/router'
 
       import { useAuth, PreBuiltUI } from './auth'
 

@@ -4,13 +4,13 @@ import * as path from 'node:path'
 import dotenv from 'dotenv'
 import * as toml from 'smol-toml'
 
-import type { Config } from '@redwoodjs/project-config'
+import type { Config } from '@redmix/project-config'
 import {
   findUp,
   getConfigPath,
   getConfig,
   resolveFile,
-} from '@redwoodjs/project-config'
+} from '@redmix/project-config'
 
 import { colors } from './colors.js'
 import { getPaths } from './paths.js'

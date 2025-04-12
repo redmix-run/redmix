@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { useMutation } from '@redwoodjs/web'
+import { useMutation } from '@redmix/web'
 
 import TodoItem from 'src/components/TodoItem'
 

@@ -1,5 +1,5 @@
 {
-  "name": "@redwoodjs/auth-clerk-setup",
+  "name": "@redmix/auth-clerk-setup",
   "version": "8.0.0",
   "repository": {
     "type": "git",
@@ -37,11 +37,11 @@
     "prepublishOnly": "NODE_ENV=production yarn build"
   },
   "dependencies": {
-    "@redwoodjs/cli-helpers": "workspace:*"
+    "@redmix/cli-helpers": "workspace:*"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "0.16.4",
-    "@redwoodjs/framework-tools": "workspace:*",
+    "@redmix/framework-tools": "workspace:*",
     "@types/yargs": "17.0.33",
     "concurrently": "8.2.2",
     "publint": "0.3.11",

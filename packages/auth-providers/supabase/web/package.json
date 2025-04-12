@@ -1,5 +1,5 @@
 {
-  "name": "@redwoodjs/auth-supabase-web",
+  "name": "@redmix/auth-supabase-web",
   "version": "8.0.0",
   "repository": {
     "type": "git",
@@ -49,10 +49,10 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@redwoodjs/auth": "workspace:*"
+    "@redmix/auth": "workspace:*"
   },
   "devDependencies": {
-    "@redwoodjs/framework-tools": "workspace:*",
+    "@redmix/framework-tools": "workspace:*",
     "@supabase/ssr": "0.5.1",
     "@supabase/supabase-js": "2.45.4",
     "@types/react": "^18.2.55",

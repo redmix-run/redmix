@@ -1,5 +1,5 @@
 {
-  "name": "@redwoodjs/mailer-core",
+  "name": "@redmix/mailer-core",
   "version": "8.0.0",
   "repository": {
     "type": "git",
@@ -22,8 +22,8 @@
     "test:watch": "vitest watch"
   },
   "devDependencies": {
-    "@redwoodjs/api": "workspace:*",
-    "@redwoodjs/framework-tools": "workspace:*",
+    "@redmix/api": "workspace:*",
+    "@redmix/framework-tools": "workspace:*",
     "tsx": "4.19.3",
     "typescript": "5.6.2",
     "vitest": "2.1.9"

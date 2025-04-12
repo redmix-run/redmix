@@ -1,6 +1,6 @@
 import fs from 'fs/promises'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@redmix/project-config'
 
 /**
  * RSC build. Step 7.

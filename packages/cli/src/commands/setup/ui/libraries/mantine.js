@@ -4,7 +4,7 @@ import execa from 'execa'
 import fse from 'fs-extra'
 import { Listr } from 'listr2'
 
-import { recordTelemetryAttributes } from '@redwoodjs/cli-helpers'
+import { recordTelemetryAttributes } from '@redmix/cli-helpers'
 
 import c from '../../../../lib/colors.js'
 import extendStorybookConfiguration from '../../../../lib/configureStorybook.js'

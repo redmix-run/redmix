@@ -3,7 +3,7 @@ import fs from 'fs'
 import { vi, describe, it, expect } from 'vitest'
 import type { Mock } from 'vitest'
 
-import { ensurePosixPath, getPaths } from '@redwoodjs/project-config'
+import { ensurePosixPath, getPaths } from '@redmix/project-config'
 
 import { handler } from '../commands/storybookHandler'
 

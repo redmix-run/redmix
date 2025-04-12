@@ -1,7 +1,7 @@
-import { Metadata } from '@redwoodjs/web'
+import { Metadata } from '@redmix/web'
 
 import { useAuth } from 'src/auth'
-// import { Link, routes } from '@redwoodjs/router'
+// import { Link, routes } from '@redmix/router'
 
 const ProfilePage = () => {
   const { currentUser, isAuthenticated, hasRole, loading } = useAuth()

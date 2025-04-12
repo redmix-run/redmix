@@ -2,7 +2,7 @@
 // Execute jobs in dev with `yarn rw jobs work`
 // See https://docs.redwoodjs.com/docs/background-jobs
 
-import { PrismaAdapter, JobManager } from '@redwoodjs/jobs'
+import { PrismaAdapter, JobManager } from '@redmix/jobs'
 
 import { db } from 'src/lib/db'
 import { logger } from 'src/lib/logger'

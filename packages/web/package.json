@@ -1,5 +1,5 @@
 {
-  "name": "@redwoodjs/web",
+  "name": "@redmix/web",
   "version": "8.0.0",
   "repository": {
     "type": "git",
@@ -143,8 +143,8 @@
   "dependencies": {
     "@apollo/client": "3.11.1",
     "@babel/runtime-corejs3": "7.26.10",
-    "@redwoodjs/auth": "workspace:*",
-    "@redwoodjs/server-store": "workspace:*",
+    "@redmix/auth": "workspace:*",
+    "@redmix/server-store": "workspace:*",
     "@whatwg-node/fetch": "0.9.21",
     "apollo-upload-client": "18.0.1",
     "cookie": "1.0.2",
@@ -164,8 +164,8 @@
     "@babel/core": "^7.26.10",
     "@babel/plugin-transform-runtime": "7.26.10",
     "@babel/runtime": "7.25.7",
-    "@redwoodjs/framework-tools": "workspace:*",
-    "@redwoodjs/internal": "workspace:*",
+    "@redmix/framework-tools": "workspace:*",
+    "@redmix/internal": "workspace:*",
     "@rollup/plugin-babel": "6.0.4",
     "@testing-library/jest-dom": "6.5.0",
     "@testing-library/react": "14.3.1",

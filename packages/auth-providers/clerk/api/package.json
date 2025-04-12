@@ -1,5 +1,5 @@
 {
-  "name": "@redwoodjs/auth-clerk-api",
+  "name": "@redmix/auth-clerk-api",
   "version": "8.0.0",
   "repository": {
     "type": "git",
@@ -43,8 +43,8 @@
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "0.16.4",
-    "@redwoodjs/api": "workspace:*",
-    "@redwoodjs/framework-tools": "workspace:*",
+    "@redmix/api": "workspace:*",
+    "@redmix/framework-tools": "workspace:*",
     "@types/aws-lambda": "8.10.145",
     "concurrently": "8.2.2",
     "publint": "0.3.11",

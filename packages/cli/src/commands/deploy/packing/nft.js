@@ -4,8 +4,8 @@ import { nodeFileTrace } from '@vercel/nft'
 import archiver from 'archiver'
 import fse from 'fs-extra'
 
-import { findApiDistFunctions } from '@redwoodjs/internal/dist/files'
-import { ensurePosixPath, getPaths } from '@redwoodjs/project-config'
+import { findApiDistFunctions } from '@redmix/internal/dist/files'
+import { ensurePosixPath, getPaths } from '@redmix/project-config'
 
 import * as nftPacker from '../packing/nft.js'
 

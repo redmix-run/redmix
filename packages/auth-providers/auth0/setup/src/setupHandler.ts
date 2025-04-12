@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 
-import { standardAuthHandler } from '@redwoodjs/cli-helpers'
+import { standardAuthHandler } from '@redmix/cli-helpers'
 
 import type { Args } from './setup'
 
@@ -15,7 +15,7 @@ export async function handler({ force: forceArg }: Args) {
     forceArg,
     provider: 'auth0',
     authDecoderImport:
-      "import { authDecoder } from '@redwoodjs/auth-auth0-api'",
+      "import { authDecoder } from '@redmix/auth-auth0-api'",
     apiPackages: [`@redwoodjs/auth-auth0-api@${version}`],
     webPackages: [
       '@auth0/auth0-spa-js@^2',

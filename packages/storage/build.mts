@@ -1,9 +1,9 @@
-import { build, defaultBuildOptions } from '@redwoodjs/framework-tools'
+import { build, defaultBuildOptions } from '@redmix/framework-tools'
 import {
   generateTypesCjs,
   generateTypesEsm,
   insertCommonJsPackageJson,
-} from '@redwoodjs/framework-tools/generateTypes'
+} from '@redmix/framework-tools/generateTypes'
 
 // ESM build
 await build({

@@ -5,8 +5,8 @@ import execa from 'execa'
 import { Listr } from 'listr2'
 import prompts from 'prompts'
 
-import { recordTelemetryAttributes } from '@redwoodjs/cli-helpers'
-import { getConfig } from '@redwoodjs/project-config'
+import { recordTelemetryAttributes } from '@redmix/cli-helpers'
+import { getConfig } from '@redmix/project-config'
 
 import c from '../../../lib/colors.js'
 import {

@@ -1,5 +1,5 @@
 {
-  "name": "@redwoodjs/mailer-renderer-mjml-react",
+  "name": "@redmix/mailer-renderer-mjml-react",
   "version": "8.0.0",
   "repository": {
     "type": "git",
@@ -21,11 +21,11 @@
   },
   "dependencies": {
     "@faire/mjml-react": "3.4.0",
-    "@redwoodjs/mailer-core": "workspace:*",
+    "@redmix/mailer-core": "workspace:*",
     "mjml": "4.15.3"
   },
   "devDependencies": {
-    "@redwoodjs/framework-tools": "workspace:*",
+    "@redmix/framework-tools": "workspace:*",
     "@types/mjml": "4",
     "tsx": "4.19.3",
     "typescript": "5.6.2"

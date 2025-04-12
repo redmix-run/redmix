@@ -947,7 +947,7 @@ Done in 1.02s.
 The generated page will get the route parameter as a prop:
 
 ```jsx {5,12,14} title="./web/src/pages/QuotePage/QuotePage.js"
-import { Link, routes } from '@redwoodjs/router'
+import { Link, routes } from '@redmix/router'
 
 const QuotePage = ({ id }) => {
   return (

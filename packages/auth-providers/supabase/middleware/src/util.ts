@@ -2,12 +2,12 @@ import { createServerClient } from '@supabase/ssr'
 import type { CookieOptions } from '@supabase/ssr'
 import type { SupabaseClient } from '@supabase/supabase-js'
 
-import { AUTH_PROVIDER_HEADER } from '@redwoodjs/api'
-import { throwSupabaseSettingsError } from '@redwoodjs/auth-supabase-api'
+import { AUTH_PROVIDER_HEADER } from '@redmix/api'
+import { throwSupabaseSettingsError } from '@redmix/auth-supabase-api'
 import type {
   MiddlewareRequest,
   MiddlewareResponse,
-} from '@redwoodjs/web/middleware'
+} from '@redmix/web/middleware'
 /**
  * Creates Supabase Server Client used to get the session cookie (only)
  * from a given collection of auth cookies

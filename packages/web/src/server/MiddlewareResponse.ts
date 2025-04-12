@@ -1,7 +1,7 @@
 import { Response as PonyResponse } from '@whatwg-node/fetch'
 import * as cookie from 'cookie'
 
-import { CookieJar } from '@redwoodjs/cookie-jar'
+import { CookieJar } from '@redmix/cookie-jar'
 
 export class MiddlewareShortCircuit extends Error {
   mwResponse: MiddlewareResponse

@@ -8,9 +8,9 @@ import {
   buildApi,
   cleanApiBuild,
   rebuildApi,
-} from '@redwoodjs/internal/dist/build/api'
-import { loadAndValidateSdls } from '@redwoodjs/internal/dist/validateSchema'
-import { ensurePosixPath, getPaths } from '@redwoodjs/project-config'
+} from '@redmix/internal/dist/build/api'
+import { loadAndValidateSdls } from '@redmix/internal/dist/validateSchema'
+import { ensurePosixPath, getPaths } from '@redmix/project-config'
 
 import type { BuildAndRestartOptions } from './buildManager'
 import { BuildManager } from './buildManager'

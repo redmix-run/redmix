@@ -1,4 +1,4 @@
-import { recordTelemetryAttributes } from '@redwoodjs/cli-helpers'
+import { recordTelemetryAttributes } from '@redmix/cli-helpers'
 
 import c from '../lib/colors.js'
 import { getPaths } from '../lib/index.js'

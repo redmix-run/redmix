@@ -6,7 +6,7 @@ import {
   MiddlewareRequest as MWRequest,
   MiddlewareRequest,
   MiddlewareResponse,
-} from '@redwoodjs/web/middleware'
+} from '@redmix/web/middleware'
 
 import { middlewareDefaultAuthProviderState } from '../../../../../auth/dist/AuthProvider/AuthProviderState.js'
 import type { DbAuthMiddlewareOptions } from '../index.js'

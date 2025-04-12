@@ -1,5 +1,5 @@
 {
-  "name": "@redwoodjs/auth-dbauth-middleware",
+  "name": "@redmix/auth-dbauth-middleware",
   "version": "8.0.0",
   "repository": {
     "type": "git",
@@ -37,14 +37,14 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@redwoodjs/auth-dbauth-api": "workspace:*",
-    "@redwoodjs/web": "workspace:*"
+    "@redmix/auth-dbauth-api": "workspace:*",
+    "@redmix/web": "workspace:*"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "0.16.4",
-    "@redwoodjs/api": "workspace:*",
-    "@redwoodjs/framework-tools": "workspace:*",
-    "@redwoodjs/graphql-server": "workspace:*",
+    "@redmix/api": "workspace:*",
+    "@redmix/framework-tools": "workspace:*",
+    "@redmix/graphql-server": "workspace:*",
     "@types/aws-lambda": "8.10.145",
     "concurrently": "8.2.2",
     "publint": "0.3.11",

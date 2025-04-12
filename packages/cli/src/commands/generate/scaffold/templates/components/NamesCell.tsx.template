@@ -1,11 +1,11 @@
 ${useClientDirective}import type { Find${pluralPascalName}, Find${pluralPascalName}Variables } from 'types/graphql'
 
-import { Link, routes } from '@redwoodjs/router'
+import { Link, routes } from '@redmix/router'
 import type {
   CellSuccessProps,
   CellFailureProps,
   TypedDocumentNode,
-} from '@redwoodjs/web'
+} from '@redmix/web'
 
 import ${pluralPascalName} from '${importComponentNames}'
 

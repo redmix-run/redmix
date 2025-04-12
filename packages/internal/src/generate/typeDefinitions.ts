@@ -3,7 +3,7 @@ import path from 'path'
 
 import { SourceMapGenerator } from 'source-map'
 
-import { getPaths, processPagesDir } from '@redwoodjs/project-config'
+import { getPaths, processPagesDir } from '@redmix/project-config'
 
 import {
   getCellGqlQuery,

@@ -2,7 +2,7 @@ import path from 'path'
 
 import { test, expect } from 'vitest'
 
-import { ensurePosixPath } from '@redwoodjs/project-config'
+import { ensurePosixPath } from '@redmix/project-config'
 
 import { findCellMocks } from '../findCellMocks'
 

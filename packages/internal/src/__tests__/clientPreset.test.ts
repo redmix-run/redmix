@@ -2,7 +2,7 @@ import path from 'path'
 
 import { vi, beforeEach, afterEach, describe, test, expect } from 'vitest'
 
-import type ProjectConfig from '@redwoodjs/project-config'
+import type ProjectConfig from '@redmix/project-config'
 
 import { generateClientPreset } from '../generate/clientPreset'
 import { generateGraphQLSchema } from '../generate/graphqlSchema'

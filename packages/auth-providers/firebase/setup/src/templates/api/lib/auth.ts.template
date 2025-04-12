@@ -1,6 +1,6 @@
 import admin from 'firebase-admin'
 
-import { AuthenticationError } from '@redwoodjs/graphql-server'
+import { AuthenticationError } from '@redmix/graphql-server'
 
 // eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
 const adminApp = admin.initializeApp({

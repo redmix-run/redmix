@@ -1,7 +1,7 @@
 import { vol, fs as memfs } from 'memfs'
 import { vi } from 'vitest'
 
-import { ensurePosixPath } from '@redwoodjs/project-config'
+import { ensurePosixPath } from '@redmix/project-config'
 
 import {
   getPathsFromTypeScriptConfig,

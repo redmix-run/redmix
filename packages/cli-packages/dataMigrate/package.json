@@ -1,5 +1,5 @@
 {
-  "name": "@redwoodjs/cli-data-migrate",
+  "name": "@redmix/cli-data-migrate",
   "version": "8.0.0",
   "repository": {
     "type": "git",
@@ -25,8 +25,8 @@
     "test:unit": "yarn vitest run src/"
   },
   "dependencies": {
-    "@redwoodjs/babel-config": "workspace:*",
-    "@redwoodjs/project-config": "workspace:*",
+    "@redmix/babel-config": "workspace:*",
+    "@redmix/project-config": "workspace:*",
     "chalk": "4.1.2",
     "dotenv-defaults": "5.0.2",
     "execa": "5.1.1",
@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@prisma/client": "5.20.0",
-    "@redwoodjs/framework-tools": "workspace:*",
+    "@redmix/framework-tools": "workspace:*",
     "@types/fs-extra": "11.0.4",
     "@types/yargs": "17.0.33",
     "memfs": "4.17.0",

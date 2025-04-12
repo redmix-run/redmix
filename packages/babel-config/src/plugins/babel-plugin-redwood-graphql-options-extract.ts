@@ -36,7 +36,7 @@ export default function ({ types: t }: { types: typeof types }): PluginObj {
     name: 'babel-plugin-redwood-graphql-options-extract',
     visitor: {
       Program(path, state) {
-        // Find all imports of the 'createGraphQLHandler' function from '@redwoodjs/graphql-server'
+        // Find all imports of the 'createGraphQLHandler' function from '@redmix/graphql-server'
         const importNames = new Set<string>()
         path.traverse({
           ImportDeclaration(p) {

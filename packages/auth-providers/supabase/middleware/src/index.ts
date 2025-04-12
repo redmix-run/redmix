@@ -1,11 +1,11 @@
-import { AUTH_PROVIDER_HEADER } from '@redwoodjs/api'
-import { authDecoder } from '@redwoodjs/auth-supabase-api'
-import type { GetCurrentUser } from '@redwoodjs/graphql-server'
+import { AUTH_PROVIDER_HEADER } from '@redmix/api'
+import { authDecoder } from '@redmix/auth-supabase-api'
+import type { GetCurrentUser } from '@redmix/graphql-server'
 import type {
   Middleware,
   MiddlewareRequest,
   MiddlewareResponse,
-} from '@redwoodjs/web/middleware'
+} from '@redmix/web/middleware'
 
 import { clearAuthState } from './util.js'
 

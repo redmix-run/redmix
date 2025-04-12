@@ -1,5 +1,5 @@
 {
-  "name": "@redwoodjs/auth-supabase-api",
+  "name": "@redmix/auth-supabase-api",
   "version": "8.0.0",
   "repository": {
     "type": "git",
@@ -39,13 +39,13 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@redwoodjs/api": "workspace:*",
+    "@redmix/api": "workspace:*",
     "@supabase/ssr": "0.5.1",
     "jsonwebtoken": "9.0.2"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "0.16.4",
-    "@redwoodjs/framework-tools": "workspace:*",
+    "@redmix/framework-tools": "workspace:*",
     "@types/aws-lambda": "8.10.145",
     "@types/jsonwebtoken": "9.0.8",
     "concurrently": "8.2.2",

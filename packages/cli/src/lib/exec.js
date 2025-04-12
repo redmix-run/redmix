@@ -3,8 +3,8 @@ import path from 'path'
 import {
   getWebSideDefaultBabelConfig,
   registerApiSideBabelHook,
-} from '@redwoodjs/babel-config'
-import { getPaths } from '@redwoodjs/project-config'
+} from '@redmix/babel-config'
+import { getPaths } from '@redmix/project-config'
 
 export async function runScriptFunction({
   path: scriptPath,

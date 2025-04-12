@@ -3,7 +3,7 @@ import type { SpawnOptions } from 'child_process'
 import os from 'os'
 import path from 'path'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@redmix/project-config'
 
 const spawnProcess = (...args: string[]) => {
   // "os.type()" returns 'Windows_NT' on Windows. See https://nodejs.org/docs/latest-v12.x/api/os.html#os_os_type.

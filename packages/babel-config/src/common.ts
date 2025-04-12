@@ -4,7 +4,7 @@ import path from 'path'
 import type { PluginItem, PluginOptions, TransformOptions } from '@babel/core'
 import { parseConfigFileTextToJson } from 'typescript'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@redmix/project-config'
 
 import pkgJson from '../package.json'
 

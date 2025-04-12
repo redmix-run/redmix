@@ -10,11 +10,11 @@ import * as t from '@babel/types'
 import type { Plugin } from 'vite'
 import { normalizePath } from 'vite'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@redmix/project-config'
 
 /**
- * Transform `import { Router } from '@redwoodjs/router/RscRouter'` to
- * `import { Router } from '@redwoodjs/router/SsrRouter'`
+ * Transform `import { Router } from '@redmix/router/RscRouter'` to
+ * `import { Router } from '@redmix/router/SsrRouter'`
  */
 export function rscSsrRouterImport(): Plugin {
   // Vite IDs are always normalized and so we avoid windows path issues

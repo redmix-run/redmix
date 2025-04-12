@@ -12,7 +12,7 @@ import {
 import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
 
-import { getConfig, getPaths } from '@redwoodjs/project-config'
+import { getConfig, getPaths } from '@redmix/project-config'
 
 import * as pluginLib from '../lib/plugin.js'
 import { loadPlugins } from '../plugin.js'

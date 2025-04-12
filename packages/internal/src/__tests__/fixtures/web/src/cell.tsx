@@ -3,7 +3,7 @@
 
 import type { BazingaQuery } from 'types/graphql'
 
-import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
+import type { CellSuccessProps, CellFailureProps } from '@redmix/web'
 
 export const QUERY = gql`
   query BazingaQuery($id: String!) {

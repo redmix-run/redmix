@@ -108,7 +108,7 @@ vi.mock('@redwoodjs/internal/dist/generate/generate', () => {
   }
 })
 
-import { ensurePosixPath } from '@redwoodjs/project-config'
+import { ensurePosixPath } from '@redmix/project-config'
 
 import { getPaths } from '../../../../lib/index.js'
 import { pathName } from '../../helpers.js'
@@ -416,7 +416,7 @@ describe('handler', () => {
   test('file generation', async () => {
     mockFiles = {
       [getPaths().web.routes]: [
-        "import { Router, Route } from '@redwoodjs/router'",
+        "import { Router, Route } from '@redmix/router'",
         '',
         'const Routes = () => {',
         '  return (',
@@ -461,7 +461,7 @@ describe('handler', () => {
   test('file generation with route params', async () => {
     mockFiles = {
       [getPaths().web.routes]: [
-        "import { Router, Route } from '@redwoodjs/router'",
+        "import { Router, Route } from '@redmix/router'",
         '',
         'const Routes = () => {',
         '  return (',

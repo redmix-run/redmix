@@ -12,8 +12,8 @@ import {
   isTypeScriptProject,
   prettify,
   writeFilesTask,
-} from '@redwoodjs/cli-helpers'
-import { errorTelemetry } from '@redwoodjs/telemetry'
+} from '@redmix/cli-helpers'
+import { errorTelemetry } from '@redmix/telemetry'
 
 import type { Args } from './sentry.js'
 
@@ -115,7 +115,7 @@ export const handler = async ({ force }: Args) => {
         contentLines.splice(
           webImportIndex,
           1,
-          "import { RedwoodProvider } from '@redwoodjs/web'",
+          "import { RedwoodProvider } from '@redmix/web'",
         )
 
         const boundaryOpenIndex = contentLines.findLastIndex((line) =>

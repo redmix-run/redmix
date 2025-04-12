@@ -1,5 +1,5 @@
 {
-  "name": "@redwoodjs/storage",
+  "name": "@redmix/storage",
   "version": "8.0.0",
   "repository": {
     "type": "git",
@@ -53,14 +53,14 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@redwoodjs/project-config": "workspace:*",
+    "@redmix/project-config": "workspace:*",
     "mime-types": "2.1.35",
     "ulid": "2.3.0"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "0.16.4",
     "@prisma/client": "5.20.0",
-    "@redwoodjs/framework-tools": "workspace:*",
+    "@redmix/framework-tools": "workspace:*",
     "@types/mime-types": "2.1.4",
     "concurrently": "8.2.2",
     "esbuild": "0.24.2",

@@ -3,7 +3,7 @@ import path from 'path'
 import pluginTester from 'babel-plugin-tester'
 import { vi, describe, beforeEach, afterAll } from 'vitest'
 
-import type projectConfig from '@redwoodjs/project-config'
+import type projectConfig from '@redmix/project-config'
 
 import plugin from '../babel-plugin-redwood-prerender-media-imports'
 

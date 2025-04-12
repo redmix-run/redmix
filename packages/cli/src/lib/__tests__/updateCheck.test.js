@@ -33,7 +33,7 @@ import {
   afterEach,
 } from 'vitest'
 
-import { getConfig } from '@redwoodjs/project-config'
+import { getConfig } from '@redmix/project-config'
 
 import { setLock } from '../locking.js'
 import * as updateCheck from '../updateCheck.js'

@@ -2,7 +2,7 @@ import path from 'path'
 
 import { Listr } from 'listr2'
 
-import { errorTelemetry } from '@redwoodjs/telemetry'
+import { errorTelemetry } from '@redmix/telemetry'
 
 import c from '../../../lib/colors.js'
 import {

@@ -141,7 +141,7 @@ export default function transform(file: FileInfo, api: API) {
    * This finds the line:
    *
    * ```
-   * import { ... } from '@redwoodjs/router'
+   * import { ... } from '@redmix/router'
    * ```
    */
   return root.find(j.ImportDeclaration, {
@@ -195,8 +195,8 @@ it('Modifies imports (inline)', async () => {
     `import {
         createGraphQLHandler,   // <-- input source
         makeMergedSchema,
-      } from '@redwoodjs/api'`,
-    `import { createGraphQLHandler } from '@redwoodjs/graphql-server'`, // <-- expected output
+      } from '@redmix/api'`,
+    `import { createGraphQLHandler } from '@redmix/graphql-server'`, // <-- expected output
   )
 })
 ```

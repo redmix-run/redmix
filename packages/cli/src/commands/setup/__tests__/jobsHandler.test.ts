@@ -13,7 +13,7 @@ import {
   afterAll,
 } from 'vitest'
 
-import type * as ProjectConfig from '@redwoodjs/project-config'
+import type * as ProjectConfig from '@redmix/project-config'
 
 import { Listr2Mock } from '../../../__tests__/Listr2Mock.js'
 // @ts-expect-error - This is a JS file

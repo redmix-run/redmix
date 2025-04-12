@@ -11,11 +11,11 @@ import ReactDOMServer from 'react-dom/server'
 import {
   registerApiSideBabelHook,
   registerWebSideBabelHook,
-} from '@redwoodjs/babel-config'
-import { getPaths, ensurePosixPath } from '@redwoodjs/project-config'
-import { LocationProvider } from '@redwoodjs/router'
-import { matchPath } from '@redwoodjs/router/dist/util'
-import type { QueryInfo } from '@redwoodjs/web'
+} from '@redmix/babel-config'
+import { getPaths, ensurePosixPath } from '@redmix/project-config'
+import { LocationProvider } from '@redmix/router'
+import { matchPath } from '@redmix/router/dist/util'
+import type { QueryInfo } from '@redmix/web'
 
 import mediaImportsPlugin from './babelPlugins/babel-plugin-redwood-prerender-media-imports'
 import { detectPrerenderRoutes } from './detection'

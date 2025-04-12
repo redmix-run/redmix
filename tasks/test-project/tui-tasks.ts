@@ -146,7 +146,7 @@ export async function webTasks(
           await createPage('profile /profile')
 
           // Update the profile page test
-          const testFileContent = `import { render, waitFor, screen } from '@redwoodjs/testing/web'
+          const testFileContent = `import { render, waitFor, screen } from '@redmix/testing/web'
 
           import ProfilePage from './ProfilePage'
 
@@ -630,7 +630,7 @@ export async function apiTasks(
           const createPage = createBuilder('yarn redwood g page')
           await createPage('double')
 
-          const doublePageContent = `import { Metadata } from '@redwoodjs/web'
+          const doublePageContent = `import { Metadata } from '@redmix/web'
 
 const DoublePage = () => {
   return (
