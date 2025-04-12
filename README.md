@@ -69,6 +69,7 @@ what you use so I know what to keep and what to remove!
       ESM
 - [ ] Enable strict mode for new Redmix TypeScript apps.
 - [ ] Upgrade to Node 24
+- [ ] Setup dependabot/renovate to automatically merge PRs that pass all checks
 
 ### Package Updates
 
