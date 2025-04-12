@@ -10,10 +10,12 @@ In general, this is a two-part process:
 > **NOTE:**
 > Do not add [bot] accounts to the files.
 >
->   ==BOTS==
+> ==BOTS==
+>
 > - dependabot[bot]
 > - renovate[bot]
 > - codesee-architecture-diagrams[bot]
+> - etc
 
 ```js
 cd tasks/all-contributors
