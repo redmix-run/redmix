@@ -846,6 +846,33 @@ _A gigantic "Thank YOU!" to everyone below who has contributed to one or more Re
       <td align="center" valign="top" width="20%"><a href="https://benjie.dev/"><img src="https://avatars.githubusercontent.com/u/129910?v=4" width="100px;" alt=""/><br /><sub><b>Benjie</b></sub></a></td>
       <td align="center" valign="top" width="20%"><a href="https://github.com/brendandonahue"><img src="https://avatars.githubusercontent.com/u/58779070?v=4" width="100px;" alt=""/><br /><sub><b>Brendan Donahue</b></sub></a></td>
       <td align="center" valign="top" width="20%"><a href="https://github.com/leahincom"><img src="https://avatars.githubusercontent.com/u/49134038?v=4" width="100px;" alt=""/><br /><sub><b>JungHyunLah</b></sub></a></td>
+      <td align="center" valign="top" width="20%"><a href="https://github.com/hobgoblina"><img src="https://avatars.githubusercontent.com/u/20880695?v=4" width="100px;" alt=""/><br /><sub><b>Lina²</b></sub></a></td>
+      <td align="center" valign="top" width="20%"><a href="https://github.com/iejfd930r2jfo32"><img src="https://avatars.githubusercontent.com/u/122743614?v=4" width="100px;" alt=""/><br /><sub><b>//////////////////////////////</b></sub></a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="20%"><a href="https://lucaspmarra.github.io/"><img src="https://avatars.githubusercontent.com/u/30451874?v=4" width="100px;" alt=""/><br /><sub><b>Lucas Paulino Marra</b></sub></a></td>
+      <td align="center" valign="top" width="20%"><a href="https://github.com/MNR85"><img src="https://avatars.githubusercontent.com/u/11350079?v=4" width="100px;" alt=""/><br /><sub><b>Milad</b></sub></a></td>
+      <td align="center" valign="top" width="20%"><a href="http://www.linkedin.com/in/magnusjas"><img src="https://avatars.githubusercontent.com/u/1804354?v=4" width="100px;" alt=""/><br /><sub><b>Magnus</b></sub></a></td>
+      <td align="center" valign="top" width="20%"><a href="https://github.com/tamadamas"><img src="https://avatars.githubusercontent.com/u/1058433?v=4" width="100px;" alt=""/><br /><sub><b>Tomas Tamadamas</b></sub></a></td>
+      <td align="center" valign="top" width="20%"><a href="https://malted.dev/"><img src="https://avatars.githubusercontent.com/u/59726149?v=4" width="100px;" alt=""/><br /><sub><b>Ben</b></sub></a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="20%"><a href="https://github.com/kukoki7"><img src="https://avatars.githubusercontent.com/u/58081001?v=4" width="100px;" alt=""/><br /><sub><b>Jeremy Genest-Picard</b></sub></a></td>
+      <td align="center" valign="top" width="20%"><a href="https://mplewis.com/"><img src="https://avatars.githubusercontent.com/u/1829094?v=4" width="100px;" alt=""/><br /><sub><b>Matt Lewis</b></sub></a></td>
+      <td align="center" valign="top" width="20%"><a href="https://blog.cometkim.kr/"><img src="https://avatars.githubusercontent.com/u/9696352?v=4" width="100px;" alt=""/><br /><sub><b>Hyeseong Kim</b></sub></a></td>
+      <td align="center" valign="top" width="20%"><a href="https://github.com/jrioscloud"><img src="https://avatars.githubusercontent.com/u/13476631?v=4" width="100px;" alt=""/><br /><sub><b>Jaime Rios</b></sub></a></td>
+      <td align="center" valign="top" width="20%"><a href="http://43081j.com/"><img src="https://avatars.githubusercontent.com/u/5677153?v=4" width="100px;" alt=""/><br /><sub><b>James Garbutt</b></sub></a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="20%"><a href="https://github.com/jwwisgerhof"><img src="https://avatars.githubusercontent.com/u/14814116?v=4" width="100px;" alt=""/><br /><sub><b>Jan Wisgerhof</b></sub></a></td>
+      <td align="center" valign="top" width="20%"><a href="https://jedidiah.dev/"><img src="https://avatars.githubusercontent.com/u/113929?v=4" width="100px;" alt=""/><br /><sub><b>Jedidiah</b></sub></a></td>
+      <td align="center" valign="top" width="20%"><a href="https://github.com/jlthompso"><img src="https://avatars.githubusercontent.com/u/59495116?v=4" width="100px;" alt=""/><br /><sub><b>Joe Thompson</b></sub></a></td>
+      <td align="center" valign="top" width="20%"><a href="https://github.com/jnhooper"><img src="https://avatars.githubusercontent.com/u/8321632?v=4" width="100px;" alt=""/><br /><sub><b>John Nissen-Hooper</b></sub></a></td>
+      <td align="center" valign="top" width="20%"><a href="https://doitalldev.com/"><img src="https://avatars.githubusercontent.com/u/30505583?v=4" width="100px;" alt=""/><br /><sub><b>Jonathan</b></sub></a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="20%"><a href="https://github.com/jondewoo"><img src="https://avatars.githubusercontent.com/u/1108358?v=4" width="100px;" alt=""/><br /><sub><b>Jonathan Derrough</b></sub></a></td>
+      <td align="center" valign="top" width="20%"><a href="https://github.com/DonsWayo"><img src="https://avatars.githubusercontent.com/u/34981526?v=4" width="100px;" alt=""/><br /><sub><b>Juan Jose Carracedo</b></sub></a></td>
     </tr>
   </tbody>
 </table>
