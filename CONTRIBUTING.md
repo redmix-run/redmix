@@ -1,6 +1,6 @@
 # Contributing to the Framework Packages (Reference Doc)
 
-Love Redwood and want to get involved? You're in the right place!
+Love Redmix and want to get involved? You're in the right place! A perfect place to get started would be to update this document. It's currently outdated and points to Redwood resources.
 
 > ⚡️ **Quick Links**
 >
