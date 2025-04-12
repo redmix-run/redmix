@@ -88,66 +88,6 @@ _A gigantic "Thank YOU!" to everyone below who has contributed to one or more Re
 
 ### RedwoodJS
 
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tr>
-    <td align="center" valign="top" width="25%"><a href="http://tom.preston-werner.com/"><img src="https://avatars0.githubusercontent.com/u/1?v=4" width="100px;" alt=""/><br /><sub><b>Tom Preston-Werner</b></sub></a></td>
-    <td align="center" valign="top" width="25%"><a href="http://peterp.org/"><img src="https://avatars0.githubusercontent.com/u/44849?v=4" width="100px;" alt=""/><br /><sub><b>Peter Pistorius</b></sub></a></td>
-    <td align="center" valign="top" width="25%"><a href="http://ridingtheclutch.com/"><img src="https://avatars1.githubusercontent.com/u/300?v=4" width="100px;" alt=""/><br /><sub><b>Rob Cameron</b></sub></a></td>
-    <td align="center" valign="top" width="25%"><a href="http://thedavidprice.com/"><img src="https://avatars0.githubusercontent.com/u/2951?v=4" width="100px;" alt=""/><br /><sub><b>David Price</b></sub></a></td>
-  </tr>
-</table>
-
-<table>
-  <tr>
-    <td align="center" valign="top" width="25%"><a href="https://github.com/ahaywood/"><img src="https://avatars0.githubusercontent.com/u/212300?v=4" width="100px;" alt=""/><br /><sub><b>Amy Haywood Dutton</b></sub></a></td>
-    <td align="center" valign="top" width="25%"><a href="https://thedavidprice.com/"><img src="https://avatars0.githubusercontent.com/u/2951?v=4" width="100px;" alt=""/><br /><sub><b>David Price</b></sub></a></td>
-    <td align="center" valign="top" width="25%"><a href="https://github.com/tobbe/"><img src="https://avatars0.githubusercontent.com/u/30793?v=4" width="100px;" alt=""/><br /><sub><b>Tobbe Lundberg</b></sub></a></td>
-    <td align="center" valign="top" width="25%"><a href="https://tom.preston-werner.com/"><img src="https://avatars0.githubusercontent.com/u/1?v=4" width="100px;" alt=""/><br /><sub><b>Tom Preston-Werner</b></sub></a></td>
-  </tr>
-</table>
-
-<table>
-  <tr>
-    <td align="center" valign="top" width="20%"><a href="https://github.com/dthyresson"><img src="https://avatars2.githubusercontent.com/u/1051633?v=4" width="100px;" alt=""/><br /><sub><b>David Thyresson</b></td>
-    <td align="center" valign="top" width="20%"><a href="https://edamame.studio/"><img src="https://avatars0.githubusercontent.com/u/1521877?v=4" width="100px;" alt=""/><br /><sub><b>Daniel Choudhury</b></td>
-    <td align="center" valign="top" width="20%"><a href="https://github.com/keithtelliott"><img src="https://avatars.githubusercontent.com/u/43206213?v=4" width="100px;" alt=""/><br /><sub><b>Keith T Elliot</b></td>
-    <td align="center" valign="top" width="20%"><a href="https://github.com/BBurnworth"><img src="https://avatars.githubusercontent.com/u/5750537?v=4" width="100px;" alt=""/><br /><sub><b>Barrett Burnworth</b></td>
-    <td align="center" valign="top" width="20%"><a href="https://github.com/Josh-Walker-GM"><img src="https://avatars.githubusercontent.com/u/56300765?v=4" width="100px;" alt=""/><br /><sub><b>Josh GM Walker</b></td>
-</tr>
-</table>
-
-<table>
-<tr>
-    <td align="center"><a href="https://github.com/aldonline"><img src="https://avatars2.githubusercontent.com/u/154884?v=4" width="100px;" alt=""/><br /><sub><b>Aldo Bucchi</b></sub></a><br /></td>
-    <td align="center"><a href="https://adityaworks.com/"><img src="https://avatars.githubusercontent.com/u/2629902?v=4" width="100px;" alt=""/><br /><sub><b>Aditya Pandey</b></sub></a><br /></td>
-    <td align="center"><a href="https://github.com/agiannelli"><img src="https://avatars.githubusercontent.com/u/53096355?v=4" width="100px;" alt=""/><br /><sub><b>Amanda Giannelli</b></sub></a><br /></td>
-    <td align="center"><a href="https://github.com/alicelovescake"><img src="https://avatars.githubusercontent.com/u/66543449?v=4" width="100px;" alt=""/><br /><sub><b>Alice Zhao</b></sub></a><br /></td>
-    <td align="center"><a href="https://simoncrypta.dev/"><img src="https://avatars.githubusercontent.com/u/18013532?v=4" width="100px;" alt=""/><br /><sub><b>Simon Gagnon</b></sub></a><br /></td>
-</tr>
-<tr>
-    <td align="center"><a href="https://github.com/chrisvdm"><img src="https://avatars.githubusercontent.com/u/4147109?v=4" width="100px;" alt=""/><br /><sub><b>Chris van der Merwe</b></sub></a><br /></td>
-    <td align="center"><a href="https://www.figma.com/@realstandal"><img src="https://avatars.githubusercontent.com/u/25166787?v=4" width="100px;" alt=""/><br /><sub><b>Ryan Lockard</b></sub></a><br /></td>
-    <td align="center"><a href="https://github.com/virtuoushub"><img src="https://avatars.githubusercontent.com/u/4303638?v=4" width="100px;" alt=""/><br /><sub><b>Peter Colapietro</b></sub><br /></a></td>
-    <td align="center"><a href="https://github.com/noire-munich"><img src="https://avatars2.githubusercontent.com/u/10271407?v=4" width="100px;" alt=""/><br /><sub><b>noire.munich</b></sub></a></td>
-    <td align="center"><a href="https://github.com/forresthayes"><img src="https://avatars0.githubusercontent.com/u/44448047?v=4" width="100px;" alt=""/><br /><sub><b>Forrest Hayes</b></sub></a><br /></td>
-</tr>
-<tr>
-    <td align="center"><a href="https://github.com/RobertBroersma"><img src="https://avatars0.githubusercontent.com/u/4519828?v=4" width="100px;" alt=""/><br /><sub><b>Robert</b></sub></a><br /></td>
-    <td align="center"><a href="https://github.com/ajcwebdev"><img src="https://avatars0.githubusercontent.com/u/12433465?v=4" width="100px;" alt=""/><br /><sub><b>Anthony Campolo</b></sub></a><br /></td>
-    <td align="center"><a href="https://github.com/clairefro"><img src="https://avatars1.githubusercontent.com/u/9841162?v=4" width="100px;" alt=""/><br /><sub><b>Claire Froelich</b></sub></a><br /></td>
-    <td align="center"><a href="https://github.com/kimadeline"><img src="https://avatars3.githubusercontent.com/u/51720070?v=4" width="100px;" alt=""/><br /><sub><b>Kim-Adeline Miguel</b></sub></a><br /></td>
-    <td align="center"><a href="https://github.com/jtoar"><img src="https://avatars2.githubusercontent.com/u/32992335?v=4" width="100px;" alt=""/><br /><sub><b>Dominic Saadi</b></sub></a><br /></td>
-</tr>
-<tr>
-    <td align="center"><a href="http://kriscoulson.com/"><img src="https://avatars3.githubusercontent.com/u/6943688?v=4" width="100px;" alt=""/><br /><sub><b>Kris Coulson</b></sub></a><br /></td>
-</tr>
-</table>
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
-
-### All Contributors
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
