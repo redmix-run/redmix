@@ -57,7 +57,12 @@ what you use so I know what to keep and what to remove!
 ### Future Proofing
 
 - [ ] Make all packages ESM only where possible and ESM+CJS where needed to
-      keep compatibility with existing RW apps
+      keep compatibility with existing RW apps. Packages still to convert:
+  - [ ] `@redmix/cli` (in progress)
+  - [ ] `@redmix/fastify-web`
+  - [ ] `@redmix/api-server`
+  - [ ] `@redmix/api`
+  - [ ] etc. Full list: https://github.com/redmix-run/redmix/issues/19
 - [ ] Future major version: Make all packages ESM only      
 - [ ] Future major version: Make new Redmix apps ESM only
 - [ ] Future major version: Make it possible to switch existing Redmix apps to
@@ -78,6 +83,14 @@ what you use so I know what to keep and what to remove!
 
 - [ ] Mirror the RedwoodJS docs to make sure they don't get deleted
 - [ ] Document where Redmix diverges from RedwoodJS. (Future major version.)
+
+### New Features
+
+- [ ] Better support for file uploads
+- [ ] dbAuth version with OAuth support
+- [ ] Whatever I need to make it easier to work with the OpenAI API/SDK and
+      other AI tools
+– [ ] Your feature request here! Let me know what you need!
 
 ## The Redmix Team
 
