@@ -2,7 +2,7 @@ import { fs as memfs, vol } from 'memfs'
 import { vi, describe, expect, it } from 'vitest'
 import yargs from 'yargs'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@redmix/project-config'
 
 import * as upCommand from '../commands/up'
 import { handler as dataMigrateUpHandler } from '../commands/upHandler.js'

@@ -2,7 +2,7 @@ import { useEngine } from '@envelop/core'
 import * as GraphQLJS from 'graphql'
 import { beforeEach, vi, describe, expect, it } from 'vitest'
 
-import type * as Api from '@redwoodjs/api'
+import type * as Api from '@redmix/api'
 
 import { testSchema, testQuery } from '../__fixtures__/common'
 import {
@@ -13,7 +13,7 @@ import { useRedwoodAuthContext } from '../useRedwoodAuthContext'
 
 const authDecoder = async (token: string) => ({ token })
 
-vi.mock('@redwoodjs/api', async (importOriginal) => {
+vi.mock('@redmix/api', async (importOriginal) => {
   const originalApi = await importOriginal<typeof Api>()
   return {
     ...originalApi,

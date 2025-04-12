@@ -3,7 +3,7 @@ import path from 'path'
 
 import { format } from 'prettier'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@redmix/project-config'
 
 import type { GeneratedFile } from './types'
 

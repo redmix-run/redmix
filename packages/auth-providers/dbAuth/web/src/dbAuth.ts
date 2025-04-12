@@ -1,8 +1,8 @@
-import type { CurrentUser, CustomProviderHooks } from '@redwoodjs/auth'
+import type { CurrentUser, CustomProviderHooks } from '@redmix/auth'
 import {
   createAuthentication,
   getCurrentUserFromMiddleware,
-} from '@redwoodjs/auth'
+} from '@redmix/auth'
 
 import type { WebAuthnClientType } from './webAuthn'
 

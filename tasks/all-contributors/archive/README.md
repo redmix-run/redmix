@@ -12,7 +12,7 @@
 
 Redwood has a vibrant community that we want to highlight as much as possible. Using the [All-contributors](https://allcontributors.org/) specifications and CLI, this project allows us to:
 
-- track the Framework, create-redwood-app, and Redwoodjs.com repo contributors
+- track the Framework, create-redmix-app, and Redwoodjs.com repo contributors
 - display the aggregated list of contributors in the [Contributors section](https://github.com/redwoodjs/redwood/blob/main/README.md#contributors) of the root README.md
 
 ## Lead
@@ -44,7 +44,7 @@ _note: this file is also used for all aggregated contributors_
 - `.learn.all-contributorsrc`
 
 // Archived
-**CRWA** `redwoodjs/create-redwood-app` project:
+**CRWA** `redwoodjs/create-redmix-app` project:
 
 - `.crwa.all-contributorsrc`
 
@@ -52,7 +52,7 @@ _note: this file is also used for all aggregated contributors_
 >
 > - 💻 (code) == Framework
 > - 📖 (doc) == Redwoodjs.com
-> - 🔧 (tool) == Create-Redwood-App
+> - 🔧 (tool) == create-redmix-app
 > - ✅ (tutorial) == Learn.Redwoodjs.com
 >
 > The "type" is required.

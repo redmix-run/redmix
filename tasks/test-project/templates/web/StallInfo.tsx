@@ -1,6 +1,6 @@
 import type { Stall } from 'types/graphql'
 
-import { registerFragment } from '@redwoodjs/web/apollo'
+import { registerFragment } from '@redmix/web/apollo'
 
 const { useRegisteredFragment } = registerFragment(gql`
   fragment Stall_info on Stall {

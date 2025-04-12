@@ -17,7 +17,7 @@ yarn rw setup docker
 The setup commands does several things:
 
 - writes four files: `Dockerfile`, `.dockerignore`, `docker-compose.dev.yml`, and `docker-compose.prod.yml`
-- adds the `@redwoodjs/api-server` and `@redwoodjs/web-server` packages to the api and web sides respectively
+- adds the `@redmix/api-server` and `@redmix/web-server` packages to the api and web sides respectively
 - edits the `browser.open` setting in the `redwood.toml` (right now, if it's set to `true`, it'll break the dev server when running the `docker-compose.dev.yml`)
 
 ## Usage
@@ -60,7 +60,7 @@ If you are using a [Server File](#using-the-server-file) then you should [change
 ## Dockerfile
 
 The documentation here goes through and explains every line of Redwood's Dockerfile.
-If you'd like to see the whole Dockerfile for reference, you can find it [here](https://github.com/redwoodjs/redwood/tree/main/packages/cli/src/commands/setup/docker/templates/Dockerfile) or by setting it up in your project: `yarn rw setup docker`.
+If you'd like to see the whole Dockerfile for reference, you can find it [here](https://github.com/redmix-run/redmix/tree/main/packages/cli/src/commands/setup/docker/templates/Dockerfile) or by setting it up in your project: `yarn rw setup docker`.
 
 Redwood takes advantage of [Docker's multi-stage build support](https://docs.docker.com/build/building/multi-stage/) to keep the final production images lean.
 
@@ -260,7 +260,7 @@ At this point all the building has been done. Now we can just grab the artifacts
 There's one more thing that was built: the prisma client in `node_modules/.prisma`.
 We need to grab it, too.
 
-Lastly, the default command is to start the api server using the bin from the `@redwoodjs/api-server` package.
+Lastly, the default command is to start the api server using the bin from the `@redmix/api-server` package.
 You can override this command if you have more specific needs.
 
 ```Dockerfile
@@ -358,7 +358,7 @@ CMD "node_modules/.bin/rw-web-server" "--api-proxy-target" "$API_PROXY_TARGET"
 Most of this stage is similar to the `api_serve` stage, except that we're copying from the `web_build` stage instead of the `api_build`.
 (If you're prerendering, you'll want to change the `--from=web_build` to `--from=web_prerender_build`.)
 
-The binary we're using here to serve the web side is `rw-web-server` which comes from the `@redwoodjs/web-server` package.
+The binary we're using here to serve the web side is `rw-web-server` which comes from the `@redmix/web-server` package.
 While this web server will be much more fully featured in the future, right now it's mostly just to get you going.
 Ideally you want to put a web server like Nginx or Caddy in front of it.
 
@@ -500,7 +500,7 @@ yarn rw setup server-file
 This should give you a new file at `api/src/server.ts`:
 
 ```typescript title="api/src/server.ts"
-import { createServer } from '@redwoodjs/api-server'
+import { createServer } from '@redmix/api-server'
 
 import { logger } from 'src/lib/logger'
 
@@ -515,7 +515,7 @@ async function main() {
 main()
 ```
 
-Without the server file, to start the api side, you'd use binaries provided by `@redwoodjs/api-server` such as `yarn rw-server api` (you may also see this as `./node_modules/.bin/rw-server api`).
+Without the server file, to start the api side, you'd use binaries provided by `@redmix/api-server` such as `yarn rw-server api` (you may also see this as `./node_modules/.bin/rw-server api`).
 
 With the server file, there's no indirection. Just use `node`:
 

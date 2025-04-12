@@ -49,7 +49,7 @@ import type {
   CellFailureProps,
   CellSuccessProps,
   TypedDocumentNode,
-} from '@redwoodjs/web'
+} from '@redmix/web'
 
 export const QUERY: TypedDocumentNode<FindPosts, FindPostsVariables> = gql`
   query FindPosts {
@@ -170,7 +170,7 @@ import type {
   CellFailureProps,
   CellSuccessProps,
   TypedDocumentNode,
-} from '@redwoodjs/web'
+} from '@redmix/web'
 
 export const QUERY: TypedDocumentNode<ArticlesQuery, ArticlesQueryVariables> =
   gql`
@@ -306,7 +306,7 @@ import type {
   CellFailureProps,
   CellSuccessProps,
   TypedDocumentNode,
-} from '@redwoodjs/web'
+} from '@redmix/web'
 
 export const QUERY: TypedDocumentNode<ArticlesQuery, ArticlesQueryVariables> =
   gql`
@@ -370,7 +370,7 @@ Let's plug this cell into our `HomePage` and see what happens:
 <TabItem value="js" label="JavaScript">
 
 ```jsx title="web/src/pages/HomePage/HomePage.jsx"
-import { Metadata } from '@redwoodjs/web'
+import { Metadata } from '@redmix/web'
 
 // highlight-next-line
 import ArticlesCell from 'src/components/ArticlesCell'
@@ -392,7 +392,7 @@ export default HomePage
 <TabItem value="ts" label="TypeScript">
 
 ```tsx title="web/src/pages/HomePage/HomePage.tsx"
-import { Metadata } from '@redwoodjs/web'
+import { Metadata } from '@redmix/web'
 
 // highlight-next-line
 import ArticlesCell from 'src/components/ArticlesCell'

@@ -4,7 +4,7 @@ export default function transform(file: FileInfo, api: API) {
   const j = api.jscodeshift
   const ast = j(file.source)
 
-  // Insert `import vitePluginOgImageGen from '@redwoodjs/ogimage-gen/plugin'` at the top of the file
+  // Insert `import vitePluginOgImageGen from '@redmix/ogimage-gen/plugin'` at the top of the file
   const needsImport =
     ast.find(j.ImportDeclaration, {
       specifiers: [
@@ -16,7 +16,7 @@ export default function transform(file: FileInfo, api: API) {
         },
       ],
       source: {
-        value: '@redwoodjs/ogimage-gen/plugin',
+        value: '@redmix/ogimage-gen/plugin',
         type: 'StringLiteral',
       },
     }).length === 0
@@ -27,7 +27,7 @@ export default function transform(file: FileInfo, api: API) {
       .insertBefore(
         j.importDeclaration(
           [j.importDefaultSpecifier(j.identifier('vitePluginOgImageGen'))],
-          j.stringLiteral('@redwoodjs/ogimage-gen/plugin'),
+          j.stringLiteral('@redmix/ogimage-gen/plugin'),
         ),
       )
   }

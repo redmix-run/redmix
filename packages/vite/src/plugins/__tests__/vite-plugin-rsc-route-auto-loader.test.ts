@@ -13,8 +13,8 @@ import {
   afterEach,
 } from 'vitest'
 
-import { processPagesDir } from '@redwoodjs/project-config'
-import type * as ProjectConfig from '@redwoodjs/project-config'
+import { processPagesDir } from '@redmix/project-config'
+import type * as ProjectConfig from '@redmix/project-config'
 
 import { rscRoutesAutoLoader } from '../vite-plugin-rsc-routes-auto-loader.js'
 
@@ -24,7 +24,7 @@ const TEST_RWJS_CWD = '/Users/mojombo/rw-app/'
 const RWJS_CWD = process.env.RWJS_CWD
 process.env.RWJS_CWD = TEST_RWJS_CWD
 
-vi.mock('@redwoodjs/project-config', async (importOriginal) => {
+vi.mock('@redmix/project-config', async (importOriginal) => {
   const originalProjectConfig = await importOriginal<typeof ProjectConfig>()
   return {
     ...originalProjectConfig,
@@ -75,7 +75,7 @@ describe('rscRoutesAutoLoader', () => {
   it('should insert the correct imports for non-ssr', async () => {
     const output = await pluginTransform(
       `import { jsx, jsxs } from "react/jsx-runtime";
-      import { Router, Route, Set } from "@redwoodjs/router";
+      import { Router, Route, Set } from "@redmix/router";
       import NavigationLayout from "./layouts/NavigationLayout/NavigationLayout";
       import ScaffoldLayout from "./layouts/ScaffoldLayout/ScaffoldLayout";
       import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
@@ -106,7 +106,7 @@ describe('rscRoutesAutoLoader', () => {
 
     // What we are interested in seeing here is:
     // - Creation of `const EmptyUserNewEmptyUserPage = () => null;` etc for each page
-    // - The import of `dummyComponent` from `@redwoodjs/router/dist/dummyComponent`
+    // - The import of `dummyComponent` from `@redmix/router/dist/dummyComponent`
     expect(output).toMatchInlineSnapshot(`
       "const EmptyUserNewEmptyUserPage = () => null;
       const EmptyUserEmptyUsersPage = () => null;
@@ -116,9 +116,9 @@ describe('rscRoutesAutoLoader', () => {
       const FatalErrorPage = () => null;
       const AboutPage = () => null;
       import { jsx, jsxs } from "react/jsx-runtime";
-      import { Router, Route, Set } from "@redwoodjs/router";
-      import NavigationLayout from "@redwoodjs/router/dist/dummyComponent";
-      import ScaffoldLayout from "@redwoodjs/router/dist/dummyComponent";
+      import { Router, Route, Set } from "@redmix/router";
+      import NavigationLayout from "@redmix/router/dist/dummyComponent";
+      import ScaffoldLayout from "@redmix/router/dist/dummyComponent";
       import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
       const Routes = () => {
         return /* @__PURE__ */jsxs(Router, {
@@ -184,7 +184,7 @@ describe('rscRoutesAutoLoader', () => {
   it('should insert the correct imports for ssr', async () => {
     const output = await pluginTransform(
       `import { jsx, jsxs } from "react/jsx-runtime";
-      import { Router, Route, Set } from "@redwoodjs/router";
+      import { Router, Route, Set } from "@redmix/router";
       import NavigationLayout from "./layouts/NavigationLayout/NavigationLayout";
       import ScaffoldLayout from "./layouts/ScaffoldLayout/ScaffoldLayout";
       import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
@@ -214,7 +214,7 @@ describe('rscRoutesAutoLoader', () => {
 
     // What we are interested in seeing here is:
     // Dummy pages (`() => null`) for all the pages
-    // Dummy imports (`import SomeWrapper from "@redwoodjs/router/dist/dummyComponent"`)
+    // Dummy imports (`import SomeWrapper from "@redmix/router/dist/dummyComponent"`)
     // for all the wrapper components
     expect(output).toMatchInlineSnapshot(`
       "const EmptyUserNewEmptyUserPage = () => null;
@@ -225,9 +225,9 @@ describe('rscRoutesAutoLoader', () => {
       const FatalErrorPage = () => null;
       const AboutPage = () => null;
       import { jsx, jsxs } from "react/jsx-runtime";
-      import { Router, Route, Set } from "@redwoodjs/router";
-      import NavigationLayout from "@redwoodjs/router/dist/dummyComponent";
-      import ScaffoldLayout from "@redwoodjs/router/dist/dummyComponent";
+      import { Router, Route, Set } from "@redmix/router";
+      import NavigationLayout from "@redmix/router/dist/dummyComponent";
+      import ScaffoldLayout from "@redmix/router/dist/dummyComponent";
       import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
       const Routes = () => {
         return /* @__PURE__ */jsxs(Router, {
@@ -297,7 +297,7 @@ describe('rscRoutesAutoLoader', () => {
       const pluginTransform = getPluginTransform()
       const output = await pluginTransform(
         `import { jsx, jsxs } from "react/jsx-runtime";
-        import { Router, Route, Set } from "@redwoodjs/router";
+        import { Router, Route, Set } from "@redmix/router";
         import NavigationLayout from "./layouts/NavigationLayout/NavigationLayout";
         import ScaffoldLayout from "./layouts/ScaffoldLayout/ScaffoldLayout";
         import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
@@ -335,7 +335,7 @@ describe('rscRoutesAutoLoader', () => {
   it('should handle existing imports in the routes file', async () => {
     const output = await pluginTransform(
       `import { jsx, jsxs } from "react/jsx-runtime";
-      import { Router, Route, Set } from "@redwoodjs/router";
+      import { Router, Route, Set } from "@redmix/router";
       import NavigationLayout from "./layouts/NavigationLayout/NavigationLayout";
       import ScaffoldLayout from "./layouts/ScaffoldLayout/ScaffoldLayout";
       import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";

@@ -4,8 +4,8 @@ import camelcase from 'camelcase'
 import { Listr } from 'listr2'
 import terminalLink from 'terminal-link'
 
-import { recordTelemetryAttributes } from '@redwoodjs/cli-helpers'
-import { errorTelemetry } from '@redwoodjs/telemetry'
+import { recordTelemetryAttributes } from '@redmix/cli-helpers'
+import { errorTelemetry } from '@redmix/telemetry'
 
 import c from '../../../lib/colors.js'
 import {

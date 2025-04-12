@@ -1,5 +1,5 @@
 {
-  "name": "@redwoodjs/auth-netlify-web",
+  "name": "@redmix/auth-netlify-web",
   "version": "8.0.0",
   "repository": {
     "type": "git",
@@ -38,7 +38,7 @@
   ],
   "scripts": {
     "build": "tsx ./build.ts",
-    "build:pack": "yarn pack -o redwoodjs-auth-netlify-web.tgz",
+    "build:pack": "yarn pack -o redmix-auth-netlify-web.tgz",
     "build:types": "tsc --build --verbose ./tsconfig.build.json",
     "build:types-cjs": "tsc --build --verbose ./tsconfig.cjs.json",
     "build:watch": "nodemon --watch src --ext \"js,jsx,ts,tsx,template\" --ignore dist --exec \"yarn build\"",
@@ -49,10 +49,10 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@redwoodjs/auth": "workspace:*"
+    "@redmix/auth": "workspace:*"
   },
   "devDependencies": {
-    "@redwoodjs/framework-tools": "workspace:*",
+    "@redmix/framework-tools": "workspace:*",
     "@types/netlify-identity-widget": "1.9.6",
     "@types/react": "^18.2.55",
     "concurrently": "8.2.2",

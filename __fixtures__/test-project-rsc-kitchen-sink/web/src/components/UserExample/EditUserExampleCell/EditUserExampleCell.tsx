@@ -2,10 +2,10 @@
 
 import type { EditUserExampleById, UpdateUserExampleInput } from 'types/graphql'
 
-import { navigate, routes } from '@redwoodjs/router'
-import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
-import { useMutation } from '@redwoodjs/web'
-import { toast } from '@redwoodjs/web/toast'
+import { navigate, routes } from '@redmix/router'
+import type { CellSuccessProps, CellFailureProps } from '@redmix/web'
+import { useMutation } from '@redmix/web'
+import { toast } from '@redmix/web/toast'
 
 import UserExampleForm from 'src/components/UserExample/UserExampleForm'
 

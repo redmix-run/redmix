@@ -7,7 +7,7 @@ import fastifyUrlData from '@fastify/url-data'
 import fg from 'fast-glob'
 import type { FastifyInstance, FastifyReply, FastifyRequest } from 'fastify'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@redmix/project-config'
 
 import { coerceRootPath } from './helpers'
 import { resolveOptions } from './resolveOptions'

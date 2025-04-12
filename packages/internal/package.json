@@ -1,5 +1,5 @@
 {
-  "name": "@redwoodjs/internal",
+  "name": "@redmix/internal",
   "version": "8.0.0",
   "repository": {
     "type": "git",
@@ -63,7 +63,7 @@
   "scripts": {
     "build": "tsx ./build.mts && yarn build:types",
     "build:clean-dist": "rimraf 'dist/**/*/__tests__' --glob",
-    "build:pack": "yarn pack -o redwoodjs-internal.tgz",
+    "build:pack": "yarn pack -o redmix-internal.tgz",
     "build:types": "tsc --build --verbose ./tsconfig.json",
     "build:watch": "nodemon --watch src --ext \"js,jsx,ts,tsx\" --ignore dist --exec \"yarn build\"",
     "check:attw": "yarn attw -P",
@@ -92,10 +92,10 @@
     "@graphql-codegen/typescript-react-apollo": "3.3.7",
     "@graphql-codegen/typescript-resolvers": "3.2.1",
     "@graphql-tools/documents": "1.0.1",
-    "@redwoodjs/babel-config": "workspace:*",
-    "@redwoodjs/graphql-server": "workspace:*",
-    "@redwoodjs/project-config": "workspace:*",
-    "@redwoodjs/router": "workspace:*",
+    "@redmix/babel-config": "workspace:*",
+    "@redmix/graphql-server": "workspace:*",
+    "@redmix/project-config": "workspace:*",
+    "@redmix/router": "workspace:*",
     "@sdl-codegen/node": "2.0.1",
     "chalk": "4.1.2",
     "core-js": "3.38.1",
@@ -116,7 +116,7 @@
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "0.16.4",
-    "@redwoodjs/framework-tools": "workspace:*",
+    "@redmix/framework-tools": "workspace:*",
     "@types/fs-extra": "11.0.4",
     "concurrently": "8.2.2",
     "graphql-tag": "2.12.6",

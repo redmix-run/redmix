@@ -108,7 +108,7 @@ export const getCurrentUser = async (
 ## Avoiding feature duplication
 
 Redwood's Clerk integration is based on [Clerk's React SDK](https://clerk.dev/docs/reference/clerk-react/installation).
-This means that there's some duplication between the features in the SDK and the ones in `@redwoodjs/auth-clerk-web`.
+This means that there's some duplication between the features in the SDK and the ones in `@redmix/auth-clerk-web`.
 For example, the SDK ha a `SignedOut` component that redirects a user away from a private page—very much like wrapping a route with Redwood's `Private` component.
 We recommend you use Redwood's way of doing things as much as possible since it's much more likely to get along with the rest of the framework.
 

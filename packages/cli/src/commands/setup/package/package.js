@@ -1,6 +1,6 @@
 import terminalLink from 'terminal-link'
 
-import { recordTelemetryAttributes } from '@redwoodjs/cli-helpers'
+import { recordTelemetryAttributes } from '@redmix/cli-helpers'
 
 export const command = 'package <npm-package>'
 export const description =

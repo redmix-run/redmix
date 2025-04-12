@@ -1,5 +1,5 @@
 import { trace as RW_OTEL_WRAPPER_TRACE } from '@opentelemetry/api'
-import { AuthenticationError, ForbiddenError } from '@redwoodjs/graphql-server'
+import { AuthenticationError, ForbiddenError } from '@redmix/graphql-server'
 import { db } from './db'
 export const getCurrentUser = async (session) => {
   const __getCurrentUser = async (session) => {

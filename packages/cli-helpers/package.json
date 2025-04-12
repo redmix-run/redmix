@@ -1,5 +1,5 @@
 {
-  "name": "@redwoodjs/cli-helpers",
+  "name": "@redmix/cli-helpers",
   "version": "8.0.0",
   "repository": {
     "type": "git",
@@ -46,7 +46,7 @@
   ],
   "scripts": {
     "build": "tsx ./build.ts && yarn build:types",
-    "build:pack": "yarn pack -o redwoodjs-cli-helpers.tgz",
+    "build:pack": "yarn pack -o redmix-cli-helpers.tgz",
     "build:types": "tsc --build --verbose ./tsconfig.build.json ./tsconfig.cjs.json",
     "build:watch": "nodemon --watch src --ext \"js,jsx,ts,tsx\" --ignore dist --exec \"yarn build\"",
     "prepublishOnly": "NODE_ENV=production yarn build",
@@ -56,8 +56,8 @@
   "dependencies": {
     "@babel/core": "^7.26.10",
     "@opentelemetry/api": "1.8.0",
-    "@redwoodjs/project-config": "workspace:*",
-    "@redwoodjs/telemetry": "workspace:*",
+    "@redmix/project-config": "workspace:*",
+    "@redmix/telemetry": "workspace:*",
     "chalk": "4.1.2",
     "dotenv": "16.4.7",
     "dotenv-defaults": "5.0.2",
@@ -73,7 +73,7 @@
     "yargs-parser": "21.1.1"
   },
   "devDependencies": {
-    "@redwoodjs/framework-tools": "workspace:*",
+    "@redmix/framework-tools": "workspace:*",
     "@types/dotenv-defaults": "^2.0.4",
     "@types/lodash": "4.17.15",
     "@types/pascalcase": "1.0.3",

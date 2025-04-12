@@ -1,7 +1,7 @@
-// import { useRouteName } from '@redwoodjs/router/dist/useRouteName'
-import { Link } from '@redwoodjs/router/Link'
-import { namedRoutes as routes } from '@redwoodjs/router/namedRoutes'
-import { getLocation } from '@redwoodjs/server-store'
+// import { useRouteName } from '@redmix/router/dist/useRouteName'
+import { Link } from '@redmix/router/Link'
+import { namedRoutes as routes } from '@redmix/router/namedRoutes'
+import { getLocation } from '@redmix/server-store'
 
 import BlogPostsNavCell from 'src/components/BlogPostsNavCell/BlogPostsNavCell'
 import { deletePost } from 'src/lib/actions'

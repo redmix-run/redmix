@@ -1,6 +1,6 @@
 import { trace as RW_OTEL_WRAPPER_TRACE } from '@opentelemetry/api'
 import gql from 'graphql-tag'
-import { createValidatorDirective } from '@redwoodjs/graphql-server'
+import { createValidatorDirective } from '@redmix/graphql-server'
 export const schema = gql`
   """
   Use to skip authentication checks and allow public access.

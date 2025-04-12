@@ -1,6 +1,6 @@
 import crypto from 'node:crypto'
 
-import { getConfig } from '@redwoodjs/project-config'
+import { getConfig } from '@redmix/project-config'
 
 export type SignedUrlSettings = {
   endpoint: string // The path to the signed url endpoint, or a full url (include http(s)://)

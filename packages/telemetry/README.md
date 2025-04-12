@@ -45,5 +45,5 @@ If you suspect problems with telemetry when running CRWA, you can set the verbos
 For example,
 
 ```terminal
-REDWOOD_VERBOSE_TELEMETRY=true yarn create-redwood-app bazinga
+REDWOOD_VERBOSE_TELEMETRY=true yarn create-redmix-app bazinga
 ```

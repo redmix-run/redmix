@@ -1,5 +1,5 @@
-import { Link, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
+import { Link, routes } from '@redmix/router'
+import { Metadata } from '@redmix/web'
 import JobsCell from 'src/components/Jobs/JobsCell'
 
 const AllJobsPage = () => {

@@ -78,7 +78,7 @@ Okay, let's do this:
 
 ```jsx title="web/src/components/ArticlesCell.test.jsx"
 // highlight-next-line
-import { render, screen, within } from '@redwoodjs/testing'
+import { render, screen, within } from '@redmix/testing'
 
 import { Loading, Empty, Failure, Success } from './ArticlesCell'
 import { standard } from './ArticlesCell.mock'
@@ -127,7 +127,7 @@ describe('ArticlesCell', () => {
 
 ```tsx title="web/src/components/ArticlesCell.test.tsx"
 // highlight-next-line
-import { render, screen, within } from '@redwoodjs/testing'
+import { render, screen, within } from '@redmix/testing'
 
 import { Loading, Empty, Failure, Success } from './ArticlesCell'
 import { standard } from './ArticlesCell.mock'
@@ -411,7 +411,7 @@ We'll move the sample article data in the test to a constant and then use it in 
 <TabItem value="js" label="JavaScript">
 
 ```jsx title="web/src/components/Article/Article.test.jsx"
-import { render, screen } from '@redwoodjs/testing'
+import { render, screen } from '@redmix/testing'
 
 import Article from './Article'
 
@@ -454,7 +454,7 @@ describe('Article', () => {
 <TabItem value="ts" label="TypeScript">
 
 ```jsx title="web/src/components/Article/Article.test.tsx"
-import { render, screen } from '@redwoodjs/testing'
+import { render, screen } from '@redmix/testing'
 
 import Article from './Article'
 

@@ -1,5 +1,5 @@
 {
-  "name": "@redwoodjs/api-server",
+  "name": "@redmix/api-server",
   "version": "8.0.0",
   "description": "Redwood's HTTP server for Serverless Functions",
   "repository": {
@@ -20,7 +20,7 @@
   ],
   "scripts": {
     "build": "tsx ./build.mts && yarn build:types",
-    "build:pack": "yarn pack -o redwoodjs-api-server.tgz",
+    "build:pack": "yarn pack -o redmix-api-server.tgz",
     "build:types": "tsc --build --verbose tsconfig.build.json",
     "build:watch": "nodemon --watch src --ext \"js,jsx,ts,tsx\" --ignore dist --exec \"yarn build && yarn fix:permissions\"",
     "fix:permissions": "chmod +x dist/index.js; chmod +x dist/watch.js",
@@ -31,11 +31,11 @@
   "dependencies": {
     "@fastify/multipart": "8.3.1",
     "@fastify/url-data": "5.4.0",
-    "@redwoodjs/context": "workspace:*",
-    "@redwoodjs/fastify-web": "workspace:*",
-    "@redwoodjs/internal": "workspace:*",
-    "@redwoodjs/project-config": "workspace:*",
-    "@redwoodjs/web-server": "workspace:*",
+    "@redmix/context": "workspace:*",
+    "@redmix/fastify-web": "workspace:*",
+    "@redmix/internal": "workspace:*",
+    "@redmix/project-config": "workspace:*",
+    "@redmix/web-server": "workspace:*",
     "chalk": "4.1.2",
     "chokidar": "3.6.0",
     "dotenv-defaults": "5.0.2",
@@ -51,7 +51,7 @@
     "yargs": "17.7.2"
   },
   "devDependencies": {
-    "@redwoodjs/framework-tools": "workspace:*",
+    "@redmix/framework-tools": "workspace:*",
     "@types/aws-lambda": "8.10.145",
     "@types/lodash": "4.17.15",
     "@types/qs": "6.9.16",
@@ -63,10 +63,10 @@
     "vitest": "2.1.9"
   },
   "peerDependencies": {
-    "@redwoodjs/graphql-server": "workspace:*"
+    "@redmix/graphql-server": "workspace:*"
   },
   "peerDependenciesMeta": {
-    "@redwoodjs/graphql-server": {
+    "@redmix/graphql-server": {
       "optional": true
     }
   },

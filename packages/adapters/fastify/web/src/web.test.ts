@@ -5,7 +5,7 @@ import type { FastifyInstance } from 'fastify'
 import Fastify from 'fastify'
 import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@redmix/project-config'
 
 import { redwoodFastifyWeb } from './web'
 

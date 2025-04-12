@@ -1,5 +1,5 @@
-import { getAuthState } from '@redwoodjs/server-store'
-import { Metadata } from '@redwoodjs/web/dist/components/Metadata'
+import { getAuthState } from '@redmix/server-store'
+import { Metadata } from '@redmix/web/dist/components/Metadata'
 
 import { LogOutButton } from './LogOutButton'
 

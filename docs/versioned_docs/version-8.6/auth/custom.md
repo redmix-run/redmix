@@ -37,7 +37,7 @@ It comes commented to guide us, but we'll get into it here.
 If you're using TypeScript, scroll past the boilerplate interfaces for now to get to our first task, instantiating the client:
 
 ```ts title="web/src/auth.ts"
-import { createAuthentication } from '@redwoodjs/auth'
+import { createAuthentication } from '@redmix/auth'
 
 // ...
 
@@ -98,7 +98,7 @@ NHOST_BACKEND_URL="..."
 Lastly, let's update `web/src/auth.ts`:
 
 ```ts title="web/src/auth.ts"
-import { createAuthentication } from '@redwoodjs/auth'
+import { createAuthentication } from '@redmix/auth'
 
 import { NhostClient } from '@nhost/nhost-js'
 

@@ -1,4 +1,4 @@
-import { Metadata } from '@redwoodjs/web'
+import { Metadata } from '@redmix/web'
 import JobProfileCell from 'src/components/Jobs/JobProfileCell'
 
 const JobProfilePage = ({ id }) => {

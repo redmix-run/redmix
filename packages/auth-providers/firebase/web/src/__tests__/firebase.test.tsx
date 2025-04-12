@@ -4,7 +4,7 @@ import type { User, OAuthProvider, Auth } from 'firebase/auth'
 import { OperationType } from 'firebase/auth'
 import { vi, beforeAll, beforeEach, describe, it, expect } from 'vitest'
 
-import type { CurrentUser } from '@redwoodjs/auth'
+import type { CurrentUser } from '@redmix/auth'
 
 import type { FirebaseClient } from '../firebase.js'
 import { createAuth } from '../firebase.js'

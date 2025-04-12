@@ -5,7 +5,7 @@ import fs from 'fs-extra'
 import { Listr } from 'listr2'
 import terminalLink from 'terminal-link'
 
-import { recordTelemetryAttributes } from '@redwoodjs/cli-helpers'
+import { recordTelemetryAttributes } from '@redmix/cli-helpers'
 
 import c from '../../../lib/colors.js'
 import { getPaths, writeFilesTask } from '../../../lib/index.js'

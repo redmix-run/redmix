@@ -6,8 +6,8 @@ const {
   getCommonPlugins,
   getApiSideDefaultBabelConfig,
   getWebSideDefaultBabelConfig,
-} = require('@redwoodjs/babel-config')
-const { getConfig, isTypeScriptProject } = require('@redwoodjs/project-config')
+} = require('@redmix/babel-config')
+const { getConfig, isTypeScriptProject } = require('@redmix/project-config')
 
 const config = getConfig()
 
@@ -74,7 +74,7 @@ module.exports = {
             ignoreNonDOM: true,
           },
         ],
-        '@redwoodjs/unsupported-route-components': 'error',
+        '@redmix/unsupported-route-components': 'error',
       },
     },
     // `api` side
@@ -91,9 +91,9 @@ module.exports = {
     },
     {
       files: ['api/src/services/**/*.ts'],
-      plugins: ['@redwoodjs'],
+      plugins: ['@redmix'],
       rules: {
-        '@redwoodjs/service-type-annotations': 'off',
+        '@redmix/service-type-annotations': 'off',
       },
     },
     {

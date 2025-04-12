@@ -1,5 +1,5 @@
 {
-  "name": "@redwoodjs/api",
+  "name": "@redmix/api",
   "version": "8.0.0",
   "repository": {
     "type": "git",
@@ -40,7 +40,7 @@
   ],
   "scripts": {
     "build": "tsx ./build.mts && yarn build:types",
-    "build:pack": "yarn pack -o redwoodjs-api.tgz",
+    "build:pack": "yarn pack -o redmix-api.tgz",
     "build:types": "tsc --build --verbose ./tsconfig.json",
     "build:watch": "nodemon --watch src --ext \"js,jsx,ts,tsx\" --ignore dist --exec \"yarn build\"",
     "check:attw": "yarn rw-fwtools-attw",
@@ -60,7 +60,7 @@
     "title-case": "3.0.3"
   },
   "devDependencies": {
-    "@redwoodjs/framework-tools": "workspace:*",
+    "@redmix/framework-tools": "workspace:*",
     "@types/aws-lambda": "8.10.145",
     "@types/jsonwebtoken": "9.0.8",
     "@types/memjs": "1",

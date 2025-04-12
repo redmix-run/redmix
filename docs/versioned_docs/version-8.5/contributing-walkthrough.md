@@ -10,7 +10,7 @@ description: Watch a video of the contributing process
 > There are several contributing docs and references, each covering specific topics:
 >
 > 1. 🧭 [Overview and Orientation](contributing-overview.md)
-> 2. 📓 [Reference: Contributing to the Framework Packages](https://github.com/redwoodjs/redwood/blob/main/CONTRIBUTING.md)
+> 2. 📓 [Reference: Contributing to the Framework Packages](https://github.com/redmix-run/redmix/blob/main/CONTRIBUTING.md)
 > 3. 🪜 **Step-by-step Walkthrough** (👈 you are here)
 > 4. 📈 [Current Project Status: v1 Release Board](https://github.com/orgs/redwoodjs/projects/6)
 > 5. 🤔 What should I work on?
@@ -39,7 +39,7 @@ The best (and most fun) way to learn Redwood and the underlying tools and techno
 
 **Docs and How To**
 
-- Start with the [Introduction](https://github.com/redwoodjs/redwood/blob/main/README.md) Doc
+- Start with the [Introduction](https://github.com/redmix-run/redmix/blob/main/README.md) Doc
 - And browse through [How To's](how-to/index)
 
 ### GitHub (and Git)
@@ -58,13 +58,13 @@ Diving into Git and the GitHub workflow can feel intimidating if you haven’t e
 
 We refer to the codebase of a Redwood application as a Project. This is what you install when you run `yarn create redwood-app <path-to-directory>`. It’s the thing you are building with Redwood.
 
-Lastly, you’ll find the template used to create a new project (when you run create redwood-app) here in GitHub: [redwoodjs/redwood/packages/create-redwood-app/template/](https://github.com/redwoodjs/redwood/tree/main/packages/create-redwood-app/template)
+Lastly, you’ll find the template used to create a new project (when you run create redwood-app) here in GitHub: [redwoodjs/redwood/packages/create-redmix-app/template/](https://github.com/redmix-run/redmix/tree/main/packages/create-redmix-app/template)
 
 We refer to this as the **CRWA Template or Project Template**.
 
 #### Redwood “Framework”
 
-The Framework is the codebase containing all the packages (and other code) that is published on NPMjs.com as `@redwoodjs/<package-name>`. The Framework repository on GitHub is here: [https://github.com/redwoodjs/redwood](https://github.com/redwoodjs/redwood)
+The Framework is the codebase containing all the packages (and other code) that is published on NPMjs.com as `@redmix/<package-name>`. The Framework repository on GitHub is here: [https://github.com/redwoodjs/redwood](https://github.com/redwoodjs/redwood)
 
 ### Development tools
 
@@ -131,18 +131,18 @@ With those details out of the way, now is the time to choose an option below tha
 2. **Install a fresh project using the local Framework template code:** Sometimes you need to create a project that uses the Template codebase in your local branch of the Framework, e.g. your changes include modifications to the CRWA Template and need to be tested. Running the command above is exactly the same as `yarn create redwood- app …`, only it runs the command from your local Framework package using the local Template codebase. Note: this is the same command used at the start of the `yarn build:test-project` command.
 
 ```
-yarn babel-node packages/create-redwood-app/src/create-redwood-app.js <path/to/project>
+yarn babel-node packages/create-redmix-app/src/create-redmix-app.js <path/to/project>
 ```
 
 3. **Clone the Redwood Tutorial App repo:** This is the codebase to use when starting the Redwood Tutorial Part 2. It is updated to the latest version and has the Blog features. This is often something we use for local development. Note: be sure to upgrade to canary and look out for breaking changes coming with the next release.
 
 4. **Install a fresh project**: `yarn create redwood-app <path/to/project>` If you just need a fresh installation 1) using the latest version template codebase and 2) without any features, then just install a new Redwood project. Note: this can have the same issues regarding the need to upgrade to canary and addressing breaking changes (see Notes from items 2 and 3 above).
 
-> Note: All the options above currently set the language to JavaScript. If you would like to work with TypeScript, you can add the option `--typescript` to either of the commands that run the create-redwood-app installation.
+> Note: All the options above currently set the language to JavaScript. If you would like to work with TypeScript, you can add the option `--typescript` to either of the commands that run the create-redmix-app installation.
 
 #### Step 3: Link the local Framework with the local test Project
 
-Once you work on the Framework code, you’ll most often want to run the code in a Redwood app for testing. However, the Redwood Project you created for testing is currently using the latest version (or canary) packages of Redwood published on NPMjs.com, e.g. [@redwoodjs/core](https://www.npmjs.com/package/@redwoodjs/core)
+Once you work on the Framework code, you’ll most often want to run the code in a Redwood app for testing. However, the Redwood Project you created for testing is currently using the latest version (or canary) packages of Redwood published on NPMjs.com, e.g. [@redmix/core](https://www.npmjs.com/package/@redmix/core)
 
 So we’ll use the Redwood Framework (rwfw) command to connect our local Framework and test Projects, which allows the Project to run on the code for Packages we are currently developing.
 

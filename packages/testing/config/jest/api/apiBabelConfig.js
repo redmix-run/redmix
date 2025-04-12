@@ -2,7 +2,7 @@ const {
   getApiSideDefaultBabelConfig,
   getApiSideBabelPresets,
   getApiSideBabelPlugins,
-} = require('@redwoodjs/babel-config')
+} = require('@redmix/babel-config')
 
 // Since configFile and babelrc is already passed a level up, cleaning up these keys here.
 // babelrc can not reside inside "extend"ed

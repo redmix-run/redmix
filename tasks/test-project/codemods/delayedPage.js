@@ -83,7 +83,7 @@ export default (file, api) => {
 
   const serverInjectImport = j.importDeclaration(
     [j.importSpecifier(j.identifier('useServerInsertedHTML'))],
-    j.stringLiteral('@redwoodjs/web'),
+    j.stringLiteral('@redmix/web'),
   )
 
   const reactImports = j.importDeclaration(
@@ -97,7 +97,7 @@ export default (file, api) => {
     .find(j.ImportDeclaration, {
       source: {
         type: 'Literal',
-        value: '@redwoodjs/router',
+        value: '@redmix/router',
       },
     })
     .remove()

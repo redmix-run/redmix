@@ -1,4 +1,4 @@
-vi.mock('@redwoodjs/project-config', async (importOriginal) => {
+vi.mock('@redmix/project-config', async (importOriginal) => {
   const originalProjectConfig = await importOriginal()
   return {
     ...originalProjectConfig,
@@ -70,7 +70,7 @@ test('the build tasks are in the correct sequence', async () => {
   `)
 })
 
-vi.mock('@redwoodjs/prerender/detection', () => {
+vi.mock('@redmix/prerender/detection', () => {
   return { detectPrerenderRoutes: () => [] }
 })
 

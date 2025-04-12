@@ -1,12 +1,12 @@
 // mock Telemetry for CLI commands so they don't try to spawn a process
-vi.mock('@redwoodjs/telemetry', () => {
+vi.mock('@redmix/telemetry', () => {
   return {
     errorTelemetry: () => vi.fn(),
     timedTelemetry: () => vi.fn(),
   }
 })
 
-vi.mock('@redwoodjs/cli-helpers', () => {
+vi.mock('@redmix/cli-helpers', () => {
   return {
     getPaths: () => {
       return {
@@ -37,7 +37,7 @@ describe('addRoutingLogic', () => {
       'Routes.tsx':
         "// In this file, all Page components from 'src/pages' are auto-imported.\n" +
         `
-import { Router, Route } from '@redwoodjs/router'
+import { Router, Route } from '@redmix/router'
 
 import { useAuth } from './auth'
 
@@ -62,7 +62,7 @@ export default Routes
 
           import { canHandleRoute, getRoutingComponent } from 'supertokens-auth-react/ui'
 
-          import { Router, Route } from '@redwoodjs/router'
+          import { Router, Route } from '@redmix/router'
 
           import { useAuth, PreBuiltUI } from './auth'
 
@@ -92,7 +92,7 @@ export default Routes
         `
 import SuperTokens from 'supertokens-auth-react'
 
-import { Router, Route } from '@redwoodjs/router'
+import { Router, Route } from '@redmix/router'
 
 import { useAuth } from './auth'
 
@@ -123,7 +123,7 @@ export default Routes
 
       import { canHandleRoute, getRoutingComponent } from 'supertokens-auth-react/ui'
 
-      import { Router, Route } from '@redwoodjs/router'
+      import { Router, Route } from '@redmix/router'
 
       import { useAuth, PreBuiltUI } from './auth'
 

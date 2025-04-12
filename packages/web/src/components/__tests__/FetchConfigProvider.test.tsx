@@ -3,7 +3,7 @@ import React from 'react'
 import { render, screen, waitFor } from '@testing-library/react'
 import { describe, test, expect } from 'vitest'
 
-import type { AuthContextInterface } from '@redwoodjs/auth'
+import type { AuthContextInterface } from '@redmix/auth'
 
 globalThis.RWJS_API_GRAPHQL_URL = 'https://api.example.com/graphql'
 

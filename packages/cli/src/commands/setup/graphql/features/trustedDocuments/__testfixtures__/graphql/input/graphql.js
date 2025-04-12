@@ -1,5 +1,5 @@
-import { createAuthDecoder } from '@redwoodjs/auth-dbauth-api'
-import { createGraphQLHandler } from '@redwoodjs/graphql-server'
+import { createAuthDecoder } from '@redmix/auth-dbauth-api'
+import { createGraphQLHandler } from '@redmix/graphql-server'
 
 import directives from 'src/directives/**/*.{js,ts}'
 import sdls from 'src/graphql/**/*.sdl.{js,ts}'

@@ -1,7 +1,7 @@
 import execa from 'execa'
 import terminalLink from 'terminal-link'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@redmix/project-config'
 
 import c from '../../../lib/colors.js'
 

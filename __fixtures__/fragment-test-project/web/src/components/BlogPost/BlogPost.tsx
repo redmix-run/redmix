@@ -1,6 +1,6 @@
 import { FindBlogPostQuery } from 'types/graphql'
 
-import { Link, routes } from '@redwoodjs/router'
+import { Link, routes } from '@redmix/router'
 
 import Author from 'src/components/Author'
 

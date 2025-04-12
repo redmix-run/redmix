@@ -1,3 +1,3 @@
-import { build } from '@redwoodjs/framework-tools'
+import { build } from '@redmix/framework-tools'
 
 await build()

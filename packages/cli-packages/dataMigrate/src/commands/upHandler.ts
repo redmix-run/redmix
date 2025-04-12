@@ -4,8 +4,8 @@ import path from 'path'
 import type { PrismaClient } from '@prisma/client'
 import { Listr } from 'listr2'
 
-import { registerApiSideBabelHook } from '@redwoodjs/babel-config'
-import { getPaths } from '@redwoodjs/project-config'
+import { registerApiSideBabelHook } from '@redmix/babel-config'
+import { getPaths } from '@redmix/project-config'
 
 import c from '../lib/colors'
 import type { DataMigrateUpOptions, DataMigration } from '../types'

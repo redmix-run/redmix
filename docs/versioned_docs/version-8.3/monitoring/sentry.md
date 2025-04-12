@@ -24,7 +24,7 @@ The setup command will install and attempt to setup the [`@envelop/sentry`](http
 ```js title="api/src/functions/graphql.js"
 import { useSentry } from '@envelop/sentry'
 
-import { createGraphQLHandler } from '@redwoodjs/graphql-server'
+import { createGraphQLHandler } from '@redmix/graphql-server'
 
 import directives from 'src/directives/**/*.{js,ts}'
 import sdls from 'src/graphql/**/*.sdl.{js,ts}'
@@ -49,7 +49,7 @@ export const handler = createGraphQLHandler({
 ```ts title="api/src/functions/graphql.ts"
 import { useSentry } from '@envelop/sentry'
 
-import { createGraphQLHandler } from '@redwoodjs/graphql-server'
+import { createGraphQLHandler } from '@redmix/graphql-server'
 
 import directives from 'src/directives/**/*.{js,ts}'
 import sdls from 'src/graphql/**/*.sdl.{js,ts}'

@@ -1,5 +1,5 @@
 {
-  "name": "@redwoodjs/mailer-renderer-mjml-react",
+  "name": "@redmix/mailer-renderer-mjml-react",
   "version": "8.0.0",
   "repository": {
     "type": "git",
@@ -14,18 +14,18 @@
   ],
   "scripts": {
     "build": "tsx ./build.mts && yarn build:types",
-    "build:pack": "yarn pack -o redwoodjs-mailer-renderer-mjml-react.tgz",
+    "build:pack": "yarn pack -o redmix-mailer-renderer-mjml-react.tgz",
     "build:types": "tsc --build --verbose",
     "build:watch": "nodemon --watch src --ext \"js,jsx,ts,tsx\" --ignore dist --exec \"yarn build\"",
     "prepublishOnly": "NODE_ENV=production yarn build"
   },
   "dependencies": {
     "@faire/mjml-react": "3.4.0",
-    "@redwoodjs/mailer-core": "workspace:*",
+    "@redmix/mailer-core": "workspace:*",
     "mjml": "4.15.3"
   },
   "devDependencies": {
-    "@redwoodjs/framework-tools": "workspace:*",
+    "@redmix/framework-tools": "workspace:*",
     "@types/mjml": "4",
     "tsx": "4.19.3",
     "typescript": "5.6.2"

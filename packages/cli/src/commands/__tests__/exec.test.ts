@@ -7,7 +7,7 @@ import { runScriptFunction } from '../../lib/exec.js'
 import '../../lib/mockTelemetry'
 import { handler } from '../execHandler.js'
 
-vi.mock('@redwoodjs/babel-config', () => ({
+vi.mock('@redmix/babel-config', () => ({
   getWebSideDefaultBabelConfig: () => ({
     presets: [],
     plugins: [],
@@ -15,7 +15,7 @@ vi.mock('@redwoodjs/babel-config', () => ({
   registerApiSideBabelHook: () => {},
 }))
 
-vi.mock('@redwoodjs/project-config', () => ({
+vi.mock('@redmix/project-config', () => ({
   getPaths: () => ({
     api: { base: '', src: '' },
     web: { base: '', src: '' },
@@ -25,7 +25,7 @@ vi.mock('@redwoodjs/project-config', () => ({
   resolveFile: (path: string) => path,
 }))
 
-vi.mock('@redwoodjs/internal/dist/files', () => ({
+vi.mock('@redmix/internal/dist/files', () => ({
   findScripts: () => {
     const scriptsPath = path.join('redwood-app', 'scripts')
 

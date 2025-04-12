@@ -3,8 +3,8 @@ import path from 'path'
 import fs from 'fs-extra'
 import { Listr } from 'listr2'
 
-import { addApiPackages } from '@redwoodjs/cli-helpers'
-import { errorTelemetry } from '@redwoodjs/telemetry'
+import { addApiPackages } from '@redmix/cli-helpers'
+import { errorTelemetry } from '@redmix/telemetry'
 
 import c from '../../../lib/colors.js'
 import { getPaths, transformTSToJS, writeFile } from '../../../lib/index.js'
@@ -42,7 +42,7 @@ export function setupServerFileTasks({ force = false } = {}) {
         ]
       },
     },
-    addApiPackages([`@redwoodjs/api-server@${version}`]),
+    addApiPackages([`@redmix/api-server@${version}`]),
   ]
 }
 

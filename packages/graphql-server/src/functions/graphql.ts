@@ -4,8 +4,8 @@ import type {
   Context as LambdaContext,
 } from 'aws-lambda'
 
-import type { GlobalContext } from '@redwoodjs/context'
-import { getAsyncStoreInstance } from '@redwoodjs/context/dist/store'
+import type { GlobalContext } from '@redmix/context'
+import { getAsyncStoreInstance } from '@redmix/context/dist/store'
 
 import { createGraphQLYoga } from '../createGraphQLYoga'
 import type { GraphQLHandlerOptions } from '../types'

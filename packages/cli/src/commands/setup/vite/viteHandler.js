@@ -3,8 +3,8 @@ import path from 'path'
 import fs from 'fs-extra'
 import { Listr } from 'listr2'
 
-import { addWebPackages } from '@redwoodjs/cli-helpers'
-import { errorTelemetry } from '@redwoodjs/telemetry'
+import { addWebPackages } from '@redmix/cli-helpers'
+import { errorTelemetry } from '@redmix/telemetry'
 
 import c from '../../../lib/colors.js'
 import { getPaths, transformTSToJS, writeFile } from '../../../lib/index.js'
@@ -55,7 +55,7 @@ export const handler = async ({ force, verbose, addPackage }) => {
               path.join(
                 getPaths().base,
                 // NOTE we're copying over the index.js before babel transform
-                'node_modules/@redwoodjs/web/src/entry/index.js',
+                'node_modules/@redmix/web/src/entry/index.js',
               ),
               'utf-8',
             )
@@ -68,11 +68,11 @@ export const handler = async ({ force, verbose, addPackage }) => {
       },
       {
         // @NOTE: make sure its added as a dev package.
-        ...addWebPackages(['-D', `@redwoodjs/vite@${version}`]),
-        title: 'Adding @redwoodjs/vite dev dependency to web side...',
+        ...addWebPackages(['-D', `@redmix/vite@${version}`]),
+        title: 'Adding @redmix/vite dev dependency to web side...',
         skip: () => {
           if (!addPackage) {
-            return 'Skipping package install, you will need to add @redwoodjs/vite manaually as a dev-dependency on the web workspace'
+            return 'Skipping package install, you will need to add @redmix/vite manaually as a dev-dependency on the web workspace'
           }
         },
       },

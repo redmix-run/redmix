@@ -28,7 +28,7 @@ Redwood has a CLI generator that adds the code and configuration required by the
 yarn rw setup deploy <provider>
 ```
 
-There are examples of deploying Redwood on other providers such as Google Cloud and direct to AWS. You can find more information by searching the [GitHub Issues](https://github.com/redwoodjs/redwood/issues) and [Forums](https://community.redwoodjs.com).
+There are examples of deploying Redmix on other providers such as Google Cloud and direct to AWS. You can find more information by searching the [RedwoodJS GitHub Issues](https://github.com/redwoodjs/redwood/issues) and [RedwoodJS Forums](https://community.redwoodjs.com).
 
 ## General Deployment Setup
 

@@ -9,9 +9,9 @@ import {
   FieldError,
   Label,
   FormError,
-} from '@redwoodjs/forms'
-import { useMutation } from '@redwoodjs/web'
-import { toast, Toaster } from '@redwoodjs/web/toast'
+} from '@redmix/forms'
+import { useMutation } from '@redmix/web'
+import { toast, Toaster } from '@redmix/web/toast'
 import { useForm } from 'react-hook-form'
 
 const CREATE_CONTACT = gql\`

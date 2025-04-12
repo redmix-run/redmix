@@ -4,7 +4,7 @@ import type {
   CellSuccessProps,
   CellFailureProps,
   TypedDocumentNode,
-} from '@redwoodjs/web'
+} from '@redmix/web'
 
 export const QUERY: TypedDocumentNode<
   ${operationName},

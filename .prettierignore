@@ -17,12 +17,12 @@
 # Ignore the .nx directory
 /.nx
 
-# Ignore create-redwood-app (we don't want to mismatch between framework and project)
-/packages/create-redwood-app/templates
-/packages/create-redwood-app/tests/**/*.sh
+# Ignore create-redmix-app (we don't want to mismatch between framework and project)
+/packages/create-redmix-app/templates
+/packages/create-redmix-app/tests/**/*.sh
 
-# Ignore create-redwood-rsc-app (it has it's own config)
-/packages/create-redwood-rsc-app
+# Ignore create-redmix-rsc-app (it has it's own config)
+/packages/create-redmix-rsc-app
 
 # TODO(jgmw): Is this too broad?
 # Ignore test fixtures

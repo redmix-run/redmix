@@ -7,7 +7,7 @@
 // 'src/pages/HomePage/HomePage.js'         -> HomePage
 // 'src/pages/Admin/BooksPage/BooksPage.js' -> AdminBooksPage
 
-import { PrivateSet, Router, Route } from '@redwoodjs/router'
+import { PrivateSet, Router, Route } from '@redmix/router'
 import SetLayout from 'src/layouts/SetLayout'
 
 import FooPage from 'src/pages/FooPage'

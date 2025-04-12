@@ -3,7 +3,7 @@ import path from 'path'
 import fs from 'fs-extra'
 import terminalLink from 'terminal-link'
 
-import { recordTelemetryAttributes } from '@redwoodjs/cli-helpers'
+import { recordTelemetryAttributes } from '@redmix/cli-helpers'
 
 export const command = 'generator <name>'
 export const description =

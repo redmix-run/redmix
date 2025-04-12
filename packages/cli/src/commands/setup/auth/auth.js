@@ -7,7 +7,7 @@ import terminalLink from 'terminal-link'
 import {
   recordTelemetryAttributes,
   standardAuthBuilder,
-} from '@redwoodjs/cli-helpers'
+} from '@redmix/cli-helpers'
 
 import { getPaths } from '../../../lib/index.js'
 
@@ -41,7 +41,7 @@ export async function builder(yargs) {
           force: args.force,
           verbose: args.verbose,
         })
-        const handler = await getAuthHandler('@redwoodjs/auth-auth0-setup')
+        const handler = await getAuthHandler('@redmix/auth-auth0-setup')
         console.log()
         handler(args)
       },
@@ -57,7 +57,7 @@ export async function builder(yargs) {
           verbose: args.verbose,
         })
         const handler = await getAuthHandler(
-          '@redwoodjs/auth-azure-active-directory-setup',
+          '@redmix/auth-azure-active-directory-setup',
         )
         console.log()
         handler(args)
@@ -73,7 +73,7 @@ export async function builder(yargs) {
           force: args.force,
           verbose: args.verbose,
         })
-        const handler = await getAuthHandler('@redwoodjs/auth-clerk-setup')
+        const handler = await getAuthHandler('@redmix/auth-clerk-setup')
         console.log()
         handler(args)
       },
@@ -88,7 +88,7 @@ export async function builder(yargs) {
           force: args.force,
           verbose: args.verbose,
         })
-        const handler = await getAuthHandler('@redwoodjs/auth-custom-setup')
+        const handler = await getAuthHandler('@redmix/auth-custom-setup')
         console.log()
         handler(args)
       },
@@ -124,7 +124,7 @@ export async function builder(yargs) {
           verbose: args.verbose,
           webauthn: args.webauthn,
         })
-        const handler = await getAuthHandler('@redwoodjs/auth-dbauth-setup')
+        const handler = await getAuthHandler('@redmix/auth-dbauth-setup')
         console.log()
         handler(args)
       },
@@ -139,7 +139,7 @@ export async function builder(yargs) {
           force: args.force,
           verbose: args.verbose,
         })
-        const handler = await getAuthHandler('@redwoodjs/auth-firebase-setup')
+        const handler = await getAuthHandler('@redmix/auth-firebase-setup')
         console.log()
         handler(args)
       },
@@ -154,7 +154,7 @@ export async function builder(yargs) {
           force: args.force,
           verbose: args.verbose,
         })
-        const handler = await getAuthHandler('@redwoodjs/auth-netlify-setup')
+        const handler = await getAuthHandler('@redmix/auth-netlify-setup')
         console.log()
         handler(args)
       },
@@ -169,7 +169,7 @@ export async function builder(yargs) {
           force: args.force,
           verbose: args.verbose,
         })
-        const handler = await getAuthHandler('@redwoodjs/auth-supabase-setup')
+        const handler = await getAuthHandler('@redmix/auth-supabase-setup')
         console.log()
         handler(args)
       },
@@ -184,9 +184,7 @@ export async function builder(yargs) {
           force: args.force,
           verbose: args.verbose,
         })
-        const handler = await getAuthHandler(
-          '@redwoodjs/auth-supertokens-setup',
-        )
+        const handler = await getAuthHandler('@redmix/auth-supertokens-setup')
         console.log()
         handler(args)
       },
@@ -228,7 +226,7 @@ function getRedirectMessage(provider) {
  * @param {string} module
  */
 async function getAuthHandler(module) {
-  const packageJsonPath = require.resolve('@redwoodjs/cli/package.json')
+  const packageJsonPath = require.resolve('@redmix/cli/package.json')
   let { version } = fs.readJSONSync(packageJsonPath)
 
   if (!isInstalled(module)) {

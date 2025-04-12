@@ -34,7 +34,7 @@ const ignored = [
   /node_modules/,
 
   /packages\/codemods/,
-  /packages\/create-redwood-app/,
+  /packages\/create-redmix-app/,
 
   /dist/,
 

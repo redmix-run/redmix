@@ -7,11 +7,11 @@
     ]
   },
   "devDependencies": {
-    "@redwoodjs/core": "7.0.0",
-    "@redwoodjs/project-config": "7.0.0"
+    "@redmix/core": "7.0.0",
+    "@redmix/project-config": "7.0.0"
   },
   "eslintConfig": {
-    "extends": "@redwoodjs/eslint-config",
+    "extends": "@redmix/eslint-config",
     "root": true
   },
   "engines": {

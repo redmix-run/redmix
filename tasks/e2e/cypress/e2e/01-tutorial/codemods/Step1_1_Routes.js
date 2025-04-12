@@ -1,5 +1,5 @@
 export default `
-import { Router, Route } from '@redwoodjs/router'
+import { Router, Route } from '@redmix/router'
 
 const Routes = () => {
   return (

@@ -1,7 +1,7 @@
 import path from 'node:path'
 import type { ReadableStream } from 'node:stream/web'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@redmix/project-config'
 
 import { getEntriesFromDist } from '../lib/entries.js'
 import { StatusError } from '../lib/StatusError.js'

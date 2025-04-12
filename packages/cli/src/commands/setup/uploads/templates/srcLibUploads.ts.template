@@ -1,6 +1,6 @@
-import { createUploadsConfig, setupStorage } from '@redwoodjs/storage'
-import { FileSystemStorage } from '@redwoodjs/storage/FileSystemStorage'
-import { UrlSigner } from '@redwoodjs/storage/UrlSigner'
+import { createUploadsConfig, setupStorage } from '@redmix/storage'
+import { FileSystemStorage } from '@redmix/storage/FileSystemStorage'
+import { UrlSigner } from '@redmix/storage/UrlSigner'
 
 const uploadsConfig = createUploadsConfig({
   // Configure your fields here

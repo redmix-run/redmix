@@ -95,7 +95,7 @@ yarn rw generate page home /
 The browser should have refreshed with a message about where to find our new homepage, `web/src/pages/HomePage/HomePage.js`. Let's open that up and create a form so the user can actually enter their zip code:
 
 ```jsx title="web/src/pages/HomePage/HomePage.js"
-import { Form, TextField, Submit } from '@redwoodjs/forms'
+import { Form, TextField, Submit } from '@redmix/forms'
 
 const HomePage = () => {
   const onSubmit = (data) => {
@@ -182,7 +182,7 @@ We're getting our data just fine but now we need to update the page with the wea
 
 ```jsx title="web/src/pages/HomePage/HomePage.js"
 import { useState } from 'react'
-import { Form, TextField, Submit } from '@redwoodjs/forms'
+import { Form, TextField, Submit } from '@redmix/forms'
 
 const HomePage = () => {
   const [weather, setWeather] = useState()
@@ -222,7 +222,7 @@ Finally, let's output the actual weather data along with a couple of helper func
 
 ```jsx title="web/src/pages/HomePage/HomePage.js"
 import { useState } from 'react'
-import { Form, TextField, Submit } from '@redwoodjs/forms'
+import { Form, TextField, Submit } from '@redmix/forms'
 
 const HomePage = () => {
   const [weather, setWeather] = useState()
@@ -423,7 +423,7 @@ Note the `weather: getWeather` part. This will actually call the API endpoint `g
 Let's leave the display as-is for now to make sure this is working. We'll use the `WeatherCell` in our `HomePage` and introduce some state to keep track of when the zip is submitted:
 
 ```jsx title="web/src/pages/HomePage/HomePage.js"
-import { Form, TextField, Submit } from '@redwoodjs/forms'
+import { Form, TextField, Submit } from '@redmix/forms'
 import { useState } from 'react'
 import WeatherCell from 'src/components/WeatherCell'
 
@@ -496,7 +496,7 @@ Okay, let's look for that `cod` and if it's `404` then we know the zip isn't fou
 
 ```javascript {2, 10-12} title="api/src/services/weather/weather.js"
 import { fetch } from '@whatwg-node/fetch'
-import { UserInputError } from '@redwoodjs/graphql-server'
+import { UserInputError } from '@redmix/graphql-server'
 
 export const getWeather = async ({ zip }) => {
   const response = await fetch(
@@ -549,4 +549,4 @@ Much better!
 
 We hope this has given you enough confidence to go out and capture data from some of the amazing APIs of the Information Superhighway and get it (them?) into your Redwood app!
 
-Picking up any new framework from scratch is a daunting task and even those of us that wrote this one made more than a few trips to Google! If you think we can improve on this recipe, or any other, open an [issue](https://github.com/redwoodjs/redwoodjs.com/issues) or a [pull request](https://github.com/redwoodjs/redwoodjs.com/pulls).
+Picking up any new framework from scratch is a daunting task and even those of us that wrote this one made more than a few trips to Google! If you think we can improve on this recipe, or any other, open an [issue](https://github.com/redmix-run/redmix.run/issues) or a [pull request](https://github.com/redmix-run/redmix.run/pulls).

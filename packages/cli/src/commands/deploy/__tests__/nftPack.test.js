@@ -1,6 +1,6 @@
 import { vi, test, expect } from 'vitest'
 
-import { findApiDistFunctions } from '@redwoodjs/internal/dist/files'
+import { findApiDistFunctions } from '@redmix/internal/dist/files'
 
 import * as nftPacker from '../packing/nft.js'
 
@@ -10,7 +10,7 @@ vi.mock('@vercel/nft', () => {
   }
 })
 
-vi.mock('@redwoodjs/internal/dist/files', () => {
+vi.mock('@redmix/internal/dist/files', () => {
   return {
     findApiDistFunctions: () => {
       return [
@@ -24,7 +24,7 @@ vi.mock('@redwoodjs/internal/dist/files', () => {
   }
 })
 
-vi.mock('@redwoodjs/project-config', () => {
+vi.mock('@redmix/project-config', () => {
   return {
     getPaths: () => {
       return {

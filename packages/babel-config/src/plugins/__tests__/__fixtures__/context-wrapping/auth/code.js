@@ -1,4 +1,4 @@
-import { DbAuthHandler, DbAuthHandlerOptions } from '@redwoodjs/auth-dbauth-api'
+import { DbAuthHandler, DbAuthHandlerOptions } from '@redmix/auth-dbauth-api'
 
 import { db } from 'src/lib/db'
 
@@ -118,7 +118,7 @@ export const handler = async (
 
     // Include any format checks for password here. Return `true` if the
     // password is valid, otherwise throw a `PasswordValidationError`.
-    // Import the error along with `DbAuthHandler` from `@redwoodjs/api` above.
+    // Import the error along with `DbAuthHandler` from `@redmix/api` above.
     passwordValidation: (_password) => {
       return true
     },

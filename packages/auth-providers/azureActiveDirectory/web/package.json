@@ -1,5 +1,5 @@
 {
-  "name": "@redwoodjs/auth-azure-active-directory-web",
+  "name": "@redmix/auth-azure-active-directory-web",
   "version": "8.0.0",
   "repository": {
     "type": "git",
@@ -38,7 +38,7 @@
   ],
   "scripts": {
     "build": "tsx ./build.ts",
-    "build:pack": "yarn pack -o redwoodjs-auth-azure-active-directory-web.tgz",
+    "build:pack": "yarn pack -o redmix-auth-azure-active-directory-web.tgz",
     "build:types": "tsc --build --verbose ./tsconfig.build.json",
     "build:types-cjs": "tsc --build --verbose ./tsconfig.cjs.json",
     "build:watch": "nodemon --watch src --ext \"js,jsx,ts,tsx,template\" --ignore dist --exec \"yarn build\"",
@@ -49,11 +49,11 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@redwoodjs/auth": "workspace:*"
+    "@redmix/auth": "workspace:*"
   },
   "devDependencies": {
     "@azure/msal-browser": "2.39.0",
-    "@redwoodjs/framework-tools": "workspace:*",
+    "@redmix/framework-tools": "workspace:*",
     "@types/netlify-identity-widget": "1.9.6",
     "@types/react": "^18.2.55",
     "concurrently": "8.2.2",

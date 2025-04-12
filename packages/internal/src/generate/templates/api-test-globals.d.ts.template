@@ -1,4 +1,4 @@
-import type { CurrentUser } from '@redwoodjs/auth'
+import type { CurrentUser } from '@redmix/auth'
 
 declare global {
   const mockCurrentUser: (currentUser: CurrentUser) => void

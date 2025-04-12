@@ -2,8 +2,8 @@
 
 import type { FindUserExamples } from 'types/graphql'
 
-import { Link, routes } from '@redwoodjs/router'
-import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
+import { Link, routes } from '@redmix/router'
+import type { CellSuccessProps, CellFailureProps } from '@redmix/web'
 
 import UserExamples from '../UserExamples/UserExamples'
 

@@ -1,5 +1,5 @@
 {
-  "name": "@redwoodjs/storage",
+  "name": "@redmix/storage",
   "version": "8.0.0",
   "repository": {
     "type": "git",
@@ -42,7 +42,7 @@
   ],
   "scripts": {
     "build": "yarn setup:test && tsx ./build.mts",
-    "build:pack": "yarn pack -o redwoodjs-storage.tgz",
+    "build:pack": "yarn pack -o redmix-storage.tgz",
     "build:types": "tsc --build --verbose ./tsconfig.build.json",
     "build:types-cjs": "tsc --build --verbose tsconfig.types-cjs.json",
     "check:attw": "tsx attw.ts",
@@ -53,14 +53,14 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@redwoodjs/project-config": "workspace:*",
+    "@redmix/project-config": "workspace:*",
     "mime-types": "2.1.35",
     "ulid": "2.3.0"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "0.16.4",
     "@prisma/client": "5.20.0",
-    "@redwoodjs/framework-tools": "workspace:*",
+    "@redmix/framework-tools": "workspace:*",
     "@types/mime-types": "2.1.4",
     "concurrently": "8.2.2",
     "esbuild": "0.24.2",

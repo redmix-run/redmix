@@ -2,7 +2,7 @@ import {
   createCache,
   InMemoryClient,
   MemcachedClient,
-} from '@redwoodjs/api/cache'
+} from '@redmix/api/cache'
 
 import { logger } from './logger'
 

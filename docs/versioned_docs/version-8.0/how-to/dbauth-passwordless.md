@@ -224,10 +224,10 @@ import {
   PasswordField,
   Submit,
   FieldError,
-} from '@redwoodjs/forms'
-import { navigate, routes, Link } from '@redwoodjs/router'
-import { MetaTags, useMutation } from '@redwoodjs/web'
-import { Toaster, toast } from '@redwoodjs/web/toast'
+} from '@redmix/forms'
+import { navigate, routes, Link } from '@redmix/router'
+import { MetaTags, useMutation } from '@redmix/web'
+import { Toaster, toast } from '@redmix/web/toast'
 const GENERATE_LOGIN_TOKEN = gql`
   mutation generateLoginToken($email: String!) {
     generateLoginToken(email: $email) {
@@ -337,10 +337,10 @@ import {
   PasswordField,
   Submit,
   FieldError,
-} from '@redwoodjs/forms'
-import { navigate, routes, Link } from '@redwoodjs/router'
-import { MetaTags, useMutation } from '@redwoodjs/web'
-import { Toaster, toast } from '@redwoodjs/web/toast'
+} from '@redmix/forms'
+import { navigate, routes, Link } from '@redmix/router'
+import { MetaTags, useMutation } from '@redmix/web'
+import { Toaster, toast } from '@redmix/web/toast'
 
 import { useAuth } from 'src/auth'
 
@@ -459,8 +459,8 @@ yarn rw g page LoginPasswordless
 ```jsx title="/web/pages/LoginPasswordlessPage/LoginPasswordlessPage.js"
 import { useEffect, useState } from 'react'
 
-import { useLocation } from '@redwoodjs/router'
-import { MetaTags } from '@redwoodjs/web'
+import { useLocation } from '@redmix/router'
+import { MetaTags } from '@redmix/web'
 
 import LoginPasswordlessForm from 'src/components/LoginPasswordlessForm/LoginPasswordlessForm'
 import LoginPasswordlessTokenForm from 'src/components/LoginPasswordlessTokenForm/LoginPasswordlessTokenForm'
@@ -528,10 +528,10 @@ import {
   PasswordField,
   FieldError,
   Submit,
-} from '@redwoodjs/forms'
-import { Link, navigate, routes } from '@redwoodjs/router'
-import { MetaTags } from '@redwoodjs/web'
-import { toast, Toaster } from '@redwoodjs/web/toast'
+} from '@redmix/forms'
+import { Link, navigate, routes } from '@redmix/router'
+import { MetaTags } from '@redmix/web'
+import { toast, Toaster } from '@redmix/web/toast'
 
 import { useAuth } from 'src/auth'
 

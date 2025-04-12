@@ -1,7 +1,7 @@
 import { act, renderHook } from '@testing-library/react'
 import { vi, beforeAll, afterAll, describe, it, expect } from 'vitest'
 
-import type { CustomProviderHooks } from '@redwoodjs/auth'
+import type { CustomProviderHooks } from '@redmix/auth'
 
 import type { DbAuthClientArgs } from '../dbAuth'
 import { createDbAuthClient, createAuth } from '../dbAuth'

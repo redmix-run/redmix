@@ -1,6 +1,6 @@
 import type { Argv } from 'yargs'
 
-import { recordTelemetryAttributes } from '@redwoodjs/cli-helpers'
+import { recordTelemetryAttributes } from '@redmix/cli-helpers'
 
 export const command = 'sentry'
 

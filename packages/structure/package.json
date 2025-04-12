@@ -1,5 +1,5 @@
 {
-  "name": "@redwoodjs/structure",
+  "name": "@redmix/structure",
   "version": "8.0.0",
   "description": "noun: the arrangement of and relations between the parts or elements of something complex",
   "repository": {
@@ -16,7 +16,7 @@
   "scripts": {
     "build": "yarn build:js && yarn build:types",
     "build:js": "babel src -d dist --extensions \".js,.jsx,.ts,.tsx\"",
-    "build:pack": "yarn pack -o redwoodjs-structure.tgz",
+    "build:pack": "yarn pack -o redmix-structure.tgz",
     "build:types": "tsc --build --verbose",
     "build:watch": "nodemon --watch src --ext \"js,jsx,ts,tsx\" --ignore dist --exec \"yarn build\"",
     "prepublishOnly": "NODE_ENV=production yarn build",
@@ -27,7 +27,7 @@
   "dependencies": {
     "@babel/runtime-corejs3": "7.26.10",
     "@prisma/internals": "5.20.0",
-    "@redwoodjs/project-config": "workspace:*",
+    "@redmix/project-config": "workspace:*",
     "@types/line-column": "1.0.2",
     "camelcase": "6.3.0",
     "core-js": "3.38.1",

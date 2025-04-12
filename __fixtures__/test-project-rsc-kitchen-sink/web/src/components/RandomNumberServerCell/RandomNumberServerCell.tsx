@@ -1,4 +1,4 @@
-import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
+import type { CellSuccessProps, CellFailureProps } from '@redmix/web'
 
 import { globalValues } from './actions'
 

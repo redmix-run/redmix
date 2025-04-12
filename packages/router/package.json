@@ -1,5 +1,5 @@
 {
-  "name": "@redwoodjs/router",
+  "name": "@redmix/router",
   "version": "8.0.0",
   "repository": {
     "type": "git",
@@ -82,7 +82,7 @@
   ],
   "scripts": {
     "build": "tsx ./build.ts",
-    "build:pack": "yarn pack -o redwoodjs-router.tgz",
+    "build:pack": "yarn pack -o redmix-router.tgz",
     "build:types": "tsc --build --verbose tsconfig.build.json",
     "build:types-cjs": "tsc --build --verbose tsconfig.cjs.json",
     "build:watch": "nodemon --watch src --ext \"js,jsx,ts,tsx\" --ignore dist --exec \"yarn build\"",
@@ -95,8 +95,8 @@
   },
   "dependencies": {
     "@babel/runtime-corejs3": "7.26.10",
-    "@redwoodjs/auth": "workspace:*",
-    "@redwoodjs/server-store": "workspace:*",
+    "@redmix/auth": "workspace:*",
+    "@redmix/server-store": "workspace:*",
     "core-js": "3.38.1",
     "react": "19.0.0-rc-f2df5694-20240916",
     "react-dom": "19.0.0-rc-f2df5694-20240916",
@@ -106,7 +106,7 @@
     "@arethetypeswrong/cli": "0.16.4",
     "@babel/cli": "7.26.4",
     "@babel/core": "^7.26.10",
-    "@redwoodjs/framework-tools": "workspace:*",
+    "@redmix/framework-tools": "workspace:*",
     "@testing-library/jest-dom": "6.5.0",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",

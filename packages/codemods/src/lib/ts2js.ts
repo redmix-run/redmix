@@ -1,6 +1,6 @@
 import { transform } from '@babel/core'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@redmix/project-config'
 
 import prettify from './prettify'
 

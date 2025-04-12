@@ -1,4 +1,4 @@
-import { Metadata } from '@redwoodjs/web/Metadata'
+import { Metadata } from '@redmix/web/Metadata'
 
 const HomePage = () => {
   return (

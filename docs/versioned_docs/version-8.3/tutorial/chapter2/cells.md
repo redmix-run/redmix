@@ -44,7 +44,7 @@ export const Success = ({ posts }) => {
 
 ```tsx
 import type { FindPosts } from 'types/graphql'
-import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
+import type { CellSuccessProps, CellFailureProps } from '@redmix/web'
 
 export const QUERY = gql`
   query FindPosts {
@@ -158,7 +158,7 @@ export const Success = ({ articles }) => {
 
 ```jsx title="web/src/components/ArticlesCell/ArticlesCell.tsx"
 import type { ArticlesQuery } from 'types/graphql'
-import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
+import type { CellSuccessProps, CellFailureProps } from '@redmix/web'
 
 export const QUERY = gql`
   query ArticlesQuery {
@@ -283,7 +283,7 @@ export const Success = ({ posts }) => {
 
 ```jsx title="web/src/components/ArticlesCell/ArticlesCell.tsx"
 import type { ArticlesQuery } from 'types/graphql'
-import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
+import type { CellSuccessProps, CellFailureProps } from '@redmix/web'
 
 export const QUERY = gql`
   query ArticlesQuery {
@@ -342,7 +342,7 @@ Let's plug this cell into our `HomePage` and see what happens:
 <TabItem value="js" label="JavaScript">
 
 ```jsx title="web/src/pages/HomePage/HomePage.jsx"
-import { Metadata } from '@redwoodjs/web'
+import { Metadata } from '@redmix/web'
 
 // highlight-next-line
 import ArticlesCell from 'src/components/ArticlesCell'
@@ -364,7 +364,7 @@ export default HomePage
 <TabItem value="ts" label="TypeScript">
 
 ```jsx title="web/src/pages/HomePage/HomePage.tsx"
-import { Metadata } from '@redwoodjs/web'
+import { Metadata } from '@redmix/web'
 
 // highlight-next-line
 import ArticlesCell from 'src/components/ArticlesCell'

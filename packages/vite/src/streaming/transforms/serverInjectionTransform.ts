@@ -2,9 +2,9 @@ import type React from 'react'
 
 import type RDServerModule from 'react-dom/server'
 
-import type { RenderCallback } from '@redwoodjs/web'
+import type { RenderCallback } from '@redmix/web'
 // @TODO (ESM), use exports field. Cannot import from web because of index exports
-import type * as ServerInjectModule from '@redwoodjs/web/dist/components/ServerInject'
+import type * as ServerInjectModule from '@redmix/web/dist/components/ServerInject'
 
 import { encodeText } from './encode-decode.js'
 

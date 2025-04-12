@@ -1,5 +1,5 @@
 {
-  "name": "@redwoodjs/auth-azure-active-directory-api",
+  "name": "@redmix/auth-azure-active-directory-api",
   "version": "8.0.0",
   "repository": {
     "type": "git",
@@ -29,7 +29,7 @@
   ],
   "scripts": {
     "build": "tsx ./build.mts && yarn build:types",
-    "build:pack": "yarn pack -o redwoodjs-auth-azure-active-directory-api.tgz",
+    "build:pack": "yarn pack -o redmix-auth-azure-active-directory-api.tgz",
     "build:types": "tsc --build --verbose ./tsconfig.json",
     "build:watch": "nodemon --watch src --ext \"js,jsx,ts,tsx,template\" --ignore dist --exec \"yarn build\"",
     "check:attw": "yarn attw -P",
@@ -44,8 +44,8 @@
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "0.16.4",
-    "@redwoodjs/api": "workspace:*",
-    "@redwoodjs/framework-tools": "workspace:*",
+    "@redmix/api": "workspace:*",
+    "@redmix/framework-tools": "workspace:*",
     "@types/aws-lambda": "8.10.145",
     "@types/jsonwebtoken": "9.0.8",
     "concurrently": "8.2.2",

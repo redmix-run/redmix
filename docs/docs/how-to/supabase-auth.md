@@ -53,8 +53,8 @@ yarn redwood setup auth supabase
 By specifying `supabase` as the provider, Redwood automatically added the necessary Supabase config to our app. Let's open up `web/src/App.[js/tsx]` and inspect. You should see:
 
 ```jsx {1-2,12,17} title="web/src/App.[js/tsx]"
-import { FatalErrorBoundary, RedwoodProvider } from '@redwoodjs/web'
-import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
+import { FatalErrorBoundary, RedwoodProvider } from '@redmix/web'
+import { RedwoodApolloProvider } from '@redmix/web/apollo'
 
 import FatalErrorPage from 'src/pages/FatalErrorPage'
 import Routes from 'src/Routes'
@@ -83,7 +83,7 @@ As you can see our AuthProvider is exported from our `web/src/auth.[js/tsx]`, le
 ```jsx {1-2,12,17} title="web/src/auth.[js/tsx]"
 import { createClient } from '@supabase/supabase-js'
 
-import { createAuth } from '@redwoodjs/auth-supabase-web'
+import { createAuth } from '@redmix/auth-supabase-web'
 
 const supabaseClient = createClient(
   process.env.SUPABASE_URL || '',
@@ -133,7 +133,7 @@ This adds a Sign Up [route](../router.md) to our routes file and creates a `Sign
 In the just-generated `SignupPage` component (`web/src/pages/SignupPage/SignupPage.[js/tsx]`), let's import some [Redwood Form components](../forms.md) and make a very basic form:
 
 ```jsx title="web/src/pages/SignupPage/SignupPage.[js/tsx]"
-import { Form, TextField, PasswordField, Submit } from '@redwoodjs/forms'
+import { Form, TextField, PasswordField, Submit } from '@redmix/forms'
 
 const SignupPage = () => {
   return (
@@ -183,7 +183,7 @@ The _something_ we need to do is—surprise!—sign up. To do this, we'll need a
 Let's import `useAuth` and destructure `client` from it in our component:
 
 ```jsx {2,5} title="web/src/pages/SignupPage/SignupPage.js"
-import { Form, TextField, PasswordField, Submit } from '@redwoodjs/forms'
+import { Form, TextField, PasswordField, Submit } from '@redmix/forms'
 import { useAuth } from 'src/auth'
 
 const SignupPage = () => {
@@ -210,7 +210,7 @@ export default SignupPage
 And now we'll attempt to create a new user in the `onSubmit` function with [`client.auth.signUp()`](https://supabase.io/docs/reference/javascript/auth-signup) by passing the `email` and `password` values that we captured from our form:
 
 ```jsx {8-16} title="web/src/pages/SignupPage/SignupPage.[js/tsx]"
-import { Form, TextField, PasswordField, Submit } from '@redwoodjs/forms'
+import { Form, TextField, PasswordField, Submit } from '@redmix/forms'
 import { useAuth } from 'src/auth'
 
 const SignupPage = () => {
@@ -247,7 +247,7 @@ Presently, our sign up works as is, but simply console-logging the response from
 Let's display errors to the user if there are any. To do this, we'll set up `React.useState()` to manage our error state and conditionally render the error message. We'll also want to reset the error state at the beginning of every submission with `setError(null)`:
 
 ```jsx {6,9,16,18,26} title="web/src/pages/SignupPage/SignupPage.js"
-import { Form, TextField, PasswordField, Submit } from '@redwoodjs/forms'
+import { Form, TextField, PasswordField, Submit } from '@redmix/forms'
 import { useAuth } from 'src/auth'
 
 const SignupPage = () => {
@@ -299,9 +299,9 @@ yarn redwood generate page home /
 Let's import `routes` and `navigate` from [Redwood Router](../router.md#navigate) and use them to redirect to the home page upon successful sign up:
 
 ```jsx {3,16} title="web/src/pages/SignupPage/SignupPage.js"
-import { Form, TextField, PasswordField, Submit } from '@redwoodjs/forms'
+import { Form, TextField, PasswordField, Submit } from '@redmix/forms'
 import { useAuth } from 'src/auth'
-import { routes, navigate } from '@redwoodjs/router'
+import { routes, navigate } from '@redmix/router'
 
 const SignupPage = () => {
   const { client } = useAuth()
@@ -348,7 +348,7 @@ yarn redwood generate page signin
 Next we'll add a basic form with `email` and `password` fields, some error reporting, and a hollow `onSubmit` function:
 
 ```jsx title="web/src/pages/SigninPage/SigninPage.[js/tsx]"
-import { Form, TextField, PasswordField, Submit } from '@redwoodjs/forms'
+import { Form, TextField, PasswordField, Submit } from '@redmix/forms'
 
 const SigninPage = () => {
   const [error, setError] = React.useState(null)
@@ -376,7 +376,7 @@ export default SigninPage
 Then we'll need to import `useAuth` from `src/auth` and destructure `logIn` so that we can use it in our `onSubmit` function:
 
 ```jsx {2,5} title="web/src/pages/SigninPage/SigninPage.js"
-import { Form, TextField, PasswordField, Submit } from '@redwoodjs/forms'
+import { Form, TextField, PasswordField, Submit } from '@redmix/forms'
 import { useAuth } from 'src/auth'
 
 const SigninPage = () => {
@@ -407,7 +407,7 @@ export default SigninPage
 Now we'll add `logIn` to our `onSubmit` function. This time we'll be passing an object to our function as we're using Redwood Auth's `logIn` function directly (as opposed to `client`). This object takes an email and password.
 
 ```jsx {10-15} title="web/src/pages/SigninPage/SigninPage.js"
-import { Form, TextField, PasswordField, Submit } from '@redwoodjs/forms'
+import { Form, TextField, PasswordField, Submit } from '@redmix/forms'
 import { useAuth } from 'src/auth'
 
 const SigninPage = () => {
@@ -442,12 +442,12 @@ export default SigninPage
 
 Let's redirect our user back to the home page upon a successful login.
 
-In our `SigninPage`, import `navigate` and `routes` from [`@redwoodjs/router`](../router.md) and add them after awaiting `logIn`:
+In our `SigninPage`, import `navigate` and `routes` from [`@redmix/router`](../router.md) and add them after awaiting `logIn`:
 
 ```jsx {10-16} title="web/src/pages/SigninPage/SigninPage.js"
-import { Form, TextField, PasswordField, Submit } from '@redwoodjs/forms'
+import { Form, TextField, PasswordField, Submit } from '@redmix/forms'
 import { useAuth } from 'src/auth'
-import { navigate, routes } from '@redwoodjs/router'
+import { navigate, routes } from '@redmix/router'
 
 const SigninPage = () => {
   const { logIn } = useAuth()
@@ -527,7 +527,7 @@ This works as is, but because the user may be in a restricted part of your app w
 
 ```jsx {2,8-9} title="web/src/components/SignoutBtn/SignoutBtn.[js/tsx]"
 import { useAuth } from 'src/auth'
-import { navigate, routes } from '@redwoodjs/router'
+import { navigate, routes } from '@redmix/router'
 
 const SignoutBtn = () => {
   const { logOut } = useAuth()
@@ -558,11 +558,11 @@ Let's start by [generating a navigation component](../cli-commands.md#generate-c
 yarn redwood generate component navigation
 ```
 
-This creates `web/src/components/Navigation/Navigation.js`. In that file, let's import [the `Link` component and the `routes` object](../router.md#link-and-named-route-functions) from `@redwoodjs/router`.
+This creates `web/src/components/Navigation/Navigation.js`. In that file, let's import [the `Link` component and the `routes` object](../router.md#link-and-named-route-functions) from `@redmix/router`.
 We'll also import [`useAuth`](../authentication.md#api) since we'll need to subscribe to the auth state for our component to decide what to render:
 
 ```jsx title="web/src/components/Navigation/Navigation.js"
-import { Link, routes } from '@redwoodjs/router'
+import { Link, routes } from '@redmix/router'
 import { useAuth } from 'src/auth'
 
 const Navigation = () => {
@@ -575,7 +575,7 @@ export default Navigation
 Let's destructure `isAuthenticated` from the `useAuth` hook and use it in some conditionals:
 
 ```jsx {5,8-12} title="web/src/components/Navigation/Navigation.js"
-import { Link, routes } from '@redwoodjs/router'
+import { Link, routes } from '@redmix/router'
 import { useAuth } from 'src/auth'
 
 const Navigation = () => {
@@ -599,7 +599,7 @@ Because Redwood Auth uses [React's Context API](https://reactjs.org/docs/context
 Now let's import our sign out button and add it, as well as sign in and sign up links, to the appropriate blocks in the conditional:
 
 ```jsx {3,9-16} title="web/src/components/Navigation/Navigation.[js/tsx]"
-import { Link, routes } from '@redwoodjs/router'
+import { Link, routes } from '@redmix/router'
 import { useAuth } from 'src/auth'
 import SignoutBtn from 'src/components/SignoutBtn/SignoutBtn'
 
@@ -650,7 +650,7 @@ export default GlobalLayout
 Finally, we'll wrap each of our generated pages in this `GlobalLayout` component. To do this efficiently, we'll update the routes defined in our `web\src\Routes.[js/tsx]` file with the [`Set` component](../router.md#sets-of-routes):
 
 ```jsx title="web/src/Routes.[js/tsx]"
-import { Router, Route, Set } from '@redwoodjs/router'
+import { Router, Route, Set } from '@redmix/router'
 import GlobalLayout from 'src/layouts/GlobalLayout/GlobalLayout'
 
 const Routes = () => {
@@ -679,7 +679,7 @@ As you continue refining your app, the following resources may come in handy:
 
 - [Redwood Supabase Auth Installation & Setup](../authentication.md#supabase)
 - [Redwood Auth Playground](https://redwood-playground-auth.netlify.app/supabase)
-- [Redwood Supabase Auth Client Implementation](https://github.com/redwoodjs/redwood/blob/main/packages/auth/src/authClients/supabase.ts)
+- [Redwood Supabase Auth Client Implementation](https://github.com/redmix-run/redmix/blob/main/packages/auth/src/authClients/supabase.ts)
 - [Supabase GoTrue client implementation](https://github.com/supabase/gotrue-js/blob/d7b334a4283027c65814aa81715ffead262f0bfa/src/GoTrueClient.ts)
 
 Finally, keep the following features in mind (future how to's could go deep into any of these):
@@ -693,4 +693,4 @@ Finally, keep the following features in mind (future how to's could go deep into
 
 Thanks for tuning in!
 
-> If you spot an error or have trouble completing any part of this recipe, please feel free to open an issue on [Github](https://github.com/redwoodjs/redwoodjs.com) or create a topic on our [community forum](https://community.redwoodjs.com/).
+> If you spot an error or have trouble completing any part of this recipe, please feel free to open an issue on [Github](https://github.com/redmix-run/redmix.run).

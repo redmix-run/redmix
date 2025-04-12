@@ -3,11 +3,11 @@ import path from 'path'
 import fs from 'fs-extra'
 import { Listr } from 'listr2'
 
-import { recordTelemetryAttributes } from '@redwoodjs/cli-helpers'
-import { runPrerender, writePrerenderedHtmlFile } from '@redwoodjs/prerender'
-import { detectPrerenderRoutes } from '@redwoodjs/prerender/detection'
-import { getConfig, getPaths } from '@redwoodjs/project-config'
-import { errorTelemetry } from '@redwoodjs/telemetry'
+import { recordTelemetryAttributes } from '@redmix/cli-helpers'
+import { runPrerender, writePrerenderedHtmlFile } from '@redmix/prerender'
+import { detectPrerenderRoutes } from '@redmix/prerender/detection'
+import { getConfig, getPaths } from '@redmix/project-config'
+import { errorTelemetry } from '@redmix/telemetry'
 
 import c from '../lib/colors.js'
 import { configureBabel, runScriptFunction } from '../lib/exec.js'
@@ -251,9 +251,9 @@ const diagnosticCheck = () => {
       ),
     },
     {
-      message: 'Duplicate @redwoodjs/web version found in web/node_modules',
+      message: 'Duplicate @redmix/web version found in web/node_modules',
       failure: fs.existsSync(
-        path.join(getPaths().web.base, 'node_modules/@redwoodjs/web'),
+        path.join(getPaths().web.base, 'node_modules/@redmix/web'),
       ),
     },
   ]

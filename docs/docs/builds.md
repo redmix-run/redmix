@@ -6,11 +6,11 @@ description: What happens when you build your app
 
 > ⚠ **Work in Progress** ⚠️
 >
-> There's more to document here. In the meantime, you can check our [community forum](https://community.redwoodjs.com/search?q=yarn%20rw%20build) for answers.
+> There's more to document here. In the meantime, you can check the RedwoodJS [community forum](https://community.redwoodjs.com/search?q=yarn%20rw%20build) for answers.
 >
-> Want to contribute? Redwood welcomes contributions and loves helping people become contributors.
-> You can edit this doc [here](https://github.com/redwoodjs/redwoodjs.com/blob/main/docs/builds.md).
-> If you have any questions, just ask for help! We're active on the [forums](https://community.redwoodjs.com/c/contributing/9) and on [discord](https://discord.com/channels/679514959968993311/747258086569541703).
+> Want to contribute? Redmix welcomes contributions and loves helping people become contributors.
+> You can edit this doc [here](https://github.com/redmix-run/redmix.run/blob/main/docs/builds.md).
+> If you have any questions, just ask for help!
 
 ## API
 

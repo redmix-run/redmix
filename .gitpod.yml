@@ -16,7 +16,7 @@ tasks:
   - name: 'Dev Servers'
     openMode: split-right
     before: |
-      export RWFW_PATH="/workspace/redwood"
+      export RWFW_PATH="/workspace/redmix"
       export REDWOOD_DISABLE_TELEMETRY=1
     init: |
       cd /workspace/redwood

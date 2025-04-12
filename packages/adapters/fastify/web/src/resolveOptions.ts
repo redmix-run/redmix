@@ -1,4 +1,4 @@
-import { getConfig } from '@redwoodjs/project-config'
+import { getConfig } from '@redmix/project-config'
 
 import type { RedwoodFastifyWebOptions } from './types'
 

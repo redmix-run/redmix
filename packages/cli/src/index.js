@@ -7,8 +7,8 @@ import fs from 'fs-extra'
 import { hideBin, Parser } from 'yargs/helpers'
 import yargs from 'yargs/yargs'
 
-import { loadEnvFiles, recordTelemetryAttributes } from '@redwoodjs/cli-helpers'
-import { telemetryMiddleware } from '@redwoodjs/telemetry'
+import { loadEnvFiles, recordTelemetryAttributes } from '@redmix/cli-helpers'
+import { telemetryMiddleware } from '@redmix/telemetry'
 
 import * as buildCommand from './commands/build.js'
 import * as checkCommand from './commands/check.js'

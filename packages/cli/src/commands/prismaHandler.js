@@ -4,8 +4,8 @@ import boxen from 'boxen'
 import execa from 'execa'
 import fs from 'fs-extra'
 
-import { recordTelemetryAttributes } from '@redwoodjs/cli-helpers'
-import { errorTelemetry } from '@redwoodjs/telemetry'
+import { recordTelemetryAttributes } from '@redmix/cli-helpers'
+import { errorTelemetry } from '@redmix/telemetry'
 
 import c from '../lib/colors.js'
 import { getPaths } from '../lib/index.js'

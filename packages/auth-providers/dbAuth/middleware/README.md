@@ -3,10 +3,10 @@
 ### Example instantiation
 
 ```tsx filename='entry.server.tsx'
-import type { TagDescriptor } from '@redwoodjs/web'
+import type { TagDescriptor } from '@redmix/web'
 
 import App from './App'
-import initDbAuthMiddleware from '@redwoodjs/auth-dbauth-middleware'
+import initDbAuthMiddleware from '@redmix/auth-dbauth-middleware'
 import { Document } from './Document'
 
 import { handler as dbAuthHandler } from '$api/src/functions/auth'

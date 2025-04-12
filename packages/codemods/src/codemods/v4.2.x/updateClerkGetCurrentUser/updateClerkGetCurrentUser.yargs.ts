@@ -3,7 +3,7 @@ import path from 'path'
 import type { TaskInnerAPI } from 'tasuku'
 import task from 'tasuku'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@redmix/project-config'
 
 import isTSProject from '../../../lib/isTSProject'
 import runTransform from '../../../lib/runTransform'

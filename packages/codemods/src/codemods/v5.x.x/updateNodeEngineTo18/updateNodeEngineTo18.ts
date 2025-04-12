@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@redmix/project-config'
 
 async function updateNodeEngineTo18() {
   const packageJSONPath = path.join(getPaths().base, 'package.json')

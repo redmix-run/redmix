@@ -11,7 +11,7 @@ import {
   vi,
 } from 'vitest'
 
-import type { AuthContextInterface, UseAuth } from '@redwoodjs/auth'
+import type { AuthContextInterface, UseAuth } from '@redmix/auth'
 
 import type { GeneratedRoutesMap } from '../analyzeRoutes.js'
 import {

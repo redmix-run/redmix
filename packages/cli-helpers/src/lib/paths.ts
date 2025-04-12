@@ -1,4 +1,4 @@
-import { getPaths as _getPaths } from '@redwoodjs/project-config'
+import { getPaths as _getPaths } from '@redmix/project-config'
 
 import { colors } from './colors.js'
 

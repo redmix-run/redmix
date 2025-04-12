@@ -1,5 +1,5 @@
-import { parseJWT, Decoded } from '@redwoodjs/api'
-import { AuthenticationError, ForbiddenError } from '@redwoodjs/graphql-server'
+import { parseJWT, Decoded } from '@redmix/api'
+import { AuthenticationError, ForbiddenError } from '@redmix/graphql-server'
 
 /**
  * Represents the user attributes returned by the decoding the

@@ -92,7 +92,7 @@ Add simple area chart to the `DashboardPage`:
 ```jsx
 import { Grid, Col, Card, Title, AreaChart } from '@tremor/react'
 
-import { MetaTags } from '@redwoodjs/web'
+import { MetaTags } from '@redmix/web'
 
 const DashboardPage = () => {
   const chartdata = [
@@ -293,7 +293,7 @@ Your Dashboard page should now look like:
 ```tsx
 import { Grid, Col, Card, Title, AreaChart } from '@tremor/react'
 
-import { MetaTags } from '@redwoodjs/web'
+import { MetaTags } from '@redmix/web'
 
 import KpiCard from 'src/components/KpiCard/KpiCard' // 👈 Import the KpiCard component
 import type { Kpi } from 'src/components/KpiCard/KpiCard' // 👈 Import the Kpi type

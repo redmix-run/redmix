@@ -1,5 +1,5 @@
 {
-  "name": "@redwoodjs/auth-dbauth-api",
+  "name": "@redmix/auth-dbauth-api",
   "version": "8.0.0",
   "repository": {
     "type": "git",
@@ -47,7 +47,7 @@
   ],
   "scripts": {
     "build": "tsx ./build.mts && yarn build:types",
-    "build:pack": "yarn pack -o redwoodjs-auth-dbauth-api.tgz",
+    "build:pack": "yarn pack -o redmix-auth-dbauth-api.tgz",
     "build:types": "tsc --build --verbose ./tsconfig.json",
     "build:watch": "nodemon --watch src --ext \"js,jsx,ts,tsx,template\" --ignore dist --exec \"yarn build\"",
     "check:attw": "yarn attw -P",
@@ -57,15 +57,15 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@redwoodjs/project-config": "workspace:*",
+    "@redmix/project-config": "workspace:*",
     "base64url": "3.0.1",
     "md5": "2.3.0",
     "uuid": "10.0.0"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "0.16.4",
-    "@redwoodjs/api": "workspace:*",
-    "@redwoodjs/framework-tools": "workspace:*",
+    "@redmix/api": "workspace:*",
+    "@redmix/framework-tools": "workspace:*",
     "@simplewebauthn/server": "7.4.0",
     "@types/md5": "2.3.5",
     "@types/uuid": "10.0.0",

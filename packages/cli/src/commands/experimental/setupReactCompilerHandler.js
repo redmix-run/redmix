@@ -5,8 +5,8 @@ import fs from 'fs-extra'
 import { Listr } from 'listr2'
 import semver from 'semver'
 
-import { getConfigPath } from '@redwoodjs/project-config'
-import { errorTelemetry } from '@redwoodjs/telemetry'
+import { getConfigPath } from '@redmix/project-config'
+import { errorTelemetry } from '@redmix/telemetry'
 
 import c from '../../lib/colors.js'
 import { getPaths, writeFile } from '../../lib/index.js'

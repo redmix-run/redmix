@@ -3,8 +3,8 @@ import type {
   MailUtilities,
   MailRenderedContent,
   MailResult,
-} from '@redwoodjs/mailer-core'
-import { AbstractMailHandler } from '@redwoodjs/mailer-core'
+} from '@redmix/mailer-core'
+import { AbstractMailHandler } from '@redmix/mailer-core'
 
 export type InMemoryMail = {
   textContent: MailRenderedContent['text']

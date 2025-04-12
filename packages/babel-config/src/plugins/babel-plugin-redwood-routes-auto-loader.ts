@@ -2,13 +2,13 @@ import path from 'path'
 
 import type { PluginObj, types } from '@babel/core'
 
-import type { PagesDependency } from '@redwoodjs/project-config'
+import type { PagesDependency } from '@redmix/project-config'
 import {
   ensurePosixPath,
   getPaths,
   importStatementPath,
   processPagesDir,
-} from '@redwoodjs/project-config'
+} from '@redmix/project-config'
 
 export interface PluginOptions {
   forPrerender?: boolean

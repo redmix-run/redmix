@@ -6,14 +6,14 @@ import type {
   UpdateEmptyUserMutationVariables,
 } from 'types/graphql'
 
-import { navigate, routes } from '@redwoodjs/router'
+import { navigate, routes } from '@redmix/router'
 import type {
   CellSuccessProps,
   CellFailureProps,
   TypedDocumentNode,
-} from '@redwoodjs/web'
-import { useMutation } from '@redwoodjs/web'
-import { toast } from '@redwoodjs/web/toast'
+} from '@redmix/web'
+import { useMutation } from '@redmix/web'
+import { toast } from '@redmix/web/toast'
 
 import EmptyUserForm from 'src/components/EmptyUser/EmptyUserForm'
 

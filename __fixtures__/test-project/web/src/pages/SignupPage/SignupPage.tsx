@@ -7,10 +7,10 @@ import {
   PasswordField,
   FieldError,
   Submit,
-} from '@redwoodjs/forms'
-import { Link, navigate, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
-import { toast, Toaster } from '@redwoodjs/web/toast'
+} from '@redmix/forms'
+import { Link, navigate, routes } from '@redmix/router'
+import { Metadata } from '@redmix/web'
+import { toast, Toaster } from '@redmix/web/toast'
 
 import { useAuth } from 'src/auth'
 

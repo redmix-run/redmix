@@ -1,5 +1,5 @@
 {
-  "name": "@redwoodjs/auth-supabase-middleware",
+  "name": "@redmix/auth-supabase-middleware",
   "version": "8.0.0",
   "repository": {
     "type": "git",
@@ -28,7 +28,7 @@
   ],
   "scripts": {
     "build": "tsx ./build.mts",
-    "build:pack": "yarn pack -o redwoodjs-auth-supabase-middleware.tgz",
+    "build:pack": "yarn pack -o redmix-auth-supabase-middleware.tgz",
     "build:types": "tsc --build --verbose ./tsconfig.build.json",
     "build:types-cjs": "tsc --build --verbose ./tsconfig.cjs.json",
     "check:attw": "yarn attw -P",
@@ -38,16 +38,16 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@redwoodjs/auth-supabase-api": "workspace:*",
-    "@redwoodjs/web": "workspace:*",
+    "@redmix/auth-supabase-api": "workspace:*",
+    "@redmix/web": "workspace:*",
     "@supabase/ssr": "0.5.1"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "0.16.4",
-    "@redwoodjs/api": "workspace:*",
-    "@redwoodjs/auth": "workspace:*",
-    "@redwoodjs/framework-tools": "workspace:*",
-    "@redwoodjs/graphql-server": "workspace:*",
+    "@redmix/api": "workspace:*",
+    "@redmix/auth": "workspace:*",
+    "@redmix/framework-tools": "workspace:*",
+    "@redmix/graphql-server": "workspace:*",
     "@types/aws-lambda": "8.10.145",
     "concurrently": "8.2.2",
     "publint": "0.3.11",

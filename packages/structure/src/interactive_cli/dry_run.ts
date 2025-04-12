@@ -83,7 +83,7 @@ function buildJS(
     return new URL(FILE_SCHEME + path.normalize(f)).href
   }
 
-  proxyquire('@redwoodjs/cli/dist', {
+  proxyquire('@redmix/cli/dist', {
     fs: {
       mkdir() {},
       mkdirSync(...args) {},

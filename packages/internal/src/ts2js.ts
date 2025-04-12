@@ -5,7 +5,7 @@ import { transform } from '@babel/core'
 import fg from 'fast-glob'
 import { format } from 'prettier'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@redmix/project-config'
 
 /**
  * Converts all the TypeScript files in the `api` and `web` sides to JavaScript.

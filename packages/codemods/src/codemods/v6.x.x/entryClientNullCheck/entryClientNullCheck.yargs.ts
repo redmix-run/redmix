@@ -4,7 +4,7 @@ import fg from 'fast-glob'
 import type { TaskInnerAPI } from 'tasuku'
 import task from 'tasuku'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@redmix/project-config'
 
 import runTransform from '../../../lib/runTransform'
 

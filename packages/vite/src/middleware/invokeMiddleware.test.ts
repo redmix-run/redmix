@@ -1,11 +1,11 @@
 import type { MockInstance } from 'vitest'
 import { afterAll, beforeAll, describe, expect, test, vi } from 'vitest'
 
-import { middlewareDefaultAuthProviderState } from '@redwoodjs/auth'
-import type { ServerAuthState } from '@redwoodjs/auth/ServerAuthProvider'
-import { createServerStorage } from '@redwoodjs/server-store'
-import type { Middleware, MiddlewareRequest } from '@redwoodjs/web/middleware'
-import { MiddlewareResponse } from '@redwoodjs/web/middleware'
+import { middlewareDefaultAuthProviderState } from '@redmix/auth'
+import type { ServerAuthState } from '@redmix/auth/ServerAuthProvider'
+import { createServerStorage } from '@redmix/server-store'
+import type { Middleware, MiddlewareRequest } from '@redmix/web/middleware'
+import { MiddlewareResponse } from '@redmix/web/middleware'
 
 import { invoke } from './invokeMiddleware'
 

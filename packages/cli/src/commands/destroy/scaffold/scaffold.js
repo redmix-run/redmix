@@ -1,7 +1,7 @@
 import { Listr } from 'listr2'
 import pascalcase from 'pascalcase'
 
-import { recordTelemetryAttributes } from '@redwoodjs/cli-helpers'
+import { recordTelemetryAttributes } from '@redmix/cli-helpers'
 
 import c from '../../../lib/colors.js'
 import {
@@ -39,7 +39,7 @@ const removeSetImport = () => {
   }
 
   const [redwoodRouterImport] = routesContent.match(
-    /import {[^]*} from '@redwoodjs\/router'/,
+    /import {[^]*} from '@redmix\/router'/,
   )
   const removedSetImport = redwoodRouterImport.replace(/,*\s*Set,*/, '')
   const newRoutesContent = routesContent.replace(

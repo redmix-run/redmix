@@ -29,7 +29,7 @@ const config = {
  * Note: This configuration does not apply in a serverless deploy.
  */
 
-/** @type {import('@redwoodjs/api-server/dist/types').FastifySideConfigFn} */
+/** @type {import('@redmix/api-server/dist/types').FastifySideConfigFn} */
 const configureFastify = async (fastify, options) => {
   if (options.side === 'api') {
     fastify.log.trace({ custom: { options } }, 'Configuring api side')

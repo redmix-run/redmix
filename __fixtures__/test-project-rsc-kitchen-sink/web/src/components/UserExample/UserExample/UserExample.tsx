@@ -1,8 +1,8 @@
 'use client'
 
-import { Link, routes, navigate } from '@redwoodjs/router'
-import { useMutation } from '@redwoodjs/web'
-import { toast } from '@redwoodjs/web/toast'
+import { Link, routes, navigate } from '@redmix/router'
+import { useMutation } from '@redmix/web'
+import { toast } from '@redmix/web/toast'
 
 import {} from 'src/lib/formatters'
 

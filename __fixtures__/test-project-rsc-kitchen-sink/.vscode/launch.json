@@ -15,8 +15,8 @@
         "<node_internals>/**"
       ],
       "type": "node",
-      "localRoot": "${workspaceFolder}/node_modules/@redwoodjs/api-server/dist",
-      "remoteRoot": "${workspaceFolder}/node_modules/@redwoodjs/api-server/dist",
+      "localRoot": "${workspaceFolder}/node_modules/@redmix/api-server/dist",
+      "remoteRoot": "${workspaceFolder}/node_modules/@redmix/api-server/dist",
       "sourceMaps": true,
       "restart": true,
       "preLaunchTask": "WaitForDevServer",

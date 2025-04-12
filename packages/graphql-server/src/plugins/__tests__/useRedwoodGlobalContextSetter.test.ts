@@ -2,9 +2,9 @@ import { useEngine } from '@envelop/core'
 import * as GraphQLJS from 'graphql'
 import { expect, test } from 'vitest'
 
-import type { GlobalContext } from '@redwoodjs/context'
-import { context, setContext } from '@redwoodjs/context'
-import { getAsyncStoreInstance } from '@redwoodjs/context/dist/store'
+import type { GlobalContext } from '@redmix/context'
+import { context, setContext } from '@redmix/context'
+import { getAsyncStoreInstance } from '@redmix/context/dist/store'
 
 import { testSchema, testQuery } from '../__fixtures__/common'
 import { createTestkit } from '../__fixtures__/envelop-testing'

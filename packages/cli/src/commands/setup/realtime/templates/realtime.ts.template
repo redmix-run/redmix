@@ -1,4 +1,4 @@
-import { RedwoodRealtimeOptions } from '@redwoodjs/realtime'
+import { RedwoodRealtimeOptions } from '@redmix/realtime'
 
 import subscriptions from 'src/subscriptions/**/*.{js,ts}'
 

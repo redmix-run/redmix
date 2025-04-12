@@ -7,8 +7,8 @@ import type {
   SignOutOptions,
 } from '@clerk/types'
 
-import type { CurrentUser } from '@redwoodjs/auth'
-import { createAuthentication } from '@redwoodjs/auth'
+import type { CurrentUser } from '@redmix/auth'
+import { createAuthentication } from '@redmix/auth'
 
 type Clerk = ClerkClient | undefined | null
 

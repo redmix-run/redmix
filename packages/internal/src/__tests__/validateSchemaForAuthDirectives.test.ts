@@ -6,7 +6,7 @@ import { mergeTypeDefs } from '@graphql-tools/merge'
 import type { DocumentNode } from 'graphql'
 import { describe, beforeAll, afterAll, test, expect } from 'vitest'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@redmix/project-config'
 
 import {
   validateSchema,

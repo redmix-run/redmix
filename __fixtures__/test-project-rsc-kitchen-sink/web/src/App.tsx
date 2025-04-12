@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 
-import { FatalErrorBoundary, RedwoodProvider } from '@redwoodjs/web'
-import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
+import { FatalErrorBoundary, RedwoodProvider } from '@redmix/web'
+import { RedwoodApolloProvider } from '@redmix/web/apollo'
 
 import { AuthProvider, useAuth } from './auth'
 import FatalErrorPage from './pages/FatalErrorPage/FatalErrorPage'

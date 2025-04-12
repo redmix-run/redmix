@@ -9,7 +9,7 @@ vi.mock('../../../../lib', async (importOriginal) => {
   }
 })
 
-vi.mock('@redwoodjs/structure', () => {
+vi.mock('@redmix/structure', () => {
   return {
     getProject: () => ({
       cells: [{ queryOperationName: undefined }],

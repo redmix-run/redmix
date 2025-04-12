@@ -15,7 +15,7 @@ import type {
   SdlGlobImports,
 } from '../types'
 
-vi.mock('@redwoodjs/project-config', () => {
+vi.mock('@redmix/project-config', () => {
   return {
     getConfig: () => {
       return {

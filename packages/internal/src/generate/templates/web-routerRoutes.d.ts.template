@@ -1,6 +1,6 @@
-import { RouteParams, QueryParams } from '@redwoodjs/router'
+import { RouteParams, QueryParams } from '@redmix/router'
 
-declare module '@redwoodjs/router' {
+declare module '@redmix/router' {
   interface AvailableRoutes {
     // Only "<Route />" components with a "name" and "path" prop will be populated here.
 ${routes.map(

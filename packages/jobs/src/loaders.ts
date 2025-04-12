@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@redmix/project-config'
 
 import type { JobManager } from './core/JobManager.js'
 import { JobsLibNotFoundError, JobNotFoundError } from './errors.js'
