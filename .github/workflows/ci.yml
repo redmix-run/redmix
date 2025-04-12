@@ -151,12 +151,12 @@ jobs:
       - name: 🌲 Install Cypress
         run: yarn cypress install
 
-      - name: 🌲 Create a Redwood App
+      - name: 🌲 Create a Redmix App
         id: crwa
         env:
           YARN_ENABLE_IMMUTABLE_INSTALLS: false
         run: |
-          project_path=$(mktemp -d -t redwood.XXXXXX)
+          project_path=$(mktemp -d -t redmix.XXXXXX)
           echo "project-path=$project_path" >> $GITHUB_OUTPUT
 
           git config --global user.email "you@example.com"
@@ -818,7 +818,7 @@ jobs:
           yarn build:pack
           PROJECT_PATH=$(yarn set-up-test-project)
           echo "PROJECT_PATH=$PROJECT_PATH" >> $GITHUB_ENV
-        working-directory: ./packages/create-redwood-app
+        working-directory: ./packages/create-redmix-app
         env:
           YARN_ENABLE_IMMUTABLE_INSTALLS: false
 
@@ -829,7 +829,7 @@ jobs:
 
       - name: e2e test
         run: yarn test:e2e
-        working-directory: ./packages/create-redwood-app
+        working-directory: ./packages/create-redmix-app
         env:
           PROJECT_PATH: ${{ env.PROJECT_PATH }}
 
@@ -845,7 +845,7 @@ jobs:
           ./tests/e2e_prompts_m.sh
           ./tests/e2e_prompts_ts.sh
           ./tests/e2e_prompts_overwrite.sh
-        working-directory: ./packages/create-redwood-app
+        working-directory: ./packages/create-redmix-app
         env:
           PROJECT_PATH: ${{ env.PROJECT_PATH }}
 
@@ -856,7 +856,7 @@ jobs:
 
       - name: Prompt tests
         run: ./tests/e2e_prompts_node_less.sh
-        working-directory: ./packages/create-redwood-app
+        working-directory: ./packages/create-redmix-app
         env:
           PROJECT_PATH: ${{ env.PROJECT_PATH }}
 
@@ -867,7 +867,7 @@ jobs:
 
       - name: Prompt tests
         run: ./tests/e2e_prompts_node_greater.sh
-        working-directory: ./packages/create-redwood-app
+        working-directory: ./packages/create-redmix-app
         env:
           PROJECT_PATH: ${{ env.PROJECT_PATH }}
 

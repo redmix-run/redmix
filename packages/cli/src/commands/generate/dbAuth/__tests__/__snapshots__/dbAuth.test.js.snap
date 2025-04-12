@@ -11,10 +11,10 @@ exports[`dbAuth > handler > exits when all files are skipped 1`] = `
 exports[`dbAuth > handler > produces the correct files with custom password set via flag 1`] = `
 "import { useEffect, useRef } from 'react'
 
-import { Form, Label, TextField, Submit, FieldError } from '@redwoodjs/forms'
-import { navigate, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
-import { toast, Toaster } from '@redwoodjs/web/toast'
+import { Form, Label, TextField, Submit, FieldError } from '@redmix/forms'
+import { navigate, routes } from '@redmix/router'
+import { Metadata } from '@redmix/web'
+import { toast, Toaster } from '@redmix/web/toast'
 
 import { useAuth } from 'src/auth'
 
@@ -112,10 +112,10 @@ import {
   PasswordField,
   Submit,
   FieldError,
-} from '@redwoodjs/forms'
-import { Link, navigate, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
-import { toast, Toaster } from '@redwoodjs/web/toast'
+} from '@redmix/forms'
+import { Link, navigate, routes } from '@redmix/router'
+import { Metadata } from '@redmix/web'
+import { toast, Toaster } from '@redmix/web/toast'
 
 import { useAuth } from 'src/auth'
 
@@ -242,16 +242,10 @@ export default LoginPage
 exports[`dbAuth > handler > produces the correct files with custom password set via flag 3`] = `
 "import { useEffect, useRef, useState } from 'react'
 
-import {
-  Form,
-  Label,
-  PasswordField,
-  Submit,
-  FieldError,
-} from '@redwoodjs/forms'
-import { navigate, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
-import { toast, Toaster } from '@redwoodjs/web/toast'
+import { Form, Label, PasswordField, Submit, FieldError } from '@redmix/forms'
+import { navigate, routes } from '@redmix/router'
+import { Metadata } from '@redmix/web'
+import { toast, Toaster } from '@redmix/web/toast'
 
 import { useAuth } from 'src/auth'
 
@@ -372,10 +366,10 @@ import {
   PasswordField,
   FieldError,
   Submit,
-} from '@redwoodjs/forms'
-import { Link, navigate, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
-import { toast, Toaster } from '@redwoodjs/web/toast'
+} from '@redmix/forms'
+import { Link, navigate, routes } from '@redmix/router'
+import { Metadata } from '@redmix/web'
+import { toast, Toaster } from '@redmix/web/toast'
 
 import { useAuth } from 'src/auth'
 
@@ -497,10 +491,10 @@ export default SignupPage
 exports[`dbAuth > handler > produces the correct files with custom password set via prompt 1`] = `
 "import { useEffect, useRef } from 'react'
 
-import { Form, Label, TextField, Submit, FieldError } from '@redwoodjs/forms'
-import { navigate, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
-import { toast, Toaster } from '@redwoodjs/web/toast'
+import { Form, Label, TextField, Submit, FieldError } from '@redmix/forms'
+import { navigate, routes } from '@redmix/router'
+import { Metadata } from '@redmix/web'
+import { toast, Toaster } from '@redmix/web/toast'
 
 import { useAuth } from 'src/auth'
 
@@ -598,10 +592,10 @@ import {
   PasswordField,
   Submit,
   FieldError,
-} from '@redwoodjs/forms'
-import { Link, navigate, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
-import { toast, Toaster } from '@redwoodjs/web/toast'
+} from '@redmix/forms'
+import { Link, navigate, routes } from '@redmix/router'
+import { Metadata } from '@redmix/web'
+import { toast, Toaster } from '@redmix/web/toast'
 
 import { useAuth } from 'src/auth'
 
@@ -728,16 +722,10 @@ export default LoginPage
 exports[`dbAuth > handler > produces the correct files with custom password set via prompt 3`] = `
 "import { useEffect, useRef, useState } from 'react'
 
-import {
-  Form,
-  Label,
-  PasswordField,
-  Submit,
-  FieldError,
-} from '@redwoodjs/forms'
-import { navigate, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
-import { toast, Toaster } from '@redwoodjs/web/toast'
+import { Form, Label, PasswordField, Submit, FieldError } from '@redmix/forms'
+import { navigate, routes } from '@redmix/router'
+import { Metadata } from '@redmix/web'
+import { toast, Toaster } from '@redmix/web/toast'
 
 import { useAuth } from 'src/auth'
 
@@ -858,10 +846,10 @@ import {
   PasswordField,
   FieldError,
   Submit,
-} from '@redwoodjs/forms'
-import { Link, navigate, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
-import { toast, Toaster } from '@redwoodjs/web/toast'
+} from '@redmix/forms'
+import { Link, navigate, routes } from '@redmix/router'
+import { Metadata } from '@redmix/web'
+import { toast, Toaster } from '@redmix/web/toast'
 
 import { useAuth } from 'src/auth'
 
@@ -983,10 +971,10 @@ export default SignupPage
 exports[`dbAuth > handler > produces the correct files with custom username and password set via flag 1`] = `
 "import { useEffect, useRef } from 'react'
 
-import { Form, Label, TextField, Submit, FieldError } from '@redwoodjs/forms'
-import { navigate, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
-import { toast, Toaster } from '@redwoodjs/web/toast'
+import { Form, Label, TextField, Submit, FieldError } from '@redmix/forms'
+import { navigate, routes } from '@redmix/router'
+import { Metadata } from '@redmix/web'
+import { toast, Toaster } from '@redmix/web/toast'
 
 import { useAuth } from 'src/auth'
 
@@ -1084,10 +1072,10 @@ import {
   PasswordField,
   Submit,
   FieldError,
-} from '@redwoodjs/forms'
-import { Link, navigate, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
-import { toast, Toaster } from '@redwoodjs/web/toast'
+} from '@redmix/forms'
+import { Link, navigate, routes } from '@redmix/router'
+import { Metadata } from '@redmix/web'
+import { toast, Toaster } from '@redmix/web/toast'
 
 import { useAuth } from 'src/auth'
 
@@ -1214,16 +1202,10 @@ export default LoginPage
 exports[`dbAuth > handler > produces the correct files with custom username and password set via flag 3`] = `
 "import { useEffect, useRef, useState } from 'react'
 
-import {
-  Form,
-  Label,
-  PasswordField,
-  Submit,
-  FieldError,
-} from '@redwoodjs/forms'
-import { navigate, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
-import { toast, Toaster } from '@redwoodjs/web/toast'
+import { Form, Label, PasswordField, Submit, FieldError } from '@redmix/forms'
+import { navigate, routes } from '@redmix/router'
+import { Metadata } from '@redmix/web'
+import { toast, Toaster } from '@redmix/web/toast'
 
 import { useAuth } from 'src/auth'
 
@@ -1344,10 +1326,10 @@ import {
   PasswordField,
   FieldError,
   Submit,
-} from '@redwoodjs/forms'
-import { Link, navigate, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
-import { toast, Toaster } from '@redwoodjs/web/toast'
+} from '@redmix/forms'
+import { Link, navigate, routes } from '@redmix/router'
+import { Metadata } from '@redmix/web'
+import { toast, Toaster } from '@redmix/web/toast'
 
 import { useAuth } from 'src/auth'
 
@@ -1469,10 +1451,10 @@ export default SignupPage
 exports[`dbAuth > handler > produces the correct files with custom username and password set via prompt 1`] = `
 "import { useEffect, useRef } from 'react'
 
-import { Form, Label, TextField, Submit, FieldError } from '@redwoodjs/forms'
-import { navigate, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
-import { toast, Toaster } from '@redwoodjs/web/toast'
+import { Form, Label, TextField, Submit, FieldError } from '@redmix/forms'
+import { navigate, routes } from '@redmix/router'
+import { Metadata } from '@redmix/web'
+import { toast, Toaster } from '@redmix/web/toast'
 
 import { useAuth } from 'src/auth'
 
@@ -1570,10 +1552,10 @@ import {
   PasswordField,
   Submit,
   FieldError,
-} from '@redwoodjs/forms'
-import { Link, navigate, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
-import { toast, Toaster } from '@redwoodjs/web/toast'
+} from '@redmix/forms'
+import { Link, navigate, routes } from '@redmix/router'
+import { Metadata } from '@redmix/web'
+import { toast, Toaster } from '@redmix/web/toast'
 
 import { useAuth } from 'src/auth'
 
@@ -1700,16 +1682,10 @@ export default LoginPage
 exports[`dbAuth > handler > produces the correct files with custom username and password set via prompt 3`] = `
 "import { useEffect, useRef, useState } from 'react'
 
-import {
-  Form,
-  Label,
-  PasswordField,
-  Submit,
-  FieldError,
-} from '@redwoodjs/forms'
-import { navigate, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
-import { toast, Toaster } from '@redwoodjs/web/toast'
+import { Form, Label, PasswordField, Submit, FieldError } from '@redmix/forms'
+import { navigate, routes } from '@redmix/router'
+import { Metadata } from '@redmix/web'
+import { toast, Toaster } from '@redmix/web/toast'
 
 import { useAuth } from 'src/auth'
 
@@ -1830,10 +1806,10 @@ import {
   PasswordField,
   FieldError,
   Submit,
-} from '@redwoodjs/forms'
-import { Link, navigate, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
-import { toast, Toaster } from '@redwoodjs/web/toast'
+} from '@redmix/forms'
+import { Link, navigate, routes } from '@redmix/router'
+import { Metadata } from '@redmix/web'
+import { toast, Toaster } from '@redmix/web/toast'
 
 import { useAuth } from 'src/auth'
 
@@ -1955,10 +1931,10 @@ export default SignupPage
 exports[`dbAuth > handler > produces the correct files with custom username and password set via prompt and with webauthn enabled via flag 1`] = `
 "import { useEffect, useRef } from 'react'
 
-import { Form, Label, TextField, Submit, FieldError } from '@redwoodjs/forms'
-import { navigate, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
-import { toast, Toaster } from '@redwoodjs/web/toast'
+import { Form, Label, TextField, Submit, FieldError } from '@redmix/forms'
+import { navigate, routes } from '@redmix/router'
+import { Metadata } from '@redmix/web'
+import { toast, Toaster } from '@redmix/web/toast'
 
 import { useAuth } from 'src/auth'
 
@@ -2056,10 +2032,10 @@ import {
   PasswordField,
   Submit,
   FieldError,
-} from '@redwoodjs/forms'
-import { Link, navigate, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
-import { toast, Toaster } from '@redwoodjs/web/toast'
+} from '@redmix/forms'
+import { Link, navigate, routes } from '@redmix/router'
+import { Metadata } from '@redmix/web'
+import { toast, Toaster } from '@redmix/web/toast'
 
 import { useAuth } from 'src/auth'
 
@@ -2318,16 +2294,10 @@ export default LoginPage
 exports[`dbAuth > handler > produces the correct files with custom username and password set via prompt and with webauthn enabled via flag 3`] = `
 "import { useEffect, useRef, useState } from 'react'
 
-import {
-  Form,
-  Label,
-  PasswordField,
-  Submit,
-  FieldError,
-} from '@redwoodjs/forms'
-import { navigate, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
-import { toast, Toaster } from '@redwoodjs/web/toast'
+import { Form, Label, PasswordField, Submit, FieldError } from '@redmix/forms'
+import { navigate, routes } from '@redmix/router'
+import { Metadata } from '@redmix/web'
+import { toast, Toaster } from '@redmix/web/toast'
 
 import { useAuth } from 'src/auth'
 
@@ -2448,10 +2418,10 @@ import {
   PasswordField,
   FieldError,
   Submit,
-} from '@redwoodjs/forms'
-import { Link, navigate, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
-import { toast, Toaster } from '@redwoodjs/web/toast'
+} from '@redmix/forms'
+import { Link, navigate, routes } from '@redmix/router'
+import { Metadata } from '@redmix/web'
+import { toast, Toaster } from '@redmix/web/toast'
 
 import { useAuth } from 'src/auth'
 
@@ -2573,10 +2543,10 @@ export default SignupPage
 exports[`dbAuth > handler > produces the correct files with custom username and password set via prompt and with webauthn enabled via prompt 1`] = `
 "import { useEffect, useRef } from 'react'
 
-import { Form, Label, TextField, Submit, FieldError } from '@redwoodjs/forms'
-import { navigate, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
-import { toast, Toaster } from '@redwoodjs/web/toast'
+import { Form, Label, TextField, Submit, FieldError } from '@redmix/forms'
+import { navigate, routes } from '@redmix/router'
+import { Metadata } from '@redmix/web'
+import { toast, Toaster } from '@redmix/web/toast'
 
 import { useAuth } from 'src/auth'
 
@@ -2674,10 +2644,10 @@ import {
   PasswordField,
   Submit,
   FieldError,
-} from '@redwoodjs/forms'
-import { Link, navigate, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
-import { toast, Toaster } from '@redwoodjs/web/toast'
+} from '@redmix/forms'
+import { Link, navigate, routes } from '@redmix/router'
+import { Metadata } from '@redmix/web'
+import { toast, Toaster } from '@redmix/web/toast'
 
 import { useAuth } from 'src/auth'
 
@@ -2936,16 +2906,10 @@ export default LoginPage
 exports[`dbAuth > handler > produces the correct files with custom username and password set via prompt and with webauthn enabled via prompt 3`] = `
 "import { useEffect, useRef, useState } from 'react'
 
-import {
-  Form,
-  Label,
-  PasswordField,
-  Submit,
-  FieldError,
-} from '@redwoodjs/forms'
-import { navigate, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
-import { toast, Toaster } from '@redwoodjs/web/toast'
+import { Form, Label, PasswordField, Submit, FieldError } from '@redmix/forms'
+import { navigate, routes } from '@redmix/router'
+import { Metadata } from '@redmix/web'
+import { toast, Toaster } from '@redmix/web/toast'
 
 import { useAuth } from 'src/auth'
 
@@ -3066,10 +3030,10 @@ import {
   PasswordField,
   FieldError,
   Submit,
-} from '@redwoodjs/forms'
-import { Link, navigate, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
-import { toast, Toaster } from '@redwoodjs/web/toast'
+} from '@redmix/forms'
+import { Link, navigate, routes } from '@redmix/router'
+import { Metadata } from '@redmix/web'
+import { toast, Toaster } from '@redmix/web/toast'
 
 import { useAuth } from 'src/auth'
 
@@ -3191,10 +3155,10 @@ export default SignupPage
 exports[`dbAuth > handler > produces the correct files with custom username set via flag 1`] = `
 "import { useEffect, useRef } from 'react'
 
-import { Form, Label, TextField, Submit, FieldError } from '@redwoodjs/forms'
-import { navigate, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
-import { toast, Toaster } from '@redwoodjs/web/toast'
+import { Form, Label, TextField, Submit, FieldError } from '@redmix/forms'
+import { navigate, routes } from '@redmix/router'
+import { Metadata } from '@redmix/web'
+import { toast, Toaster } from '@redmix/web/toast'
 
 import { useAuth } from 'src/auth'
 
@@ -3296,10 +3260,10 @@ import {
   PasswordField,
   Submit,
   FieldError,
-} from '@redwoodjs/forms'
-import { Link, navigate, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
-import { toast, Toaster } from '@redwoodjs/web/toast'
+} from '@redmix/forms'
+import { Link, navigate, routes } from '@redmix/router'
+import { Metadata } from '@redmix/web'
+import { toast, Toaster } from '@redmix/web/toast'
 
 import { useAuth } from 'src/auth'
 
@@ -3426,16 +3390,10 @@ export default LoginPage
 exports[`dbAuth > handler > produces the correct files with custom username set via flag 3`] = `
 "import { useEffect, useRef, useState } from 'react'
 
-import {
-  Form,
-  Label,
-  PasswordField,
-  Submit,
-  FieldError,
-} from '@redwoodjs/forms'
-import { navigate, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
-import { toast, Toaster } from '@redwoodjs/web/toast'
+import { Form, Label, PasswordField, Submit, FieldError } from '@redmix/forms'
+import { navigate, routes } from '@redmix/router'
+import { Metadata } from '@redmix/web'
+import { toast, Toaster } from '@redmix/web/toast'
 
 import { useAuth } from 'src/auth'
 
@@ -3558,10 +3516,10 @@ import {
   PasswordField,
   FieldError,
   Submit,
-} from '@redwoodjs/forms'
-import { Link, navigate, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
-import { toast, Toaster } from '@redwoodjs/web/toast'
+} from '@redmix/forms'
+import { Link, navigate, routes } from '@redmix/router'
+import { Metadata } from '@redmix/web'
+import { toast, Toaster } from '@redmix/web/toast'
 
 import { useAuth } from 'src/auth'
 
@@ -3683,10 +3641,10 @@ export default SignupPage
 exports[`dbAuth > handler > produces the correct files with custom username set via prompt 1`] = `
 "import { useEffect, useRef } from 'react'
 
-import { Form, Label, TextField, Submit, FieldError } from '@redwoodjs/forms'
-import { navigate, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
-import { toast, Toaster } from '@redwoodjs/web/toast'
+import { Form, Label, TextField, Submit, FieldError } from '@redmix/forms'
+import { navigate, routes } from '@redmix/router'
+import { Metadata } from '@redmix/web'
+import { toast, Toaster } from '@redmix/web/toast'
 
 import { useAuth } from 'src/auth'
 
@@ -3788,10 +3746,10 @@ import {
   PasswordField,
   Submit,
   FieldError,
-} from '@redwoodjs/forms'
-import { Link, navigate, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
-import { toast, Toaster } from '@redwoodjs/web/toast'
+} from '@redmix/forms'
+import { Link, navigate, routes } from '@redmix/router'
+import { Metadata } from '@redmix/web'
+import { toast, Toaster } from '@redmix/web/toast'
 
 import { useAuth } from 'src/auth'
 
@@ -3918,16 +3876,10 @@ export default LoginPage
 exports[`dbAuth > handler > produces the correct files with custom username set via prompt 3`] = `
 "import { useEffect, useRef, useState } from 'react'
 
-import {
-  Form,
-  Label,
-  PasswordField,
-  Submit,
-  FieldError,
-} from '@redwoodjs/forms'
-import { navigate, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
-import { toast, Toaster } from '@redwoodjs/web/toast'
+import { Form, Label, PasswordField, Submit, FieldError } from '@redmix/forms'
+import { navigate, routes } from '@redmix/router'
+import { Metadata } from '@redmix/web'
+import { toast, Toaster } from '@redmix/web/toast'
 
 import { useAuth } from 'src/auth'
 
@@ -4050,10 +4002,10 @@ import {
   PasswordField,
   FieldError,
   Submit,
-} from '@redwoodjs/forms'
-import { Link, navigate, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
-import { toast, Toaster } from '@redwoodjs/web/toast'
+} from '@redmix/forms'
+import { Link, navigate, routes } from '@redmix/router'
+import { Metadata } from '@redmix/web'
+import { toast, Toaster } from '@redmix/web/toast'
 
 import { useAuth } from 'src/auth'
 
@@ -4175,10 +4127,10 @@ export default SignupPage
 exports[`dbAuth > handler > produces the correct files with default labels 1`] = `
 "import { useEffect, useRef } from 'react'
 
-import { Form, Label, TextField, Submit, FieldError } from '@redwoodjs/forms'
-import { navigate, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
-import { toast, Toaster } from '@redwoodjs/web/toast'
+import { Form, Label, TextField, Submit, FieldError } from '@redmix/forms'
+import { navigate, routes } from '@redmix/router'
+import { Metadata } from '@redmix/web'
+import { toast, Toaster } from '@redmix/web/toast'
 
 import { useAuth } from 'src/auth'
 
@@ -4280,10 +4232,10 @@ import {
   PasswordField,
   Submit,
   FieldError,
-} from '@redwoodjs/forms'
-import { Link, navigate, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
-import { toast, Toaster } from '@redwoodjs/web/toast'
+} from '@redmix/forms'
+import { Link, navigate, routes } from '@redmix/router'
+import { Metadata } from '@redmix/web'
+import { toast, Toaster } from '@redmix/web/toast'
 
 import { useAuth } from 'src/auth'
 
@@ -4410,16 +4362,10 @@ export default LoginPage
 exports[`dbAuth > handler > produces the correct files with default labels 3`] = `
 "import { useEffect, useRef, useState } from 'react'
 
-import {
-  Form,
-  Label,
-  PasswordField,
-  Submit,
-  FieldError,
-} from '@redwoodjs/forms'
-import { navigate, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
-import { toast, Toaster } from '@redwoodjs/web/toast'
+import { Form, Label, PasswordField, Submit, FieldError } from '@redmix/forms'
+import { navigate, routes } from '@redmix/router'
+import { Metadata } from '@redmix/web'
+import { toast, Toaster } from '@redmix/web/toast'
 
 import { useAuth } from 'src/auth'
 
@@ -4542,10 +4488,10 @@ import {
   PasswordField,
   FieldError,
   Submit,
-} from '@redwoodjs/forms'
-import { Link, navigate, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
-import { toast, Toaster } from '@redwoodjs/web/toast'
+} from '@redmix/forms'
+import { Link, navigate, routes } from '@redmix/router'
+import { Metadata } from '@redmix/web'
+import { toast, Toaster } from '@redmix/web/toast'
 
 import { useAuth } from 'src/auth'
 

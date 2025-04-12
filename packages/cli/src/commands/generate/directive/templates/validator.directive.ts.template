@@ -1,7 +1,7 @@
 import {
   createValidatorDirective,
   ValidatorDirectiveFunc,
-} from '@redwoodjs/graphql-server'
+} from '@redmix/graphql-server'
 
 import { logger } from 'src/lib/logger'
 

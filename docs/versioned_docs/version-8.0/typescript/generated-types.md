@@ -151,7 +151,7 @@ While the default settings are configured so that things just work️, you can c
 
 :::info Curious about the defaults?
 
-You can find them [here](https://github.com/redwoodjs/redwood/blob/main/packages/internal/src/generate/graphqlCodeGen.ts) in Redwood's source. Look for the `generateTypeDefGraphQLWeb` and `generateTypeDefGraphQLApi` functions.
+You can find them [here](https://github.com/redmix-run/redmix/blob/main/packages/internal/src/generate/graphqlCodeGen.ts) in Redwood's source. Look for the `generateTypeDefGraphQLWeb` and `generateTypeDefGraphQLApi` functions.
 
 :::
 
@@ -180,7 +180,7 @@ Running `yarn rw g types` will generate types for your resolvers on a per-file b
 
 ```diff title="package.json"
    "eslintConfig": {
-     "extends": "@redwoodjs/eslint-config",
+     "extends": "@redmix/eslint-config",
      "root": true,
      "parserOptions": {
        "warnOnUnsupportedTypeScriptVersion": false
@@ -191,7 +191,7 @@ Running `yarn rw g types` will generate types for your resolvers on a per-file b
 +          "api/src/services/**/*.ts"
 +        ],
 +        "rules": {
-+          "@redwoodjs/service-type-annotations": "error"
++          "@redmix/service-type-annotations": "error"
 +        }
 +      }
      ]

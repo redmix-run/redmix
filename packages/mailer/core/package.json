@@ -1,6 +1,6 @@
 {
-  "name": "@redwoodjs/mailer-core",
-  "version": "8.6.1",
+  "name": "@redmix/mailer-core",
+  "version": "0.0.1",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/redmix-run/redmix.git",
@@ -14,7 +14,7 @@
   ],
   "scripts": {
     "build": "tsx ./build.mts && yarn build:types",
-    "build:pack": "yarn pack -o redwoodjs-mailer-core.tgz",
+    "build:pack": "yarn pack -o redmix-mailer-core.tgz",
     "build:types": "tsc --build --verbose",
     "build:watch": "nodemon --watch src --ext \"js,jsx,ts,tsx\" --ignore dist --exec \"yarn build\"",
     "prepublishOnly": "NODE_ENV=production yarn build",
@@ -22,8 +22,8 @@
     "test:watch": "vitest watch"
   },
   "devDependencies": {
-    "@redwoodjs/api": "workspace:*",
-    "@redwoodjs/framework-tools": "workspace:*",
+    "@redmix/api": "workspace:*",
+    "@redmix/framework-tools": "workspace:*",
     "tsx": "4.19.3",
     "typescript": "5.6.2",
     "vitest": "2.1.9"

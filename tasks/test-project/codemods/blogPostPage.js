@@ -24,7 +24,7 @@ export default (file, api) => {
     .find(j.ImportDeclaration, {
       source: {
         type: 'StringLiteral',
-        value: '@redwoodjs/router',
+        value: '@redmix/router',
       },
     })
     .remove()

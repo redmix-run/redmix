@@ -5,7 +5,7 @@ export {
   loadDefaultEnvFiles,
   loadNodeEnvDerivedEnvFile,
   loadUserSpecifiedEnvFiles,
-} from '@redwoodjs/cli-helpers'
+} from '@redmix/cli-helpers'
 
 /**
  * Retaining the file here as per https://github.com/redwoodjs/redwood/pull/11885#issuecomment-2575847407

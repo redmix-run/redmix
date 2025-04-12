@@ -1,6 +1,6 @@
 {
-  "name": "@redwoodjs/cli-storybook-vite",
-  "version": "8.6.1",
+  "name": "@redmix/cli-storybook-vite",
+  "version": "0.0.1",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/redmix-run/redmix.git",
@@ -14,7 +14,7 @@
   ],
   "scripts": {
     "build": "tsx ./build.mts && yarn build:types",
-    "build:pack": "yarn pack -o redwoodjs-cli-storybook-vite.tgz",
+    "build:pack": "yarn pack -o redmix-cli-storybook-vite.tgz",
     "build:types": "tsc --build --verbose",
     "build:watch": "nodemon --watch src --ext \"js,jsx,ts,tsx\" --ignore dist --exec \"yarn build\"",
     "prepublishOnly": "NODE_ENV=production yarn build",
@@ -22,20 +22,20 @@
     "test:unit": "vitest run"
   },
   "dependencies": {
-    "@redwoodjs/cli-helpers": "8.6.1",
-    "@redwoodjs/project-config": "8.6.1",
-    "@redwoodjs/telemetry": "8.6.1",
+    "@redmix/cli-helpers": "workspace:*",
+    "@redmix/project-config": "workspace:*",
+    "@redmix/telemetry": "workspace:*",
     "chalk": "4.1.2",
     "execa": "5.1.1",
     "semver": "7.6.3",
     "storybook": "7.6.20",
-    "storybook-framework-redwoodjs-vite": "8.6.1",
+    "storybook-framework-redmix-vite": "workspace:*",
     "terminal-link": "2.1.1",
     "vitest": "2.1.9",
     "yargs": "17.7.2"
   },
   "devDependencies": {
-    "@redwoodjs/framework-tools": "8.6.1",
+    "@redmix/framework-tools": "workspace:*",
     "@types/semver": "^7",
     "@types/yargs": "17.0.33",
     "tsx": "4.19.3",

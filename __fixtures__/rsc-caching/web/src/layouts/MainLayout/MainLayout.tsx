@@ -1,5 +1,5 @@
-import { namedRoutes } from '@redwoodjs/router/namedRoutes'
-import { NavLink } from '@redwoodjs/router/NavLink'
+import { namedRoutes } from '@redmix/router/namedRoutes'
+import { NavLink } from '@redmix/router/NavLink'
 
 import CachingBoxes from 'src/components/CachingBoxes/CachingBoxes'
 import ServerDelayForm from 'src/components/ServerDelayForm'

@@ -13,10 +13,10 @@ Here's a diff of what this codemod will do
 -let RedwoodDevFatalErrorPage = undefined
 -if (process.env.NODE_ENV === 'development') {
 -  RedwoodDevFatalErrorPage =
--    require('@redwoodjs/web/dist/components/DevFatalErrorPage').DevFatalErrorPage
+-    require('@redmix/web/dist/components/DevFatalErrorPage').DevFatalErrorPage
 -}
 +// This import will be automatically removed when building for production
-+import { DevFatalErrorPage } from '@redwoodjs/web/dist/components/DevFatalErrorPage'
++import { DevFatalErrorPage } from '@redmix/web/dist/components/DevFatalErrorPage'
 
 -export default RedwoodDevFatalErrorPage ||
 +export default DevFatalErrorPage ||

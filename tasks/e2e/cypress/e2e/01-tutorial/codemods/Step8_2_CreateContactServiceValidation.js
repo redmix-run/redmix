@@ -2,7 +2,7 @@ export default `
 // api/src/service/contacts/contacts.js
 
 
-import { UserInputError } from '@redwoodjs/graphql-server'
+import { UserInputError } from '@redmix/graphql-server'
 
 import { db } from 'src/lib/db'
 import { requireAuth } from 'src/lib/auth'

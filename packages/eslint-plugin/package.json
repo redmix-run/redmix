@@ -1,6 +1,6 @@
 {
-  "name": "@redwoodjs/eslint-plugin",
-  "version": "8.6.1",
+  "name": "@redmix/eslint-plugin",
+  "version": "0.0.1",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/redmix-run/redmix.git",
@@ -14,7 +14,7 @@
   ],
   "scripts": {
     "build": "tsx ./build.mts && yarn build:types",
-    "build:pack": "yarn pack -o redwoodjs-eslint-plugin.tgz",
+    "build:pack": "yarn pack -o redmix-eslint-plugin.tgz",
     "build:types": "tsc --build --verbose",
     "build:watch": "nodemon --watch src --ext \"js,jsx,ts,tsx\" --ignore dist --exec \"yarn build\"",
     "prepublishOnly": "NODE_ENV=production yarn build",
@@ -26,7 +26,7 @@
     "eslint": "8.57.1"
   },
   "devDependencies": {
-    "@redwoodjs/framework-tools": "workspace:*",
+    "@redmix/framework-tools": "workspace:*",
     "@types/eslint": "8.56.12",
     "@types/estree": "1.0.6",
     "@typescript-eslint/parser": "8.19.1",

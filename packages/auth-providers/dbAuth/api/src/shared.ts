@@ -2,9 +2,9 @@ import crypto from 'node:crypto'
 
 import type { APIGatewayProxyEvent } from 'aws-lambda'
 
-import type { CorsHeaders } from '@redwoodjs/api'
-import { getEventHeader, isFetchApiRequest } from '@redwoodjs/api'
-import { getConfig, getConfigPath } from '@redwoodjs/project-config'
+import type { CorsHeaders } from '@redmix/api'
+import { getEventHeader, isFetchApiRequest } from '@redmix/api'
+import { getConfig, getConfigPath } from '@redmix/project-config'
 
 import * as DbAuthError from './errors'
 

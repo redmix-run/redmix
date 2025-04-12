@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
 
-import { navigate, routes } from '@redwoodjs/router'
-import { Metadata, useMutation } from '@redwoodjs/web'
-import { toast } from '@redwoodjs/web/toast'
+import { navigate, routes } from '@redmix/router'
+import { Metadata, useMutation } from '@redmix/web'
+import { toast } from '@redmix/web/toast'
 
 import JobProfileForm from 'src/components/Jobs/JobProfileForm'
 

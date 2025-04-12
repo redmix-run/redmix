@@ -89,7 +89,7 @@ import {
   Label,
   TextField,
   Submit,
-} from '@redwoodjs/forms'
+} from '@redmix/forms'
 import { PickerInline } from 'filestack-react'
 
 const formatDatetime = (value) => {
@@ -199,7 +199,7 @@ import {
   Label,
   TextField,
   Submit,
-} from '@redwoodjs/forms'
+} from '@redmix/forms'
 import { PickerInline } from 'filestack-react'
 import { useState } from 'react'
 
@@ -242,9 +242,9 @@ Now try uploading a file and saving the form:
 It worked! Next let's update the display here to actually show the image as a thumbnail and make it clickable to see the full version:
 
 ```jsx {76-78} title="web/src/components/Images/Images.js"
-import { useMutation } from '@redwoodjs/web'
-import { toast } from '@redwoodjs/web/toast'
-import { Link, routes } from '@redwoodjs/router'
+import { useMutation } from '@redmix/web'
+import { toast } from '@redmix/web/toast'
+import { Link, routes } from '@redmix/router'
 
 import { QUERY } from 'src/components/Image/ImagesCell'
 

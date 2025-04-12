@@ -14,7 +14,7 @@ import {
   assert,
 } from 'vitest'
 
-import { type AuthHandlerArgs } from '@redwoodjs/cli-helpers'
+import { type AuthHandlerArgs } from '@redmix/cli-helpers'
 
 vi.mock('fs', async () => ({ ...memfs, default: memfs }))
 vi.mock('node:fs', async () => ({ ...memfs, default: memfs }))
@@ -54,7 +54,7 @@ vi.mock('../shared', () => ({
   libPath: () => redwoodProjectPath + '/api/src/lib',
 }))
 
-vi.mock('@redwoodjs/cli-helpers', () => {
+vi.mock('@redmix/cli-helpers', () => {
   return {
     getGraphqlPath: () => {
       return redwoodProjectPath + '/api/src/functions/graphql.ts'
@@ -72,7 +72,7 @@ vi.mock('@redwoodjs/cli-helpers', () => {
       underline: (str: string) => str,
     },
     // I wish I could have used something like
-    // vi.requireActual(@redwoodjs/cli-helpers) here, but I couldn't because
+    // vi.requireActual(@redmix/cli-helpers) here, but I couldn't because
     // jest doesn't support ESM
     standardAuthHandler: async (args: AuthHandlerArgs) => {
       if (args.notes) {
@@ -108,7 +108,7 @@ describe('dbAuth setup command', () => {
       {
         [packageJsonPath]: '{ "version": "0.0.0" }',
         [graphqlTsPath]: `
-import { createGraphQLHandler } from '@redwoodjs/graphql-server'
+import { createGraphQLHandler } from '@redmix/graphql-server'
 
 import directives from 'src/directives/**/*.{js,ts}'
 import sdls from 'src/graphql/**/*.sdl.{js,ts}'

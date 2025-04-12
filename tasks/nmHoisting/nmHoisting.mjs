@@ -32,7 +32,7 @@ async function main() {
     }
 
     data.version = (
-      await $`jq -r '.devDependencies."@redwoodjs/core"' < package.json`
+      await $`jq -r '.devDependencies."@redmix/core"' < package.json`
     ).stdout.trim()
 
     let stdout = (

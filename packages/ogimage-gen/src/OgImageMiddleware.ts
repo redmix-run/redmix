@@ -7,14 +7,14 @@ import mime from 'mime-types'
 import type { PageScreenshotOptions } from 'playwright'
 import { renderToString } from 'react-dom/server'
 
-import type { RWRouteManifestItem } from '@redwoodjs/internal'
-import { getPaths } from '@redwoodjs/project-config'
-import { LocationProvider, matchPath } from '@redwoodjs/router'
+import type { RWRouteManifestItem } from '@redmix/internal'
+import { getPaths } from '@redmix/project-config'
+import { LocationProvider, matchPath } from '@redmix/router'
 import type {
   MiddlewareInvokeOptions,
   MiddlewareRequest,
   MiddlewareResponse,
-} from '@redwoodjs/web/middleware' with { 'resolution-mode': 'import' }
+} from '@redmix/web/middleware' with { 'resolution-mode': 'import' }
 
 import { getRoutesList } from './getRoutesList.js'
 import { OGIMAGE_DEFAULTS } from './hooks.js'

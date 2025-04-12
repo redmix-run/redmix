@@ -5,15 +5,12 @@ import type { ViteDevServer } from 'vite'
 import { createServer as createViteServer } from 'vite'
 import { cjsInterop } from 'vite-plugin-cjs-interop'
 
-import type { RouteSpec } from '@redwoodjs/internal/dist/routes.js'
-import { getProjectRoutes } from '@redwoodjs/internal/dist/routes.js'
-import type { Paths } from '@redwoodjs/project-config'
-import { getConfig, getPaths } from '@redwoodjs/project-config'
-import {
-  createPerRequestMap,
-  createServerStorage,
-} from '@redwoodjs/server-store'
-import type { Middleware } from '@redwoodjs/web/middleware'
+import type { RouteSpec } from '@redmix/internal/dist/routes.js'
+import { getProjectRoutes } from '@redmix/internal/dist/routes.js'
+import type { Paths } from '@redmix/project-config'
+import { getConfig, getPaths } from '@redmix/project-config'
+import { createPerRequestMap, createServerStorage } from '@redmix/server-store'
+import type { Middleware } from '@redmix/web/middleware'
 
 import { registerFwGlobalsAndShims } from './lib/registerFwGlobalsAndShims.js'
 import { invoke } from './middleware/invokeMiddleware.js'
@@ -85,10 +82,10 @@ async function createServer() {
       cjsInterop({
         dependencies: [
           // Skip ESM modules: rwjs/auth, rwjs/web, rwjs/auth-*-middleware, rwjs/router
-          '@redwoodjs/forms',
-          '@redwoodjs/prerender/*',
-          '@redwoodjs/auth-*-api',
-          '@redwoodjs/auth-*-web',
+          '@redmix/forms',
+          '@redmix/prerender/*',
+          '@redmix/auth-*-api',
+          '@redmix/auth-*-web',
         ],
       }),
       rscEnabled && rscRoutesAutoLoader(),

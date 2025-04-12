@@ -1,4 +1,4 @@
-import { Link, navigate, routes } from '@redwoodjs/router'
+import { Link, navigate, routes } from '@redmix/router'
 import { useEffect, useRef } from 'react'
 import {
   FieldError,
@@ -7,10 +7,10 @@ import {
   PasswordField,
   Submit,
   TextField,
-} from '@redwoodjs/forms'
-import { useAuth } from '@redwoodjs/auth'
-import { Metadata } from '@redwoodjs/web'
-import { toast, Toaster } from '@redwoodjs/web/toast'
+} from '@redmix/forms'
+import { useAuth } from '@redmix/auth'
+import { Metadata } from '@redmix/web'
+import { toast, Toaster } from '@redmix/web/toast'
 
 const LoginPage = () => {
   const { isAuthenticated, logIn } = useAuth()

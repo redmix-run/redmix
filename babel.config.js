@@ -57,7 +57,7 @@ module.exports = {
      * Needed for react@18
      *
      * ```
-     * ✖  @redwoodjs/router:build
+     * ✖  @redmix/router:build
      *  SyntaxError: /code/redwood/packages/router/src/location.tsx: TypeScript 'declare' fields must first be transformed by @babel/plugin-transform-typescript.
      *  If you have already enabled that plugin (or '@babel/preset-typescript'), make sure that it runs before any plugin related to additional class features:
      *   - @babel/plugin-proposal-class-properties
@@ -83,7 +83,7 @@ module.exports = {
     ],
     /**
      * NOTE
-     * Experimental decorators are used in `@redwoodjs/structure`.
+     * Experimental decorators are used in `@redmix/structure`.
      * https://github.com/tc39/proposal-decorators
      **/
     ['@babel/plugin-proposal-decorators', { legacy: true }],

@@ -1,5 +1,5 @@
-import { namedRoutes as routes } from '@redwoodjs/router/namedRoutes'
-import { NavLink } from '@redwoodjs/router/NavLink'
+import { namedRoutes as routes } from '@redmix/router/namedRoutes'
+import { NavLink } from '@redmix/router/NavLink'
 
 import './AuthLayout.css'
 

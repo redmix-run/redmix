@@ -54,7 +54,7 @@ describe('rscRoutesAutoLoader', () => {
       path.join(
         TEST_RWJS_CWD,
         'node_modules',
-        '@redwoodjs',
+        '@redmix',
         'router',
         'dist',
         'link.js',

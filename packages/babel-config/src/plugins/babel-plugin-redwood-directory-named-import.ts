@@ -2,7 +2,7 @@ import path from 'path'
 
 import type { PluginObj, types } from '@babel/core'
 
-import { resolveFile } from '@redwoodjs/project-config'
+import { resolveFile } from '@redmix/project-config'
 
 const getNewPath = (value: string, filename: string): string | null => {
   const dirname = path.dirname(value)

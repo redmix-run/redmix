@@ -3,7 +3,7 @@ import path from 'node:path'
 
 import { describe, test } from 'vitest'
 
-import { findUp } from '@redwoodjs/project-config'
+import { findUp } from '@redmix/project-config'
 
 describe('fragments graphQLClientConfig', () => {
   test('App.tsx with no graphQLClientConfig', async () => {
@@ -66,8 +66,8 @@ describe('fragments graphQLClientConfig', () => {
       testProjectAppTsx,
       `import type { ReactNode } from 'react'
 
-      import { FatalErrorBoundary, RedwoodProvider } from \"@redwoodjs/web\";
-      import { RedwoodApolloProvider } from \"@redwoodjs/web/apollo\";
+      import { FatalErrorBoundary, RedwoodProvider } from \"@redmix/web\";
+      import { RedwoodApolloProvider } from \"@redmix/web/apollo\";
 
       import FatalErrorPage from \"src/pages/FatalErrorPage\";
 

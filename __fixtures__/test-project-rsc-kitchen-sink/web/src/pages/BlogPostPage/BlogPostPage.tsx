@@ -1,4 +1,4 @@
-import { Metadata } from '@redwoodjs/web/Metadata'
+import { Metadata } from '@redmix/web/Metadata'
 
 import BlogPostCell from 'src/components/BlogPostCell'
 

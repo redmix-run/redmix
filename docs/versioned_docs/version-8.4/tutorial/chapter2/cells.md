@@ -43,13 +43,13 @@ export const Success = ({ posts }) => {
 <TabItem value="ts" label="TypeScript">
 
 ```tsx
-import type { FindPosts, FindPostsVariables } from 'types/graphql'
+import type { FindPosts } from 'types/graphql'
 
 import type {
-  CellFailureProps,
   CellSuccessProps,
-  TypedDocumentNode,
-} from '@redwoodjs/web'
+  CellFailureProps,
+  TypedDocumentNode
+} from '@redmix/web'
 
 export const QUERY: TypedDocumentNode<FindPosts, FindPostsVariables> = gql`
   query FindPosts {
@@ -163,14 +163,13 @@ export const Success = ({ articles }) => {
 </TabItem>
 <TabItem value="ts" label="TypeScript">
 
-```tsx title="web/src/components/ArticlesCell/ArticlesCell.tsx"
 import type { ArticlesQuery, ArticlesQueryVariables } from 'types/graphql'
 
 import type {
-  CellFailureProps,
   CellSuccessProps,
-  TypedDocumentNode,
-} from '@redwoodjs/web'
+  CellFailureProps,
+  TypedDocumentNode
+} from '@redmix/web'
 
 export const QUERY: TypedDocumentNode<ArticlesQuery, ArticlesQueryVariables> =
   gql`
@@ -299,14 +298,13 @@ export const Success = ({ posts }) => {
 </TabItem>
 <TabItem value="ts" label="TypeScript">
 
-```tsx title="web/src/components/ArticlesCell/ArticlesCell.tsx"
 import type { ArticlesQuery, ArticlesQueryVariables } from 'types/graphql'
 
 import type {
   CellFailureProps,
   CellSuccessProps,
   TypedDocumentNode,
-} from '@redwoodjs/web'
+} from '@redmix/web'
 
 export const QUERY: TypedDocumentNode<ArticlesQuery, ArticlesQueryVariables> =
   gql`
@@ -370,7 +368,7 @@ Let's plug this cell into our `HomePage` and see what happens:
 <TabItem value="js" label="JavaScript">
 
 ```jsx title="web/src/pages/HomePage/HomePage.jsx"
-import { Metadata } from '@redwoodjs/web'
+import { Metadata } from '@redmix/web'
 
 // highlight-next-line
 import ArticlesCell from 'src/components/ArticlesCell'
@@ -391,8 +389,7 @@ export default HomePage
 </TabItem>
 <TabItem value="ts" label="TypeScript">
 
-```tsx title="web/src/pages/HomePage/HomePage.tsx"
-import { Metadata } from '@redwoodjs/web'
+import { Metadata } from '@redmix/web'
 
 // highlight-next-line
 import ArticlesCell from 'src/components/ArticlesCell'

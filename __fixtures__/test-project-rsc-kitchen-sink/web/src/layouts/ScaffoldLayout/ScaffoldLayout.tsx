@@ -1,5 +1,5 @@
-// import { Link, routes } from '@redwoodjs/router'
-// import { Toaster } from '@redwoodjs/web/toast'
+// import { Link, routes } from '@redmix/router'
+// import { Toaster } from '@redmix/web/toast'
 
 type LayoutProps = {
   title: string

@@ -1,7 +1,7 @@
 {
-  "name": "@redwoodjs/core",
-  "version": "8.6.1",
-  "description": "Foundational packages and config required to build RedwoodJS.",
+  "name": "@redmix/core",
+  "version": "0.0.1",
+  "description": "Foundational packages and config required to build Redmix.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/redmix-run/redmix.git",
@@ -33,19 +33,19 @@
   ],
   "scripts": {
     "build": "tsx ./build.mts",
-    "build:pack": "yarn pack -o redwoodjs-core.tgz",
+    "build:pack": "yarn pack -o redmix-core.tgz",
     "check:package": "yarn publint",
     "prepublishOnly": "NODE_ENV=production yarn build"
   },
   "dependencies": {
     "@babel/cli": "7.26.4",
-    "@redwoodjs/api-server": "workspace:*",
-    "@redwoodjs/cli": "workspace:*",
-    "@redwoodjs/eslint-config": "workspace:*",
-    "@redwoodjs/internal": "workspace:*",
-    "@redwoodjs/project-config": "workspace:*",
-    "@redwoodjs/testing": "workspace:*",
-    "@redwoodjs/web-server": "workspace:*",
+    "@redmix/api-server": "workspace:*",
+    "@redmix/cli": "workspace:*",
+    "@redmix/eslint-config": "workspace:*",
+    "@redmix/internal": "workspace:*",
+    "@redmix/project-config": "workspace:*",
+    "@redmix/testing": "workspace:*",
+    "@redmix/web-server": "workspace:*",
     "graphql-tag": "2.12.6",
     "lodash": "4.17.21",
     "nodemon": "3.1.9",
@@ -54,7 +54,7 @@
     "typescript": "5.6.2"
   },
   "devDependencies": {
-    "@redwoodjs/framework-tools": "workspace:*",
+    "@redmix/framework-tools": "workspace:*",
     "@types/lodash": "4.17.15",
     "publint": "0.3.11",
     "tsx": "4.19.3"

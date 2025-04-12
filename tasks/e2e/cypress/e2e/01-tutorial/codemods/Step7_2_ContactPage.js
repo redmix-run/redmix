@@ -8,7 +8,7 @@ import {
   Submit,
   FieldError,
   Label,
-} from '@redwoodjs/forms'
+} from '@redmix/forms'
 
 const ContactPage = () => {
   const onSubmit = (data) => {

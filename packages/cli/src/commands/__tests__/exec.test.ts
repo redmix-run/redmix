@@ -5,14 +5,14 @@ import { vi, afterEach, beforeEach, describe, it, expect } from 'vitest'
 import '../../lib/mockTelemetry.js'
 import { handler } from '../execHandler.js'
 
-vi.mock('@redwoodjs/project-config', () => ({
+vi.mock('@redmix/project-config', () => ({
   getPaths: () => ({
     scripts: path.join('redwood-app', 'scripts'),
   }),
   resolveFile: (path: string) => path,
 }))
 
-vi.mock('@redwoodjs/internal/dist/files', () => ({
+vi.mock('@redmix/internal/dist/files', () => ({
   findScripts: () => {
     const scriptsPath = path.join('redwood-app', 'scripts')
 

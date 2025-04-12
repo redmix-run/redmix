@@ -111,7 +111,7 @@ The final thing to add is a page selector, or pagination component, to the end o
 Generate a new component with`yarn rw g component Pagination`
 
 ```jsx title="web/src/components/Pagination/Pagination.js"
-import { Link, routes } from '@redwoodjs/router'
+import { Link, routes } from '@redmix/router'
 
 const POSTS_PER_PAGE = 5
 

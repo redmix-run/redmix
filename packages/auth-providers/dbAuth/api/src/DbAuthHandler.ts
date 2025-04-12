@@ -16,12 +16,12 @@ import base64url from 'base64url'
 import md5 from 'md5'
 import { v4 as uuidv4 } from 'uuid'
 
-import type { CorsConfig, CorsContext, PartialRequest } from '@redwoodjs/api'
+import type { CorsConfig, CorsContext, PartialRequest } from '@redmix/api'
 import {
   createCorsContext,
   isFetchApiRequest,
   normalizeRequest,
-} from '@redwoodjs/api'
+} from '@redmix/api'
 
 import * as DbAuthError from './errors'
 import {

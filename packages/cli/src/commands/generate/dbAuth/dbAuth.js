@@ -8,7 +8,7 @@ import { Listr } from 'listr2'
 import terminalLink from 'terminal-link'
 import { titleCase } from 'title-case'
 
-import { recordTelemetryAttributes } from '@redwoodjs/cli-helpers'
+import { recordTelemetryAttributes } from '@redmix/cli-helpers'
 
 import c from '../../../lib/colors.js'
 import {
@@ -483,7 +483,7 @@ function isDbAuthSetup() {
       'auth.' + webAuthExtension,
     )
 
-    return /^import (.*) from ['"]@redwoodjs\/auth-dbauth-web['"]/m.test(
+    return /^import (.*) from ['"]@redmix\/auth-dbauth-web['"]/m.test(
       fs.readFileSync(webAuthPath),
     )
   }

@@ -2,7 +2,7 @@ import execa from 'execa'
 import { vol, fs as memfs } from 'memfs'
 import { vi, describe, expect, it } from 'vitest'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@redmix/project-config'
 
 import {
   handler,

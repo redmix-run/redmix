@@ -11,7 +11,7 @@
       "automerge": true
     },
     {
-      "groupName": "ESM and @redwoodjs packages",
+      "groupName": "ESM and @redmix packages",
       "enabled": false,
       "matchPackageNames": [
         "boxen",
@@ -30,7 +30,7 @@
         "terminal-link",
         "title-case",
         "untildify",
-        "/^@redwoodjs//"
+        "/^@redmix//"
       ]
     },
     {

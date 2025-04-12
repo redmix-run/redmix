@@ -1,7 +1,7 @@
-import { Link } from '@redwoodjs/router/Link'
-import { namedRoutes as routes } from '@redwoodjs/router/namedRoutes'
-import { NavLink } from '@redwoodjs/router/NavLink'
-import { getAuthState, getLocation } from '@redwoodjs/server-store'
+import { Link } from '@redmix/router/Link'
+import { namedRoutes as routes } from '@redmix/router/namedRoutes'
+import { NavLink } from '@redmix/router/NavLink'
+import { getAuthState, getLocation } from '@redmix/server-store'
 
 import ReadFileServerCell from 'src/components/ReadFileServerCell'
 

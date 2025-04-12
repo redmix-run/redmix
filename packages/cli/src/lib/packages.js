@@ -10,10 +10,10 @@ import { getPaths } from './index.js'
 /**
  * Installs a module into a user's project. If the module is already installed,
  * this function does nothing. If no version is specified, the version will be
- * assumed to be the same as that of \@redwoodjs/cli.
+ * assumed to be the same as that of \@redmix/cli.
  *
  * @param {string} name The name of the module to install
- * @param {string} version The version of the module to install, otherwise the same as that of \@redwoodjs/cli
+ * @param {string} version The version of the module to install, otherwise the same as that of \@redmix/cli
  * @param {boolean} isDevDependency Whether to install as a devDependency or not
  * @returns Whether the module was installed or not
  */
@@ -36,16 +36,16 @@ export async function installModule(name, version = undefined) {
 
 /**
  * Installs a Redwood module into a user's project keeping the version
- * consistent with that of \@redwoodjs/cli.
+ * consistent with that of \@redmix/cli.
  * If the module is already installed, this function does nothing.
  * If no remote version can not be found which matches the local cli version
  * then the latest canary version will be used.
  *
- * @param {string} module A redwoodjs module, e.g. \@redwoodjs/web
+ * @param {string} module A redwoodjs module, e.g. \@redmix/web
  * @returns {boolean} Whether the module was installed or not
  */
 export async function installRedwoodModule(module) {
-  const packageJsonPath = require.resolve('@redwoodjs/cli/package.json')
+  const packageJsonPath = require.resolve('@redmix/cli/package.json')
   let { version } = fs.readJSONSync(packageJsonPath)
 
   if (!isModuleInstalled(module)) {

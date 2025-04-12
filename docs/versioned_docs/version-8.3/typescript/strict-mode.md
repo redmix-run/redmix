@@ -45,11 +45,11 @@ One of the challenges in the GraphQL-Prisma world is the difference in the way t
 This is covered in detail in [Prisma's docs](https://www.prisma.io/docs/concepts/components/prisma-client/null-and-undefined), which we strongly recommend reading.
 But the gist of it is that, for Prisma's create and update operations, you may have to make sure `null`s are converted to `undefined` from your GraphQL mutation inputs. You'll have to think carefully about the behaviour you want - if the client is expected to send null, and you expect those fields to be set to null, you can make the field nullable in your Prisma schema. Sending a null will mean removing that value, sending undefined will mean that the field won't be updated.
 
-For most cases however, you probably want to convert nulls to undefined - one way to do this is to use the `removeNulls` utility function from `@redwoodjs/api`:
+For most cases however, you probably want to convert nulls to undefined - one way to do this is to use the `removeNulls` utility function from `@redmix/api`:
 
 ```ts title="api/src/services/users.ts"
 // highlight-next-line
-import { removeNulls } from '@redwoodjs/api'
+import { removeNulls } from '@redmix/api'
 
 export const updateUser: MutationResolvers['updateUser'] = ({ id, input }) => {
   return db.user.update({
@@ -246,7 +246,7 @@ So you'll have to make sure that the `getCurrentUser` function is typed.
 To help you get started, the comments above the `getCurrentUser` function describe its parameters' types. We recommend typing `decoded` without using imported types from Redwood, as this may be a little too generic!
 
 ```ts title='api/src/lib/auth.ts'
-import type { AuthContextPayload } from '@redwoodjs/api'
+import type { AuthContextPayload } from '@redmix/api'
 
 // Example 1: typing directly
 export const getCurrentUser: CurrentUserFunc = async (

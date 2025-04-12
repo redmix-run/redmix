@@ -2,13 +2,13 @@ import type { PluginOption } from 'vite'
 
 export function mockRouter(): PluginOption {
   return {
-    name: 'mock-@redwoodjs/router',
+    name: 'mock-@redmix/router',
     enforce: 'pre',
     transform(code: string, id: string) {
       if (id.includes('src')) {
         code = code.replace(
-          "'@redwoodjs/router'",
-          "'storybook-framework-redwoodjs-vite/dist/mocks/MockRouter'",
+          "'@redmix/router'",
+          "'storybook-framework-redmix-vite/dist/mocks/MockRouter'",
         )
       }
       return code

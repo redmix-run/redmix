@@ -1,5 +1,5 @@
-import { recordTelemetryAttributes } from '@redwoodjs/cli-helpers'
-import { parseDatamodel } from '@redwoodjs/record'
+import { recordTelemetryAttributes } from '@redmix/cli-helpers'
+import { parseDatamodel } from '@redmix/record'
 
 export const handler = async () => {
   recordTelemetryAttributes({

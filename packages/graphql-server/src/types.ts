@@ -9,9 +9,9 @@ import type {
 } from 'graphql'
 import type { Plugin } from 'graphql-yoga'
 
-import type { AuthContextPayload, Decoder } from '@redwoodjs/api'
-import type { CorsConfig } from '@redwoodjs/api'
-import type { RedwoodRealtimeOptions } from '@redwoodjs/realtime'
+import type { AuthContextPayload, Decoder } from '@redmix/api'
+import type { CorsConfig } from '@redmix/api'
+import type { RedwoodRealtimeOptions } from '@redmix/realtime'
 
 import type { DirectiveGlobImports } from './directives/makeDirectives'
 import type {

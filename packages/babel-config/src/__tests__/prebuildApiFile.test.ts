@@ -2,7 +2,7 @@ import path from 'path'
 
 import compat from 'core-js-compat'
 
-import { getConfig } from '@redwoodjs/project-config'
+import { getConfig } from '@redmix/project-config'
 
 import {
   BABEL_PLUGIN_TRANSFORM_RUNTIME_OPTIONS,
@@ -451,7 +451,7 @@ describe('api prebuild ', () => {
     })
 
     it('auto imports', () => {
-      expect(code).toContain('import { context } from "@redwoodjs/context"')
+      expect(code).toContain('import { context } from "@redmix/context"')
       expect(code).toContain('import gql from "graphql-tag"')
     })
   })

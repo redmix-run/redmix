@@ -7,9 +7,9 @@ import execa from 'execa'
 import fs from 'fs-extra'
 import TerminalLink from 'terminal-link'
 
-import { getConfigPath } from '@redwoodjs/project-config'
+import { getConfigPath } from '@redmix/project-config'
 
-const config = new Configstore('@redwoodjs/cli')
+const config = new Configstore('@redmix/cli')
 
 const RWFW_PATH =
   process.env.RWFW_PATH || process.env.RW_PATH || config.get('RWFW_PATH')

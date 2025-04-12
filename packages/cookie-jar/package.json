@@ -1,6 +1,6 @@
 {
-  "name": "@redwoodjs/cookie-jar",
-  "version": "8.6.1",
+  "name": "@redmix/cookie-jar",
+  "version": "0.0.1",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/redmix-run/redmix.git",
@@ -18,7 +18,7 @@
   ],
   "scripts": {
     "build": "tsx ./build.mts && run build:types",
-    "build:pack": "yarn pack -o redwoodjs-cookie-jar.tgz",
+    "build:pack": "yarn pack -o redmix-cookie-jar.tgz",
     "build:types": "tsc --build --verbose",
     "test": "vitest run"
   },
@@ -29,7 +29,7 @@
     "fs-extra": "11.2.0"
   },
   "devDependencies": {
-    "@redwoodjs/framework-tools": "workspace:*",
+    "@redmix/framework-tools": "workspace:*",
     "@types/fs-extra": "11.0.4",
     "tsx": "4.19.3",
     "typescript": "5.6.2",

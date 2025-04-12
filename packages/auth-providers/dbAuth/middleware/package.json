@@ -1,6 +1,6 @@
 {
-  "name": "@redwoodjs/auth-dbauth-middleware",
-  "version": "8.6.1",
+  "name": "@redmix/auth-dbauth-middleware",
+  "version": "0.0.1",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/redmix-run/redmix.git",
@@ -27,7 +27,7 @@
   ],
   "scripts": {
     "build": "tsx ./build.mts",
-    "build:pack": "yarn pack -o redwoodjs-auth-dbauth-middleware.tgz",
+    "build:pack": "yarn pack -o redmix-auth-dbauth-middleware.tgz",
     "build:types": "tsc --build --verbose ./tsconfig.build.json",
     "build:types-cjs": "tsc --build --verbose tsconfig.cjs.json",
     "check:attw": "yarn attw -P",
@@ -37,14 +37,14 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@redwoodjs/auth-dbauth-api": "workspace:*",
-    "@redwoodjs/web": "workspace:*"
+    "@redmix/auth-dbauth-api": "workspace:*",
+    "@redmix/web": "workspace:*"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "0.16.4",
-    "@redwoodjs/api": "workspace:*",
-    "@redwoodjs/framework-tools": "workspace:*",
-    "@redwoodjs/graphql-server": "workspace:*",
+    "@redmix/api": "workspace:*",
+    "@redmix/framework-tools": "workspace:*",
+    "@redmix/graphql-server": "workspace:*",
     "@types/aws-lambda": "8.10.145",
     "concurrently": "8.2.2",
     "publint": "0.3.11",

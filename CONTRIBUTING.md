@@ -14,8 +14,6 @@ Love Redmix and want to get involved? You're in the right place! A perfect place
 >    - ["Help Wanted" v1 Triage Board](https://redwoodjs.com/good-first-issue)
 >    - [Discovery Process and Open Issues](https://redwoodjs.com/docs/contributing#what-should-i-work-on)
 
-_Before interacting with the Redwood community, please read and understand our [Code of Conduct](https://github.com/redwoodjs/redwood/blob/main/CODE_OF_CONDUCT.md)._
-
 ## Table of Contents
 
 - [Code Organization: Project and Framework](#code-organization-project-and-framework)
@@ -38,7 +36,7 @@ _Before interacting with the Redwood community, please read and understand our [
 
 As a Redwood developer, you're already familiar with the codebase created by `yarn create redwood-app`. In this document, we'll refer to that codebase as a **Redwood Project**.
 
-As a contributor, you'll have to familiarize yourself with one more codebase: the **Redwood Framework**. The Redwood Framework lives in the monorepo [redwoodjs/redwood](https://github.com/redwoodjs/redwood) (which is where you're probably reading this). It contains all the packages that make Redwood Projects work the way they do. In a Redwood Project, you can find the Redwood Framework in `node_modules/@redwoodjs`.
+As a contributor, you'll have to familiarize yourself with one more codebase: the **Redmix Framework**. The Redmix Framework lives in the monorepo [redmix-run/redmix](https://github.com/redmix-run/redmix) (which is where you're probably reading this). It contains all the packages that make Redwood Projects work the way they do. In a Redwood Project, you can find the Redwood Framework in `node_modules/@redmix`.
 
 Here we'll assume your local copy of the Redwood Framework is in a directory called `redwood` and your Redwood Project is in a directory called `redwood-project`.
 
@@ -50,7 +48,7 @@ Chances are that you'll have more than a few VS Codes open when you're contribut
 
 ### Redwood Framework
 
-To submit PRs, you will need to Fork the redwoodjs/redwood codebase. You can [do this from GitHub.com or by using GitHub Desktop.](https://docs.github.com/en/desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop#forking-a-repository) Use `git clone` on your fork to get a local copy of the Redwood Framework. If you've already got a local copy, make sure you've got the `main` branch's latest changes using `git pull`. Then run `yarn install` in the root directory to install the dependencies:
+To submit PRs, you will need to Fork the redmix-run/redmix codebase. You can [do this from GitHub.com or by using GitHub Desktop.](https://docs.github.com/en/desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop#forking-a-repository) Use `git clone` on your fork to get a local copy of the Redwood Framework. If you've already got a local copy, make sure you've got the `main` branch's latest changes using `git pull`. Then run `yarn install` in the root directory to install the dependencies:
 
 Replace `your-username` with your GitHub username below:
 
@@ -67,7 +65,7 @@ You'll almost always want to test the functionality of your changes to the Redwo
 
 - [***Recommended for 90% of cases***] Create a functional test project. See section below for steps.
 - Run `yarn create redwood-app <project directory>`
-- `git clone` the [RedwoodJS Tutorial Blog](https://github.com/redwoodjs/redwood-tutorial)
+- `git clone` the [Redmix Tutorial Blog](https://github.com/redmix-run/redmix-tutorial)
 - Use a project you've already created
 
 **Using the functional test project might be the fastest and easiest way to test your changes.**
@@ -76,7 +74,7 @@ You'll almost always want to test the functionality of your changes to the Redwo
 
 Run `yarn run build:test-project ../redwood-project` from the root of your local copy of the Redwood Framework to create a functional test project. In just a few minutes, this will create a Redwood Project on the current canary (optionally: `latest` stable) that contains a lot of functionality. For example, here's a brief overview of all the things `yarn run build:test-project <project directory>` does:
 
-1. It installs using the `create-redwood-app` template in the current branch of your Redwood Framework
+1. It installs using the `create-redmix-app` template in the current branch of your Redwood Framework
 2. It uses the current `canary` version of Redwood Packages (with the option to use the `latest` stable version)
 3. It has a TypeScript language target (with the option for JavaScript)
 4. It applies code mods from the [Redwood tutorial](https://redwoodjs.com/tutorial) to add functionality and styling
@@ -185,7 +183,7 @@ This generates a functional test project and links it with the Redwood Framework
 
 > Note: if you make changes to the framework, you will need to run `yarn rwfw project:sync` in the terminal, so that your changes are watched and reflected in the test project
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/redwoodjs/redwood)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/redmix-run/redmix)
 
 ## Local QA and Integration Tests
 
@@ -242,7 +240,7 @@ Most of the time your contribution to Redwood won't involve adding any new depen
 Reuse the specified package from other workspaces in the project. Example:
 
 ```
-yarn workspace create-redwood-app add -i rimraf
+yarn workspace create-redmix-app add -i rimraf
 ```
 
 > Note: Interactivity is enabled by default
@@ -252,7 +250,7 @@ For example, if we're using `yarn add` to add a dependency to a workspace (say `
 ```
 redwood/packages/codemods$ yarn add yargs
 ? Which range do you want to use? …
-❯ Reuse yargs@16.2.0 (originally used by @redwoodjs/api-server@0.37.2 and 2 others)
+❯ Reuse yargs@16.2.0 (originally used by @redmix/api-server@0.37.2 and 2 others)
   Use yargs@^17.2.1 (resolved from latest)
 ```
 

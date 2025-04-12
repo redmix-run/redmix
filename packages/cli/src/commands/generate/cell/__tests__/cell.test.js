@@ -7,7 +7,7 @@ import { vi, describe, it, expect, test, beforeAll } from 'vitest'
 import '../../../../lib/test'
 import * as cell from '../cell.js'
 
-vi.mock('@redwoodjs/structure', () => {
+vi.mock('@redmix/structure', () => {
   return {
     getProject: () => ({
       cells: [{ queryOperationName: 'AlreadyDefinedQueryName' }],

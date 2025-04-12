@@ -28,7 +28,7 @@ describe('cacheFindMany', () => {
 
     const user = {
       id: 1,
-      email: 'rob@redwoodjs.com',
+      email: 'rob@redmix.com',
       updatedAt: now,
     }
     mockFindFirst.mockImplementation(() => user)
@@ -50,7 +50,7 @@ describe('cacheFindMany', () => {
     const now = new Date()
     const user = {
       id: 1,
-      email: 'rob@redwoodjs.com',
+      email: 'rob@redmix.com',
       updatedAt: now,
     }
     const client = new InMemoryClient({

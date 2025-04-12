@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "@redwoodjs/api": "8.6.1",
-    "@redwoodjs/auth-dbauth-api": "8.6.1",
-    "@redwoodjs/graphql-server": "8.6.1"
+    "@redmix/api": "0.0.1",
+    "@redmix/auth-dbauth-api": "0.0.1",
+    "@redmix/graphql-server": "0.0.1"
   }
 }

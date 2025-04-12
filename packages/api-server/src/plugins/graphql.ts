@@ -8,12 +8,12 @@ import type {
   FastifyRequest,
 } from 'fastify'
 
-import type { GlobalContext } from '@redwoodjs/context'
-import { getAsyncStoreInstance } from '@redwoodjs/context/dist/store'
-import { coerceRootPath } from '@redwoodjs/fastify-web/dist/helpers'
-import { createGraphQLYoga } from '@redwoodjs/graphql-server'
-import type { GraphQLYogaOptions } from '@redwoodjs/graphql-server'
-import { getPaths } from '@redwoodjs/project-config'
+import type { GlobalContext } from '@redmix/context'
+import { getAsyncStoreInstance } from '@redmix/context/dist/store'
+import { coerceRootPath } from '@redmix/fastify-web/dist/helpers'
+import { createGraphQLYoga } from '@redmix/graphql-server'
+import type { GraphQLYogaOptions } from '@redmix/graphql-server'
+import { getPaths } from '@redmix/project-config'
 
 import { lambdaEventForFastifyRequest } from '../requestHandlers/awsLambdaFastify'
 
@@ -65,7 +65,7 @@ export async function redwoodFastifyGraphQLServer(
     //
     // These would be plugins that need a server instance such as Redwood Realtime
     if (graphqlOptions?.realtime) {
-      const { useRedwoodRealtime } = await import('@redwoodjs/realtime')
+      const { useRedwoodRealtime } = await import('@redmix/realtime')
 
       const originalExtraPlugins = graphqlOptions.extraPlugins ?? []
       // @ts-expect-error TODO(jgmw): Fix this type issue introduced after switching to Node16 module resolution

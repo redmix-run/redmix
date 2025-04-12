@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url'
 import type {
   MiddlewareRequest,
   MiddlewareResponse,
-} from '@redwoodjs/web/middleware'
+} from '@redmix/web/middleware'
 
 const __filename = fileURLToPath(import.meta.url)
 

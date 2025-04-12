@@ -35,7 +35,7 @@ To start 🌲🪓 api-side logging, just
 - use `logger` with the level just as you might have with `console`
 
 ```jsx title="api/lib/logger.ts"
-import { createLogger } from '@redwoodjs/api/logger'
+import { createLogger } from '@redmix/api/logger'
 
 /**
  * Creates a logger. Options define how to log. Destination defines where to log.
@@ -65,11 +65,11 @@ That's it!
 
 If you are upgrading an existing RedwoodJS app older than v0.28 and would like to include logging, you simply need to copy over files from the "Create Redwood Application" template:
 
-- Copy [`packages/create-redwood-app/template/api/src/lib/logger.ts`](https://github.com/redwoodjs/redwood/blob/main/packages/create-redwood-app/template/api/src/lib/logger.ts) to `api/src/lib/logger.ts`. Required.
+- Copy [`packages/create-redmix-app/template/api/src/lib/logger.ts`](https://github.com/redmix-run/redmix/blob/main/packages/create-redmix-app/template/api/src/lib/logger.ts) to `api/src/lib/logger.ts`. Required.
 
 For optional Prisma logging:
 
-- Copy [`packages/create-redwood-app/template/api/src/lib/db.ts`](https://github.com/redwoodjs/redwood/blob/main/packages/create-redwood-app/template/api/src/lib/db.ts) and replace `api/src/lib/db.ts` (or `api/src/lib/db.js`). _Optional_.
+- Copy [`packages/create-redmix-app/template/api/src/lib/db.ts`](https://github.com/redmix-run/redmix/blob/main/packages/create-redmix-app/template/api/src/lib/db.ts) and replace `api/src/lib/db.ts` (or `api/src/lib/db.js`). _Optional_.
 
 The first file `logger.ts` defines the logger instance. You will import `logger` and use in your services, functions or other libraries. You may then replace existing `console.log()` statements with `logger.info()` or `logger.debug()`.
 
@@ -97,7 +97,7 @@ The 'silent' level disables logging.
 > If you are not seeing log output when deployed, consider setting the level to `info` or `debug`.
 
 ```jsx
-import { createLogger } from '@redwoodjs/api/logger'
+import { createLogger } from '@redmix/api/logger'
 
 /**
  * Creates a logger with RedwoodLoggerOptions
@@ -146,7 +146,7 @@ You may wish to augment these defaults via the `redact` configuration setting, h
 /**
  * Custom redaction list
  */
-import { redactionsList } from '@redwoodjs/api/logger'
+import { redactionsList } from '@redmix/api/logger'
 
 //...
 
@@ -410,7 +410,7 @@ Please see [pino's redaction documentation](https://github.com/pinojs/pino/blob/
 /**
  * Customize a redactions list to add `my_secret_key`
  */
-import { redactionsList } from '@redwoodjs/api/logger'
+import { redactionsList } from '@redmix/api/logger'
 
 export const logger = createLogger({
   options: { redact: [...redactionsList, 'my_secret_key'] },
@@ -452,7 +452,7 @@ yarn workspace api add @honeybadger-io/js
 - Import both `stream` and `@honeybadger-io/js` into `api/src/lib/logger.ts`
 
 ```jsx
-import { createLogger } from '@redwoodjs/api/logger'
+import { createLogger } from '@redmix/api/logger'
 import { Writable } from 'stream'
 
 const Honeybadger = require('@honeybadger-io/js')
@@ -695,7 +695,7 @@ If you wish to remove `info` logging, then you can define a set of levels, such 
 
 To configure Prisma logging, you first create the client and set the `log` options to emit the levels you wish to be logged via `emitLogLevels`. Second, you instruct the `logger` to handle the events emitted by the Prisma client in `handlePrismaLogging` setting the instance of the Prisma Client you've created in `db`, the `logger` instances, and then the same levels you've told the client to emit.
 
-Both `emitLogLevels` and `handlePrismaLogging` are `@redwoodjs/api/logger` package exports.
+Both `emitLogLevels` and `handlePrismaLogging` are `@redmix/api/logger` package exports.
 
 ```jsx
 /*

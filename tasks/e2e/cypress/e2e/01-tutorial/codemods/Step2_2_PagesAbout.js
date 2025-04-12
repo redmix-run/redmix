@@ -1,5 +1,5 @@
 export default `
-import { Link, routes } from '@redwoodjs/router'
+import { Link, routes } from '@redmix/router'
 
 const AboutPage = () => {
   return (

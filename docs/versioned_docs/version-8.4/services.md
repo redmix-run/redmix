@@ -52,7 +52,7 @@ import {
   validateWith,
   validateWithSync,
   validateUniqueness,
-} from '@redwoodjs/api'
+} from '@redmix/api'
 
 export const createUser = async ({ input }) => {
   validate(input.firstName, 'First name', {
@@ -101,8 +101,8 @@ If you're using [Redwood's scaffolds](cli-commands.md#generate-scaffold) then yo
 Otherwise you'll need to use the `error` property that you can [destructure](https://www.apollographql.com/docs/react/data/mutations/#executing-a-mutation) from `useMutation()` and display an element containing the error message (Redwood's [form helpers](/docs/forms) will do some of the heavy lifting for you for displaying the error):
 
 ```jsx {13,21}
-import { Form, FormError, Label, TextField, Submit } from '@redwoodjs/forms'
-import { useMutation } from '@redwoodjs/web'
+import { Form, FormError, Label, TextField, Submit } from '@redmix/forms'
+import { useMutation } from '@redmix/web'
 
 const CREATE_CONTACT = gql`
   mutation CreateContactMutation($input: ContactInput!) {
@@ -132,10 +132,10 @@ const ContactPage = () => {
 
 ### Importing
 
-You'll import the three functions below from `@redwoodjs/api`:
+You'll import the three functions below from `@redmix/api`:
 
 ```jsx
-import { validate, validateWith, validateUniqueness } from '@redwoodjs/api'
+import { validate, validateWith, validateUniqueness } from '@redmix/api'
 ```
 
 ### validate()
@@ -705,7 +705,7 @@ So `validateUniqueness()` first tries to find a record with the given fields, an
 #### Arguments
 
 1. The name of the db table accessor that will be checked (what you would call on `db` in a normal Prisma call). If you'd call `db.user` then this value is `"user"`.
-2. An object, containing the db fields/values to check for uniqueness, like `{ email: 'rob@redwoodjs.com' }`. Can also include additional options explained below that provide for a narrower scope for uniqueness requirements, and a way for the record to identify itself and not create a false positive for an existing record.
+2. An object, containing the db fields/values to check for uniqueness, like `{ email: 'rob@redmix.com' }`. Can also include additional options explained below that provide for a narrower scope for uniqueness requirements, and a way for the record to identify itself and not create a false positive for an existing record.
 3. [Optional] An object with options. `message` - custom error message. `db` - custom instance of the PrismaClient to use
 4. Callback to be invoked if record is found to be unique.
 
@@ -804,7 +804,7 @@ In our example above you could cache the GraphQL query for the most popular prod
 
 ### Clients
 
-As of this writing, Redwood ships with clients for the two most popular cache backends: [Memcached](https://memcached.org/) and [Redis](https://redis.io/). Service caching wraps each of these in an adapter, which makes it easy to add more clients in the future. If you're interested in adding an adapter for your favorite cache client, [open a issue](https://github.com/redwoodjs/redwood/issues) and tell us about it! Instructions for getting started with the code are [below](#creating-your-own-client).
+As of this writing, Redwood ships with clients for the two most popular cache backends: [Memcached](https://memcached.org/) and [Redis](https://redis.io/). Service caching wraps each of these in an adapter, which makes it easy to add more clients in the future. If you're interested in adding an adapter for your favorite cache client, [open a issue](https://github.com/redmix-run/redmix/issues) and tell us about it! Instructions for getting started with the code are [below](#creating-your-own-client).
 
 :::info
 
@@ -973,7 +973,7 @@ yarn rw setup cache redis
 This generates the following (memcached example shown):
 
 ```js title="api/src/lib/cache.js"
-import { createCache, MemcachedClient } from '@redwoodjs/api/cache'
+import { createCache, MemcachedClient } from '@redmix/api/cache'
 
 import { logger } from './logger'
 

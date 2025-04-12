@@ -1,10 +1,10 @@
-import { parseJWT } from '@redwoodjs/api'
-import { AuthenticationError, ForbiddenError } from '@redwoodjs/graphql-server'
+import { parseJWT } from '@redmix/api'
+import { AuthenticationError, ForbiddenError } from '@redmix/graphql-server'
 import type { APIGatewayEvent } from 'aws-lambda'
 
 interface Context extends Record<string, any> {}
 
-import { context } from '@redwoodjs/context'
+import { context } from '@redmix/context'
 
 /**
  * Represents the user attributes returned by the decoding the

@@ -7,9 +7,9 @@ import fs from 'fs-extra'
 import system from 'systeminformation'
 import { v4 as uuidv4, validate as validateUUID } from 'uuid'
 
-import { getPaths, getRawConfig } from '@redwoodjs/project-config'
-import { DefaultHost } from '@redwoodjs/structure/dist/hosts'
-import { RWProject } from '@redwoodjs/structure/dist/model/RWProject'
+import { getPaths, getRawConfig } from '@redmix/project-config'
+import { DefaultHost } from '@redmix/structure/dist/hosts'
+import { RWProject } from '@redmix/structure/dist/model/RWProject'
 
 import {
   name as packageName,
@@ -45,7 +45,7 @@ export async function getResources() {
       {
         System: ['OS', 'Shell'],
         Binaries: ['Node', 'Yarn', 'npm'],
-        npmPackages: '@redwoodjs/*',
+        npmPackages: '@redmix/*',
         IDEs: ['VSCode'],
       },
       { json: true },

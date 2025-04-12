@@ -4,7 +4,7 @@ import React from 'react'
 import { gql } from 'graphql-tag'
 import { describe, expect, test } from 'tstyche'
 
-import type { CellProps, CellSuccessProps } from '@redwoodjs/web'
+import type { CellProps, CellSuccessProps } from '@redmix/web'
 
 type ExampleQueryVariables = {
   category: string

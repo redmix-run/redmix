@@ -1,6 +1,6 @@
 {
-  "name": "@redwoodjs/auth-supertokens-api",
-  "version": "8.6.1",
+  "name": "@redmix/auth-supertokens-api",
+  "version": "0.0.1",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/redmix-run/redmix.git",
@@ -29,7 +29,7 @@
   ],
   "scripts": {
     "build": "tsx ./build.mts && yarn build:types",
-    "build:pack": "yarn pack -o redwoodjs-auth-supertokens-api.tgz",
+    "build:pack": "yarn pack -o redmix-auth-supertokens-api.tgz",
     "build:types": "tsc --build --verbose ./tsconfig.json",
     "build:watch": "nodemon --watch src --ext \"js,jsx,ts,tsx,template\" --ignore dist --exec \"yarn build\"",
     "check:attw": "yarn attw -P",
@@ -44,8 +44,8 @@
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "0.16.4",
-    "@redwoodjs/api": "workspace:*",
-    "@redwoodjs/framework-tools": "workspace:*",
+    "@redmix/api": "workspace:*",
+    "@redmix/framework-tools": "workspace:*",
     "@types/jsonwebtoken": "9.0.8",
     "concurrently": "8.2.2",
     "publint": "0.3.11",

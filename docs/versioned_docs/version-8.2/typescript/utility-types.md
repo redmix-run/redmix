@@ -30,7 +30,7 @@ import type {
 } from 'types/graphql'
 
 // highlight-next-line
-import type { CellSuccessProps } from '@redwoodjs/web'
+import type { CellSuccessProps } from '@redmix/web'
 
 // ...
 
@@ -58,7 +58,7 @@ It takes `TVariables` as an optional generic parameter, which is useful if you w
 import type { FindBlogPostQuery, FindBlogPostQueryVariables } from 'types/graphql'
 
 // highlight-next-line
-import type { CellFailureProps } from '@redwoodjs/web'
+import type { CellFailureProps } from '@redmix/web'
 
 // ...
 
@@ -79,7 +79,7 @@ Similar to `CellFailureProps`, but for the props of your Cell's `Loading` compon
 import type { FindBlogPostQuery, FindBlogPostQueryVariables } from 'types/graphql'
 
 // highlight-next-line
-import type { CellLoadingProps } from '@redwoodjs/web'
+import type { CellLoadingProps } from '@redmix/web'
 
 // ...
 
@@ -170,7 +170,7 @@ When you setup dbAuth, the generated files in `api/src/lib/auth.ts` and `api/src
 You'll notice an import at the top of `api/src/lib/auth.ts`:
 
 ```ts title="api/src/lib/auth.ts"
-import type { DbAuthSession } from '@redwoodjs/api'
+import type { DbAuthSession } from '@redmix/api'
 ```
 
 `DbAuthSession` is a utility type that's used to type the argument to `getCurrentUser`, `session`:
@@ -199,7 +199,7 @@ You can import the type of the User model directly from Prisma and pass it to `D
 ```ts
 import type { User as PrismaUser } from '@prisma/client'
 
-import type { DbAuthHandlerOptions } from '@redwoodjs/api'
+import type { DbAuthHandlerOptions } from '@redmix/api'
 
 export const handler = async (
   event: APIGatewayProxyEvent,
@@ -235,7 +235,7 @@ import {
   createValidatorDirective,
   // highlight-next-line
   ValidatorDirectiveFunc,
-} from '@redwoodjs/graphql-server'
+} from '@redmix/graphql-server'
 
 export const schema = gql`
   directive @myValidator on FIELD_DEFINITION

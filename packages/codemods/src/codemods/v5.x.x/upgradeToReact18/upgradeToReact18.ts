@@ -5,7 +5,7 @@ import { load } from 'cheerio'
 import execa from 'execa'
 import type { TaskInnerAPI } from 'tasuku'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@redmix/project-config'
 
 function checkAndTransformReactRoot(
   taskContext: Pick<TaskInnerAPI, 'setWarning'>,

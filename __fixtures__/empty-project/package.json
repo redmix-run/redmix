@@ -8,10 +8,10 @@
     ]
   },
   "devDependencies": {
-    "@redwoodjs/core": "canary"
+    "@redmix/core": "canary"
   },
   "eslintConfig": {
-    "extends": "@redwoodjs/eslint-config",
+    "extends": "@redmix/eslint-config",
     "root": true
   },
   "engines": {

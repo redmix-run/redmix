@@ -17,7 +17,7 @@ export default TypescriptUser
 `;
 
 exports[`creates a TS component and test 2`] = `
-"import { render } from '@redwoodjs/testing/web'
+"import { render } from '@redmix/testing/web'
 
 import TypescriptUser from './TypescriptUser'
 
@@ -70,7 +70,7 @@ export const Primary = {}
 `;
 
 exports[`creates a multi word component test 1`] = `
-"import { render } from '@redwoodjs/testing/web'
+"import { render } from '@redmix/testing/web'
 
 import UserProfile from './UserProfile'
 
@@ -123,7 +123,7 @@ export const Primary = {}
 `;
 
 exports[`creates a single word component test 1`] = `
-"import { render } from '@redwoodjs/testing/web'
+"import { render } from '@redmix/testing/web'
 
 import User from './User'
 

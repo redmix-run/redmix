@@ -4,7 +4,7 @@ import { useOgImage, OGIMAGE_DEFAULTS } from './hooks'
 
 const mockLocation = vi.fn()
 
-vi.mock('@redwoodjs/router', () => {
+vi.mock('@redmix/router', () => {
   return {
     useLocation: () => mockLocation(),
   }

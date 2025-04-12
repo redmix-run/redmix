@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 
-import { standardAuthHandler } from '@redwoodjs/cli-helpers'
+import { standardAuthHandler } from '@redmix/cli-helpers'
 
 import type { Args } from './setup'
 
@@ -15,12 +15,12 @@ export async function handler({ force: forceArg }: Args) {
     forceArg,
     provider: 'firebase',
     authDecoderImport:
-      "import { authDecoder } from '@redwoodjs/auth-firebase-api'",
-    webPackages: ['firebase@^10', `@redwoodjs/auth-firebase-web@${version}`],
+      "import { authDecoder } from '@redmix/auth-firebase-api'",
+    webPackages: ['firebase@^10', `@redmix/auth-firebase-web@${version}`],
     apiPackages: [
-      // Note that the version of this package should be exactly the same as the version in `@redwoodjs/auth-firebase-api` .
+      // Note that the version of this package should be exactly the same as the version in `@redmix/auth-firebase-api` .
       'firebase-admin@12.1.1',
-      `@redwoodjs/auth-firebase-api@${version}`,
+      `@redmix/auth-firebase-api@${version}`,
     ],
     notes: [
       "You'll need to add three env vars to your .env file:",

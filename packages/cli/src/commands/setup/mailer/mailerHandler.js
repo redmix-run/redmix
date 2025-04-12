@@ -3,8 +3,8 @@ import path from 'path'
 import fs from 'fs-extra'
 import { Listr } from 'listr2'
 
-import { addApiPackages } from '@redwoodjs/cli-helpers'
-import { errorTelemetry } from '@redwoodjs/telemetry'
+import { addApiPackages } from '@redmix/cli-helpers'
+import { errorTelemetry } from '@redmix/telemetry'
 
 import c from '../../../lib/colors.js'
 import { getPaths, transformTSToJS, writeFile } from '../../../lib/index.js'
@@ -14,7 +14,7 @@ export const handler = async ({ force, skipExamples }) => {
   const projectIsTypescript = isTypeScriptProject()
   const redwoodVersion =
     require(path.join(getPaths().base, 'package.json')).devDependencies[
-      '@redwoodjs/core'
+      '@redmix/core'
     ] ?? 'latest'
 
   const tasks = new Listr(
@@ -87,9 +87,9 @@ export const handler = async ({ force, skipExamples }) => {
       {
         // Add production dependencies
         ...addApiPackages([
-          `@redwoodjs/mailer-core@${redwoodVersion}`,
-          `@redwoodjs/mailer-handler-nodemailer@${redwoodVersion}`,
-          `@redwoodjs/mailer-renderer-react-email@${redwoodVersion}`,
+          `@redmix/mailer-core@${redwoodVersion}`,
+          `@redmix/mailer-handler-nodemailer@${redwoodVersion}`,
+          `@redmix/mailer-renderer-react-email@${redwoodVersion}`,
           `@react-email/components`, // NOTE: Unpinned dependency here
         ]),
         title: 'Adding production dependencies to your api side...',
@@ -98,8 +98,8 @@ export const handler = async ({ force, skipExamples }) => {
         // Add development dependencies
         ...addApiPackages([
           '-D',
-          `@redwoodjs/mailer-handler-in-memory@${redwoodVersion}`,
-          `@redwoodjs/mailer-handler-studio@${redwoodVersion}`,
+          `@redmix/mailer-handler-in-memory@${redwoodVersion}`,
+          `@redmix/mailer-handler-studio@${redwoodVersion}`,
         ]),
         title: 'Adding development dependencies to your api side...',
       },

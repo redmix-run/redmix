@@ -4,7 +4,7 @@ import type { PresetProperty } from '@storybook/types'
 import { mergeConfig } from 'vite'
 import { nodePolyfills } from 'vite-plugin-node-polyfills'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@redmix/project-config'
 
 import { autoImports } from './plugins/auto-imports'
 import { mockAuth } from './plugins/mock-auth'

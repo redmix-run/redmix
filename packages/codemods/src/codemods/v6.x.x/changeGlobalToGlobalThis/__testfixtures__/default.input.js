@@ -1,5 +1,5 @@
-import { Link, routes } from '@redwoodjs/router'
-import { MetaTags } from '@redwoodjs/web'
+import { Link, routes } from '@redmix/router'
+import { MetaTags } from '@redmix/web'
 
 const HomePage = () => {
   console.log(global)

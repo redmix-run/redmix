@@ -8,14 +8,14 @@ describe('storybook config file fixtures', () => {
     console.log('mainTemplatePath', mainTemplatePath)
     const mainTemplate = fs.readFileSync(mainTemplatePath, { encoding: 'utf8' })
     expect(mainTemplate).toMatchInlineSnapshot(`
-      "import type { StorybookConfig } from 'storybook-framework-redwoodjs-vite'
+      "import type { StorybookConfig } from 'storybook-framework-redmix-vite'
 
-      import { getPaths, importStatementPath } from '@redwoodjs/project-config'
+      import { getPaths, importStatementPath } from '@redmix/project-config'
 
       const redwoodProjectPaths = getPaths()
 
       const config: StorybookConfig = {
-        framework: 'storybook-framework-redwoodjs-vite',
+        framework: 'storybook-framework-redmix-vite',
 
         stories: [
           \`\${importStatementPath(

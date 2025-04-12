@@ -3,10 +3,10 @@ import path from 'path'
 
 import { fetch } from '@whatwg-node/fetch'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@redmix/project-config'
 
 /**
- * Fetches the FatalErrorPage from the create-redwood-app template and replaces
+ * Fetches the FatalErrorPage from the create-redmix-app template and replaces
  * the current one in the project
  */
 export const updateDevFatalErrorPage = async () => {
@@ -15,7 +15,7 @@ export const updateDevFatalErrorPage = async () => {
   const webFatalErrorPagesDir = path.join(rwPaths.web.pages, 'FatalErrorPage')
   const filename = path.join(webFatalErrorPagesDir, 'FatalErrorPage')
   const url =
-    'https://raw.githubusercontent.com/redwoodjs/redwood/29138f59dc5abe7b3d3c2a11c6e6f5fee32580c5/packages/create-redwood-app/templates/ts/web/src/pages/FatalErrorPage/FatalErrorPage.tsx'
+    'https://raw.githubusercontent.com/redmix-run/redmix/477454008c34355f2d318505caf97a5bf411177f/packages/create-redmix-app/templates/ts/web/src/pages/FatalErrorPage/FatalErrorPage.tsx'
 
   const isTsxPage = fs.existsSync(
     path.join(webFatalErrorPagesDir, 'FatalErrorPage.tsx'),

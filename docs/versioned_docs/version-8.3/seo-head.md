@@ -51,7 +51,7 @@ So you want to change the title of your page, or add elements to the `<head>` of
 Let's say you want to change the title of your About page, Redwood provides a built-in `<Head>` component, which you can use like this:
 
 ```diff title=web/src/pages/AboutPage/AboutPage.(tsx|jsx)
-+import { Head } from '@redwoodjs/web'
++import { Head } from '@redmix/web'
 
 const AboutPage = () => {
   return (
@@ -91,7 +91,7 @@ Redwood provides a convenience component `<Metadata>` to help you create most of
 Here's an example setting some common meta, including a page title, description, `og:image` and an `http-equiv`:
 
 ```jsx
-import { Metadata } from '@redwoodjs/web'
+import { Metadata } from '@redmix/web'
 
 const AboutPage = () => {
   return (
@@ -301,7 +301,7 @@ This should allow you to create a fairly full-featured set of `<meta>` tags with
   twitter={{
     card: 'summary',
     site: '@mysite',
-    creator: '@redwoodjs'
+    creator: '@redmix'
   }}
 />
 ```
@@ -319,7 +319,7 @@ As of v3.x, Redwood supports prerendering your [Cells](https://redwoodjs.com/doc
 Let's say in our `PostCell`, we want to set the title to match the `Post`.
 
 ```jsx
-import { Metadata } from '@redwoodjs/web'
+import { Metadata } from '@redmix/web'
 
 import Post from 'src/components/Post/Post'
 

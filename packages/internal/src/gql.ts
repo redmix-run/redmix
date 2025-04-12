@@ -9,8 +9,8 @@ import type {
 } from 'graphql'
 import { Kind, parse, print, visit } from 'graphql'
 
-import { rootSchema } from '@redwoodjs/graphql-server'
-import { getPaths } from '@redwoodjs/project-config'
+import { rootSchema } from '@redmix/graphql-server'
+import { getPaths } from '@redmix/project-config'
 
 interface Operation {
   operation: OperationTypeNode

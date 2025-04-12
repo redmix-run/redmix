@@ -92,7 +92,7 @@ export default function (
           return
         }
         path.insertBefore(
-          // import { getAsyncStoreInstance as __rw_getAsyncStoreInstance } from '@redwoodjs/context/dist/store'
+          // import { getAsyncStoreInstance as __rw_getAsyncStoreInstance } from '@redmix/context/dist/store'
           t.importDeclaration(
             [
               t.importSpecifier(
@@ -102,8 +102,8 @@ export default function (
             ],
             t.stringLiteral(
               projectIsEsm
-                ? '@redwoodjs/context/dist/store.js'
-                : '@redwoodjs/context/dist/store',
+                ? '@redmix/context/dist/store.js'
+                : '@redmix/context/dist/store',
             ),
           ),
         )

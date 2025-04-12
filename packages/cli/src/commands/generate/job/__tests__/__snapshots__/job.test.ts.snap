@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Single word default files > creates a single word function file > Scenario snapshot 1`] = `
-"import type { ScenarioData } from '@redwoodjs/testing/api'
+"import type { ScenarioData } from '@redmix/testing/api'
 
 export const standard = defineScenario({
   // Define the "fixture" to write into your test database here

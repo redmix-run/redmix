@@ -12,13 +12,13 @@ import {
 import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
 
-import { getConfig, getPaths } from '@redwoodjs/project-config'
+import { getConfig, getPaths } from '@redmix/project-config'
 
 import * as pluginLib from '../lib/plugin.js'
 import { loadPlugins } from '../plugin.js'
 
 vi.mock('fs-extra')
-vi.mock('@redwoodjs/project-config', async (importOriginal) => {
+vi.mock('@redmix/project-config', async (importOriginal) => {
   const originalProjectConfig = await importOriginal()
   return {
     ...originalProjectConfig,
@@ -73,7 +73,7 @@ describe('command information caching', () => {
       },
     }
     const exampleCacheEntry = {
-      '@redwoodjs/cli-some-package': {
+      '@redmix/cli-some-package': {
         'some-command': {
           aliases: ['sc', 'someCommand'],
           description: 'Some example command',
@@ -178,10 +178,10 @@ describe('plugin loading', () => {
           cli: {
             plugins: [
               {
-                package: '@redwoodjs/cli-some-package',
+                package: '@redmix/cli-some-package',
               },
               {
-                package: '@redwoodjs/cli-some-package-not-in-cache',
+                package: '@redmix/cli-some-package-not-in-cache',
               },
               {
                 package: '@bluewoodjs/cli-some-package',
@@ -192,7 +192,7 @@ describe('plugin loading', () => {
         },
       })
       vi.mock(
-        '@redwoodjs/cli-some-package-not-in-cache',
+        '@redmix/cli-some-package-not-in-cache',
         () => {
           return {
             commands: [
@@ -208,7 +208,7 @@ describe('plugin loading', () => {
       )
       vol.fromJSON({
         ['commandCache.json']: JSON.stringify({
-          '@redwoodjs/cli-some-package': {
+          '@redmix/cli-some-package': {
             'some-command': {
               aliases: ['sc', 'someCommand'],
               description: 'Some example command',
@@ -232,7 +232,7 @@ describe('plugin loading', () => {
       // Should have loaded the package when it was not in the cache
       expect(pluginLib.loadPluginPackage).toHaveBeenCalledTimes(1)
       expect(pluginLib.loadPluginPackage).toHaveBeenCalledWith(
-        '@redwoodjs/cli-some-package-not-in-cache',
+        '@redmix/cli-some-package-not-in-cache',
         undefined,
         true,
       )
@@ -268,20 +268,20 @@ describe('plugin loading', () => {
   )
 
   test.each([['--help'], ['-h'], ['']])(
-    `correct loading for @redwoodjs namespace help ('%s')`,
+    `correct loading for @redmix namespace help ('%s')`,
     async (command) => {
       const originalArgv = process.argv
-      process.argv = ['node', 'rw', '@redwoodjs', command]
+      process.argv = ['node', 'rw', '@redmix', command]
 
       getConfig.mockReturnValue({
         experimental: {
           cli: {
             plugins: [
               {
-                package: '@redwoodjs/cli-some-package',
+                package: '@redmix/cli-some-package',
               },
               {
-                package: '@redwoodjs/cli-some-package-not-in-cache',
+                package: '@redmix/cli-some-package-not-in-cache',
               },
               {
                 package: '@bluewoodjs/cli-some-package',
@@ -292,7 +292,7 @@ describe('plugin loading', () => {
         },
       })
       vi.mock(
-        '@redwoodjs/cli-some-package-not-in-cache',
+        '@redmix/cli-some-package-not-in-cache',
         () => {
           return {
             commands: [
@@ -308,7 +308,7 @@ describe('plugin loading', () => {
       )
       vol.fromJSON({
         ['commandCache.json']: JSON.stringify({
-          '@redwoodjs/cli-some-package': {
+          '@redmix/cli-some-package': {
             'some-command': {
               aliases: ['sc', 'someCommand'],
               description: 'Some example command',
@@ -332,7 +332,7 @@ describe('plugin loading', () => {
       // Should have loaded the package when it was not in the cache
       expect(pluginLib.loadPluginPackage).toHaveBeenCalledTimes(1)
       expect(pluginLib.loadPluginPackage).toHaveBeenCalledWith(
-        '@redwoodjs/cli-some-package-not-in-cache',
+        '@redmix/cli-some-package-not-in-cache',
         undefined,
         true,
       )
@@ -378,10 +378,10 @@ describe('plugin loading', () => {
           cli: {
             plugins: [
               {
-                package: '@redwoodjs/cli-some-package',
+                package: '@redmix/cli-some-package',
               },
               {
-                package: '@redwoodjs/cli-some-package-not-in-cache',
+                package: '@redmix/cli-some-package-not-in-cache',
               },
               {
                 package: '@bluewoodjs/cli-some-package',
@@ -392,7 +392,7 @@ describe('plugin loading', () => {
         },
       })
       vi.mock(
-        '@redwoodjs/cli-some-package-not-in-cache',
+        '@redmix/cli-some-package-not-in-cache',
         () => {
           return {
             commands: [
@@ -408,7 +408,7 @@ describe('plugin loading', () => {
       )
       vol.fromJSON({
         ['commandCache.json']: JSON.stringify({
-          '@redwoodjs/cli-some-package': {
+          '@redmix/cli-some-package': {
             'some-command': {
               aliases: ['sc', 'someCommand'],
               description: 'Some example command',
@@ -466,10 +466,10 @@ describe('plugin loading', () => {
         cli: {
           plugins: [
             {
-              package: '@redwoodjs/cli-some-package',
+              package: '@redmix/cli-some-package',
             },
             {
-              package: '@redwoodjs/cli-some-package-not-in-cache',
+              package: '@redmix/cli-some-package-not-in-cache',
             },
             {
               package: '@bluewoodjs/cli-some-package',
@@ -480,7 +480,7 @@ describe('plugin loading', () => {
       },
     })
     vi.mock(
-      '@redwoodjs/cli-some-package-not-in-cache',
+      '@redmix/cli-some-package-not-in-cache',
       () => {
         return {
           commands: [
@@ -496,7 +496,7 @@ describe('plugin loading', () => {
     )
     vol.fromJSON({
       ['commandCache.json']: JSON.stringify({
-        '@redwoodjs/cli-some-package': {
+        '@redmix/cli-some-package': {
           'some-command': {
             aliases: ['sc', 'someCommand'],
             description: 'Some example command',
@@ -520,7 +520,7 @@ describe('plugin loading', () => {
     // Should have loaded the package when it was not in the cache
     expect(pluginLib.loadPluginPackage).toHaveBeenCalledTimes(1)
     expect(pluginLib.loadPluginPackage).toHaveBeenCalledWith(
-      '@redwoodjs/cli-some-package-not-in-cache',
+      '@redmix/cli-some-package-not-in-cache',
       undefined,
       true,
     )
@@ -562,10 +562,10 @@ describe('plugin loading', () => {
         cli: {
           plugins: [
             {
-              package: '@redwoodjs/cli-some-package',
+              package: '@redmix/cli-some-package',
             },
             {
-              package: '@redwoodjs/cli-some-package-not-in-cache',
+              package: '@redmix/cli-some-package-not-in-cache',
             },
             {
               package: '@bluewoodjs/cli-some-package',
@@ -576,7 +576,7 @@ describe('plugin loading', () => {
       },
     })
     vi.mock(
-      '@redwoodjs/cli-some-package-not-in-cache',
+      '@redmix/cli-some-package-not-in-cache',
       () => {
         return {
           commands: [
@@ -592,7 +592,7 @@ describe('plugin loading', () => {
     )
     vol.fromJSON({
       ['commandCache.json']: JSON.stringify({
-        '@redwoodjs/cli-some-package': {
+        '@redmix/cli-some-package': {
           'some-command': {
             aliases: ['sc', 'someCommand'],
             description: 'Some example command',
@@ -616,7 +616,7 @@ describe('plugin loading', () => {
     // Should have loaded the package when it was not in the cache
     expect(pluginLib.loadPluginPackage).toHaveBeenCalledTimes(1)
     expect(pluginLib.loadPluginPackage).toHaveBeenCalledWith(
-      '@redwoodjs/cli-some-package-not-in-cache',
+      '@redmix/cli-some-package-not-in-cache',
       undefined,
       true,
     )
@@ -659,10 +659,10 @@ describe('plugin loading', () => {
         cli: {
           plugins: [
             {
-              package: '@redwoodjs/cli-some-package',
+              package: '@redmix/cli-some-package',
             },
             {
-              package: '@redwoodjs/cli-some-package-not-in-cache',
+              package: '@redmix/cli-some-package-not-in-cache',
             },
             {
               package: '@bluewoodjs/cli-some-package',
@@ -673,7 +673,7 @@ describe('plugin loading', () => {
       },
     })
     vi.mock(
-      '@redwoodjs/cli-some-package-not-in-cache',
+      '@redmix/cli-some-package-not-in-cache',
       () => {
         return {
           commands: [
@@ -689,7 +689,7 @@ describe('plugin loading', () => {
     )
     vol.fromJSON({
       ['commandCache.json']: JSON.stringify({
-        '@redwoodjs/cli-some-package': {
+        '@redmix/cli-some-package': {
           'some-command': {
             aliases: ['sc', 'someCommand'],
             description: 'Some example command',
@@ -705,7 +705,7 @@ describe('plugin loading', () => {
     })
 
     pluginLib.loadPluginPackage.mockImplementation((packageName) => {
-      if (packageName === '@redwoodjs/cli-some-package') {
+      if (packageName === '@redmix/cli-some-package') {
         return {
           commands: [
             {
@@ -732,7 +732,7 @@ describe('plugin loading', () => {
     // Should have loaded the package - only the one we need
     expect(pluginLib.loadPluginPackage).toHaveBeenCalledTimes(1)
     expect(pluginLib.loadPluginPackage).toHaveBeenCalledWith(
-      '@redwoodjs/cli-some-package',
+      '@redmix/cli-some-package',
       undefined,
       true,
     )
@@ -764,10 +764,10 @@ describe('plugin loading', () => {
         cli: {
           plugins: [
             {
-              package: '@redwoodjs/cli-some-package',
+              package: '@redmix/cli-some-package',
             },
             {
-              package: '@redwoodjs/cli-some-package-not-in-cache',
+              package: '@redmix/cli-some-package-not-in-cache',
             },
             {
               package: '@bluewoodjs/cli-some-package',
@@ -778,7 +778,7 @@ describe('plugin loading', () => {
       },
     })
     vi.mock(
-      '@redwoodjs/cli-some-package-not-in-cache',
+      '@redmix/cli-some-package-not-in-cache',
       () => {
         return {
           commands: [
@@ -793,7 +793,7 @@ describe('plugin loading', () => {
       { virtual: true },
     )
     vi.mock(
-      '@redwoodjs/cli-some-package',
+      '@redmix/cli-some-package',
       () => {
         return {
           commands: [
@@ -812,7 +812,7 @@ describe('plugin loading', () => {
     })
 
     pluginLib.loadPluginPackage.mockImplementation((packageName) => {
-      if (packageName === '@redwoodjs/cli-some-package') {
+      if (packageName === '@redmix/cli-some-package') {
         return {
           commands: [
             {
@@ -827,7 +827,7 @@ describe('plugin loading', () => {
           ],
         }
       }
-      if (packageName === '@redwoodjs/cli-some-package-not-in-cache') {
+      if (packageName === '@redmix/cli-some-package-not-in-cache') {
         return {
           commands: [
             {
@@ -854,12 +854,12 @@ describe('plugin loading', () => {
     // Should have loaded the package - all in the namespace
     expect(pluginLib.loadPluginPackage).toHaveBeenCalledTimes(2)
     expect(pluginLib.loadPluginPackage).toHaveBeenCalledWith(
-      '@redwoodjs/cli-some-package',
+      '@redmix/cli-some-package',
       undefined,
       true,
     )
     expect(pluginLib.loadPluginPackage).toHaveBeenCalledWith(
-      '@redwoodjs/cli-some-package-not-in-cache',
+      '@redmix/cli-some-package-not-in-cache',
       undefined,
       true,
     )
@@ -892,10 +892,10 @@ describe('plugin loading', () => {
         cli: {
           plugins: [
             {
-              package: '@redwoodjs/cli-some-package',
+              package: '@redmix/cli-some-package',
             },
             {
-              package: '@redwoodjs/cli-some-package-not-in-cache',
+              package: '@redmix/cli-some-package-not-in-cache',
             },
             {
               package: '@bluewoodjs/cli-some-package',
@@ -906,7 +906,7 @@ describe('plugin loading', () => {
       },
     })
     vi.mock(
-      '@redwoodjs/cli-some-package-not-in-cache',
+      '@redmix/cli-some-package-not-in-cache',
       () => {
         return {
           commands: [
@@ -922,7 +922,7 @@ describe('plugin loading', () => {
     )
     vol.fromJSON({
       ['commandCache.json']: JSON.stringify({
-        '@redwoodjs/cli-some-package': {
+        '@redmix/cli-some-package': {
           'some-command': {
             aliases: ['sc', 'someCommand'],
             description: 'Some example command',
@@ -938,7 +938,7 @@ describe('plugin loading', () => {
     })
 
     pluginLib.loadPluginPackage.mockImplementation((packageName) => {
-      if (packageName === '@redwoodjs/cli-some-package') {
+      if (packageName === '@redmix/cli-some-package') {
         return {
           commands: [
             {
@@ -953,7 +953,7 @@ describe('plugin loading', () => {
           ],
         }
       }
-      if (packageName === '@redwoodjs/cli-some-package-not-in-cache') {
+      if (packageName === '@redmix/cli-some-package-not-in-cache') {
         return {
           commands: [
             {
@@ -980,7 +980,7 @@ describe('plugin loading', () => {
     // Should have loaded the package that we couldn't rule out from the cache
     expect(pluginLib.loadPluginPackage).toHaveBeenCalledTimes(1)
     expect(pluginLib.loadPluginPackage).toHaveBeenCalledWith(
-      '@redwoodjs/cli-some-package-not-in-cache',
+      '@redmix/cli-some-package-not-in-cache',
       undefined,
       true,
     )
@@ -1028,10 +1028,10 @@ describe('plugin loading', () => {
         cli: {
           plugins: [
             {
-              package: '@redwoodjs/cli-some-package',
+              package: '@redmix/cli-some-package',
             },
             {
-              package: '@redwoodjs/cli-some-package-not-in-cache',
+              package: '@redmix/cli-some-package-not-in-cache',
             },
             {
               package: '@bluewoodjs/cli-some-package',
@@ -1042,7 +1042,7 @@ describe('plugin loading', () => {
       },
     })
     vi.mock(
-      '@redwoodjs/cli-some-package-not-in-cache',
+      '@redmix/cli-some-package-not-in-cache',
       () => {
         return {
           commands: [
@@ -1058,7 +1058,7 @@ describe('plugin loading', () => {
     )
     vol.fromJSON({
       ['commandCache.json']: JSON.stringify({
-        '@redwoodjs/cli-some-package': {
+        '@redmix/cli-some-package': {
           'some-command': {
             aliases: ['sc', 'someCommand'],
             description: 'Some example command',
@@ -1133,10 +1133,10 @@ describe('plugin loading', () => {
         cli: {
           plugins: [
             {
-              package: '@redwoodjs/cli-some-package',
+              package: '@redmix/cli-some-package',
             },
             {
-              package: '@redwoodjs/cli-some-package-not-in-cache',
+              package: '@redmix/cli-some-package-not-in-cache',
             },
             {
               package: '@bluewoodjs/cli-some-package',
@@ -1234,10 +1234,10 @@ describe('plugin loading', () => {
         cli: {
           plugins: [
             {
-              package: '@redwoodjs/cli-some-package',
+              package: '@redmix/cli-some-package',
             },
             {
-              package: '@redwoodjs/cli-some-package-not-in-cache',
+              package: '@redmix/cli-some-package-not-in-cache',
             },
             {
               package: '@bluewoodjs/cli-some-package',
@@ -1249,7 +1249,7 @@ describe('plugin loading', () => {
     })
     vol.fromJSON({
       ['commandCache.json']: JSON.stringify({
-        '@redwoodjs/cli-some-package': {
+        '@redmix/cli-some-package': {
           'some-command': {
             aliases: ['sc', 'someCommand'],
             description: 'Some example command',

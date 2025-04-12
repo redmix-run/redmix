@@ -3,8 +3,8 @@ import repl from 'repl'
 
 import fs from 'fs-extra'
 
-import { registerApiSideBabelHook } from '@redwoodjs/babel-config'
-import { recordTelemetryAttributes } from '@redwoodjs/cli-helpers'
+import { registerApiSideBabelHook } from '@redmix/babel-config'
+import { recordTelemetryAttributes } from '@redmix/cli-helpers'
 
 import { getPaths } from '../lib/index.js'
 

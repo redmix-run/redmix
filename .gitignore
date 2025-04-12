@@ -22,8 +22,9 @@ blog-test-project/*
 *.code-workspace
 .nova
 packages/**/redwoodjs-*.tgz
+packages/**/redmix-*.tgz
 packages/**/storybook-*.tgz
-packages/create-redwood-app/create-redwood-app.tgz
+packages/create-redmix-app/create-redmix-app.tgz
 
 # For esbuild.
 **/meta.json

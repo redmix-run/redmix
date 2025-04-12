@@ -1,8 +1,8 @@
 import { Request as WhatWgRequest } from '@whatwg-node/fetch'
 
-import { middlewareDefaultAuthProviderState } from '@redwoodjs/auth/dist/AuthProvider/AuthProviderState.js'
-import type { ServerAuthState } from '@redwoodjs/auth/dist/AuthProvider/ServerAuthProvider.js'
-import { CookieJar } from '@redwoodjs/cookie-jar'
+import { middlewareDefaultAuthProviderState } from '@redmix/auth/dist/AuthProvider/AuthProviderState.js'
+import type { ServerAuthState } from '@redmix/auth/dist/AuthProvider/ServerAuthProvider.js'
+import { CookieJar } from '@redmix/cookie-jar'
 
 class AuthStateJar {
   private _data: ServerAuthState | null

@@ -1,6 +1,6 @@
 import path from 'node:path'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@redmix/project-config'
 
 import { moduleMap } from './ssrModuleMap.js'
 import { importRsdwClient, importRsdwServer, importReact } from './utils.js'

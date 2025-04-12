@@ -9,15 +9,15 @@ import {
 } from 'graphql-scalars'
 import gql from 'graphql-tag'
 
-import { prismaVersion, redwoodVersion } from '@redwoodjs/api'
-import type { GlobalContext } from '@redwoodjs/context'
+import { prismaVersion, redwoodVersion } from '@redmix/api'
+import type { GlobalContext } from '@redmix/context'
 
 /**
  * This adds scalar types for dealing with Date, Time, DateTime, and JSON.
  * This also adds a root Query type which is needed to start the GraphQL server on a fresh install.
  *
  * NOTE: When you add a new Scalar type you must add it to
- * "generateTypeDefGraphQL" in @redwoodjs/internal.
+ * "generateTypeDefGraphQL" in @redmix/internal.
  */
 export const schema = gql`
   scalar BigInt

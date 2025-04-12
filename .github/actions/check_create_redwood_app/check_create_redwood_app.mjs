@@ -14,7 +14,7 @@ if (hasCRWA_OkLabel) {
   const { stdout } = await getExecOutput('git diff origin/main --name-only')
   const changedFiles = stdout.toString().trim().split('\n').filter(Boolean)
   const didRebuildJS_Template = changedFiles.some((file) =>
-    file.startsWith('packages/create-redwood-app/templates/js'),
+    file.startsWith('packages/create-redmix-app/templates/js'),
   )
 
   if (didRebuildJS_Template) {
@@ -29,7 +29,7 @@ if (hasCRWA_OkLabel) {
   } else {
     // If it doesn't, does it need to be rebuilt? If not, no problem. Otherwise, throw.
     const shouldRebuildJS_Template = changedFiles.some((file) =>
-      file.startsWith('packages/create-redwood-app/templates/ts'),
+      file.startsWith('packages/create-redmix-app/templates/ts'),
     )
 
     if (!shouldRebuildJS_Template) {
@@ -43,11 +43,11 @@ if (hasCRWA_OkLabel) {
       console.log(
         [
           '',
-          'This PR changes the create-redwood-app TS template.',
+          'This PR changes the create-redmix-app TS template.',
           'That usually means the JS template needs to be rebuilt.',
           `If you know that it doesn't, add the "crwa-ok" label. Otherwise, rebuild the JS template and commit the changes:`,
           '',
-          '  cd packages/create-redwood-app',
+          '  cd packages/create-redmix-app',
           '  yarn ts-to-js',
           '',
         ].join('\n'),

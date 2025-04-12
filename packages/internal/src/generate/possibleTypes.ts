@@ -6,7 +6,7 @@ import { GraphQLFileLoader } from '@graphql-tools/graphql-file-loader'
 import { loadDocuments, loadSchemaSync } from '@graphql-tools/load'
 import { format } from 'prettier'
 
-import { getConfig, getPaths } from '@redwoodjs/project-config'
+import { getConfig, getPaths } from '@redmix/project-config'
 
 import { getLoadDocumentsOptions } from './graphqlCodeGen'
 

@@ -1,6 +1,6 @@
 {
-  "name": "@redwoodjs/telemetry",
-  "version": "8.6.1",
+  "name": "@redmix/telemetry",
+  "version": "0.0.1",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/redmix-run/redmix.git",
@@ -14,15 +14,15 @@
   ],
   "scripts": {
     "build": "tsx build.mts && yarn build:types",
-    "build:pack": "yarn pack -o redwoodjs-telemetry.tgz",
+    "build:pack": "yarn pack -o redmix-telemetry.tgz",
     "build:types": "tsc --build --verbose",
     "prepublishOnly": "NODE_ENV=production yarn build",
     "test": "vitest run",
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@redwoodjs/project-config": "workspace:*",
-    "@redwoodjs/structure": "workspace:*",
+    "@redmix/project-config": "workspace:*",
+    "@redmix/structure": "workspace:*",
     "@whatwg-node/fetch": "0.9.21",
     "ci-info": "4.0.0",
     "envinfo": "7.14.0",

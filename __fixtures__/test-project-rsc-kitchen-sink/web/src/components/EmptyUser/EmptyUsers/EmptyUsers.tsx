@@ -4,10 +4,10 @@ import type {
   FindEmptyUsers,
 } from 'types/graphql'
 
-import { Link, routes } from '@redwoodjs/router'
-import { useMutation } from '@redwoodjs/web'
-import type { TypedDocumentNode } from '@redwoodjs/web'
-import { toast } from '@redwoodjs/web/toast'
+import { Link, routes } from '@redmix/router'
+import { useMutation } from '@redmix/web'
+import type { TypedDocumentNode } from '@redmix/web'
+import { toast } from '@redmix/web/toast'
 
 import { QUERY } from 'src/components/EmptyUser/EmptyUsersCell'
 import { truncate } from 'src/lib/formatters'

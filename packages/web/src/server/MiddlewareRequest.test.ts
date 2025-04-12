@@ -1,7 +1,7 @@
 import { Request as ArdaRequest } from '@whatwg-node/fetch'
 import { describe, expect, test } from 'vitest'
 
-import type { ServerAuthState } from '@redwoodjs/auth'
+import type { ServerAuthState } from '@redmix/auth'
 
 import { MiddlewareRequest, createMiddlewareRequest } from './MiddlewareRequest'
 

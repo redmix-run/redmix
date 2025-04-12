@@ -1,6 +1,6 @@
 {
-  "name": "@redwoodjs/auth-dbauth-web",
-  "version": "8.6.1",
+  "name": "@redmix/auth-dbauth-web",
+  "version": "0.0.1",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/redmix-run/redmix.git",
@@ -16,7 +16,7 @@
   "scripts": {
     "build": "yarn build:js && yarn build:types",
     "build:js": "babel src -d dist --extensions \".js,.jsx,.ts,.tsx\" --copy-files --no-copy-ignored",
-    "build:pack": "yarn pack -o redwoodjs-auth-dbauth-web.tgz",
+    "build:pack": "yarn pack -o redmix-auth-dbauth-web.tgz",
     "build:types": "tsc --build --verbose",
     "build:watch": "nodemon --watch src --ext \"js,jsx,ts,tsx,template\" --ignore dist --exec \"yarn build\"",
     "prepublishOnly": "NODE_ENV=production yarn build",
@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "@babel/runtime-corejs3": "7.26.10",
-    "@redwoodjs/auth": "workspace:*",
+    "@redmix/auth": "workspace:*",
     "@simplewebauthn/browser": "7.4.0",
     "core-js": "3.38.1"
   },
@@ -34,8 +34,7 @@
     "@babel/core": "^7.26.10",
     "@simplewebauthn/typescript-types": "7.4.0",
     "@types/react": "^18.2.55",
-    "jest-environment-jsdom": "29.7.0",
-    "react": "18.3.1",
+    "react": "19.0.0-rc-f2df5694-20240916",
     "typescript": "5.6.2",
     "vitest": "2.1.9"
   },

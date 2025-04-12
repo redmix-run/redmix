@@ -4,8 +4,8 @@ import fs from 'fs-extra'
 import { Listr } from 'listr2'
 import { format } from 'prettier'
 
-import { addApiPackages, getPrettierOptions } from '@redwoodjs/cli-helpers'
-import { errorTelemetry } from '@redwoodjs/telemetry'
+import { addApiPackages, getPrettierOptions } from '@redmix/cli-helpers'
+import { errorTelemetry } from '@redmix/telemetry'
 
 import c from '../../../lib/colors.js'
 import { getPaths, transformTSToJS, writeFile } from '../../../lib/index.js'
@@ -16,7 +16,7 @@ export const handler = async ({ force }) => {
   const projectIsTypescript = isTypeScriptProject()
   const redwoodVersion =
     require(path.join(getPaths().base, 'package.json')).devDependencies[
-      '@redwoodjs/core'
+      '@redmix/core'
     ] ?? 'latest'
 
   const tasks = new Listr(
@@ -76,7 +76,7 @@ export const handler = async ({ force }) => {
         },
       },
       {
-        ...addApiPackages([`@redwoodjs/storage@${redwoodVersion}`]),
+        ...addApiPackages([`@redmix/storage@${redwoodVersion}`]),
         title: 'Adding dependencies to your api side...',
       },
       {

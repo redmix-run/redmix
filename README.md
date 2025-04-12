@@ -63,7 +63,7 @@ what you use so I know what to keep and what to remove!
   - [ ] `@redmix/api-server`
   - [ ] `@redmix/api`
   - [ ] etc. Full list: https://github.com/redmix-run/redmix/issues/19
-- [ ] Future major version: Make all packages ESM only      
+- [ ] Future major version: Make all packages ESM only
 - [ ] Future major version: Make new Redmix apps ESM only
 - [ ] Future major version: Make it possible to switch existing Redmix apps to
       ESM
@@ -91,7 +91,7 @@ what you use so I know what to keep and what to remove!
 - [ ] dbAuth version with OAuth support
 - [ ] Whatever I need to make it easier to work with the OpenAI API/SDK and
       other AI tools
-– [ ] Your feature request here! Let me know what you need!
+- [ ] Your feature request here! Let me know what you need!
 
 ## The Redmix Team
 

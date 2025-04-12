@@ -9,9 +9,9 @@ import { Listr } from 'listr2'
 import pascalcase from 'pascalcase'
 import terminalLink from 'terminal-link'
 
-import { recordTelemetryAttributes } from '@redwoodjs/cli-helpers'
-import { generate as generateTypes } from '@redwoodjs/internal/dist/generate/generate'
-import { getConfig } from '@redwoodjs/project-config'
+import { recordTelemetryAttributes } from '@redmix/cli-helpers'
+import { generate as generateTypes } from '@redmix/internal/dist/generate/generate'
+import { getConfig } from '@redmix/project-config'
 
 import c from '../../../lib/colors.js'
 import {
@@ -676,8 +676,8 @@ const addLayoutImport = () => {
 
   if (!routesContent.match(importLayout)) {
     const newRoutesContent = routesContent.replace(
-      /['"]@redwoodjs\/router['"](\s*)/,
-      `'@redwoodjs/router'\n\n${importLayout}$1`,
+      /['"]@redmix\/router['"](\s*)/,
+      `'@redmix/router'\n\n${importLayout}$1`,
     )
     writeFile(routesPath, newRoutesContent, { overwriteExisting: true })
 
@@ -710,13 +710,11 @@ const addSetImport = (task) => {
   const routesContent = readFile(routesPath).toString()
   const [redwoodRouterImport, importStart, spacing, importContent, importEnd] =
     routesContent.match(
-      /(import {)(\s*)([^]*)(} from ['"]@redwoodjs\/router['"])/,
+      /(import {)(\s*)([^]*)(} from ['"]@redmix\/router['"])/,
     ) || []
 
   if (!redwoodRouterImport) {
-    task.skip(
-      "Couldn't add Set import from @redwoodjs/router to Routes.{jsx,tsx}",
-    )
+    task.skip("Couldn't add Set import from @redmix/router to Routes.{jsx,tsx}")
     return undefined
   }
 

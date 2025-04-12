@@ -30,8 +30,8 @@ import {
 import { getMainDefinition } from '@apollo/client/utilities/utilities.cjs'
 import { print } from 'graphql/language/printer.js'
 
-import type { UseAuth } from '@redwoodjs/auth'
-import { useNoAuth } from '@redwoodjs/auth'
+import type { UseAuth } from '@redmix/auth'
+import { useNoAuth } from '@redmix/auth'
 
 import './typeOverride.js'
 import { createUploadLink } from '../bundled/apollo-upload-client.js'

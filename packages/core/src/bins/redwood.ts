@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * A proxy for running the "redwood" @redwoodjs/cli bin (`yarn redwood`, or `yarn rw`) from @redwoodjs/core.
+ * A proxy for running the "redwood" @redmix/cli bin (`yarn redwood`, or `yarn rw`) from @redmix/core.
  *
  * createRequire is for ES modules. require literally doesn't exist in ES modules,
  * so if you want to use it, you have to create it.
@@ -26,7 +26,7 @@ import { createRequire } from 'node:module'
 // See https://github.com/nodejs/node/issues/40567#issuecomment-949825461.
 const require = createRequire(import.meta.url)
 const requireFromCli = createRequire(
-  require.resolve('@redwoodjs/cli/package.json'),
+  require.resolve('@redmix/cli/package.json'),
 )
 
 const bins = requireFromCli('./package.json')['bin']

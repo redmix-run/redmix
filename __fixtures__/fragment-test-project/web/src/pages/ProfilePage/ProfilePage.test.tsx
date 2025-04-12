@@ -1,4 +1,4 @@
-import { render, waitFor, screen } from '@redwoodjs/testing/web'
+import { render, waitFor, screen } from '@redmix/testing/web'
 
 import ProfilePage from './ProfilePage'
 

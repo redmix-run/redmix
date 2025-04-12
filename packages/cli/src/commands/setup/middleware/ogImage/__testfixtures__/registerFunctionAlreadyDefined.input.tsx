@@ -1,4 +1,4 @@
-import type { TagDescriptor } from '@redwoodjs/web'
+import type { TagDescriptor } from '@redmix/web'
 
 import App from './App.js'
 import { Document } from './Document.js'

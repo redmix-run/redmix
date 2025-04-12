@@ -7,7 +7,7 @@ import type {
   CellSuccessProps,
   CellFailureProps,
   TypedDocumentNode,
-} from '@redwoodjs/web'
+} from '@redmix/web'
 
 import BlogPost from 'src/components/BlogPost'
 

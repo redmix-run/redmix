@@ -10,7 +10,7 @@ import type {
 import { defaultFieldResolver, getDirectiveValues } from 'graphql'
 import type { Plugin } from 'graphql-yoga'
 
-import type { GlobalContext } from '@redwoodjs/context'
+import type { GlobalContext } from '@redmix/context'
 
 export interface DirectiveParams<
   FieldType = any,

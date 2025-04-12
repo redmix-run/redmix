@@ -1,6 +1,6 @@
 import type { Fruit } from 'types/graphql'
 
-import { registerFragment } from '@redwoodjs/web/apollo'
+import { registerFragment } from '@redmix/web/apollo'
 
 import Card from 'src/components/Card'
 import StallInfo from 'src/components/StallInfo'

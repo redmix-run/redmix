@@ -1,5 +1,5 @@
-import { getPaths } from '@redwoodjs/project-config'
-import { getProject } from '@redwoodjs/structure'
+import { getPaths } from '@redmix/project-config'
+import { getProject } from '@redmix/structure'
 
 export const detectPrerenderRoutes = () => {
   const rwProject = getProject(getPaths().base)

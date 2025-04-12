@@ -4,15 +4,15 @@ import fs from 'fs-extra'
 import { Listr } from 'listr2'
 import { format } from 'prettier'
 
-import { addWebPackages, getPrettierOptions } from '@redwoodjs/cli-helpers'
-import { getConfig, getPaths } from '@redwoodjs/project-config'
+import { addWebPackages, getPrettierOptions } from '@redmix/cli-helpers'
+import { getConfig, getPaths } from '@redmix/project-config'
 
 import { runTransform } from '../../../../lib/runTransform.js'
 
 export async function handler({ force }: { force: boolean }) {
   const rwPaths = getPaths()
   const rootPkgJson = fs.readJSONSync(path.join(rwPaths.base, 'package.json'))
-  const currentProjectVersion = rootPkgJson.devDependencies['@redwoodjs/core']
+  const currentProjectVersion = rootPkgJson.devDependencies['@redmix/core']
 
   const notes: string[] = ['']
   const tasks = new Listr(
@@ -28,7 +28,7 @@ export async function handler({ force }: { force: boolean }) {
           }
         },
       },
-      addWebPackages([`@redwoodjs/ogimage-gen@${currentProjectVersion}`]),
+      addWebPackages([`@redmix/ogimage-gen@${currentProjectVersion}`]),
       {
         title: 'Add OG Image middleware ...',
         task: async () => {

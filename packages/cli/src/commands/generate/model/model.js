@@ -3,7 +3,7 @@ import path from 'path'
 import { Listr } from 'listr2'
 import terminalLink from 'terminal-link'
 
-import { recordTelemetryAttributes } from '@redwoodjs/cli-helpers'
+import { recordTelemetryAttributes } from '@redmix/cli-helpers'
 
 import c from '../../../lib/colors.js'
 import {
@@ -70,7 +70,7 @@ export const handler = async ({ force, ...args }) => {
       {
         title: 'Parsing datamodel, generating api/src/models/index.js...',
         task: async () => {
-          const redwoodRecordModule = await import('@redwoodjs/record')
+          const redwoodRecordModule = await import('@redmix/record')
           await redwoodRecordModule.default.parseDatamodel()
         },
       },

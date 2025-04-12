@@ -14,7 +14,7 @@ const getDep = ([dep]) => dep
 const getNestedDepsNo = ([_dep, nestedDeps]) => Object.keys(nestedDeps).length
 const getTooltipString = ([dep, version]) => `${dep}@${version}`
 
-const isRWDep = (dep) => dep.startsWith('@redwoodjs/')
+const isRWDep = (dep) => dep.startsWith('@redmix/')
 
 // ------------------------
 // Raw data

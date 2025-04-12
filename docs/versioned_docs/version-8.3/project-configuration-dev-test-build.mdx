@@ -12,7 +12,7 @@ import ReactPlayer from './ReactPlayer'
 Out of the box Redwood configures [Babel](https://babeljs.io/) so that you can write modern JavaScript and TypeScript without needing to worry about transpilation at all.
 GraphQL tags, JSX, SVG imports—all of it's handled for you.
 
-For those well-versed in Babel config, you can find Redwood's in [@redwoodjs/internal](https://github.com/redwoodjs/redwood/tree/main/packages/internal/src/build/babel).
+For those well-versed in Babel config, you can find Redwood's in [@redmix/internal](https://github.com/redmix-run/redmix/tree/main/packages/internal/src/build/babel).
 
 ### Configuring Babel
 
@@ -83,17 +83,17 @@ The web side's configuration sits in `./web/jest.config.js`
 ```jsx
 const config = {
   rootDir: '../',
-  preset: '@redwoodjs/testing/config/jest/web',
+  preset: '@redmix/testing/config/jest/web',
   // ☝️ load the built-in Redwood Jest configuration
 }
 
 module.exports = config
 ```
 
-> You can always see Redwood's latest configuration templates in the [create-redwood-app package](https://github.com/redwoodjs/redwood/blob/main/packages/create-redwood-app/templates/ts/web/jest.config.js).
+> You can always see Redwood's latest configuration templates in the [create-redmix-app package](https://github.com/redmix-run/redmix/blob/main/packages/create-redmix-app/templates/ts/web/jest.config.js).
 
 The preset includes all the setup required to test everything that's going on in web: rendering React components and transforming JSX, automatically mocking Cells, transpiling with Babel, mocking the Router and the GraphQL client—the list goes on!
-You can find all the details in the [source](https://github.com/redwoodjs/redwood/blob/main/packages/testing/config/jest/web/jest-preset.js).
+You can find all the details in the [source](https://github.com/redmix-run/redmix/blob/main/packages/testing/config/jest/web/jest-preset.js).
 
 #### Api Side Config
 
@@ -103,7 +103,7 @@ But the api preset is slightly different in that:
 - it's configured to run tests serially (because Scenarios seed your test database)
 - it has setup code to make sure your database is 1) seeded before running tests 2) reset between Scenarios
 
-You can find all the details in the [source](https://github.com/redwoodjs/redwood/blob/main/packages/testing/config/jest/api/jest-preset.js).
+You can find all the details in the [source](https://github.com/redmix-run/redmix/blob/main/packages/testing/config/jest/api/jest-preset.js).
 
 ## GraphQL Codegen
 
@@ -165,7 +165,7 @@ It allows you to start all debugging configurations at once, facilitating simult
 
 > **ℹ️ Tip: Can't see the debug configurations?** In VSCode
 >
-> You can grab the latest launch.json from the Redwood template [here](https://github.com/redwoodjs/redwood/blob/main/packages/create-redwood-app/templates/ts/.vscode/launch.json). Copy the contents into your project's `.vscode/launch.json`
+> You can grab the latest launch.json from the Redwood template [here](https://github.com/redmix-run/redmix/blob/main/packages/create-redmix-app/templates/ts/.vscode/launch.json). Copy the contents into your project's `.vscode/launch.json`
 
 ## Ignoring the `.yarn` folder
 

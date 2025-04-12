@@ -1,9 +1,9 @@
 import pascalcase from 'pascalcase'
 
-import { listQueryTypeFieldsInProject } from '@redwoodjs/internal/dist/gql'
+import { listQueryTypeFieldsInProject } from '@redmix/internal/dist/gql'
 
 export const getCellOperationNames = async () => {
-  const { getProject } = await import('@redwoodjs/structure')
+  const { getProject } = await import('@redmix/structure')
 
   return getProject()
     .cells.map((x) => {

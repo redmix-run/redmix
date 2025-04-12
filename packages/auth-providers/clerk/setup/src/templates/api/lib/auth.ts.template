@@ -1,4 +1,4 @@
-import { AuthenticationError, ForbiddenError } from '@redwoodjs/graphql-server'
+import { AuthenticationError, ForbiddenError } from '@redmix/graphql-server'
 
 import { logger } from 'src/lib/logger'
 

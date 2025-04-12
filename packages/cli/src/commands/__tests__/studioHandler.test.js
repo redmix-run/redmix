@@ -2,7 +2,7 @@
 
 var mockedRedwoodVersion = '0.0.0'
 
-vi.mock('@redwoodjs/project-config', async (importOriginal) => {
+vi.mock('@redmix/project-config', async (importOriginal) => {
   const originalProjectConfig = await importOriginal()
   return {
     ...originalProjectConfig,
@@ -14,7 +14,7 @@ vi.mock('fs-extra', () => ({
   default: {
     readJSONSync: () => ({
       devDependencies: {
-        '@redwoodjs/core': mockedRedwoodVersion,
+        '@redmix/core': mockedRedwoodVersion,
       },
     }),
   },

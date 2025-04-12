@@ -1,6 +1,6 @@
 import { expect, test } from 'tstyche'
 
-import { useLocation } from '@redwoodjs/router'
+import { useLocation } from '@redmix/router'
 
 test('useLocation types', () => {
   const location = useLocation()

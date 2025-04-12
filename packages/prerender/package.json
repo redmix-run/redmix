@@ -1,7 +1,7 @@
 {
-  "name": "@redwoodjs/prerender",
-  "version": "8.6.1",
-  "description": "RedwoodJS prerender",
+  "name": "@redmix/prerender",
+  "version": "0.0.1",
+  "description": "Redmix prerender",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/redmix-run/redmix.git",
@@ -30,7 +30,7 @@
   ],
   "scripts": {
     "build": "tsx ./build.mts && yarn build:types",
-    "build:pack": "yarn pack -o redwoodjs-prerender.tgz",
+    "build:pack": "yarn pack -o redmix-prerender.tgz",
     "build:types": "tsc --build --verbose ./tsconfig.build.json",
     "build:watch": "nodemon --watch src --ext \"js,jsx,ts,tsx,template\" --ignore dist --exec \"yarn build\"",
     "check:attw": "yarn rw-fwtools-attw",
@@ -40,11 +40,11 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@redwoodjs/babel-config": "workspace:*",
-    "@redwoodjs/project-config": "workspace:*",
-    "@redwoodjs/router": "workspace:*",
-    "@redwoodjs/structure": "workspace:*",
-    "@redwoodjs/web": "workspace:*",
+    "@redmix/babel-config": "workspace:*",
+    "@redmix/project-config": "workspace:*",
+    "@redmix/router": "workspace:*",
+    "@redmix/structure": "workspace:*",
+    "@redmix/web": "workspace:*",
     "@whatwg-node/fetch": "0.9.21",
     "babel-plugin-ignore-html-and-css-imports": "0.1.0",
     "cheerio": "1.0.0",
@@ -52,7 +52,7 @@
     "mime-types": "2.1.35"
   },
   "devDependencies": {
-    "@redwoodjs/framework-tools": "workspace:*",
+    "@redmix/framework-tools": "workspace:*",
     "@types/mime-types": "2.1.4",
     "babel-plugin-tester": "11.0.4",
     "concurrently": "8.2.2",
@@ -62,8 +62,8 @@
     "vitest": "2.1.9"
   },
   "peerDependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1"
+    "react": "19.0.0-rc-f2df5694-20240916",
+    "react-dom": "19.0.0-rc-f2df5694-20240916"
   },
   "externals": {
     "react": "react",

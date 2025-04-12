@@ -1,6 +1,6 @@
 {
-  "name": "@redwoodjs/auth-clerk-web",
-  "version": "8.6.1",
+  "name": "@redmix/auth-clerk-web",
+  "version": "0.0.1",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/redmix-run/redmix.git",
@@ -38,7 +38,7 @@
   ],
   "scripts": {
     "build": "tsx ./build.ts",
-    "build:pack": "yarn pack -o redwoodjs-auth-clerk-web.tgz",
+    "build:pack": "yarn pack -o redmix-auth-clerk-web.tgz",
     "build:types": "tsc --build --verbose ./tsconfig.build.json",
     "build:types-cjs": "tsc --build --verbose ./tsconfig.cjs.json",
     "build:watch": "nodemon --watch src --ext \"js,jsx,ts,tsx,template\" --ignore dist --exec \"yarn build\"",
@@ -49,16 +49,16 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@redwoodjs/auth": "workspace:*"
+    "@redmix/auth": "workspace:*"
   },
   "devDependencies": {
     "@clerk/clerk-react": "4.32.4",
     "@clerk/types": "3.65.4",
-    "@redwoodjs/framework-tools": "workspace:*",
+    "@redmix/framework-tools": "workspace:*",
     "@types/react": "^18.2.55",
     "concurrently": "8.2.2",
     "publint": "0.3.11",
-    "react": "18.3.1",
+    "react": "19.0.0-rc-f2df5694-20240916",
     "tsx": "4.19.3",
     "typescript": "5.6.2",
     "vitest": "2.1.9"

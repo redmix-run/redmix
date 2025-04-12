@@ -4,13 +4,13 @@ import * as path from 'node:path'
 import dotenv from 'dotenv'
 import * as toml from 'smol-toml'
 
-import type { Config } from '@redwoodjs/project-config'
+import type { Config } from '@redmix/project-config'
 import {
   findUp,
   getConfigPath,
   getConfig,
   resolveFile,
-} from '@redwoodjs/project-config'
+} from '@redmix/project-config'
 
 import { colors } from './colors.js'
 import { getPaths } from './paths.js'
@@ -162,7 +162,7 @@ export const addEnvVar = (name: string, value: string, comment: string) => {
 
 /**
  * This sets the `RWJS_CWD` env var to the redwood project directory. This is typically required for internal
- * redwood packages to work correctly. For example, `@redwoodjs/project-config` uses this when reading config
+ * redwood packages to work correctly. For example, `@redmix/project-config` uses this when reading config
  * or paths.
  *
  * @param cwd Explicitly set the redwood cwd. If not set, we'll try to determine it automatically. You likely

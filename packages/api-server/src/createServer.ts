@@ -6,9 +6,9 @@ import { config } from 'dotenv-defaults'
 import fg from 'fast-glob'
 import fastify from 'fastify'
 
-import type { GlobalContext } from '@redwoodjs/context'
-import { getAsyncStoreInstance } from '@redwoodjs/context/dist/store'
-import { getConfig, getPaths } from '@redwoodjs/project-config'
+import type { GlobalContext } from '@redmix/context'
+import { getAsyncStoreInstance } from '@redmix/context/dist/store'
+import { getConfig, getPaths } from '@redmix/project-config'
 
 import { resolveOptions } from './createServerHelpers'
 import type {
@@ -22,7 +22,7 @@ import { redwoodFastifyAPI } from './plugins/api'
 //
 // ```js
 // # Loads dotenv...
-// import { createServer } from '@redwoodjs/api-server'
+// import { createServer } from '@redmix/api-server'
 // ```
 //
 // We do it here and not in the function below so that users can access env vars before calling `createServer`
@@ -40,7 +40,7 @@ if (!process.env.REDWOOD_ENV_FILES_LOADED) {
  * Creates a server for api functions:
  *
  * ```js
- * import { createServer } from '@redwoodjs/api-server'
+ * import { createServer } from '@redmix/api-server'
  *
  * import { logger } from 'src/lib/logger'
  *

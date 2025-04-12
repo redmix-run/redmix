@@ -1,6 +1,6 @@
 import admin from 'firebase-admin'
 
-import { AuthenticationError } from '@redwoodjs/graphql-server'
+import { AuthenticationError } from '@redmix/graphql-server'
 
 // eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
 const adminApp = admin.initializeApp({
@@ -21,7 +21,7 @@ const adminApp = admin.initializeApp({
  * fields to the return object only once you've decided they are safe to be seen
  * if someone were to open the Web Inspector in their browser.
  *
- * @see https://github.com/redwoodjs/redwood/tree/main/packages/auth for examples
+ * @see https://github.com/redmix-run/redmix/tree/main/packages/auth for examples
  */
 export const getCurrentUser = async (
   decoded,
@@ -50,7 +50,7 @@ export const isAuthenticated = (): boolean => {
  *
  * @throws {@link AuthenticationError} - If the currentUser is not authenticated
  *
- * @see https://github.com/redwoodjs/redwood/tree/main/packages/auth for examples
+ * @see https://github.com/redmix-run/redmix/tree/main/packages/auth for examples
  */
 export const requireAuth = () => {
   if (!isAuthenticated()) {

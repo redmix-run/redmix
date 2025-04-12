@@ -1,10 +1,10 @@
 # Supabase Middleware
 
 ```tsx filename='entry.server.tsx'
-import type { TagDescriptor } from '@redwoodjs/web'
+import type { TagDescriptor } from '@redmix/web'
 
 import App from './App'
-import initSupabaseMiddleware from '@redwoodjs/auth-supabase-middleware'
+import initSupabaseMiddleware from '@redmix/auth-supabase-middleware'
 import { Document } from './Document'
 
 import { getCurrentUser } from '$api/src/lib/auth'

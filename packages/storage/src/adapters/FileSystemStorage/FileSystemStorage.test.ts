@@ -1,7 +1,7 @@
 import { vol } from 'memfs'
 import { beforeEach, describe, expect, test, vi } from 'vitest'
 
-import { ensurePosixPath } from '@redwoodjs/project-config'
+import { ensurePosixPath } from '@redmix/project-config'
 
 import { FileSystemStorage } from './FileSystemStorage.js'
 

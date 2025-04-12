@@ -6,7 +6,7 @@ import {
   build,
   defaultBuildOptions,
   defaultIgnorePatterns,
-} from '@redwoodjs/framework-tools'
+} from '@redmix/framework-tools'
 
 // CJS build
 /**

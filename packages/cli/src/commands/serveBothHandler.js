@@ -3,15 +3,15 @@ import path from 'path'
 import concurrently from 'concurrently'
 import execa from 'execa'
 
-import { handler as apiServerHandler } from '@redwoodjs/api-server/dist/apiCLIConfigHandler'
+import { handler as apiServerHandler } from '@redmix/api-server/dist/apiCLIConfigHandler'
 import {
   getAPIHost,
   getAPIPort,
   getWebHost,
   getWebPort,
-} from '@redwoodjs/api-server/dist/cliHelpers'
-import { getConfig, getPaths } from '@redwoodjs/project-config'
-import { errorTelemetry } from '@redwoodjs/telemetry'
+} from '@redmix/api-server/dist/cliHelpers'
+import { getConfig, getPaths } from '@redmix/project-config'
+import { errorTelemetry } from '@redmix/telemetry'
 
 import { exitWithError } from '../lib/exit.js'
 

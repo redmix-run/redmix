@@ -1,6 +1,6 @@
 {
-  "name": "@redwoodjs/auth-supabase-setup",
-  "version": "8.6.1",
+  "name": "@redmix/auth-supabase-setup",
+  "version": "0.0.1",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/redmix-run/redmix.git",
@@ -29,7 +29,7 @@
   ],
   "scripts": {
     "build": "tsx ./build.mts && yarn build:types",
-    "build:pack": "yarn pack -o redwoodjs-auth-supabase-setup.tgz",
+    "build:pack": "yarn pack -o redmix-auth-supabase-setup.tgz",
     "build:types": "tsc --build --verbose ./tsconfig.json",
     "build:watch": "nodemon --watch src --ext \"js,jsx,ts,tsx,template\" --ignore dist --exec \"yarn build\"",
     "check:attw": "yarn attw -P",
@@ -37,11 +37,11 @@
     "prepublishOnly": "NODE_ENV=production yarn build"
   },
   "dependencies": {
-    "@redwoodjs/cli-helpers": "workspace:*"
+    "@redmix/cli-helpers": "workspace:*"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "0.16.4",
-    "@redwoodjs/framework-tools": "workspace:*",
+    "@redmix/framework-tools": "workspace:*",
     "@types/yargs": "17.0.33",
     "concurrently": "8.2.2",
     "publint": "0.3.11",

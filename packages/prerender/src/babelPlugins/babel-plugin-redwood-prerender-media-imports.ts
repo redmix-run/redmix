@@ -3,7 +3,7 @@ import { extname, join, relative, dirname } from 'path'
 import type { PluginObj, types, NodePath } from '@babel/core'
 import type { ManifestChunk as ViteManifestChunk } from 'vite'
 
-import { ensurePosixPath, getPaths } from '@redwoodjs/project-config'
+import { ensurePosixPath, getPaths } from '@redmix/project-config'
 
 import { convertToDataUrl } from './utils'
 

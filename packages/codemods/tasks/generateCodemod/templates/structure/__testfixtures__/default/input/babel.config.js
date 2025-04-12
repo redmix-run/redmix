@@ -1,4 +1,4 @@
 /** @type {import('@babel/core').TransformOptions} */
 module.exports = {
-  presets: ['@redwoodjs/core/config/babel-preset'],
+  presets: ['@redmix/core/config/babel-preset'],
 }

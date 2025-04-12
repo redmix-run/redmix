@@ -1,4 +1,4 @@
-import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
+import type { CellSuccessProps, CellFailureProps } from '@redmix/web'
 
 import { db } from 'api/src/lib/db'
 

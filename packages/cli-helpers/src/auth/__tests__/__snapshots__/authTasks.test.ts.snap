@@ -1,8 +1,8 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`authTasks > Components with props > Should add useAuth on the same line for single line components, and separate line for multiline components 1`] = `
-"import { FatalErrorBoundary, RedwoodProvider } from '@redwoodjs/web'
-import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
+"import { FatalErrorBoundary, RedwoodProvider } from '@redmix/web'
+import { RedwoodApolloProvider } from '@redmix/web/apollo'
 
 import FatalErrorPage from 'src/pages/FatalErrorPage'
 import Routes from 'src/Routes'
@@ -37,7 +37,7 @@ exports[`authTasks > Components with props > Should add useAuth on the same line
 // 'src/pages/HomePage/HomePage.js'         -> HomePage
 // 'src/pages/Admin/BooksPage/BooksPage.js' -> AdminBooksPage
 
-import { Router, Route } from '@redwoodjs/router'
+import { Router, Route } from '@redmix/router'
 
 import { useAuth } from './auth'
 
@@ -63,8 +63,8 @@ export default Routes
 `;
 
 exports[`authTasks > Components with props > Should not add useAuth if one already exists 1`] = `
-"import { FatalErrorBoundary, RedwoodProvider } from '@redwoodjs/web'
-import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
+"import { FatalErrorBoundary, RedwoodProvider } from '@redmix/web'
+import { RedwoodApolloProvider } from '@redmix/web/apollo'
 
 import FatalErrorPage from 'src/pages/FatalErrorPage'
 import Routes from 'src/Routes'
@@ -99,7 +99,7 @@ exports[`authTasks > Components with props > Should not add useAuth if one alrea
 // 'src/pages/HomePage/HomePage.js'         -> HomePage
 // 'src/pages/Admin/BooksPage/BooksPage.js' -> AdminBooksPage
 
-import { Router, Route } from '@redwoodjs/router'
+import { Router, Route } from '@redmix/router'
 
 import { useAuth } from './auth'
 
@@ -130,8 +130,8 @@ export default Routes
 
 exports[`authTasks > Customized App.js > Should add auth config when using explicit return 1`] = `
 "import { useEffect } from 'react'
-import { FatalErrorBoundary, RedwoodProvider } from '@redwoodjs/web'
-import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
+import { FatalErrorBoundary, RedwoodProvider } from '@redmix/web'
+import { RedwoodApolloProvider } from '@redmix/web/apollo'
 
 import FatalErrorPage from 'src/pages/FatalErrorPage'
 import Routes from 'src/Routes'
@@ -167,8 +167,8 @@ export default App
 `;
 
 exports[`authTasks > Should update App.{jsx,tsx}, Routes.{jsx,tsx} and add auth.ts (Auth0) 1`] = `
-"import { FatalErrorBoundary, RedwoodProvider } from '@redwoodjs/web'
-import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
+"import { FatalErrorBoundary, RedwoodProvider } from '@redmix/web'
+import { RedwoodApolloProvider } from '@redmix/web/apollo'
 
 import FatalErrorPage from 'src/pages/FatalErrorPage'
 import Routes from 'src/Routes'
@@ -196,7 +196,7 @@ export default App
 exports[`authTasks > Should update App.{jsx,tsx}, Routes.{jsx,tsx} and add auth.ts (Auth0) 2`] = `
 "import { Auth0Client } from '@auth0/auth0-spa-js'
 
-import { createAuth } from '@redwoodjs/auth-auth0-web'
+import { createAuth } from '@redmix/auth-auth0-web'
 
 const auth0 = new Auth0Client({
   domain: process.env.AUTH0_DOMAIN || '',
@@ -231,7 +231,7 @@ exports[`authTasks > Should update App.{jsx,tsx}, Routes.{jsx,tsx} and add auth.
 // 'src/pages/HomePage/HomePage.js'         -> HomePage
 // 'src/pages/Admin/BooksPage/BooksPage.js' -> AdminBooksPage
 
-import { Router, Route } from '@redwoodjs/router'
+import { Router, Route } from '@redmix/router'
 
 import { useAuth } from './auth'
 
@@ -248,8 +248,8 @@ export default Routes
 `;
 
 exports[`authTasks > Should update App.{jsx,tsx}, Routes.{jsx,tsx} and add auth.ts (Clerk) 1`] = `
-"import { FatalErrorBoundary, RedwoodProvider } from '@redwoodjs/web'
-import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
+"import { FatalErrorBoundary, RedwoodProvider } from '@redmix/web'
+import { RedwoodApolloProvider } from '@redmix/web/apollo'
 
 import FatalErrorPage from 'src/pages/FatalErrorPage'
 import Routes from 'src/Routes'
@@ -279,7 +279,7 @@ exports[`authTasks > Should update App.{jsx,tsx}, Routes.{jsx,tsx} and add auth.
 
 import { ClerkLoaded, ClerkProvider, useUser } from '@clerk/clerk-react'
 
-import { createAuth } from '@redwoodjs/auth-clerk-web'
+import { createAuth } from '@redmix/auth-clerk-web'
 
 // You can set user roles in a "roles" array on the public metadata in Clerk.
 //
@@ -337,7 +337,7 @@ exports[`authTasks > Should update App.{jsx,tsx}, Routes.{jsx,tsx} and add auth.
 // 'src/pages/HomePage/HomePage.js'         -> HomePage
 // 'src/pages/Admin/BooksPage/BooksPage.js' -> AdminBooksPage
 
-import { Router, Route } from '@redwoodjs/router'
+import { Router, Route } from '@redmix/router'
 
 import { useAuth } from './auth'
 
@@ -356,9 +356,9 @@ export default Routes
 exports[`authTasks > Should update App.tsx for legacy apps 1`] = `
 "import netlifyIdentity from 'netlify-identity-widget'
 
-import { isBrowser } from '@redwoodjs/prerender/browserUtils'
-import { FatalErrorBoundary, RedwoodProvider } from '@redwoodjs/web'
-import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
+import { isBrowser } from '@redmix/prerender/browserUtils'
+import { FatalErrorBoundary, RedwoodProvider } from '@redmix/web'
+import { RedwoodApolloProvider } from '@redmix/web/apollo'
 
 import FatalErrorPage from 'src/pages/FatalErrorPage'
 import Routes from 'src/Routes'
@@ -386,7 +386,7 @@ export default App
 `;
 
 exports[`authTasks > Swapped out GraphQL client > Should add auth config when app is missing RedwoodApolloProvider 1`] = `
-"import { FatalErrorBoundary, RedwoodProvider } from '@redwoodjs/web'
+"import { FatalErrorBoundary, RedwoodProvider } from '@redmix/web'
 
 import FatalErrorPage from 'src/pages/FatalErrorPage'
 import Routes from 'src/Routes'
@@ -417,7 +417,7 @@ export default App
 
 exports[`authTasks > addApiConfig > Adds authDecoder arg to default graphql.ts file 1`] = `
 "import { authDecoder } from 'test-auth-api'
-import { createGraphQLHandler } from '@redwoodjs/graphql-server'
+import { createGraphQLHandler } from '@redmix/graphql-server'
 
 import directives from 'src/directives/**/*.{js,ts}'
 import sdls from 'src/graphql/**/*.sdl.{js,ts}'
@@ -444,7 +444,7 @@ export const handler = createGraphQLHandler({
 
 exports[`authTasks > addApiConfig > Doesn't add authDecoder arg if one already exists 1`] = `
 "import { authDecoder } from 'test-auth-api'
-import { createGraphQLHandler } from '@redwoodjs/graphql-server'
+import { createGraphQLHandler } from '@redmix/graphql-server'
 
 import directives from 'src/directives/**/*.{js,ts}'
 import sdls from 'src/graphql/**/*.sdl.{js,ts}'
@@ -471,7 +471,7 @@ export const handler = createGraphQLHandler({
 
 exports[`authTasks > addApiConfig > Doesn't add authDecoder arg if one already exists, even with a non-standard import name and arg placement 1`] = `
 "import { authDecoder } from 'test-auth-api'
-import { createGraphQLHandler } from '@redwoodjs/graphql-server'
+import { createGraphQLHandler } from '@redmix/graphql-server'
 
 import directives from 'src/directives/**/*.{js,ts}'
 import sdls from 'src/graphql/**/*.sdl.{js,ts}'

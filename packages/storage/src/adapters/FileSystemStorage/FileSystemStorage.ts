@@ -4,7 +4,7 @@ import path from 'node:path'
 
 import mime from 'mime-types'
 
-import { ensurePosixPath } from '@redwoodjs/project-config'
+import { ensurePosixPath } from '@redmix/project-config'
 
 import type { SaveOptionsOverride } from '../BaseStorageAdapter.js'
 import { BaseStorageAdapter } from '../BaseStorageAdapter.js'

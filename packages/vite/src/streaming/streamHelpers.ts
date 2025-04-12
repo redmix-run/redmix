@@ -8,13 +8,13 @@ import type {
 } from 'react-dom/server'
 import type { default as RDServerModule } from 'react-dom/server.edge'
 
-import type { ServerAuthState } from '@redwoodjs/auth/dist/AuthProvider/ServerAuthProvider.js'
-import type * as ServerAuthProviderModule from '@redwoodjs/auth/dist/AuthProvider/ServerAuthProvider.js'
-import { getConfig, getPaths } from '@redwoodjs/project-config'
-import type * as LocationModule from '@redwoodjs/router/location'
-import type { TagDescriptor } from '@redwoodjs/web'
-import type { MiddlewareResponse } from '@redwoodjs/web/middleware'
-import type * as ServerInjectModule from '@redwoodjs/web/serverInject'
+import type { ServerAuthState } from '@redmix/auth/dist/AuthProvider/ServerAuthProvider.js'
+import type * as ServerAuthProviderModule from '@redmix/auth/dist/AuthProvider/ServerAuthProvider.js'
+import { getConfig, getPaths } from '@redmix/project-config'
+import type * as LocationModule from '@redmix/router/location'
+import type { TagDescriptor } from '@redmix/web'
+import type { MiddlewareResponse } from '@redmix/web/middleware'
+import type * as ServerInjectModule from '@redmix/web/serverInject'
 
 import type { ServerEntryType } from '../types.js'
 import { makeFilePath } from '../utils.js'
@@ -111,7 +111,7 @@ export async function reactRenderToStreamResponse(
     ServerInjectedHtml,
   }: ServerInjectType = rscEnabled
     ? await importModule('__rwjs__server_inject')
-    : await import('@redwoodjs/web/serverInject')
+    : await import('@redmix/web/serverInject')
   const { renderToString }: RDServerType = rscEnabled
     ? await importModule('rd-server')
     : await import('react-dom/server')
@@ -142,10 +142,10 @@ export async function reactRenderToStreamResponse(
 
   const { ServerAuthProvider }: ServerAuthProviderType = rscEnabled
     ? await importModule('__rwjs__server_auth_provider')
-    : await import('@redwoodjs/auth/dist/AuthProvider/ServerAuthProvider.js')
+    : await import('@redmix/auth/dist/AuthProvider/ServerAuthProvider.js')
   const { LocationProvider }: LocationType = rscEnabled
     ? await importModule('__rwjs__location')
-    : await import('@redwoodjs/router/location')
+    : await import('@redmix/router/location')
 
   const renderRoot = (url: URL) => {
     return createElement(

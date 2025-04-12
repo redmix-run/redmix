@@ -5,12 +5,8 @@ import execa from 'execa'
 import { Listr } from 'listr2'
 import { format } from 'prettier'
 
-import {
-  colors,
-  getPrettierOptions,
-  setTomlSetting,
-} from '@redwoodjs/cli-helpers'
-import { getConfig, getPaths } from '@redwoodjs/project-config'
+import { colors, getPrettierOptions, setTomlSetting } from '@redmix/cli-helpers'
+import { getConfig, getPaths } from '@redmix/project-config'
 
 import { runTransform } from '../../../../../lib/runTransform.js'
 

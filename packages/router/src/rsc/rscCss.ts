@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@redmix/project-config'
 
 // Note: The current implementation here simply aggregates all CSS but inspecting
 // the manifest files produced during build. In the future we may wish to move to

@@ -4,7 +4,7 @@ import * as path from 'node:path'
 import { getDMMF } from '@prisma/internals'
 import { Listr } from 'listr2'
 
-import { addApiPackages } from '@redwoodjs/cli-helpers'
+import { addApiPackages } from '@redmix/cli-helpers'
 
 import c from '../../../lib/colors.js'
 import { getPaths, transformTSToJS, writeFile } from '../../../lib/index.js'
@@ -48,8 +48,8 @@ const tasks = async ({ force }) => {
   const packageJsonPath = path.join(getPaths().base, 'package.json')
   const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8'))
   const redwoodVersion =
-    packageJson.devDependencies?.['@redwoodjs/core'] ?? 'latest'
-  const jobsPackage = `@redwoodjs/jobs@${redwoodVersion}`
+    packageJson.devDependencies?.['@redmix/core'] ?? 'latest'
+  const jobsPackage = `@redmix/jobs@${redwoodVersion}`
 
   return new Listr(
     [

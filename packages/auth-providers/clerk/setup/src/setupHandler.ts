@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 
-import { standardAuthHandler } from '@redwoodjs/cli-helpers'
+import { standardAuthHandler } from '@redmix/cli-helpers'
 
 import type { Args } from './setup'
 
@@ -13,13 +13,10 @@ export const handler = async ({ force: forceArg }: Args) => {
   standardAuthHandler({
     basedir: __dirname,
     forceArg,
-    authDecoderImport: `import { clerkAuthDecoder as authDecoder } from '@redwoodjs/auth-clerk-api'`,
+    authDecoderImport: `import { clerkAuthDecoder as authDecoder } from '@redmix/auth-clerk-api'`,
     provider: 'clerk',
-    webPackages: [
-      '@clerk/clerk-react@^4',
-      `@redwoodjs/auth-clerk-web@${version}`,
-    ],
-    apiPackages: [`@redwoodjs/auth-clerk-api@${version}`],
+    webPackages: ['@clerk/clerk-react@^4', `@redmix/auth-clerk-web@${version}`],
+    apiPackages: [`@redmix/auth-clerk-api@${version}`],
     notes: [
       "You'll need to add two env vars to your .env file:",
       '',

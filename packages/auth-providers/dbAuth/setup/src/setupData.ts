@@ -1,8 +1,8 @@
 import crypto from 'node:crypto'
 import path from 'path'
 
-import { getPaths, colors, addEnvVarTask } from '@redwoodjs/cli-helpers'
-import type { AuthGeneratorCtx } from '@redwoodjs/cli-helpers/src/auth/authTasks'
+import { getPaths, colors, addEnvVarTask } from '@redmix/cli-helpers'
+import type { AuthGeneratorCtx } from '@redmix/cli-helpers/src/auth/authTasks'
 
 import { addModels, functionsPath, hasModel, libPath } from './shared'
 

@@ -1,5 +1,5 @@
-import { Link, routes } from '@redwoodjs/router'
-import { Toaster } from '@redwoodjs/web/toast'
+import { Link, routes } from '@redmix/router'
+import { Toaster } from '@redmix/web/toast'
 import { Popover, Transition } from '@headlessui/react'
 import { Fragment } from 'react'
 import i18n, { Languages } from 'src/i18n'
@@ -200,7 +200,7 @@ const MainLayout = ({ children }: MainLayoutProps) => {
                                 <PopoverLink
                                   link="https://twitter.com/redwoodjs"
                                   title="Twitter"
-                                  desc="Follow @redwoodjs for updates, new releases and community meetup announcements"
+                                  desc="Follow @redmix for updates, new releases and community meetup announcements"
                                 >
                                   <svg
                                     viewBox="0 0 34 34"

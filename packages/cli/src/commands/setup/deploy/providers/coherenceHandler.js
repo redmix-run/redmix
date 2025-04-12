@@ -5,12 +5,8 @@ import fs from 'fs-extra'
 import { Listr } from 'listr2'
 import * as toml from 'smol-toml'
 
-import {
-  colors as c,
-  getPaths,
-  isTypeScriptProject,
-} from '@redwoodjs/cli-helpers'
-import { errorTelemetry } from '@redwoodjs/telemetry'
+import { colors as c, getPaths, isTypeScriptProject } from '@redmix/cli-helpers'
+import { errorTelemetry } from '@redmix/telemetry'
 
 import { printSetupNotes } from '../../../../lib/index.js'
 import { serverFileExists } from '../../../../lib/project.js'

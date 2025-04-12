@@ -2,7 +2,7 @@
 import { createServer } from 'vite'
 import yargsParser from 'yargs-parser'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@redmix/project-config'
 
 const rwPaths = getPaths()
 

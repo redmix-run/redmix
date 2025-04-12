@@ -6,8 +6,8 @@ import execa from 'execa'
 import { Listr } from 'listr2'
 import terminalLink from 'terminal-link'
 
-import { recordTelemetryAttributes } from '@redwoodjs/cli-helpers'
-import { errorTelemetry } from '@redwoodjs/telemetry'
+import { recordTelemetryAttributes } from '@redmix/cli-helpers'
+import { errorTelemetry } from '@redmix/telemetry'
 
 import c from '../../../lib/colors.js'
 import {
@@ -187,7 +187,7 @@ export const handler = async ({ name, force, ...rest }) => {
             'eslint',
             '--fix',
             '--config',
-            `${getPaths().base}/node_modules/@redwoodjs/eslint-config/shared.js`,
+            `${getPaths().base}/node_modules/@redmix/eslint-config/shared.js`,
             `${getPaths().api.jobsConfig}`,
           ])
         },
