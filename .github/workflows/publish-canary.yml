@@ -52,19 +52,3 @@ jobs:
         uses: sergeysova/jq-action@a3f0d4ff59cc1dddf023fc0b325dd75b10deec58 # v2.3.0
         with:
           cmd: 'jq .version packages/core/package.json -r'
-
-  message-slack:
-    name: 💬 Message Slack
-    needs: publish-canary
-    if: ${{ !cancelled() }}
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
-      - name: 💬 Message Slack
-        uses: ./.github/actions/message_slack_publishing
-        with:
-          title: '🦜 Canary Packages'
-          status: ${{ needs.publish-canary.result }}
-          version: ${{ needs.publish-canary.outputs.version }}
-          slack-webhook-url: ${{ secrets.SLACK_WEBHOOK_URL_PACKAGE_PUBLISHING }}

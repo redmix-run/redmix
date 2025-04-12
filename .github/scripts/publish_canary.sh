@@ -29,8 +29,8 @@ args+=(
 # `2>&1` to pipe both stdout and stderr to grep. Mostly do this keep the github
 #   action output clean.
 # At the end we use awk to increase the commit count by 1, because we'll commit
-#   updated package.jsons in the next step, which will increase increase the
-#   final number that lerna will use when publishing the canary packages.
+#   updated package.jsons in the next step, which will increase the final
+#   number that lerna will use when publishing the canary packages.
 echo 'n' \
   | yarn lerna publish "${args[@]}" 2>&1 \
     > publish_output
