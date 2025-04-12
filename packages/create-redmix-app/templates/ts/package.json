@@ -7,8 +7,8 @@
     ]
   },
   "devDependencies": {
-    "@redmix/core": "1.0.0",
-    "@redmix/project-config": "1.0.0"
+    "@redmix/core": "0.0.1",
+    "@redmix/project-config": "0.0.1"
   },
   "eslintConfig": {
     "extends": "@redmix/eslint-config",
