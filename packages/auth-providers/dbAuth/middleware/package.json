@@ -27,7 +27,7 @@
   ],
   "scripts": {
     "build": "tsx ./build.mts",
-    "build:pack": "yarn pack -o redwoodjs-auth-dbauth-middleware.tgz",
+    "build:pack": "yarn pack -o redmix-auth-dbauth-middleware.tgz",
     "build:types": "tsc --build --verbose ./tsconfig.build.json",
     "build:types-cjs": "tsc --build --verbose tsconfig.cjs.json",
     "check:attw": "yarn attw -P",

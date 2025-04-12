@@ -18,7 +18,7 @@
   ],
   "scripts": {
     "build": "tsx ./build.mts && run build:types",
-    "build:pack": "yarn pack -o redwoodjs-cookie-jar.tgz",
+    "build:pack": "yarn pack -o redmix-cookie-jar.tgz",
     "build:types": "tsc --build --verbose",
     "test": "vitest run"
   },

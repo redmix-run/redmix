@@ -8059,7 +8059,7 @@ __metadata:
     execa: "npm:5.1.1"
     semver: "npm:7.6.3"
     storybook: "npm:7.6.20"
-    storybook-framework-redwoodjs-vite: "workspace:*"
+    storybook-framework-redmix-vite: "workspace:*"
     terminal-link: "npm:2.1.1"
     tsx: "npm:4.19.3"
     typescript: "npm:5.6.2"
@@ -27759,9 +27759,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"storybook-framework-redwoodjs-vite@workspace:*, storybook-framework-redwoodjs-vite@workspace:packages/storybook":
+"storybook-framework-redmix-vite@workspace:*, storybook-framework-redmix-vite@workspace:packages/storybook":
   version: 0.0.0-use.local
-  resolution: "storybook-framework-redwoodjs-vite@workspace:packages/storybook"
+  resolution: "storybook-framework-redmix-vite@workspace:packages/storybook"
   dependencies:
     "@joshwooding/vite-plugin-react-docgen-typescript": "npm:0.4.2"
     "@redmix/testing": "workspace:*"

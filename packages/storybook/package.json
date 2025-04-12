@@ -1,6 +1,6 @@
 {
-  "name": "storybook-framework-redwoodjs-vite",
-  "version": "8.0.0",
+  "name": "storybook-framework-redmix-vite",
+  "version": "1.0.0",
   "description": "Storybook for RedwoodJS with Vite",
   "keywords": [
     "Storybook",
@@ -44,7 +44,7 @@
   ],
   "scripts": {
     "build": "tsx build.ts && yarn build:types",
-    "build:pack": "yarn pack -o storybook-framework-redwoodjs-vite.tgz",
+    "build:pack": "yarn pack -o storybook-framework-redmix-vite.tgz",
     "build:types": "tsc --build --verbose"
   },
   "dependencies": {

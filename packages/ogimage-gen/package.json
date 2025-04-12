@@ -33,7 +33,7 @@
   ],
   "scripts": {
     "build": "tsx ./build.mts && yarn build:types",
-    "build:pack": "yarn pack -o redwoodjs-ogimage-gen.tgz",
+    "build:pack": "yarn pack -o redmix-ogimage-gen.tgz",
     "build:types": "tsc --build --verbose",
     "prepublishOnly": "NODE_ENV=production yarn build",
     "test": "vitest run",

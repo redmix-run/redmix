@@ -33,7 +33,7 @@
   ],
   "scripts": {
     "build": "tsx ./build.mts",
-    "build:pack": "yarn pack -o redwoodjs-core.tgz",
+    "build:pack": "yarn pack -o redmix-core.tgz",
     "check:package": "yarn publint",
     "prepublishOnly": "NODE_ENV=production yarn build"
   },

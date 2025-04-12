@@ -18,7 +18,7 @@
   ],
   "scripts": {
     "build": "tsx ./build.mts",
-    "build:pack": "yarn pack -o redwoodjs-cli.tgz",
+    "build:pack": "yarn pack -o redmix-cli.tgz",
     "build:watch": "nodemon --watch src --ext \"js,jsx,ts,tsx,template\" --ignore dist --exec \"yarn build && yarn fix:permissions\"",
     "dev": "RWJS_CWD=../../__fixtures__/example-todo-main node dist/index.js",
     "fix:permissions": "chmod +x dist/index.js dist/rwfw.js",

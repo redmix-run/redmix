@@ -8,7 +8,7 @@ export function mockRouter(): PluginOption {
       if (id.includes('src')) {
         code = code.replace(
           "'@redmix/router'",
-          "'storybook-framework-redwoodjs-vite/dist/mocks/MockRouter'",
+          "'storybook-framework-redmix-vite/dist/mocks/MockRouter'",
         )
       }
       return code

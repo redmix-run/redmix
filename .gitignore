@@ -22,6 +22,7 @@ blog-test-project/*
 *.code-workspace
 .nova
 packages/**/redwoodjs-*.tgz
+packages/**/redmix-*.tgz
 packages/**/storybook-*.tgz
 packages/create-redmix-app/create-redmix-app.tgz
 

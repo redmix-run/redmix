@@ -10,7 +10,7 @@
   "main": "index.js",
   "scripts": {
     "build": "echo 'Nothing to build..'",
-    "build:pack": "yarn pack -o redwoodjs-eslint-config.tgz"
+    "build:pack": "yarn pack -o redmix-eslint-config.tgz"
   },
   "dependencies": {
     "@babel/core": "^7.26.10",

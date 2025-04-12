@@ -17,7 +17,7 @@
   ],
   "scripts": {
     "build": "tsx ./build.mts && yarn build:types",
-    "build:pack": "yarn pack -o redwoodjs-cli-data-migrate.tgz",
+    "build:pack": "yarn pack -o redmix-cli-data-migrate.tgz",
     "build:types": "tsc --build --verbose",
     "prepublishOnly": "NODE_ENV=production yarn build",
     "test": "yarn test:unit && yarn test:dist",

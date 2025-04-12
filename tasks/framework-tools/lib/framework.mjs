@@ -81,7 +81,7 @@ export function getFrameworkDependencies(
       }
 
       // Skip storybook packages because they're installed manually by the user.
-      if (name.startsWith('storybook-framework-redwoodjs-vite')) {
+      if (name.startsWith('storybook-framework-redmix-vite')) {
         continue
       }
 

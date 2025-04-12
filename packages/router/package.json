@@ -82,7 +82,7 @@
   ],
   "scripts": {
     "build": "tsx ./build.ts",
-    "build:pack": "yarn pack -o redwoodjs-router.tgz",
+    "build:pack": "yarn pack -o redmix-router.tgz",
     "build:types": "tsc --build --verbose tsconfig.build.json",
     "build:types-cjs": "tsc --build --verbose tsconfig.cjs.json",
     "build:watch": "nodemon --watch src --ext \"js,jsx,ts,tsx\" --ignore dist --exec \"yarn build\"",
