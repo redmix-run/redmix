@@ -10,13 +10,13 @@ const projectPath = await fs.realpath(process.env.PROJECT_PATH)
 
 cd(projectPath)
 
-describe('create-redwood-app', () => {
+describe('create-redmix-app', () => {
   test('--help', async () => {
-    const p = await $`yarn create-redwood-app --help`
+    const p = await $`yarn create-redmix-app --help`
 
     expect(p.exitCode).toEqual(0)
     expect(p.stdout).toMatchInlineSnapshot(`
-      "Usage: create-redwood-app <project directory>
+      "Usage: create-redmix-app <project directory>
 
       Options:
             --help              Show help                                    [boolean]
@@ -36,14 +36,14 @@ describe('create-redwood-app', () => {
                                                              [boolean] [default: null]
 
       Examples:
-        create-redwood-app my-redwood-app
+        create-redmix-app my-redwood-app
       [?25l[?25h"
     `)
     expect(p.stderr).toMatchInlineSnapshot(`"[?25l[?25h"`)
   })
 
   test('--version', async () => {
-    const p = await $`yarn create-redwood-app --version`
+    const p = await $`yarn create-redmix-app --version`
 
     expect(p.exitCode).toEqual(0)
     expect(p.stdout).toMatch(/\d+\.\d+\.\d+/)
@@ -55,7 +55,7 @@ describe('create-redwood-app', () => {
     // generating types, is also flakey since `yarn pack` seems to skip
     // `.yarnrc.yml` which is necessary for configuring a proper install.
     const p =
-      await $`yarn create-redwood-app ./redwood-app --no-yarn-install --yes`
+      await $`yarn create-redmix-app ./redwood-app --no-yarn-install --yes`
 
     expect(p.exitCode).toEqual(0)
     expect(p.stdout).toMatchInlineSnapshot(`
@@ -96,7 +96,7 @@ describe('create-redwood-app', () => {
 
   it.fails('fails on unknown options', async () => {
     try {
-      await $`yarn create-redwood-app --unknown-options`.timeout(2500)
+      await $`yarn create-redmix-app --unknown-options`.timeout(2500)
       // Fail the test if the function didn't throw.
       expect(true).toEqual(false)
     } catch (p) {

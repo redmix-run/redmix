@@ -237,7 +237,7 @@ if (resumePath && !fs.existsSync(path.join(resumePath, 'redwood.toml'))) {
 }
 
 const createProject = () => {
-  const cmd = `yarn node ./packages/create-redwood-app/dist/create-redwood-app.js ${OUTPUT_PROJECT_PATH}`
+  const cmd = `yarn node ./packages/create-redmix-app/dist/create-redmix-app.js ${OUTPUT_PROJECT_PATH}`
 
   const subprocess = exec(
     cmd,
@@ -467,7 +467,7 @@ async function runCommand() {
       fs.copyFileSync(
         path.join(
           __dirname,
-          '../../packages/create-redwood-app/templates/ts/package.json',
+          '../../packages/create-redmix-app/templates/ts/package.json',
         ),
         path.join(OUTPUT_PROJECT_PATH, 'package.json'),
       )

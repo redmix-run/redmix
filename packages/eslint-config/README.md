@@ -11,7 +11,7 @@
 
 ## Purpose and Vision
 
-This package contains a shareable set of ESLint rules and configuration that can be re-used on all RedwoodJS projects. The framework [`eslint-config`](https://github.com/redwoodjs/redwood/tree/main/packages/eslint-config) package is used both for framework configuration and RedwoodJS app (created with the [CRWA](https://github.com/redwoodjs/redwood/tree/main/packages/create-redwood-app) package) configuration.
+This package contains a shareable set of ESLint rules and configuration that can be re-used on all RedwoodJS projects. The framework [`eslint-config`](https://github.com/redwoodjs/redwood/tree/main/packages/eslint-config) package is used both for framework configuration and RedwoodJS app (created with the [CRWA](https://github.com/redwoodjs/redwood/tree/main/packages/create-redmix-app) package) configuration.
 
 Our configuration uses recommended rule presets, including those from [ESLint](https://eslint.org/docs/rules/), [React](https://www.npmjs.com/package/eslint-plugin-react#list-of-supported-rules), the [Rules of Hooks](https://reactjs.org/docs/hooks-rules.html), and [Jest](https://github.com/testing-library/eslint-plugin-jest-dom#supported-rules). We also override the presets with some stylistic preferences. Some of them are:
 

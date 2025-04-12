@@ -54,8 +54,8 @@ async function main() {
   await $`yarn build`
   await $`npm version ${version}`
   const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf-8'))
-  await $`git commit -am "create-redwood-rsc-app v${packageJson.version}"`
-  await $`git tag "create-redwood-rsc-app/v${packageJson.version}"`
+  await $`git commit -am "create-redmix-rsc-app v${packageJson.version}"`
+  await $`git tag "create-redmix-rsc-app/v${packageJson.version}"`
   await $`yarn npm publish --otp ${otp}`
   await $`git push upstream --follow-tags`
 }

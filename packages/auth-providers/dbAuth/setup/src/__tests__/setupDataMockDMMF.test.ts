@@ -312,7 +312,7 @@ import { getCurrentUser } from 'src/lib/auth'
         'api/db/schema.prisma': actualFs.readFileSync(
           path.resolve(
             __dirname +
-              '/../../../../../create-redwood-app/templates/ts/api/db/schema.prisma',
+              '/../../../../../create-redmix-app/templates/ts/api/db/schema.prisma',
           ),
           'utf-8',
         ),

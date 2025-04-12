@@ -74,7 +74,7 @@ You'll almost always want to test the functionality of your changes to the Redwo
 
 Run `yarn run build:test-project ../redwood-project` from the root of your local copy of the Redwood Framework to create a functional test project. In just a few minutes, this will create a Redwood Project on the current canary (optionally: `latest` stable) that contains a lot of functionality. For example, here's a brief overview of all the things `yarn run build:test-project <project directory>` does:
 
-1. It installs using the `create-redwood-app` template in the current branch of your Redwood Framework
+1. It installs using the `create-redmix-app` template in the current branch of your Redwood Framework
 2. It uses the current `canary` version of Redwood Packages (with the option to use the `latest` stable version)
 3. It has a TypeScript language target (with the option for JavaScript)
 4. It applies code mods from the [Redwood tutorial](https://redwoodjs.com/tutorial) to add functionality and styling
@@ -240,7 +240,7 @@ Most of the time your contribution to Redwood won't involve adding any new depen
 Reuse the specified package from other workspaces in the project. Example:
 
 ```
-yarn workspace create-redwood-app add -i rimraf
+yarn workspace create-redmix-app add -i rimraf
 ```
 
 > Note: Interactivity is enabled by default

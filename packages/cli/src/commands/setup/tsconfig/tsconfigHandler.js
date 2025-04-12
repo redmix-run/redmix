@@ -17,7 +17,7 @@ export const handler = async ({ force }) => {
     ? 'main'
     : `v${installedRwVersion}`
 
-  const CRWA_TEMPLATE_URL = `https://raw.githubusercontent.com/redwoodjs/redwood/${GITHUB_VERSION_TAG}/packages/create-redwood-app/templates/ts`
+  const CRWA_TEMPLATE_URL = `https://raw.githubusercontent.com/redwoodjs/redwood/${GITHUB_VERSION_TAG}/packages/create-redmix-app/templates/ts`
 
   const tasks = new Listr(
     [

@@ -9,9 +9,9 @@ if {$projectPath eq ""} {
 
 cd $projectPath
 
-set projectDirectory "redwood-app-prompt-git-test"
+set projectDirectory "redwood-app-prompt-m-test"
 
-spawn yarn create-redwood-app --no-yarn-install --git
+spawn yarn create-redmix-app --no-yarn-install -m "first"
 
 expect "Where would you like to create your Redwood app?"
 send "$projectDirectory\n"
@@ -20,8 +20,9 @@ expect "Select your preferred language"
 # ❯ TypeScript
 send "\n"
 
-expect "Enter a commit message"
-send "first\n"
+expect "Do you want to initialize a git repo?"
+# ❯ Yes
+send "\n"
 
 expect eof
 catch wait result

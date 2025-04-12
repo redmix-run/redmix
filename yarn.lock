@@ -14868,9 +14868,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"create-redwood-app@workspace:packages/create-redwood-app":
+"create-redmix-app@workspace:packages/create-redmix-app":
   version: 0.0.0-use.local
-  resolution: "create-redwood-app@workspace:packages/create-redwood-app"
+  resolution: "create-redmix-app@workspace:packages/create-redmix-app"
   dependencies:
     "@babel/core": "npm:^7.26.10"
     "@babel/plugin-transform-typescript": "npm:^7.26.8"
@@ -14898,7 +14898,7 @@ __metadata:
     vitest: "npm:2.1.9"
     yargs: "npm:17.7.2"
   bin:
-    create-redwood-app: ./dist/create-redwood-app.js
+    create-redmix-app: ./dist/create-redmix-app.js
   languageName: unknown
   linkType: soft
 

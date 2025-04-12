@@ -353,15 +353,15 @@ async function updatePackageVersionsFromTemplate(ctx, { dryRun, verbose }) {
   const packageJsons = [
     {
       basePath: getPaths().base,
-      url: 'https://raw.githubusercontent.com/redmix-run/redmix/main/packages/create-redwood-app/templates/ts/package.json',
+      url: 'https://raw.githubusercontent.com/redmix-run/redmix/main/packages/create-redmix-app/templates/ts/package.json',
     },
     {
       basePath: getPaths().api.base,
-      url: 'https://raw.githubusercontent.com/redmix-run/redmix/main/packages/create-redwood-app/templates/ts/api/package.json',
+      url: 'https://raw.githubusercontent.com/redmix-run/redmix/main/packages/create-redmix-app/templates/ts/api/package.json',
     },
     {
       basePath: getPaths().web.base,
-      url: 'https://raw.githubusercontent.com/redmix-run/redmix/main/packages/create-redwood-app/templates/ts/web/package.json',
+      url: 'https://raw.githubusercontent.com/redmix-run/redmix/main/packages/create-redmix-app/templates/ts/web/package.json',
     },
   ]
 
@@ -446,7 +446,7 @@ async function downloadYarnPatches(ctx, { dryRun, verbose }) {
   const json = await res.json()
   const patches = json.tree?.filter((patchInfo) =>
     patchInfo.path.startsWith(
-      'packages/create-redwood-app/templates/ts/.yarn/patches/',
+      'packages/create-redmix-app/templates/ts/.yarn/patches/',
     ),
   )
 

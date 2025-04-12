@@ -1,14 +1,14 @@
 {
-  "name": "create-redwood-app",
+  "name": "create-redmix-app",
   "version": "8.0.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/redmix-run/redmix.git",
-    "directory": "packages/create-redwood-app"
+    "directory": "packages/create-redmix-app"
   },
   "license": "MIT",
   "type": "module",
-  "bin": "./dist/create-redwood-app.js",
+  "bin": "./dist/create-redmix-app.js",
   "files": [
     "dist",
     "templates"

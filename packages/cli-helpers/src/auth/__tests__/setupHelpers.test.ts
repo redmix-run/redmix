@@ -23,15 +23,15 @@ vi.mock('../../lib/paths', () => {
   return {
     getPaths: () => ({
       api: {
-        src: path.join(__dirname, '../create-redwood-app/template/api/src'),
+        src: path.join(__dirname, '../create-redmix-app/template/api/src'),
         functions: path.join(
           __dirname,
-          '../create-redwood-app/template/api/src/functions',
+          '../create-redmix-app/template/api/src/functions',
         ),
-        lib: path.join(__dirname, '../create-redwood-app/template/api/src/lib'),
+        lib: path.join(__dirname, '../create-redmix-app/template/api/src/lib'),
       },
       web: { src: '' },
-      base: path.join(__dirname, '../create-redwood-app/template'),
+      base: path.join(__dirname, '../create-redmix-app/template'),
     }),
   }
 })

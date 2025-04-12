@@ -65,11 +65,11 @@ That's it!
 
 If you are upgrading an existing RedwoodJS app older than v0.28 and would like to include logging, you simply need to copy over files from the "Create Redwood Application" template:
 
-- Copy [`packages/create-redwood-app/template/api/src/lib/logger.ts`](https://github.com/redmix-run/redmix/blob/main/packages/create-redwood-app/template/api/src/lib/logger.ts) to `api/src/lib/logger.ts`. Required.
+- Copy [`packages/create-redmix-app/template/api/src/lib/logger.ts`](https://github.com/redmix-run/redmix/blob/main/packages/create-redmix-app/template/api/src/lib/logger.ts) to `api/src/lib/logger.ts`. Required.
 
 For optional Prisma logging:
 
-- Copy [`packages/create-redwood-app/template/api/src/lib/db.ts`](https://github.com/redmix-run/redmix/blob/main/packages/create-redwood-app/template/api/src/lib/db.ts) and replace `api/src/lib/db.ts` (or `api/src/lib/db.js`). _Optional_.
+- Copy [`packages/create-redmix-app/template/api/src/lib/db.ts`](https://github.com/redmix-run/redmix/blob/main/packages/create-redmix-app/template/api/src/lib/db.ts) and replace `api/src/lib/db.ts` (or `api/src/lib/db.js`). _Optional_.
 
 The first file `logger.ts` defines the logger instance. You will import `logger` and use in your services, functions or other libraries. You may then replace existing `console.log()` statements with `logger.info()` or `logger.debug()`.
 

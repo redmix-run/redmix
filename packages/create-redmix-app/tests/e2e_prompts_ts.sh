@@ -9,36 +9,26 @@ if {$projectPath eq ""} {
 
 cd $projectPath
 
-# Make directory that needs to be overwritten.
-set projectDirectory "redwood-app-prompt-overwrite-test"
-exec mkdir $projectDirectory
-exec touch $projectDirectory/README.md
+set projectDirectory "redwood-app-prompt-ts-test"
 
-spawn yarn create-redwood-app --no-yarn-install
+spawn yarn create-redmix-app --no-yarn-install --ts
 
 expect "Where would you like to create your Redwood app?"
 send "$projectDirectory\n"
-
-expect "Select your preferred language"
-# ❯ TypeScript
-send "\n"
 
 expect "Do you want to initialize a git repo?"
 # ❯ Yes
 send "\n"
 
 expect "Enter a commit message"
-send "first\n"
-
-expect "How would you like to proceed?"
-# ❯ Quit install
+# Initial commit
 send "\n"
 
 expect eof
 catch wait result
 set exitStatus [lindex $result 3]
 
-if {$exitStatus == 1} {
+if {$exitStatus == 0} {
     puts "Success"
     exec rm -rf $projectDirectory
     exit 0

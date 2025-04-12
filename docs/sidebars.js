@@ -105,7 +105,7 @@ module.exports = {
         'contributing-overview',
         'contributing-walkthrough',
         'cors',
-        'create-redwood-app',
+        'create-redmix-app',
         'data-migrations',
         {
           type: 'category',

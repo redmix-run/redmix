@@ -10,5 +10,5 @@ export function getCrwrscaVersion() {
 }
 
 export function printVersion() {
-  console.log(`create-redwood-rsc-app v${getCrwrscaVersion()}`)
+  console.log(`create-redmix-rsc-app v${getCrwrscaVersion()}`)
 }

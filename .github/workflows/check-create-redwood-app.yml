@@ -1,4 +1,4 @@
-name: Check create-redwood-app
+name: Check create-redmix-app
 
 on:
   pull_request:
@@ -13,7 +13,7 @@ concurrency:
 permissions: {}
 
 jobs:
-  check-create-redwood-app:
+  check-create-redmix-app:
     name: Check create redwood app
     runs-on: ubuntu-latest
     steps:

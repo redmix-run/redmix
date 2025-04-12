@@ -838,7 +838,7 @@ if (telemetry) {
 
 // Execute create redwood app within a span
 const tracer = trace.getTracer('redwoodjs')
-await tracer.startActiveSpan('create-redwood-app', async (span) => {
+await tracer.startActiveSpan('create-redmix-app', async (span) => {
   await createRedwoodApp()
 
   // Span housekeeping

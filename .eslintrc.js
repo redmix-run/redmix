@@ -313,7 +313,7 @@ module.exports = {
         'packages/api/src/**',
         'packages/api-server/src/**',
         'packages/cli/src/**',
-        'packages/create-redwood-app/src/*.js',
+        'packages/create-redmix-app/src/*.js',
         'packages/internal/src/**',
         'packages/prerender/src/**',
         'packages/structure/src/**',

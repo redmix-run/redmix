@@ -18,7 +18,7 @@ export const REDWOOD_PACKAGES_PATH = path.join(
   'packages',
 )
 
-const IGNORE_PACKAGES = ['@redmix/codemods', 'create-redwood-app']
+const IGNORE_PACKAGES = ['@redmix/codemods', 'create-redmix-app']
 
 /**
  * Get the names, locations, and absolute package.json file paths of all the packages we publish to NPM.

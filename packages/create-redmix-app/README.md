@@ -40,7 +40,7 @@ yarn redwood dev
 - [Documentation](https://redwoodjs.com/docs) and [How To's](https://redwoodjs.com/how-to/custom-function)
 - Join the Community [Forums](https://community.redwoodjs.com) and [Chat](https://discord.gg/redwoodjs)
 
-<h2>Contributing to create-redwood-app</h2>
+<h2>Contributing to create-redmix-app</h2>
 
 _Contributors are Welcome! Get started [here](https://redwoodjs.com/docs/contributing). And don't hesitate to ask for help on the forums and chat_.
 
@@ -52,14 +52,14 @@ _Contributors are Welcome! Get started [here](https://redwoodjs.com/docs/contrib
 - [Local Development](#local-development)
   - [Installation Script](#installation-script)
   - [Template Codebase](#template-codebase)
-  - [How to run create-redwood-app and create a project](#how-to-run-create-redwood-app-and-create-a-project)
+  - [How to run create-redmix-app and create a project](#how-to-run-create-redmix-app-and-create-a-project)
   - [Develop using the new project](#develop-using-the-new-project)
 
 ## Description
 
 This package creates and installs a Redwood project, which is the entry point for anyone using Redwood. It has two parts:
 
-- The installation script [`src/create-redwood-app.js`](./src/create-redwood-app.js)
+- The installation script [`src/create-redmix-app.js`](./src/create-redmix-app.js)
 - Project template code in the [`templates/`](./templates/) directory
 
 ## Local Development
@@ -72,7 +72,7 @@ The installation script is built with [Yargs](https://github.com/yargs/yargs).
 
 The project codebase in [`templates/`](./templates/) uses [Yarn Workspaces](https://yarnpkg.com/features/workspaces) for a monorepo project containing the API and Web Sides. Redwood packages are included in `templates/ts/package.json`, `templates/ts/web/package.json`, and `templates/ts/api/package.json`, respectively.
 
-### How to run `create-redwood-app` from your local repo and create a project
+### How to run `create-redmix-app` from your local repo and create a project
 
 First, run the following commands in the root of the monorepo:
 
@@ -84,13 +84,13 @@ yarn build
 Then, navigate to the create redwood app package:
 
 ```bash
-cd packages/create-redwood-app
+cd packages/create-redmix-app
 ```
 
-Run `yarn node` on the built file (`dist/create-redwood-app.js`) and pass in the path to the new project:
+Run `yarn node` on the built file (`dist/create-redmix-app.js`) and pass in the path to the new project:
 
 ```bash
-yarn node ./dist/create-redwood-app.js /path/to/new/redwood-app
+yarn node ./dist/create-redmix-app.js /path/to/new/redwood-app
 ```
 
 > [!NOTE]
@@ -103,10 +103,10 @@ By default yarn create will pick the latest stable version to run, but you can s
 To try the canary version, run:
 
 ```
-npx create-redwood-app@canary /path/to/project
+npx create-redmix-app@canary /path/to/project
 ```
 
-Note that this will still create a project with the latest stable version, but run the canary version of create-redwood-app, and is mainly useful for debugging this package, and not the redwood canary release.
+Note that this will still create a project with the latest stable version, but run the canary version of create-redmix-app, and is mainly useful for debugging this package, and not the redwood canary release.
 
 You can specify any tag or version instead of `@canary`
 

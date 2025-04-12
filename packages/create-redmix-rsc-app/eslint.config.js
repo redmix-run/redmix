@@ -107,7 +107,7 @@ export default tseslint.config(
     rules: {
       'n/no-missing-import': [
         'error',
-        { allowModules: ['create-redwood-rsc-app'] },
+        { allowModules: ['create-redmix-rsc-app'] },
       ],
     },
   },

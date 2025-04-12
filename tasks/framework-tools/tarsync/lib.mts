@@ -19,7 +19,7 @@ export const IGNORED = [
   /node_modules/,
 
   /packages\/codemods/,
-  /packages\/create-redwood-app/,
+  /packages\/create-redmix-app/,
 
   /dist/,
 
@@ -97,7 +97,7 @@ export async function getOptions(): Promise<Options> {
 }
 
 export async function buildTarballs() {
-  await $`yarn nx run-many -t build:pack --exclude create-redwood-app`
+  await $`yarn nx run-many -t build:pack --exclude create-redmix-app`
 }
 
 export async function moveTarballs(projectPath: string) {

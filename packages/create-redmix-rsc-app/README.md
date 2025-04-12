@@ -10,7 +10,7 @@ please use our standard RedwoodJS installer.
 ## Usage
 
 ```shell
-npx -y create-redwood-rsc-app <desired-installation-directory>
+npx -y create-redmix-rsc-app <desired-installation-directory>
 ```
 
 ## Publishing

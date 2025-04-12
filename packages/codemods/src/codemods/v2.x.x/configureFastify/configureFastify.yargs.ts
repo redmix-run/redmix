@@ -42,7 +42,7 @@ export const handler = () => {
       setOutput('All done!')
     } else {
       const res = await fetch(
-        'https://raw.githubusercontent.com/redmix-run/redmix/main/packages/create-redwood-app/template/api/server.config.js',
+        'https://raw.githubusercontent.com/redmix-run/redmix/main/packages/create-redmix-app/template/api/server.config.js',
       )
       const text = await res.text()
 

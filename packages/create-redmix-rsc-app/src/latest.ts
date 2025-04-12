@@ -86,7 +86,7 @@ export function relaunchOnLatest(config: Config) {
       console.log(
         'cmd:',
         'npx',
-        ['create-redwood-rsc-app@latest', ...args].join(' '),
+        ['create-redmix-rsc-app@latest', ...args].join(' '),
       )
     }
   }
@@ -109,7 +109,7 @@ export function relaunchOnLatest(config: Config) {
   } else {
     result = spawnSync(
       'npx',
-      ['create-redwood-rsc-app@latest', ...args],
+      ['create-redmix-rsc-app@latest', ...args],
       spawnOpts,
     )
   }
@@ -120,10 +120,10 @@ export function relaunchOnLatest(config: Config) {
 
   if (result.error) {
     console.error(
-      'There was an error launching the latest version of create-redwood-rsc-app.',
+      'There was an error launching the latest version of create-redmix-rsc-app.',
     )
     console.error('Please try running it manually with `@latest')
-    console.error('npx -y create-redwood-rsc-app@latest APP_PATH')
+    console.error('npx -y create-redmix-rsc-app@latest APP_PATH')
 
     throw new ExitCodeError(1, result.error.message)
   }

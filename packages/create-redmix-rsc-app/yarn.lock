@@ -1439,9 +1439,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"create-redwood-rsc-app@workspace:.":
+"create-redmix-rsc-app@workspace:.":
   version: 0.0.0-use.local
-  resolution: "create-redwood-rsc-app@workspace:."
+  resolution: "create-redmix-rsc-app@workspace:."
   dependencies:
     "@eslint-community/eslint-plugin-eslint-comments": "npm:^4.3.0"
     "@eslint/js": "npm:^9.7.0"
@@ -1486,7 +1486,7 @@ __metadata:
     yauzl-promise: "npm:4.0.0"
     zx: "npm:^8.1.4"
   bin:
-    create-redwood-rsc-app: dist/index.js
+    create-redmix-rsc-app: dist/index.js
   languageName: unknown
   linkType: soft
 

@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url'
 import Configstore from 'configstore'
 import { cd, fs, os, path, $ } from 'zx'
 
-const config = new Configstore('create-redwood-app')
+const config = new Configstore('create-redmix-app')
 let projectPath = config.get('projectPath')
 
 const projectExists = projectPath && (await fs.pathExists(projectPath))
@@ -22,7 +22,7 @@ if (!projectExists) {
 }
 
 const packagePath = fileURLToPath(new URL('../', import.meta.url))
-const tarball = 'create-redwood-app.tgz'
+const tarball = 'create-redmix-app.tgz'
 
 await fs.move(
   path.join(packagePath, tarball),

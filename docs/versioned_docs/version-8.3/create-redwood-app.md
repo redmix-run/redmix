@@ -1,5 +1,5 @@
 ---
-slug: create-redwood-app
+slug: create-redmix-app
 description: Instructions and usage examples for Create Redwood App
 ---
 

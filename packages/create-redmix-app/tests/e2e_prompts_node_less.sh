@@ -13,7 +13,7 @@ cd $projectPath
 
 set projectDirectory "redwood-app-prompt-node-less-test"
 
-spawn yarn create-redwood-app --no-yarn-install
+spawn yarn create-redmix-app --no-yarn-install
 
 expect eof
 catch wait result

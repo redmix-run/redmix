@@ -25,7 +25,7 @@ await within(async () => {
   await $`yarn`
 })
 
-await $`yarn pack -o create-redwood-app.tgz`
+await $`yarn pack -o create-redmix-app.tgz`
 
 await $`rm ${path.join(tsTemplatePath, 'yarn.lock')}`
 await $`rm ${path.join(jsTemplatePath, 'yarn.lock')}`

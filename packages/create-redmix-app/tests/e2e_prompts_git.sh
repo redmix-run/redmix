@@ -1,7 +1,5 @@
 #!/usr/bin/expect
 
-# You have to set your Node version to 21+ before running this test.
-
 set projectPath $env(PROJECT_PATH)
 
 if {$projectPath eq ""} {
@@ -11,23 +9,15 @@ if {$projectPath eq ""} {
 
 cd $projectPath
 
-set projectDirectory "redwood-app-prompt-node-greater-test"
+set projectDirectory "redwood-app-prompt-git-test"
 
-spawn yarn create-redwood-app --no-yarn-install
-
-expect "How would you like to proceed?"
-# ❯ Override error and continue install
-send "\n"
+spawn yarn create-redmix-app --no-yarn-install --git
 
 expect "Where would you like to create your Redwood app?"
 send "$projectDirectory\n"
 
 expect "Select your preferred language"
 # ❯ TypeScript
-send "\n"
-
-expect "Do you want to initialize a git repo?"
-# ❯ Yes
 send "\n"
 
 expect "Enter a commit message"
