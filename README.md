@@ -1,99 +1,61 @@
 <p align="center">
-  <img src="https://avatars2.githubusercontent.com/u/45050444?v=4" width="200" />
-  <h1 align="center">Redwood</h1>
+  <img src="https://avatars2.githubusercontent.com/u/197462962?v=4" width="200" />
+  <h1 align="center">Redmix</h1>
 </p>
 
-_by Tom Preston-Werner, Peter Pistorius, Rob Cameron, David Price, and more than
-250 amazing contributors (see end of file for a full list)._
-
-## Bighorn Epoch (current development epoch)
-
-> **NOTE:** This section of the Readme is aspirational for the current development
-> epoch we call Bighorn. Bighorn has not yet been released, but when it is, it will
-> fulfill the promises of what you read below. If you’d like to help us on this
-> journey, please say hi in the [Community Forums](https://redwoodjs.com/community)!
-
-**Redwood is a framework for quickly creating React-based web applications that
-provide an amazing end user experience.** Our goal is to be simple and approachable
-enough for use in prototypes and hackathons, but performant and comprehensive enough
-to evolve into your next startup.
-
-We accomplish this in two primary ways:
-
-1. Redwood is opinionated and full-stack. We’ve chosen the best technologies in the
-   JS/TS ecosystem and beautifully integrated them into a cohesive framework that
-   lets you get things done instead of endlessly evaluating technology options. You
-   can get started using Redwood without a backend, but the framework really shines
-   when you’re building a data driven application. Our transparent data fetching and
-   optional GraphQL API make building and growing your application easier than you
-   expect!
-
-2. Redwood’s declarative data fetching and simple form submission features are built
-   on top of RSC + Server Actions and simplify common use cases so you can focus on
-   your users’ experience. Creating the best, most responsive user interfaces
-   requires reasoning about whether code should execute on the server or the client.
-   Redwood makes it easy to choose the best execution context for your code by
-   leveraging the power of React Server Components.
-
-The entire framework is built with TypeScript, so you get type safety from the router
-to the database and everywhere in-between. If you’d rather build your app with
-JavaScript, you can do that too, and still enjoy great code completion features in
-your favorite editor.
-
-> **TRY BIGHORN:** While Bighorn does not yet have a production release, we do
-> publish the latest code as canaries, and we welcome you to experiment with them!
-> The best way to get familiar with these canaries is to keep an eye on the [Redwood
-> Blog](https://redwoodjs.com/blog).
-
-## Arapahoe Epoch (current stable release)
-
-**Redwood is an opinionated, full-stack, JavaScript/TypeScript web application
-framework designed to keep you moving fast as your app grows from side project to
-startup.**
-
-At the highest level, a Redwood app is a React frontend that talks to a custom
-GraphQL API. The API uses Prisma to operate on a database. Out of the box you get
-tightly integrated testing with Jest, logging with Pino, and a UI component catalog
-with Storybook. Setting up authentication (like Auth0) or CSS frameworks (like
-Tailwind CSS) are a single command line invocation away. And to top it off, Redwood's
-architecture allows you to deploy to either serverless providers (e.g. Netlify,
-Vercel) or traditional server and container providers (e.g. AWS, Render) with nearly
-no code changes between the two!
-
-By making a lot of decisions for you, Redwood lets you get to work on what makes your
-application special, instead of wasting cycles choosing and re-choosing various
-technologies and configurations. Plus, because Redwood is a proper framework, you
-benefit from continued performance and feature upgrades over time and with minimum
-effort.
-
-> **TUTORIAL:** The best way to get to know Redwood is by going through the
-> extensive [Redwood Tutorial](https://redwoodjs.com/docs/tutorial). Have fun!
+> **TUTORIAL:** The best way to get to know Redmix is by going through the
+> extensive [Redmix Tutorial](https://redwoodjs.com/docs/tutorial). Have fun!
 
 > **QUICK START:** You can install and run a full-stack Redwood application on
 > your machine with only a couple commands. Check out the [Quick
 > Start](https://redwoodjs.com/docs/quick-start) guide to get started.
 
 > **DOCS:** Visit the full [RedwoodJS
-> Documentation](https://redwoodjs.com/docs/introduction) for extensive reference
-> docs and guides.
+> Documentation](https://redwoodjs.com/docs/introduction) for extensive
+> reference docs and guides.
 
 ## About
 
-Redwood is the latest open source project initiated by Tom Preston-Werner, cofounder
-of GitHub (most popular code host on the planet), creator of Jekyll (one of the first
-and most popular static site generators), creator of Gravatar (the most popular
-avatar service on the planet), author of the Semantic Versioning specification
-(powers the Node packaging ecosystem), and inventor of TOML (an obvious, minimal
-configuration language used by many projects).
+Redmix is a TypeScript Web App Framework that gives you all the tools you need
+to build web applications quickly and efficiently.
+
+Redmix is a fork of the [RedwoodJS](https://redwoodjs.com/) framework with the
+goal of taking it into the modern era.
+
+Redmix would obviously not be where it is today without the vision and heroic
+efforts of the RedwoodJS founders, maintainers and community.
+
+### The Redmix Team
+
+<table>
+  <tr>
+    <td align="center" valign="top" width="25%"><a href="https://tobbe.dev"><img src="https://avatars0.githubusercontent.com/u/30793?v=4" width="100px;" alt=""/><br /><sub><b>Tobbe Lundberg</b></sub></a></td>
+    <td align="center" valign="top" width="25%"><img src="https://placehold.co/400x400?text=You?" width="100px;" alt="You?"/></td>
+    <td align="center" valign="top" width="25%"><img src="https://placehold.co/400x400?text=You?" width="100px;" alt="You?"/></td>
+    <td align="center" valign="top" width="25%"><img src="https://placehold.co/400x400?text=You?" width="100px;" alt="You?"/></td>
+  </tr>
+</table>
+
+### Sponsors
+
+<table>
+  <tr>
+    <td align="center" valign="center" width="20%"><a href="https://groddapp.com"><img src="https://static.wixstatic.com/media/cc7718_720ec4bbdbe24762812011e69098b9fb~mv2.png/v1/fill/w_100,h_101,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Grodd%20-%20app.png" width="100px;" alt="Grodd"/></a></td>
+    <td align="center" valign="center" width="20%"><a href="https://acm.se"><img src="https://acm.se/images/acm_se-logo.png" width="100px;" alt="ACM"/></a></td>
+    <td align="center" valign="center" width="20%"><a href="https://aerafarms.com"><img src="https://umsousercontent.com/lib_spHIafSFjsByroeG/07huta025gqqnbw0.png?w=100" width="100px;" alt="Aera"/></a></td>
+    <td align="center" valign="center" width="20%"><img src="https://placehold.co/400x400?text=Your\nCompany?" width="100px;" alt=""/></td>
+    <td align="center" valign="center" width="20%"><img src="https://placehold.co/400x400?text=Your\nCompany?" width="100px;" alt=""/></td>
+  </tr>
+</table>
 
 ## Technologies
 
 We are obsessed with developer experience and eliminating as much boilerplate as
 possible. Where existing libraries elegantly solve our problems, we use them;
-where they don't, we write our own solutions. The end result is a JavaScript
+where they don't, we write our own solutions. The end result is a TypeScript
 development experience you can fall in love with!
 
-Here's a quick taste of the technologies a standard Redwood application will
+Here's a quick taste of the technologies a standard Redmix application will
 use:
 
 - [React](https://react.dev/)
@@ -102,82 +64,32 @@ use:
 - [Jest](https://jestjs.io/)
 - [Storybook](https://storybook.js.org/)
 - [Pino](https://getpino.io)
-
-If you'd like to use our optional built-in GraphQL API support, here's our stack:
-
 - [GraphQL](https://graphql.org/)
 - [GraphQL Yoga](https://www.graphql-yoga.com)
 - [Envelop](https://www.envelop.dev)
 - [Apollo Client](https://www.apollographql.com/docs/react)
 
-## Roadmap
-
-A framework like Redwood has a lot of moving parts; the Roadmap is a great way
-to get a high-level overview of where the framework is relative to where we want
-it to be. And since we link to all of our GitHub project boards, it's also a
-great way to get involved! [Roadmap](https://redwoodjs.com/roadmap)
-
-## Why is it called Redwood?
-
-_(A history, by Tom Preston-Werner)_
-
-Where I live in Northern California there is a type of tree called a redwood.
-Redwoods are HUGE, the tallest in the world, some topping out at 115 meters (380
-feet) in height. The eldest of the still-living redwoods sprouted from the
-ground an astonishing 3,200 years ago. To stand among them is transcendent.
-Sometimes, when I need to think or be creative, I will journey to my favorite
-grove of redwoods and walk among these giants, soaking myself in their silent
-grandeur.
-
-In addition, Redwoods have a few properties that I thought would be aspirational
-for my nascent web app framework. Namely:
-
-- **Redwoods are beautiful as saplings, and grow to be majestic.** What if you
-  could feel that way about your web app?
-
-- **Redwood pinecones are dense and surprisingly small.** Can we allow you to
-  get more done with less code?
-
-- **Redwood trees are resistant to fire.** Surprisingly robust to disaster
-  scenarios, just like a great web framework should be!
-
-- **Redwoods appear complex from afar, but simple up close.** Their branching
-  structure provides order and allows for emergent complexity within a simple
-  framework. Can a web framework do the same?
-
-And there you have it.
-
 ## Contributors
 
-_A gigantic "Thank YOU!" to everyone below who has contributed to one or more Redwood projects: [Framework](https://github.com/redwoodjs/redwood), [Website](https://github.com/redwoodjs/sprout), [Docs](https://github.com/redwoodjs/redwood/tree/main/docs), and [Create-Redwood Template](https://github.com/redwoodjs/redwood/tree/main/packages/create-redwood-app/template). 🚀_
+_A gigantic "Thank YOU!" to everyone below who has contributed to one or more Redmix or Redwood projects that Redmix builds on 🚀_
 
-### Core Team: Leadership
+### Redmix
 
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center" valign="top" width="25%"><a href="https://github.com/ahaywood/"><img src="https://avatars0.githubusercontent.com/u/212300?v=4" width="100px;" alt=""/><br /><sub><b>Amy Haywood Dutton</b></sub></a></td>
-    <td align="center" valign="top" width="25%"><a href="https://thedavidprice.com/"><img src="https://avatars0.githubusercontent.com/u/2951?v=4" width="100px;" alt=""/><br /><sub><b>David Price</b></sub></a></td>
-    <td align="center" valign="top" width="25%"><a href="https://github.com/tobbe/"><img src="https://avatars0.githubusercontent.com/u/30793?v=4" width="100px;" alt=""/><br /><sub><b>Tobbe Lundberg</b></sub></a></td>
-    <td align="center" valign="top" width="25%"><a href="https://tom.preston-werner.com/"><img src="https://avatars0.githubusercontent.com/u/1?v=4" width="100px;" alt=""/><br /><sub><b>Tom Preston-Werner</b></sub></a></td>
+    <td align="center" valign="top" width="25%"><a href="https://tobbe.dev"><img src="https://avatars0.githubusercontent.com/u/30793?v=4" width="100px;" alt=""/><br /><sub><b>Tobbe Lundberg</b></sub></a></td>
   </tr>
-</table>
+</table
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
 
-### Core Team: Maintainer and Community Leads
 
-<table>
-  <tr>
-    <td align="center" valign="top" width="20%"><a href="https://github.com/dthyresson"><img src="https://avatars2.githubusercontent.com/u/1051633?v=4" width="100px;" alt=""/><br /><sub><b>David Thyresson</b></sub></a><br /><sub>maintainer</sub></td>
-    <td align="center" valign="top" width="20%"><a href="https://edamame.studio/"><img src="https://avatars0.githubusercontent.com/u/1521877?v=4" width="100px;" alt=""/><br /><sub><b>Daniel Choudhury</b></sub></a><br /><sub>maintainer</sub></td>
-    <td align="center" valign="top" width="20%"><a href="https://github.com/keithtelliott"><img src="https://avatars.githubusercontent.com/u/43206213?v=4" width="100px;" alt=""/><br /><sub><b>Keith T Elliot</b></sub></a><br /><sub>community</sub></td>
-    <td align="center" valign="top" width="20%"><a href="https://github.com/BBurnworth"><img src="https://avatars.githubusercontent.com/u/5750537?v=4" width="100px;" alt=""/><br /><sub><b>Barrett Burnworth</b></sub></a><br /><sub>community</sub></td>
-    <td align="center" valign="top" width="20%"><a href="https://github.com/Josh-Walker-GM"><img src="https://avatars.githubusercontent.com/u/56300765?v=4" width="100px;" alt=""/><br /><sub><b>Josh GM Walker</b></sub></a><br /><sub>maintainer</sub></td>
-</tr>
-</table>
+### RedwoodJS
 
-### Founders
-
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
 <table>
   <tr>
     <td align="center" valign="top" width="25%"><a href="http://tom.preston-werner.com/"><img src="https://avatars0.githubusercontent.com/u/1?v=4" width="100px;" alt=""/><br /><sub><b>Tom Preston-Werner</b></sub></a></td>
@@ -187,7 +99,24 @@ _A gigantic "Thank YOU!" to everyone below who has contributed to one or more Re
   </tr>
 </table>
 
-### Core Team: Alumni
+<table>
+  <tr>
+    <td align="center" valign="top" width="25%"><a href="https://github.com/ahaywood/"><img src="https://avatars0.githubusercontent.com/u/212300?v=4" width="100px;" alt=""/><br /><sub><b>Amy Haywood Dutton</b></sub></a></td>
+    <td align="center" valign="top" width="25%"><a href="https://thedavidprice.com/"><img src="https://avatars0.githubusercontent.com/u/2951?v=4" width="100px;" alt=""/><br /><sub><b>David Price</b></sub></a></td>
+    <td align="center" valign="top" width="25%"><a href="https://github.com/tobbe/"><img src="https://avatars0.githubusercontent.com/u/30793?v=4" width="100px;" alt=""/><br /><sub><b>Tobbe Lundberg</b></sub></a></td>
+    <td align="center" valign="top" width="25%"><a href="https://tom.preston-werner.com/"><img src="https://avatars0.githubusercontent.com/u/1?v=4" width="100px;" alt=""/><br /><sub><b>Tom Preston-Werner</b></sub></a></td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td align="center" valign="top" width="20%"><a href="https://github.com/dthyresson"><img src="https://avatars2.githubusercontent.com/u/1051633?v=4" width="100px;" alt=""/><br /><sub><b>David Thyresson</b></td>
+    <td align="center" valign="top" width="20%"><a href="https://edamame.studio/"><img src="https://avatars0.githubusercontent.com/u/1521877?v=4" width="100px;" alt=""/><br /><sub><b>Daniel Choudhury</b></td>
+    <td align="center" valign="top" width="20%"><a href="https://github.com/keithtelliott"><img src="https://avatars.githubusercontent.com/u/43206213?v=4" width="100px;" alt=""/><br /><sub><b>Keith T Elliot</b></td>
+    <td align="center" valign="top" width="20%"><a href="https://github.com/BBurnworth"><img src="https://avatars.githubusercontent.com/u/5750537?v=4" width="100px;" alt=""/><br /><sub><b>Barrett Burnworth</b></td>
+    <td align="center" valign="top" width="20%"><a href="https://github.com/Josh-Walker-GM"><img src="https://avatars.githubusercontent.com/u/56300765?v=4" width="100px;" alt=""/><br /><sub><b>Josh GM Walker</b></td>
+</tr>
+</table>
 
 <table>
 <tr>
@@ -868,4 +797,4 @@ _A gigantic "Thank YOU!" to everyone below who has contributed to one or more Re
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-Redwood projects _(mostly)_ follow the [all-contributions](https://allcontributors.org/) specification. Contributions of any kind are welcome.
+Redmix projects _(mostly)_ follow the [all-contributions](https://allcontributors.org/) specification. Contributions of any kind are welcome.
