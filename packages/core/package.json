@@ -59,5 +59,8 @@
     "publint": "0.3.11",
     "tsx": "4.19.3"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "gitHead": "3905ed045508b861b495f8d5630d76c7a157d8f1"
 }
