@@ -1,5 +1,6 @@
 import type * as PresetClassic from '@docusaurus/preset-classic'
 import type { Config } from '@docusaurus/types'
+import type { PluginOptions } from '@easyops-cn/docusaurus-search-local'
 
 import autoImportTabs from './src/remark/auto-import-tabs.mjs'
 import fileExtSwitcher from './src/remark/file-ext-switcher.mjs'
@@ -106,6 +107,14 @@ const config: Config = {
       copyright: `Copyright © ${new Date().getFullYear()} Redmix. Built with Docusaurus.`,
     },
   } satisfies PresetClassic.ThemeConfig,
+  themes: [
+    [
+      '@easyops-cn/docusaurus-search-local',
+      {
+        hashed: true,
+      } satisfies PluginOptions,
+    ],
+  ],
   presets: [
     [
       '@docusaurus/preset-classic',
