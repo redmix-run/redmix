@@ -14,34 +14,34 @@ const config: Config = {
     },
   },
   // ?
-  title: 'RedwoodJS Docs',
+  title: 'Redmix Docs',
   // ?
   tagline:
-    'Built on React, GraphQL, and Prisma, Redwood works with the components and development workflow you love, but with simple conventions and helpers to make your experience even better.',
+    'Built on React, GraphQL, and Prisma, Redmix works with the components and development workflow you love, but with simple conventions and helpers to make your experience even better.',
   // ?
-  url: 'https://docs.redwoodjs.com',
-  baseUrl: '/',
+  url: 'https://redmix.run',
+  baseUrl: '/redwood-docs',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'https://redwoodjs.com/favicon.png',
-  organizationName: 'redwoodjs', // Usually your GitHub org/user name.
+  organizationName: 'redmix-run', // Usually your GitHub org/user name.
   // ?
-  projectName: 'redwood', // Usually your repo name.,
+  projectName: 'redmix', // Usually your repo name.,
   themeConfig: {
     algolia: {
-      appId: '37B3LHULK0',
-      apiKey: '1d7f2f299d9a38c157501c301425f090',
-      indexName: 'learn-redwood',
+      appId: '__37B3LHULK0',
+      apiKey: '__1d7f2f299d9a38c157501c301425f090',
+      indexName: 'learn-redmix',
       contextualSearch: true,
       searchParameters: {},
       // externalUrlRegex: 'https://learn-redwood.netlify.app',
     },
     navbar: {
-      title: 'RedwoodJS',
+      title: 'Redmix',
       logo: {
-        alt: 'RedwoodJS pinecone logo',
+        alt: 'Redmix logo',
         src: 'https://d33wubrfki0l68.cloudfront.net/72b0d56596a981835c18946d6c4f8a968b08e694/82254/images/logo.svg',
-        href: 'https://docs.redwoodjs.com/',
+        href: 'https://redmix.run/redwood-docs',
         target: '_self',
       },
       items: [
@@ -93,8 +93,8 @@ const config: Config = {
           title: 'More',
           items: [
             {
-              label: 'redwoodjs.com',
-              to: 'https://redwoodjs.com/',
+              label: 'redmix.run',
+              to: 'https://redmix.run/',
             },
             {
               label: 'GitHub',
@@ -103,7 +103,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} RedwoodJS. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Redmix. Built with Docusaurus.`,
     },
   } satisfies PresetClassic.ThemeConfig,
   presets: [
@@ -131,13 +131,13 @@ const config: Config = {
     ],
   ],
   // ?
-  scripts: [
-    {
-      src: 'https://plausible.io/js/script.outbound-links.tagged-events.js',
-      defer: true,
-      'data-domain': 'docs.redwoodjs.com',
-    },
-  ],
+  // scripts: [
+  //   {
+  //     src: 'https://plausible.io/js/script.outbound-links.tagged-events.js',
+  //     defer: true,
+  //     'data-domain': 'docs.redwoodjs.com',
+  //   },
+  // ],
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap',
     'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;900&display=swap',
