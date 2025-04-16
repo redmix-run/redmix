@@ -15,25 +15,19 @@ for existing RedwoodJS applications.
 Redmix would obviously not be where it is today without the vision and heroic
 efforts of the RedwoodJS founders, maintainers and community.
 
-## Learning Redmix
+## Migrating from RedwoodJS to Redmix
 
-The best documentation for Redmix is actually the RedwoodJS documentation.
-The first version of Redmix will be fully compatible with RedwoodJS v8.6 and
-there will be no specific documentation written for Redmix for now.
+Search and replace all instances of `"@redwoodjs/(.*)": "\d+\.\d+\.\d+"`
+with `"@redmix/$1": "0.0.1"` in all three `package.json` files.
 
-RedwoodJS **TUTORIAL:** The best way to get to know Redmix is by going through
-the extensive [RedwoodJS Tutorial](https://redwoodjs.com/docs/tutorial). Have fun!
+Search and replace all instances of `@redwoodjs` in all files with `@redmix`.
+Pay attention to `yarn.lock`. If anything changed in there you probably have to
+do some manual editing
 
-RedwoodJS **QUICK START:** You can install and run a full-stack Redmix
-application on your machine with only a couple commands. Check out the [Quick
-Start](https://redwoodjs.com/docs/quick-start) guide to get started.
+Redmix doesn't have the equivalent of Redwood Studio yet. So Studio will not
+work for now. Let me know if that's something you use and need.
 
-RedwoodJS **DOCS:** Visit the full [RedwoodJS
-Documentation](https://redwoodjs.com/docs/introduction) for extensive reference
-docs and guides.
-
-The only thing you'll have to adjust are the package names and replace every
-`@redwoodjs` package with a `@redmix` package of the same name.
+Delete all files and folders inside `.redwood/` except `README.md`
 
 ## Roadmap
 
@@ -92,6 +86,26 @@ what you use so I know what to keep and what to remove!
 - [ ] Whatever I need to make it easier to work with the OpenAI API/SDK and
       other AI tools
 - [ ] Your feature request here! Let me know what you need!
+
+## Learning Redmix
+
+The best documentation for Redmix is actually the RedwoodJS documentation.
+The first version of Redmix will be fully compatible with RedwoodJS v8.6 and
+there will be no specific documentation written for Redmix for now.
+
+RedwoodJS **TUTORIAL:** The best way to get to know Redmix is by going through
+the extensive [RedwoodJS Tutorial](https://redwoodjs.com/docs/tutorial). Have fun!
+
+RedwoodJS **QUICK START:** You can install and run a full-stack Redmix
+application on your machine with only a couple commands. Check out the [Quick
+Start](https://redwoodjs.com/docs/quick-start) guide to get started.
+
+RedwoodJS **DOCS:** Visit the full [RedwoodJS
+Documentation](https://redwoodjs.com/docs/introduction) for extensive reference
+docs and guides.
+
+The only thing you'll have to adjust are the package names and replace every
+`@redwoodjs` package with a `@redmix` package of the same name.
 
 ## The Redmix Team
 
