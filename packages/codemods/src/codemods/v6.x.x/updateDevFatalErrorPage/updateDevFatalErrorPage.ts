@@ -15,7 +15,7 @@ export const updateDevFatalErrorPage = async () => {
   const webFatalErrorPagesDir = path.join(rwPaths.web.pages, 'FatalErrorPage')
   const filename = path.join(webFatalErrorPagesDir, 'FatalErrorPage')
   const url =
-    'https://raw.githubusercontent.com/redmix-run/redmix/477454008c34355f2d318505caf97a5bf411177f/packages/create-redmix-app/templates/ts/web/src/pages/FatalErrorPage/FatalErrorPage.tsx'
+    'https://raw.githubusercontent.com/redmix-run/redmix/0acd00946f9ad235320ea9b0b9a380d366e8936f/packages/create-redmix-app/templates/ts/web/src/pages/FatalErrorPage/FatalErrorPage.tsx'
 
   const isTsxPage = fs.existsSync(
     path.join(webFatalErrorPagesDir, 'FatalErrorPage.tsx'),
