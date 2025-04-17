@@ -3,20 +3,27 @@
 import { createRequire } from 'node:module'
 import { pathToFileURL } from 'node:url'
 
-function isErrorWithCode(error: any): error is { code: string } {
-  return error.code !== undefined
+function isErrorWithCode(error: unknown): error is { code: string } {
+  return (
+    !!error &&
+    typeof error === 'object' &&
+    'code' in error &&
+    typeof error.code === 'string'
+  )
 }
 
-const storybookPackageJsonFileUrl = pathToFileURL(
-  require.resolve('storybook-framework-redmix-vite/package.json'),
-)
+const pkgJsonPath = require.resolve('@redmix/web/package.json')
+const storybookPackageJsonFileUrl = pathToFileURL(pkgJsonPath)
 
 // We do not install storybook by default, so we need to check if it is
 // installed before we try to run it.
 try {
   const requireFromStorybook = createRequire(storybookPackageJsonFileUrl)
   const bins = requireFromStorybook('./package.json')['bin']
-  const sbEntryPointUrl = new URL(bins['rwfw'], storybookPackageJsonFileUrl)
+  const sbEntryPointUrl = new URL(
+    bins['storybook'],
+    storybookPackageJsonFileUrl,
+  )
 
   // If this is defined, we're running through yarn and need to change the cwd.
   // See https://yarnpkg.com/advanced/lifecycle-scripts/#environment-variables.
