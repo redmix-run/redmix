@@ -57,7 +57,9 @@ async function main() {
   await $`git commit -am "create-redmix-rsc-app v${packageJson.version}"`
   await $`git tag "create-redmix-rsc-app/v${packageJson.version}"`
   await $`yarn npm publish --otp ${otp}`
-  await $`git push upstream --follow-tags`
+  // TODO: Check if there is an upstream remote, if so, use that
+  // await $`git push upstream --follow-tags`
+  await $`git push --follow-tags`
 }
 
 main().catch((error: unknown) => {
