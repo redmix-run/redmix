@@ -1,6 +1,6 @@
 {
   "name": "@redmix/prerender",
-  "version": "8.0.0",
+  "version": "0.0.1",
   "description": "RedwoodJS prerender",
   "repository": {
     "type": "git",

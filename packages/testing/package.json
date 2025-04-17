@@ -1,7 +1,7 @@
 {
   "name": "@redmix/testing",
-  "version": "8.0.0",
-  "description": "Tools, wrappers and configuration for testing a Redwood project.",
+  "version": "0.0.1",
+  "description": "Tools, wrappers and configuration for testing a Redmix project.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/redmix-run/redmix.git",
