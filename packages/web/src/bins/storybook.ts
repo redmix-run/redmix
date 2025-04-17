@@ -12,7 +12,7 @@ function isErrorWithCode(error: unknown): error is { code: string } {
   )
 }
 
-const pkgJsonPath = require.resolve('@redmix/web/package.json')
+const pkgJsonPath = require.resolve('storybook/package.json')
 const storybookPackageJsonFileUrl = pathToFileURL(pkgJsonPath)
 
 // We do not install storybook by default, so we need to check if it is
