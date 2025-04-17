@@ -6,13 +6,11 @@ import path from 'node:path'
 import type { Options as ExecaOptions, ExecaChildProcess } from 'execa'
 
 import type { TuiTaskList } from './typing.js'
-
-const {
-  getExecaOptions: utilGetExecaOptions,
-  // applyCodemod,
+import {
+  getExecaOptions as utilGetExecaOptions,
   updatePkgJsonScripts,
   exec,
-} = require('./util')
+} from './util.js'
 
 function getExecaOptions(cwd: string): ExecaOptions {
   return { ...utilGetExecaOptions(cwd), stdio: 'pipe' }
@@ -61,8 +59,8 @@ async function applyCodemod(codemod: string, target: string) {
 /**
  * @param cmd The command to run
  */
-function createBuilder(cmd: string) {
-  const execaOptions = getExecaOptions(OUTPUT_PATH)
+function createBuilder(cmd: string, dir = '') {
+  const execaOptions = getExecaOptions(path.join(OUTPUT_PATH, dir))
 
   return function (
     positionalArguments?: string | string[],
@@ -88,7 +86,7 @@ export async function webTasks(
   const execaOptions = getExecaOptions(outputPath)
 
   const createPages = async () => {
-    const createPage = createBuilder('yarn redwood g page')
+    const createPage = createBuilder('yarn redwood g page', 'web')
 
     const tuiTaskList: TuiTaskList = [
       {
@@ -815,7 +813,7 @@ export default DoublePage`
     {
       title: 'Add users service',
       task: async () => {
-        const generateSdl = createBuilder('yarn redwood g sdl --no-crud')
+        const generateSdl = createBuilder('yarn redwood g sdl --no-crud', 'api')
 
         await generateSdl('user')
 
