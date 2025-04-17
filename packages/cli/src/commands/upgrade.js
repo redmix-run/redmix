@@ -49,7 +49,7 @@ export const builder = (yargs) => {
     })
     .epilogue(
       `Also see the ${terminalLink(
-        'Redwood CLI Reference for the upgrade command',
+        'Redmix CLI Reference for the upgrade command',
         'https://redwoodjs.com/docs/cli-commands#upgrade',
       )}.\nAnd the ${terminalLink(
         'GitHub releases page',
@@ -66,12 +66,12 @@ const isValidSemver = (string) => {
   return SEMVER_REGEX.test(string)
 }
 
-const isValidRedwoodJSTag = (tag) => {
+const isValidRedmixTag = (tag) => {
   return ['rc', 'canary', 'latest', 'next', 'experimental'].includes(tag)
 }
 
 export const validateTag = (tag) => {
-  const isTagValid = isValidSemver(tag) || isValidRedwoodJSTag(tag)
+  const isTagValid = isValidSemver(tag) || isValidRedmixTag(tag)
 
   if (!isTagValid) {
     // Stop execution
@@ -102,8 +102,8 @@ export const handler = async ({ dryRun, tag, verbose, dedupe }) => {
         task: async (ctx) => setLatestVersionToContext(ctx, tag),
       },
       {
-        title: 'Updating your Redwood version',
-        task: (ctx) => updateRedwoodDepsForAllSides(ctx, { dryRun, verbose }),
+        title: 'Updating your Redmix version',
+        task: (ctx) => updateRedmixDepsForAllSides(ctx, { dryRun, verbose }),
         enabled: (ctx) => !!ctx.versionToUpgradeTo,
       },
       {
@@ -142,7 +142,7 @@ export const handler = async ({ dryRun, tag, verbose, dedupe }) => {
           const version = ctx.versionToUpgradeTo
           const messageSections = [
             `One more thing...\n\n   ${c.warning(
-              `🎉 Your project has been upgraded to RedwoodJS ${version}!`,
+              `🎉 Your project has been upgraded to Redmix ${version}!`,
             )} \n\n`,
           ]
           // Show links when switching to 'latest' or 'rc', undefined is essentially an alias of 'latest'
@@ -164,7 +164,7 @@ export const handler = async ({ dryRun, tag, verbose, dedupe }) => {
             // Reminder to update the `notifications.versionUpdates` TOML option
             if (
               !getConfig().notifications.versionUpdates.includes(tag) &&
-              isValidRedwoodJSTag(tag)
+              isValidRedmixTag(tag)
             ) {
               additionalMessages.push(
                 `   ❖ You may want to update your redwood.toml config so that \`notifications.versionUpdates\` includes "${tag}"\n`,
@@ -245,7 +245,7 @@ async function setLatestVersionToContext(ctx, tag) {
 }
 
 /**
- * Iterates over Redwood dependencies in package.json files and updates the version.
+ * Iterates over Redmix dependencies in package.json files and updates the version.
  */
 function updatePackageJsonVersion(pkgPath, version, { dryRun, verbose }) {
   const pkg = JSON.parse(
@@ -283,7 +283,7 @@ function updatePackageJsonVersion(pkgPath, version, { dryRun, verbose }) {
   }
 }
 
-function updateRedwoodDepsForAllSides(ctx, options) {
+function updateRedmixDepsForAllSides(ctx, options) {
   if (!ctx.versionToUpgradeTo) {
     throw new Error('Failed to upgrade')
   }
@@ -343,7 +343,7 @@ async function updatePackageVersionsFromTemplate(ctx, { dryRun, verbose }) {
 
           Object.entries(templatePackageJson.dependencies || {}).forEach(
             ([depName, depVersion]) => {
-              // Redwood packages are handled in another task
+              // Redmix packages are handled in another task
               if (!depName.startsWith('@redmix/')) {
                 if (verbose || dryRun) {
                   console.log(
@@ -358,7 +358,7 @@ async function updatePackageVersionsFromTemplate(ctx, { dryRun, verbose }) {
 
           Object.entries(templatePackageJson.devDependencies || {}).forEach(
             ([depName, depVersion]) => {
-              // Redwood packages are handled in another task
+              // Redmix packages are handled in another task
               if (!depName.startsWith('@redmix/')) {
                 if (verbose || dryRun) {
                   console.log(
@@ -493,7 +493,7 @@ const dedupeDeps = async (task, { verbose }) => {
     if (yarnVersion > 1) {
       await execa('yarn', ['dedupe'], baseExecaArgsForDedupe)
     } else {
-      // Redwood projects should not be using yarn 1.x as we specify a version of yarn in the package.json
+      // Redmix projects should not be using yarn 1.x as we specify a version of yarn in the package.json
       // with "packageManager": "yarn@4.6.0" or similar.
       // Although we could (and previous did) automatically run `npx yarn-deduplicate` here, that would require
       // the user to have `npx` installed, which is not guaranteed and we do not wish to enforce that.
