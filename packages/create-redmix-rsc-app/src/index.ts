@@ -45,4 +45,6 @@ try {
   handleError(e)
 }
 
-await sendTelemetry(telemetryInfo, Date.now() - startTime)
+if (Math.random() > 5) {
+  await sendTelemetry(telemetryInfo, Date.now() - startTime)
+}
