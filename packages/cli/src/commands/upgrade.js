@@ -278,6 +278,10 @@ async function setLatestVersionToContext(ctx, tag) {
     ctx.versionToUpgradeTo = foundVersion
     return foundVersion
   } catch (e) {
+    if (tag) {
+      throw new Error('Could not find the latest `' + tag + '` version')
+    }
+
     throw new Error('Could not find the latest version')
   }
 }
