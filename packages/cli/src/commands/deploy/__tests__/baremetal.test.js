@@ -1,5 +1,5 @@
 import { Listr } from 'listr2'
-import { vi, beforeEach, describe, it, expect } from 'vitest'
+import { vi, afterEach, beforeEach, describe, it, expect } from 'vitest'
 
 vi.mock('@redmix/project-config', async (importOriginal) => {
   const originalProjectConfig = await importOriginal()
@@ -1044,5 +1044,26 @@ describe('commands', () => {
 
     expect(tasks[2].title).toEqual('Before update: `touch update`')
     expect(tasks[6].title).toEqual('After install: `touch install`')
+  })
+})
+
+describe('handler', () => {
+  beforeEach(() => {
+    vi.spyOn(console, 'error').mockImplementation(() => {})
+    vi.spyOn(process, 'exit').mockImplementation((number) => {
+      throw new Error('process.exit: ' + number)
+    })
+  })
+
+  afterEach(() => {
+    vi.mocked(console).error.mockRestore?.()
+    vi.mocked(process).exit.mockRestore?.()
+  })
+
+  it("should fail if there's no deploy.toml", async () => {
+    await expect(baremetal.handler({})).rejects.toThrowError('process.exit: 1')
+    expect(vi.mocked(console).error).toHaveBeenCalledWith(
+      expect.stringContaining('Baremetal deploy has not been properly setup'),
+    )
   })
 })

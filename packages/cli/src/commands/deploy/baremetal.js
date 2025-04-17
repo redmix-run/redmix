@@ -13,8 +13,6 @@ import { recordTelemetryAttributes } from '@redmix/cli-helpers'
 import c from '../../lib/colors.js'
 import { getPaths } from '../../lib/index.js'
 
-import { SshExecutor } from './baremetal/SshExecutor.js'
-
 const CONFIG_FILENAME = 'deploy.toml'
 const SYMLINK_FLAGS = '-nsf'
 const CURRENT_RELEASE_SYMLINK_NAME = 'current'
@@ -747,6 +745,8 @@ export const handler = async (yargs) => {
     rollback: yargs.rollback,
     verbose: yargs.verbose,
   })
+
+  const { SshExecutor } = await import('./baremetal/SshExecutor.js')
 
   // Check if baremetal has been setup
   const tomlPath = path.join(getPaths().base, 'deploy.toml')
