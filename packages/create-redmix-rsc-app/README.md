@@ -1,11 +1,11 @@
-# Create Redwood RSC App
+# Create Redmix RSC App
 
-This is the RedwoodJS RSC quick-start installer. It's designed to get you
-started as fast as possible with a new RedwoodJS project with RSC support
+This is the Redmix RSC quick-start installer. It's designed to get you
+started as fast as possible with a new Redmix project with RSC support
 enabled.
 
 It's _very_ opinionated. If you need more control over your project setup,
-please use our standard RedwoodJS installer.
+please use our standard Redmix installer.
 
 ## Usage
 
