@@ -1,6 +1,7 @@
+import { NodeSSH } from 'node-ssh'
+
 export class SshExecutor {
   constructor(verbose) {
-    const { NodeSSH } = require('node-ssh')
     this.ssh = new NodeSSH()
     this.verbose = verbose
   }
