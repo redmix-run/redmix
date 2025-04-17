@@ -3,7 +3,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 
-import type { Options as ExecaOptions, ExecaChildProcess } from 'execa'
+import type { Options as ExecaOptions } from 'execa'
 
 import type { TuiTaskList } from './typing.js'
 import {
@@ -62,9 +62,7 @@ async function applyCodemod(codemod: string, target: string) {
 function createBuilder(cmd: string, dir = '') {
   const execaOptions = getExecaOptions(path.join(OUTPUT_PATH, dir))
 
-  return function (
-    positionalArguments?: string | string[],
-  ): ExecaChildProcess<string> {
+  return function (positionalArguments?: string | string[]) {
     const subprocess = exec(
       cmd,
       Array.isArray(positionalArguments)
@@ -86,6 +84,9 @@ export async function webTasks(
   const execaOptions = getExecaOptions(outputPath)
 
   const createPages = async () => {
+    // Passing 'web' here to test executing 'yarn redwood' in the /web directory
+    // to make sure it works as expected. We do the same for the /api directory
+    // further down in this file.
     const createPage = createBuilder('yarn redwood g page', 'web')
 
     const tuiTaskList: TuiTaskList = [
