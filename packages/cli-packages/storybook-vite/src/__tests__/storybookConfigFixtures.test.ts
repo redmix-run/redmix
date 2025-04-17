@@ -12,14 +12,14 @@ describe('storybook config file fixtures', () => {
 
       import { getPaths, importStatementPath } from '@redmix/project-config'
 
-      const redwoodProjectPaths = getPaths()
+      const redmixProjectPaths = getPaths()
 
       const config: StorybookConfig = {
         framework: 'storybook-framework-redmix-vite',
 
         stories: [
           \`\${importStatementPath(
-            redwoodProjectPaths.web.src
+            redmixProjectPaths.web.src
           )}/**/*.stories.@(js|jsx|ts|tsx|mdx)\`,
         ],
 
