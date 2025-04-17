@@ -33,7 +33,6 @@
     "redwood": "./dist/bins/redwood.js",
     "rw": "./dist/bins/redwood.js",
     "rwfw": "./dist/bins/rwfw.js",
-    "rx": "./dist/bins/redwood.js",
     "tsc": "./dist/bins/tsc.js"
   },
   "files": [
