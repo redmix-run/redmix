@@ -3,7 +3,7 @@ import terminalLink from 'terminal-link'
 import detectRwVersion from '../middleware/detectProjectRwVersion.js'
 
 import * as experimentalInngest from './experimental/setupInngest.js'
-import * as experimentalOpenTelemetry from './experimental/setupOpenTelemetry.js'
+import * as experimentalOpenTelemetry from './experimental/setupOpentelemetry.js'
 import * as experimentalReactCompiler from './experimental/setupReactCompiler.js'
 import * as experimentalRsc from './experimental/setupRsc.js'
 import * as experimentalStreamingSsr from './experimental/setupStreamingSsr.js'
