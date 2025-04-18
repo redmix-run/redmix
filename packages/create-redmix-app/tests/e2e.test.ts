@@ -60,7 +60,7 @@ describe('create-redmix-app', () => {
     expect(p.exitCode).toEqual(0)
     expect(p.stdout).toMatchInlineSnapshot(`
       "------------------------------------------------------------------
-                      🌲⚡️ Welcome to RedwoodJS! ⚡️🌲
+                        🌲⚡️ Welcome to Redmix! ⚡️🌲
       ------------------------------------------------------------------
       [?25l⠋ Checking node and yarn compatibility
       [?25h[?25l✔ Compatibility checks passed
