@@ -11,7 +11,7 @@ vi.mock('@redmix/project-config', async (importOriginal) => {
   }
 })
 
-import * as baremetal from '../baremetal.js'
+import * as baremetal from '../baremetal/baremetalHandler.js'
 
 describe('verifyConfig', () => {
   it('throws an error if no environment specified', () => {
