@@ -1,6 +1,6 @@
 {
   "name": "create-redmix-rsc-app",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Quickstart for a Redmix React Server Components App",
   "repository": {
     "type": "git",
