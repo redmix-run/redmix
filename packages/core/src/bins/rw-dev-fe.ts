@@ -2,10 +2,10 @@
 import { createRequire } from 'node:module'
 
 const require = createRequire(import.meta.url)
-const requireFromRwVite = createRequire(
-  require.resolve('@redmix/vite/package.json'),
-)
+const pkgPath = require.resolve('@redmix/vite/package.json')
+const vitePackageJsonFileUrl = pathToFileURL(pkgPath)
+const requireFromRxVite = createRequire(vitePackageJsonFileUrl)
+const bins = requireFromRxVite('./package.json')['bin']
+const viteEntryPointUrl = new URL(bins['rw-dev-fe'], vitePackageJsonFileUrl)
 
-const bins = requireFromRwVite('./package.json')['bin']
-
-requireFromRwVite(bins['rw-dev-fe'])
+import(viteEntryPointUrl.toString())
