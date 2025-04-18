@@ -30,7 +30,7 @@ describe('studioHandler', () => {
       throw new Error(`process.exit(${code})`)
     })
 
-    vi.spyOn(console, 'error').mockImplementation()
+    vi.spyOn(console, 'error').mockImplementation(() => {})
 
     afterEach(() => {
       vi.clearAllMocks()
