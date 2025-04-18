@@ -20,13 +20,15 @@ import {
   addFunctionToRollback,
 } from '../../../lib/rollback.js'
 import {
-  createYargsForComponentGeneration,
   pathName,
-  templateForComponentFile,
   mapRouteParamTypeToTsType,
   removeGeneratorName,
   validateName,
 } from '../helpers.js'
+import {
+  createYargsForComponentGeneration,
+  templateForComponentFile,
+} from '../yargsHandlerHelpers.js'
 
 const COMPONENT_SUFFIX = 'Page'
 const REDWOOD_WEB_PATH_NAME = 'pages'

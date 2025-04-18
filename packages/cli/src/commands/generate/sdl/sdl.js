@@ -28,9 +28,10 @@ import {
   getEnum,
   verifyModelName,
 } from '../../../lib/schemaHelpers.js'
-import { yargsDefaults } from '../helpers.js'
-import { customOrDefaultTemplatePath, relationsForModel } from '../helpers.js'
+import { relationsForModel } from '../helpers.js'
 import { files as serviceFiles } from '../service/service.js'
+import { yargsDefaults } from '../yargsCommandHelpers.js'
+import { customOrDefaultTemplatePath } from '../yargsHandlerHelpers.js'
 
 const DEFAULT_IGNORE_FIELDS_FOR_INPUT = ['createdAt', 'updatedAt']
 

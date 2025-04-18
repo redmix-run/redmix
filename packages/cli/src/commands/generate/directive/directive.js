@@ -18,12 +18,12 @@ import {
   prepareForRollback,
   addFunctionToRollback,
 } from '../../../lib/rollback.js'
-import { yargsDefaults } from '../helpers.js'
+import { validateName } from '../helpers.js'
+import { yargsDefaults } from '../yargsCommandHelpers.js'
 import {
   createYargsForComponentGeneration,
   templateForComponentFile,
-  validateName,
-} from '../helpers.js'
+} from '../yargsHandlerHelpers.js'
 
 export const files = async ({ name, typescript = false, type, tests }) => {
   if (tests === undefined) {

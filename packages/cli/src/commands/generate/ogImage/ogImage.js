@@ -18,7 +18,7 @@ import {
 } from '../../../lib/index.js'
 import { isTypeScriptProject } from '../../../lib/project.js'
 import { prepareForRollback } from '../../../lib/rollback.js'
-import { customOrDefaultTemplatePath } from '../helpers.js'
+import { customOrDefaultTemplatePath } from '../yargsHandlerHelpers.js'
 
 export const files = async ({ pagePath, typescript = false }) => {
   const extension = typescript ? '.tsx' : '.jsx'

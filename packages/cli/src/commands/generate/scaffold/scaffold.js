@@ -32,9 +32,7 @@ import {
 } from '../../../lib/rollback.js'
 import { pluralize, singularize } from '../../../lib/rwPluralize.js'
 import { getSchema, verifyModelName } from '../../../lib/schemaHelpers.js'
-import { yargsDefaults } from '../helpers.js'
 import {
-  customOrDefaultTemplatePath,
   relationsForModel,
   intForeignKeysForModel,
   mapPrismaScalarToPagePropTsType,
@@ -44,6 +42,8 @@ import {
   files as serviceFiles,
   builder as serviceBuilder,
 } from '../service/service.js'
+import { yargsDefaults } from '../yargsCommandHelpers.js'
+import { customOrDefaultTemplatePath } from '../yargsHandlerHelpers.js'
 
 // Any assets that should not trigger an overwrite error and require a --force
 const SKIPPABLE_ASSETS = ['scaffold.css']
