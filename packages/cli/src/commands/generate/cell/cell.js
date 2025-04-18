@@ -2,6 +2,7 @@ import {
   createCommand,
   createDescription,
   createBuilder,
+  yargsDefaults,
 } from '../yargsCommandHelpers.js'
 
 export const command = createCommand('cell')
@@ -9,6 +10,7 @@ export const description = createDescription('cell')
 export const builder = createBuilder({
   componentName: 'cell',
   optionsObj: {
+    ...yargsDefaults,
     list: {
       alias: 'l',
       default: false,

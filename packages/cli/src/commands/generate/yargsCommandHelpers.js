@@ -43,7 +43,7 @@ export function createDescription(componentName) {
 
 export function createBuilder({
   componentName,
-  optionsObj = {},
+  optionsObj = yargsDefaults,
   positionalsObj = {},
 }) {
   return (yargs) => {
