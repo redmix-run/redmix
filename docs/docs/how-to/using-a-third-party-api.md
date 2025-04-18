@@ -79,7 +79,7 @@ If it's still not ready let's start working on the app and hopefully it will be 
 We'll start our app the way we start all Redwood apps:
 
 ```bash
-yarn create redwood-app weatherstation
+yarn create redmix-app weatherstation
 cd weatherstation
 yarn rw dev
 ```

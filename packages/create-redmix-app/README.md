@@ -27,7 +27,7 @@ Want great developer experience and easy scaling? How about an integrated front-
 Redwood requires Node.js =20.x.
 
 ```bash
-yarn create redwood-app my-redwood-app
+yarn create redmix-app my-redwood-app
 cd my-redwood-app
 yarn install
 yarn redwood dev

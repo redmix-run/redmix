@@ -3,7 +3,7 @@
 This action creates a RW project with Streaming SSR and RSC support set up.
 It's used for RSC smoke tests.
 
-It runs `yarn create redwood-app -y ...` to set the project, and then upgrades
+It runs `yarn create redmix-app -y ...` to set the project, and then upgrades
 it to the latest canary release of Redwood. After that it runs
 `experimental setup-streaming-ssr` and `experimental setup-rsc` followed by
 a build of the rw app. Finally it runs `project:copy` to get the latest

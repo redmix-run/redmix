@@ -42,7 +42,7 @@ The `..` operator indicates that the argument accepts an array of values. See [V
 Create a Redwood project using the yarn create command:
 
 ```
-yarn create redwood-app <project directory> [option]
+yarn create redmix-app <project directory> [option]
 ```
 
 | Arguments & Options    | Description                                                                                                                                               |
@@ -58,7 +58,7 @@ yarn create redwood-app <project directory> [option]
 If you run into trouble during the yarn install step, which may happen if you're developing on an external drive and in other miscellaneous scenarios, try the `--yarn1` flag:
 
 ```
-yarn create redwood-app my-redwood-project --yarn1
+yarn create redmix-app my-redwood-project --yarn1
 ```
 
 ## build

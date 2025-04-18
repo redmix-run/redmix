@@ -56,7 +56,7 @@ Diving into Git and the GitHub workflow can feel intimidating if you haven’t e
 
 #### Redwood “Project”
 
-We refer to the codebase of a Redwood application as a Project. This is what you install when you run `yarn create redwood-app <path-to-directory>`. It’s the thing you are building with Redwood.
+We refer to the codebase of a Redwood application as a Project. This is what you install when you run `yarn create redmix-app <path-to-directory>`. It’s the thing you are building with Redmix.
 
 Lastly, you’ll find the template used to create a new project (when you run create redwood-app) here in GitHub: [redmix-run/redmix/packages/create-redmix-app/template/](https://github.com/redmix-run/redmix/tree/main/packages/create-redmix-app/template)
 
@@ -134,9 +134,9 @@ With those details out of the way, now is the time to choose an option below tha
 yarn babel-node packages/create-redmix-app/src/create-redmix-app.js <path/to/project>
 ```
 
-3. **Clone the Redwood Tutorial App repo:** This is the codebase to use when starting the Redwood Tutorial Part 2. It is updated to the latest version and has the Blog features. This is often something we use for local development. Note: be sure to upgrade to canary and look out for breaking changes coming with the next release.
+3. **Clone the Redmix Tutorial App repo:** This is the codebase to use when starting the Redwood Tutorial Part 2. It is updated to the latest version and has the Blog features. This is often something we use for local development. Note: be sure to upgrade to canary and look out for breaking changes coming with the next release.
 
-4. **Install a fresh project**: `yarn create redwood-app <path/to/project>` If you just need a fresh installation 1) using the latest version template codebase and 2) without any features, then just install a new Redwood project. Note: this can have the same issues regarding the need to upgrade to canary and addressing breaking changes (see Notes from items 2 and 3 above).
+4. **Install a fresh project**: `yarn create redmix-app <path/to/project>` If you just need a fresh installation 1) using the latest version template codebase and 2) without any features, then just install a new Redwood project. Note: this can have the same issues regarding the need to upgrade to canary and addressing breaking changes (see Notes from items 2 and 3 above).
 
 > Note: All the options above currently set the language to JavaScript. If you would like to work with TypeScript, you can add the option `--typescript` to either of the commands that run the create-redmix-app installation.
 

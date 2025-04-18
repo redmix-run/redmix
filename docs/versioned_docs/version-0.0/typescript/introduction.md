@@ -9,10 +9,10 @@ Redwood comes with full TypeScript support, and you don't have to give up any of
 
 ### Starting a Redwood Project in TypeScript
 
-You can use the `--typescript` option on `yarn create redwood-app` to use TypeScript from the start:
+You can use the `--typescript` option on `yarn create redmix-app` to use TypeScript from the start:
 
 ```shell
-yarn create redwood-app my-redwood-app --typescript
+yarn create redmix-app my-redwood-app --typescript
 ```
 
 ### Converting a JavaScript Project to TypeScript
