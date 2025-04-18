@@ -4,11 +4,12 @@ import terminalLink from 'terminal-link'
 import { transformTSToJS } from '../../../lib/index.js'
 import { pluralize, singularize } from '../../../lib/rwPluralize.js'
 import { getSchema, verifyModelName } from '../../../lib/schemaHelpers.js'
-import { yargsDefaults, relationsForModel } from '../helpers.js'
+import { relationsForModel } from '../helpers.js'
+import { yargsDefaults } from '../yargsCommandHelpers.js'
 import {
   createYargsForComponentGeneration,
   templateForComponentFile,
-} from '../helpers.js'
+} from '../yargsHandlerHelpers.js'
 
 const DEFAULT_SCENARIO_NAMES = ['one', 'two']
 

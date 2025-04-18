@@ -1,10 +1,10 @@
 import { transformTSToJS } from '../../../lib/index.js'
-import { yargsDefaults } from '../helpers.js'
+import { removeGeneratorName } from '../helpers.js'
+import { yargsDefaults } from '../yargsCommandHelpers.js'
 import {
   templateForComponentFile,
   createYargsForComponentGeneration,
-  removeGeneratorName,
-} from '../helpers.js'
+} from '../yargsHandlerHelpers.js'
 
 const COMPONENT_SUFFIX = 'Layout'
 const REDWOOD_WEB_PATH_NAME = 'layouts'
