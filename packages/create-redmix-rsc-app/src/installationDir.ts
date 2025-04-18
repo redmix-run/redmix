@@ -9,7 +9,7 @@ import { ExitCodeError } from './error.js'
 export async function setInstallationDir(config: Config) {
   if (!config.installationDir) {
     console.log()
-    console.log('Where do you want to install the RedwoodJS RSC project?')
+    console.log('Where do you want to install the Redmix RSC project?')
     config.installationDir = await promptForInstallationDir()
   } else if (fs.existsSync(config.installationDir)) {
     console.log()

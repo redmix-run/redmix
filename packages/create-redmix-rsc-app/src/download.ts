@@ -6,13 +6,13 @@ import fetch from 'node-fetch'
 import type { Config } from './config.js'
 
 export async function downloadTemplate(config: Config) {
-  console.log('📥 Downloading RedwoodJS RSC template')
+  console.log('📥 Downloading Redmix RSC template')
 
   const url = 'https://github.com/redmix-run/redmix/archive/refs/heads/main.zip'
 
   const tmpDir = path.join(
     os.tmpdir(),
-    'rw-rsc-app',
+    'rx-rsc-app',
     // ":" is problematic with paths
     new Date().toISOString().split(':').join('-'),
   )

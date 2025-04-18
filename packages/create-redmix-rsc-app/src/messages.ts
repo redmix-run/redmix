@@ -2,7 +2,7 @@ import chalk from 'chalk'
 
 import type { Config } from './config.js'
 
-import { getCrwrscaVersion } from './version.js'
+import { getCrxrscaVersion } from './version.js'
 
 export function printWelcome() {
   console.log()
@@ -10,8 +10,8 @@ export function printWelcome() {
     chalk
       .hex('bf4722')
       .bold(
-        '🌲 Welcome to the RedwoodJS RSC quick-start installer ' +
-          `v${getCrwrscaVersion()} 🌲`,
+        '🌲 Welcome to the Redmix RSC quick-start installer ' +
+          `v${getCrxrscaVersion()} 🌲`,
       ),
   )
   console.log()
@@ -20,7 +20,7 @@ export function printWelcome() {
   )
   console.log(
     'If you need a more customized setup, please use the official installer ' +
-      'by running `yarn create redwood-app`',
+      'by running `yarn create redmix-app`',
   )
   console.log()
 }

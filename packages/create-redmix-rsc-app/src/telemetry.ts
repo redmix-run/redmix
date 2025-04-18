@@ -26,7 +26,7 @@ function buildPayload(
   telemetryInfo: TelemetryInfo,
   duration: number,
 ): TelemetryPayload {
-  const command = ['create', 'redwood-rsc-app']
+  const command = ['create', 'redmix-rsc-app']
   if (process.argv.includes('--no-check-latest')) {
     command.push('--no-check-latest')
   }
