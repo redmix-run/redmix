@@ -692,8 +692,8 @@ async function createRedwoodApp() {
   tui.drawText(
     [
       `${RedwoodStyling.redwood('-'.repeat(66))}`,
-      `${' '.repeat(16)}🌲⚡️ ${RedwoodStyling.header(
-        'Welcome to RedwoodJS!',
+      `${' '.repeat(18)}🌲⚡️ ${RedwoodStyling.header(
+        'Welcome to Redmix!',
       )} ⚡️🌲`,
       `${RedwoodStyling.redwood('-'.repeat(66))}`,
     ].join('\n'),
