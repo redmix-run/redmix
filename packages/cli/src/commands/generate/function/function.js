@@ -14,8 +14,9 @@ import {
   writeFilesTask,
 } from '../../../lib/index.js'
 import { prepareForRollback } from '../../../lib/rollback.js'
-import { yargsDefaults } from '../helpers.js'
-import { validateName, templateForComponentFile } from '../helpers.js'
+import { validateName } from '../helpers.js'
+import { yargsDefaults } from '../yargsCommandHelpers.js'
+import { templateForComponentFile } from '../yargsHandlerHelpers.js'
 
 export const files = async ({
   name,

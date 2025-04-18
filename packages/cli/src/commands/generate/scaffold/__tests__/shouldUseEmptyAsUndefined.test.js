@@ -8,7 +8,7 @@ import { vi, describe, beforeAll, test, expect } from 'vitest'
 import '../../../../lib/test'
 
 import { getDefaultArgs } from '../../../../lib/index.js'
-import { yargsDefaults as defaults } from '../../helpers.js'
+import { yargsDefaults as defaults } from '../../yargsCommandHelpers.js'
 import * as scaffold from '../scaffold.js'
 
 vi.mock('fs', async () => ({ default: (await import('memfs')).fs }))

@@ -1,8 +1,8 @@
 import { transformTSToJS } from '../../../lib/index.js'
 import {
-  templateForComponentFile,
   createYargsForComponentGeneration,
-} from '../helpers.js'
+  templateForComponentFile,
+} from '../yargsHandlerHelpers.js'
 
 const REDWOOD_WEB_PATH_NAME = 'components'
 

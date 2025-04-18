@@ -10,7 +10,8 @@ import { recordTelemetryAttributes } from '@redmix/cli-helpers'
 import c from '../../../lib/colors.js'
 import { getPaths, writeFilesTask } from '../../../lib/index.js'
 import { prepareForRollback } from '../../../lib/rollback.js'
-import { validateName, yargsDefaults } from '../helpers.js'
+import { validateName } from '../helpers.js'
+import { yargsDefaults } from '../yargsCommandHelpers.js'
 
 const POST_RUN_INSTRUCTIONS = `Next steps...\n\n   ${c.warning(
   'After writing your migration, you can run it with:',

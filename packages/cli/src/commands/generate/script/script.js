@@ -14,7 +14,8 @@ import {
   transformTSToJS,
 } from '../../../lib/index.js'
 import { prepareForRollback } from '../../../lib/rollback.js'
-import { validateName, yargsDefaults } from '../helpers.js'
+import { validateName } from '../helpers.js'
+import { yargsDefaults } from '../yargsCommandHelpers.js'
 
 const TEMPLATE_PATH = path.resolve(__dirname, 'templates', 'script.ts.template')
 const TSCONFIG_TEMPLATE = path.resolve(

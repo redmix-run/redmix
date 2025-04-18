@@ -20,8 +20,8 @@ import {
   writeFilesTask,
 } from '../../../lib/index.js'
 import { prepareForRollback } from '../../../lib/rollback.js'
-import { yargsDefaults } from '../helpers.js'
-import { templateForComponentFile } from '../helpers.js'
+import { yargsDefaults } from '../yargsCommandHelpers.js'
+import { templateForComponentFile } from '../yargsHandlerHelpers.js'
 
 const ROUTES = [
   `<Route path="/login" page={LoginPage} name="login" />`,

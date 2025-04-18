@@ -17,8 +17,9 @@ import {
 } from '../../../lib/index.js'
 import { isTypeScriptProject } from '../../../lib/project.js'
 import { prepareForRollback } from '../../../lib/rollback.js'
-import { yargsDefaults } from '../helpers.js'
-import { validateName, templateForComponentFile } from '../helpers.js'
+import { validateName } from '../helpers.js'
+import { yargsDefaults } from '../yargsCommandHelpers.js'
+import { templateForComponentFile } from '../yargsHandlerHelpers.js'
 
 // Try to make the name end up looking like: `WelcomeNotice` even if the user
 // called it `welcome-notice` or `welcomeNoticeJob` or something like that
