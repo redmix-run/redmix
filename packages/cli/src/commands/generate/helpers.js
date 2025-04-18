@@ -9,8 +9,6 @@
 import { paramCase } from 'change-case'
 import pascalcase from 'pascalcase'
 
-import { isTypeScriptProject } from '@redmix/cli-helpers'
-
 import { pluralize, isPlural, isSingular } from '../../lib/rwPluralize.js'
 
 /**
