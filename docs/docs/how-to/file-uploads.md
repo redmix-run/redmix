@@ -23,7 +23,7 @@ Let's create a very simple DAM (Digital Asset Manager) that lets users upload an
 Create a new Redwood app:
 
 ```bash
-yarn create redwood-app uploader
+yarn create redmix-app uploader
 cd uploader
 ```
 

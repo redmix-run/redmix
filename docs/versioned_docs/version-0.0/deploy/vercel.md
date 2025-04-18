@@ -10,7 +10,7 @@ description: Deploy serverless in an instant with Vercel
 
 If you simply want to experience the Vercel deployment process without a database and/or adding custom code, you can do the following:
 
-1. create a new redwood project: `yarn create redwood-app ./vercel-deploy`
+1. create a new redwood project: `yarn create redmix-app ./vercel-deploy`
 2. after your "vercel-deploy" project installation is complete, init git, commit, and add it as a new repo to GitHub, BitBucket, or GitLab
 3. run the command `yarn rw setup deploy vercel` and commit and push changes
 4. use the Vercel [Quick Start](https://vercel.com/#get-started) to deploy

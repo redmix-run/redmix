@@ -26,7 +26,7 @@ Let's get started!
 In our terminal, we create a new RedwoodJS project:
 
 ```bash
-yarn create redwood-app my-project --ts
+yarn create redmix-app my-project --ts
 ```
 
 > **Note:** If you already have a RedwoodJS project, you can skip this step and continue with the next section.

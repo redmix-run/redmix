@@ -9,7 +9,7 @@ The emails will be sent using the npm package [nodemailer](https://www.npmjs.com
 The first thing to do is to create a new RedwoodJS project.
 
 ```zsh
-yarn create redwood-app --typescript email
+yarn create redmix-app --typescript email
 ```
 
 When that's done, go into the `email` directory and install the `nodemailer` package.

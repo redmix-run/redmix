@@ -33,7 +33,7 @@ If you already have a project, you can skip to [4. Set up GitHub Actions](#4-set
 Start by creating a Redwood app and `cd`ing into it:
 
 ```sh
-yarn create redwood-app rw-testing-gh-actions
+yarn create redmix-app rw-testing-gh-actions
 cd rw-testing-gh-actions
 ```
 

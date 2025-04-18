@@ -26,7 +26,7 @@ async function main() {
     if (projectProvided) {
       cd(CRWA_DIR)
     } else {
-      await $`yarn create redwood-app ${CRWA_DIR} -y`
+      await $`yarn create redmix-app ${CRWA_DIR} -y`
       cd(CRWA_DIR)
       await $`yarn`
     }
