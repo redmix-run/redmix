@@ -105,7 +105,7 @@ export const validateName = (name) => {
 
 export function createHandler({
   componentName,
-  preTasksFn,
+  preTasksFn = (options) => options,
   filesFn,
   includeAdditionalTasks,
 }) {
