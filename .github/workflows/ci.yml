@@ -257,6 +257,16 @@ jobs:
           yarn rw prerender --verbose
         working-directory: ${{ steps.set-up-test-project.outputs.test-project-path }}
 
+      - name: Run `rw web test`
+        run: |
+          yarn rw web test --no-watch
+        working-directory: ${{ steps.set-up-test-project.outputs.test-project-path }}
+
+      - name: Run `rw api test`
+        run: |
+          yarn rw api test --no-watch
+        working-directory: ${{ steps.set-up-test-project.outputs.test-project-path }}
+
       - name: 🖥️ Run serve smoke tests
         working-directory: tasks/smoke-tests/serve
         run: npx playwright test
