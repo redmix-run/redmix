@@ -2,16 +2,15 @@ const foo = `class Bar {}
 
 class Foo {
   // Without the correct babel plugins this will throw an error
-  private b = new Bar()
-
-  bar() {
-    return this.b
-  }
+  public bar = new Bar()
 }
 
-export const ClassWithPrivate = () => {
-  return <p>{new Foo().bar().toString()}</p>
-}`
+const ClassWithClassField = () => {
+  return <p>{new Foo().bar.toString()}</p>
+}
+
+export default ClassWithClassField
+`
 
 export default () => {
   return foo
