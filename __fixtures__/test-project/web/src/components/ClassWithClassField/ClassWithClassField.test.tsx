@@ -1,14 +1,14 @@
 import { render } from '@redmix/testing/web'
 
-import ClassWithPrivate from './ClassWithPrivate'
+import ClassWithClassField from './ClassWithClassField'
 
 //   Improve this test with help from the Redwood Testing Doc:
 //    https://redwoodjs.com/docs/testing#testing-components
 
-describe('ClassWithPrivate', () => {
+describe('ClassWithClassField', () => {
   it('renders successfully', () => {
     expect(() => {
-      render(<ClassWithPrivate />)
+      render(<ClassWithClassField />)
     }).not.toThrow()
   })
 })

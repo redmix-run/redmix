@@ -12,15 +12,15 @@
 
 import type { Meta, StoryObj } from '@storybook/react'
 
-import ClassWithPrivate from './ClassWithPrivate'
+import ClassWithClassField from './ClassWithClassField'
 
-const meta: Meta<typeof ClassWithPrivate> = {
-  component: ClassWithPrivate,
+const meta: Meta<typeof ClassWithClassField> = {
+  component: ClassWithClassField,
   tags: ['autodocs'],
 }
 
 export default meta
 
-type Story = StoryObj<typeof ClassWithPrivate>
+type Story = StoryObj<typeof ClassWithClassField>
 
 export const Primary: Story = {}

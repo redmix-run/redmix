@@ -253,11 +253,11 @@ export async function webTasks(
       fullPath('web/src/components/Author/Author.test'),
     )
 
-    await createComponent('classWithPrivate')
+    await createComponent('classWithClassField')
 
     await applyCodemod(
-      'classWithPrivate.ts',
-      fullPath('web/src/components/ClassWithPrivate/ClassWithPrivate'),
+      'classWithClassField.ts',
+      fullPath('web/src/components/ClassWithClassField/ClassWithClassField'),
     )
   }
 
