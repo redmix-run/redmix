@@ -5,6 +5,8 @@ class Foo {
   public bar = new Bar()
 }
 
-export const ClassWithClassField = () => {
+const ClassWithClassField = () => {
   return <p>{new Foo().bar.toString()}</p>
 }
+
+export default ClassWithClassField
