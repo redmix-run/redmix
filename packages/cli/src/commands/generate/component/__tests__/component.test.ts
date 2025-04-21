@@ -61,9 +61,9 @@ test('returns exactly 3 files', () => {
 })
 
 test('keeps Component in name', async () => {
-  const isPromiseLike = <T>(element: unknown): element is Promise<T> => {
-    if (!!element && typeof element === 'object') {
-      if ('then' in element) {
+  const isPromiseLike = <T>(obj: unknown): obj is Promise<T> => {
+    if (!!obj && typeof obj === 'object') {
+      if ('then' in obj) {
         return true
       }
     }
