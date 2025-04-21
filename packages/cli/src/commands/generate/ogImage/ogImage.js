@@ -1,12 +1,11 @@
 import terminalLink from 'terminal-link'
 
 import { isTypeScriptProject } from '../../../lib/project.js'
+import { createHandler } from '../yargsCommandHelpers.js'
 
 export const description = 'Generate an og:image component'
-
 export const command = 'og-image <path>'
 export const aliases = ['ogImage', 'ogimage']
-
 export const builder = (yargs) => {
   yargs
     .positional('path', {
@@ -42,9 +41,4 @@ export const builder = (yargs) => {
       default: true,
     })
 }
-
-export async function handler(argv) {
-  const { handler: importedHandler } = await import('./ogImageHandler.js')
-
-  return importedHandler(argv)
-}
+export const handler = createHandler('ogImage')

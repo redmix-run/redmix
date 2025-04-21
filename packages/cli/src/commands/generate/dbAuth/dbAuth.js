@@ -1,6 +1,6 @@
 import terminalLink from 'terminal-link'
 
-import { yargsDefaults } from '../yargsCommandHelpers.js'
+import { yargsDefaults, createHandler } from '../yargsCommandHelpers.js'
 
 export const command = 'dbAuth'
 export const description =
@@ -60,9 +60,4 @@ export const builder = (yargs) => {
     yargs.option(option, config)
   })
 }
-
-export async function handler(argv) {
-  const { handler: dbAuthHandler } = await import('./dbAuthHandler.js')
-
-  return dbAuthHandler(argv)
-}
+export const handler = createHandler('dbAuth')
