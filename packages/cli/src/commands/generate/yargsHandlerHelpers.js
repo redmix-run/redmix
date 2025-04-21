@@ -107,7 +107,7 @@ export function createHandler({
   componentName,
   preTasksFn = (argv) => argv,
   filesFn,
-  includeAdditionalTasks,
+  includeAdditionalTasks = () => [],
 }) {
   return async (argv) => {
     recordTelemetryAttributes({
