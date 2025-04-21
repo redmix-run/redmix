@@ -66,4 +66,7 @@ export const files = async ({ name, typescript = false, ...options }) => {
   }, Promise.resolve({}))
 }
 
-export const handler = createHandler('layout')
+export const handler = createHandler({
+  componentName: 'layout',
+  filesFn: files,
+})
