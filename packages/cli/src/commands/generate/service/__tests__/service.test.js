@@ -9,6 +9,7 @@ import '../../../../lib/test'
 
 import { getDefaultArgs } from '../../../../lib/index.js'
 import * as service from '../service.js'
+import * as serviceHandler from '../serviceHandler.js'
 
 beforeAll(() => {
   vi.useFakeTimers()
@@ -24,7 +25,7 @@ const extensionForBaseArgs = (baseArgs) =>
 
 const itReturnsExactly3Files = (baseArgs) => {
   test('returns exactly 3 files', async () => {
-    const files = await service.files({
+    const files = await serviceHandler.files({
       ...baseArgs,
       name: 'User',
     })
@@ -34,7 +35,7 @@ const itReturnsExactly3Files = (baseArgs) => {
 }
 const itCreatesASingleWordServiceFile = (baseArgs) => {
   test('creates a single word service file', async () => {
-    const files = await service.files({
+    const files = await serviceHandler.files({
       ...baseArgs,
       name: 'User',
     })
@@ -51,7 +52,7 @@ const itCreatesASingleWordServiceFile = (baseArgs) => {
 }
 const itCreatesASingleWordServiceTestFile = (baseArgs) => {
   test('creates a single word service test file', async () => {
-    const files = await service.files({
+    const files = await serviceHandler.files({
       ...baseArgs,
       name: 'User',
     })
@@ -69,7 +70,7 @@ const itCreatesASingleWordServiceTestFile = (baseArgs) => {
 
 const itCreatesASingleWordServiceScenarioFile = (baseArgs) => {
   test('creates a single word service scenario file', async () => {
-    const files = await service.files({
+    const files = await serviceHandler.files({
       ...baseArgs,
       name: 'User',
     })
@@ -85,7 +86,7 @@ const itCreatesASingleWordServiceScenarioFile = (baseArgs) => {
 
 const itCreatesAMultiWordServiceFile = (baseArgs) => {
   test('creates a multi word service file', async () => {
-    const files = await service.files({
+    const files = await serviceHandler.files({
       ...baseArgs,
       name: 'UserProfile',
       crud: false,
@@ -104,7 +105,7 @@ const itCreatesAMultiWordServiceFile = (baseArgs) => {
 
 const itCreatesAMultiWordServiceTestFile = (baseArgs) => {
   test('creates a multi word service test file', async () => {
-    const files = await service.files({
+    const files = await serviceHandler.files({
       ...baseArgs,
       name: 'UserProfile',
       crud: false,
@@ -123,7 +124,7 @@ const itCreatesAMultiWordServiceTestFile = (baseArgs) => {
 
 const itCreatesASingleWordServiceFileWithCRUDActions = (baseArgs) => {
   test('creates a single word service file with CRUD actions', async () => {
-    const files = await service.files({
+    const files = await serviceHandler.files({
       ...baseArgs,
       name: 'Post',
       crud: true,
@@ -145,7 +146,7 @@ const itCreatesASingleWordServiceFileWithCRUDActions = (baseArgs) => {
 
 const itCreatesASingleWordServiceTestFileWithCRUDActions = (baseArgs) => {
   test('creates a service test file with CRUD actions', async () => {
-    const files = await service.files({
+    const files = await serviceHandler.files({
       ...baseArgs,
       name: 'Post',
       crud: true,
@@ -161,7 +162,7 @@ const itCreatesASingleWordServiceTestFileWithCRUDActions = (baseArgs) => {
 
 const itCreatesAMultiWordServiceFileWithCRUDActions = (baseArgs) => {
   test('creates a multi word service file with CRUD actions', async () => {
-    const files = await service.files({
+    const files = await serviceHandler.files({
       ...baseArgs,
       name: 'UserProfile',
       crud: true,
@@ -177,7 +178,7 @@ const itCreatesAMultiWordServiceFileWithCRUDActions = (baseArgs) => {
 
 const itCreatesAMultiWordServiceTestFileWithCRUDActions = (baseArgs) => {
   test('creates a multi word service test file with CRUD actions', async () => {
-    const files = await service.files({
+    const files = await serviceHandler.files({
       ...baseArgs,
       name: 'UserProfile',
       crud: true,
@@ -195,7 +196,7 @@ const itCreatesAMultiWordServiceTestFileWithMultipleScalarTypes = (
   baseArgs,
 ) => {
   test('creates a multi word service test file with multiple scalar types', async () => {
-    const files = await service.files({
+    const files = await serviceHandler.files({
       ...baseArgs,
       name: 'ScalarType',
       crud: true,
@@ -214,7 +215,7 @@ const itCreatesAMultiWordServiceTestFileWithMultipleScalarTypes = (
 
 const itCreatesASingleWordServiceFileWithAHasManyRelation = (baseArgs) => {
   test('creates a single word service file with a hasMany relation', async () => {
-    const files = await service.files({
+    const files = await serviceHandler.files({
       ...baseArgs,
       name: 'User',
       relations: ['userProfiles'],
@@ -234,7 +235,7 @@ const itCreatesASingleWordServiceFileWithAHasManyRelation = (baseArgs) => {
 
 const itCreatesASingleWordServiceFileWithABelongsToRelation = (baseArgs) => {
   test('creates a single word service file with a belongsTo relation', async () => {
-    const files = await service.files({
+    const files = await serviceHandler.files({
       ...baseArgs,
       name: 'User',
       relations: ['identity'],
@@ -254,7 +255,7 @@ const itCreatesASingleWordServiceFileWithABelongsToRelation = (baseArgs) => {
 
 const itCreatesASingleWordServiceFileWithMultipleRelations = (baseArgs) => {
   test('creates a single word service file with multiple relations', async () => {
-    const files = await service.files({
+    const files = await serviceHandler.files({
       ...baseArgs,
       name: 'User',
       relations: ['userProfiles', 'identity'],
@@ -276,7 +277,7 @@ const itCreatesAMultiWordServiceTestFileWithCRUDAndOnlyForeignKeyRequired = (
   baseArgs,
 ) => {
   test('creates a multi word service test file with crud actions and only foreign as mandatory field', async () => {
-    const files = await service.files({
+    const files = await serviceHandler.files({
       ...baseArgs,
       name: 'Transaction',
       crud: true,
@@ -347,13 +348,13 @@ describe('in typescript mode', () => {
 
 describe('parseSchema', () => {
   it('returns an empty array for models with no required scalars', async () => {
-    const { scalarFields } = await service.parseSchema('Product')
+    const { scalarFields } = await serviceHandler.parseSchema('Product')
 
     expect(scalarFields).toEqual([])
   })
 
   it('includes required scalar fields', async () => {
-    const { scalarFields } = await service.parseSchema('User')
+    const { scalarFields } = await serviceHandler.parseSchema('User')
 
     expect(
       scalarFields.find((field) => field.name === 'email'),
@@ -361,13 +362,13 @@ describe('parseSchema', () => {
   })
 
   it('does not include non-required scalar fields', async () => {
-    const { scalarFields } = await service.parseSchema('User')
+    const { scalarFields } = await serviceHandler.parseSchema('User')
 
     expect(scalarFields.find((field) => field.name === 'name')).toBeUndefined()
   })
 
   it('does not include required scalar fields with default values', async () => {
-    const { scalarFields } = await service.parseSchema('User')
+    const { scalarFields } = await serviceHandler.parseSchema('User')
 
     expect(
       scalarFields.find((field) => field.name === 'isAdmin'),
@@ -375,7 +376,7 @@ describe('parseSchema', () => {
   })
 
   it('includes foreign key scalars', async () => {
-    const { scalarFields } = await service.parseSchema('UserProfile')
+    const { scalarFields } = await serviceHandler.parseSchema('UserProfile')
 
     expect(
       scalarFields.find((field) => field.name === 'userId'),
@@ -383,19 +384,19 @@ describe('parseSchema', () => {
   })
 
   it('does not include prisma-generated helper fields', async () => {
-    const { scalarFields } = await service.parseSchema('UserProfile')
+    const { scalarFields } = await serviceHandler.parseSchema('UserProfile')
 
     expect(scalarFields.find((field) => field.name === 'user')).toBeUndefined()
   })
 
   it('returns an empty object for models with no relations', async () => {
-    const { relations } = await service.parseSchema('User')
+    const { relations } = await serviceHandler.parseSchema('User')
 
     expect(relations).toEqual({})
   })
 
   it('returns relations', async () => {
-    const { relations } = await service.parseSchema('UserProfile')
+    const { relations } = await serviceHandler.parseSchema('UserProfile')
 
     expect(relations).toEqual({
       user: { foreignKey: ['userId'], type: 'User' },
@@ -403,7 +404,7 @@ describe('parseSchema', () => {
   })
 
   it('returns relations for join tables', async () => {
-    const { relations } = await service.parseSchema('TagsOnProducts')
+    const { relations } = await serviceHandler.parseSchema('TagsOnProducts')
 
     expect(relations).toEqual({
       tag: { foreignKey: ['tagId'], type: 'Tag' },
@@ -412,7 +413,7 @@ describe('parseSchema', () => {
   })
 
   it('properly captures relationships with different field name than related model', async () => {
-    const { relations } = await service.parseSchema('Feature')
+    const { relations } = await serviceHandler.parseSchema('Feature')
 
     expect(relations).toEqual({
       inventory: { foreignKey: ['inventoryId'], type: 'Product' },
@@ -420,13 +421,13 @@ describe('parseSchema', () => {
   })
 
   it('returns an empty array for models with no foreign keys', async () => {
-    const { foreignKeys } = await service.parseSchema('User')
+    const { foreignKeys } = await serviceHandler.parseSchema('User')
 
     expect(foreignKeys).toEqual([])
   })
 
   it('returns foreign keys', async () => {
-    const { foreignKeys } = await service.parseSchema('UserProfile')
+    const { foreignKeys } = await serviceHandler.parseSchema('UserProfile')
 
     expect(foreignKeys).toEqual(['userId'])
   })
@@ -434,7 +435,7 @@ describe('parseSchema', () => {
 
 describe('fieldsToScenario', () => {
   it('includes scalar fields', async () => {
-    const output = await service.fieldsToScenario(
+    const output = await serviceHandler.fieldsToScenario(
       [
         { name: 'email', type: 'String' },
         { name: 'date', type: 'DateTime' },
@@ -463,7 +464,7 @@ describe('fieldsToScenario', () => {
 
   it('includes dependent relationships', async () => {
     // fields for a Post model
-    const output = await service.fieldsToScenario(
+    const output = await serviceHandler.fieldsToScenario(
       [
         { name: 'title', type: 'String' },
         { name: 'userId', type: 'Integer' },
@@ -479,7 +480,7 @@ describe('fieldsToScenario', () => {
 
   it('properly looks up related models by type', async () => {
     // fields for a Post model
-    const output = await service.fieldsToScenario(
+    const output = await serviceHandler.fieldsToScenario(
       [
         { name: 'title', type: 'String' },
         { name: 'userId', type: 'Integer' },
@@ -501,7 +502,7 @@ test("doesn't include test file when --tests is set to false", async () => {
     javascript: true,
   }
 
-  const files = await service.files({
+  const files = await serviceHandler.files({
     ...baseArgs,
     name: 'User',
     tests: false,

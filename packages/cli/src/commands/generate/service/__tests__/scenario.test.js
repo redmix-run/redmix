@@ -4,11 +4,11 @@ import '../../../../lib/test'
 
 import { describe, test, expect } from 'vitest'
 
-import * as service from '../service.js'
+import * as serviceHandler from '../serviceHandler.js'
 
 describe('the scenario generator', () => {
   test('parseSchema returns an object with required scalar fields', async () => {
-    const { scalarFields } = await service.parseSchema('UserProfile')
+    const { scalarFields } = await serviceHandler.parseSchema('UserProfile')
 
     expect(scalarFields).toEqual([
       {
@@ -41,7 +41,7 @@ describe('the scenario generator', () => {
   })
 
   test('parseSchema returns an object with BigINt scalar fields', async () => {
-    const { scalarFields } = await service.parseSchema('Favorite')
+    const { scalarFields } = await serviceHandler.parseSchema('Favorite')
 
     expect(scalarFields).toEqual([
       {
@@ -74,13 +74,13 @@ describe('the scenario generator', () => {
   })
 
   test('parseSchema returns an empty object when no relation fields', async () => {
-    const { relations } = await service.parseSchema('User')
+    const { relations } = await serviceHandler.parseSchema('User')
 
     expect(relations).toEqual({})
   })
 
   test('parseSchema returns an object with relation fields', async () => {
-    const { relations } = await service.parseSchema('UserProfile')
+    const { relations } = await serviceHandler.parseSchema('UserProfile')
 
     expect(relations).toEqual({
       user: { foreignKey: ['userId'], type: 'User' },
@@ -88,14 +88,14 @@ describe('the scenario generator', () => {
   })
 
   test('parseSchema returns an object with foreign keys', async () => {
-    const { foreignKeys } = await service.parseSchema('UserProfile')
+    const { foreignKeys } = await serviceHandler.parseSchema('UserProfile')
 
     expect(foreignKeys).toEqual(['userId'])
   })
 
   test('scenarioFieldValue returns a plain string for non-unique String types', () => {
     const field = { type: 'String', isUnique: false }
-    const value = service.scenarioFieldValue(field)
+    const value = serviceHandler.scenarioFieldValue(field)
 
     expect(value).toEqual(expect.any(String))
     expect(typeof value).toBe('string')
@@ -103,7 +103,7 @@ describe('the scenario generator', () => {
 
   test('scenarioFieldValue returns a unique string for unique String types', () => {
     const field = { type: 'String', isUnique: true }
-    const value = service.scenarioFieldValue(field)
+    const value = serviceHandler.scenarioFieldValue(field)
 
     expect(value).toEqual(expect.any(String))
     // contains some unique digits somewhere
@@ -113,7 +113,7 @@ describe('the scenario generator', () => {
 
   test('scenarioFieldValue returns a true for BigInt types', () => {
     const field = { type: 'BigInt' }
-    const value = service.scenarioFieldValue(field)
+    const value = serviceHandler.scenarioFieldValue(field)
 
     expect(value).toMatch(/^\d+n$/)
     expect(typeof value).toBe('string') // pseudo-bigint
@@ -121,7 +121,7 @@ describe('the scenario generator', () => {
 
   test('scenarioFieldValue returns a true for Boolean types', () => {
     const field = { type: 'Boolean' }
-    const value = service.scenarioFieldValue(field)
+    const value = serviceHandler.scenarioFieldValue(field)
 
     expect(value).toEqual(true)
     expect(typeof value).toBe('boolean')
@@ -129,7 +129,7 @@ describe('the scenario generator', () => {
 
   test('scenarioFieldValue returns a float for Decimal types', () => {
     const field = { type: 'Decimal' }
-    const value = service.scenarioFieldValue(field)
+    const value = serviceHandler.scenarioFieldValue(field)
 
     expect(value).toEqual(parseFloat(value))
     expect(typeof value).toBe('number')
@@ -137,7 +137,7 @@ describe('the scenario generator', () => {
 
   test('scenarioFieldValue returns a float for Float types', () => {
     const field = { type: 'Float' }
-    const value = service.scenarioFieldValue(field)
+    const value = serviceHandler.scenarioFieldValue(field)
 
     expect(value).toEqual(parseFloat(value))
     expect(typeof value).toBe('number')
@@ -145,7 +145,7 @@ describe('the scenario generator', () => {
 
   test('scenarioFieldValue returns a number for Int types', () => {
     const field = { type: 'Int' }
-    const value = service.scenarioFieldValue(field)
+    const value = serviceHandler.scenarioFieldValue(field)
 
     expect(value).toEqual(parseInt(value))
     expect(typeof value).toBe('number')
@@ -153,7 +153,7 @@ describe('the scenario generator', () => {
 
   test('scenarioFieldValue returns a valid Date for DateTime types', () => {
     const field = { type: 'DateTime' }
-    const value = service.scenarioFieldValue(field)
+    const value = serviceHandler.scenarioFieldValue(field)
 
     expect(value instanceof Date).toBe(true)
     expect(!isNaN(value)).toBe(true)
@@ -162,7 +162,7 @@ describe('the scenario generator', () => {
   test('scenarioFieldValue returns JSON for Json types', () => {
     const field = { type: 'Json' }
 
-    expect(service.scenarioFieldValue(field)).toEqual({ foo: 'bar' })
+    expect(serviceHandler.scenarioFieldValue(field)).toEqual({ foo: 'bar' })
   })
 
   test('scenarioFieldValue returns the first enum option for enum kinds', () => {
@@ -175,7 +175,7 @@ describe('the scenario generator', () => {
       ],
     }
 
-    expect(service.scenarioFieldValue(field)).toEqual('Red')
+    expect(serviceHandler.scenarioFieldValue(field)).toEqual('Red')
   })
 
   test('scenarioFieldValue returns the dbName for enum types if present', () => {
@@ -188,7 +188,7 @@ describe('the scenario generator', () => {
       ],
     }
 
-    expect(service.scenarioFieldValue(field)).toEqual('color-red')
+    expect(serviceHandler.scenarioFieldValue(field)).toEqual('color-red')
   })
 
   test('fieldsToScenario returns scenario data for scalarFields', async () => {
@@ -204,7 +204,7 @@ describe('the scenario generator', () => {
         isUnique: true,
       },
     ]
-    const scenario = await service.fieldsToScenario(scalarFields, [], [])
+    const scenario = await serviceHandler.fieldsToScenario(scalarFields, [], [])
 
     expect(Object.keys(scenario).length).toEqual(2)
     expect(scenario.firstName).toEqual(expect.any(String))
@@ -214,9 +214,9 @@ describe('the scenario generator', () => {
 
   test('fieldsToScenario returns scenario data for nested relations', async () => {
     const { scalarFields, relations, foreignKeys } =
-      await service.parseSchema('UserProfile')
+      await serviceHandler.parseSchema('UserProfile')
 
-    const scenario = await service.fieldsToScenario(
+    const scenario = await serviceHandler.fieldsToScenario(
       scalarFields,
       relations,
       foreignKeys,

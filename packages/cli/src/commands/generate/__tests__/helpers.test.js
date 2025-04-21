@@ -8,7 +8,7 @@ globalThis.__dirname = __dirname
 import '../../../lib/test'
 
 import * as helpers from '../helpers.js'
-import * as page from '../page/page.js'
+import * as pageHandler from '../page/pageHandler.js'
 import {
   customOrDefaultTemplatePath,
   templateForComponentFile,
@@ -71,7 +71,7 @@ test('templateForComponentFile creates a proper output path for files', async ()
       generator: 'page',
       templatePath: 'page.tsx.template',
       templateVars: {
-        ...page.paramVariants(helpers.pathName(undefined, name)),
+        ...pageHandler.paramVariants(helpers.pathName(undefined, name)),
         rscEnabled: false,
       },
     })
@@ -93,7 +93,7 @@ test('templateForComponentFile creates a proper output path for files with all c
       generator: 'page',
       templatePath: 'page.tsx.template',
       templateVars: {
-        ...page.paramVariants(helpers.pathName(undefined, name)),
+        ...pageHandler.paramVariants(helpers.pathName(undefined, name)),
         rscEnabled: false,
       },
     })
@@ -115,7 +115,7 @@ test('templateForComponentFile creates a proper output path for files for starti
       generator: 'page',
       templatePath: 'page.tsx.template',
       templateVars: {
-        ...page.paramVariants(helpers.pathName(undefined, name)),
+        ...pageHandler.paramVariants(helpers.pathName(undefined, name)),
         rscEnabled: false,
       },
     })
@@ -137,7 +137,7 @@ test('templateForComponentFile creates a proper output path for files with upper
       generator: 'page',
       templatePath: 'page.tsx.template',
       templateVars: {
-        ...page.paramVariants(helpers.pathName(undefined, name)),
+        ...pageHandler.paramVariants(helpers.pathName(undefined, name)),
         rscEnabled: false,
       },
     })
@@ -156,7 +156,7 @@ test('templateForComponentFile can create a path in /web', async () => {
     generator: 'page',
     templatePath: 'page.tsx.template',
     templateVars: {
-      ...page.paramVariants(helpers.pathName(undefined, 'Home')),
+      ...pageHandler.paramVariants(helpers.pathName(undefined, 'Home')),
       rscEnabled: false,
     },
   })
@@ -174,7 +174,7 @@ test('templateForComponentFile can create a path in /api', async () => {
     generator: 'page',
     templatePath: 'page.tsx.template',
     templateVars: {
-      ...page.paramVariants(helpers.pathName(undefined, 'Home')),
+      ...pageHandler.paramVariants(helpers.pathName(undefined, 'Home')),
       rscEnabled: false,
     },
   })
@@ -192,7 +192,7 @@ test('templateForComponentFile can override generated component name', async () 
     generator: 'page',
     templatePath: 'page.tsx.template',
     templateVars: {
-      ...page.paramVariants(helpers.pathName(undefined, 'Home')),
+      ...pageHandler.paramVariants(helpers.pathName(undefined, 'Home')),
       rscEnabled: false,
     },
   })
@@ -211,7 +211,7 @@ test('templateForComponentFile can override file extension', async () => {
     generator: 'page',
     templatePath: 'page.tsx.template',
     templateVars: {
-      ...page.paramVariants(helpers.pathName(undefined, 'Home')),
+      ...pageHandler.paramVariants(helpers.pathName(undefined, 'Home')),
       rscEnabled: false,
     },
   })
@@ -244,7 +244,7 @@ test('templateForComponentFile creates a template', async () => {
     generator: 'page',
     templatePath: 'page.tsx.template',
     templateVars: {
-      ...page.paramVariants(helpers.pathName(undefined, 'fooBar')),
+      ...pageHandler.paramVariants(helpers.pathName(undefined, 'fooBar')),
       rscEnabled: false,
     },
   })
