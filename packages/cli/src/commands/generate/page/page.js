@@ -12,7 +12,7 @@ const positionalsObj = {
   },
 }
 
-export const command = createCommand('page')
+export const command = createCommand('page', positionalsObj)
 export const description = createDescription('page')
 export const builder = createBuilder({ componentName: 'page', positionalsObj })
 export const handler = createHandler('page')
