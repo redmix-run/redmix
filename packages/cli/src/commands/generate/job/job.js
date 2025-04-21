@@ -1,7 +1,7 @@
 import terminalLink from 'terminal-link'
 
 import { isTypeScriptProject } from '../../../lib/project.js'
-import { yargsDefaults } from '../yargsCommandHelpers.js'
+import { yargsDefaults, createHandler } from '../yargsCommandHelpers.js'
 
 export const command = 'job <name>'
 export const description = 'Generate a Background Job'
@@ -47,8 +47,4 @@ export const builder = (yargs) => {
   })
 }
 
-export async function handler(argv) {
-  const { handler: importedHandler } = await import('./jobHandler.js')
-
-  return importedHandler(argv)
-}
+export const handler = createHandler('job')

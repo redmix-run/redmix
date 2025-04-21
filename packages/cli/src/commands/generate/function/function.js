@@ -1,6 +1,6 @@
 import terminalLink from 'terminal-link'
 
-import { yargsDefaults } from '../yargsCommandHelpers.js'
+import { yargsDefaults, createHandler } from '../yargsCommandHelpers.js'
 
 export const command = 'function <name>'
 export const description = 'Generate a Function'
@@ -33,8 +33,4 @@ export const builder = (yargs) => {
   })
 }
 
-export async function handler(argv) {
-  const { handler: importedHandler } = await import('./functionHandler.js')
-
-  return importedHandler(argv)
-}
+export const handler = createHandler('function')

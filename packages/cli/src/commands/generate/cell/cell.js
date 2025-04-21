@@ -3,6 +3,7 @@ import {
   createDescription,
   createBuilder,
   yargsDefaults,
+  createHandler,
 } from '../yargsCommandHelpers.js'
 
 export const command = createCommand('cell')
@@ -26,9 +27,4 @@ export const builder = createBuilder({
     },
   },
 })
-
-export async function handler(argv) {
-  const { handler: cellHandler } = await import('./cellHandler.js')
-
-  return cellHandler(argv)
-}
+export const handler = createHandler('cell')
