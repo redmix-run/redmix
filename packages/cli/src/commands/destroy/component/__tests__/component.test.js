@@ -14,7 +14,7 @@ import { vi, beforeEach, afterEach, test, expect } from 'vitest'
 
 import '../../../../lib/test'
 
-import { files } from '../../../generate/component/component.js'
+import { files } from '../../../generate/component/componentHandler.js'
 import { tasks } from '../component.js'
 
 beforeEach(async () => {
