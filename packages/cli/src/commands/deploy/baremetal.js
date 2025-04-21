@@ -1,17 +1,6 @@
 import terminalLink from 'terminal-link'
-import { titleCase } from 'title-case'
 
 import { recordTelemetryAttributes } from '@redmix/cli-helpers'
-
-export const DEFAULT_SERVER_CONFIG = {
-  port: 22,
-  branch: 'main',
-  packageManagerCommand: 'yarn',
-  monitorCommand: 'pm2',
-  sides: ['api', 'web'],
-  keepReleases: 5,
-  freeSpaceRequired: 2048,
-}
 
 export const command = 'baremetal [environment]'
 export const description = 'Deploy to baremetal server(s)'
@@ -111,88 +100,6 @@ export const builder = (yargs) => {
       'https://redwoodjs.com/docs/cli-commands#deploy',
     )}\n`,
   )
-}
-
-export const throwMissingConfig = (name) => {
-  throw new Error(
-    `"${name}" config option not set. See https://redwoodjs.com/docs/deployment/baremetal#deploytoml`,
-  )
-}
-
-export const verifyConfig = (config, yargs) => {
-  if (!yargs.environment) {
-    throw new Error(
-      'Must specify an environment to deploy to, ex: `yarn rw deploy baremetal production`',
-    )
-  }
-
-  if (!config[yargs.environment]) {
-    throw new Error(`No servers found for environment "${yargs.environment}"`)
-  }
-
-  return true
-}
-
-export const verifyServerConfig = (config) => {
-  if (!config.host) {
-    throwMissingConfig('host')
-  }
-
-  if (!config.path) {
-    throwMissingConfig('path')
-  }
-
-  if (!config.repo) {
-    throwMissingConfig('repo')
-  }
-
-  if (!/^\d+$/.test(config.freeSpaceRequired)) {
-    throw new Error('"freeSpaceRequired" must be an integer >= 0')
-  }
-
-  return true
-}
-
-export const serverConfigWithDefaults = (serverConfig, yargs) => {
-  return {
-    ...DEFAULT_SERVER_CONFIG,
-    ...serverConfig,
-    branch: yargs.branch || serverConfig.branch || DEFAULT_SERVER_CONFIG.branch,
-  }
-}
-
-export const lifecycleTask = (
-  lifecycle,
-  task,
-  skip,
-  { serverLifecycle, ssh, cmdPath },
-) => {
-  if (serverLifecycle[lifecycle]?.[task]) {
-    const tasks = []
-
-    for (const command of serverLifecycle[lifecycle][task]) {
-      tasks.push({
-        title: `${titleCase(lifecycle)} ${task}: \`${command}\``,
-        task: async () => {
-          await ssh.exec(cmdPath, command)
-        },
-        skip: () => skip,
-      })
-    }
-
-    return tasks
-  }
-}
-
-// wraps a given command with any defined before/after lifecycle commands
-export const commandWithLifecycleEvents = ({ name, config, skip, command }) => {
-  const tasks = []
-
-  tasks.push(lifecycleTask('before', name, skip, config))
-  tasks.push({ ...command, skip: () => skip })
-  tasks.push(lifecycleTask('after', name, skip, config))
-
-  return tasks.flat().filter((t) => t)
 }
 
 export async function handler(yargs) {
