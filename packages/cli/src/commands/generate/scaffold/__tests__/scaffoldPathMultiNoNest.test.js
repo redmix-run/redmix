@@ -6,7 +6,7 @@ import { vi, describe, beforeAll, test, expect } from 'vitest'
 
 import '../../../../lib/test'
 
-import * as scaffold from '../scaffold.js'
+import * as scaffoldHandler from '../scaffoldHandler.js'
 
 vi.mock('fs', async () => ({ default: (await import('memfs')).fs }))
 vi.mock('execa')
@@ -19,7 +19,7 @@ describe('admin/pages/post', () => {
   let filesNestedLower
 
   beforeAll(async () => {
-    filesNestedLower = await scaffold.files({
+    filesNestedLower = await scaffoldHandler.files({
       model: 'Post',
       path: 'admin/pages',
       tests: true,
@@ -224,7 +224,7 @@ describe('admin/pages/post', () => {
 
     test('creates a single-word name routes', async () => {
       expect(
-        await scaffold.routes({
+        await scaffoldHandler.routes({
           model: 'Post',
           path: 'admin/pages',
           nestScaffoldByModel: false,
@@ -239,7 +239,7 @@ describe('admin/pages/post', () => {
 
     test('creates a multi-word name routes', async () => {
       expect(
-        await scaffold.routes({
+        await scaffoldHandler.routes({
           model: 'UserProfile',
           path: 'admin/pages',
           nestScaffoldByModel: false,
@@ -255,7 +255,7 @@ describe('admin/pages/post', () => {
 
   describe('GraphQL queries', () => {
     test('the GraphQL in the index query does not contain object types', async () => {
-      const userProfileFiles = await scaffold.files({
+      const userProfileFiles = await scaffoldHandler.files({
         model: 'UserProfile',
         path: 'admin/pages',
         tests: false,
@@ -275,7 +275,7 @@ describe('admin/pages/post', () => {
     })
 
     test('the GraphQL in the show query does not contain object types', async () => {
-      const userProfileFiles = await scaffold.files({
+      const userProfileFiles = await scaffoldHandler.files({
         model: 'UserProfile',
         path: 'admin/pages',
         tests: false,
@@ -295,7 +295,7 @@ describe('admin/pages/post', () => {
     })
 
     test('the GraphQL in the edit query does not contain object types', async () => {
-      const userProfileFiles = await scaffold.files({
+      const userProfileFiles = await scaffoldHandler.files({
         model: 'UserProfile',
         path: 'admin/pages',
         tests: false,
@@ -317,7 +317,7 @@ describe('admin/pages/post', () => {
 
   describe('Foreign key casting', () => {
     test('creates a new component with int foreign keys converted in onSave', async () => {
-      const foreignKeyFiles = await scaffold.files({
+      const foreignKeyFiles = await scaffoldHandler.files({
         model: 'UserProfile',
         path: 'admin/pages',
         tests: false,
@@ -332,7 +332,7 @@ describe('admin/pages/post', () => {
     })
 
     test('creates an edit component with int foreign keys converted in onSave', async () => {
-      const foreignKeyFiles = await scaffold.files({
+      const foreignKeyFiles = await scaffoldHandler.files({
         model: 'UserProfile',
         path: 'admin/pages',
         tests: false,
@@ -352,7 +352,7 @@ describe('Admin/Pages/Post/Post', () => {
   let filesNestedUpper
 
   beforeAll(async () => {
-    filesNestedUpper = await scaffold.files({
+    filesNestedUpper = await scaffoldHandler.files({
       model: 'Post',
       path: 'Admin/Pages',
       tests: true,
@@ -556,7 +556,7 @@ describe('Admin/Pages/Post/Post', () => {
 
     test('creates a single-word name routes', async () => {
       expect(
-        await scaffold.routes({
+        await scaffoldHandler.routes({
           model: 'Post',
           path: 'Admin/Pages',
           nestScaffoldByModel: false,
@@ -571,7 +571,7 @@ describe('Admin/Pages/Post/Post', () => {
 
     test('creates a multi-word name routes', async () => {
       expect(
-        await scaffold.routes({
+        await scaffoldHandler.routes({
           model: 'UserProfile',
           path: 'Admin/Pages',
           nestScaffoldByModel: false,
@@ -587,7 +587,7 @@ describe('Admin/Pages/Post/Post', () => {
 
   describe('GraphQL queries', () => {
     test('the GraphQL in the index query does not contain object types', async () => {
-      const userProfileFiles = await scaffold.files({
+      const userProfileFiles = await scaffoldHandler.files({
         model: 'UserProfile',
         path: 'Admin/Pages',
         tests: false,
@@ -607,7 +607,7 @@ describe('Admin/Pages/Post/Post', () => {
     })
 
     test('the GraphQL in the show query does not contain object types', async () => {
-      const userProfileFiles = await scaffold.files({
+      const userProfileFiles = await scaffoldHandler.files({
         model: 'UserProfile',
         path: 'Admin/Pages',
         tests: false,
@@ -627,7 +627,7 @@ describe('Admin/Pages/Post/Post', () => {
     })
 
     test('the GraphQL in the edit query does not contain object types', async () => {
-      const userProfileFiles = await scaffold.files({
+      const userProfileFiles = await scaffoldHandler.files({
         model: 'UserProfile',
         path: 'Admin/Pages',
         tests: false,
@@ -649,7 +649,7 @@ describe('Admin/Pages/Post/Post', () => {
 
   describe('Foreign key casting', () => {
     test('creates a new component with int foreign keys converted in onSave', async () => {
-      const foreignKeyFiles = await scaffold.files({
+      const foreignKeyFiles = await scaffoldHandler.files({
         model: 'UserProfile',
         path: 'Admin/Pages',
         tests: false,
@@ -664,7 +664,7 @@ describe('Admin/Pages/Post/Post', () => {
     })
 
     test('creates an edit component with int foreign keys converted in onSave', async () => {
-      const foreignKeyFiles = await scaffold.files({
+      const foreignKeyFiles = await scaffoldHandler.files({
         model: 'UserProfile',
         path: 'Admin/Pages',
         tests: false,

@@ -12,7 +12,7 @@ import { pathName } from '../../generate/helpers.js'
 import {
   files as pageFiles,
   paramVariants as templateVars,
-} from '../../generate/page/page.js'
+} from '../../generate/page/pageHandler.js'
 
 export const command = 'page <name> [path]'
 export const description = 'Destroy a page and route component'

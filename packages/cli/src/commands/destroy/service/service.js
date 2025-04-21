@@ -1,6 +1,7 @@
 import { getDefaultArgs } from '../../../lib/index.js'
 import { verifyModelName } from '../../../lib/schemaHelpers.js'
-import { builder, files } from '../../generate/service/service.js'
+import { builder } from '../../generate/service/service.js'
+import { files } from '../../generate/service/serviceHandler.js'
 import { createYargsForComponentDestroy } from '../helpers.js'
 
 // This function wraps files(), so we can pass templateVars. templateVars

@@ -17,7 +17,7 @@ import {
   files,
   routes as scaffoldRoutes,
   splitPathAndModel,
-} from '../../generate/scaffold/scaffold.js'
+} from '../../generate/scaffold/scaffoldHandler.js'
 
 export const command = 'scaffold <model>'
 export const description =

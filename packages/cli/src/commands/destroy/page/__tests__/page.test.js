@@ -55,7 +55,7 @@ vi.mock('@redmix/internal/dist/generate/generate', () => {
 })
 
 import { getPaths } from '../../../../lib/index.js'
-import { files } from '../../../generate/page/page.js'
+import { files } from '../../../generate/page/pageHandler.js'
 import { tasks } from '../page.js'
 
 beforeEach(async () => {
