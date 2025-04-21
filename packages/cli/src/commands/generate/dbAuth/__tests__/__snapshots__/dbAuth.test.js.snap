@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`dbAuth > handler > exits when all files are skipped 1`] = `
+exports[`dbAuth > handler > process.exit behavior > exits when all files are skipped 1`] = `
 [
   "[1m[31m[39m[22m
 [1m[31mNo files to generate.[39m[22m
