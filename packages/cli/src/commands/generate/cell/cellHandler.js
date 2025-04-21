@@ -24,7 +24,7 @@ import {
 const COMPONENT_SUFFIX = 'Cell'
 const REDWOOD_WEB_PATH_NAME = 'components'
 
-export const files = async ({ name, typescript, ...options }) => {
+export const files = async ({ name, typescript, ...argv }) => {
   let cellName = removeGeneratorName(name, 'cell')
   let idName = 'id'
   let idType,
@@ -35,8 +35,7 @@ export const files = async ({ name, typescript, ...options }) => {
   // Create a unique operation name.
 
   const shouldGenerateList =
-    (isWordPluralizable(cellName) ? isPlural(cellName) : options.list) ||
-    options.list
+    (isWordPluralizable(cellName) ? isPlural(cellName) : argv.list) || argv.list
 
   // needed for the singular cell GQL query find by id case
   try {
@@ -63,7 +62,7 @@ export const files = async ({ name, typescript, ...options }) => {
     // override operationName so that its find_operationName
   }
 
-  let operationName = options.query
+  let operationName = argv.query
   if (operationName) {
     const userSpecifiedOperationNameIsUnique =
       await operationNameIsUnique(operationName)
@@ -129,15 +128,15 @@ export const files = async ({ name, typescript, ...options }) => {
 
   const files = [cellFile]
 
-  if (options.stories) {
+  if (argv.stories) {
     files.push(storiesFile)
   }
 
-  if (options.tests) {
+  if (argv.tests) {
     files.push(testFile)
   }
 
-  if (options.stories || options.tests) {
+  if (argv.stories || argv.tests) {
     files.push(mockFile)
   }
 
