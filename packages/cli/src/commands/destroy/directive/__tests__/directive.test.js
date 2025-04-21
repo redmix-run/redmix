@@ -15,7 +15,7 @@ import { vi, beforeEach, afterEach, test, expect } from 'vitest'
 
 import '../../../../lib/test'
 
-import { files } from '../../../generate/directive/directive.js'
+import { files } from '../../../generate/directive/directiveHandler.js'
 import { tasks } from '../directive.js'
 
 beforeEach(() => {
