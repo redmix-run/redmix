@@ -12,7 +12,7 @@ import { vol } from 'memfs'
 import { afterEach, beforeEach, vi, describe, it, expect } from 'vitest'
 
 import { getPaths } from '../../../../lib/index.js'
-import * as dbAuth from '../dbAuth.js'
+import * as dbAuth from '../dbAuthHandler.js'
 
 vi.mock('listr2', async () => {
   return {

@@ -24,7 +24,7 @@ import {
 } from 'vitest'
 
 import { getPaths } from '../../../../lib/index.js'
-import * as dbAuth from '../dbAuth.js'
+import * as dbAuth from '../dbAuthHandler.js'
 
 // Mock files needed for each test
 const mockFiles = {}
