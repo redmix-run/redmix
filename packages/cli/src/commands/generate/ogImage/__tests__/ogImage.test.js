@@ -6,7 +6,7 @@ import { afterEach, beforeEach, describe, test, expect, vi } from 'vitest'
 
 import { ensurePosixPath } from '@redmix/project-config'
 
-import * as ogImage from '../ogImage.js'
+import * as ogImageHandler from '../ogImageHandler.js'
 
 vi.mock('fs', () => ({ ...memfs, default: { ...memfs } }))
 vi.mock('node:fs', () => ({ ...memfs, default: { ...memfs } }))
@@ -55,7 +55,7 @@ describe('ogImage generator', () => {
 
   describe('files', () => {
     test('returns the path to the .jsx template to be written', async () => {
-      const files = await ogImage.files({
+      const files = await ogImageHandler.files({
         pagePath: 'AboutPage/AboutPage',
         typescript: false,
       })
@@ -67,7 +67,7 @@ describe('ogImage generator', () => {
     })
 
     test('returns the path to the .tsx template to be written', async () => {
-      const files = await ogImage.files({
+      const files = await ogImageHandler.files({
         pagePath: 'AboutPage/AboutPage',
         typescript: true,
       })
@@ -79,7 +79,7 @@ describe('ogImage generator', () => {
     })
 
     test('returns the path to the template when the page is nested in subdirectories', async () => {
-      const files = await ogImage.files({
+      const files = await ogImageHandler.files({
         pagePath: 'Products/Display/ProductPage/ProductPage',
         typescript: true,
       })
@@ -91,7 +91,7 @@ describe('ogImage generator', () => {
     })
 
     test('returns the template to be written', async () => {
-      const files = await ogImage.files({
+      const files = await ogImageHandler.files({
         pagePath: 'AboutPage/AboutPage',
         typescript: false,
       })
@@ -102,38 +102,44 @@ describe('ogImage generator', () => {
 
   describe('normalizedPath', () => {
     test('returns an array without a leading "pages" dir', () => {
-      expect(ogImage.normalizedPath('pages/AboutPage/AboutPage')).toEqual(
+      expect(
+        ogImageHandler.normalizedPath('pages/AboutPage/AboutPage'),
+      ).toEqual('AboutPage/AboutPage')
+    })
+
+    test('returns an array prepended with a missing page directory', () => {
+      expect(ogImageHandler.normalizedPath('AboutPage')).toEqual(
         'AboutPage/AboutPage',
       )
     })
 
-    test('returns an array prepended with a missing page directory', () => {
-      expect(ogImage.normalizedPath('AboutPage')).toEqual('AboutPage/AboutPage')
-    })
-
     test('returns an array when page is nested in subdirectories', () => {
       expect(
-        ogImage.normalizedPath('Products/Display/ProductPage/ProductPage'),
+        ogImageHandler.normalizedPath(
+          'Products/Display/ProductPage/ProductPage',
+        ),
       ).toEqual('Products/Display/ProductPage/ProductPage')
     })
 
     test('returns an array including a missing page directory when deeply nested', () => {
-      expect(ogImage.normalizedPath('Products/Display/ProductPage')).toEqual(
-        'Products/Display/ProductPage/ProductPage',
-      )
+      expect(
+        ogImageHandler.normalizedPath('Products/Display/ProductPage'),
+      ).toEqual('Products/Display/ProductPage/ProductPage')
     })
   })
 
   describe('validatePath', () => {
     test('does nothing if path to jsx page exists', async () => {
       await expect(
-        ogImage.validatePath('AboutPage/AboutPage', 'jsx', { fs: memfs }),
+        ogImageHandler.validatePath('AboutPage/AboutPage', 'jsx', {
+          fs: memfs,
+        }),
       ).resolves.toEqual(true)
     })
 
     test('does nothing if path to tsx page exists in nested directory structure', async () => {
       await expect(
-        ogImage.validatePath(
+        ogImageHandler.validatePath(
           'Products/Display/ProductPage/ProductPage',
           'tsx',
           { fs: memfs },
@@ -145,7 +151,7 @@ describe('ogImage generator', () => {
       const pagePath = 'ContactUsPage/ContactUsPage'
       const ext = 'tsx'
       await expect(
-        ogImage.validatePath(pagePath, ext, {
+        ogImageHandler.validatePath(pagePath, ext, {
           fs: memfs,
         }),
       ).rejects.toThrow()
@@ -155,7 +161,7 @@ describe('ogImage generator', () => {
       const pagePath = 'HomePage/HomePage'
       const ext = 'jsx'
       await expect(
-        ogImage.validatePath(pagePath, ext, { fs: memfs }),
+        ogImageHandler.validatePath(pagePath, ext, { fs: memfs }),
       ).rejects.toThrow()
     })
   })

@@ -14,7 +14,7 @@ import { vi, beforeEach, afterEach, test, expect } from 'vitest'
 
 import '../../../../lib/test'
 
-import { files } from '../../../generate/function/function.js'
+import { files } from '../../../generate/function/functionHandler.js'
 import { tasks } from '../function.js'
 
 beforeEach(async () => {

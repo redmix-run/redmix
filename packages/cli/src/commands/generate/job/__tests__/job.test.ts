@@ -6,11 +6,11 @@ import path from 'path'
 
 import { describe, it, expect } from 'vitest'
 
-// @ts-expect-error - Jobs is a JavaScript file
-import * as jobGenerator from '../job.js'
+// @ts-expect-error - job is a JavaScript file
+import * as jobHandler from '../jobHandler.js'
 
 describe('Single word default files', async () => {
-  const files = await jobGenerator.files({
+  const files = await jobHandler.files({
     name: 'Sample',
     queueName: 'default',
     tests: true,
@@ -44,7 +44,7 @@ describe('Single word default files', async () => {
 
 describe('multi-word files', () => {
   it('creates a multi word function file', async () => {
-    const multiWordDefaultFiles = await jobGenerator.files({
+    const multiWordDefaultFiles = await jobHandler.files({
       name: 'send-mail',
       queueName: 'default',
       tests: false,
@@ -62,7 +62,7 @@ describe('multi-word files', () => {
 })
 
 describe('generation of js files', async () => {
-  const jsFiles = await jobGenerator.files({
+  const jsFiles = await jobHandler.files({
     name: 'Sample',
     queueName: 'default',
     tests: true,
