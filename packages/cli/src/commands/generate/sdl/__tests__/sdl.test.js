@@ -54,6 +54,7 @@ import { ensurePosixPath } from '@redmix/project-config'
 
 import { getDefaultArgs } from '../../../../lib/index.js'
 import * as sdl from '../sdl.js'
+import * as sdlHandler from '../sdlHandler.js'
 
 afterEach(() => {
   vi.clearAllMocks()
@@ -64,7 +65,11 @@ const extensionForBaseArgs = (baseArgs) =>
 
 const itReturnsExactlyFourFiles = (baseArgs = {}) => {
   test('returns exactly 4 files', async () => {
-    const files = await sdl.files({ ...baseArgs, name: 'Post', crud: false })
+    const files = await sdlHandler.files({
+      ...baseArgs,
+      name: 'Post',
+      crud: false,
+    })
 
     expect(Object.keys(files).length).toEqual(4)
   })
@@ -75,7 +80,11 @@ const itReturnsExactlyFourFiles = (baseArgs = {}) => {
 // job of the service tests
 const itCreatesAService = (baseArgs = {}) => {
   test('creates a service', async () => {
-    const files = await sdl.files({ ...baseArgs, name: 'User', crud: false })
+    const files = await sdlHandler.files({
+      ...baseArgs,
+      name: 'User',
+      crud: false,
+    })
     const extension = extensionForBaseArgs(baseArgs)
 
     expect(files).toHaveProperty([
@@ -98,7 +107,11 @@ const itCreatesAService = (baseArgs = {}) => {
 
 const itCreatesASingleWordSDLFile = (baseArgs = {}) => {
   test('creates a single word sdl file', async () => {
-    const files = await sdl.files({ ...baseArgs, name: 'User', crud: false })
+    const files = await sdlHandler.files({
+      ...baseArgs,
+      name: 'User',
+      crud: false,
+    })
     const extension = extensionForBaseArgs(baseArgs)
 
     expect(
@@ -113,7 +126,7 @@ const itCreatesASingleWordSDLFile = (baseArgs = {}) => {
 
 const itCreatesAMultiWordSDLFile = (baseArgs = {}) => {
   test('creates a multi word sdl file', async () => {
-    const files = await sdl.files({
+    const files = await sdlHandler.files({
       ...baseArgs,
       name: 'UserProfile',
     })
@@ -131,7 +144,11 @@ const itCreatesAMultiWordSDLFile = (baseArgs = {}) => {
 
 const itCreatesASingleWordSDLFileWithCRUD = (baseArgs = {}) => {
   test('creates a single word sdl file with CRUD actions', async () => {
-    const files = await sdl.files({ ...baseArgs, name: 'Post', crud: true })
+    const files = await sdlHandler.files({
+      ...baseArgs,
+      name: 'Post',
+      crud: true,
+    })
     const extension = extensionForBaseArgs(baseArgs)
 
     expect(
@@ -146,7 +163,7 @@ const itCreatesASingleWordSDLFileWithCRUD = (baseArgs = {}) => {
 
 const itCreateAMultiWordSDLFileWithCRUD = (baseArgs = {}) => {
   test('creates a multi word sdl file with CRUD actions', async () => {
-    const files = await sdl.files({
+    const files = await sdlHandler.files({
       ...baseArgs,
       name: 'UserProfile',
       crud: true,
@@ -189,7 +206,7 @@ const itCreateAMultiWordSDLFileWithCRUD = (baseArgs = {}) => {
 
 const itCreatesAnSDLFileWithEnumDefinitions = (baseArgs = {}) => {
   test('creates a sdl file with enum definitions', async () => {
-    const files = await sdl.files({
+    const files = await sdlHandler.files({
       ...baseArgs,
       name: 'Shoe',
       crud: true,
@@ -208,7 +225,11 @@ const itCreatesAnSDLFileWithEnumDefinitions = (baseArgs = {}) => {
 
 const itCreatesAnSDLFileWithJsonDefinitions = (baseArgs = {}) => {
   test('creates a sdl file with json definitions', async () => {
-    const files = await sdl.files({ ...baseArgs, name: 'Photo', crud: true })
+    const files = await sdlHandler.files({
+      ...baseArgs,
+      name: 'Photo',
+      crud: true,
+    })
     const extension = extensionForBaseArgs(baseArgs)
 
     expect(
@@ -223,7 +244,7 @@ const itCreatesAnSDLFileWithJsonDefinitions = (baseArgs = {}) => {
 
 const itCreatesAnSDLFileWithByteDefinitions = (baseArgs = {}) => {
   test('creates a sdl file with Byte definitions', async () => {
-    const files = await sdl.files({
+    const files = await sdlHandler.files({
       ...baseArgs,
       name: 'Key',
       crud: true,
@@ -239,12 +260,12 @@ const itCreatesAnSDLFileWithByteDefinitions = (baseArgs = {}) => {
 const itCreatesAnSslFileForModelWithOnlyIdAndRelation = (baseArgs = {}) => {
   test('create an sdl file for model with only id and relation', async () => {
     const files = {
-      ...(await sdl.files({
+      ...(await sdlHandler.files({
         ...baseArgs,
         name: 'Car',
         crud: true,
       })),
-      ...(await sdl.files({
+      ...(await sdlHandler.files({
         ...baseArgs,
         name: 'CarBrand',
         crud: true,

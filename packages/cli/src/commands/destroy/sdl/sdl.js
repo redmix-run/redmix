@@ -5,7 +5,7 @@ import { recordTelemetryAttributes } from '@redmix/cli-helpers'
 import c from '../../../lib/colors.js'
 import { deleteFilesTask } from '../../../lib/index.js'
 import { verifyModelName } from '../../../lib/schemaHelpers.js'
-import { files } from '../../generate/sdl/sdl.js'
+import { files } from '../../generate/sdl/sdlHandler.js'
 
 export const command = 'sdl <model>'
 export const description =

@@ -7,10 +7,13 @@ import path from 'path'
 import { test, expect } from 'vitest'
 import yargs from 'yargs'
 
+// @ts-expect-error - js file
 import * as script from '../script.js'
+// @ts-expect-error - js file
+import * as scriptHandler from '../scriptHandler.js'
 
 test('creates a JavaScript function to execute', async () => {
-  const output = await script.files({
+  const output = await scriptHandler.files({
     name: 'scriptyMcScript',
     typescript: false,
   })
@@ -24,7 +27,7 @@ test('creates a JavaScript function to execute', async () => {
 })
 
 test('creates a TypeScript function to execute', async () => {
-  const output = await script.files({
+  const output = await scriptHandler.files({
     name: 'typescriptyTypescript',
     typescript: true,
   })
@@ -44,10 +47,22 @@ test('creates a TypeScript function to execute', async () => {
   expect(outputFilePaths).toContainEqual(tsconfigPath)
 })
 
-test('keeps Script in name', () => {
-  const { name } = yargs()
+test('keeps Script in name', async () => {
+  const isPromiseLike = <T>(obj: unknown): obj is Promise<T> => {
+    if (!!obj && typeof obj === 'object') {
+      if ('then' in obj) {
+        return true
+      }
+    }
+
+    return false
+  }
+
+  const argv = yargs()
     .command('script <name>', false, script.builder)
     .parse('script BazingaScript')
+
+  const name = isPromiseLike(argv) ? (await argv).name : argv.name
 
   expect(name).toEqual('BazingaScript')
 })

@@ -9,7 +9,7 @@ import '../../../../lib/test'
 
 import { getDefaultArgs } from '../../../../lib/index.js'
 import { yargsDefaults as defaults } from '../../yargsCommandHelpers.js'
-import * as scaffold from '../scaffold.js'
+import * as scaffoldHandler from '../scaffoldHandler.js'
 
 vi.mock('fs', async () => ({ default: (await import('memfs')).fs }))
 vi.mock('execa')
@@ -20,7 +20,7 @@ describe('support custom @id name', () => {
   beforeAll(async () => {
     vol.fromJSON({ 'redwood.toml': '' }, '/')
 
-    files = await scaffold.files({
+    files = await scaffoldHandler.files({
       ...getDefaultArgs(defaults),
       typescript: true,
       model: 'CustomIdField',
@@ -30,7 +30,7 @@ describe('support custom @id name', () => {
   })
 
   test('creates routes with the custom id name', async () => {
-    const customIdFieldRoutes = await scaffold.routes({
+    const customIdFieldRoutes = await scaffoldHandler.routes({
       model: 'CustomIdField',
       nestScaffoldByModel: true,
     })
