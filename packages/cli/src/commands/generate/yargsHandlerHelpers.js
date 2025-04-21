@@ -105,51 +105,51 @@ export const validateName = (name) => {
 
 export function createHandler({
   componentName,
-  preTasksFn = (options) => options,
+  preTasksFn = (argv) => argv,
   filesFn,
   includeAdditionalTasks,
 }) {
-  return async (options) => {
+  return async (argv) => {
     recordTelemetryAttributes({
       command: `generate ${componentName}`,
-      tests: options.tests,
-      stories: options.stories,
-      verbose: options.verbose,
-      rollback: options.rollback,
-      force: options.force,
+      tests: argv.tests,
+      stories: argv.stories,
+      verbose: argv.verbose,
+      rollback: argv.rollback,
+      force: argv.force,
       // TODO: This does not cover the specific options that each generator might pass in
     })
 
-    if (options.tests === undefined) {
-      options.tests = getConfig().generate.tests
+    if (argv.tests === undefined) {
+      argv.tests = getConfig().generate.tests
     }
-    if (options.stories === undefined) {
-      options.stories = getConfig().generate.stories
+    if (argv.stories === undefined) {
+      argv.stories = getConfig().generate.stories
     }
-    validateName(options.name)
+    validateName(argv.name)
 
     try {
-      options = await preTasksFn(options)
+      argv = await preTasksFn(argv)
 
       const tasks = new Listr(
         [
           {
             title: `Generating ${componentName} files...`,
             task: async () => {
-              const f = await filesFn(options)
-              return writeFilesTask(f, { overwriteExisting: options.force })
+              const f = await filesFn(argv)
+              return writeFilesTask(f, { overwriteExisting: argv.force })
             },
           },
-          ...includeAdditionalTasks(options),
+          ...includeAdditionalTasks(argv),
         ],
         {
           rendererOptions: { collapseSubtasks: false },
           exitOnError: true,
-          renderer: options.verbose && 'verbose',
+          renderer: argv.verbose && 'verbose',
         },
       )
 
-      if (options.rollback && !options.force) {
+      if (argv.rollback && !argv.force) {
         prepareForRollback(tasks)
       }
       await tasks.run()

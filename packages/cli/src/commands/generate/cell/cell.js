@@ -27,8 +27,8 @@ export const builder = createBuilder({
   },
 })
 
-export async function handler(options) {
+export async function handler(argv) {
   const { handler: cellHandler } = await import('./cellHandler.js')
 
-  return cellHandler(options)
+  return cellHandler(argv)
 }
