@@ -1,6 +1,6 @@
 import terminalLink from 'terminal-link'
 
-import { yargsDefaults } from '../yargsCommandHelpers.js'
+import { createHandler, yargsDefaults } from '../yargsCommandHelpers.js'
 
 export const command = 'model <name>'
 export const description = 'Generate a RedwoodRecord model'
@@ -26,9 +26,4 @@ export const builder = (yargs) => {
     yargs.option(option, config)
   })
 }
-
-export async function handler(argv) {
-  const { handler: importedHandler } = await import('./modelHandler.js')
-
-  return importedHandler(argv)
-}
+export const handler = createHandler('model')

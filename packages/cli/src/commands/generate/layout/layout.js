@@ -2,6 +2,7 @@ import {
   createCommand,
   createDescription,
   createBuilder,
+  createHandler,
   yargsDefaults,
 } from '../yargsCommandHelpers.js'
 
@@ -17,9 +18,4 @@ const optionsObj = {
 export const command = createCommand('layout')
 export const description = createDescription('layout')
 export const builder = createBuilder({ componentName: 'layout', optionsObj })
-
-export async function handler(argv) {
-  const { handler: importedHandler } = await import('./layoutHandler.js')
-
-  return importedHandler(argv)
-}
+export const handler = createHandler('layout')
