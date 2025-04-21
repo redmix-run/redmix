@@ -25,7 +25,7 @@ import {
 // https://github.com/vitest-dev/vitest/issues/5999
 import { Listr2Mock } from '../../../../__tests__/Listr2Mock'
 import { getPaths } from '../../../../lib/index.js'
-import * as dbAuth from '../dbAuth.js'
+import * as dbAuth from '../dbAuthHandler.js'
 
 vi.mock('listr2', () => ({
   Listr: Listr2Mock,
