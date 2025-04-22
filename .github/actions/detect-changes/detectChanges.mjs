@@ -69,11 +69,11 @@ async function getLatestCompletedWorkflowRun(branchName) {
     return
   }
 
-  // 24294187 is the ID of the CI workflow (ci.yml). If it changes, or you want
+  // 154971623 is the ID of the CI workflow (ci.yml). If it changes, or you want
   // to use a different workflow, go to
   // https://api.github.com/repos/redmix-run/redmix/actions/workflows to get a
   // list of all workflows and their IDs
-  const workflowId = '24294187'
+  const workflowId = '154971623'
   const url = `${BASE_URL}/actions/workflows/${workflowId}/runs?branch=${branchName}`
   const { json } = await fetchJson(url)
 

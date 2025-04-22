@@ -7,13 +7,16 @@ import path from 'path'
 import { describe, it, expect, test } from 'vitest'
 import yargs from 'yargs/yargs'
 
+// @ts-expect-error - importing js
 import * as functionGenerator from '../function.js'
+// @ts-expect-error - importing js
+import * as functionHandler from '../functionHandler.js'
 
 // Should be refactored as it's repeated
 type WordFilesType = { [key: string]: string }
 
 describe('Single word default files', async () => {
-  const singleWordDefaultFiles: WordFilesType = await functionGenerator.files({
+  const singleWordDefaultFiles: WordFilesType = await functionHandler.files({
     name: 'foo',
     tests: true,
   })
@@ -64,7 +67,7 @@ test('Keeps Function in name', () => {
 })
 
 test('creates a multi word function file', async () => {
-  const multiWordDefaultFiles = await functionGenerator.files({
+  const multiWordDefaultFiles = await functionHandler.files({
     name: 'send-mail',
   })
 
@@ -76,7 +79,7 @@ test('creates a multi word function file', async () => {
 })
 
 test('creates a .js file if --javascript=true', async () => {
-  const javascriptFiles = await functionGenerator.files({
+  const javascriptFiles = await functionHandler.files({
     name: 'javascript-function',
   })
 
@@ -92,7 +95,7 @@ test('creates a .js file if --javascript=true', async () => {
 })
 
 test('creates a .ts file if --typescript=true', async () => {
-  const typescriptFiles = await functionGenerator.files({
+  const typescriptFiles = await functionHandler.files({
     name: 'typescript-function',
     typescript: true,
   })

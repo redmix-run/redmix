@@ -252,6 +252,13 @@ export async function webTasks(
       'updateAuthorTest.js',
       fullPath('web/src/components/Author/Author.test'),
     )
+
+    await createComponent('classWithClassField')
+
+    await applyCodemod(
+      'classWithClassField.ts',
+      fullPath('web/src/components/ClassWithClassField/ClassWithClassField'),
+    )
   }
 
   const createCells = async () => {

@@ -4,7 +4,7 @@ import fs from 'fs-extra'
 import { vi, describe, expect, test, afterEach } from 'vitest'
 
 import '../../../../lib/test'
-import { shouldUseTailwindCSS } from '../scaffold.js'
+import { shouldUseTailwindCSS } from '../scaffoldHandler.js'
 
 vi.mock('fs-extra')
 

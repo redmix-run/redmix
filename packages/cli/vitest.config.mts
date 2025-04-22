@@ -8,5 +8,8 @@ export default defineConfig({
     },
     logHeapUsage: true,
     workspace: './vitest.workspaces.ts',
+    env: {
+      FORCE_COLOR: 'true',
+    },
   },
 })

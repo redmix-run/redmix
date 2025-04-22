@@ -8,8 +8,8 @@ import { vi, describe, beforeAll, test, expect } from 'vitest'
 import '../../../../lib/test'
 
 import { getDefaultArgs } from '../../../../lib/index.js'
-import { yargsDefaults as defaults } from '../../helpers.js'
-import * as scaffold from '../scaffold.js'
+import { yargsDefaults as defaults } from '../../yargsCommandHelpers.js'
+import * as scaffoldHandler from '../scaffoldHandler.js'
 
 vi.mock('fs', async () => ({ default: (await import('memfs')).fs }))
 vi.mock('execa')
@@ -19,7 +19,7 @@ describe('relational form field', () => {
 
   beforeAll(async () => {
     vol.fromJSON({ 'redwood.toml': '' }, '/')
-    const files = await scaffold.files({
+    const files = await scaffoldHandler.files({
       ...getDefaultArgs(defaults),
       model: 'Tag',
       tests: true,

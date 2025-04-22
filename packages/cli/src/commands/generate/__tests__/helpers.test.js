@@ -1,6 +1,6 @@
-import path from 'path'
+import fs from 'node:fs'
+import path from 'node:path'
 
-import fs from 'fs-extra'
 import { vi, test, expect, describe, it } from 'vitest'
 
 // Setup test mocks
@@ -8,10 +8,14 @@ globalThis.__dirname = __dirname
 import '../../../lib/test'
 
 import * as helpers from '../helpers.js'
-import * as page from '../page/page.js'
+import * as pageHandler from '../page/pageHandler.js'
+import {
+  customOrDefaultTemplatePath,
+  templateForComponentFile,
+} from '../yargsHandlerHelpers.js'
 
 test('customOrDefaultTemplatePath returns the default path if no custom templates exist', () => {
-  const output = helpers.customOrDefaultTemplatePath({
+  const output = customOrDefaultTemplatePath({
     side: 'web',
     generator: 'page',
     templatePath: 'page.tsx.template',
@@ -28,7 +32,7 @@ test('customOrDefaultTemplatePath returns the app path if a custom template exis
   // pretend the custom template exists
   vi.spyOn(fs, 'existsSync').mockImplementationOnce(() => true)
 
-  const output = helpers.customOrDefaultTemplatePath({
+  const output = customOrDefaultTemplatePath({
     side: 'web',
     generator: 'page',
     templatePath: 'page.tsx.template',
@@ -43,7 +47,7 @@ test('customOrDefaultTemplatePath returns the app path with proper side, generat
   // pretend the custom template exists
   vi.spyOn(fs, 'existsSync').mockImplementationOnce(() => true)
 
-  const output = helpers.customOrDefaultTemplatePath({
+  const output = customOrDefaultTemplatePath({
     side: 'api',
     generator: 'cell',
     templatePath: 'component.tsx.template',
@@ -60,14 +64,14 @@ test('templateForComponentFile creates a proper output path for files', async ()
   const names = ['FooBar', 'fooBar', 'foo-bar', 'foo_bar']
 
   for (const name of names) {
-    const output = await helpers.templateForComponentFile({
+    const output = await templateForComponentFile({
       name: name,
       suffix: 'Page',
       webPathSection: 'pages',
       generator: 'page',
       templatePath: 'page.tsx.template',
       templateVars: {
-        ...page.paramVariants(helpers.pathName(undefined, name)),
+        ...pageHandler.paramVariants(helpers.pathName(undefined, name)),
         rscEnabled: false,
       },
     })
@@ -82,14 +86,14 @@ test('templateForComponentFile creates a proper output path for files with all c
   const names = ['FOO_BAR', 'FOO-BAR', 'FOOBAR']
 
   for (const name of names) {
-    const output = await helpers.templateForComponentFile({
+    const output = await templateForComponentFile({
       name: name,
       suffix: 'Page',
       webPathSection: 'pages',
       generator: 'page',
       templatePath: 'page.tsx.template',
       templateVars: {
-        ...page.paramVariants(helpers.pathName(undefined, name)),
+        ...pageHandler.paramVariants(helpers.pathName(undefined, name)),
         rscEnabled: false,
       },
     })
@@ -104,14 +108,14 @@ test('templateForComponentFile creates a proper output path for files for starti
   const names = ['FOOBar', 'FOO-Bar', 'FOO_Bar']
 
   for (const name of names) {
-    const output = await helpers.templateForComponentFile({
+    const output = await templateForComponentFile({
       name: name,
       suffix: 'Page',
       webPathSection: 'pages',
       generator: 'page',
       templatePath: 'page.tsx.template',
       templateVars: {
-        ...page.paramVariants(helpers.pathName(undefined, name)),
+        ...pageHandler.paramVariants(helpers.pathName(undefined, name)),
         rscEnabled: false,
       },
     })
@@ -126,14 +130,14 @@ test('templateForComponentFile creates a proper output path for files with upper
   const names = ['ABtest', 'aBtest', 'a-Btest', 'a_Btest']
 
   for (const name of names) {
-    const output = await helpers.templateForComponentFile({
+    const output = await templateForComponentFile({
       name: name,
       suffix: 'Page',
       webPathSection: 'pages',
       generator: 'page',
       templatePath: 'page.tsx.template',
       templateVars: {
-        ...page.paramVariants(helpers.pathName(undefined, name)),
+        ...pageHandler.paramVariants(helpers.pathName(undefined, name)),
         rscEnabled: false,
       },
     })
@@ -145,14 +149,14 @@ test('templateForComponentFile creates a proper output path for files with upper
 })
 
 test('templateForComponentFile can create a path in /web', async () => {
-  const output = await helpers.templateForComponentFile({
+  const output = await templateForComponentFile({
     name: 'Home',
     suffix: 'Page',
     webPathSection: 'pages',
     generator: 'page',
     templatePath: 'page.tsx.template',
     templateVars: {
-      ...page.paramVariants(helpers.pathName(undefined, 'Home')),
+      ...pageHandler.paramVariants(helpers.pathName(undefined, 'Home')),
       rscEnabled: false,
     },
   })
@@ -163,14 +167,14 @@ test('templateForComponentFile can create a path in /web', async () => {
 })
 
 test('templateForComponentFile can create a path in /api', async () => {
-  const output = await helpers.templateForComponentFile({
+  const output = await templateForComponentFile({
     name: 'Home',
     suffix: 'Page',
     apiPathSection: 'services',
     generator: 'page',
     templatePath: 'page.tsx.template',
     templateVars: {
-      ...page.paramVariants(helpers.pathName(undefined, 'Home')),
+      ...pageHandler.paramVariants(helpers.pathName(undefined, 'Home')),
       rscEnabled: false,
     },
   })
@@ -181,14 +185,14 @@ test('templateForComponentFile can create a path in /api', async () => {
 })
 
 test('templateForComponentFile can override generated component name', async () => {
-  const output = await helpers.templateForComponentFile({
+  const output = await templateForComponentFile({
     name: 'Home',
     componentName: 'Hobbiton',
     webPathSection: 'pages',
     generator: 'page',
     templatePath: 'page.tsx.template',
     templateVars: {
-      ...page.paramVariants(helpers.pathName(undefined, 'Home')),
+      ...pageHandler.paramVariants(helpers.pathName(undefined, 'Home')),
       rscEnabled: false,
     },
   })
@@ -199,7 +203,7 @@ test('templateForComponentFile can override generated component name', async () 
 })
 
 test('templateForComponentFile can override file extension', async () => {
-  const output = await helpers.templateForComponentFile({
+  const output = await templateForComponentFile({
     name: 'Home',
     suffix: 'Page',
     extension: '.txt',
@@ -207,7 +211,7 @@ test('templateForComponentFile can override file extension', async () => {
     generator: 'page',
     templatePath: 'page.tsx.template',
     templateVars: {
-      ...page.paramVariants(helpers.pathName(undefined, 'Home')),
+      ...pageHandler.paramVariants(helpers.pathName(undefined, 'Home')),
       rscEnabled: false,
     },
   })
@@ -218,7 +222,7 @@ test('templateForComponentFile can override file extension', async () => {
 })
 
 test('templateForComponentFile can override output path', async () => {
-  const output = await helpers.templateForComponentFile({
+  const output = await templateForComponentFile({
     name: 'func',
     apiPathSection: 'functions',
     generator: 'function',
@@ -233,14 +237,14 @@ test('templateForComponentFile can override output path', async () => {
 })
 
 test('templateForComponentFile creates a template', async () => {
-  const output = await helpers.templateForComponentFile({
+  const output = await templateForComponentFile({
     name: 'FooBar',
     suffix: 'Page',
     webPathSection: 'pages',
     generator: 'page',
     templatePath: 'page.tsx.template',
     templateVars: {
-      ...page.paramVariants(helpers.pathName(undefined, 'fooBar')),
+      ...pageHandler.paramVariants(helpers.pathName(undefined, 'fooBar')),
       rscEnabled: false,
     },
   })

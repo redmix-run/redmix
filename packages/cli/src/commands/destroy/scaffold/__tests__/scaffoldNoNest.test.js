@@ -9,11 +9,9 @@ import { vi, test, describe, beforeEach, afterEach, expect } from 'vitest'
 import '../../../../lib/test'
 
 import { getPaths, getDefaultArgs } from '../../../../lib/index.js'
-import {
-  yargsDefaults as defaults,
-  customOrDefaultTemplatePath,
-} from '../../../generate/helpers.js'
-import { files } from '../../../generate/scaffold/scaffold.js'
+import { files } from '../../../generate/scaffold/scaffoldHandler.js'
+import { yargsDefaults as defaults } from '../../../generate/yargsCommandHelpers.js'
+import { customOrDefaultTemplatePath } from '../../../generate/yargsHandlerHelpers.js'
 import { tasks } from '../scaffold.js'
 
 vi.mock('fs', async () => ({ default: (await import('memfs')).fs }))

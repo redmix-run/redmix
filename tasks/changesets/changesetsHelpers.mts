@@ -144,7 +144,7 @@ fragment PullRequestDetails on PullRequest {
 const getPrByNumberQuery = `\
 ${pullRequestFragment}
 query ($prNumber: Int!) {
-  repository(owner: "redwoodjs", name: "redwood") {
+  repository(owner: "redmix-run", name: "redmix") {
     pullRequest(number: $prNumber) {
       ...PullRequestDetails
     }
@@ -155,7 +155,7 @@ query ($prNumber: Int!) {
 function getPlaceholderForPr(pr: PR) {
   return [
     "(Delete this help paragraph when you're done.) Thanks for writing a changeset! Here's a place to start.",
-    "Don't edit the title, but in editing the body, try to explain what this PR means for Redwood users.",
+    "Don't edit the title, but in editing the body, try to explain what this PR means for Redmix users.",
     'The more detail the better. E.g., is it a new feature? How do they use it? Code examples go a long way!',
     '',
     `- ${pr.title} (#${pr.number}) by @${pr.author.login}`,
