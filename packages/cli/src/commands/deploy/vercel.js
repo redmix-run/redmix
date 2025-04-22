@@ -1,18 +1,23 @@
 import { recordTelemetryAttributes } from '@redmix/cli-helpers'
 
-import { deployBuilder, deployHandler } from './helpers/helpers.js'
+import { deployBuilder } from './helpers/deployBuilder.js'
 
 export const command = 'vercel [...commands]'
 export const description = 'Build command for Vercel deploy'
 
 export const builder = (yargs) => deployBuilder(yargs)
 
-export const handler = (yargs) => {
+export async function handler(yargs) {
   recordTelemetryAttributes({
     command: 'deploy vercel',
     build: yargs.build,
     prisma: yargs.prisma,
     dataMigrate: yargs.dataMigrate,
   })
-  deployHandler(yargs)
+
+  const { handler: importedHandler } = await import(
+    './helpers/deployHandler.js'
+  )
+
+  return importedHandler(yargs)
 }

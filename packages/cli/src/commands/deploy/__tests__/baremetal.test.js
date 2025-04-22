@@ -11,12 +11,12 @@ vi.mock('@redmix/project-config', async (importOriginal) => {
   }
 })
 
-import * as baremetal from '../baremetal.js'
+import * as baremetalHandler from '../baremetal/baremetalHandler.js'
 
 describe('verifyConfig', () => {
   it('throws an error if no environment specified', () => {
     expect(() =>
-      baremetal.verifyConfig(
+      baremetalHandler.verifyConfig(
         { production: { servers: [{ host: 'prod.server.com' }] } },
         {},
       ),
@@ -25,7 +25,7 @@ describe('verifyConfig', () => {
 
   it('throws an error if environment is not found', () => {
     expect(() =>
-      baremetal.verifyConfig(
+      baremetalHandler.verifyConfig(
         { production: { servers: [{ host: 'prod.server.com' }] } },
         { environment: 'staging' },
       ),
@@ -36,7 +36,7 @@ describe('verifyConfig', () => {
 describe('verifyServerConfig', () => {
   it('throws an error if host is missing', () => {
     expect(() =>
-      baremetal.verifyServerConfig({
+      baremetalHandler.verifyServerConfig({
         path: '/var/www/app',
         repo: 'git://github.com',
       }),
@@ -47,7 +47,7 @@ describe('verifyServerConfig', () => {
 
   it('throws an error if path is missing', () => {
     expect(() =>
-      baremetal.verifyServerConfig({
+      baremetalHandler.verifyServerConfig({
         host: 'host.test',
         repo: 'git://github.com',
       }),
@@ -58,7 +58,7 @@ describe('verifyServerConfig', () => {
 
   it('throws an error if repo is missing', () => {
     expect(() =>
-      baremetal.verifyServerConfig({
+      baremetalHandler.verifyServerConfig({
         host: 'host.test',
         path: '/var/www/app',
       }),
@@ -69,7 +69,7 @@ describe('verifyServerConfig', () => {
 
   it('throws an error if freeSpaceRequired is a string of letters', () => {
     expect(() =>
-      baremetal.verifyServerConfig({
+      baremetalHandler.verifyServerConfig({
         host: 'host.test',
         path: '/var/www/app',
         repo: 'git://github.com',
@@ -80,7 +80,7 @@ describe('verifyServerConfig', () => {
 
   it('throws an error if freeSpaceRequired is a float (as a string)', () => {
     expect(() =>
-      baremetal.verifyServerConfig({
+      baremetalHandler.verifyServerConfig({
         host: 'host.test',
         path: '/var/www/app',
         repo: 'git://github.com',
@@ -91,7 +91,7 @@ describe('verifyServerConfig', () => {
 
   it('throws an error if freeSpaceRequired is a float', () => {
     expect(() =>
-      baremetal.verifyServerConfig({
+      baremetalHandler.verifyServerConfig({
         host: 'host.test',
         path: '/var/www/app',
         repo: 'git://github.com',
@@ -102,7 +102,7 @@ describe('verifyServerConfig', () => {
 
   it('throws an error if freeSpaceRequired includes a unit', () => {
     expect(() =>
-      baremetal.verifyServerConfig({
+      baremetalHandler.verifyServerConfig({
         host: 'host.test',
         path: '/var/www/app',
         repo: 'git://github.com',
@@ -111,7 +111,7 @@ describe('verifyServerConfig', () => {
     ).toThrow('"freeSpaceRequired" must be an integer >= 0')
 
     expect(() =>
-      baremetal.verifyServerConfig({
+      baremetalHandler.verifyServerConfig({
         host: 'host.test',
         path: '/var/www/app',
         repo: 'git://github.com',
@@ -122,7 +122,7 @@ describe('verifyServerConfig', () => {
 
   it('throws an error if freeSpaceRequired is negative (as a string)', () => {
     expect(() =>
-      baremetal.verifyServerConfig({
+      baremetalHandler.verifyServerConfig({
         host: 'host.test',
         path: '/var/www/app',
         repo: 'git://github.com',
@@ -133,7 +133,7 @@ describe('verifyServerConfig', () => {
 
   it('throws an error if freeSpaceRequired is negative', () => {
     expect(() =>
-      baremetal.verifyServerConfig({
+      baremetalHandler.verifyServerConfig({
         host: 'host.test',
         path: '/var/www/app',
         repo: 'git://github.com',
@@ -144,7 +144,7 @@ describe('verifyServerConfig', () => {
 
   it('allows freeSpaceRequired to be 0 (as a string)', () => {
     expect(
-      baremetal.verifyServerConfig({
+      baremetalHandler.verifyServerConfig({
         host: 'host.test',
         path: '/var/www/app',
         repo: 'git://github.com',
@@ -155,7 +155,7 @@ describe('verifyServerConfig', () => {
 
   it('allows freeSpaceRequired to be 0', () => {
     expect(
-      baremetal.verifyServerConfig({
+      baremetalHandler.verifyServerConfig({
         host: 'host.test',
         path: '/var/www/app',
         repo: 'git://github.com',
@@ -166,7 +166,7 @@ describe('verifyServerConfig', () => {
 
   it('returns true if no problems', () => {
     expect(
-      baremetal.verifyServerConfig({
+      baremetalHandler.verifyServerConfig({
         host: 'host.test',
         path: '/var/www/app',
         repo: 'git://github.com',
@@ -178,7 +178,7 @@ describe('verifyServerConfig', () => {
 
 describe('maintenanceTasks', () => {
   it('returns tasks to put maintenance page up', () => {
-    const tasks = baremetal.maintenanceTasks(
+    const tasks = baremetalHandler.maintenanceTasks(
       'up',
       {},
       { path: '/var/www/app', processNames: ['api'] },
@@ -190,7 +190,7 @@ describe('maintenanceTasks', () => {
   })
 
   it('returns tasks to take maintenance page down', () => {
-    const tasks = baremetal.maintenanceTasks(
+    const tasks = baremetalHandler.maintenanceTasks(
       'down',
       {},
       { path: '/var/www/app', processNames: ['api'] },
@@ -204,7 +204,7 @@ describe('maintenanceTasks', () => {
 
 describe('rollbackTasks', () => {
   it('returns rollback tasks', () => {
-    const tasks1 = baremetal.rollbackTasks(
+    const tasks1 = baremetalHandler.rollbackTasks(
       1,
       {},
       { path: '/var/www/app', processNames: ['api'] },
@@ -214,7 +214,7 @@ describe('rollbackTasks', () => {
     expect(tasks1[0].title).toMatch('Rolling back 1')
     expect(tasks1[1].title).toMatch('Restarting')
 
-    const tasks2 = baremetal.rollbackTasks(
+    const tasks2 = baremetalHandler.rollbackTasks(
       5,
       {},
       { path: '/var/www/app', processNames: ['api'] },
@@ -226,8 +226,8 @@ describe('rollbackTasks', () => {
 
 describe('serverConfigWithDefaults', () => {
   it('provides some default settings', () => {
-    const config = baremetal.serverConfigWithDefaults({}, {})
-    expect(config).toEqual(baremetal.DEFAULT_SERVER_CONFIG)
+    const config = baremetalHandler.serverConfigWithDefaults({}, {})
+    expect(config).toEqual(baremetalHandler.DEFAULT_SERVER_CONFIG)
   })
 
   it('overrides defaults with custom', () => {
@@ -240,27 +240,30 @@ describe('serverConfigWithDefaults', () => {
       keepReleases: 2,
       freeSpaceRequired: 1000,
     }
-    const config = baremetal.serverConfigWithDefaults(serverConfig, {})
+    const config = baremetalHandler.serverConfigWithDefaults(serverConfig, {})
     expect(config).toEqual(serverConfig)
   })
 
   it('provides default port as 22', () => {
-    const config = baremetal.serverConfigWithDefaults({}, {})
+    const config = baremetalHandler.serverConfigWithDefaults({}, {})
     expect(config.port).toEqual(22)
   })
 
   it('provides default branch name', () => {
-    const config = baremetal.serverConfigWithDefaults({}, {})
+    const config = baremetalHandler.serverConfigWithDefaults({}, {})
     expect(config.branch).toEqual('main')
   })
 
   it('overrides branch name from config', () => {
-    const config = baremetal.serverConfigWithDefaults({ branch: 'earth' }, {})
+    const config = baremetalHandler.serverConfigWithDefaults(
+      { branch: 'earth' },
+      {},
+    )
     expect(config.branch).toEqual('earth')
   })
 
   it('overrides branch name from yargs no matter what', () => {
-    const config = baremetal.serverConfigWithDefaults(
+    const config = baremetalHandler.serverConfigWithDefaults(
       { branch: 'earth' },
       { branch: 'moon' },
     )
@@ -268,14 +271,14 @@ describe('serverConfigWithDefaults', () => {
   })
 
   it('does not provide default freeSpaceRequired', () => {
-    const config = baremetal.serverConfigWithDefaults({}, {})
+    const config = baremetalHandler.serverConfigWithDefaults({}, {})
     expect(config.freeSpaceRequired).toBeUndefined()
   })
 })
 
 describe('parseConfig', () => {
   it('returns the config for an environment', () => {
-    const { envConfig } = baremetal.parseConfig(
+    const { envConfig } = baremetalHandler.parseConfig(
       { environment: 'production' },
       `
         [[production.servers]]
@@ -287,7 +290,7 @@ describe('parseConfig', () => {
   })
 
   it('returns the proper config from multiple environments', () => {
-    const { envConfig } = baremetal.parseConfig(
+    const { envConfig } = baremetalHandler.parseConfig(
       { environment: 'staging' },
       `
         [[production.servers]]
@@ -302,7 +305,7 @@ describe('parseConfig', () => {
   })
 
   it('returns empty objects if no lifecycle defined', () => {
-    const { _envConfig, envLifecycle } = baremetal.parseConfig(
+    const { _envConfig, envLifecycle } = baremetalHandler.parseConfig(
       { environment: 'production' },
       `
         [[production.servers]]
@@ -315,7 +318,7 @@ describe('parseConfig', () => {
   })
 
   it('parses a single global lifecycle event', () => {
-    const { _envConfig, envLifecycle } = baremetal.parseConfig(
+    const { _envConfig, envLifecycle } = baremetalHandler.parseConfig(
       { environment: 'production' },
       `
         [before]
@@ -331,7 +334,7 @@ describe('parseConfig', () => {
   })
 
   it('parses multiple global lifecycle events', () => {
-    const { _envConfig, envLifecycle } = baremetal.parseConfig(
+    const { _envConfig, envLifecycle } = baremetalHandler.parseConfig(
       { environment: 'production' },
       `
         [before]
@@ -351,7 +354,7 @@ describe('parseConfig', () => {
   })
 
   it('parses an array of global lifecycle events', () => {
-    const { _envConfig, envLifecycle } = baremetal.parseConfig(
+    const { _envConfig, envLifecycle } = baremetalHandler.parseConfig(
       { environment: 'production' },
       `
         [before]
@@ -369,7 +372,7 @@ describe('parseConfig', () => {
   })
 
   it('parses an env lifecycle event', () => {
-    const { _envConfig, envLifecycle } = baremetal.parseConfig(
+    const { _envConfig, envLifecycle } = baremetalHandler.parseConfig(
       { environment: 'production' },
       `
         [[production.servers]]
@@ -385,7 +388,7 @@ describe('parseConfig', () => {
   })
 
   it('parses combined global and env lifecycle events', () => {
-    const { _envConfig, envLifecycle } = baremetal.parseConfig(
+    const { _envConfig, envLifecycle } = baremetalHandler.parseConfig(
       { environment: 'production' },
       `
         [before]
@@ -412,7 +415,7 @@ describe('parseConfig', () => {
     process.env.TEST_VAR_REPO = 'git://staging.github.com'
     const {
       envConfig: { servers },
-    } = baremetal.parseConfig(
+    } = baremetalHandler.parseConfig(
       { environment: 'production' },
       `
         [[production.servers]]
@@ -437,7 +440,7 @@ describe('parseConfig', () => {
 
 describe('commandWithLifecycleEvents', () => {
   it('returns just the command if no lifecycle defined', () => {
-    const tasks = baremetal.commandWithLifecycleEvents({
+    const tasks = baremetalHandler.commandWithLifecycleEvents({
       name: 'update',
       config: { serverLifecycle: {} },
       skip: false,
@@ -453,7 +456,7 @@ describe('commandWithLifecycleEvents', () => {
   })
 
   it('copies `skip` output into task function', () => {
-    const tasks = baremetal.commandWithLifecycleEvents({
+    const tasks = baremetalHandler.commandWithLifecycleEvents({
       name: 'update',
       config: { serverLifecycle: {} },
       skip: 'foobar',
@@ -467,7 +470,7 @@ describe('commandWithLifecycleEvents', () => {
   })
 
   it('includes a `before` lifecycle event', () => {
-    const tasks = baremetal.commandWithLifecycleEvents({
+    const tasks = baremetalHandler.commandWithLifecycleEvents({
       name: 'update',
       config: {
         serverLifecycle: { before: { update: ['touch'] } },
@@ -487,7 +490,7 @@ describe('commandWithLifecycleEvents', () => {
   })
 
   it('includes multiple `before` lifecycle events', () => {
-    const tasks = baremetal.commandWithLifecycleEvents({
+    const tasks = baremetalHandler.commandWithLifecycleEvents({
       name: 'update',
       config: {
         serverLifecycle: { before: { update: ['touch1', 'touch2'] } },
@@ -509,7 +512,7 @@ describe('commandWithLifecycleEvents', () => {
   })
 
   it('copies `skip` output into `before` lifecycle event task function', () => {
-    const tasks = baremetal.commandWithLifecycleEvents({
+    const tasks = baremetalHandler.commandWithLifecycleEvents({
       name: 'update',
       config: {
         serverLifecycle: { before: { update: ['touch'] } },
@@ -526,7 +529,7 @@ describe('commandWithLifecycleEvents', () => {
   })
 
   it('includes an `after` lifecycle event', () => {
-    const tasks = baremetal.commandWithLifecycleEvents({
+    const tasks = baremetalHandler.commandWithLifecycleEvents({
       name: 'update',
       config: {
         serverLifecycle: { after: { update: ['touch'] } },
@@ -546,7 +549,7 @@ describe('commandWithLifecycleEvents', () => {
   })
 
   it('includes multiple `after` lifecycle events', () => {
-    const tasks = baremetal.commandWithLifecycleEvents({
+    const tasks = baremetalHandler.commandWithLifecycleEvents({
       name: 'update',
       config: {
         serverLifecycle: { after: { update: ['touch1', 'touch2'] } },
@@ -568,7 +571,7 @@ describe('commandWithLifecycleEvents', () => {
   })
 
   it('copies `skip` output into `after` lifecycle event task function', () => {
-    const tasks = baremetal.commandWithLifecycleEvents({
+    const tasks = baremetalHandler.commandWithLifecycleEvents({
       name: 'update',
       config: {
         serverLifecycle: { after: { update: ['touch'] } },
@@ -585,7 +588,7 @@ describe('commandWithLifecycleEvents', () => {
   })
 
   it('includes both `before` and `after` lifecycle events', () => {
-    const tasks = baremetal.commandWithLifecycleEvents({
+    const tasks = baremetalHandler.commandWithLifecycleEvents({
       name: 'update',
       config: {
         serverLifecycle: {
@@ -638,7 +641,7 @@ describe('deployTasks', () => {
   })
 
   it('provides a default list of tasks', () => {
-    const tasks = baremetal.deployTasks(
+    const tasks = baremetalHandler.deployTasks(
       defaultYargs,
       {}, // ssh
       defaultServerConfig,
@@ -667,7 +670,7 @@ describe('deployTasks', () => {
   })
 
   it('skips the available space check if --no-df is passed', () => {
-    const tasks = baremetal.deployTasks(
+    const tasks = baremetalHandler.deployTasks(
       { ...defaultYargs, df: false },
       {}, // ssh
       defaultServerConfig,
@@ -678,7 +681,7 @@ describe('deployTasks', () => {
   })
 
   it('skips the available space check if freeSpaceRequired is set to 0', () => {
-    const tasks = baremetal.deployTasks(
+    const tasks = baremetalHandler.deployTasks(
       { ...defaultYargs },
       {}, // ssh
       { ...defaultServerConfig, freeSpaceRequired: 0 },
@@ -695,7 +698,7 @@ describe('deployTasks', () => {
 
     const { freeSpaceRequired: _, ...serverConfig } = defaultServerConfig
 
-    const tasks = baremetal.deployTasks(
+    const tasks = baremetalHandler.deployTasks(
       defaultYargs,
       ssh,
       { ...serverConfig, sides: ['api', 'web'] },
@@ -716,7 +719,7 @@ describe('deployTasks', () => {
       exec: () => ({ stdout: 'df:1875' }),
     }
 
-    const tasks = baremetal.deployTasks(
+    const tasks = baremetalHandler.deployTasks(
       defaultYargs,
       ssh,
       { ...defaultServerConfig, sides: ['api', 'web'] },
@@ -733,7 +736,7 @@ describe('deployTasks', () => {
       exec: () => ({ stdout: '', stderr: 'df: command not found' }),
     }
 
-    const tasks = baremetal.deployTasks(
+    const tasks = baremetalHandler.deployTasks(
       defaultYargs,
       ssh,
       { ...defaultServerConfig, sides: ['api', 'web'] },
@@ -752,7 +755,7 @@ describe('deployTasks', () => {
       exec: () => ({ stdout: 'df:/dev/sda1' }),
     }
 
-    const tasks = baremetal.deployTasks(
+    const tasks = baremetalHandler.deployTasks(
       defaultYargs,
       ssh,
       { ...defaultServerConfig, sides: ['api', 'web'] },
@@ -769,7 +772,7 @@ describe('deployTasks', () => {
   })
 
   it('builds each side separately', () => {
-    const tasks = baremetal.deployTasks(
+    const tasks = baremetalHandler.deployTasks(
       defaultYargs,
       {}, // ssh
       { ...defaultServerConfig, sides: ['api', 'web'] },
@@ -782,7 +785,7 @@ describe('deployTasks', () => {
   })
 
   it('skips migrations if migrate = false in config', () => {
-    const tasks = baremetal.deployTasks(
+    const tasks = baremetalHandler.deployTasks(
       defaultYargs,
       {}, // ssh
       { ...defaultServerConfig, migrate: false },
@@ -794,7 +797,7 @@ describe('deployTasks', () => {
   })
 
   it('starts pm2 if --first-run flag set', () => {
-    const tasks = baremetal.deployTasks(
+    const tasks = baremetalHandler.deployTasks(
       { ...defaultYargs, firstRun: true },
       {}, // ssh
       defaultServerConfig,
@@ -807,7 +810,7 @@ describe('deployTasks', () => {
   })
 
   it('skips clone and symlinks if --no-update flag passed', () => {
-    const tasks = baremetal.deployTasks(
+    const tasks = baremetalHandler.deployTasks(
       { ...defaultYargs, update: false },
       {}, // ssh
       defaultServerConfig,
@@ -820,7 +823,7 @@ describe('deployTasks', () => {
   })
 
   it('skips install if --no-install flag passed', () => {
-    const tasks = baremetal.deployTasks(
+    const tasks = baremetalHandler.deployTasks(
       { ...defaultYargs, install: false },
       {}, // ssh
       defaultServerConfig,
@@ -831,7 +834,7 @@ describe('deployTasks', () => {
   })
 
   it('skips migrations if --no-migrate flag passed', () => {
-    const tasks = baremetal.deployTasks(
+    const tasks = baremetalHandler.deployTasks(
       { ...defaultYargs, migrate: false },
       {}, // ssh
       defaultServerConfig,
@@ -842,7 +845,7 @@ describe('deployTasks', () => {
   })
 
   it('skips build if --no-build flag passed', () => {
-    const tasks = baremetal.deployTasks(
+    const tasks = baremetalHandler.deployTasks(
       { ...defaultYargs, build: false },
       {}, // ssh
       defaultServerConfig,
@@ -853,7 +856,7 @@ describe('deployTasks', () => {
   })
 
   it('skips restart if --no-restart flag passed', () => {
-    const tasks = baremetal.deployTasks(
+    const tasks = baremetalHandler.deployTasks(
       { ...defaultYargs, restart: false },
       {}, // ssh
       defaultServerConfig,
@@ -864,7 +867,7 @@ describe('deployTasks', () => {
   })
 
   it('skips cleanup if --no-cleanup flag passed', () => {
-    const tasks = baremetal.deployTasks(
+    const tasks = baremetalHandler.deployTasks(
       { ...defaultYargs, cleanup: false },
       {}, // ssh
       defaultServerConfig,
@@ -875,7 +878,7 @@ describe('deployTasks', () => {
   })
 
   it('injects lifecycle events for update', () => {
-    const tasks = baremetal.deployTasks(
+    const tasks = baremetalHandler.deployTasks(
       defaultYargs,
       {}, // ssh
       defaultServerConfig,
@@ -888,7 +891,7 @@ describe('deployTasks', () => {
   })
 
   it('injects lifecycle events for install', () => {
-    const tasks = baremetal.deployTasks(
+    const tasks = baremetalHandler.deployTasks(
       defaultYargs,
       {}, // ssh
       defaultServerConfig,
@@ -901,7 +904,7 @@ describe('deployTasks', () => {
   })
 
   it('injects lifecycle events for migrate', () => {
-    const tasks = baremetal.deployTasks(
+    const tasks = baremetalHandler.deployTasks(
       defaultYargs,
       {}, // ssh
       defaultServerConfig,
@@ -914,7 +917,7 @@ describe('deployTasks', () => {
   })
 
   it('injects lifecycle events for build', () => {
-    const tasks = baremetal.deployTasks(
+    const tasks = baremetalHandler.deployTasks(
       defaultYargs,
       {}, // ssh
       defaultServerConfig,
@@ -927,7 +930,7 @@ describe('deployTasks', () => {
   })
 
   it('injects lifecycle events for restart', () => {
-    const tasks = baremetal.deployTasks(
+    const tasks = baremetalHandler.deployTasks(
       defaultYargs,
       {}, // ssh
       defaultServerConfig,
@@ -940,7 +943,7 @@ describe('deployTasks', () => {
   })
 
   it('injects lifecycle events for cleanup', () => {
-    const tasks = baremetal.deployTasks(
+    const tasks = baremetalHandler.deployTasks(
       defaultYargs,
       {}, // ssh
       defaultServerConfig,
@@ -955,11 +958,11 @@ describe('deployTasks', () => {
 
 describe('commands', () => {
   it('contains a top-level task for each server in an environment', () => {
-    const prodServers = baremetal.commands(
+    const prodServers = baremetalHandler.commands(
       { environment: 'production', releaseDir: '2022051120000' },
       {},
     )
-    const stagingServers = baremetal.commands(
+    const stagingServers = baremetalHandler.commands(
       { environment: 'staging', releaseDir: '2022051120000' },
       {},
     )
@@ -973,7 +976,7 @@ describe('commands', () => {
   })
 
   it('a single server contains nested deploy tasks', () => {
-    const servers = baremetal.commands(
+    const servers = baremetalHandler.commands(
       { environment: 'staging', releaseDir: '2022051120000' },
       {},
     )
@@ -982,7 +985,7 @@ describe('commands', () => {
   })
 
   it('contains connection and disconnection tasks', () => {
-    const servers = baremetal.commands(
+    const servers = baremetalHandler.commands(
       { environment: 'staging', releaseDir: '2022051120000' },
       {},
     )
@@ -993,7 +996,7 @@ describe('commands', () => {
   })
 
   it('contains deploy tasks by default', () => {
-    const servers = baremetal.commands(
+    const servers = baremetalHandler.commands(
       { environment: 'staging', releaseDir: '2022051120000' },
       {},
     )
@@ -1003,7 +1006,7 @@ describe('commands', () => {
   })
 
   it('contains maintenance tasks if yargs are set', () => {
-    const servers = baremetal.commands(
+    const servers = baremetalHandler.commands(
       {
         environment: 'staging',
         releaseDir: '2022051120000',
@@ -1018,7 +1021,7 @@ describe('commands', () => {
   })
 
   it('contains rollback tasks if yargs are set', () => {
-    const servers = baremetal.commands(
+    const servers = baremetalHandler.commands(
       {
         environment: 'staging',
         releaseDir: '2022051120000',
@@ -1033,7 +1036,7 @@ describe('commands', () => {
   })
 
   it('includes server-specific lifecycle events', () => {
-    const servers = baremetal.commands(
+    const servers = baremetalHandler.commands(
       {
         environment: 'test',
         releaseDir: '2022051120000',
@@ -1061,7 +1064,9 @@ describe('handler', () => {
   })
 
   it("should fail if there's no deploy.toml", async () => {
-    await expect(baremetal.handler({})).rejects.toThrowError('process.exit: 1')
+    await expect(baremetalHandler.handler({})).rejects.toThrowError(
+      'process.exit: 1',
+    )
     expect(vi.mocked(console).error).toHaveBeenCalledWith(
       expect.stringContaining('Baremetal deploy has not been properly setup'),
     )
