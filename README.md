@@ -18,12 +18,14 @@ efforts of the RedwoodJS founders, maintainers and community.
 ## Migrating from RedwoodJS to Redmix
 
 Search and replace all instances of `"@redwoodjs/(.*)": "\d+\.\d+\.\d+"`
-with `"@redmix/$1": "0.0.1"` in all three `package.json` files. Run
+with `"@redmix/$1": "0.0.2"` in all three `package.json` files. Run
 `yarn install` to update your lock file.
 
 Search and replace all instances of `@redwoodjs` in all files with `@redmix`.
 Pay attention to `yarn.lock`. If anything changed in there you probably have to
-do some manual editing
+do some manual editing. Also find all mentions of
+`storybook-framework-redwoodjs-vite` and replace with
+`storybook-framework-redmix-vite`
 
 Redmix doesn't have the equivalent of Redwood Studio yet. So Studio will not
 work for now. Let me know if that's something you use and need.
