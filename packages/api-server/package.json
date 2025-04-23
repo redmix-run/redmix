@@ -1,6 +1,6 @@
 {
   "name": "@redmix/api-server",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Redmix's HTTP server for Serverless Functions",
   "repository": {
     "type": "git",

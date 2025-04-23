@@ -1,6 +1,6 @@
 {
   "name": "@redmix/testing",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Tools, wrappers and configuration for testing a Redmix project.",
   "repository": {
     "type": "git",

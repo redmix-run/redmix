@@ -1,6 +1,6 @@
 {
   "name": "@redmix/cli-storybook-vite",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/redmix-run/redmix.git",
@@ -29,7 +29,7 @@
     "execa": "5.1.1",
     "semver": "7.6.3",
     "storybook": "7.6.20",
-    "storybook-framework-redmix-vite": "workspace:*",
+    "storybook-framework-redmix-vite": "0.0.2",
     "terminal-link": "2.1.1",
     "vitest": "2.1.9",
     "yargs": "17.7.2"
