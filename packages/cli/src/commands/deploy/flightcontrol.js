@@ -37,7 +37,7 @@ export const builder = (yargs) => {
 }
 
 export async function handler(yargs) {
-  const { handler: importedHandler } = await import('./flightcontrolHandler')
+  const { handler: importedHandler } = await import('./flightcontrolHandler.js')
 
   return importedHandler(yargs)
 }

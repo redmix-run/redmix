@@ -48,7 +48,7 @@ export const builder = (yargs) => {
 }
 
 export async function handler(yargs) {
-  const { handler: importedHandler } = await import('./serverlessHandler')
+  const { handler: importedHandler } = await import('./serverlessHandler.js')
 
   return importedHandler(yargs)
 }
