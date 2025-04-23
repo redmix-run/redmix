@@ -1,6 +1,6 @@
 {
   "name": "@redmix/api-server",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Redmix's HTTP server for Serverless Functions",
   "repository": {
     "type": "git",
@@ -31,11 +31,11 @@
   "dependencies": {
     "@fastify/multipart": "8.3.1",
     "@fastify/url-data": "5.4.0",
-    "@redmix/context": "workspace:*",
-    "@redmix/fastify-web": "workspace:*",
-    "@redmix/internal": "workspace:*",
-    "@redmix/project-config": "workspace:*",
-    "@redmix/web-server": "workspace:*",
+    "@redmix/context": "0.0.3",
+    "@redmix/fastify-web": "0.0.3",
+    "@redmix/internal": "0.0.3",
+    "@redmix/project-config": "0.0.3",
+    "@redmix/web-server": "0.0.3",
     "chalk": "4.1.2",
     "chokidar": "3.6.0",
     "dotenv-defaults": "5.0.2",
@@ -51,7 +51,7 @@
     "yargs": "17.7.2"
   },
   "devDependencies": {
-    "@redmix/framework-tools": "workspace:*",
+    "@redmix/framework-tools": "0.0.3",
     "@types/aws-lambda": "8.10.145",
     "@types/lodash": "4.17.15",
     "@types/qs": "6.9.16",
@@ -63,7 +63,7 @@
     "vitest": "2.1.9"
   },
   "peerDependencies": {
-    "@redmix/graphql-server": "workspace:*"
+    "@redmix/graphql-server": "0.0.3"
   },
   "peerDependenciesMeta": {
     "@redmix/graphql-server": {

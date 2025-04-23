@@ -1,6 +1,6 @@
 {
   "name": "@redmix/cli",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "The Redwood Command Line",
   "repository": {
     "type": "git",

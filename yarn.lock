@@ -7354,12 +7354,12 @@ __metadata:
   dependencies:
     "@fastify/multipart": "npm:8.3.1"
     "@fastify/url-data": "npm:5.4.0"
-    "@redmix/context": "workspace:*"
-    "@redmix/fastify-web": "workspace:*"
-    "@redmix/framework-tools": "workspace:*"
-    "@redmix/internal": "workspace:*"
-    "@redmix/project-config": "workspace:*"
-    "@redmix/web-server": "workspace:*"
+    "@redmix/context": "npm:0.0.3"
+    "@redmix/fastify-web": "npm:0.0.3"
+    "@redmix/framework-tools": "npm:0.0.3"
+    "@redmix/internal": "npm:0.0.3"
+    "@redmix/project-config": "npm:0.0.3"
+    "@redmix/web-server": "npm:0.0.3"
     "@types/aws-lambda": "npm:8.10.145"
     "@types/lodash": "npm:4.17.15"
     "@types/qs": "npm:6.9.16"
@@ -7383,7 +7383,7 @@ __metadata:
     vitest: "npm:2.1.9"
     yargs: "npm:17.7.2"
   peerDependencies:
-    "@redmix/graphql-server": "workspace:*"
+    "@redmix/graphql-server": 0.0.3
   peerDependenciesMeta:
     "@redmix/graphql-server":
       optional: true
@@ -8011,7 +8011,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redmix/cli-helpers@workspace:*, @redmix/cli-helpers@workspace:packages/cli-helpers":
+"@redmix/cli-helpers@npm:0.0.3, @redmix/cli-helpers@workspace:*, @redmix/cli-helpers@workspace:packages/cli-helpers":
   version: 0.0.0-use.local
   resolution: "@redmix/cli-helpers@workspace:packages/cli-helpers"
   dependencies:
@@ -8049,17 +8049,17 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@redmix/cli-storybook-vite@workspace:packages/cli-packages/storybook-vite"
   dependencies:
-    "@redmix/cli-helpers": "workspace:*"
-    "@redmix/framework-tools": "workspace:*"
-    "@redmix/project-config": "workspace:*"
-    "@redmix/telemetry": "workspace:*"
+    "@redmix/cli-helpers": "npm:0.0.3"
+    "@redmix/framework-tools": "npm:0.0.3"
+    "@redmix/project-config": "npm:0.0.3"
+    "@redmix/telemetry": "npm:0.0.3"
     "@types/semver": "npm:^7"
     "@types/yargs": "npm:17.0.33"
     chalk: "npm:4.1.2"
     execa: "npm:5.1.1"
     semver: "npm:7.6.3"
     storybook: "npm:7.6.20"
-    storybook-framework-redmix-vite: "npm:0.0.2"
+    storybook-framework-redmix-vite: "npm:0.0.3"
     terminal-link: "npm:2.1.1"
     tsx: "npm:4.19.3"
     typescript: "npm:5.6.2"
@@ -8185,7 +8185,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redmix/context@workspace:*, @redmix/context@workspace:packages/context":
+"@redmix/context@npm:0.0.3, @redmix/context@workspace:*, @redmix/context@workspace:packages/context":
   version: 0.0.0-use.local
   resolution: "@redmix/context@workspace:packages/context"
   dependencies:
@@ -8302,7 +8302,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redmix/fastify-web@workspace:*, @redmix/fastify-web@workspace:packages/adapters/fastify/web":
+"@redmix/fastify-web@npm:0.0.3, @redmix/fastify-web@workspace:*, @redmix/fastify-web@workspace:packages/adapters/fastify/web":
   version: 0.0.0-use.local
   resolution: "@redmix/fastify-web@workspace:packages/adapters/fastify/web"
   dependencies:
@@ -8347,7 +8347,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redmix/framework-tools@workspace:*, @redmix/framework-tools@workspace:packages/framework-tools":
+"@redmix/framework-tools@npm:0.0.3, @redmix/framework-tools@workspace:*, @redmix/framework-tools@workspace:packages/framework-tools":
   version: 0.0.0-use.local
   resolution: "@redmix/framework-tools@workspace:packages/framework-tools"
   dependencies:
@@ -8409,7 +8409,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redmix/internal@workspace:*, @redmix/internal@workspace:packages/internal":
+"@redmix/internal@npm:0.0.3, @redmix/internal@workspace:*, @redmix/internal@workspace:packages/internal":
   version: 0.0.0-use.local
   resolution: "@redmix/internal@workspace:packages/internal"
   dependencies:
@@ -8623,7 +8623,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redmix/project-config@workspace:*, @redmix/project-config@workspace:packages/project-config":
+"@redmix/project-config@npm:0.0.3, @redmix/project-config@workspace:*, @redmix/project-config@workspace:packages/project-config":
   version: 0.0.0-use.local
   resolution: "@redmix/project-config@workspace:packages/project-config"
   dependencies:
@@ -8795,7 +8795,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redmix/telemetry@workspace:*, @redmix/telemetry@workspace:packages/telemetry":
+"@redmix/telemetry@npm:0.0.3, @redmix/telemetry@workspace:*, @redmix/telemetry@workspace:packages/telemetry":
   version: 0.0.0-use.local
   resolution: "@redmix/telemetry@workspace:packages/telemetry"
   dependencies:
@@ -8816,7 +8816,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redmix/testing@workspace:*, @redmix/testing@workspace:packages/testing":
+"@redmix/testing@npm:0.0.3, @redmix/testing@workspace:*, @redmix/testing@workspace:packages/testing":
   version: 0.0.0-use.local
   resolution: "@redmix/testing@workspace:packages/testing"
   dependencies:
@@ -8929,7 +8929,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redmix/web-server@workspace:*, @redmix/web-server@workspace:packages/web-server":
+"@redmix/web-server@npm:0.0.3, @redmix/web-server@workspace:*, @redmix/web-server@workspace:packages/web-server":
   version: 0.0.0-use.local
   resolution: "@redmix/web-server@workspace:packages/web-server"
   dependencies:
@@ -27853,12 +27853,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"storybook-framework-redmix-vite@npm:0.0.2, storybook-framework-redmix-vite@workspace:packages/storybook":
+"storybook-framework-redmix-vite@npm:0.0.3, storybook-framework-redmix-vite@workspace:packages/storybook":
   version: 0.0.0-use.local
   resolution: "storybook-framework-redmix-vite@workspace:packages/storybook"
   dependencies:
     "@joshwooding/vite-plugin-react-docgen-typescript": "npm:0.4.2"
-    "@redmix/testing": "workspace:*"
+    "@redmix/testing": "npm:0.0.3"
     "@rollup/pluginutils": "npm:5.1.4"
     "@storybook/addon-essentials": "npm:7.6.20"
     "@storybook/builder-vite": "npm:7.6.20"
@@ -27872,8 +27872,8 @@ __metadata:
     vite: "npm:5.4.16"
     vite-plugin-node-polyfills: "npm:0.23.0"
   peerDependencies:
-    "@redmix/project-config": "workspace:*"
-    "@redmix/router": "workspace:*"
+    "@redmix/project-config": 0.0.3
+    "@redmix/router": 0.0.3
     react: 18.3.1
     react-dom: 18.3.1
     storybook: 7.6.20

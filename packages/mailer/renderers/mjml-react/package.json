@@ -1,6 +1,6 @@
 {
   "name": "@redmix/mailer-renderer-mjml-react",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/redmix-run/redmix.git",

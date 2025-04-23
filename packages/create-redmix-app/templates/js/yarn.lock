@@ -4433,17 +4433,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redmix/api-server@npm:0.0.1":
-  version: 0.0.1
-  resolution: "@redmix/api-server@npm:0.0.1"
+"@redmix/api-server@npm:0.0.3":
+  version: 0.0.3
+  resolution: "@redmix/api-server@npm:0.0.3"
   dependencies:
     "@fastify/multipart": "npm:8.3.1"
     "@fastify/url-data": "npm:5.4.0"
-    "@redmix/context": "npm:0.0.1"
-    "@redmix/fastify-web": "npm:0.0.1"
-    "@redmix/internal": "npm:0.0.1"
-    "@redmix/project-config": "npm:0.0.1"
-    "@redmix/web-server": "npm:0.0.1"
+    "@redmix/context": "npm:0.0.3"
+    "@redmix/fastify-web": "npm:0.0.3"
+    "@redmix/internal": "npm:0.0.3"
+    "@redmix/project-config": "npm:0.0.3"
+    "@redmix/web-server": "npm:0.0.3"
     chalk: "npm:4.1.2"
     chokidar: "npm:3.6.0"
     dotenv-defaults: "npm:5.0.2"
@@ -4466,13 +4466,13 @@ __metadata:
     rw-api-server-watch: ./dist/watch.js
     rw-log-formatter: ./dist/logFormatter/bin.js
     rw-server: ./dist/bin.js
-  checksum: 10c0/e1cbc6a1a8fe672885b03be1b4e4ae44dde4adbc5ddb42cc23fb295a65b7833d501ca35709ad60f3d342e2a77aea661e1a8e0f72030049fa425bea3a957f4a95
+  checksum: 10c0/2e07527f462431cc8d2717d518bb8b45e70a2d3a58c5904e4d6b87d3da385415dd7aa23144d86188c46d832718268a66d90d1120282d9330daf2a75a9ac86543
   languageName: node
   linkType: hard
 
-"@redmix/api@npm:0.0.1":
-  version: 0.0.1
-  resolution: "@redmix/api@npm:0.0.1"
+"@redmix/api@npm:0.0.3":
+  version: 0.0.3
+  resolution: "@redmix/api@npm:0.0.3"
   dependencies:
     "@prisma/client": "npm:5.20.0"
     "@whatwg-node/fetch": "npm:0.9.21"
@@ -4495,23 +4495,23 @@ __metadata:
     rw: ./dist/bins/redwood.js
     rwfw: ./dist/bins/rwfw.js
     tsc: ./dist/bins/tsc.js
-  checksum: 10c0/f893e1f7d7f3148b0c2d784d56126649a20fac8a0740d52bf1a38bc7a1ccd30d8d4d9a96bf5ea9f42990d7e8ba47e6f58065249445b2c8d6a4a3d2be96822d6a
+  checksum: 10c0/de3fe22e46c89ba12ab9dd40e7d51f3f25e81d6202de9d21eec60599a6887a195c8a37710fe8c1ca5a749acfe5e1b589c134167a3da915fd6403178fd23beb01
   languageName: node
   linkType: hard
 
-"@redmix/auth@npm:0.0.1":
-  version: 0.0.1
-  resolution: "@redmix/auth@npm:0.0.1"
+"@redmix/auth@npm:0.0.3":
+  version: 0.0.3
+  resolution: "@redmix/auth@npm:0.0.3"
   dependencies:
     core-js: "npm:3.38.1"
-    react: "npm:19.0.0-rc-f2df5694-20240916"
-  checksum: 10c0/3de47995edde5ef1003007533352525235b1289eacaaf8deff135a49affa7352becf0db1603b63f6a2c7a6dc53450bcb7d4e2d418758dbb89be6b1f6778691dc
+    react: "npm:18.3.1"
+  checksum: 10c0/d4812359e91f8646f731a575e076dcdfed25e07f65bc5c044bee57c80c354f4806482acb703318f53de189161db30d318d34955f3e320fa8f438d58b5b146946
   languageName: node
   linkType: hard
 
-"@redmix/babel-config@npm:0.0.1":
-  version: 0.0.1
-  resolution: "@redmix/babel-config@npm:0.0.1"
+"@redmix/babel-config@npm:0.0.3":
+  version: 0.0.3
+  resolution: "@redmix/babel-config@npm:0.0.3"
   dependencies:
     "@babel/core": "npm:^7.26.10"
     "@babel/parser": "npm:7.26.10"
@@ -4526,7 +4526,7 @@ __metadata:
     "@babel/register": "npm:7.25.9"
     "@babel/runtime-corejs3": "npm:7.26.10"
     "@babel/traverse": "npm:7.26.10"
-    "@redmix/project-config": "npm:0.0.1"
+    "@redmix/project-config": "npm:0.0.3"
     babel-plugin-auto-import: "npm:1.1.0"
     babel-plugin-graphql-tag: "npm:3.3.0"
     babel-plugin-module-resolver: "npm:5.0.2"
@@ -4534,18 +4534,18 @@ __metadata:
     fast-glob: "npm:3.3.2"
     graphql: "npm:16.9.0"
     typescript: "npm:5.6.2"
-  checksum: 10c0/0d89b1606885b6bab83432c4c95269e363110fd521dea089d59889794c9094e3cea79579921dd3680c5f7ebac842ae84c8ec59b069df782f4ffb67686c79183a
+  checksum: 10c0/1473d1b37dd7c19dc5bef448e4d2379c5049aee5fda6183345482d01268d97b10d062eb26d8a582e9bcc7f745de2f50c17c8c28efd1d2dfb0d559ed666d8b5f4
   languageName: node
   linkType: hard
 
-"@redmix/cli-helpers@npm:0.0.1":
-  version: 0.0.1
-  resolution: "@redmix/cli-helpers@npm:0.0.1"
+"@redmix/cli-helpers@npm:0.0.3":
+  version: 0.0.3
+  resolution: "@redmix/cli-helpers@npm:0.0.3"
   dependencies:
     "@babel/core": "npm:^7.26.10"
     "@opentelemetry/api": "npm:1.8.0"
-    "@redmix/project-config": "npm:0.0.1"
-    "@redmix/telemetry": "npm:0.0.1"
+    "@redmix/project-config": "npm:0.0.3"
+    "@redmix/telemetry": "npm:0.0.3"
     chalk: "npm:4.1.2"
     dotenv: "npm:16.4.7"
     dotenv-defaults: "npm:5.0.2"
@@ -4559,13 +4559,13 @@ __metadata:
     smol-toml: "npm:1.3.1"
     terminal-link: "npm:2.1.1"
     yargs-parser: "npm:21.1.1"
-  checksum: 10c0/c95da2e7b1b0efd4398367b7e7022d1c6aca3c4885feaabe4694eadedd7a1bc122c09db9a76dbfe978a5d3237e5db2d03e0caf18d333aacd8a38bced28d3b265
+  checksum: 10c0/1c63d6c278ef9d59f218fb63b836bfcff303269d827fe1deb83e5efe6eaaf2f2bf850238d02c43f93de86872598d833f2ff3e2e5d79a93f39d2b0b6e070783f8
   languageName: node
   linkType: hard
 
-"@redmix/cli@npm:0.0.1":
-  version: 0.0.1
-  resolution: "@redmix/cli@npm:0.0.1"
+"@redmix/cli@npm:0.0.3":
+  version: 0.0.3
+  resolution: "@redmix/cli@npm:0.0.3"
   dependencies:
     "@babel/runtime-corejs3": "npm:7.26.10"
     "@listr2/prompt-adapter-enquirer": "npm:2.0.12"
@@ -4576,15 +4576,15 @@ __metadata:
     "@opentelemetry/sdk-trace-node": "npm:1.22.0"
     "@opentelemetry/semantic-conventions": "npm:1.22.0"
     "@prisma/internals": "npm:5.20.0"
-    "@redmix/api-server": "npm:0.0.1"
-    "@redmix/cli-helpers": "npm:0.0.1"
-    "@redmix/fastify-web": "npm:0.0.1"
-    "@redmix/internal": "npm:0.0.1"
-    "@redmix/prerender": "npm:0.0.1"
-    "@redmix/project-config": "npm:0.0.1"
-    "@redmix/structure": "npm:0.0.1"
-    "@redmix/telemetry": "npm:0.0.1"
-    "@redmix/web-server": "npm:0.0.1"
+    "@redmix/api-server": "npm:0.0.3"
+    "@redmix/cli-helpers": "npm:0.0.3"
+    "@redmix/fastify-web": "npm:0.0.3"
+    "@redmix/internal": "npm:0.0.3"
+    "@redmix/prerender": "npm:0.0.3"
+    "@redmix/project-config": "npm:0.0.3"
+    "@redmix/structure": "npm:0.0.3"
+    "@redmix/telemetry": "npm:0.0.3"
+    "@redmix/web-server": "npm:0.0.3"
     archiver: "npm:7.0.1"
     boxen: "npm:5.1.2"
     camelcase: "npm:6.3.0"
@@ -4627,41 +4627,41 @@ __metadata:
     redwood: ./dist/index.js
     rw: ./dist/index.js
     rwfw: ./dist/rwfw.js
-  checksum: 10c0/25a6e4f784f3d00689f762d2b635f4100615794903a78266fc24ca9e5e621689b0f229943c1b4e917d0539209d4e90b3e41b353be7d4e362124e51f6e7e4cda6
+  checksum: 10c0/4f2f58461c8141f3328e1e9150c03ad2dec4e1d3c694175c9b6c6f9d02c9bb4cff0d48e9a27853a7513ab4a4915295787cddd46d75b47f0345c9ca225774fd27
   languageName: node
   linkType: hard
 
-"@redmix/context@npm:0.0.1":
-  version: 0.0.1
-  resolution: "@redmix/context@npm:0.0.1"
-  checksum: 10c0/1ad2165940d61b041b39c46f0a1e24d0d8568e18d40ff65f17c0bdb53f0b8837f19fae822a60424e6da5c40425168c82f5ae5a96250fb3081058872fa1d11c99
+"@redmix/context@npm:0.0.3":
+  version: 0.0.3
+  resolution: "@redmix/context@npm:0.0.3"
+  checksum: 10c0/b13c7160ade6cad4afc3ab3c0c222d8596f765410027574b91b22487e36768518c692def4a5e19bc3a4711054ffe68204f0965cbe4e42cf2c89f6c1632f5333b
   languageName: node
   linkType: hard
 
-"@redmix/cookie-jar@npm:0.0.1":
-  version: 0.0.1
-  resolution: "@redmix/cookie-jar@npm:0.0.1"
+"@redmix/cookie-jar@npm:0.0.3":
+  version: 0.0.3
+  resolution: "@redmix/cookie-jar@npm:0.0.3"
   dependencies:
     cookie: "npm:0.7.2"
     esbuild: "npm:0.24.2"
     fast-glob: "npm:3.3.2"
     fs-extra: "npm:11.2.0"
-  checksum: 10c0/5679d5afbf0b369b08e9b8a2c0bc7cd4aea21561e5c36957a94cb07b901a8d4887b42fe5254603b2c4ab5036f99ebc29c7dda5c3cbc2b078b6b206d559076d3c
+  checksum: 10c0/8d634ea8888ea9913447d61ef3333b60e94f3c1dd6c4842169d78804a39610ef606c34b88fcb297ffcb77be0fcf3feaaa06ded8e8bb3936e883df70153c6d8ff
   languageName: node
   linkType: hard
 
-"@redmix/core@npm:0.0.1":
-  version: 0.0.1
-  resolution: "@redmix/core@npm:0.0.1"
+"@redmix/core@npm:0.0.3":
+  version: 0.0.3
+  resolution: "@redmix/core@npm:0.0.3"
   dependencies:
     "@babel/cli": "npm:7.26.4"
-    "@redmix/api-server": "npm:0.0.1"
-    "@redmix/cli": "npm:0.0.1"
-    "@redmix/eslint-config": "npm:0.0.1"
-    "@redmix/internal": "npm:0.0.1"
-    "@redmix/project-config": "npm:0.0.1"
-    "@redmix/testing": "npm:0.0.1"
-    "@redmix/web-server": "npm:0.0.1"
+    "@redmix/api-server": "npm:0.0.3"
+    "@redmix/cli": "npm:0.0.3"
+    "@redmix/eslint-config": "npm:0.0.3"
+    "@redmix/internal": "npm:0.0.3"
+    "@redmix/project-config": "npm:0.0.3"
+    "@redmix/testing": "npm:0.0.3"
+    "@redmix/web-server": "npm:0.0.3"
     graphql-tag: "npm:2.12.6"
     lodash: "npm:4.17.21"
     nodemon: "npm:3.1.9"
@@ -4686,20 +4686,20 @@ __metadata:
     rw-serve-fe: ./dist/bins/rw-serve-fe.js
     rw-web-server: ./dist/bins/rw-web-server.js
     rwfw: ./dist/bins/rwfw.js
-  checksum: 10c0/5334de7560cc7317bcffb78119f1d1da76e0111f9c485c5265830006cc23d0381fe72eaaee8bbdd735d3a28dff21175051fcb5760d488afc14fc444b73b4a621
+  checksum: 10c0/4bfcdfe9b09c83955caec51efa76d6af999cf97871e9d44ef0b82fdb5aa73d1396f47e649976faf0c328eeb8e2c2e118120b139a8e8fc79d438e49c9f4e4d761
   languageName: node
   linkType: hard
 
-"@redmix/eslint-config@npm:0.0.1":
-  version: 0.0.1
-  resolution: "@redmix/eslint-config@npm:0.0.1"
+"@redmix/eslint-config@npm:0.0.3":
+  version: 0.0.3
+  resolution: "@redmix/eslint-config@npm:0.0.3"
   dependencies:
     "@babel/core": "npm:^7.26.10"
     "@babel/eslint-parser": "npm:7.25.7"
     "@babel/eslint-plugin": "npm:7.25.7"
-    "@redmix/eslint-plugin": "npm:0.0.1"
-    "@redmix/internal": "npm:0.0.1"
-    "@redmix/project-config": "npm:0.0.1"
+    "@redmix/eslint-plugin": "npm:0.0.3"
+    "@redmix/internal": "npm:0.0.3"
+    "@redmix/project-config": "npm:0.0.3"
     "@typescript-eslint/eslint-plugin": "npm:8.19.1"
     "@typescript-eslint/parser": "npm:8.19.1"
     eslint: "npm:8.57.1"
@@ -4713,49 +4713,49 @@ __metadata:
     eslint-plugin-react: "npm:7.36.1"
     eslint-plugin-react-hooks: "npm:4.6.0"
     prettier: "npm:3.5.3"
-  checksum: 10c0/63f1253de0842d93eb9e0804cb7cdab12bb56d7df61d909a487e4344358ad3c2ccb810cbff12cc031ac0ccd475a531c692d6666d98f96ec44877e41b61d2eea2
+  checksum: 10c0/58f146104c1a4be867d064a523f91d76d77535501170224fc79b2a87faa57aad4cd0b6bad3604edfc33aabf5d6409fe2fe598aa5a3bba5f0e315d483d30bc6b1
   languageName: node
   linkType: hard
 
-"@redmix/eslint-plugin@npm:0.0.1":
-  version: 0.0.1
-  resolution: "@redmix/eslint-plugin@npm:0.0.1"
+"@redmix/eslint-plugin@npm:0.0.3":
+  version: 0.0.3
+  resolution: "@redmix/eslint-plugin@npm:0.0.3"
   dependencies:
     "@typescript-eslint/utils": "npm:8.19.1"
     eslint: "npm:8.57.1"
-  checksum: 10c0/ca7c8bdbcc41ea549d692cc71928b5c0a7e0dba8481676479946adffc0e19d15f0bc197eed85c77bee76f7ad8e30e0aee324afac12b29c351693e1944b3e2f06
+  checksum: 10c0/408342d24413f72123529f0d0ef8b1b7e57c58aecab5b7bbe1a12cab668531b2b32fca14cb6dbc741e4ccb6cdf54d6f6d980dccc58688b7505994b28c2ba1eb5
   languageName: node
   linkType: hard
 
-"@redmix/fastify-web@npm:0.0.1":
-  version: 0.0.1
-  resolution: "@redmix/fastify-web@npm:0.0.1"
+"@redmix/fastify-web@npm:0.0.3":
+  version: 0.0.3
+  resolution: "@redmix/fastify-web@npm:0.0.3"
   dependencies:
     "@fastify/http-proxy": "npm:9.5.0"
     "@fastify/static": "npm:6.12.0"
     "@fastify/url-data": "npm:5.4.0"
-    "@redmix/project-config": "npm:0.0.1"
+    "@redmix/project-config": "npm:0.0.3"
     fast-glob: "npm:3.3.2"
-  checksum: 10c0/15569a7cfbe793e20d4eb705b0a7a79c8b97f13f3e10e9393c6fb8bfc972c1cb942659275155f8cd6cbb320feea760727663c9ef764b5e3a7535d8d832fe94ed
+  checksum: 10c0/f16dabad53f950a2eef440a277477bf56729a6991cd315d1b2764c17dc03706b393d28e15567302dcb67a71c04f8cf074e8b102655a552655108ab55a0364dec
   languageName: node
   linkType: hard
 
-"@redmix/forms@npm:0.0.1":
-  version: 0.0.1
-  resolution: "@redmix/forms@npm:0.0.1"
+"@redmix/forms@npm:0.0.3":
+  version: 0.0.3
+  resolution: "@redmix/forms@npm:0.0.3"
   dependencies:
     graphql: "npm:16.9.0"
     pascalcase: "npm:1.0.0"
     react-hook-form: "npm:7.54.2"
   peerDependencies:
-    react: 19.0.0-rc-f2df5694-20240916
-  checksum: 10c0/424d183fe1bda8715b791414f1bed84c9b46c4c97877cadb5c3dfa3353f6142fbe27e6fcf59e183a9a2a842a0113e3d1ec03d6a94af11eeeb6009cbb8ced8463
+    react: 18.3.1
+  checksum: 10c0/b19a91705eeeae5f60c430150fbabacb5cee69348e49917441315a7da6737b6fed138b0b8451de5e8308aa5910a72308ad244ecf32aba1b88c06c06c159e1617
   languageName: node
   linkType: hard
 
-"@redmix/graphql-server@npm:0.0.1":
-  version: 0.0.1
-  resolution: "@redmix/graphql-server@npm:0.0.1"
+"@redmix/graphql-server@npm:0.0.3":
+  version: 0.0.3
+  resolution: "@redmix/graphql-server@npm:0.0.3"
   dependencies:
     "@babel/runtime-corejs3": "npm:7.26.10"
     "@envelop/core": "npm:5.0.2"
@@ -4769,8 +4769,8 @@ __metadata:
     "@graphql-tools/utils": "npm:10.5.4"
     "@graphql-yoga/plugin-persisted-operations": "npm:3.7.0"
     "@opentelemetry/api": "npm:1.8.0"
-    "@redmix/api": "npm:0.0.1"
-    "@redmix/context": "npm:0.0.1"
+    "@redmix/api": "npm:0.0.3"
+    "@redmix/context": "npm:0.0.3"
     core-js: "npm:3.38.1"
     graphql: "npm:16.9.0"
     graphql-scalars: "npm:1.23.0"
@@ -4778,13 +4778,13 @@ __metadata:
     graphql-yoga: "npm:5.7.0"
     lodash: "npm:4.17.21"
     uuid: "npm:10.0.0"
-  checksum: 10c0/042eff4b6a29301360005c1ff8b8174672c14063af8fd46f3f96d230c4695d02a0d20fad3a65ab94c90761e7ffd99899e3de6a6179c760c9af895908bcc268f6
+  checksum: 10c0/0d7a2e748419a486934600d924d59dd4bbbef5bdf0370d8021b03b841debe166ae45f665f43d177231d4899178a2a90509ff8798e7ba0a88279d8db8ef923621
   languageName: node
   linkType: hard
 
-"@redmix/internal@npm:0.0.1":
-  version: 0.0.1
-  resolution: "@redmix/internal@npm:0.0.1"
+"@redmix/internal@npm:0.0.3":
+  version: 0.0.3
+  resolution: "@redmix/internal@npm:0.0.3"
   dependencies:
     "@babel/core": "npm:^7.26.10"
     "@babel/parser": "npm:7.26.10"
@@ -4804,10 +4804,10 @@ __metadata:
     "@graphql-codegen/typescript-react-apollo": "npm:3.3.7"
     "@graphql-codegen/typescript-resolvers": "npm:3.2.1"
     "@graphql-tools/documents": "npm:1.0.1"
-    "@redmix/babel-config": "npm:0.0.1"
-    "@redmix/graphql-server": "npm:0.0.1"
-    "@redmix/project-config": "npm:0.0.1"
-    "@redmix/router": "npm:0.0.1"
+    "@redmix/babel-config": "npm:0.0.3"
+    "@redmix/graphql-server": "npm:0.0.3"
+    "@redmix/project-config": "npm:0.0.3"
+    "@redmix/router": "npm:0.0.3"
     "@sdl-codegen/node": "npm:2.0.1"
     chalk: "npm:4.1.2"
     core-js: "npm:3.38.1"
@@ -4828,81 +4828,80 @@ __metadata:
   bin:
     rw-gen: ./dist/generate/generate.js
     rw-gen-watch: ./dist/generate/watch.js
-  checksum: 10c0/0c2811ec6007bbbef10346b67e787e03987a9e4f186b920bb33805c9a6e96e58c3dc3ec41cc4511524e8611704aa1e997bf7038b68c90d9a6b9deffab41204df
+  checksum: 10c0/45d548e9013c7d838de27571fa1d1348c1a17de2e97b66910418f51307db522a7563dbffcbe15096a911ffee38d5bc3da177ec401426c686b0a4443f0f346ddb
   languageName: node
   linkType: hard
 
-"@redmix/prerender@npm:0.0.1":
-  version: 0.0.1
-  resolution: "@redmix/prerender@npm:0.0.1"
+"@redmix/prerender@npm:0.0.3":
+  version: 0.0.3
+  resolution: "@redmix/prerender@npm:0.0.3"
   dependencies:
-    "@redmix/babel-config": "npm:0.0.1"
-    "@redmix/project-config": "npm:0.0.1"
-    "@redmix/router": "npm:0.0.1"
-    "@redmix/structure": "npm:0.0.1"
-    "@redmix/web": "npm:0.0.1"
+    "@redmix/babel-config": "npm:0.0.3"
+    "@redmix/project-config": "npm:0.0.3"
+    "@redmix/router": "npm:0.0.3"
+    "@redmix/structure": "npm:0.0.3"
+    "@redmix/web": "npm:0.0.3"
     "@whatwg-node/fetch": "npm:0.9.21"
     babel-plugin-ignore-html-and-css-imports: "npm:0.1.0"
     cheerio: "npm:1.0.0"
     graphql: "npm:16.9.0"
     mime-types: "npm:2.1.35"
   peerDependencies:
-    react: 19.0.0-rc-f2df5694-20240916
-    react-dom: 19.0.0-rc-f2df5694-20240916
-  checksum: 10c0/ba17c20266b1c5afe32f8b3cc48ecea4f9ba8d9930851bfd03e5b4fc8680c2227894ba99ccc1f6855ced17eb0f03794736b2f02c9c842557d004e7988e81951c
+    react: 18.3.1
+    react-dom: 18.3.1
+  checksum: 10c0/d9b99495970cadebfc427c014e03b63090944b76114951915d218419aa698cd5052eef7cf27dd400ff5ffa3f2547e5e3de148614e1867770c15a0f14c140c757
   languageName: node
   linkType: hard
 
-"@redmix/project-config@npm:0.0.1":
-  version: 0.0.1
-  resolution: "@redmix/project-config@npm:0.0.1"
+"@redmix/project-config@npm:0.0.3":
+  version: 0.0.3
+  resolution: "@redmix/project-config@npm:0.0.3"
   dependencies:
     deepmerge: "npm:4.3.1"
     fast-glob: "npm:3.3.2"
     smol-toml: "npm:1.3.1"
     string-env-interpolation: "npm:1.0.1"
-  checksum: 10c0/4c1398b1f44459633258637b2c4f2d3e836ab5fe79a02e2130a070e125bcffd823351e45572b5078ebf6c2b5a161fcec28c8b5643ca0ac8fc5851f2040e397f7
+  checksum: 10c0/d8edee7b7c282187c1957e95c32be6fea470774e67287328a59d8470751b9d0407235699cd91ca95c804fee4ccfc804b8fdec9c06b13cd4bea8baefb2bb7d7dd
   languageName: node
   linkType: hard
 
-"@redmix/router@npm:0.0.1":
-  version: 0.0.1
-  resolution: "@redmix/router@npm:0.0.1"
+"@redmix/router@npm:0.0.3":
+  version: 0.0.3
+  resolution: "@redmix/router@npm:0.0.3"
   dependencies:
     "@babel/runtime-corejs3": "npm:7.26.10"
-    "@redmix/auth": "npm:0.0.1"
-    "@redmix/server-store": "npm:0.0.1"
+    "@redmix/auth": "npm:0.0.3"
+    "@redmix/server-store": "npm:0.0.3"
     core-js: "npm:3.38.1"
-    react: "npm:19.0.0-rc-f2df5694-20240916"
-    react-dom: "npm:19.0.0-rc-f2df5694-20240916"
-    react-server-dom-webpack: "npm:19.0.0-rc-f2df5694-20240916"
+    react: "npm:18.3.1"
+    react-dom: "npm:18.3.1"
   peerDependencies:
-    react: 19.0.0-rc-f2df5694-20240916
-    react-dom: 19.0.0-rc-f2df5694-20240916
-  checksum: 10c0/bc5acc217a6c502d95f382c53d2463214b84d1f44b1be10e34dbec61c36c2f4de39159c9b4291ac3fe41f7745a1e0f57301da6c39848a88a0cc72f5b6def3e7d
+    react: 18.3.1
+    react-dom: 18.3.1
+  checksum: 10c0/4b33870c2d573f194ee53bdeab182a9edae34c3f7b81e286c19ee34f3c4dbd3a26620e5b2e2a2efe74cb375d2bb3115d4b3f0ab060a7d54a80523932f7f4ce46
   languageName: node
   linkType: hard
 
-"@redmix/server-store@npm:0.0.1":
-  version: 0.0.1
-  resolution: "@redmix/server-store@npm:0.0.1"
+"@redmix/server-store@npm:0.0.3":
+  version: 0.0.3
+  resolution: "@redmix/server-store@npm:0.0.3"
   dependencies:
-    "@redmix/auth": "npm:0.0.1"
-    "@redmix/cookie-jar": "npm:0.0.1"
+    "@redmix/auth": "npm:0.0.3"
+    "@redmix/cookie-jar": "npm:0.0.3"
     esbuild: "npm:0.24.2"
     fast-glob: "npm:3.3.2"
     fs-extra: "npm:11.2.0"
-  checksum: 10c0/04feb5fdb2866ccf56f070a2e3a777362609346efbb45ea85cab25ea64b560872dc312651da9d3d05448e52ff59daa6e9293d12f73909ca2627eb4363661895d
+  checksum: 10c0/f65b8e2f7d8ea78edbab903c0823215dcae11cd2e326b66d3c788da056bd0cb65f3c9aae98e0502947700f50106ad3445b13b02395c319789695bab179dac905
   languageName: node
   linkType: hard
 
-"@redmix/structure@npm:0.0.1":
-  version: 0.0.1
-  resolution: "@redmix/structure@npm:0.0.1"
+"@redmix/structure@npm:0.0.3":
+  version: 0.0.3
+  resolution: "@redmix/structure@npm:0.0.3"
   dependencies:
     "@babel/runtime-corejs3": "npm:7.26.10"
     "@prisma/internals": "npm:5.20.0"
-    "@redmix/project-config": "npm:0.0.1"
+    "@redmix/project-config": "npm:0.0.3"
     "@types/line-column": "npm:1.0.2"
     camelcase: "npm:6.3.0"
     core-js: "npm:3.38.1"
@@ -4924,37 +4923,37 @@ __metadata:
     vscode-languageserver-textdocument: "npm:1.0.12"
     vscode-languageserver-types: "npm:3.17.5"
     yargs-parser: "npm:21.1.1"
-  checksum: 10c0/1336cea2d3eddfed4eb2d987fa2fabce15afe8277ac1946cfc19dc31a9fe457a5886e8e806f84904c3dc0c89ec41abccfaa1f839066034721736bea0ed90decc
+  checksum: 10c0/e57708b53f3c01fd52a3d42b76d6fc102db08668db891d0fc8f824535d613e7fc74fba3143870ce63a65ed17bf871509e68944e6523cca0ac6dfbf7197e6d38e
   languageName: node
   linkType: hard
 
-"@redmix/telemetry@npm:0.0.1":
-  version: 0.0.1
-  resolution: "@redmix/telemetry@npm:0.0.1"
+"@redmix/telemetry@npm:0.0.3":
+  version: 0.0.3
+  resolution: "@redmix/telemetry@npm:0.0.3"
   dependencies:
-    "@redmix/project-config": "npm:0.0.1"
-    "@redmix/structure": "npm:0.0.1"
+    "@redmix/project-config": "npm:0.0.3"
+    "@redmix/structure": "npm:0.0.3"
     "@whatwg-node/fetch": "npm:0.9.21"
     ci-info: "npm:4.0.0"
     envinfo: "npm:7.14.0"
     systeminformation: "npm:5.23.8"
     uuid: "npm:10.0.0"
     yargs: "npm:17.7.2"
-  checksum: 10c0/82a29d5cfe5c9436dd2af47ce248405049077534304f0bb13dd0b1e3b5efb2b01a30d87e744b47a9fadbd89872932157711a1d4b77ecf5729850a7c11f7a40bf
+  checksum: 10c0/d05001b53f304fca505c0bfadd2314e1b2270b3c0a817d9c898311757e1fb4d0be11ca6966c0c1cc1520159a16aa82337b004fa9cc875d61916019f5ad4a2304
   languageName: node
   linkType: hard
 
-"@redmix/testing@npm:0.0.1":
-  version: 0.0.1
-  resolution: "@redmix/testing@npm:0.0.1"
+"@redmix/testing@npm:0.0.3":
+  version: 0.0.3
+  resolution: "@redmix/testing@npm:0.0.3"
   dependencies:
-    "@redmix/auth": "npm:0.0.1"
-    "@redmix/babel-config": "npm:0.0.1"
-    "@redmix/context": "npm:0.0.1"
-    "@redmix/graphql-server": "npm:0.0.1"
-    "@redmix/project-config": "npm:0.0.1"
-    "@redmix/router": "npm:0.0.1"
-    "@redmix/web": "npm:0.0.1"
+    "@redmix/auth": "npm:0.0.3"
+    "@redmix/babel-config": "npm:0.0.3"
+    "@redmix/context": "npm:0.0.3"
+    "@redmix/graphql-server": "npm:0.0.3"
+    "@redmix/project-config": "npm:0.0.3"
+    "@redmix/router": "npm:0.0.3"
+    "@redmix/web": "npm:0.0.3"
     "@testing-library/jest-dom": "npm:6.5.0"
     "@testing-library/react": "npm:14.3.1"
     "@testing-library/user-event": "npm:14.5.2"
@@ -4970,24 +4969,24 @@ __metadata:
     msw: "npm:1.3.4"
     ts-toolbelt: "npm:9.6.0"
     whatwg-fetch: "npm:3.6.20"
-  checksum: 10c0/18ef3ede38431cab74ea0e63ad6dbb19e7ed1ee70f097acc1e77224de35e5907d0aa8978043f7841e1aa4fd92f8caad99c11e3e9af8a4b7c4a4bf69217e0c37a
+  checksum: 10c0/bc9681b182f989ce12276bdcabe159809bcdf057e4eefa7a92ea3db7433a97fed415fc934d217b7a8050fc987b30ce98dc50b0b69ba350d93bd3e4d24f59f31f
   languageName: node
   linkType: hard
 
-"@redmix/vite@npm:0.0.1":
-  version: 0.0.1
-  resolution: "@redmix/vite@npm:0.0.1"
+"@redmix/vite@npm:0.0.3":
+  version: 0.0.3
+  resolution: "@redmix/vite@npm:0.0.3"
   dependencies:
     "@babel/generator": "npm:7.26.10"
     "@babel/parser": "npm:7.26.10"
     "@babel/traverse": "npm:7.26.10"
-    "@redmix/auth": "npm:0.0.1"
-    "@redmix/babel-config": "npm:0.0.1"
-    "@redmix/cookie-jar": "npm:0.0.1"
-    "@redmix/internal": "npm:0.0.1"
-    "@redmix/project-config": "npm:0.0.1"
-    "@redmix/server-store": "npm:0.0.1"
-    "@redmix/web": "npm:0.0.1"
+    "@redmix/auth": "npm:0.0.3"
+    "@redmix/babel-config": "npm:0.0.3"
+    "@redmix/cookie-jar": "npm:0.0.3"
+    "@redmix/internal": "npm:0.0.3"
+    "@redmix/project-config": "npm:0.0.3"
+    "@redmix/server-store": "npm:0.0.3"
+    "@redmix/web": "npm:0.0.3"
     "@swc/core": "npm:1.7.28"
     "@vitejs/plugin-react": "npm:4.3.4"
     "@whatwg-node/fetch": "npm:0.9.21"
@@ -5004,8 +5003,8 @@ __metadata:
     fs-extra: "npm:11.2.0"
     http-proxy-middleware: "npm:3.0.3"
     isbot: "npm:5.1.21"
-    react: "npm:19.0.0-rc-f2df5694-20240916"
-    react-server-dom-webpack: "npm:19.0.0-rc-f2df5694-20240916"
+    react: "npm:18.3.1"
+    react-server-dom-webpack: "npm:19.0.0-rc-8269d55d-20240802"
     rimraf: "npm:6.0.1"
     vite: "npm:5.4.16"
     vite-plugin-cjs-interop: "npm:2.1.4"
@@ -5018,16 +5017,16 @@ __metadata:
     rw-vite-build: ./bins/rw-vite-build.mjs
     rw-vite-dev: ./bins/rw-vite-dev.mjs
     vite: ./bins/vite.mjs
-  checksum: 10c0/25bcb21b19779c33d5a45248531a0a9e4612ffb101b00848d30166f54f76ecba52374289ca3e38e4f6ea9e7b8af028adc7488f4e35f976c2eaef6a57b566026c
+  checksum: 10c0/2d836fd053fef03fd7c3f2c51eb6726bfc8fd0d1c51d02ed0556f0516404bfe13cc8bf32a46f040cc64c51ee6ef3ebf45c583c7a859ffc6e504c274c3441a4b2
   languageName: node
   linkType: hard
 
-"@redmix/web-server@npm:0.0.1":
-  version: 0.0.1
-  resolution: "@redmix/web-server@npm:0.0.1"
+"@redmix/web-server@npm:0.0.3":
+  version: 0.0.3
+  resolution: "@redmix/web-server@npm:0.0.3"
   dependencies:
-    "@redmix/fastify-web": "npm:0.0.1"
-    "@redmix/project-config": "npm:0.0.1"
+    "@redmix/fastify-web": "npm:0.0.3"
+    "@redmix/project-config": "npm:0.0.3"
     chalk: "npm:4.1.2"
     dotenv-defaults: "npm:5.0.2"
     fastify: "npm:4.28.1"
@@ -5035,18 +5034,18 @@ __metadata:
     yargs: "npm:17.7.2"
   bin:
     rw-web-server: ./dist/bin.js
-  checksum: 10c0/343ef52d7095a13425fce39099259ad0f6e848bbde1a6d0d5f63612f038ad2854ead675450a875d8a0c3deb8453b7d9e2ad4676441a3a9000fd04b666ea9c762
+  checksum: 10c0/bb01c84ff43de7743b56eeb8b61c6d19e076a2e794994a692115cabe36b9c2a86baa1bd000911f6817824161f00a1cdbd0f7f72e204cdfae3daffaac8f1f9f2c
   languageName: node
   linkType: hard
 
-"@redmix/web@npm:0.0.1":
-  version: 0.0.1
-  resolution: "@redmix/web@npm:0.0.1"
+"@redmix/web@npm:0.0.3":
+  version: 0.0.3
+  resolution: "@redmix/web@npm:0.0.3"
   dependencies:
     "@apollo/client": "npm:3.11.1"
     "@babel/runtime-corejs3": "npm:7.26.10"
-    "@redmix/auth": "npm:0.0.1"
-    "@redmix/server-store": "npm:0.0.1"
+    "@redmix/auth": "npm:0.0.3"
+    "@redmix/server-store": "npm:0.0.3"
     "@whatwg-node/fetch": "npm:0.9.21"
     apollo-upload-client: "npm:18.0.1"
     cookie: "npm:0.7.2"
@@ -5059,8 +5058,8 @@ __metadata:
     stacktracey: "npm:2.1.8"
     ts-toolbelt: "npm:9.6.0"
   peerDependencies:
-    react: 19.0.0-rc-f2df5694-20240916
-    react-dom: 19.0.0-rc-f2df5694-20240916
+    react: 18.3.1
+    react-dom: 18.3.1
   bin:
     cross-env: ./dist/cjs/bins/cross-env.js
     msw: ./dist/cjs/bins/msw.js
@@ -5069,7 +5068,7 @@ __metadata:
     rwfw: ./dist/cjs/bins/rwfw.js
     storybook: ./dist/cjs/bins/storybook.js
     tsc: ./dist/cjs/bins/tsc.js
-  checksum: 10c0/cd1a4e885d373b60910fa20fea147fc0f69ec46dd84d7b0d04de406f6cc046626035a08b880d9a8359a6eb46a806d4dbae3af1d3840f0e41b0e770d84aaee20e
+  checksum: 10c0/06880e8ab729e57473f4fc2cf04cdeb1f76959b8c1a8e83644d8ab3db9ee964e528516e201750975f9cbd0c95a80fc9bf60ecdd2fd74d9b41b8d8001c99160ea
   languageName: node
   linkType: hard
 
@@ -6560,8 +6559,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "api@workspace:api"
   dependencies:
-    "@redmix/api": "npm:0.0.1"
-    "@redmix/graphql-server": "npm:0.0.1"
+    "@redmix/api": "npm:0.0.3"
+    "@redmix/graphql-server": "npm:0.0.3"
   languageName: unknown
   linkType: soft
 
@@ -14878,17 +14877,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@npm:19.0.0-rc-f2df5694-20240916":
-  version: 19.0.0-rc-f2df5694-20240916
-  resolution: "react-dom@npm:19.0.0-rc-f2df5694-20240916"
-  dependencies:
-    scheduler: "npm:0.25.0-rc-f2df5694-20240916"
-  peerDependencies:
-    react: 19.0.0-rc-f2df5694-20240916
-  checksum: 10c0/43577e8aa0a69095bce3821c370d0f73be2d87fe7f01de48ef91166373221daa13898e093ea9e0e3c31a3967579d768c69045197b139c1182c2f15e680c49e20
-  languageName: node
-  linkType: hard
-
 "react-fast-compare@npm:^3.2.2":
   version: 3.2.2
   resolution: "react-fast-compare@npm:3.2.2"
@@ -14965,18 +14953,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-server-dom-webpack@npm:19.0.0-rc-f2df5694-20240916":
-  version: 19.0.0-rc-f2df5694-20240916
-  resolution: "react-server-dom-webpack@npm:19.0.0-rc-f2df5694-20240916"
+"react-server-dom-webpack@npm:19.0.0-rc-8269d55d-20240802":
+  version: 19.0.0-rc-8269d55d-20240802
+  resolution: "react-server-dom-webpack@npm:19.0.0-rc-8269d55d-20240802"
   dependencies:
     acorn-loose: "npm:^8.3.0"
     neo-async: "npm:^2.6.1"
-    webpack-sources: "npm:^3.2.0"
   peerDependencies:
-    react: 19.0.0-rc-f2df5694-20240916
-    react-dom: 19.0.0-rc-f2df5694-20240916
+    react: 19.0.0-rc-8269d55d-20240802
+    react-dom: 19.0.0-rc-8269d55d-20240802
     webpack: ^5.59.0
-  checksum: 10c0/ff1890ceca1306df12073fdac579077c35cd411d1a21c6f43bf60065e0121fdfe860f1befccb9e367ba73a37c99add0233780af07528dde77c43d35e641faaf7
+  checksum: 10c0/b483cecdd77d0ba1aada0b00d8cede2fad4d010c97022ad859e2094bb3aa9cd5c16c5267806ef4fa21777250c4bb6ae3c9b0f4c6578b24d1af9f8bb23e172d74
   languageName: node
   linkType: hard
 
@@ -14986,13 +14973,6 @@ __metadata:
   dependencies:
     loose-envify: "npm:^1.1.0"
   checksum: 10c0/283e8c5efcf37802c9d1ce767f302dd569dd97a70d9bb8c7be79a789b9902451e0d16334b05d73299b20f048cbc3c7d288bbbde10b701fa194e2089c237dbea3
-  languageName: node
-  linkType: hard
-
-"react@npm:19.0.0-rc-f2df5694-20240916":
-  version: 19.0.0-rc-f2df5694-20240916
-  resolution: "react@npm:19.0.0-rc-f2df5694-20240916"
-  checksum: 10c0/15ea40edcea5f14b702e971f7aefbb87f8644be2e0480d563b4e21ee8d6dcc5332d608941c5c69889c035d9d80601fbd6ab303be4ed9f716e6c7ace441ea527a
   languageName: node
   linkType: hard
 
@@ -15560,8 +15540,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
-    "@redmix/core": "npm:0.0.1"
-    "@redmix/project-config": "npm:0.0.1"
+    "@redmix/core": "npm:0.0.3"
+    "@redmix/project-config": "npm:0.0.3"
   languageName: unknown
   linkType: soft
 
@@ -15667,13 +15647,6 @@ __metadata:
   dependencies:
     xmlchars: "npm:^2.2.0"
   checksum: 10c0/3847b839f060ef3476eb8623d099aa502ad658f5c40fd60c105ebce86d244389b0d76fcae30f4d0c728d7705ceb2f7e9b34bb54717b6a7dbedaf5dad2d9a4b74
-  languageName: node
-  linkType: hard
-
-"scheduler@npm:0.25.0-rc-f2df5694-20240916":
-  version: 0.25.0-rc-f2df5694-20240916
-  resolution: "scheduler@npm:0.25.0-rc-f2df5694-20240916"
-  checksum: 10c0/f8a59d85497ccb97a4e1408fcfd2c48a179608c531bd6a10ca1e41d3830c3f5557a02b2aab63e302c42052f70f8ca089ce38a8496efe44edf17f604e098fb531
   languageName: node
   linkType: hard
 
@@ -17548,10 +17521,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "web@workspace:web"
   dependencies:
-    "@redmix/forms": "npm:0.0.1"
-    "@redmix/router": "npm:0.0.1"
-    "@redmix/vite": "npm:0.0.1"
-    "@redmix/web": "npm:0.0.1"
+    "@redmix/forms": "npm:0.0.3"
+    "@redmix/router": "npm:0.0.3"
+    "@redmix/vite": "npm:0.0.3"
+    "@redmix/web": "npm:0.0.3"
     "@types/react": "npm:^18.2.55"
     "@types/react-dom": "npm:^18.2.19"
     react: "npm:18.3.1"
@@ -17583,13 +17556,6 @@ __metadata:
   version: 7.0.0
   resolution: "webidl-conversions@npm:7.0.0"
   checksum: 10c0/228d8cb6d270c23b0720cb2d95c579202db3aaf8f633b4e9dd94ec2000a04e7e6e43b76a94509cdb30479bd00ae253ab2371a2da9f81446cc313f89a4213a2c4
-  languageName: node
-  linkType: hard
-
-"webpack-sources@npm:^3.2.0":
-  version: 3.2.3
-  resolution: "webpack-sources@npm:3.2.3"
-  checksum: 10c0/2ef63d77c4fad39de4a6db17323d75eb92897b32674e97d76f0a1e87c003882fc038571266ad0ef581ac734cbe20952912aaa26155f1905e96ce251adbb1eb4e
   languageName: node
   linkType: hard
 

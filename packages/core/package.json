@@ -1,6 +1,6 @@
 {
   "name": "@redmix/core",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Foundational packages and config required to build Redmix.",
   "repository": {
     "type": "git",
