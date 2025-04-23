@@ -18,8 +18,9 @@ efforts of the RedwoodJS founders, maintainers and community.
 ## Migrating from RedwoodJS to Redmix
 
 Search and replace all instances of `"@redwoodjs/(.*)": "\d+\.\d+\.\d+"`
-with `"@redmix/$1": "0.0.2"` in all three `package.json` files. Run
-`yarn install` to update your lock file.
+with `"@redmix/$1": "0.0.3"` (or whatever the latest version of Redmix is when
+you run this) in all three `package.json` files. Run `yarn install` to update
+your lock file.
 
 Search and replace all instances of `@redwoodjs` in all files with `@redmix`.
 Pay attention to `yarn.lock`. If anything changed in there you probably have to
@@ -49,13 +50,17 @@ what you use so I know what to keep and what to remove!
 - [ ] Deploy providers I don't know of anyone using
 - [x] Old docs versions
 - [ ] Old codemods
-- [ ] The structure package
+- [ ] The structure package (internal legacy package)
 
 ### Future Proofing
 
 - [ ] Make all packages ESM only where possible and ESM+CJS where needed to
       keep compatibility with existing RW apps. Packages still to convert:
-  - [ ] `@redmix/cli` (in progress)
+  - [ ] `@redmix/cli` (in progress, see
+    [#23](https://github.com/redmix-run/redmix/pull/23),
+    [#26](https://github.com/redmix-run/redmix/pull/26),
+    [#34](https://github.com/redmix-run/redmix/pull/34),
+    [#40](https://github.com/redmix-run/redmix/pull/40), etc)
   - [ ] `@redmix/fastify-web`
   - [ ] `@redmix/api-server`
   - [ ] `@redmix/api`
