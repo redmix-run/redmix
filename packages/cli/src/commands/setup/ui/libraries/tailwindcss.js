@@ -228,10 +228,12 @@ export const handler = async ({ force, install }) => {
 
           // Replace `content`.
           const tailwindConfig = fs.readFileSync(tailwindConfigPath, 'utf-8')
-          const newTailwindConfig = tailwindConfig.replace(
-            'content: []',
-            "content: ['src/**/*.{js,jsx,ts,tsx}']",
-          )
+          const newTailwindConfig =
+            'const { join } = require("node:path");\n\n' +
+            tailwindConfig.replace(
+              'content: []',
+              "content: [join(__dirname, '../src/**/*.{js,jsx,ts,tsx}')]",
+            )
           fs.writeFileSync(tailwindConfigPath, newTailwindConfig)
         },
       },
