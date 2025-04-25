@@ -1,14 +1,14 @@
 ---
-description: GraphQL is a fundamental part of Redwood
+description: GraphQL is a fundamental part of Redmix
 ---
 
 # GraphQL
 
-GraphQL is a fundamental part of Redwood. Having said that, you can get going without knowing anything about it, and can actually get quite far without ever having to read [the docs](https://graphql.org/learn/). But to master Redwood, you'll need to have more than just a vague notion of what GraphQL is. You'll have to really grok it.
+GraphQL is a fundamental part of Redmix. Having said that, you can get going without knowing anything about it, and can actually get quite far without ever having to read [the docs](https://graphql.org/learn/). But to master Redmix, you'll need to have more than just a vague notion of what GraphQL is. You'll have to really grok it.
 
 ## GraphQL 101
 
-GraphQL is a query language that enhances the exchange of data between clients (in Redwood's case, a React app) and servers (a Redwood API).
+GraphQL is a query language that enhances the exchange of data between clients (in Redmix's case, a React app) and servers (a Redmix API).
 
 Unlike a REST API, a GraphQL Client performs operations that allow gathering a rich dataset in a single request.
 There's three types of GraphQL operations, but here we'll only focus on two: Queries (to read data) and Mutations (to create, update, or delete data).
@@ -44,7 +44,7 @@ returns the following JSON response:
       "description": "Lorem ipsum...",
       "owner": {
         "id": 11,
-        "username": "Redwood"
+        "username": "Redmix"
       },
       "tags": [{ "id": 22, "name": "graphql" }]
     }
@@ -118,27 +118,27 @@ To summarize, when a GraphQL query reaches a GraphQL API, here's what happens:
                                         +--------------------+
 ```
 
-In contrast to most GraphQL implementations, Redwood provides a "deconstructed" way of creating a GraphQL API:
+In contrast to most GraphQL implementations, Redmix provides a "deconstructed" way of creating a GraphQL API:
 
 - You define your SDLs (schema) in `*.sdl.js` files, which define what queries and mutations are available, and what fields can be returned
 - For each query or mutation, you write a service function with the same name. This is the resolver
-- Redwood then takes all your SDLs and Services (resolvers), combines them into a GraphQL server, and expose it as an endpoint
+- Redmix then takes all your SDLs and Services (resolvers), combines them into a GraphQL server, and expose it as an endpoint
 
-## RedwoodJS and GraphQL
+## Redmix and GraphQL
 
-Besides taking care of the annoying stuff for you (namely, mapping your resolvers, which gets annoying fast if you do it yourself!), there's not many gotchas with GraphQL in Redwood.
-The only Redwood-specific thing you should really be aware of is [resolver args](#redwoods-resolver-args).
+Besides taking care of the annoying stuff for you (namely, mapping your resolvers, which gets annoying fast if you do it yourself!), there's not many gotchas with GraphQL in Redmix.
+The only Redmix-specific thing you should really be aware of is [resolver args](#redwoods-resolver-args).
 
-Since there's two parts to GraphQL in Redwood, the client and the server, we've divided this doc up that way.
+Since there's two parts to GraphQL in Redmix, the client and the server, we've divided this doc up that way.
 
-On the `web` side, Redwood uses [Apollo Client](https://www.apollographql.com/docs/react/) by default though you can swap it out for something else if you want.
+On the `web` side, Redmix uses [Apollo Client](https://www.apollographql.com/docs/react/) by default though you can swap it out for something else if you want.
 
 The `api` side offers a GraphQL server built on [GraphQL Yoga](https://www.graphql-yoga.com) and the [Envelop plugin system](https://www.envelop.dev/docs) from [The Guild](https://the-guild.dev).
 
 ###
 
-Redwood's api side is "serverless first", meaning it's architected as functions which can be deployed on either serverless or traditional infrastructure, and Redwood's GraphQL endpoint is effectively "just another function" (with a whole lot more going on under the hood, but that part is handled for you, out of the box).
-One of the tenets of the Redwood philosophy is "Redwood believes that, as much as possible, you should be able to operate in a serverless mindset and deploy to a generic computational grid.”
+Redmix's api side is "serverless first", meaning it's architected as functions which can be deployed on either serverless or traditional infrastructure, and Redmix's GraphQL endpoint is effectively "just another function" (with a whole lot more going on under the hood, but that part is handled for you, out of the box).
+One of the tenets of the Redmix philosophy is "Redmix believes that, as much as possible, you should be able to operate in a serverless mindset and deploy to a generic computational grid.”
 
 ### GraphQL Yoga and the Generic Computation Grid
 
@@ -148,29 +148,29 @@ The same should be true of your GraphQL Server. [GraphQL Yoga](https://www.graph
 
 > The fully-featured GraphQL Server with focus on easy setup, performance and great developer experience.
 
-RedwoodJS leverages Yoga's Envelop plugins to implement custom internal plugins to help with [authentication](#authentication), [logging](#logging), [directive handling](#directives), and more.
+Redmix leverages Yoga's Envelop plugins to implement custom internal plugins to help with [authentication](#authentication), [logging](#logging), [directive handling](#directives), and more.
 
 ### Security Best Practices
 
-RedwoodJS implements GraphQL Armor from [Escape Technologies](https://escape.tech) to make your endpoint more secure by default by implementing common GraphQL [security best practices](#security).
+Redmix implements GraphQL Armor from [Escape Technologies](https://escape.tech) to make your endpoint more secure by default by implementing common GraphQL [security best practices](#security).
 
-GraphQL Armor, developed by Escape in partnership with The Guild, is a middleware for JS servers that adds a security layer to the RedwoodJS GraphQL endpoint.
+GraphQL Armor, developed by Escape in partnership with The Guild, is a middleware for JS servers that adds a security layer to the Redmix GraphQL endpoint.
 
 ### Trusted Documents
 
-In addition, RedwoodJS can be setup to enforce [persisted operations](https://the-guild.dev/graphql/yoga-server/docs/features/persisted-operations) -- alternatively called [Trusted Documents](https://benjie.dev/graphql/trusted-documents).
+In addition, Redmix can be setup to enforce [persisted operations](https://the-guild.dev/graphql/yoga-server/docs/features/persisted-operations) -- alternatively called [Trusted Documents](https://benjie.dev/graphql/trusted-documents).
 
 See [Configure Trusted Documents](graphql/trusted-documents#configure-trusted-documents) for more information and usage instructions.
 
 ### Conclusion
 
-All this gets us closer to Redwood's goal of being able to deploy to a "generic computation grid". And that’s exciting!
+All this gets us closer to Redmix's goal of being able to deploy to a "generic computation grid". And that’s exciting!
 
 ## Client-side
 
 ### RedwoodApolloProvider
 
-By default, Redwood Apps come ready-to-query with the `RedwoodApolloProvider`. As you can tell from the name, this Provider wraps [ApolloProvider](https://www.apollographql.com/docs/react/api/react/hooks/#the-apolloprovider-component). Omitting a few things, this is what you'll normally see in Redwood Apps:
+By default, Redmix Apps come ready-to-query with the `RedwoodApolloProvider`. As you can tell from the name, this Provider wraps [ApolloProvider](https://www.apollographql.com/docs/react/api/react/hooks/#the-apolloprovider-component). Omitting a few things, this is what you'll normally see in Redmix Apps:
 
 ```jsx title="web/src/App.js"
 import { RedwoodApolloProvider } from '@redmix/web/apollo'
@@ -215,7 +215,7 @@ Note that you're free to use any of Apollo's other hooks, you'll just have to im
 
 ### Customizing the Apollo Client and Cache
 
-By default, `RedwoodApolloProvider` configures an `ApolloClient` instance with 1) a default instance of `InMemoryCache` to cache responses from the GraphQL API and 2) an `authMiddleware` to sign API requests for use with [Redwood's built-in auth](authentication.md). Beyond the `cache` and `link` params, which are used to set up that functionality, you can specify additional params to be passed to `ApolloClient` using the `graphQLClientConfig` prop. The full list of available configuration options for the client are [documented here on Apollo's site](https://www.apollographql.com/docs/react/api/core/ApolloClient/#options).
+By default, `RedwoodApolloProvider` configures an `ApolloClient` instance with 1) a default instance of `InMemoryCache` to cache responses from the GraphQL API and 2) an `authMiddleware` to sign API requests for use with [Redmix's built-in auth](authentication.md). Beyond the `cache` and `link` params, which are used to set up that functionality, you can specify additional params to be passed to `ApolloClient` using the `graphQLClientConfig` prop. The full list of available configuration options for the client are [documented here on Apollo's site](https://www.apollographql.com/docs/react/api/core/ApolloClient/#options).
 
 Depending on your use case, you may want to configure `InMemoryCache`. For example, you may need to specify a type policy to change the key by which a model is cached or to enable pagination on a query. [This article from Apollo](https://www.apollographql.com/docs/react/caching/cache-configuration/) explains in further detail why and how you might want to do this.
 
@@ -258,7 +258,7 @@ Note that if you don't import `RedwoodApolloProvider`, it won't be included in y
 
 According to the spec, for every field in your sdl, there has to be a resolver in your Services. But you'll usually see fewer resolvers in your Services than you technically should. And that's because if you don't define a resolver, GraphQL Yoga server will.
 
-The key question the Yoga server asks is: "Does the parent argument (in Redwood apps, the `parent` argument is named `root`&mdash;see [Redwood's Resolver Args](#redwoods-resolver-args)) have a property with this resolver's exact name?" Most of the time, especially with Prisma Client's ergonomic returns, the answer is yes.
+The key question the Yoga server asks is: "Does the parent argument (in Redmix apps, the `parent` argument is named `root`&mdash;see [Redmix's Resolver Args](#redwoods-resolver-args)) have a property with this resolver's exact name?" Most of the time, especially with Prisma Client's ergonomic returns, the answer is yes.
 
 Let's walk through an example. Say our sdl looks like this:
 
@@ -286,7 +286,7 @@ model User {
 }
 ```
 
-If you create your Services for this model using Redwood's generator (`yarn rw g service user`), your Services will look like this:
+If you create your Services for this model using Redmix's generator (`yarn rw g service user`), your Services will look like this:
 
 ```jsx title="api/src/services/user/user.js"
 import { db } from 'src/lib/db'
@@ -333,9 +333,9 @@ export const Users = {
 
 <!-- Source: https://community.redwoodjs.com/t/how-to-create-field-resolver/195/7 -->
 
-### Redwood's Resolver Args
+### Redmix's Resolver Args
 
-[According to the spec](https://graphql.org/learn/execution/#root-fields-resolvers), resolvers take four arguments: `args`, `obj`, `context`, and `info`. In Redwood, resolvers do take these four arguments, but what they're named and how they're passed to resolvers is slightly different:
+[According to the spec](https://graphql.org/learn/execution/#root-fields-resolvers), resolvers take four arguments: `args`, `obj`, `context`, and `info`. In Redmix, resolvers do take these four arguments, but what they're named and how they're passed to resolvers is slightly different:
 
 - `args` is passed as the first argument
 - `obj` is named `root` (all the rest keep their names)
@@ -361,11 +361,11 @@ Of the four, you'll see `args` and `root` being used a lot.
 
 > **There's so many terms!**
 >
-> Half the battle here is really just coming to terms. To keep your head from spinning, keep in mind that everybody tends to rename `obj` to something else: Redwood calls it `root`, GraphQL Yoga calls it `parent`. `obj` isn't exactly the most descriptive name in the world.
+> Half the battle here is really just coming to terms. To keep your head from spinning, keep in mind that everybody tends to rename `obj` to something else: Redmix calls it `root`, GraphQL Yoga calls it `parent`. `obj` isn't exactly the most descriptive name in the world.
 
 ### Context
 
-In Redwood, the `context` object that's passed to resolvers is actually available to all your Services, whether or not they're serving as resolvers. Just import it from `@redmix/graphql-server`:
+In Redmix, the `context` object that's passed to resolvers is actually available to all your Services, whether or not they're serving as resolvers. Just import it from `@redmix/graphql-server`:
 
 ```jsx
 import { context } from '@redmix/graphql-server'
@@ -427,7 +427,7 @@ query {
 }
 ```
 
-How is this possible? Via Redwood's [root schema](https://github.com/redmix-run/redmix/blob/main/packages/graphql-server/src/rootSchema.ts). The root schema is where things like currentUser are defined:
+How is this possible? Via Redmix's [root schema](https://github.com/redmix-run/redmix/blob/main/packages/graphql-server/src/rootSchema.ts). The root schema is where things like currentUser are defined:
 
 ```graphql
 scalar BigInt
@@ -437,14 +437,14 @@ scalar DateTime
 scalar JSON
 scalar JSONObject
 
-type Redwood {
+type Redmix {
   version: String
   currentUser: JSON
   prismaVersion: String
 }
 
 type Query {
-  redwood: Redwood
+  redwood: Redmix
 }
 ```
 
@@ -487,7 +487,7 @@ The GraphQL Playground's nice, but if you're a power user, you'll want to be usi
 
 CORS stands for [Cross Origin Resource Sharing](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing); in a nutshell, by default, browsers aren't allowed to access resources outside their own domain.
 
-Let's say you're hosting each of your Redwood app's sides on different domains: the web side on `www.example.com` and the api side (and thus, the GraphQL Server) on `api.example.com`.
+Let's say you're hosting each of your Redmix app's sides on different domains: the web side on `www.example.com` and the api side (and thus, the GraphQL Server) on `api.example.com`.
 When the browser tries to fetch data from the `/graphql` function, you'll see an error that says the request was blocked due to CORS. Wording may vary, but it'll be similar to:
 
 > ⛔️ Access to fetch ... has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource.
@@ -526,7 +526,7 @@ For more in-depth discussion and configuration of CORS when it comes to using a 
 You can use health checks to determine if a server is available and ready to start serving traffic.
 For example, services like [Pingdom](https://www.pingdom.com) use health checks to determine server uptime and will notify you if it becomes unavailable.
 
-Redwood's GraphQL server provides a health check endpoint at `/graphql/health` as part of its GraphQL handler.
+Redmix's GraphQL server provides a health check endpoint at `/graphql/health` as part of its GraphQL handler.
 If the server is healthy and can accept requests, the response will contain the following headers:
 
 ```
@@ -551,7 +551,7 @@ Note the `x-yoga-id` header. The header's value defaults to `yoga` when `healthC
 export const handler = createGraphQLHandler({
   // This will be the value of the `x-yoga-id` header
   // highlight-next-line
-  healthCheckId: 'my-redwood-graphql-server',
+  healthCheckId: 'my-Redmix-graphql-server',
   getCurrentUser,
   loggerConfig: { logger, options: {} },
   directives,
@@ -629,7 +629,7 @@ For production, make a request wherever your `/graphql` function exists.
 
 In order to keep your GraphQL endpoint and services secure, you must specify one of `@requireAuth`, `@skipAuth` or a custom directive on **every** query and mutation defined in your SDL.
 
-Redwood will verify that your schema complies with these runs when:
+Redmix will verify that your schema complies with these runs when:
 
 - building (or building just the api)
 - launching the dev server.
@@ -691,7 +691,7 @@ To fix these errors, simple declare with `@requireAuth` to enforce authenticatio
 
 ## Default Scalars
 
-Redwood includes a selection of scalar types by default.
+Redmix includes a selection of scalar types by default.
 
 Currently we allow you to control whether or not the `File` scalar is included automatically or not. By default we include the `File` scalar which maps to the standard `File` type. To disable this scalar you should add config to two places:
 
@@ -851,7 +851,7 @@ type Mutation {
 }
 ```
 
-See the [Directives](directives) section for complete information on RedwoodJS Directives.
+See the [Directives](directives) section for complete information on Redmix Directives.
 
 ## Fragments
 
@@ -861,13 +861,13 @@ See [fragments](graphql/fragments.md)
 
 Unions are abstract GraphQL types that enable a schema field to return one of multiple object types.
 
-`union FavoriteTree = Redwood | Ginkgo | Oak`
+`union FavoriteTree = Redmix | Ginkgo | Oak`
 
 A field can have a union as its return type.
 
 ```tsx
 type Query {
-  searchTrees: [FavoriteTree] // This list can include Redwood, Gingko or Oak objects
+  searchTrees: [FavoriteTree] // This list can include Redmix, Gingko or Oak objects
 }
 ```
 
@@ -879,7 +879,7 @@ To query a union, you can take advantage on [inline fragments](https://graphql.o
 query GetFavoriteTrees {
   __typename // typename is helpful when querying a field that returns one of multiple types
   searchTrees {
-    ... on Redwood {
+    ... on Redmix {
       name
       height
     }
@@ -895,7 +895,7 @@ query GetFavoriteTrees {
 }
 ```
 
-Redwood will automatically detect your union types in your `sdl` files and resolve _which_ of your union's types is being returned. If the returned object does not match any of the valid types, the associated operation will produce a GraphQL error.
+Redmix will automatically detect your union types in your `sdl` files and resolve _which_ of your union's types is being returned. If the returned object does not match any of the valid types, the associated operation will produce a GraphQL error.
 
 :::note
 
@@ -1030,7 +1030,7 @@ const Fruit = ({ id }: { id: FragmentIdentifier }) => {
 
 ## GraphQL Handler Setup
 
-Redwood's `GraphQLHandlerOptions` allows you to configure your GraphQL handler schema, context, authentication, security and more.
+Redmix's `GraphQLHandlerOptions` allows you to configure your GraphQL handler schema, context, authentication, security and more.
 
 ```ts
 export interface GraphQLHandlerOptions {
@@ -1154,7 +1154,7 @@ export interface GraphQLHandlerOptions {
 
 ### Directive Setup
 
-Redwood makes it easy to code, organize, and map your directives into the GraphQL schema.
+Redmix makes it easy to code, organize, and map your directives into the GraphQL schema.
 
 You simply add them to the `directives` directory and the `createGraphQLHandler` will do all the work.
 
@@ -1181,7 +1181,7 @@ export const handler = createGraphQLHandler({
 })
 ```
 
-> Note: Check-out the [in-depth look at Redwood Directives](directives) that explains how to generate directives so you may use them to validate access and transform the response.
+> Note: Check-out the [in-depth look at Redmix Directives](directives) that explains how to generate directives so you may use them to validate access and transform the response.
 
 ### Logging Setup
 
@@ -1195,9 +1195,9 @@ For a details on setting up GraphQL Security, see [Security](#security).
 
 Logging is essential in production apps to be alerted about critical errors and to be able to respond effectively to support issues. In staging and development environments, logging helps you debug queries, resolvers and cell requests.
 
-We want to make logging simple when using RedwoodJS and therefore have configured the api-side GraphQL handler to log common information about your queries and mutations. Log statements also be optionally enriched with [operation names](https://graphql.org/learn/queries/#operation-name), user agents, request ids, and performance timings to give you more visibility into your GraphQL api.
+We want to make logging simple when using Redmix and therefore have configured the api-side GraphQL handler to log common information about your queries and mutations. Log statements also be optionally enriched with [operation names](https://graphql.org/learn/queries/#operation-name), user agents, request ids, and performance timings to give you more visibility into your GraphQL api.
 
-By configuring the GraphQL handler to use your api side [RedwoodJS logger](logger), any errors and other log statements about the [GraphQL execution](https://graphql.org/learn/execution/) will be logged to the [destination](logger#destination-aka-where-to-log) you've set up: to standard output, file, or transport stream.
+By configuring the GraphQL handler to use your api side [Redmix logger](logger), any errors and other log statements about the [GraphQL execution](https://graphql.org/learn/execution/) will be logged to the [destination](logger#destination-aka-where-to-log) you've set up: to standard output, file, or transport stream.
 
 You configure the logger using the `loggerConfig` that accepts a [`logger`](logger) and a set of [GraphQL Logger Options](#graphql-logger-options).
 
@@ -1365,9 +1365,9 @@ Stream to third-party log and application monitoring services vital to productio
 
 #### Supports Log Redaction
 
-Everyone has heard of reports that Company X logged emails, or passwords to files or systems that may not have been secured. While RedwoodJS logging won't necessarily prevent that, it does provide you with the mechanism to ensure that won't happen.
+Everyone has heard of reports that Company X logged emails, or passwords to files or systems that may not have been secured. While Redmix logging won't necessarily prevent that, it does provide you with the mechanism to ensure that won't happen.
 
-To redact sensitive information, you can supply paths to keys that hold sensitive data using the RedwoodJS logger [redact option](logger#redaction).
+To redact sensitive information, you can supply paths to keys that hold sensitive data using the Redmix logger [redact option](logger#redaction).
 
 Because this logger is used with the GraphQL handler, it will respect any redaction paths setup.
 
@@ -1452,9 +1452,9 @@ By logging the operation name and extracting the duration for each query, you ca
 
 Parsing a GraphQL operation document is a very expensive and compute intensive operation that blocks the JavaScript event loop. If an attacker sends a very complex operation document with slight variations over and over again he can easily degrade the performance of the GraphQL server.
 
-RedwoodJS will by default reject a variety malicious operation documents; that is, it'll prevent attackers from making malicious queries or mutations.
+Redmix will by default reject a variety malicious operation documents; that is, it'll prevent attackers from making malicious queries or mutations.
 
-RedwoodJS is configured out-of-the-box with GraphQL security best practices:
+Redmix is configured out-of-the-box with GraphQL security best practices:
 
 - Schema Directive-based Authentication including RBAC validation
 - Production Deploys disable Introspection and GraphQL Playground automatically
@@ -1474,9 +1474,9 @@ By default, your GraphQL endpoint is open to the world.
 That means anyone can request any query and invoke any Mutation.
 Whatever types and fields are defined in your SDL is data that anyone can access.
 
-Redwood [encourages being secure by default](directives) by defaulting all queries and mutations to have the `@requireAuth` directive when generating SDL or a service.
+Redmix [encourages being secure by default](directives) by defaulting all queries and mutations to have the `@requireAuth` directive when generating SDL or a service.
 
-When your app builds and your server starts up, Redwood checks that **all** queries and mutations have `@requireAuth`, `@skipAuth` or a custom directive applied.
+When your app builds and your server starts up, Redmix checks that **all** queries and mutations have `@requireAuth`, `@skipAuth` or a custom directive applied.
 
 If not, then your build will fail:
 
@@ -1576,7 +1576,7 @@ export const requireAuth = ({ roles }: { roles: AllowedRoles }) => {
 }
 ```
 
-> **Note**: The `auth.ts` file here is the stub for a new RedwoodJS app. Once you have setup auth with your provider, this will enforce a proper authentication check.
+> **Note**: The `auth.ts` file here is the stub for a new Redmix app. Once you have setup auth with your provider, this will enforce a proper authentication check.
 
 ##### Field-level Auth
 
@@ -1633,7 +1633,7 @@ Because it is often useful to ask a GraphQL schema for information about what qu
 
 The [GraphQL Playground](https://www.graphql-yoga.com/docs/features/graphiql) is a way for you to interact with your schema and try out queries and mutations. It can show you the schema by inspecting it. You can find the GraphQL Playground at [http://localhost:8911/graphql](http://localhost:8911/graphql) when your dev server is running.
 
-> Because both introspection and the playground share possibly sensitive information about your data model, your data, your queries and mutations, best practices for deploying a GraphQL Server call to disable these in production, RedwoodJS **, by default, only enables introspection and the playground when running in development**. That is when `process.env.NODE_ENV === 'development'`.
+> Because both introspection and the playground share possibly sensitive information about your data model, your data, your queries and mutations, best practices for deploying a GraphQL Server call to disable these in production, Redmix **, by default, only enables introspection and the playground when running in development**. That is when `process.env.NODE_ENV === 'development'`.
 
 However, there may be cases where you want to enable introspection as well as the GraphQL Playground. You can enable introspection by setting the `allowIntrospection` option to `true` and enable GraphiQL by setting `allowGraphiQL` to `true`.
 
@@ -1668,7 +1668,7 @@ Or, you may want to enable GraphiQL, but not allow introspection; for example, t
 
 ### GraphQL Armor Configuration
 
-[GraphQL Armor](https://escape.tech/graphql-armor/) is a middleware that adds a security layer the RedwoodJS GraphQL endpoint configured with sensible defaults.
+[GraphQL Armor](https://escape.tech/graphql-armor/) is a middleware that adds a security layer the Redmix GraphQL endpoint configured with sensible defaults.
 
 You don't have to configure anything to enforce protection against alias, cost, depth, directive, tokens abuse in GraphQL operations as well as to block field suggestions or revealing error messages that might leak sensitive information.
 
@@ -1939,7 +1939,7 @@ The following example demonstrates that by using the `@include` and `@skip` Grap
     "posts": [
       {
         "id": 1,
-        "title": "A little more about RedwoodJS"
+        "title": "A little more about Redmix"
       },
       {
         "id": 2,
@@ -1947,7 +1947,7 @@ The following example demonstrates that by using the `@include` and `@skip` Grap
       },
       {
         "id": 3,
-        "title": "Welcome to the RedwoodJS Community!"
+        "title": "Welcome to the Redmix Community!"
       },
       {
         "id": 4,
@@ -2090,10 +2090,10 @@ Orm if you want a custom mask:
 
 In many GraphQL servers, when an error is thrown, the details of that error are leaked to the outside world. The error and its message are then returned in the response and a client might reveal those errors in logs or even render the message to the user. You could potentially leak sensitive or other information about your app you don't want to share—such as database connection failures or even the presence of certain fields.
 
-Redwood is here to help!
+Redmix is here to help!
 
-Redwood prevents leaking sensitive error-stack information out-of-the-box for unexpected errors.
-If an error that isn't one of [Redwood's GraphQL Errors](#redwood-errors) or isn't based on a GraphQLError is thrown:
+Redmix prevents leaking sensitive error-stack information out-of-the-box for unexpected errors.
+If an error that isn't one of [Redmix's GraphQL Errors](#Redmix-errors) or isn't based on a GraphQLError is thrown:
 
 - The original error and its message will be logged using the defined GraphQL logger, so you'll know what went wrong
 - A default message "Something went wrong" will replace the error message in the response (Note: you can customize this message)
@@ -2101,7 +2101,7 @@ If an error that isn't one of [Redwood's GraphQL Errors](#redwood-errors) or isn
 #### Customizing the Error Message
 
 But what if you still want to share an error message with client?
-Simply use one of [Redwood's GraphQL Errors](#redwood-errors) and your custom message will be shared with your users.
+Simply use one of [Redmix's GraphQL Errors](#Redmix-errors) and your custom message will be shared with your users.
 
 #### Customizing the Default Error Message
 
@@ -2121,11 +2121,11 @@ export const handler = createGraphQLHandler({
 })
 ```
 
-#### Redwood Errors
+#### Redmix Errors
 
-Redwood Errors are inspired from [Apollo Server Error codes](https://www.apollographql.com/docs/apollo-server/data/errors/#error-codes) for common use cases:
+Redmix Errors are inspired from [Apollo Server Error codes](https://www.apollographql.com/docs/apollo-server/data/errors/#error-codes) for common use cases:
 
-To use a Redwood Error, import each from `@redmix/graphql-server`.
+To use a Redmix Error, import each from `@redmix/graphql-server`.
 
 - `SyntaxError` - An unspecified error occurred
 - `ValidationError` - Invalid input to a service
@@ -2193,9 +2193,9 @@ You can achieve this by using the [`@graphql-yoga/plugin-csrf-prevention` GraphQ
 
 ## Self-Documenting GraphQL API
 
-RedwoodJS helps you document your GraphQL API by generating commented SDL used for GraphiQL and the GraphQL Playground explorer -- as well as can be turned into API docs using tools like [Docusaurus](#use-in-docusaurus).
+Redmix helps you document your GraphQL API by generating commented SDL used for GraphiQL and the GraphQL Playground explorer -- as well as can be turned into API docs using tools like [Docusaurus](#use-in-docusaurus).
 
-If you specify the SDL generator with its `--docs` option, any comments (which the [GraphQL spec](https://spec.graphql.org/October2021/#sec-Descriptions) calls "descriptions") will be incorporated into your RedwoodJS app's `graphql.schema` file when generating types.
+If you specify the SDL generator with its `--docs` option, any comments (which the [GraphQL spec](https://spec.graphql.org/October2021/#sec-Descriptions) calls "descriptions") will be incorporated into your Redmix app's `graphql.schema` file when generating types.
 
 If you comment your Prisma schema models, its fields, or enums, the SDL generator will use those comments as the documentation.
 
@@ -2327,27 +2327,27 @@ type Query {
 
 #### Root Schema
 
-Documentation is also generated for the Redwood Root Schema that defines details about Redwood such as the current user and version information.
+Documentation is also generated for the Redmix Root Schema that defines details about Redmix such as the current user and version information.
 
 ```
 type Query {
-  "Fetches the Redwood root schema."
-  redwood: Redwood
+  "Fetches the Redmix root schema."
+  redwood: Redmix
 }
 
 """
-The Redwood Root Schema
+The Redmix Root Schema
 
-Defines details about Redwood such as the current user and version information.
+Defines details about Redmix such as the current user and version information.
 """
-type Redwood {
+type Redmix {
   "The current user."
   currentUser: JSON
 
   "The version of Prisma."
   prismaVersion: String
 
-  "The version of Redwood."
+  "The version of Redmix."
   version: String
 }
 
@@ -2514,7 +2514,7 @@ yarn start
 
 ## FAQ
 
-### Why Doesn't Redwood Use Something Like Nexus?
+### Why Doesn't Redmix Use Something Like Nexus?
 
 This might be one of our most frequently asked questions of all time. Here's [Tom's response in the forum](https://community.redwoodjs.com/t/anyone-playing-around-with-nexus-js/360/5):
 
@@ -2528,5 +2528,5 @@ This might be one of our most frequently asked questions of all time. Here's [To
 Eager to learn more about GraphQL? Check out some of the resources below:
 
 - [GraphQL.wtf](https://graphql.wtf) covers most aspects of GraphQL and publishes one short video a week
-- The official GraphQL Yoga (the GraphQL server powering Redwood) [tutorial](https://www.graphql-yoga.com/tutorial/basic/00-introduction) is the best place to get your hands on GraphQL basics
+- The official GraphQL Yoga (the GraphQL server powering Redmix) [tutorial](https://www.graphql-yoga.com/tutorial/basic/00-introduction) is the best place to get your hands on GraphQL basics
 - And of course, [the official GraphQL docs](https://graphql.org/learn/) are great place to do a deep dive into exactly how GraphQL works
