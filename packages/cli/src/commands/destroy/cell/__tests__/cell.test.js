@@ -6,7 +6,7 @@ import { vi, beforeEach, afterEach, test, expect } from 'vitest'
 import '../../../../lib/test'
 
 import { files } from '../../../generate/cell/cellHandler.js'
-import { tasks } from '../cell.js'
+import { tasks } from '../cellHandler.js'
 
 vi.mock('node:fs', async () => ({ ...memfs, default: memfs }))
 vi.mock('fs-extra', async () => ({ ...memfs, default: memfs }))
