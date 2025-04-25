@@ -373,9 +373,9 @@ import { context } from '@redmix/graphql-server'
 
 #### How to Modify the Context
 
-Because the context is read-only in your services, if you need to modify it, then you need to do so in the `createGraphQLHandler`.
+Because the context is read-only in your services, if you need to modify it, then you need to do so when calling the `createGraphQLHandler` function.
 
-To populate or enrich the context on a per-request basis with additional attributes, set the `context` attribute `createGraphQLHandler` to a custom ContextFunction that modifies the context.
+To populate or enrich the context on a per-request basis with additional attributes, set the `context` attribute that's passed to `createGraphQLHandler` to a custom ContextFunction that modifies the context.
 
 For example, if we want to populate a new, custom `ipAddress` attribute on the context with the information from the request's event, declare the `setIpAddress` ContextFunction as seen here:
 
