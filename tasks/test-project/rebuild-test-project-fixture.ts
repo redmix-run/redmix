@@ -5,6 +5,7 @@ import path from 'node:path'
 import chalk from 'chalk'
 import fse from 'fs-extra'
 import { rimraf } from 'rimraf'
+import semver from 'semver'
 import { hideBin } from 'yargs/helpers'
 import yargs from 'yargs/yargs'
 
@@ -23,6 +24,21 @@ import {
   ExecaError,
   exec,
 } from './util'
+
+// If the current Node.js version is outside of the recommended range the Redmix
+// setup command will pause and ask the user if they want to continue. This
+// hangs this script without any information to the user that tries to rebuild
+// the test-project. It's better to fail early so the correct node version can
+// be installed.
+if (
+  semver.lt(process.version, '20.0.0') ||
+  semver.gte(process.version, '21.0.0')
+) {
+  console.error('Unsupported Node.js version')
+  console.error('  You are using:', process.version)
+  console.error('  Supported version:', 'v20')
+  process.exit(1)
+}
 
 const args = yargs(hideBin(process.argv))
   .usage('Usage: $0 [option]')
