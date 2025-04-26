@@ -15,7 +15,7 @@ import { vi, beforeEach, afterEach, test, expect } from 'vitest'
 import '../../../../lib/test'
 
 import { files } from '../../../generate/function/functionHandler.js'
-import { tasks } from '../function.js'
+import { tasks } from '../functionHandler.js'
 
 beforeEach(async () => {
   vol.fromJSON(files({ name: 'sendMail' }))

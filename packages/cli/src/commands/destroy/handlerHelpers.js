@@ -23,11 +23,14 @@ export function createHandler({
   preTasksFn = (options) => options,
   filesFn,
 }) {
-  return async (options) => {
-    recordTelemetryAttributes({
-      command: `destroy ${componentName}`,
-    })
-    options = await preTasksFn({ ...options, isDestroyer: true })
-    await tasks({ componentName, filesFn, name: options.name }).run()
+  return {
+    handler: async (options) => {
+      recordTelemetryAttributes({
+        command: `destroy ${componentName}`,
+      })
+      options = await preTasksFn({ ...options, isDestroyer: true })
+      await tasks({ componentName, filesFn, name: options.name }).run()
+    },
+    tasks,
   }
 }
