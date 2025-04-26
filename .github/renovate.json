@@ -36,7 +36,6 @@
     {
       "groupName": "chore",
       "matchPackageNames": [
-        "all-contributors-cli",
         "cypress",
         "cypress-wait-until",
         "dependency-cruiser",
