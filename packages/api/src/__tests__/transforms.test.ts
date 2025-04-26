@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 
-import { removeNulls } from '../transforms'
+import { removeNulls } from '../transforms.js'
 
 describe('removeNulls utility', () => {
   it('Changes nulls to undefined', () => {

@@ -7,7 +7,7 @@ import {
   verifySignature,
   WebhookVerificationError,
   DEFAULT_WEBHOOK_SIGNATURE_HEADER,
-} from './index'
+} from './index.js'
 
 const payload = 'No more secrets, Marty.'
 const secret = 'MY_VOICE_IS_MY_PASSPORT_VERIFY_ME'

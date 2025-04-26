@@ -1,6 +1,6 @@
 import { beforeEach, afterEach, describe, test, expect, vi } from 'vitest'
 
-import { createVerifier } from '../index'
+import { createVerifier } from '../index.js'
 
 const payload = 'No more secrets, Marty.'
 const secret = 'MY_VOICE_IS_MY_PASSPORT_VERIFY_ME'

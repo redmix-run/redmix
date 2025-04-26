@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 
-import { createCache, formatCacheKey, InMemoryClient } from '../index'
+import { createCache, formatCacheKey, InMemoryClient } from '../index.js'
 
 describe('exports', () => {
   it('exports the client that was passed in', () => {

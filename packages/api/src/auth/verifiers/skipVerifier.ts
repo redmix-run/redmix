@@ -1,4 +1,4 @@
-import type { VerifyOptions, WebhookVerifier } from './common'
+import type { VerifyOptions, WebhookVerifier } from './common.js'
 
 export interface SkipVerifier extends WebhookVerifier {
   type: 'skipVerifier'

@@ -3,7 +3,7 @@
 import { PrismaClient } from '@prisma/client'
 import pascalcase from 'pascalcase'
 
-import * as ValidationErrors from './errors'
+import * as ValidationErrors from './errors.js'
 
 type WithOptionalMessage<T = Record<string, unknown>> = T & {
   /**

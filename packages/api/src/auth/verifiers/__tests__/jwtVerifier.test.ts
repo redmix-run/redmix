@@ -4,7 +4,7 @@ import {
   createVerifier,
   WebhookSignError,
   WebhookVerificationError,
-} from '../index'
+} from '../index.js'
 
 const payload = { data: 'No more secrets, Marty.' }
 const secret = 'MY_VOICE_IS_MY_PASSPORT_VERIFY_ME'
