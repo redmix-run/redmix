@@ -1,3 +1,4 @@
-import { build } from '@redmix/framework-tools'
+import { buildExternalCjs, buildExternalEsm } from '@redmix/framework-tools'
 
-await build()
+await buildExternalCjs()
+await buildExternalEsm()

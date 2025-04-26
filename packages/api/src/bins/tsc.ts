@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 import { createRequire } from 'node:module'
 
-const require = createRequire(import.meta.url)
+const customRequire =
+  typeof require === 'function' ? require : createRequire(import.meta.url)
 
 const requireFromTypeScript = createRequire(
-  require.resolve('typescript/package.json'),
+  customRequire.resolve('typescript/package.json'),
 )
 
 const bins = requireFromTypeScript('./package.json')['bin']
