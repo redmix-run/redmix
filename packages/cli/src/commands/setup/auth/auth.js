@@ -25,11 +25,11 @@ export async function builder(yargs) {
       )}`,
     )
     // Command "redirects" for auth providers we used to support
-    .command(...redirectCommand('ethereum'))
-    .command(...redirectCommand('goTrue'))
-    .command(...redirectCommand('magicLink'))
-    .command(...redirectCommand('nhost'))
-    .command(...redirectCommand('okta'))
+    .command(...directToCustomAuthCommand('ethereum'))
+    .command(...directToCustomAuthCommand('goTrue'))
+    .command(...directToCustomAuthCommand('magicLink'))
+    .command(...directToCustomAuthCommand('nhost'))
+    .command(...directToCustomAuthCommand('okta'))
     // Auth providers we support
     .command(
       'auth0',
@@ -195,7 +195,8 @@ export async function builder(yargs) {
  * @param {string} provider
  * @returns {[string, boolean, () => void, () => void]}
  */
-function redirectCommand(provider) {
+function directToCustomAuthCommand(provider) {
+  // cmd, description, builder, handler
   return [
     provider,
     false,
@@ -204,22 +205,18 @@ function redirectCommand(provider) {
       recordTelemetryAttributes({
         command: `setup auth ${provider}`,
       })
-      console.log(getRedirectMessage(provider))
+
+      const customAuthLink = terminalLink(
+        'Custom Auth',
+        'https://redwoodjs.com/docs/auth/custom',
+      )
+
+      console.log(
+        `${provider} is no longer supported out of the box. But you can ` +
+          `still integrate it yourself with ${customAuthLink}`,
+      )
     },
   ]
-}
-
-/**
- * Get a stock message for one of our removed auth providers
- * directing the user to the Custom Auth docs.
- *
- * @param {string} provider
- */
-function getRedirectMessage(provider) {
-  return `${provider} is no longer supported out of the box. But you can still integrate it yourself with ${terminalLink(
-    'Custom Auth',
-    'https://redwoodjs.com/docs/canary/auth/custom',
-  )}`
 }
 
 /**
