@@ -1,6 +1,6 @@
 import { describe, test, expect } from 'vitest'
 
-import { createVerifier, WebhookVerificationError } from '../index'
+import { createVerifier, WebhookVerificationError } from '../index.js'
 
 const stringPayload = 'No more secrets, Marty.'
 const payload = { data: { move: 'Sneakers', quote: stringPayload } }

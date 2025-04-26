@@ -1,8 +1,8 @@
 import type { APIGatewayProxyEvent, Context } from 'aws-lambda'
 import { describe, it, expect } from 'vitest'
 
-import type { Decoded } from '../index'
-import { getAuthenticationContext } from '../index'
+import type { Decoded } from '../index.js'
+import { getAuthenticationContext } from '../index.js'
 
 export const createMockedEvent = (
   headers: Record<string, string>,

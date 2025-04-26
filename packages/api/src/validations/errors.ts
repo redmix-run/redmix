@@ -1,7 +1,7 @@
 import humanize from 'humanize-string'
 import { titleCase } from 'title-case'
 
-import { RedwoodError } from '../errors'
+import { RedwoodError } from '../errors.js'
 
 export class ServiceValidationError extends RedwoodError {
   constructor(message: string, substitutions = {}) {

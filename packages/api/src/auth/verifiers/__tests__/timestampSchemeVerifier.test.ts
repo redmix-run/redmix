@@ -2,7 +2,7 @@
 
 import { describe, test, expect } from 'vitest'
 
-import { createVerifier, WebhookVerificationError } from '../index'
+import { createVerifier, WebhookVerificationError } from '../index.js'
 
 const payload = 'No more secrets, Marty.'
 const secret = 'MY_VOICE_IS_MY_PASSPORT_VERIFY_ME'

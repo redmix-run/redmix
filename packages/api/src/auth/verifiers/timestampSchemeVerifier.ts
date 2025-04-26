@@ -4,8 +4,8 @@ import {
   WebhookVerificationError,
   DEFAULT_WEBHOOK_SECRET,
   DEFAULT_TOLERANCE,
-} from './common'
-import type { WebhookVerifier, VerifyOptions } from './common'
+} from './common.js'
+import type { WebhookVerifier, VerifyOptions } from './common.js'
 
 export interface TimestampSchemeVerifier extends WebhookVerifier {
   type: 'timestampSchemeVerifier'

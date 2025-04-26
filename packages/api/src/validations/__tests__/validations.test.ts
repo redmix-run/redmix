@@ -1,12 +1,12 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 
-import * as ValidationErrors from '../errors'
+import * as ValidationErrors from '../errors.js'
 import {
   validate,
   validateUniqueness,
   validateWith,
   validateWithSync,
-} from '../validations'
+} from '../validations.js'
 
 describe('validate absence', () => {
   it('checks if value is null or undefined', () => {
@@ -1039,6 +1039,7 @@ describe('validate custom', () => {
       validate(undefined, {
         custom: {
           with: () => {
+            // eslint-disable-next-line @typescript-eslint/only-throw-error
             throw 'Gimmie an email'
           },
         },
@@ -1175,6 +1176,7 @@ describe('validateWithSync', () => {
     // Error string
     try {
       validateWithSync(() => {
+        // eslint-disable-next-line @typescript-eslint/only-throw-error
         throw 'Bad input'
       })
     } catch (e) {
@@ -1207,6 +1209,7 @@ describe('validateWith', () => {
     // Error string
     try {
       await validateWith(() => {
+        // eslint-disable-next-line @typescript-eslint/only-throw-error
         throw 'Bad input'
       })
     } catch (e) {

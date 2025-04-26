@@ -8,8 +8,8 @@ import { describe, test, expect } from 'vitest'
 const pid = process.pid
 const hostname = os.hostname()
 
-import { createLogger, emitLogLevels } from '../logger'
-import type { LoggerOptions, BaseLogger } from '../logger'
+import { createLogger, emitLogLevels } from '../logger/index.js'
+import type { LoggerOptions, BaseLogger } from '../logger/index.js'
 
 const once = (emitter, name) => {
   return new Promise((resolve, reject) => {
