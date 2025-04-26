@@ -1,4 +1,3 @@
-import { createRequire } from 'node:module'
 import path from 'node:path'
 
 import execa from 'execa'
@@ -11,9 +10,6 @@ import {
 } from '@redmix/cli-helpers'
 
 import { getPaths } from '../../../lib/index.js'
-
-// Create a require function that can be used in ESM
-const require = createRequire(import.meta.url)
 
 export const command = 'auth <provider>'
 
@@ -229,7 +225,26 @@ function directToCustomAuthCommand(provider) {
  * @param {string} module
  */
 async function getAuthSetupHandler(module) {
-  const packageJsonPath = require.resolve('@redmix/cli/package.json')
+  // Conditionally create a require function that works in ESM or use the
+  // native one in CJS
+  // TODO (ESM): Remove this once we've fully moved to ESM
+  let customRequire
+
+  try {
+    // Check if we're in an ESM context
+    if (typeof require === 'undefined') {
+      const { createRequire } = await import('node:module')
+      customRequire = createRequire(import.meta.url)
+    } else {
+      // We're in a CJS context, so we use the native require
+      customRequire = require
+    }
+  } catch (error) {
+    // Fallback to native require if something goes wrong
+    customRequire = require
+  }
+
+  const packageJsonPath = customRequire.resolve('@redmix/cli/package.json')
   let { version } = fs.readJSONSync(packageJsonPath)
 
   if (!isInstalled(module)) {
