@@ -1,4 +1,5 @@
-import path from 'path'
+import { createRequire } from 'node:module'
+import path from 'node:path'
 
 import execa from 'execa'
 import fs from 'fs-extra'
@@ -10,6 +11,9 @@ import {
 } from '@redmix/cli-helpers'
 
 import { getPaths } from '../../../lib/index.js'
+
+// Create a require function that can be used in ESM
+const require = createRequire(import.meta.url)
 
 export const command = 'auth <provider>'
 
@@ -291,14 +295,19 @@ function isInstalled(module) {
     return true
   }
 
-  // Check any of the places require would look for this module.
-  // This enables testing auth setup packages with `yarn rwfw project:copy`.
-  //
-  // We can't use require.resolve here because it caches the exception
-  // Making it impossible to require when we actually do install it...
-  return require.resolve
-    .paths(`${module}/package.json`)
-    .some((requireResolvePath) => {
-      return fs.existsSync(path.join(requireResolvePath, module))
+  try {
+    const possiblePaths = [
+      path.join(getPaths().base, 'node_modules', module),
+      path.join(getPaths().base, '..', 'node_modules', module),
+      path.join(getPaths().api.base, 'node_modules', module),
+      path.join(getPaths().web.base, 'node_modules', module),
+    ]
+
+    return possiblePaths.some((modulePath) => {
+      return fs.existsSync(path.join(modulePath, 'package.json'))
     })
+  } catch (error) {
+    // If there's an error checking, assume it's not installed
+    return false
+  }
 }
