@@ -4,8 +4,8 @@ import {
   WebhookVerificationError,
   VERIFICATION_ERROR_MESSAGE,
   DEFAULT_WEBHOOK_SECRET,
-} from './common'
-import type { WebhookVerifier, VerifyOptions } from './common'
+} from './common.js'
+import type { WebhookVerifier, VerifyOptions } from './common.js'
 
 export interface Sha256Verifier extends WebhookVerifier {
   type: 'sha256Verifier'

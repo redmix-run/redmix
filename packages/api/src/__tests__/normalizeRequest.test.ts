@@ -2,7 +2,7 @@ import { Headers } from '@whatwg-node/fetch'
 import type { APIGatewayProxyEvent } from 'aws-lambda'
 import { test, expect, describe } from 'vitest'
 
-import { normalizeRequest } from '../transforms'
+import { normalizeRequest } from '../transforms.js'
 
 export const createMockedLambdaEvent = (
   httpMethod = 'POST',

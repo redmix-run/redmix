@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
 
-import InMemoryClient from '../clients/InMemoryClient'
-import { createCache } from '../index'
+import InMemoryClient from '../clients/InMemoryClient.js'
+import { createCache } from '../index.js'
 
 describe('deleteCacheKey', () => {
   it('deletes a key from the cache', async () => {

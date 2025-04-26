@@ -1,19 +1,22 @@
 import type { APIGatewayProxyEvent } from 'aws-lambda'
 
-import type { VerifyOptions, SupportedVerifierTypes } from '../auth/verifiers'
+import type {
+  VerifyOptions,
+  SupportedVerifierTypes,
+} from '../auth/verifiers/index.js'
 import {
   createVerifier,
   WebhookVerificationError,
   DEFAULT_WEBHOOK_SECRET,
   DEFAULT_TOLERANCE,
-} from '../auth/verifiers'
+} from '../auth/verifiers/index.js'
 
 export {
   VerifyOptions,
   WebhookVerificationError,
   DEFAULT_WEBHOOK_SECRET,
   SupportedVerifierTypes,
-} from '../auth/verifiers'
+} from '../auth/verifiers/index.js'
 
 export const DEFAULT_WEBHOOK_SIGNATURE_HEADER = 'RW-WEBHOOK-SIGNATURE'
 

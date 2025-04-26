@@ -1,9 +1,9 @@
-import { verifierLookup } from './common'
+import { verifierLookup } from './common.js'
 import type {
   SupportedVerifierTypes,
   VerifyOptions,
   WebhookVerifier,
-} from './common'
+} from './common.js'
 
 /**
  * @param {SupportedVerifierTypes} type - What verification type methods used to sign and verify signatures
@@ -20,4 +20,4 @@ export const createVerifier = (
   }
 }
 
-export * from './common'
+export * from './common.js'

@@ -1,6 +1,6 @@
 // Simple in-memory cache client for testing. NOT RECOMMENDED FOR PRODUCTION
 
-import BaseClient from './BaseClient'
+import BaseClient from './BaseClient.js'
 
 type CacheOptions = {
   expires?: number

@@ -1,8 +1,8 @@
 import type { RedisClientType, RedisClientOptions } from 'redis'
 
-import type { Logger } from '../../logger'
+import type { Logger } from '../../logger/index.js'
 
-import BaseClient from './BaseClient'
+import BaseClient from './BaseClient.js'
 
 interface SetOptions {
   EX?: number
