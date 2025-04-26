@@ -12,7 +12,7 @@ Development on Redmix happens in the [redmix-run/redmix repo on GitHub](https://
 The docs are [there too](https://github.com/redmix-run/redmix/tree/main/docs).
 While the [Redmix Team](https://github.com/redmix-run/redmix#the-redmix-team)
 handle most of the high-priority items and the day-to-day, Redmix wouldn't be
-where it is without [all its contributors](https://github.com/redmix-run/redmix#all-contributors)!
+where it is without [all its contributors](https://github.com/redmix-run/redmix/graphs/contributors)!
 
 ## Getting the Most out of Redwood
 
