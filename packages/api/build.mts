@@ -2,6 +2,14 @@ import { writeFileSync } from 'node:fs'
 
 import { buildExternalCjs, buildExternalEsm } from '@redmix/framework-tools'
 
+// Some comments I wish I had a better place for...
+//  - The `exports` field in package.json must have the "types" condition first
+//    See the end of this section:
+//      https://devblogs.microsoft.com/typescript/announcing-typescript-4-7/#package.json-exports-imports-and-self-referencing
+//  - We specify `tsBuildInfoFile` for `tsconfig.cjs.json` because otherwise
+//    it'd be placed inside ./dist/ (because outDir is dist/cjs and the default
+//    is to place it at one level up from outDir).
+
 await buildExternalCjs()
 await buildExternalEsm()
 
