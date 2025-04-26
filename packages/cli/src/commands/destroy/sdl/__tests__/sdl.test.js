@@ -9,7 +9,7 @@ import '../../../../lib/test'
 import { getDefaultArgs } from '../../../../lib/index.js'
 import { builder } from '../../../generate/sdl/sdl.js'
 import { files } from '../../../generate/sdl/sdlHandler.js'
-import { tasks } from '../sdl.js'
+import { tasks } from '../sdlHandler.js'
 
 vi.mock('fs-extra')
 

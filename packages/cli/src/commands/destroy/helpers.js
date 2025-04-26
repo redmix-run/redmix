@@ -10,3 +10,11 @@ export const createYargsForComponentDestroy = ({ componentName }) => {
     },
   }
 }
+
+export function createHandler(componentName) {
+  return async (argv) => {
+    const importedHandler = await import(`./${componentName}Handler.js`)
+
+    return importedHandler(argv)
+  }
+}
