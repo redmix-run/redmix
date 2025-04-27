@@ -29,9 +29,9 @@ export const schema = gql`
   scalar Byte
 
   """
-  The RedwoodJS Root Schema
+  The Redmix Root Schema
 
-  Defines details about RedwoodJS such as the current user and version information.
+  Defines details about Redmix such as the current user and version information.
   """
   type Redwood {
     "The version of Redwood."
