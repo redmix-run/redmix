@@ -1,4 +1,5 @@
 import fs from 'node:fs'
+import path from 'node:path'
 
 export * from './auth/index.js'
 export * from './errors.js'
@@ -9,7 +10,9 @@ export * from './transforms.js'
 export * from './cors.js'
 export * from './event.js'
 
-const packageJson = JSON.parse(fs.readFileSync('../api/package.json', 'utf8'))
+const packageJson = JSON.parse(
+  fs.readFileSync(path.join(__dirname, '../package.json'), 'utf8'),
+)
 
 export const prismaVersion = packageJson?.dependencies['@prisma/client']
 export const redwoodVersion = packageJson?.version

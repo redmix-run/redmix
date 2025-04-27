@@ -1,4 +1,4 @@
-import { writeFileSync } from 'node:fs'
+import fs from 'node:fs'
 
 import {
   buildExternalCjs,
@@ -24,16 +24,35 @@ await build({
   },
   buildOptions: {
     ...defaultBuildOptions,
+    banner: {
+      js:
+        'import bannerPath from "node:path"; ' +
+        'import bannerUrl from "node:url"; ' +
+        'const __filename = bannerUrl.fileURLToPath(import.meta.url); ' +
+        'const __dirname = bannerPath.dirname(__filename);',
+    },
     tsconfig: 'tsconfig.build.json',
     format: 'esm',
     packages: 'external',
   },
 })
 
+const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'))
+
 // Place a package.json file with `type: commonjs` in the dist/cjs folder so
 // that all .js files are treated as CommonJS files.
-writeFileSync('dist/cjs/package.json', JSON.stringify({ type: 'commonjs' }))
+fs.writeFileSync('dist/cjs/package.json', JSON.stringify({ type: 'commonjs' }))
 
 // Place a package.json file with `type: module` in the dist folder so that
 // all .js files are treated as ES Module files.
-writeFileSync('dist/package.json', JSON.stringify({ type: 'module' }))
+// Also adding version and dependencies so that src/index.ts for the CJS build
+// can read those (The relative ../package.json path in the index.ts file will
+// point to this file)
+fs.writeFileSync(
+  'dist/package.json',
+  JSON.stringify({
+    type: 'module',
+    version: packageJson.version,
+    dependencies: packageJson.dependencies,
+  }),
+)
