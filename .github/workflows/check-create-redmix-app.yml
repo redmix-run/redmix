@@ -1,4 +1,4 @@
-name: Check create-redmix-app
+name: 🌲 Check create-redmix-app
 
 on:
   pull_request:
@@ -14,7 +14,7 @@ permissions: {}
 
 jobs:
   check-create-redmix-app:
-    name: Check create redwood app
+    name: Check create redmix app
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
@@ -25,7 +25,7 @@ jobs:
           yarn-install-directory: ./.github/actions/check_create_redwood_app
           build: false
 
-      - name: Check create redwood app
+      - name: Check create redmix app
         uses: ./.github/actions/check_create_redwood_app
         with:
           labels: '{ "labels": ${{ toJSON(github.event.pull_request.labels) }} }'

@@ -70,7 +70,7 @@ const OUTPUT_PROJECT_PATH = resumePath
   ? /* path.resolve(String(resumePath)) */ resumePath
   : path.join(
       os.tmpdir(),
-      'redwood-test-project',
+      'redmix-test-project',
       // ":" is problematic with paths
       new Date().toISOString().split(':').join('-'),
     )
@@ -297,7 +297,7 @@ async function runCommand() {
 
   await tuiTask({
     step: 1,
-    title: '[link] Building Redwood framework',
+    title: '[link] Building Redmix framework',
     content: 'yarn build:clean && yarn build',
     task: async () => {
       return exec(
