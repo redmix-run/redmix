@@ -224,18 +224,22 @@ export const createLogger = ({
   if (isFile) {
     if (isProduction) {
       console.warn(
-        'Please make certain that file system access is available when logging to a file in a production environment.',
+        'Please make certain that file system access is available when ' +
+          'logging to a file in a production environment.',
       )
     }
 
+    // @ts-expect-error - See https://github.com/pinojs/pino/issues/2120
     return pino(options, stream as DestinationStream)
   } else {
     if (isStream && isDevelopment && !isTest) {
       console.warn(
-        'Logs will be sent to the transport stream in the current development environment.',
+        'Logs will be sent to the transport stream in the current ' +
+          'development environment.',
       )
     }
 
+    // @ts-expect-error - See https://github.com/pinojs/pino/issues/2120
     return pino(options, stream as DestinationStream)
   }
 }

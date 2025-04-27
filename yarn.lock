@@ -7430,10 +7430,10 @@ __metadata:
     redis:
       optional: true
   bin:
-    redwood: ./dist/bins/redwood.js
-    rw: ./dist/bins/redwood.js
-    rwfw: ./dist/bins/rwfw.js
-    tsc: ./dist/bins/tsc.js
+    redwood: ./dist/cjs/bins/redwood.js
+    rw: ./dist/cjs/bins/redwood.js
+    rwfw: ./dist/cjs/bins/rwfw.js
+    tsc: ./dist/cjs/bins/tsc.js
   languageName: unknown
   linkType: soft
 
