@@ -8,7 +8,7 @@
   },
   "include": ["ambient.d.ts", "src/**/*"],
   "references": [
-    { "path": "../api" },
+    { "path": "../api/tsconfig.build.json" },
     { "path": "../context/tsconfig.build.json" },
     { "path": "../realtime" }
   ]
