@@ -20,6 +20,16 @@
       }
     },
     "./package.json": "./package.json",
+    "./auth": {
+      "import": {
+        "types": "./dist/auth/index.d.ts",
+        "default": "./dist/auth/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/auth/index.d.ts",
+        "default": "./dist/cjs/auth/index.js"
+      }
+    },
     "./cache": {
       "import": {
         "types": "./dist/cache/index.d.ts",
@@ -54,13 +64,14 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "bin": {
-    "redwood": "./dist/bins/redwood.js",
-    "rw": "./dist/bins/redwood.js",
-    "rwfw": "./dist/bins/rwfw.js",
-    "tsc": "./dist/bins/tsc.js"
+    "redwood": "./dist/cjs/bins/redwood.js",
+    "rw": "./dist/cjs/bins/redwood.js",
+    "rwfw": "./dist/cjs/bins/rwfw.js",
+    "tsc": "./dist/cjs/bins/tsc.js"
   },
   "files": [
-    "dist"
+    "dist/",
+    "package.json"
   ],
   "scripts": {
     "build": "tsx ./build.mts && yarn build:types",

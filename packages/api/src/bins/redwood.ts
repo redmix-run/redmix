@@ -10,11 +10,8 @@
 import { createRequire } from 'node:module'
 import { pathToFileURL } from 'node:url'
 
-const customRequire =
-  typeof require === 'function' ? require : createRequire(import.meta.url)
-
 const cliPackageJsonFileUrl = pathToFileURL(
-  customRequire.resolve('@redmix/cli/package.json'),
+  require.resolve('@redmix/cli/package.json'),
 )
 
 const requireFromCli = createRequire(cliPackageJsonFileUrl)

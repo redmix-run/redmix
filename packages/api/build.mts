@@ -1,6 +1,11 @@
 import { writeFileSync } from 'node:fs'
 
-import { buildExternalCjs, buildExternalEsm } from '@redmix/framework-tools'
+import {
+  buildExternalCjs,
+  build,
+  defaultBuildOptions,
+  defaultIgnorePatterns,
+} from '@redmix/framework-tools'
 
 // Some comments I wish I had a better place for...
 //  - The `exports` field in package.json must have the "types" condition first
@@ -11,7 +16,19 @@ import { buildExternalCjs, buildExternalEsm } from '@redmix/framework-tools'
 //    is to place it at one level up from outDir).
 
 await buildExternalCjs()
-await buildExternalEsm()
+await build({
+  entryPointOptions: {
+    // NOTE: building the bins as CJS only so they can still use
+    // require.resolve()
+    ignore: [...defaultIgnorePatterns, 'src/bins/**'],
+  },
+  buildOptions: {
+    ...defaultBuildOptions,
+    tsconfig: 'tsconfig.build.json',
+    format: 'esm',
+    packages: 'external',
+  },
+})
 
 // Place a package.json file with `type: commonjs` in the dist/cjs folder so
 // that all .js files are treated as CommonJS files.

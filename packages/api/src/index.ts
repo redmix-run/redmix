@@ -9,6 +9,7 @@ export * from './transforms.js'
 export * from './cors.js'
 export * from './event.js'
 
-const packageJson = JSON.parse(fs.readFileSync('../package.json', 'utf8'))
+const packageJson = JSON.parse(fs.readFileSync('../api/package.json', 'utf8'))
+
 export const prismaVersion = packageJson?.dependencies['@prisma/client']
 export const redwoodVersion = packageJson?.version
