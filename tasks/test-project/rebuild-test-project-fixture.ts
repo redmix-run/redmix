@@ -295,6 +295,8 @@ async function runCommand() {
     task: createProject,
   })
 
+  // TODO: See if this is needed now with tarsync. Maybe just keep the
+  // build:clean part (and/or combine it with the tarsync)
   await tuiTask({
     step: 1,
     title: '[link] Building Redmix framework',
@@ -308,6 +310,7 @@ async function runCommand() {
     },
   })
 
+  // TODO: See if this is needed now with tarsync
   await tuiTask({
     step: 2,
     title: '[link] Adding framework dependencies to project',
@@ -325,8 +328,15 @@ async function runCommand() {
     step: 3,
     title: 'Installing node_modules',
     content: 'yarn install',
-    task: () => {
-      return exec('yarn install', getExecaOptions(OUTPUT_PROJECT_PATH))
+    task: async () => {
+      // TODO: See if this is needed now with tarsync
+      await exec('yarn install', getExecaOptions(OUTPUT_PROJECT_PATH))
+
+      // TODO: Now that I've added this, I wonder what other steps I can remove
+      return exec(
+        'yarn rwfw project:tarsync',
+        getExecaOptions(OUTPUT_PROJECT_PATH),
+      )
     },
   })
 
@@ -482,16 +492,27 @@ async function runCommand() {
       await rimraf(`${OUTPUT_PROJECT_PATH}/yarn.lock`)
       await rimraf(`${OUTPUT_PROJECT_PATH}/step.txt`)
       await rimraf(`${OUTPUT_PROJECT_PATH}/.nx`)
+      await rimraf(`${OUTPUT_PROJECT_PATH}/tarballs`)
 
       // Copy over package.json from template, so we remove the extra dev dependencies, and rwfw postinstall script
       // that we added in "Adding framework dependencies to project"
-      await rimraf(`${OUTPUT_PROJECT_PATH}/package.json`)
-      fs.copyFileSync(
-        path.join(
-          __dirname,
-          '../../packages/create-redmix-app/templates/ts/package.json',
-        ),
+      // There's one devDep we actually do want in there though, and that's the
+      // prettier plugin for Tailwind CSS
+      const rootPackageJson = JSON.parse(
+        fs.readFileSync(path.join(OUTPUT_PROJECT_PATH, 'package.json'), 'utf8'),
+      )
+      const templateRootPackageJsonPath = path.join(
+        __dirname,
+        '../../packages/create-redmix-app/templates/ts/package.json',
+      )
+      const newRootPackageJson = JSON.parse(
+        fs.readFileSync(templateRootPackageJsonPath, 'utf8'),
+      )
+      newRootPackageJson.devDependencies['prettier-plugin-tailwindcss'] =
+        rootPackageJson.devDependencies['prettier-plugin-tailwindcss']
+      fs.writeFileSync(
         path.join(OUTPUT_PROJECT_PATH, 'package.json'),
+        JSON.stringify(newRootPackageJson, null, 2),
       )
 
       // removes existing Fixture and replaces with newly built project,
