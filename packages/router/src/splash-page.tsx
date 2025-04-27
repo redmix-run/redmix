@@ -545,7 +545,7 @@ const useVersion = () => {
         const versionData = await response.json()
         setVersion(versionData?.data?.redwood?.version || null)
       } catch (err) {
-        console.error('Unable to get Redwood version: ', err)
+        console.error('Unable to get Redmix version: ', err)
       }
     }
 
