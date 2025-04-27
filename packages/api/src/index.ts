@@ -1,6 +1,3 @@
-import fs from 'node:fs'
-import path from 'node:path'
-
 export * from './auth/index.js'
 export * from './errors.js'
 export * from './validations/validations.js'
@@ -10,9 +7,23 @@ export * from './transforms.js'
 export * from './cors.js'
 export * from './event.js'
 
-const packageJson = JSON.parse(
-  fs.readFileSync(path.join(__dirname, '../package.json'), 'utf8'),
-)
-
-export const prismaVersion = packageJson?.dependencies['@prisma/client']
+// Keeping original functionality for CJS builds to stay 100% backwards
+// compatible
+const packageJson =
+  typeof require === 'function' ? require('../package.json') : {}
+export const prismaVersion = packageJson?.dependencies?.['@prisma/client']
 export const redwoodVersion = packageJson?.version
+
+// Adding this as a fallback for ESM builds
+export async function getPrismaVersion() {
+  const { default: apiPackageJson } = await import('@redmix/api/package.json')
+
+  return apiPackageJson?.dependencies?.['@prisma/client']
+}
+
+// Adding this as a fallback for ESM builds
+export async function getRedwoodVersion() {
+  const { default: apiPackageJson } = await import('@redmix/api/package.json')
+
+  return apiPackageJson?.version
+}

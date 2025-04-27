@@ -9,7 +9,12 @@ import {
 } from 'graphql-scalars'
 import gql from 'graphql-tag'
 
-import { prismaVersion, redwoodVersion } from '@redmix/api'
+import {
+  prismaVersion,
+  redwoodVersion,
+  getPrismaVersion,
+  getRedwoodVersion,
+} from '@redmix/api'
 import type { GlobalContext } from '@redmix/context'
 
 /**
@@ -77,13 +82,15 @@ export const resolvers: Resolvers = {
   JSON: JSONResolver,
   JSONObject: JSONObjectResolver,
   Query: {
-    redwood: () => ({
-      version: redwoodVersion,
-      prismaVersion: prismaVersion,
-      currentUser: (_args: any, context: GlobalContext) => {
-        return context?.currentUser
-      },
-    }),
+    redwood: async () => {
+      return {
+        version: redwoodVersion || (await getRedwoodVersion()),
+        prismaVersion: prismaVersion || (await getPrismaVersion()),
+        currentUser: (_args: any, context: GlobalContext) => {
+          return context?.currentUser
+        },
+      }
+    },
   },
   Byte: ByteResolver,
 }
