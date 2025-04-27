@@ -811,7 +811,7 @@ jobs:
   crwa:
     needs: check
 
-    name: 🌲 Create Redwood App
+    name: 🌲 Create Redmix App
     runs-on: ubuntu-latest
 
     env:
@@ -885,7 +885,7 @@ jobs:
     needs: detect-changes
     if: needs.detect-changes.outputs.code == 'false'
 
-    name: 🌲 Create Redwood App
+    name: 🌲 Create Redmix App
     runs-on: ubuntu-latest
 
     steps:
