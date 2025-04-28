@@ -8,7 +8,7 @@ import '../../../../lib/test'
 import { getDefaultArgs } from '../../../../lib/index.js'
 import { builder } from '../../../generate/service/service.js'
 import { files } from '../../../generate/service/serviceHandler.js'
-import { tasks } from '../service.js'
+import { tasks } from '../serviceHandler.js'
 
 vi.mock('fs-extra')
 

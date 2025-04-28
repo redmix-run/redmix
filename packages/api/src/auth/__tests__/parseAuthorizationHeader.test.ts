@@ -1,7 +1,7 @@
 import type { APIGatewayProxyEvent } from 'aws-lambda'
 import { test, expect, describe } from 'vitest'
 
-import { parseAuthorizationHeader } from '../index'
+import { parseAuthorizationHeader } from '../index.js'
 
 describe('parseAuthorizationHeader', () => {
   test('throws error if Authorization header is not valid', () => {

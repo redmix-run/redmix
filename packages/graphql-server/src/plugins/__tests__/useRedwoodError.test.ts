@@ -10,16 +10,16 @@ import { createLogger } from '@redmix/api/logger'
 
 import { createGraphQLHandler } from '../../functions/graphql'
 
-vi.mock('../../makeMergedSchema', () => {
-  const { createGraphQLError } = require('graphql-yoga')
-  const { makeExecutableSchema } = require('@graphql-tools/schema')
-  const {
-    ForbiddenError,
-    RedwoodGraphQLError,
-  } = require('@redmix/graphql-server/dist/errors')
-
-  const { CurrencyResolver } = require('graphql-scalars')
-  const { RedwoodError, EmailValidationError } = require('@redmix/api') as {
+vi.mock('../../makeMergedSchema', async () => {
+  const { createGraphQLError } = await import('graphql-yoga')
+  const { makeExecutableSchema } = await import('@graphql-tools/schema')
+  const { ForbiddenError, RedwoodGraphQLError } = await import(
+    '@redmix/graphql-server/dist/errors'
+  )
+  const { CurrencyResolver } = await import('graphql-scalars')
+  const { RedwoodError, EmailValidationError } = (await import(
+    '@redmix/api'
+  )) as {
     RedwoodError: typeof RedwoodErrorType
     EmailValidationError: typeof EmailValidationErrorType
   }

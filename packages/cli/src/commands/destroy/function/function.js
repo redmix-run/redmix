@@ -1,5 +1,5 @@
 import { files as functionFiles } from '../../generate/function/functionHandler.js'
-import { createYargsForComponentDestroy } from '../helpers.js'
+import { createYargsForComponentDestroy, createHandler } from '../helpers.js'
 
 export const description = 'Destroy a Function'
 
@@ -10,7 +10,9 @@ export const builder = (yargs) => {
   })
 }
 
-export const { command, handler, tasks } = createYargsForComponentDestroy({
+export const { command } = createYargsForComponentDestroy({
   componentName: 'function',
   filesFn: functionFiles,
 })
+
+export const handler = createHandler('function')

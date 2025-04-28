@@ -55,7 +55,7 @@ export const createGraphQLYoga = ({
   includeScalars,
 }: GraphQLYogaOptions) => {
   let schema: GraphQLSchema
-  let redwoodDirectivePlugins = [] as Plugin[]
+  let redwoodDirectivePlugins: Plugin[] = []
   const logger = loggerConfig.logger
 
   const isDevEnv = process.env.NODE_ENV === 'development'
@@ -72,7 +72,7 @@ export const createGraphQLYoga = ({
     }
 
     // @NOTE: Subscriptions are optional and only work in the context of a server
-    let projectSubscriptions = [] as RedwoodSubscription[]
+    let projectSubscriptions: RedwoodSubscription[] = []
 
     if (realtime?.subscriptions?.subscriptions) {
       projectSubscriptions = makeSubscriptions(

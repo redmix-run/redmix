@@ -1,11 +1,21 @@
 import React from 'react'
 
 import { act, render, waitFor } from '@testing-library/react'
-import { test } from 'vitest'
+import { test, vi } from 'vitest'
 
 import { navigate } from '../history.js'
 import { Route } from '../Route.js'
 import { Router } from '../router.js'
+
+// Mock the fetch function for when our default splash-screen is fetching the
+// framework version
+vi.spyOn(global, 'fetch').mockImplementation(() => {
+  return {
+    json: () => ({ data: { redwood: { version: '1.0.0' } } }),
+    status: 200,
+    ok: true,
+  }
+})
 
 const RedirectedRoutes = () => {
   const SimplePage = () => <h1>FindMeSimple</h1>

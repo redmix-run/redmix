@@ -1,28 +1,4 @@
-import { Listr } from 'listr2'
-
-import { recordTelemetryAttributes } from '@redmix/cli-helpers'
-
-import { deleteFilesTask } from '../../lib/index.js'
-
-const tasks = ({ componentName, filesFn, name }) =>
-  new Listr(
-    [
-      {
-        title: `Destroying ${componentName} files...`,
-        task: async () => {
-          const f = await filesFn({ name, stories: true, tests: true })
-          return deleteFilesTask(f)
-        },
-      },
-    ],
-    { rendererOptions: { collapseSubtasks: false }, exitOnError: true },
-  )
-
-export const createYargsForComponentDestroy = ({
-  componentName,
-  preTasksFn = (options) => options,
-  filesFn,
-}) => {
+export const createYargsForComponentDestroy = ({ componentName }) => {
   return {
     command: `${componentName} <name>`,
     description: `Destroy a ${componentName} component`,
@@ -32,13 +8,13 @@ export const createYargsForComponentDestroy = ({
         type: 'string',
       })
     },
-    handler: async (options) => {
-      recordTelemetryAttributes({
-        command: `destroy ${componentName}`,
-      })
-      options = await preTasksFn({ ...options, isDestroyer: true })
-      await tasks({ componentName, filesFn, name: options.name }).run()
-    },
-    tasks,
+  }
+}
+
+export function createHandler(componentName) {
+  return async (argv) => {
+    const importedHandler = await import(`./${componentName}Handler.js`)
+
+    return importedHandler(argv)
   }
 }

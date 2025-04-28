@@ -1,11 +1,11 @@
-export * from './parseJWT'
+export * from './parseJWT.js'
 
 import type { APIGatewayProxyEvent, Context as LambdaContext } from 'aws-lambda'
 import * as cookie from 'cookie'
 
-import { getEventHeader } from '../event'
+import { getEventHeader } from '../event.js'
 
-import type { Decoded } from './parseJWT'
+import type { Decoded } from './parseJWT.js'
 export type { Decoded }
 
 // This is shared by `@redmix/web` as well as used on auth middleware

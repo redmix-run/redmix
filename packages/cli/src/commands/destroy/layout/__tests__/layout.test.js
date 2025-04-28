@@ -15,7 +15,7 @@ import { vi, beforeEach, afterEach, test, expect } from 'vitest'
 import '../../../../lib/test'
 
 import { files } from '../../../generate/layout/layoutHandler.js'
-import { tasks } from '../layout.js'
+import { tasks } from '../layoutHandler.js'
 
 beforeEach(() => {
   vol.fromJSON(files({ name: 'Blog' }))

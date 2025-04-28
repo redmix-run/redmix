@@ -1,5 +1,5 @@
-import { WebhookVerificationError, DEFAULT_WEBHOOK_SECRET } from './common'
-import type { WebhookVerifier, VerifyOptions } from './common'
+import { WebhookVerificationError, DEFAULT_WEBHOOK_SECRET } from './common.js'
+import type { WebhookVerifier, VerifyOptions } from './common.js'
 
 export interface SecretKeyVerifier extends WebhookVerifier {
   type: 'secretKeyVerifier'

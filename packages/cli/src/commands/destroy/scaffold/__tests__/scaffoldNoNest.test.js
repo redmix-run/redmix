@@ -12,7 +12,7 @@ import { getPaths, getDefaultArgs } from '../../../../lib/index.js'
 import { files } from '../../../generate/scaffold/scaffoldHandler.js'
 import { yargsDefaults as defaults } from '../../../generate/yargsCommandHelpers.js'
 import { customOrDefaultTemplatePath } from '../../../generate/yargsHandlerHelpers.js'
-import { tasks } from '../scaffold.js'
+import { tasks } from '../scaffoldHandler.js'
 
 vi.mock('fs', async () => ({ default: (await import('memfs')).fs }))
 vi.mock('fs-extra')

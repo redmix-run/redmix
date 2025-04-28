@@ -119,7 +119,7 @@ export async function handler(yargs) {
   })
 
   const { handler: baremetalHandler } = await import(
-    './baremetal/baremetalHandler'
+    './baremetal/baremetalHandler.js'
   )
 
   return baremetalHandler(yargs)

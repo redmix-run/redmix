@@ -1,15 +1,33 @@
-export * from './auth'
-export * from './errors'
-export * from './validations/validations'
-export * from './validations/errors'
+import { createRequire } from 'node:module'
 
-export * from './types'
+export * from './auth/index.js'
+export * from './errors.js'
+export * from './validations/validations.js'
+export * from './validations/errors.js'
+export * from './types.js'
+export * from './transforms.js'
+export * from './cors.js'
+export * from './event.js'
 
-export * from './transforms'
-export * from './cors'
-export * from './event'
+const customRequire =
+  typeof require === 'function'
+    ? require
+    : createRequire(process.env.RWJS_CWD || process.cwd())
 
-// @NOTE: use require, to avoid messing around with tsconfig and nested output dirs
-const packageJson = require('../package.json')
+const rxApiPath = customRequire.resolve('@redmix/api')
+const rxApiRequire = createRequire(rxApiPath)
+
+let packageJson = rxApiRequire('./package.json')
+
+// Because of how we build the package we might have to walk up the directory
+// tree a few times to find the correct package.json file
+if (packageJson?.name !== '@redmix/api') {
+  packageJson = rxApiRequire('../package.json')
+}
+
+if (packageJson?.name !== '@redmix/api') {
+  packageJson = rxApiRequire('../../package.json')
+}
+
 export const prismaVersion = packageJson?.dependencies['@prisma/client']
 export const redwoodVersion = packageJson?.version

@@ -7,41 +7,76 @@
     "directory": "packages/api"
   },
   "license": "MIT",
-  "type": "commonjs",
+  "type": "module",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      }
     },
     "./package.json": "./package.json",
+    "./auth": {
+      "import": {
+        "types": "./dist/auth/index.d.ts",
+        "default": "./dist/auth/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/auth/index.d.ts",
+        "default": "./dist/cjs/auth/index.js"
+      }
+    },
     "./cache": {
-      "types": "./dist/cache/index.d.ts",
-      "default": "./dist/cache/index.js"
+      "import": {
+        "types": "./dist/cache/index.d.ts",
+        "default": "./dist/cache/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/cache/index.d.ts",
+        "default": "./dist/cjs/cache/index.js"
+      }
     },
     "./logger": {
-      "types": "./dist/logger/index.d.ts",
-      "default": "./dist/logger/index.js"
+      "import": {
+        "types": "./dist/logger/index.d.ts",
+        "default": "./dist/logger/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/logger/index.d.ts",
+        "default": "./dist/cjs/logger/index.js"
+      }
     },
     "./webhooks": {
-      "types": "./dist/webhooks/index.d.ts",
-      "default": "./dist/webhooks/index.js"
+      "import": {
+        "types": "./dist/webhooks/index.d.ts",
+        "default": "./dist/webhooks/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/webhooks/index.d.ts",
+        "default": "./dist/cjs/webhooks/index.js"
+      }
     }
   },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "bin": {
-    "redwood": "./dist/bins/redwood.js",
-    "rw": "./dist/bins/redwood.js",
-    "rwfw": "./dist/bins/rwfw.js",
-    "tsc": "./dist/bins/tsc.js"
+    "redwood": "./dist/cjs/bins/redwood.js",
+    "rw": "./dist/cjs/bins/redwood.js",
+    "rwfw": "./dist/cjs/bins/rwfw.js",
+    "tsc": "./dist/cjs/bins/tsc.js"
   },
   "files": [
-    "dist"
+    "dist/",
+    "package.json"
   ],
   "scripts": {
     "build": "tsx ./build.mts && yarn build:types",
     "build:pack": "yarn pack -o redmix-api.tgz",
-    "build:types": "tsc --build --verbose ./tsconfig.json",
+    "build:types": "tsc --build --verbose ./tsconfig.build.json ./tsconfig.cjs.json",
     "build:watch": "nodemon --watch src --ext \"js,jsx,ts,tsx\" --ignore dist --exec \"yarn build\"",
     "check:attw": "yarn rw-fwtools-attw",
     "check:package": "concurrently npm:check:attw yarn:publint",

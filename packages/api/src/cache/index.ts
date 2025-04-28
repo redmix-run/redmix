@@ -1,11 +1,11 @@
-import type { Logger } from '../logger'
+import type { Logger } from '../logger/index.js'
 
-import type BaseClient from './clients/BaseClient'
-import { CacheTimeoutError } from './errors'
+import type BaseClient from './clients/BaseClient.js'
+import { CacheTimeoutError } from './errors.js'
 
-export { default as MemcachedClient } from './clients/MemcachedClient'
-export { default as RedisClient } from './clients/RedisClient'
-export { default as InMemoryClient } from './clients/InMemoryClient'
+export { default as MemcachedClient } from './clients/MemcachedClient.js'
+export { default as RedisClient } from './clients/RedisClient.js'
+export { default as InMemoryClient } from './clients/InMemoryClient.js'
 
 export interface CreateCacheOptions {
   logger?: Logger

@@ -1,7 +1,7 @@
 import terminalLink from 'terminal-link'
 import type { Argv } from 'yargs'
 
-import type { HandlerArgs } from './flightcontrolHandler'
+import type { HandlerArgs } from './flightcontrolHandler.js'
 
 export const command = 'flightcontrol <side>'
 export const alias = 'fc'
@@ -42,7 +42,7 @@ export const builder = (yargs: Argv) => {
 }
 
 export async function handler(yargs: HandlerArgs) {
-  const { handler: importedHandler } = await import('./flightcontrolHandler')
+  const { handler: importedHandler } = await import('./flightcontrolHandler.js')
 
   return importedHandler(yargs)
 }

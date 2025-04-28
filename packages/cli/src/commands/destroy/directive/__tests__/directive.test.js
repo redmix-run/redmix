@@ -16,7 +16,7 @@ import { vi, beforeEach, afterEach, test, expect } from 'vitest'
 import '../../../../lib/test'
 
 import { files } from '../../../generate/directive/directiveHandler.js'
-import { tasks } from '../directive.js'
+import { tasks } from '../directiveHandler.js'
 
 beforeEach(() => {
   vol.fromJSON(files({ name: 'require-admin', type: 'validator', tests: true }))
