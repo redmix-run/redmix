@@ -30,22 +30,10 @@ await build({
   },
 })
 
-const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'))
-
 // Place a package.json file with `type: commonjs` in the dist/cjs folder so
 // that all .js files are treated as CommonJS files.
 fs.writeFileSync('dist/cjs/package.json', JSON.stringify({ type: 'commonjs' }))
 
 // Place a package.json file with `type: module` in the dist folder so that
 // all .js files are treated as ES Module files.
-// Also adding version and dependencies so that src/index.ts for the CJS build
-// can read those (The relative ../package.json path in the index.ts file will
-// point to this file)
-fs.writeFileSync(
-  'dist/package.json',
-  JSON.stringify({
-    type: 'module',
-    version: packageJson.version,
-    dependencies: packageJson.dependencies,
-  }),
-)
+fs.writeFileSync('dist/package.json', JSON.stringify({ type: 'module' }))
