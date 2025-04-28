@@ -9,8 +9,25 @@ export * from './transforms.js'
 export * from './cors.js'
 export * from './event.js'
 
-const customRequire = createRequire(process.env.RWJS_CWD || process.cwd())
+const customRequire =
+  typeof require === 'function'
+    ? require
+    : createRequire(process.env.RWJS_CWD || process.cwd())
 
-const packageJson = customRequire('@redmix/api/package.json')
+const rxApiPath = customRequire.resolve('@redmix/api')
+const rxApiRequire = createRequire(rxApiPath)
+
+let packageJson = rxApiRequire('./package.json')
+
+// Because of how we build the package we might have to walk up the directory
+// tree a few times to find the correct package.json file
+if (packageJson?.name !== '@redmix/api') {
+  packageJson = rxApiRequire('../package.json')
+}
+
+if (packageJson?.name !== '@redmix/api') {
+  packageJson = rxApiRequire('../../package.json')
+}
+
 export const prismaVersion = packageJson?.dependencies['@prisma/client']
 export const redwoodVersion = packageJson?.version
