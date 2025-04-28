@@ -6,10 +6,11 @@ import fs from 'fs-extra'
 import { vol } from 'memfs'
 import { vi, describe, it, expect, beforeEach } from 'vitest'
 
+// Mock telemetry and other things
 import '../../../../lib/test'
+
 import { getPaths } from '../../../../lib/index.js'
 import { updateApiURLTask } from '../helpers/index.js'
-// Mock telemetry and other things
 
 vi.mock('../../../../lib', async (importOriginal) => {
   const { printSetupNotes } = await importOriginal()
