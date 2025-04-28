@@ -24,13 +24,6 @@ await build({
   },
   buildOptions: {
     ...defaultBuildOptions,
-    banner: {
-      js:
-        'import bannerPath from "node:path"; ' +
-        'import bannerUrl from "node:url"; ' +
-        'const __filename = bannerUrl.fileURLToPath(import.meta.url); ' +
-        'const __dirname = bannerPath.dirname(__filename);',
-    },
     tsconfig: 'tsconfig.build.json',
     format: 'esm',
     packages: 'external',
