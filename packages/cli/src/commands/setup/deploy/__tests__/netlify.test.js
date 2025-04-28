@@ -65,7 +65,7 @@ beforeEach(() => {
 
 describe('netlify', () => {
   it('should call the handler without error', async () => {
-    const netlify = await import('../providers/netlify')
+    const netlify = await import('../providers/netlifyHandler')
 
     let error = undefined
     try {
