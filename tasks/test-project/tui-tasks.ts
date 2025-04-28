@@ -353,39 +353,10 @@ export async function webTasks(
       title: 'Changing routes',
       task: () => applyCodemod('routes.js', fullPath('web/src/Routes')),
     },
-
-    // ====== NOTE: rufus needs this workaround for tailwind =======
-    // Setup tailwind in a linked project, due to rwfw we install deps manually
-    {
-      title: 'Install tailwind dependencies',
-      // @NOTE: use rwfw, because calling the copy function doesn't seem to work here
-      // TODO: Try using tarsync. See if that removes the need for this workaround
-      task: async () => {
-        await exec(
-          'yarn workspace web add -D postcss postcss-loader tailwindcss@^3.4.17 autoprefixer prettier-plugin-tailwindcss@^0.5.12',
-          [],
-          getExecaOptions(outputPath),
-        )
-      },
-      enabled: () => linkWithLatestFwBuild,
-    },
-    {
-      title: '[link] Copy local framework files again',
-      // @NOTE: use rwfw, because calling the copy function doesn't seem to work here
-      task: async () => {
-        await exec('yarn rwfw project:copy', [], getExecaOptions(outputPath))
-      },
-      enabled: () => linkWithLatestFwBuild,
-    },
-    // =========
     {
       title: 'Adding Tailwind',
       task: async () => {
-        await exec(
-          'yarn rw setup ui tailwindcss',
-          ['--force', linkWithLatestFwBuild && '--no-install'].filter(Boolean),
-          execaOptions,
-        )
+        await exec('yarn rw setup ui tailwindcss', ['--force'], execaOptions)
       },
     },
   ] //,
