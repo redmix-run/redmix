@@ -478,7 +478,6 @@ export const getDefaults = () => {
     },
   }
 }
-
 ```
 
 This way we can define an option specific to the sdl generator (`crud`) while still getting all the options common to generators.
