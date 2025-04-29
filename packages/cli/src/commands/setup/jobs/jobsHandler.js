@@ -1,7 +1,7 @@
 import * as fs from 'node:fs'
 import * as path from 'node:path'
 
-import { getDMMF } from '@prisma/internals'
+import prismaInternals from '@prisma/internals'
 import { Listr } from 'listr2'
 
 import { addApiPackages } from '@redmix/cli-helpers'
@@ -28,7 +28,9 @@ model BackgroundJob {
 `
 
 const getModelNames = async () => {
-  const schema = await getDMMF({ datamodelPath: getPaths().api.dbSchema })
+  const schema = await prismaInternals.getDMMF({
+    datamodelPath: getPaths().api.dbSchema,
+  })
 
   return schema.datamodel.models.map((model) => model.name)
 }
