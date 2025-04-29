@@ -1,14 +1,16 @@
 import terminalLink from 'terminal-link'
 
-import { createHandler, yargsDefaults } from '../yargsCommandHelpers.js'
+import { createHandler, getYargsDefaults } from '../yargsCommandHelpers.js'
 
-export const defaults = {
-  ...yargsDefaults,
-  crud: {
-    default: true,
-    description: 'Also generate mutations',
-    type: 'boolean',
-  },
+export const getDefaults = () => {
+  return {
+    ...getYargsDefaults(),
+    crud: {
+      default: true,
+      description: 'Also generate mutations',
+      type: 'boolean',
+    },
+  }
 }
 
 export const command = 'sdl <model>'
@@ -43,7 +45,7 @@ export const builder = (yargs) => {
     )
 
   // Merge default options in
-  Object.entries(defaults).forEach(([option, config]) => {
+  Object.entries(getDefaults()).forEach(([option, config]) => {
     yargs.option(option, config)
   })
 }

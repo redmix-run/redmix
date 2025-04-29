@@ -2,22 +2,48 @@ import terminalLink from 'terminal-link'
 
 import detectRwVersion from '../middleware/detectProjectRwVersion.js'
 
+import * as setupAuth from './setup/auth/auth.js'
+import * as setupCache from './setup/cache/cache.js'
+import * as setupDeploy from './setup/deploy/deploy.js'
+import * as setupDocker from './setup/docker/docker.js'
+import * as setupGenerator from './setup/generator/generator.js'
+import * as setupGraphql from './setup/graphql/graphql.js'
+import * as setupI18n from './setup/i18n/i18n.js'
+import * as setupJobs from './setup/jobs/jobs.js'
+import * as setupMailer from './setup/mailer/mailer.js'
+import * as setupMiddleware from './setup/middleware/middleware.js'
+import * as setupMonitoring from './setup/monitoring/monitoring.js'
+import * as setupPackage from './setup/package/package.js'
+import * as setupRealtime from './setup/realtime/realtime.js'
+import * as setupServerFile from './setup/server-file/serverFile.js'
+import * as setupTsconfig from './setup/tsconfig/tsconfig.js'
+import * as setupUi from './setup/ui/ui.js'
+import * as setupUploads from './setup/uploads/uploads.js'
+import * as setupVite from './setup/vite/vite.js'
+
 export const command = 'setup <command>'
 export const description = 'Initialize project config and install packages'
 
 export const builder = (yargs) =>
   yargs
-    .commandDir('./setup', {
-      recurse: true,
-      // @NOTE This regex will ignore all commands nested more than two
-      // levels deep.
-      // e.g. /setup/hi.js & setup/hi/hi.js are picked up, but
-      // setup/hi/hello/bazinga.js will be ignored
-      // The [/\\] bit is for supporting both windows and unix style paths
-      // Also take care to not trip up on paths that have "setup" earlier
-      // in the path by eagerly matching in the start of the regexp
-      exclude: /.*[/\\]setup[/\\].*[/\\].*[/\\]/,
-    })
+    .command(setupAuth)
+    .command(setupCache)
+    .command(setupDeploy)
+    .command(setupDocker)
+    .command(setupGenerator)
+    .command(setupGraphql)
+    .command(setupI18n)
+    .command(setupJobs)
+    .command(setupMailer)
+    .command(setupMiddleware)
+    .command(setupMonitoring)
+    .command(setupPackage)
+    .command(setupRealtime)
+    .command(setupServerFile)
+    .command(setupTsconfig)
+    .command(setupUi)
+    .command(setupUploads)
+    .command(setupVite)
     .demandCommand()
     .middleware(detectRwVersion)
     .epilogue(

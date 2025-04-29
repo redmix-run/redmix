@@ -1,6 +1,6 @@
 import terminalLink from 'terminal-link'
 
-import { createHandler, yargsDefaults } from '../yargsCommandHelpers.js'
+import { createHandler, getYargsDefaults } from '../yargsCommandHelpers.js'
 
 export const command = 'scaffold <model>'
 export const description =
@@ -38,7 +38,7 @@ export const builder = (yargs) => {
     )
 
   // Merge generator defaults in
-  Object.entries(yargsDefaults).forEach(([option, config]) => {
+  Object.entries(getYargsDefaults()).forEach(([option, config]) => {
     yargs.option(option, config)
   })
 }

@@ -26,7 +26,6 @@ import {
   createCommand,
   createDescription,
   createBuilder,
-  yargsDefaults,
 } from './yargsCommandHelpers.js'
 
 /**
@@ -172,7 +171,7 @@ export const createYargsForComponentGeneration = ({
   preTasksFn = (options) => options,
   /** filesFn is not used if generator implements its own `handler` */
   filesFn = () => ({}),
-  optionsObj = yargsDefaults,
+  optionsObj,
   positionalsObj = {},
   /** function that takes the options object and returns an array of listr tasks */
   includeAdditionalTasks = () => [],

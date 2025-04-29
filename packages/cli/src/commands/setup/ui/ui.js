@@ -1,10 +1,16 @@
 import terminalLink from 'terminal-link'
 
+import * as libraryChakraUi from './libraries/chakra-ui.js'
+import * as libraryMantine from './libraries/mantine.js'
+import * as libraryTailwindCss from './libraries/tailwindcss.js'
+
 export const command = 'ui <library>'
 export const description = 'Set up a UI design or style library'
 export const builder = (yargs) =>
   yargs
-    .commandDir('./libraries')
+    .command(libraryChakraUi)
+    .command(libraryMantine)
+    .command(libraryTailwindCss)
     .demandCommand()
     .epilogue(
       `Also see the ${terminalLink(

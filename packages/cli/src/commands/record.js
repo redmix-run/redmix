@@ -5,7 +5,7 @@ import terminalLink from 'terminal-link'
 
 export const builder = (yargs) =>
   yargs
-    .commandDir('./record', { recurse: false })
+    .command({ command, description, handler })
     .demandCommand()
     .epilogue(
       `Also see the ${terminalLink(
@@ -13,3 +13,9 @@ export const builder = (yargs) =>
         'https://redwoodjs.com/docs/redwoodrecord',
       )}\n`,
     )
+
+async function handler(argv) {
+  const recordInit = await import('./record/init.js')
+
+  recordInit(argv)
+}
