@@ -3,17 +3,17 @@ import {
   createDescription,
   createBuilder,
   createHandler,
-  yargsDefaults,
+  getYargsDefaults,
 } from '../yargsCommandHelpers.js'
 
-const optionsObj = {
+const optionsObj = () => ({
   skipLink: {
     default: false,
     description: 'Generate with skip link',
     type: 'boolean',
   },
-  ...yargsDefaults,
-}
+  ...getYargsDefaults(),
+})
 
 export const command = createCommand('layout')
 export const description = createDescription('layout')

@@ -3,13 +3,16 @@ import path from 'path'
 
 import { describe, it, expect } from 'vitest'
 
-const BASE_DIR = path.resolve(__dirname, '..', '..', '..', '..')
+const BASE_DIR = path.resolve(import.meta.dirname, '..', '..', '..', '..')
 const CLI = path.join(BASE_DIR, 'packages', 'cli', 'dist', 'index.js')
 
 console.log('BASE_DIR:', BASE_DIR)
 console.log('CLI:', CLI)
 
 function rw(args, options) {
+  console.log('test cwd', BASE_DIR)
+  console.log('args', args)
+  console.log('options', options)
   const { status, stdout, stderr } = spawnSync('node', [CLI, ...args], {
     cwd: BASE_DIR,
     ...options,
@@ -28,15 +31,12 @@ const VERSION = /^\d+\.\d+\.\d/
 describe('The CLI sets `cwd` correctly', () => {
   describe('--cwd', () => {
     it('lets the user set the cwd via the `--cwd` option', async () => {
-      const { status, stdout, stderr } = rw([
-        '--cwd',
-        path.join('__fixtures__', 'test-project'),
-        '--version',
-      ])
+      const cwd = path.join('__fixtures__', 'test-project')
+      const { status, stdout, stderr } = rw(['--cwd', cwd, '--version'])
 
-      expect(status).toBe(0)
-      expect(stdout).toMatch(VERSION)
-      expect(stderr).toBe('')
+      expect(status, 'status').toBe(0)
+      expect(stdout, 'stdout').toMatch(VERSION)
+      expect(stderr, 'stderr').toBe('')
     })
 
     it(`throws if set via --cwd and there's no "redwood.toml"`, () => {

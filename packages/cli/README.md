@@ -18,7 +18,7 @@
   - [Adding an Entry Point Command](#adding-an-entry-point-command)
   - [Adding a Generator](#adding-a-generator)
     - [createYargsForComponentGeneration](#createyargsforcomponentgeneration)
-    - [yargsDefaults](#yargsdefaults)
+    - [getYargsDefaults](#getyargsdefaults)
     - [Testing Generators](#testing-generators)
     - [Adding a Destroyer](#adding-a-destroyer)
   - [Adding a Provider to the Auth Generator](#adding-a-provider-to-the-auth-generator)
@@ -199,7 +199,7 @@ export const description = 'Build for production.'
 
 `builder` configures the positional arguments and options for the command.
 
-While `builder` can be an object, the [positional argument api](https://yargs.js.org/docs/#api-positionalkey-opt) is only available if builder is a function. But that doesn't mean we can't use an object to "build" `builder`. As you'll see in [yargsDefaults](#yargsdefaults), this is what we do with commands that share a lot of options.
+While `builder` can be an object, the [positional argument api](https://yargs.js.org/docs/#api-positionalkey-opt) is only available if builder is a function. But that doesn't mean we can't use an object to "build" `builder`. As you'll see in [getYargsDefaults()](#getyargsdefaults), this is what we do with commands that share a lot of options.
 
 Here's an excerpt of `build`'s `builder`:
 
@@ -420,7 +420,7 @@ It has four parameters:
 
 - `componentName`: a string, like `'page'`
 - `filesFn`: a function, usually the one called `files`
-- `optionsObj`: an object, used to construct `options` for yargs. Defaults to [yargsDefaults](#yargsdefaults)
+- `optionsObj`: an object, used to construct `options` for yargs. Defaults to [getYargsDefaults()](#getyargsdefaults)
 - `positionalsObj`: an object, used to construct `positionals` for yargs.
 
 The idea here's to export as many constants as you can straight from `createYargsForComponentGeneration`'s returns:
@@ -448,34 +448,37 @@ export const { command, builder, handler } = createYargsForComponentGeneration({
 })
 ```
 
-#### yargsDefaults
+#### getYargsDefaults
 
-If you find yourself not using the `builder` from `createYargsForComponentGeneration` (or just not using `createYargsForComponentGeneration` at all), you should use `yargsDefaults`.
+If you find yourself not using the `builder` from `createYargsForComponentGeneration` (or just not using `createYargsForComponentGeneration` at all), you should use `getYargsDefaults()`.
 
 <!-- [todo] -->
 <!-- Link when merged -->
 
-`yargsDefaults` is an object that contains all the options common to generate commands. It's defined in `generate.js`, the generator entry-point command. So importing it usually looks like:
+`getYargsDefaults()` is a function that returns an object that contains all the options common to generate commands. It's defined in `generate.js`, the generator entry-point command. So importing it usually looks like:
 
 ```javascript
-import { yargsDefaults } from '../../generate'
+import { getYargsDefaults } from '../../generate'
 ```
 
 <!-- kind of a bad name -->
 
-We use `yargsDefaults` to "build" the builder. The generate sdl command is a good example. In sdl.js (which is in the generate directory in ./src/commands) `yargsDefault` is spread into another object, `defaults` (the name of this object is another convention):
+We use `getYargsDefaults` to "build" the builder. The generate sdl command is a good example. In sdl.js (which is in the generate directory in ./src/commands) `getYargsDefaults` is spread into another object, `defaults` (the name of this object is another convention):
 
 ```javascript
 // ./src/commands/generate/sdl/sdl.js
 
-export const defaults = {
-  ...yargsDefaults,
-  crud: {
-    default: false,
-    description: 'Also generate mutations',
-    type: 'boolean',
-  },
+export const getDefaults = () => {
+  return {
+    ...getYargsDefaults(),
+    crud: {
+      default: true,
+      description: 'Also generate mutations',
+      type: 'boolean',
+    },
+  }
 }
+
 ```
 
 This way we can define an option specific to the sdl generator (`crud`) while still getting all the options common to generators.
@@ -617,7 +620,7 @@ Some of the generators have already been converted; use them as a reference (lin
 - [sdl](https://github.com/redwoodjs/redwood/pull/515)
 - [services](https://github.com/redwoodjs/redwood/pull/515)
 
-For most of the generate commands, the option (in the builder) for generating a typescript file is already there, either in the builder returned from `createYargsForComponentGeneration` or in `yargsDefaults` (the former actually uses the latter).
+For most of the generate commands, the option (in the builder) for generating a typescript file is already there, either in the builder returned from `createYargsForComponentGeneration` or in `getYargsDefaults` (the former actually uses the latter).
 
 ### What about...
 

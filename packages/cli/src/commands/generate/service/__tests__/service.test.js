@@ -303,7 +303,7 @@ test('keeps Service in name', () => {
 })
 
 describe('in javascript mode', () => {
-  const baseArgs = { ...getDefaultArgs(service.defaults), tests: true }
+  const baseArgs = { ...getDefaultArgs(service.defaults()), tests: true }
 
   itReturnsExactly3Files(baseArgs)
   itCreatesASingleWordServiceFile(baseArgs)
@@ -324,7 +324,7 @@ describe('in javascript mode', () => {
 
 describe('in typescript mode', () => {
   const baseArgs = {
-    ...getDefaultArgs(service.defaults),
+    ...getDefaultArgs(service.defaults()),
     typescript: true,
     tests: true,
   }
@@ -498,7 +498,7 @@ describe('fieldsToScenario', () => {
 
 test("doesn't include test file when --tests is set to false", async () => {
   const baseArgs = {
-    ...getDefaultArgs(service.defaults),
+    ...getDefaultArgs(service.defaults()),
     javascript: true,
   }
 

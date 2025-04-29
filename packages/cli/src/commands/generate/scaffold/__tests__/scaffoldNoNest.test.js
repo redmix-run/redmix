@@ -8,7 +8,7 @@ import { vi, describe, beforeAll, test, expect } from 'vitest'
 import '../../../../lib/test'
 
 import { getDefaultArgs } from '../../../../lib/index.js'
-import { yargsDefaults as defaults } from '../../yargsCommandHelpers.js'
+import { getYargsDefaults } from '../../yargsCommandHelpers.js'
 import * as scaffoldHandler from '../scaffoldHandler.js'
 
 vi.mock('fs', async () => ({ default: (await import('memfs')).fs }))
@@ -20,7 +20,7 @@ describe('in javascript (default) mode', () => {
   beforeAll(async () => {
     vol.fromJSON({ 'redwood.toml': '' }, '/')
     files = await scaffoldHandler.files({
-      ...getDefaultArgs(defaults),
+      ...getDefaultArgs(getYargsDefaults()),
       model: 'Post',
       tests: true,
       nestScaffoldByModel: false,
@@ -303,7 +303,7 @@ describe('in typescript mode', () => {
 
   beforeAll(async () => {
     tsFiles = await scaffoldHandler.files({
-      ...getDefaultArgs(defaults),
+      ...getDefaultArgs(getYargsDefaults()),
       model: 'Post',
       typescript: true,
       tests: true,

@@ -1,6 +1,6 @@
 import terminalLink from 'terminal-link'
 
-import { yargsDefaults, createHandler } from '../yargsCommandHelpers.js'
+import { getYargsDefaults, createHandler } from '../yargsCommandHelpers.js'
 
 export const command = 'dbAuth'
 export const description =
@@ -56,7 +56,7 @@ export const builder = (yargs) => {
     )
 
   // Merge generator defaults in
-  Object.entries(yargsDefaults).forEach(([option, config]) => {
+  Object.entries(getYargsDefaults()).forEach(([option, config]) => {
     yargs.option(option, config)
   })
 }

@@ -4,20 +4,23 @@ import {
   createCommand,
   createDescription,
   createHandler,
-  yargsDefaults,
+  getYargsDefaults,
 } from '../yargsCommandHelpers.js'
 
-export const defaults = {
-  ...yargsDefaults,
-  tests: {
-    description: 'Generate test files',
-    type: 'boolean',
-  },
-  crud: {
-    default: true,
-    description: 'Create CRUD functions',
-    type: 'boolean',
-  },
+export const defaults = () => {
+  const defaults = {
+    ...getYargsDefaults(),
+    tests: {
+      description: 'Generate test files',
+      type: 'boolean',
+    },
+    crud: {
+      default: true,
+      description: 'Create CRUD functions',
+      type: 'boolean',
+    },
+  }
+  return defaults
 }
 
 export const command = createCommand('service')
@@ -39,7 +42,7 @@ export const builder = (yargs) => {
         'https://redwoodjs.com/docs/cli-commands#generate-service',
       )}`,
     )
-  Object.entries(defaults).forEach(([option, config]) => {
+  Object.entries(defaults()).forEach(([option, config]) => {
     yargs.option(option, config)
   })
 }

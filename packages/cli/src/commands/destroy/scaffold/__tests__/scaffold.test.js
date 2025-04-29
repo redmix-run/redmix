@@ -10,7 +10,7 @@ import '../../../../lib/test'
 
 import { getPaths, getDefaultArgs } from '../../../../lib/index.js'
 import { files } from '../../../generate/scaffold/scaffoldHandler.js'
-import { yargsDefaults as defaults } from '../../../generate/yargsCommandHelpers.js'
+import { getYargsDefaults as getDefaults } from '../../../generate/yargsCommandHelpers.js'
 import { customOrDefaultTemplatePath } from '../../../generate/yargsHandlerHelpers.js'
 import { tasks } from '../scaffoldHandler.js'
 
@@ -68,7 +68,7 @@ describe('rw destroy scaffold', () => {
       vol.fromJSON({ 'redwood.toml': '', ...scaffoldTemplates }, '/')
 
       const postFiles = await files({
-        ...getDefaultArgs(defaults),
+        ...getDefaultArgs(getDefaults()),
         model: 'Post',
         tests: false,
         nestScaffoldByModel: true,
@@ -109,7 +109,7 @@ describe('rw destroy scaffold', () => {
       return t.tasks[0].run().then(async () => {
         const generatedFiles = Object.keys(
           await files({
-            ...getDefaultArgs(defaults),
+            ...getDefaultArgs(getDefaults()),
             model: 'Post',
             tests: false,
             nestScaffoldByModel: true,
@@ -128,7 +128,7 @@ describe('rw destroy scaffold', () => {
         vol.fromJSON({
           ...scaffoldTemplates,
           ...(await files({
-            ...getDefaultArgs(defaults),
+            ...getDefaultArgs(getDefaults()),
             typescript: true,
             model: 'Post',
             tests: false,
@@ -159,7 +159,7 @@ describe('rw destroy scaffold', () => {
         return t.tasks[0].run().then(async () => {
           const generatedFiles = Object.keys(
             await files({
-              ...getDefaultArgs(defaults),
+              ...getDefaultArgs(getDefaults()),
               typescript: true,
               model: 'Post',
               tests: false,
@@ -203,7 +203,7 @@ describe('rw destroy scaffold', () => {
         'redwood.toml': '',
         ...scaffoldTemplates,
         ...(await files({
-          ...getDefaultArgs(defaults),
+          ...getDefaultArgs(getDefaults()),
           model: 'Post',
           path: 'admin',
           tests: false,
@@ -239,7 +239,7 @@ describe('rw destroy scaffold', () => {
       return t.tasks[0].run().then(async () => {
         const generatedFiles = Object.keys(
           await files({
-            ...getDefaultArgs(defaults),
+            ...getDefaultArgs(getDefaults()),
             model: 'Post',
             path: 'admin',
             tests: false,
@@ -259,7 +259,7 @@ describe('rw destroy scaffold', () => {
         vol.fromJSON({
           ...scaffoldTemplates,
           ...(await files({
-            ...getDefaultArgs(defaults),
+            ...getDefaultArgs(getDefaults()),
             model: 'Post',
             path: 'admin',
             tests: false,
@@ -289,7 +289,7 @@ describe('rw destroy scaffold', () => {
         return t.tasks[0].run().then(async () => {
           const generatedFiles = Object.keys(
             await files({
-              ...getDefaultArgs(defaults),
+              ...getDefaultArgs(getDefaults()),
               model: 'Post',
               path: 'admin',
               tests: false,
