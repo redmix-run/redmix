@@ -88,14 +88,14 @@ vi.mock('./project', () => ({
 }))
 
 globalThis.__prettierPath = path.resolve(
-  __dirname,
+  import.meta.dirname,
   './__tests__/fixtures/prettier.config.js',
 )
 
 vi.spyOn(Math, 'random').mockReturnValue(0.123456789)
 
 export const generatorsRootPath = path.join(
-  __dirname,
+  import.meta.dirname,
   '..',
   'commands',
   'generate',
@@ -114,7 +114,7 @@ export const generatorsRootPath = path.join(
 export const loadGeneratorFixture = (generator, name) => {
   return loadFixture(
     path.join(
-      __dirname,
+      import.meta.dirname,
       '..',
       'commands',
       'generate',

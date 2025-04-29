@@ -86,7 +86,7 @@ export async function handler({ name, type, force, verbose }) {
           // sdl
 
           const exampleSdlTemplateContent = path.resolve(
-            __dirname,
+            import.meta.dirname,
             'templates',
             'subscriptions',
             'blank',
@@ -105,7 +105,7 @@ export async function handler({ name, type, force, verbose }) {
           // service
 
           const exampleServiceTemplateContent = path.resolve(
-            __dirname,
+            import.meta.dirname,
             'templates',
             'subscriptions',
             'blank',
@@ -124,7 +124,7 @@ export async function handler({ name, type, force, verbose }) {
           // subscription
 
           const exampleSubscriptionTemplateContent = path.resolve(
-            __dirname,
+            import.meta.dirname,
             'templates',
             'subscriptions',
             'blank',
@@ -179,7 +179,7 @@ export async function handler({ name, type, force, verbose }) {
         task: async () => {
           // sdl
           const exampleSdlTemplateContent = path.resolve(
-            __dirname,
+            import.meta.dirname,
             'templates',
             'liveQueries',
             'blank',
@@ -195,7 +195,7 @@ export async function handler({ name, type, force, verbose }) {
 
           // service
           const exampleServiceTemplateContent = path.resolve(
-            __dirname,
+            import.meta.dirname,
             'templates',
             'liveQueries',
             'blank',

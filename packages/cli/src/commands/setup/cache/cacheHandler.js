@@ -33,7 +33,11 @@ export const handler = async ({ client, force }) => {
       task: () => {
         const template = fs
           .readFileSync(
-            path.join(__dirname, 'templates', `${client}.ts.template`),
+            path.join(
+              import.meta.dirname,
+              'templates',
+              `${client}.ts.template`,
+            ),
           )
           .toString()
 

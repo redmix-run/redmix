@@ -176,7 +176,10 @@ export const handler = async ({ force, install }) => {
             )
           } else {
             const postCSSConfig = fs.readFileSync(
-              path.join(__dirname, '../templates/postcss.config.js.template'),
+              path.join(
+                import.meta.dirname,
+                '../templates/postcss.config.js.template',
+              ),
               'utf-8',
             )
 
@@ -257,7 +260,7 @@ export const handler = async ({ force, install }) => {
 
           const tailwindScaffoldTemplate = fs.readFileSync(
             path.join(
-              __dirname,
+              import.meta.dirname,
               '..',
               '..',
               '..',

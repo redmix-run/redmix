@@ -45,7 +45,7 @@ expect.extend({
       )
     } catch (e) {
       const relativePath = path.relative(
-        path.join(__dirname, 'src/commands/setup'),
+        path.join(import.meta.dirname, 'src/commands/setup'),
         expectedPath,
       )
       pass = false

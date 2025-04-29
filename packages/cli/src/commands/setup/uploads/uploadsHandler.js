@@ -27,7 +27,7 @@ export const handler = async ({ force }) => {
         }...`,
         task: async () => {
           const templatePath = path.resolve(
-            __dirname,
+            import.meta.dirname,
             'templates',
             'srcLibUploads.ts.template',
           )
@@ -53,7 +53,7 @@ export const handler = async ({ force }) => {
         title: `Adding signedUrl function...`,
         task: async () => {
           const templatePath = path.resolve(
-            __dirname,
+            import.meta.dirname,
             'templates',
             'signedUrl.ts.template',
           )
@@ -88,7 +88,7 @@ export const handler = async ({ force }) => {
           )
 
           const transformResult = await runTransform({
-            transformPath: path.join(__dirname, 'dbCodemod.js'),
+            transformPath: path.join(import.meta.dirname, 'dbCodemod.js'),
             targetPaths: [dbPath],
           })
 

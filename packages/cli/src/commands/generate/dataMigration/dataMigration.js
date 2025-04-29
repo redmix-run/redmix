@@ -21,8 +21,16 @@ const POST_RUN_INSTRUCTIONS = `Next steps...\n\n   ${c.warning(
 `
 
 const TEMPLATE_PATHS = {
-  js: path.resolve(__dirname, 'templates', 'dataMigration.js.template'),
-  ts: path.resolve(__dirname, 'templates', 'dataMigration.ts.template'),
+  js: path.resolve(
+    import.meta.dirname,
+    'templates',
+    'dataMigration.js.template',
+  ),
+  ts: path.resolve(
+    import.meta.dirname,
+    'templates',
+    'dataMigration.ts.template',
+  ),
 }
 
 export const files = ({ name, typescript }) => {

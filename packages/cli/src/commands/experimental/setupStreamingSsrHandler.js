@@ -80,7 +80,7 @@ export const handler = async ({ force, verbose }) => {
         task: async (_ctx, task) => {
           const entryClientTemplate = fs.readFileSync(
             path.resolve(
-              __dirname,
+              import.meta.dirname,
               'templates',
               'streamingSsr',
               'entry.client.tsx.template',
@@ -118,7 +118,7 @@ export const handler = async ({ force, verbose }) => {
         task: async () => {
           const entryServerTemplate = fs.readFileSync(
             path.resolve(
-              __dirname,
+              import.meta.dirname,
               'templates',
               'streamingSsr',
               'entry.server.tsx.template',
@@ -144,7 +144,7 @@ export const handler = async ({ force, verbose }) => {
         task: async () => {
           const documentTemplate = fs.readFileSync(
             path.resolve(
-              __dirname,
+              import.meta.dirname,
               'templates',
               'streamingSsr',
               'Document.tsx.template',
@@ -166,7 +166,7 @@ export const handler = async ({ force, verbose }) => {
         task: async () => {
           const tsconfigTemplate = fs.readFileSync(
             path.resolve(
-              __dirname,
+              import.meta.dirname,
               'templates',
               'streamingSsr',
               'tsconfig.json.template',

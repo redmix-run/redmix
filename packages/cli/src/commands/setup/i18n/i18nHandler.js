@@ -83,7 +83,11 @@ export const handler = async ({ force }) => {
               path.join(getPaths().web.src, 'i18n.js'),
               fs
                 .readFileSync(
-                  path.resolve(__dirname, 'templates', 'i18n.js.template'),
+                  path.resolve(
+                    import.meta.dirname,
+                    'templates',
+                    'i18n.js.template',
+                  ),
                 )
                 .toString(),
               { overwriteExisting: force },
@@ -111,7 +115,11 @@ export const handler = async ({ force }) => {
               path.join(getPaths().web.src, '/locales/fr.json'),
               fs
                 .readFileSync(
-                  path.resolve(__dirname, 'templates', 'fr.json.template'),
+                  path.resolve(
+                    import.meta.dirname,
+                    'templates',
+                    'fr.json.template',
+                  ),
                 )
                 .toString(),
               { overwriteExisting: force },
@@ -138,7 +146,11 @@ export const handler = async ({ force }) => {
               path.join(getPaths().web.src, '/locales/en.json'),
               fs
                 .readFileSync(
-                  path.resolve(__dirname, 'templates', 'en.json.template'),
+                  path.resolve(
+                    import.meta.dirname,
+                    'templates',
+                    'en.json.template',
+                  ),
                 )
                 .toString(),
               { overwriteExisting: force },
@@ -169,7 +181,11 @@ export const handler = async ({ force }) => {
         skip: () => fileIncludes(rwPaths.web.storybookConfig, 'withI18n'),
         task: async () =>
           extendStorybookConfiguration(
-            path.join(__dirname, 'templates', 'storybook.preview.tsx.template'),
+            path.join(
+              import.meta.dirname,
+              'templates',
+              'storybook.preview.tsx.template',
+            ),
           ),
       },
       {

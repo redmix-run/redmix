@@ -11,7 +11,7 @@ import { errorTelemetry } from '@redmix/telemetry'
 import c from '../../../lib/colors.js'
 
 export async function handler({ force }) {
-  const TEMPLATE_DIR = path.join(__dirname, 'templates')
+  const TEMPLATE_DIR = path.join(import.meta.dirname, 'templates')
 
   let dockerfileTemplateContent = fs.readFileSync(
     path.resolve(TEMPLATE_DIR, 'Dockerfile'),

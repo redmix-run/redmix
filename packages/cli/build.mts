@@ -4,9 +4,9 @@ import { fileURLToPath } from 'node:url'
 
 import fg from 'fast-glob'
 
-import { build, defaultIgnorePatterns } from '@redmix/framework-tools'
+import { buildEsm, defaultIgnorePatterns } from '@redmix/framework-tools'
 
-await build()
+await buildEsm()
 
 // The CLI depends on assets like templates files
 // that esbuild won't copy over. So we do it manually here.

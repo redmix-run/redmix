@@ -25,7 +25,7 @@ export const handler = async ({ force, skipExamples }) => {
         }...`,
         task: async () => {
           const templatePath = path.resolve(
-            __dirname,
+            import.meta.dirname,
             'templates',
             'mailer.ts.template',
           )
@@ -61,7 +61,7 @@ export const handler = async ({ force, skipExamples }) => {
         skip: () => skipExamples,
         task: async () => {
           const templatePath = path.resolve(
-            __dirname,
+            import.meta.dirname,
             'templates',
             're-example.tsx.template',
           )

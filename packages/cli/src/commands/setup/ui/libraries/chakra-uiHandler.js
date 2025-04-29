@@ -87,7 +87,7 @@ export async function handler({ force, install }) {
         task: async () =>
           extendStorybookConfiguration(
             path.join(
-              __dirname,
+              import.meta.dirname,
               '..',
               'templates',
               'chakra.storybook.preview.tsx.template',

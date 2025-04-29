@@ -75,7 +75,11 @@ const tasks = async ({ force }) => {
           )
           let template = fs
             .readFileSync(
-              path.resolve(__dirname, 'templates', 'jobs.ts.template'),
+              path.resolve(
+                import.meta.dirname,
+                'templates',
+                'jobs.ts.template',
+              ),
             )
             .toString()
 

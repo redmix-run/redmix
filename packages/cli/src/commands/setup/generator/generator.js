@@ -23,7 +23,7 @@ const EXCLUDE_GENERATORS = [
 // and accept a configuration such as its CURRENT default to append onto a command.
 export const builder = (yargs) => {
   const availableGenerators = fs
-    .readdirSync(path.join(__dirname, '../../generate'), {
+    .readdirSync(path.join(import.meta.dirname, '../../generate'), {
       withFileTypes: true,
     })
     .filter((dir) => dir.isDirectory() && !dir.name.match(/__/))
