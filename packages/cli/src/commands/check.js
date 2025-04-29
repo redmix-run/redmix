@@ -11,9 +11,11 @@ export const description =
 export const handler = async () => {
   recordTelemetryAttributes({ command: 'check' })
 
-  const { printDiagnostics, DiagnosticSeverity } = await import(
-    '@redmix/structure'
-  )
+  const { printDiagnostics, DiagnosticSeverity } = (
+    await import('@redmix/structure')
+  ).default
+
+  console.log('DiagnosticServerity', DiagnosticSeverity)
 
   printDiagnostics(getPaths().base, {
     getSeverityLabel: (severity) => {
