@@ -179,13 +179,14 @@ export const saveRemoteFileToDisk = (
   return downloadPromise
 }
 
-export const getInstalledRedwoodVersion = () => {
+export async function getInstalledRedmixVersion() {
   try {
-    // @ts-ignore TS Config issue, due to src being the rootDir
-    const packageJson = require('../../package.json')
-    return packageJson.version
+    const packageJson = await import('../../package.json', {
+      with: { type: 'json' },
+    })
+    return packageJson.default.version
   } catch (e) {
-    console.error(c.error('Could not find installed redwood version'))
+    console.error(c.error('Could not find installed Redmix version'))
     process.exit(1)
   }
 }
@@ -496,20 +497,22 @@ export const removeRoutesFromRouterTask = (routes, layout) => {
  *
  * Use this util to install dependencies on a user's Redwood app
  *
- * @example addPackagesTask({
+ * @example await addPackagesTask({
  * packages: ['fs-extra', 'somePackage@2.1.0'],
  * side: 'api', // <-- leave empty for project root
  * devDependency: true
  * })
  */
-export const addPackagesTask = ({
+export const addPackagesTask = async ({
   packages,
   side = 'project',
   devDependency = false,
 }) => {
+  const redmixVersion = await getInstalledRedmixVersion()
+
   const packagesWithSameRWVersion = packages.map((pkg) => {
     if (pkg.includes('@redmix')) {
-      return `${pkg}@${getInstalledRedwoodVersion()}`
+      return `${pkg}@${redmixVersion}`
     } else {
       return pkg
     }

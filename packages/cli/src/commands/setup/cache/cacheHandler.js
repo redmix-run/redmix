@@ -24,7 +24,7 @@ export const handler = async ({ client, force }) => {
   const extension = isTypeScriptProject ? 'ts' : 'js'
 
   const tasks = new Listr([
-    addPackagesTask({
+    await addPackagesTask({
       packages: [CLIENT_PACKAGE_MAP[client]],
       side: 'api',
     }),

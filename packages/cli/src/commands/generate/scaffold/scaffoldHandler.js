@@ -686,10 +686,10 @@ const addLayoutImport = () => {
 
 const addHelperPackages = async (task) => {
   const packageJsonPath = path.join(getPaths().web.base, 'package.json')
-  const packageJson = require(packageJsonPath)
+  const packageJson = await import(packageJsonPath, { with: { type: 'json' } })
 
   // Skip if humanize-string is already installed
-  if (packageJson.dependencies['humanize-string']) {
+  if (packageJson.default.dependencies['humanize-string']) {
     return task.skip('Skipping. Already installed')
   }
 

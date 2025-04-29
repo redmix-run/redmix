@@ -15,9 +15,9 @@ import { runTransform } from '../../../lib/runTransform.js'
 export const handler = async ({ force }) => {
   const projectIsTypescript = isTypeScriptProject()
   const redwoodVersion =
-    require(path.join(getPaths().base, 'package.json')).devDependencies[
-      '@redmix/core'
-    ] ?? 'latest'
+    (await import(path.join(getPaths().base, 'package.json'), {
+      with: { type: 'json ' },
+    }).default.devDependencies['@redmix/core']) ?? 'latest'
 
   const tasks = new Listr(
     [

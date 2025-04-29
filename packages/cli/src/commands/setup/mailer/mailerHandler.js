@@ -1,4 +1,4 @@
-import path from 'path'
+import path from 'node:path'
 
 import fs from 'fs-extra'
 import { Listr } from 'listr2'
@@ -13,9 +13,9 @@ import { isTypeScriptProject } from '../../../lib/project.js'
 export const handler = async ({ force, skipExamples }) => {
   const projectIsTypescript = isTypeScriptProject()
   const redwoodVersion =
-    require(path.join(getPaths().base, 'package.json')).devDependencies[
-      '@redmix/core'
-    ] ?? 'latest'
+    (await import(path.join(getPaths().base, 'package.json'), {
+      with: { type: 'json ' },
+    }).default.devDependencies['@redmix/core']) ?? 'latest'
 
   const tasks = new Listr(
     [

@@ -102,16 +102,16 @@ export const handler = async ({ force }) => {
 
   const tasks = new Listr(
     [
-      addPackagesTask({
+      await addPackagesTask({
         packages: [serverless, ...rest],
         devDependency: true,
       }),
-      addPackagesTask({
+      await addPackagesTask({
         packages: [serverless, serverlessLift],
         side: 'web',
         devDependency: true,
       }),
-      addPackagesTask({
+      await addPackagesTask({
         packages: [serverless],
         side: 'api',
         devDependency: true,

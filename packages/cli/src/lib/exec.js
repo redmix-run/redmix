@@ -1,4 +1,5 @@
-import path from 'path'
+import { createRequire } from 'node:module'
+import path from 'node:path'
 
 import {
   getWebSideDefaultBabelConfig,
@@ -11,11 +12,12 @@ export async function runScriptFunction({
   functionName,
   args,
 }) {
-  const script = require(scriptPath)
+  const createdRequire = createRequire(import.meta.url)
+  const script = createdRequire(scriptPath)
   const returnValue = await script[functionName](args)
 
   try {
-    const { db } = require(path.join(getPaths().api.lib, 'db'))
+    const { db } = createdRequire(path.join(getPaths().api.lib, 'db'))
     db.$disconnect()
   } catch (e) {
     // silence

@@ -37,7 +37,7 @@ export const getInstalledRedwoodVersion = () => {
     const packageJson = require('../../package.json')
     return packageJson.version
   } catch {
-    console.error(colors.error('Could not find installed redwood version'))
+    console.error(colors.error('Could not find installed Redmix version'))
     process.exit(1)
   }
 }

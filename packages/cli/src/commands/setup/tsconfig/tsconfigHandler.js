@@ -6,13 +6,13 @@ import { errorTelemetry } from '@redmix/telemetry'
 
 import c from '../../../lib/colors.js'
 import {
-  getInstalledRedwoodVersion,
+  getInstalledRedmixVersion,
   getPaths,
   saveRemoteFileToDisk,
 } from '../../../lib/index.js'
 
 export const handler = async ({ force }) => {
-  const installedRwVersion = getInstalledRedwoodVersion()
+  const installedRwVersion = await getInstalledRedmixVersion()
   const GITHUB_VERSION_TAG = installedRwVersion.match('canary')
     ? 'main'
     : `v${installedRwVersion}`
