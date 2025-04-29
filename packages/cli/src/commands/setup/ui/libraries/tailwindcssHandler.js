@@ -1,9 +1,8 @@
-import path from 'path'
+import fs from 'node:fs'
+import path from 'node:path'
 
 import { ListrEnquirerPromptAdapter } from '@listr2/prompt-adapter-enquirer'
 import execa from 'execa'
-import fs from 'fs-extra'
-import { outputFileSync } from 'fs-extra'
 import { Listr } from 'listr2'
 import terminalLink from 'terminal-link'
 
@@ -183,7 +182,9 @@ export const handler = async ({ force, install }) => {
               'utf-8',
             )
 
-            return outputFileSync(postCSSConfigPath, postCSSConfig)
+            fs.mkdirSync(path.dirname(postCSSConfigPath), { recursive: true })
+
+            return fs.writeFileSync(postCSSConfigPath, postCSSConfig)
           }
         },
       },
