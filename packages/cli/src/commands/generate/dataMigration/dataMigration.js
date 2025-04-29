@@ -11,7 +11,7 @@ import c from '../../../lib/colors.js'
 import { getPaths, writeFilesTask } from '../../../lib/index.js'
 import { prepareForRollback } from '../../../lib/rollback.js'
 import { validateName } from '../helpers.js'
-import { yargsDefaults } from '../yargsCommandHelpers.js'
+import { getYargsDefaults } from '../yargsCommandHelpers.js'
 
 const POST_RUN_INSTRUCTIONS = `Next steps...\n\n   ${c.warning(
   'After writing your migration, you can run it with:',
@@ -60,7 +60,7 @@ export const builder = (yargs) => {
     )
 
   // Merge generator defaults in
-  Object.entries(yargsDefaults).forEach(([option, config]) => {
+  Object.entries(getYargsDefaults()).forEach(([option, config]) => {
     yargs.option(option, config)
   })
 }

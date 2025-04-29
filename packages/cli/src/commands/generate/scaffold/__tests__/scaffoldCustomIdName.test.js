@@ -8,7 +8,7 @@ import { vi, describe, beforeAll, test, expect } from 'vitest'
 import '../../../../lib/test'
 
 import { getDefaultArgs } from '../../../../lib/index.js'
-import { yargsDefaults as defaults } from '../../yargsCommandHelpers.js'
+import { getYargsDefaults } from '../../yargsCommandHelpers.js'
 import * as scaffoldHandler from '../scaffoldHandler.js'
 
 vi.mock('fs', async () => ({ default: (await import('memfs')).fs }))
@@ -21,7 +21,7 @@ describe('support custom @id name', () => {
     vol.fromJSON({ 'redwood.toml': '' }, '/')
 
     files = await scaffoldHandler.files({
-      ...getDefaultArgs(defaults),
+      ...getDefaultArgs(getYargsDefaults()),
       typescript: true,
       model: 'CustomIdField',
       tests: true,

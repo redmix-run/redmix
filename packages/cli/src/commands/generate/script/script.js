@@ -1,6 +1,6 @@
 import terminalLink from 'terminal-link'
 
-import { createHandler, yargsDefaults } from '../yargsCommandHelpers.js'
+import { createHandler, getYargsDefaults } from '../yargsCommandHelpers.js'
 
 export const command = 'script <name>'
 export const description = 'Generate a command line script'
@@ -22,7 +22,7 @@ export const builder = (yargs) => {
       )}`,
     )
 
-  Object.entries(yargsDefaults).forEach(([option, config]) => {
+  Object.entries(getYargsDefaults()).forEach(([option, config]) => {
     yargs.option(option, config)
   })
 }

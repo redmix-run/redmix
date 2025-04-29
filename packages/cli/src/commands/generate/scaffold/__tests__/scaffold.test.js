@@ -9,7 +9,7 @@ import { vi, describe, test, expect, afterAll, beforeAll } from 'vitest'
 import '../../../../lib/test'
 
 import { getDefaultArgs } from '../../../../lib/index.js'
-import { yargsDefaults as defaults } from '../../yargsCommandHelpers.js'
+import { getYargsDefaults } from '../../yargsCommandHelpers.js'
 import * as scaffoldHandler from '../scaffoldHandler.js'
 
 vi.mock('fs-extra', async (importOriginal) => {
@@ -38,7 +38,7 @@ describe('in javascript (default) mode', () => {
 
   beforeAll(async () => {
     files = await scaffoldHandler.files({
-      ...getDefaultArgs(defaults),
+      ...getDefaultArgs(getYargsDefaults()),
       model: 'Post',
       tests: true,
       nestScaffoldByModel: true,
@@ -297,7 +297,7 @@ describe('in javascript (default) mode', () => {
   test('error when no editable fields are in model', async () => {
     await expect(
       scaffoldHandler.files({
-        ...getDefaultArgs(defaults),
+        ...getDefaultArgs(getYargsDefaults()),
         model: 'NoEditableField',
         tests: true,
         nestScaffoldByModel: true,
@@ -442,7 +442,7 @@ describe('in javascript (default) mode', () => {
 
   test('generated form matches expectations', async () => {
     const files = await scaffoldHandler.files({
-      ...getDefaultArgs(defaults),
+      ...getDefaultArgs(getYargsDefaults()),
       model: 'Pixel',
       nestScaffoldByModel: true,
     })
@@ -461,7 +461,7 @@ describe('in typescript mode', () => {
 
   beforeAll(async () => {
     tsFiles = await scaffoldHandler.files({
-      ...getDefaultArgs(defaults),
+      ...getDefaultArgs(getYargsDefaults()),
       model: 'Post',
       typescript: true,
       tests: true,
@@ -769,7 +769,7 @@ describe('in typescript mode', () => {
 
   test('generated form matches expectations', async () => {
     const files = await scaffoldHandler.files({
-      ...getDefaultArgs(defaults),
+      ...getDefaultArgs(getYargsDefaults()),
       model: 'Pixel',
       nestScaffoldByModel: true,
       typescript: true,
@@ -787,7 +787,7 @@ describe('in typescript mode', () => {
 describe('tailwind flag', () => {
   test('set to `false` generates a scaffold.css with raw CSS', async () => {
     const files = await scaffoldHandler.files({
-      ...getDefaultArgs(defaults),
+      ...getDefaultArgs(getYargsDefaults()),
       model: 'Post',
       tailwind: false,
       nestScaffoldByModel: true,
@@ -800,7 +800,7 @@ describe('tailwind flag', () => {
 
   test('set to `true` generates a scaffold.css with Tailwind components', async () => {
     const files = await scaffoldHandler.files({
-      ...getDefaultArgs(defaults),
+      ...getDefaultArgs(getYargsDefaults()),
       model: 'Post',
       tailwind: true,
       nestScaffoldByModel: true,
@@ -822,7 +822,7 @@ describe("'use client' directive", () => {
     )
 
     files = await scaffoldHandler.files({
-      ...getDefaultArgs(defaults),
+      ...getDefaultArgs(getYargsDefaults()),
       model: 'Post',
       nestScaffoldByModel: true,
     })

@@ -4,8 +4,15 @@ import terminalLink from 'terminal-link'
 // Don't import anything here that isn't already imported by the CLI
 import { isTypeScriptProject } from '@redmix/cli-helpers'
 
-/** @type {Record<string, import('yargs').Options>} */
-export const yargsDefaults = {
+/**
+ * Don't invoke this function at the top level of a file. Always call it within
+ * a function or method.
+ * The reason for this is that this in turn will call `isTypeScriptProject`,
+ * and that has side effects that will break `cwd` functionality if called
+ * before `cwd` is initialized.
+ * @type {() => Record<string, import('yargs').Options>}
+ */
+export const getYargsDefaults = () => ({
   force: {
     alias: 'f',
     default: false,
@@ -18,7 +25,7 @@ export const yargsDefaults = {
     description: 'Generate TypeScript files',
     type: 'boolean',
   },
-}
+})
 
 const appendPositionalsToCmd = (commandString, positionalsObj) => {
   // Add positionals like `page <name>` + ` [path]` if specified
@@ -41,11 +48,7 @@ export function createDescription(componentName) {
   return `Generate a ${componentName} component`
 }
 
-export function createBuilder({
-  componentName,
-  optionsObj = yargsDefaults,
-  positionalsObj = {},
-}) {
+export function createBuilder({ componentName, optionsObj, positionalsObj }) {
   return (yargs) => {
     yargs
       .positional('name', {
@@ -78,12 +81,19 @@ export function createBuilder({
       })
 
     // Add in passed in positionals
-    Object.entries(positionalsObj).forEach(([option, config]) => {
+    Object.entries(positionalsObj || {}).forEach(([option, config]) => {
       yargs.positional(option, config)
     })
 
+    const opts =
+      typeof optionsObj === 'object'
+        ? optionsObj
+        : typeof optionsObj === 'function'
+          ? optionsObj()
+          : getYargsDefaults()
+
     // Add in passed in options
-    Object.entries(optionsObj).forEach(([option, config]) => {
+    Object.entries(opts).forEach(([option, config]) => {
       yargs.option(option, config)
     })
   }
