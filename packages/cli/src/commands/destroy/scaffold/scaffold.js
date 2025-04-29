@@ -1,4 +1,4 @@
-import { createHandler } from '../helpers'
+import { createHandler } from '../helpers.js'
 
 export const command = 'scaffold <model>'
 export const description =

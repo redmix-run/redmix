@@ -10,7 +10,7 @@ import decamelize from 'decamelize'
 import execa from 'execa'
 import fs from 'fs-extra'
 import { Listr } from 'listr2'
-import { memoize, template } from 'lodash'
+import lodash from 'lodash'
 import pascalcase from 'pascalcase'
 import { format } from 'prettier'
 
@@ -26,6 +26,8 @@ import { addFileToRollback } from './rollback.js'
 import { pluralize, singularize } from './rwPluralize.js'
 
 export { findUp }
+
+const { memoize, template } = lodash
 
 /**
  * Returns variants of the passed `name` for usage in templates. If the given

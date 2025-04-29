@@ -1,6 +1,6 @@
 import j from 'jscodeshift'
 
-module.exports = function transform(fileInfo: j.FileInfo) {
+export default function transform(fileInfo: j.FileInfo) {
   const root = j(fileInfo.source)
 
   // Add the import statement for storagePrismaExtension

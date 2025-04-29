@@ -13,7 +13,7 @@ import path from 'path'
 import fs from 'fs-extra'
 import { vi } from 'vitest'
 
-import './mockTelemetry'
+import './mockTelemetry.js'
 
 vi.mock('@redmix/internal/dist/generate/generate', () => {
   return {
@@ -24,7 +24,7 @@ vi.mock('@redmix/internal/dist/generate/generate', () => {
 })
 
 vi.mock('@redmix/project-config', async (importOriginal) => {
-  const path = require('path')
+  const path = await import('path')
   const originalProjectConfig = await importOriginal()
   return {
     ...originalProjectConfig,
