@@ -101,7 +101,7 @@ export async function handler({
     const isTSProject = isTypeScriptProject()
     console.log(`Storybook's ${mainFileName} not found. Creating it now...`)
     const mainConfigTemplatePath = path.join(
-      import.meta.dirname,
+      __dirname,
       'templates/main.ts.template', // The template is TS, and we'll convert it to JS if needed
     )
     const mainConfigContentTS = readFile(mainConfigTemplatePath)
