@@ -23,11 +23,13 @@ vi.mock('fs', async () => ({ ...memfsFs, default: { ...memfsFs } }))
 vi.mock('node:fs', async () => ({ ...memfsFs, default: { ...memfsFs } }))
 
 vi.mock('@prisma/internals', async () => ({
-  getDMMF: async () => ({
-    datamodel: {
-      models: [{ name: 'BackgroundJob' }],
-    },
-  }),
+  default: {
+    getDMMF: async () => ({
+      datamodel: {
+        models: [{ name: 'BackgroundJob' }],
+      },
+    }),
+  },
 }))
 
 vi.mock('@redmix/cli-helpers', () => ({
