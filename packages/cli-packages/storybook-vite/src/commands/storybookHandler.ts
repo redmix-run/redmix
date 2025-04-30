@@ -120,7 +120,7 @@ export async function handler({
   if (!fs.existsSync(storybookPreviewBodyFilePath)) {
     console.log("Storybook's preview-body.html not found. Creating it now...")
     const previewBodyTemplatePath = path.join(
-      import.meta.dirname,
+      __dirname,
       'templates/preview-body.html.template',
     )
     const previewBodyConfigContent = readFile(previewBodyTemplatePath)
