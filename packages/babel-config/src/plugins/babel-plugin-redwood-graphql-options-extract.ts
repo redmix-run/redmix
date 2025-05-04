@@ -1,6 +1,7 @@
 import type { NodePath, PluginObj, PluginPass, types } from '@babel/core'
 
-// This extracts the options passed to the graphql function and stores them in an exported variable so they can be imported elsewhere.
+// This extracts the options passed to the graphql function and stores them in
+// an exported variable so they can be imported elsewhere.
 
 const exportVariableName = '__rw_graphqlOptions'
 
@@ -70,12 +71,17 @@ export default function ({ types: t }: { types: typeof types }): PluginObj {
             }
           },
         })
+
         if (callExpressionPaths.length > 1) {
           console.log(
-            `There are ${callExpressionPaths.length} calls to 'createGraphQLHandler' in '${state.file.opts.filename}'. The automatic extraction of graphql options will fallback to the first usage.`,
+            `There are ${callExpressionPaths.length} calls to ` +
+              `'createGraphQLHandler' in '${state.file.opts.filename}'. The ` +
+              'automatic extraction of graphql options will fallback to the ' +
+              'first usage.',
           )
           return
         }
+
         const callExpressionPath = callExpressionPaths[0]
         if (!callExpressionPath) {
           return

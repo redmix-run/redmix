@@ -131,7 +131,8 @@ export async function createServer(options: CreateServerOptions = {}) {
 
   if (graphqlFunctionPath) {
     const { redwoodFastifyGraphQLServer } = await import('./plugins/graphql.js')
-    // This comes from a babel plugin that's applied to api/dist/functions/graphql.{ts,js} in user projects
+    // This comes from a babel plugin that's applied to
+    // api/dist/functions/graphql.{ts,js} in user projects
     const { __rw_graphqlOptions } = await import(
       `file://${graphqlFunctionPath}`
     )
