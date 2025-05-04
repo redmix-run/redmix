@@ -44,10 +44,14 @@ export const generatePrismaClient = async ({
   if (!force) {
     // The Prisma client throws if it is not generated.
     try {
-      // Import the client from the Redmix app's node_modules path.
-      const { PrismaClient } = await import(
-        path.join(getPaths().base, 'node_modules/.prisma/client/index.js')
+      const prismaClientPath = path.join(
+        getPaths().base,
+        'node_modules/.prisma/client/index.js',
       )
+      console.log(`Prisma client path: ${prismaClientPath}`)
+
+      // Import the client from the Redmix app's node_modules path.
+      const { PrismaClient } = await import(prismaClientPath)
 
       // eslint-disable-next-line
       new PrismaClient()
