@@ -67,7 +67,7 @@ export const generatePrismaClient = async ({
     }
   }
 
-  return await runCommandTask(
+  await runCommandTask(
     [
       {
         title: 'Generating the Prisma client...',
@@ -79,4 +79,15 @@ export const generatePrismaClient = async ({
       silent,
     },
   )
+
+  // Purge Prisma Client from node's require cache, so that the newly generated
+  // client gets picked up by any script that uses it
+  Object.keys(require.cache).forEach((key) => {
+    if (
+      key.includes('/node_modules/@prisma/client/') ||
+      key.includes('/node_modules/.prisma/client/')
+    ) {
+      delete require.cache[key]
+    }
+  })
 }
