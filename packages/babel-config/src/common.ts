@@ -2,6 +2,7 @@ import fs from 'fs'
 import path from 'path'
 
 import type { PluginItem, PluginOptions, TransformOptions } from '@babel/core'
+import type { RegisterOptions } from '@babel/register'
 import { parseConfigFileTextToJson } from 'typescript'
 
 import { getPaths } from '@redmix/project-config'
@@ -21,7 +22,8 @@ export interface RegisterHookOptions {
   options?: WebFlags
 }
 
-interface BabelRegisterOptions extends TransformOptions {
+/** @deprecated Please use `RegisterOptions` from `@babel/register` */
+export interface BabelRegisterOptions extends TransformOptions {
   extensions?: string[]
   cache?: boolean
 }
@@ -33,7 +35,7 @@ interface BabelRegisterOptions extends TransformOptions {
 //
 // Lets say we use the import syntax:
 // `import babelRequireHook from '@babel/register'`
-// - if your import in a JS file (like we used to in the cli project) - not a
+// - if you import in a JS file (like we used to in the cli project) - not a
 //   problem, and it would only invoke the register function when you called
 //   babelRequireHook
 // - if you import in a TS file, the transpile process modifies it when we build
@@ -42,11 +44,12 @@ interface BabelRegisterOptions extends TransformOptions {
 //   BUTTT!!! you won't notice it if your project is TS because by default it
 //   ignores .ts and .tsx files, but if its a JS project, it would try to
 //   transpile twice
-export const registerBabel = (options: BabelRegisterOptions) => {
+export const registerBabel = (options: RegisterOptions) => {
   // One of the ways you can use Babel is through the require hook. The require
   // hook will bind itself to node's require and automatically compile files on
-  // the fly. After this `require` all subsequent files required by node with
-  // the extensions .es6, .es, .jsx, .mjs, and .js will be transformed by Babel.
+  // the fly. After this `require`, all subsequent files required by node with
+  // the extensions .es6, .es, .jsx, .mjs, and .js will be transformed by Babel
+  // (unless options.extensions override the default exensions).
   require('@babel/register')(options)
 }
 
