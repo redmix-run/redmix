@@ -222,19 +222,28 @@ async function main() {
   // Step 10: Confirm the job was scheduled into the database
   console.log('Testing: Confirming the job was scheduled into the database')
   const rawJobs = (await $`yarn rw exec jobs --silent`).toString()
-  const jobs = JSON.parse(rawJobs)
-  if (!jobs?.length) {
-    console.error('Expected job not found in the database')
+  try {
+    const jobs = JSON.parse(rawJobs)
+    if (!jobs?.length) {
+      console.error('Expected job not found in the database')
+      process.exit(1)
+    }
+    const job = jobs[0]
+    const handler = JSON.parse(job?.handler ?? '{}')
+    const args = handler.args ?? []
+    if (args[0] !== location || args[1] !== data) {
+      console.error('Expected job arguments do not match')
+      process.exit(1)
+    }
+    console.log('Confirmed: job was scheduled into the database')
+  } catch (error) {
+    console.error(
+      'Error: Failed to confirm job was scheduled into the database',
+    )
+    console.error(rawJobs)
+    console.error(error)
     process.exit(1)
   }
-  const job = jobs[0]
-  const handler = JSON.parse(job?.handler ?? '{}')
-  const args = handler.args ?? []
-  if (args[0] !== location || args[1] !== data) {
-    console.error('Expected job arguments do not match')
-    process.exit(1)
-  }
-  console.log('Confirmed: job was scheduled into the database')
 
   // Step 11: Run the jobs worker
   console.log('Testing: `yarn rw jobs workoff`')
