@@ -30,7 +30,7 @@ import type { RedwoodSubscription } from './subscriptions/makeSubscriptions'
 import type { GraphQLYogaOptions } from './types'
 
 export const createGraphQLYoga = ({
-  healthCheckId,
+  healthCheckId = 'yoga',
   loggerConfig,
   context,
   getCurrentUser,
@@ -168,12 +168,10 @@ export const createGraphQLYoga = ({
               new URL(graphiQLEndpoint + '/health', request.url),
             )
 
-            const expectedHealthCheckId = healthCheckId || 'yoga'
-
-            // ... and the health check id's match the request and response's
+            // ... and the health check id match the request's and response's
             const status =
-              response.headers.get('x-yoga-id') === expectedHealthCheckId &&
-              request.headers.get('x-yoga-id') === expectedHealthCheckId
+              response.headers.get('x-yoga-id') === healthCheckId &&
+              request.headers.get('x-yoga-id') === healthCheckId
 
             // then we're good to go (or not)
             return status
