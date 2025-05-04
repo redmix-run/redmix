@@ -48,7 +48,7 @@ export const generatePrismaClient = async ({
         getPaths().base,
         'node_modules/.prisma/client/index.js',
       )
-      console.log(`Prisma client path: ${prismaClientPath}`)
+      console.log('Prisma client path', prismaClientPath)
 
       // Import the client from the Redmix app's node_modules path.
       const { PrismaClient } = await import(prismaClientPath)
