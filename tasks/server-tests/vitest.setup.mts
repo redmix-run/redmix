@@ -21,11 +21,9 @@ export const testContext: TestContext = {
 }
 
 const __dirname = fileURLToPath(new URL('./', import.meta.url))
-console.log('__dirname', __dirname)
 
 // @redmix/cli (yarn rw)
 export const rw = path.resolve(__dirname, '../../packages/cli/dist/index.js')
-console.log('rw', rw)
 
 // @redmix/api-server (yarn rw-server)
 export const rwServer = path.resolve(
@@ -109,7 +107,6 @@ export async function test({
   webPort ??= testContext.projectConfig?.web.port
 
   const url = `http://${webHost}:${webPort}/about`
-  console.log('url', url)
 
   for (let i = 0; i < 40; i++) {
     try {
