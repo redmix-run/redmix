@@ -112,7 +112,8 @@ async function main() {
     }
     console.log('Confirmed: prisma model exists')
   } catch (error) {
-    console.error('Failed to parse prisma script output')
+    console.error('Error: Failed to parse prisma script output')
+    console.error(prismaData)
     console.error(error?.toString())
     process.exit(1)
   }
