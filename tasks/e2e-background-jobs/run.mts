@@ -104,12 +104,18 @@ async function main() {
 
   console.log('Testing: the prisma model exists in the database')
   const prismaData = (await $`yarn rw exec prisma --silent`).toString()
-  const { name } = JSON.parse(prismaData)
-  if (name !== 'BackgroundJob') {
-    console.error('Expected model not found in the database')
+  try {
+    const { name } = JSON.parse(prismaData)
+    if (name !== 'BackgroundJob') {
+      console.error('Expected model not found in the database')
+      process.exit(1)
+    }
+    console.log('Confirmed: prisma model exists')
+  } catch (error) {
+    console.error('Failed to parse prisma script output')
+    console.error(error?.toString())
     process.exit(1)
   }
-  console.log('Confirmed: prisma model exists')
 
   // Step 3: Generate a job
   console.log('Testing: `yarn rw generate job SampleJob`')
