@@ -44,19 +44,30 @@ export const generatePrismaClient = async ({
   if (!force) {
     // The Prisma client throws if it is not generated.
     try {
-      // Import the client from the redwood apps node_modules path.
-      const { PrismaClient } = require(
-        path.join(getPaths().base, 'node_modules/.prisma/client'),
+      const prismaClientPath = path.join(
+        getPaths().base,
+        'node_modules/.prisma/client/index.js',
       )
+
+      // Import the client from the Redmix app's node_modules path.
+      const { PrismaClient } = await import(prismaClientPath)
+
       // eslint-disable-next-line
       new PrismaClient()
-      return // Client exists, so abort.
+
+      // Client exists, so abort.
+      return
     } catch (e) {
-      // Swallow your pain, and generate.
+      // Client does not exist, continue execution
+      //
+      // TODO: Look for the specific error message we expect. If we get another
+      // error we should print it
+      // Expecting:
+      // Error: @prisma/client did not initialize yet. Please run "prisma generate" and try to import it again.
     }
   }
 
-  return await runCommandTask(
+  await runCommandTask(
     [
       {
         title: 'Generating the Prisma client...',
@@ -68,4 +79,15 @@ export const generatePrismaClient = async ({
       silent,
     },
   )
+
+  // Purge Prisma Client from node's require cache, so that the newly generated
+  // client gets picked up by any script that uses it
+  Object.keys(require.cache).forEach((key) => {
+    if (
+      key.includes('/node_modules/@prisma/client/') ||
+      key.includes('/node_modules/.prisma/client/')
+    ) {
+      delete require.cache[key]
+    }
+  })
 }
