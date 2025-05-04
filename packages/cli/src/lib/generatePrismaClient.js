@@ -1,7 +1,5 @@
-// helper used in Dev and Build commands
-
-import { createRequire } from 'node:module'
 import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 
 import fs from 'fs-extra'
 
@@ -22,10 +20,12 @@ export const generatePrismaCommand = (schema) => {
     return {}
   }
 
-  const createdRequire = createRequire(import.meta.url)
+  const prismaIndexPath = fileURLToPath(
+    import.meta.resolve('prisma/build/index.js'),
+  )
 
   return {
-    cmd: `node "${createdRequire.resolve('prisma/build/index.js')}"`,
+    cmd: `node "${prismaIndexPath}"`,
     args: ['generate', schema && `--schema="${schema}"`],
   }
 }
