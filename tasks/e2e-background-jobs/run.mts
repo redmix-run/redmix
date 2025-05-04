@@ -222,13 +222,14 @@ async function main() {
   // Step 10: Confirm the job was scheduled into the database
   console.log('Testing: Confirming the job was scheduled into the database')
   const rawJobs = (await $`yarn rw exec jobs --silent`).toString()
+  let job = undefined
   try {
-    const jobs = JSON.parse(rawJobs)
+    const jobs = JSON.parse(rawJobs.split('\n').slice(1).join('\n'))
     if (!jobs?.length) {
       console.error('Expected job not found in the database')
       process.exit(1)
     }
-    const job = jobs[0]
+    job = jobs[0]
     const handler = JSON.parse(job?.handler ?? '{}')
     const args = handler.args ?? []
     if (args[0] !== location || args[1] !== data) {
@@ -280,7 +281,7 @@ async function main() {
   // Step 13: Confirm the job was removed from the database
   console.log('Testing: Confirming the job was removed from the database')
   const rawJobsAfter = (await $`yarn rw exec jobs --silent`).toString()
-  const jobsAfter = JSON.parse(rawJobsAfter)
+  const jobsAfter = JSON.parse(rawJobsAfter.split('\n').slice(1).join('\n'))
   const jobAfter = jobsAfter.find((j: any) => j.id === job.id)
   if (jobAfter) {
     console.error('Expected job found in the database')
