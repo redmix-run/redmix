@@ -48,7 +48,6 @@ export const generatePrismaClient = async ({
         getPaths().base,
         'node_modules/.prisma/client/index.js',
       )
-      console.log('Prisma client path', prismaClientPath)
 
       // Import the client from the Redmix app's node_modules path.
       const { PrismaClient } = await import(prismaClientPath)
@@ -60,8 +59,9 @@ export const generatePrismaClient = async ({
       return
     } catch (e) {
       // Client does not exist, continue execution
-      // TODO: Look for the expected error message. If we get another error we
-      // should print it
+      //
+      // TODO: Look for the specific error message we expect. If we get another
+      // error we should print it
       // Expecting:
       // Error: @prisma/client did not initialize yet. Please run "prisma generate" and try to import it again.
     }

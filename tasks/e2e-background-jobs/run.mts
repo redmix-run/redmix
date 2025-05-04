@@ -104,27 +104,19 @@ async function main() {
 
   console.log('Testing: the prisma model exists in the database')
   const prismaData = (await $`yarn rw exec prisma --silent`).toString()
-  console.log('')
-  console.log('prismaData')
-  console.log(prismaData)
-  console.log('')
-  if (!prismaData.includes('{"name":"BackgroundJob"}')) {
-    console.error('Expected model not found in the database')
+  try {
+    const { name } = JSON.parse(prismaData)
+    if (name !== 'BackgroundJob') {
+      console.error('Expected model not found in the database')
+      process.exit(1)
+    }
+    console.log('Confirmed: prisma model exists')
+  } catch (error) {
+    console.error('Error: Failed to parse prisma script output')
+    console.error(prismaData)
+    console.error(error?.toString())
     process.exit(1)
   }
-  // try {
-  //   const { name } = JSON.parse(prismaData)
-  //   if (name !== 'BackgroundJob') {
-  //     console.error('Expected model not found in the database')
-  //     process.exit(1)
-  //   }
-  //   console.log('Confirmed: prisma model exists')
-  // } catch (error) {
-  //   console.error('Error: Failed to parse prisma script output')
-  //   console.error(prismaData)
-  //   console.error(error?.toString())
-  //   process.exit(1)
-  // }
 
   // Step 3: Generate a job
   console.log('Testing: `yarn rw generate job SampleJob`')
@@ -224,7 +216,7 @@ async function main() {
   const rawJobs = (await $`yarn rw exec jobs --silent`).toString()
   let job = undefined
   try {
-    const jobs = JSON.parse(rawJobs.split('\n').slice(1).join('\n'))
+    const jobs = JSON.parse(rawJobs)
     if (!jobs?.length) {
       console.error('Expected job not found in the database')
       process.exit(1)
@@ -281,7 +273,7 @@ async function main() {
   // Step 13: Confirm the job was removed from the database
   console.log('Testing: Confirming the job was removed from the database')
   const rawJobsAfter = (await $`yarn rw exec jobs --silent`).toString()
-  const jobsAfter = JSON.parse(rawJobsAfter.split('\n').slice(1).join('\n'))
+  const jobsAfter = JSON.parse(rawJobsAfter)
   const jobAfter = jobsAfter.find((j: any) => j.id === job.id)
   if (jobAfter) {
     console.error('Expected job found in the database')
