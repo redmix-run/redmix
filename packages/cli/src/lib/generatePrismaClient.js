@@ -33,6 +33,7 @@ export const generatePrismaCommand = (schema) => {
 export const generatePrismaClient = async ({
   verbose = true,
   force = true,
+  silent = false,
   schema = getPaths().api.dbSchema,
 }) => {
   if (skipTask(schema)) {
@@ -64,6 +65,7 @@ export const generatePrismaClient = async ({
     ],
     {
       verbose,
+      silent,
     },
   )
 }

@@ -133,7 +133,12 @@ export const handler = async (args) => {
     {
       title: 'Generating Prisma client',
       enabled: () => prisma,
-      task: () => generatePrismaClient({ force: false, verbose: !args.silent }),
+      task: () =>
+        generatePrismaClient({
+          force: false,
+          verbose: !args.silent,
+          silent: args.silent,
+        }),
     },
     {
       title: 'Running script',

@@ -550,7 +550,9 @@ export const addPackagesTask = ({
   }
 }
 
-export const runCommandTask = async (commands, { verbose }) => {
+// TODO: Move this to generatePrismaClient.js. Possibly just inlining it
+// instead of creating a new Listr for generating the client
+export const runCommandTask = async (commands, { verbose, silent }) => {
   const tasks = new Listr(
     commands.map(({ title, cmd, args, opts = {}, cwd = getPaths().base }) => ({
       title,
@@ -558,7 +560,7 @@ export const runCommandTask = async (commands, { verbose }) => {
         return execa(cmd, args, {
           shell: true,
           cwd,
-          stdio: verbose ? 'inherit' : 'pipe',
+          stdio: verbose && !silent ? 'inherit' : 'pipe',
           extendEnv: true,
           cleanup: true,
           ...opts,
@@ -566,7 +568,7 @@ export const runCommandTask = async (commands, { verbose }) => {
       },
     })),
     {
-      renderer: verbose && 'verbose',
+      renderer: silent ? 'silent' : verbose ? 'verbose' : 'default',
       rendererOptions: { collapseSubtasks: false, dateFormat: false },
     },
   )
