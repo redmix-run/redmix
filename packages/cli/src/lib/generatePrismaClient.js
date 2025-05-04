@@ -45,28 +45,29 @@ export const generatePrismaClient = async ({
 
   // Do not generate the Prisma client if it exists.
   if (!force) {
-    // The Prisma client throws if it is not generated.
-    try {
-      const prismaClientPath = path.join(
-        getPaths().base,
-        'node_modules/.prisma/client/index.js',
-      )
+    const prismaClientPath = path.join(
+      getPaths().base,
+      'node_modules/.prisma/client/index.js',
+    )
 
-      // Import the client from the Redmix app's node_modules path.
-      const { PrismaClient } = await import(prismaClientPath)
+    const prismaClientFile = fs.readFileSync(prismaClientPath, 'utf8')
 
-      // eslint-disable-next-line
-      new PrismaClient()
-
+    // This is a hack, and is likely to break. A better solution would be to
+    // try to import the Prisma client. But that gets cached, so we'd have to
+    // do it in a worker thread.
+    // See https://github.com/nodejs/node/issues/49442#issuecomment-1703472299
+    // for an idea on how to do that
+    // Just reading the file and manually looking for known strings is faster
+    // and works around the caching issue. But is less future proof. But it's
+    // good enough for now.
+    // If we want to go back to `await import(...)` we could try appending
+    // `?cache_busting=${Date.now()}` to the URL.
+    if (
+      !prismaClientFile.includes('@prisma/client did not initialize yet.') &&
+      prismaClientFile.includes('exports.Prisma.')
+    ) {
       // Client exists, so abort.
       return
-    } catch (e) {
-      // Client does not exist, continue execution
-      //
-      // TODO: Look for the specific error message we expect. If we get another
-      // error we should print it
-      // Expecting:
-      // Error: @prisma/client did not initialize yet. Please run "prisma generate" and try to import it again.
     }
   }
 
@@ -82,15 +83,4 @@ export const generatePrismaClient = async ({
       silent,
     },
   )
-
-  // Purge Prisma Client from node's require cache, so that the newly generated
-  // client gets picked up by any script that uses it
-  Object.keys(require.cache).forEach((key) => {
-    if (
-      key.includes('/node_modules/@prisma/client/') ||
-      key.includes('/node_modules/.prisma/client/')
-    ) {
-      delete require.cache[key]
-    }
-  })
 }
