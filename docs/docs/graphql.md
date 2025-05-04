@@ -551,7 +551,7 @@ Note the `x-yoga-id` header. The header's value defaults to `yoga` when `healthC
 export const handler = createGraphQLHandler({
   // This will be the value of the `x-yoga-id` header
   // highlight-next-line
-  healthCheckId: 'my-Redmix-graphql-server',
+  healthCheckId: 'my-redmix-graphql-server',
   getCurrentUser,
   loggerConfig: { logger, options: {} },
   directives,
