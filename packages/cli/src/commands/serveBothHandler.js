@@ -3,7 +3,7 @@ import path from 'path'
 import concurrently from 'concurrently'
 import execa from 'execa'
 
-import { handler as apiServerHandler } from '@redmix/api-server/dist/apiCLIConfigHandler'
+import { handler as apiServerHandler } from '@redmix/api-server/dist/apiCLIConfigHandler.js'
 import {
   getAPIHost,
   getAPIPort,
