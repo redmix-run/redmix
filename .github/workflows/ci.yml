@@ -465,6 +465,14 @@ jobs:
         run: yarn rw g script testScript && yarn rw exec testScript
         working-directory: ${{ steps.set-up-test-project.outputs.test-project-path }}
 
+      - name: Nested script | Run "rw exec"
+        run: yarn rw g script i/am/nested && yarn rw exec i/am/nested
+        working-directory: ${{ steps.set-up-test-project.outputs.test-project-path }}
+
+      - name: Nested script | Run in /scripts "rw exec"
+        run: yarn rw g script i/am/nested/too && yarn rw exec i/am/nested/too
+        working-directory: ${{ steps.set-up-test-project.outputs.test-project-path }}/scripts
+
       - name: Run "prisma generate"
         run: yarn rw prisma generate
         working-directory: ${{ steps.set-up-test-project.outputs.test-project-path }}
