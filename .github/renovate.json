@@ -9,13 +9,13 @@
     {
       "matchUpdateTypes": ["patch"],
       "automerge": true,
-      "labels": ["release:dependency", "chagesets-ok"],
+      "labels": ["release:dependency", "changesets-ok"],
       "milestone": 3
     },
     {
       "matchUpdateTypes": ["minor"],
       "automerge": true,
-      "labels": ["release:dependency", "chagesets-ok"],
+      "labels": ["release:dependency", "changesets-ok"],
       "milestone": 4
     },
     {
