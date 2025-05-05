@@ -296,7 +296,7 @@ export function updateCheckMiddleware(argv) {
     setLock(CHECK_LOCK_IDENTIFIER)
     spawnBackgroundProcess('updateCheck', 'yarn', [
       'node',
-      path.join(__dirname, 'updateCheckExecute.js'),
+      path.join(import.meta.dirname, 'updateCheckExecute.js'),
     ])
   }
 }

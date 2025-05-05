@@ -13,7 +13,7 @@ import path from 'path'
 import fs from 'fs-extra'
 import { vi } from 'vitest'
 
-import './mockTelemetry'
+import './mockTelemetry.js'
 
 vi.mock('@redmix/internal/dist/generate/generate', () => {
   return {
@@ -24,7 +24,7 @@ vi.mock('@redmix/internal/dist/generate/generate', () => {
 })
 
 vi.mock('@redmix/project-config', async (importOriginal) => {
-  const path = require('path')
+  const path = await import('path')
   const originalProjectConfig = await importOriginal()
   return {
     ...originalProjectConfig,
@@ -88,14 +88,14 @@ vi.mock('./project', () => ({
 }))
 
 globalThis.__prettierPath = path.resolve(
-  __dirname,
+  import.meta.dirname,
   './__tests__/fixtures/prettier.config.js',
 )
 
 vi.spyOn(Math, 'random').mockReturnValue(0.123456789)
 
 export const generatorsRootPath = path.join(
-  __dirname,
+  import.meta.dirname,
   '..',
   'commands',
   'generate',
@@ -114,7 +114,7 @@ export const generatorsRootPath = path.join(
 export const loadGeneratorFixture = (generator, name) => {
   return loadFixture(
     path.join(
-      __dirname,
+      import.meta.dirname,
       '..',
       'commands',
       'generate',

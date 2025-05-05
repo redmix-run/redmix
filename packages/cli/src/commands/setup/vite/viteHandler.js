@@ -11,7 +11,10 @@ import { getPaths, transformTSToJS, writeFile } from '../../../lib/index.js'
 import { isTypeScriptProject } from '../../../lib/project.js'
 
 const { version } = JSON.parse(
-  fs.readFileSync(path.resolve(__dirname, '../../../../package.json'), 'utf-8'),
+  fs.readFileSync(
+    path.resolve(import.meta.dirname, '../../../../package.json'),
+    'utf-8',
+  ),
 )
 
 export const handler = async ({ force, verbose, addPackage }) => {
@@ -28,7 +31,11 @@ export const handler = async ({ force, verbose, addPackage }) => {
           }`
 
           const templateContent = fs.readFileSync(
-            path.resolve(__dirname, 'templates', 'vite.config.ts.template'),
+            path.resolve(
+              import.meta.dirname,
+              'templates',
+              'vite.config.ts.template',
+            ),
             'utf-8',
           )
 

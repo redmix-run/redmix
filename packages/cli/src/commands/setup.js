@@ -1,6 +1,6 @@
 import terminalLink from 'terminal-link'
 
-import detectRwVersion from '../middleware/detectProjectRwVersion.js'
+import detectRxVersion from '../middleware/detectProjectRxVersion.js'
 
 import * as setupAuth from './setup/auth/auth.js'
 import * as setupCache from './setup/cache/cache.js'
@@ -45,7 +45,7 @@ export const builder = (yargs) =>
     .command(setupUploads)
     .command(setupVite)
     .demandCommand()
-    .middleware(detectRwVersion)
+    .middleware(detectRxVersion)
     .epilogue(
       `Also see the ${terminalLink(
         'Redwood CLI Reference',

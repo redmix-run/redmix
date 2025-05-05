@@ -1,4 +1,4 @@
-import { createHandler } from '../helpers/helpers'
+import { createHandler } from '../helpers/helpers.js'
 
 export const command = 'render'
 export const description = 'Setup Render deploy'

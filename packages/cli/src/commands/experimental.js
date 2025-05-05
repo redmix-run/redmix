@@ -1,6 +1,6 @@
 import terminalLink from 'terminal-link'
 
-import detectRwVersion from '../middleware/detectProjectRwVersion.js'
+import detectRxVersion from '../middleware/detectProjectRxVersion.js'
 
 import * as experimentalInngest from './experimental/setupInngest.js'
 import * as experimentalOpenTelemetry from './experimental/setupOpentelemetry.js'
@@ -20,7 +20,7 @@ export const builder = (yargs) =>
     .command(experimentalRsc)
     .command(experimentalStreamingSsr)
     .demandCommand()
-    .middleware(detectRwVersion)
+    .middleware(detectRxVersion)
     .epilogue(
       `Also see the ${terminalLink(
         'Redwood CLI Reference',

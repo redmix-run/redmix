@@ -1,4 +1,5 @@
-import path from 'path'
+import { createRequire } from 'node:module'
+import path from 'node:path'
 
 import execa from 'execa'
 import fs from 'fs-extra'
@@ -11,7 +12,7 @@ import { errorTelemetry } from '@redmix/telemetry'
 import c from '../../../lib/colors.js'
 
 export async function handler({ force }) {
-  const TEMPLATE_DIR = path.join(__dirname, 'templates')
+  const TEMPLATE_DIR = path.join(import.meta.dirname, 'templates')
 
   let dockerfileTemplateContent = fs.readFileSync(
     path.resolve(TEMPLATE_DIR, 'Dockerfile'),
@@ -284,7 +285,8 @@ export async function handler({ force }) {
 }
 
 export async function getVersionOfRedwoodPackageToInstall(module) {
-  const packageJsonPath = require.resolve('@redmix/cli/package.json', {
+  const createdRequire = createRequire(import.meta.url)
+  const packageJsonPath = createdRequire.resolve('@redmix/cli/package.json', {
     paths: [getPaths().base],
   })
   let { version } = fs.readJSONSync(packageJsonPath)

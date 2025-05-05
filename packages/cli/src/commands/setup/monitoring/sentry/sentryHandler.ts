@@ -39,12 +39,18 @@ export const handler = async ({ force }: Args) => {
           {
             [path.join(rwPaths.api.lib, `sentry.${extension}`)]: fs
               .readFileSync(
-                path.join(__dirname, 'templates/sentryApi.ts.template'),
+                path.join(
+                  import.meta.dirname,
+                  'templates/sentryApi.ts.template',
+                ),
               )
               .toString(),
             [path.join(rwPaths.web.src, 'lib', `sentry.${extension}`)]: fs
               .readFileSync(
-                path.join(__dirname, 'templates/sentryWeb.ts.template'),
+                path.join(
+                  import.meta.dirname,
+                  'templates/sentryWeb.ts.template',
+                ),
               )
               .toString(),
           },

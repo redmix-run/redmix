@@ -15,9 +15,9 @@ import { runTransform } from '../../../lib/runTransform.js'
 export const handler = async ({ force }) => {
   const projectIsTypescript = isTypeScriptProject()
   const redwoodVersion =
-    require(path.join(getPaths().base, 'package.json')).devDependencies[
-      '@redmix/core'
-    ] ?? 'latest'
+    (await import(path.join(getPaths().base, 'package.json'), {
+      with: { type: 'json ' },
+    }).default.devDependencies['@redmix/core']) ?? 'latest'
 
   const tasks = new Listr(
     [
@@ -27,7 +27,7 @@ export const handler = async ({ force }) => {
         }...`,
         task: async () => {
           const templatePath = path.resolve(
-            __dirname,
+            import.meta.dirname,
             'templates',
             'srcLibUploads.ts.template',
           )
@@ -53,7 +53,7 @@ export const handler = async ({ force }) => {
         title: `Adding signedUrl function...`,
         task: async () => {
           const templatePath = path.resolve(
-            __dirname,
+            import.meta.dirname,
             'templates',
             'signedUrl.ts.template',
           )
@@ -88,7 +88,7 @@ export const handler = async ({ force }) => {
           )
 
           const transformResult = await runTransform({
-            transformPath: path.join(__dirname, 'dbCodemod.js'),
+            transformPath: path.join(import.meta.dirname, 'dbCodemod.js'),
             targetPaths: [dbPath],
           })
 

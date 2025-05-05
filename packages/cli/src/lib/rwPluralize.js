@@ -1,4 +1,4 @@
-import * as plurals from 'pluralize'
+import plurals from 'pluralize'
 
 const mappings = {
   toSingular: {},

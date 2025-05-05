@@ -48,7 +48,10 @@ export async function handler({ force }: Args) {
         title: 'Import possibleTypes in App.tsx',
         task: () => {
           return runTransform({
-            transformPath: path.join(__dirname, 'appImportTransform.js'),
+            transformPath: path.join(
+              import.meta.dirname,
+              'appImportTransform.js',
+            ),
             targetPaths: [getPaths().web.app],
           })
         },
@@ -57,7 +60,10 @@ export async function handler({ force }: Args) {
         title: 'Add possibleTypes to the GraphQL cache config',
         task: async () => {
           const transformResult = await runTransform({
-            transformPath: path.join(__dirname, 'appGqlConfigTransform.js'),
+            transformPath: path.join(
+              import.meta.dirname,
+              'appGqlConfigTransform.js',
+            ),
             targetPaths: [getPaths().web.app],
           })
 

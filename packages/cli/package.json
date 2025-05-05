@@ -8,6 +8,7 @@
     "directory": "packages/cli"
   },
   "license": "MIT",
+  "type": "module",
   "bin": {
     "redwood": "./dist/index.js",
     "rw": "./dist/index.js",
@@ -52,7 +53,7 @@
     "change-case": "4.1.2",
     "ci-info": "4.0.0",
     "concurrently": "8.2.2",
-    "configstore": "3.1.5",
+    "configstore": "7.0.0",
     "core-js": "3.38.1",
     "cross-env": "7.0.3",
     "decamelize": "5.0.1",

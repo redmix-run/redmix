@@ -24,7 +24,7 @@ export const handler = async ({ client, force }) => {
   const extension = isTypeScriptProject ? 'ts' : 'js'
 
   const tasks = new Listr([
-    addPackagesTask({
+    await addPackagesTask({
       packages: [CLIENT_PACKAGE_MAP[client]],
       side: 'api',
     }),
@@ -33,7 +33,11 @@ export const handler = async ({ client, force }) => {
       task: () => {
         const template = fs
           .readFileSync(
-            path.join(__dirname, 'templates', `${client}.ts.template`),
+            path.join(
+              import.meta.dirname,
+              'templates',
+              `${client}.ts.template`,
+            ),
           )
           .toString()
 

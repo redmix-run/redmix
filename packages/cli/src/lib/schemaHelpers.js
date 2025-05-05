@@ -1,14 +1,11 @@
-import {
-  getConfig,
-  getDMMF,
-  getSchema as getSchemaPrisma,
-} from '@prisma/internals'
+import prismaInternals from '@prisma/internals'
 
 import { ensureUniquePlural } from './pluralHelpers.js'
 import { singularize, isPlural } from './rwPluralize.js'
 
 import { getPaths } from './index.js'
 
+const { getConfig, getDMMF, getSchema: getSchemaPrisma } = prismaInternals
 /**
  * Used to memoize results from `getSchema()` so we don't have to go through
  * the work of opening and parsing the file from scratch each time `getSchema()`

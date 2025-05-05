@@ -1,4 +1,4 @@
-import { createHandler } from '../helpers/helpers'
+import { createHandler } from '../helpers/helpers.js'
 
 export const command = 'chakra-ui'
 export const description = 'Set up Chakra UI'

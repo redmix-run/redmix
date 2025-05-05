@@ -1,6 +1,6 @@
 import path from 'path'
 
-import { getSchema, getConfig } from '@prisma/internals'
+import prismaInternals from '@prisma/internals'
 import fs from 'fs-extra'
 import { Listr } from 'listr2'
 
@@ -20,6 +20,8 @@ import {
   RENDER_YAML,
   SQLITE_YAML,
 } from '../templates/render.js'
+
+const { getSchema, getConfig } = prismaInternals
 
 const getRenderYamlContent = async (database) => {
   if (database === 'none') {
