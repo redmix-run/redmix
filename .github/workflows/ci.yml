@@ -172,7 +172,7 @@ jobs:
         working-directory: ${{ steps.crwa.outputs.project-path }}
 
       - name: 🌲 Run Cypress
-        uses: cypress-io/github-action@df7484c5ba85def7eef30db301afa688187bc378 # v6
+        uses: cypress-io/github-action@0ee1130f05f69098ab5c560bd198fecf5a14d75b # v6
         env:
           CYPRESS_RW_PATH: ${{ steps.crwa.outputs.project-path }}
         with:
