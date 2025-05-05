@@ -7,7 +7,7 @@
     "directory": "packages/auth-providers/azureActiveDirectory/web"
   },
   "license": "MIT",
-  "type": "module",
+  "type": "commonjs",
   "exports": {
     ".": {
       "import": {
@@ -37,7 +37,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsx ./build.ts",
+    "build": "tsx ./build.mts",
     "build:pack": "yarn pack -o redmix-auth-azure-active-directory-web.tgz",
     "build:types": "tsc --build --verbose ./tsconfig.build.json",
     "build:types-cjs": "tsc --build --verbose ./tsconfig.cjs.json",

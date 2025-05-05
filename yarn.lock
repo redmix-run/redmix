@@ -7971,7 +7971,7 @@ __metadata:
     "@redmix/project-config": "workspace:*"
     "@types/babel-plugin-tester": "npm:9.0.10"
     "@types/babel__core": "npm:7.20.5"
-    "@types/babel__register": "npm:^7.17.3"
+    "@types/babel__register": "npm:7.17.3"
     "@types/node": "npm:20.17.10"
     babel-plugin-auto-import: "npm:1.1.0"
     babel-plugin-graphql-tag: "npm:3.3.0"
@@ -10660,7 +10660,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/babel__register@npm:^7.17.3":
+"@types/babel__register@npm:7.17.3":
   version: 7.17.3
   resolution: "@types/babel__register@npm:7.17.3"
   dependencies:
