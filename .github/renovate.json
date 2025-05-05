@@ -17,7 +17,6 @@
         "boxen",
         "chalk",
         "camelcase",
-        "configstore",
         "decamelize",
         "execa",
         "humanize-string",
