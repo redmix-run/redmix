@@ -118,7 +118,7 @@ const getInfo = async (presets: Args = {}) => {
     npmVersion: info.Binaries?.npm?.version,
     vsCodeVersion: info.IDEs?.VSCode?.version,
     redwoodVersion:
-      presets.redwoodVersion || info.npmPackages['@redmix/core']?.installed,
+      presets.redwoodVersion || info.npmPackages?.['@redmix/core']?.installed,
     system: `${cpu.physicalCores}.${Math.round(mem.total / 1073741824)}`,
     webBundler: 'vite', // Hardcoded as this is now the only supported bundler
     experiments,

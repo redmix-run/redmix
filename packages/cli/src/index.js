@@ -102,8 +102,7 @@ try {
 process.env.RWJS_CWD = cwd
 
 if (process.cwd() !== cwd) {
-  // CI fail
-  // process.chdir(cwd)
+  process.chdir(cwd)
 }
 
 // Load .env.* files.

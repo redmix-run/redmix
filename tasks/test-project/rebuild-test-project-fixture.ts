@@ -458,11 +458,8 @@ async function runCommand() {
       )
 
       if (!runFromRoot.stdout.includes('Hello from myNestedScript')) {
-        console.error(
-          '`yarn rw exec one/two/myNestedScript` output',
-          runFromRoot.stdout,
-          runFromRoot.stderr,
-        )
+        console.error('`yarn rw exec one/two/myNestedScript` output')
+        console.error(runFromRoot.stdout, runFromRoot.stderr)
 
         throw new Error('Script not executed successfully')
       }
@@ -474,11 +471,8 @@ async function runCommand() {
       )
 
       if (!runFromScripts.stdout.includes('Hello from myNestedScript')) {
-        console.error(
-          '`yarn rw exec one/two/myNestedScript` output',
-          runFromRoot.stdout,
-          runFromRoot.stderr,
-        )
+        console.error('`yarn rw exec one/two/myNestedScript` output')
+        console.error(runFromRoot.stdout, runFromRoot.stderr)
 
         throw new Error('Script not executed successfully')
       }
