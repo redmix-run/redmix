@@ -23,9 +23,12 @@ export const generatePrismaCommand = (schema) => {
   }
 
   const createdRequire = createRequire(import.meta.url)
+  const prismaIndexPath = createdRequire.resolve('prisma/build/index.js')
+
+  console.log('prismaIndexPath', prismaIndexPath)
 
   return {
-    cmd: `node "${createdRequire.resolve('prisma/build/index.js')}"`,
+    cmd: `node "${prismaIndexPath}"`,
     args: ['generate', schema && `--schema="${schema}"`],
   }
 }
