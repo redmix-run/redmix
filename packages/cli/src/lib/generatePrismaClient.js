@@ -23,9 +23,12 @@ export const generatePrismaCommand = (schema) => {
   }
 
   const createdRequire = createRequire(import.meta.url)
+  // I wanted to use `import.meta.resolve` here, but it's not supported by
+  // vitest yet
+  // https://github.com/vitest-dev/vitest/issues/6953
+  // The path will be something like
+  // /Users/tobbe/tmp/rx-test-project/node_modules/prisma/build/index.js
   const prismaIndexPath = createdRequire.resolve('prisma/build/index.js')
-
-  console.log('prismaIndexPath', prismaIndexPath)
 
   return {
     cmd: `node "${prismaIndexPath}"`,
