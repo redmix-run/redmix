@@ -6,9 +6,6 @@ import { describe, it, expect } from 'vitest'
 const BASE_DIR = path.resolve(import.meta.dirname, '..', '..', '..', '..')
 const CLI = path.join(BASE_DIR, 'packages', 'cli', 'dist', 'index.js')
 
-console.log('BASE_DIR:', BASE_DIR)
-console.log('CLI:', CLI)
-
 function rw(args, options) {
   const { status, stdout, stderr } = spawnSync('node', [CLI, ...args], {
     cwd: BASE_DIR,

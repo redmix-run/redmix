@@ -101,6 +101,10 @@ try {
 
 process.env.RWJS_CWD = cwd
 
+if (process.cwd() !== cwd) {
+  process.chdir(cwd)
+}
+
 // Load .env.* files.
 //
 // This should be done as early as possible, and the earliest we can do it is after setting `cwd`.
