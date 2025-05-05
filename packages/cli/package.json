@@ -56,7 +56,7 @@
     "configstore": "7.0.0",
     "core-js": "3.38.1",
     "cross-env": "7.0.3",
-    "decamelize": "5.0.1",
+    "decamelize": "6.0.0",
     "dotenv-defaults": "5.0.2",
     "enquirer": "2.4.1",
     "envinfo": "7.14.0",

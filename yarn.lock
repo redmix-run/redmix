@@ -8131,7 +8131,7 @@ __metadata:
     configstore: "npm:7.0.0"
     core-js: "npm:3.38.1"
     cross-env: "npm:7.0.3"
-    decamelize: "npm:5.0.1"
+    decamelize: "npm:6.0.0"
     dotenv-defaults: "npm:5.0.2"
     enquirer: "npm:2.4.1"
     envinfo: "npm:7.14.0"
@@ -15278,10 +15278,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"decamelize@npm:5.0.1":
-  version: 5.0.1
-  resolution: "decamelize@npm:5.0.1"
-  checksum: 10c0/3da71022bc1e85487810fa0833138effb599fa331ca21e179650e93a765d0c4dabeb1ecdd6ad1474fa0bacd2457953c63ea335afb6e53b35f2b4bf779514e2a3
+"decamelize@npm:6.0.0":
+  version: 6.0.0
+  resolution: "decamelize@npm:6.0.0"
+  checksum: 10c0/689888f5ea39add843d79fb5a8d3bc1ce1df7583899bc7cef081c3deecd54758e24e8692f4c214e0ea6917742bb05ea1991e3e15c33031e7aa7b9041e8e8033a
   languageName: node
   linkType: hard
 
