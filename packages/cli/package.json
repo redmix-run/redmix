@@ -65,7 +65,7 @@
     "fs-extra": "11.2.0",
     "humanize-string": "2.1.0",
     "jscodeshift": "17.0.0",
-    "latest-version": "5.1.0",
+    "latest-version": "9.0.0",
     "listr2": "7.0.2",
     "lodash": "4.17.21",
     "pascalcase": "1.0.0",
