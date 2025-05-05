@@ -438,8 +438,12 @@ jobs:
           YARN_ENABLE_IMMUTABLE_INSTALLS: false
 
       - name: Run `rw info`
-        run: yarn rw info
+        run: yarn rw info | tr -d '\n' | grep "npmPackages:.*@redmix/core:"
         working-directory: ${{ steps.set-up-test-project.outputs.test-project-path }}
+
+      - name: Run in /scripts `rw info`
+        run: yarn rw info | tr -d '\n' | grep "npmPackages:.*@redmix/core:"
+        working-directory: ${{ steps.set-up-test-project.outputs.test-project-path }}/scripts
 
       - name: Run `rw lint`
         run: yarn rw lint ./api/src --fix
@@ -464,6 +468,17 @@ jobs:
       - name: Run "rw exec"
         run: yarn rw g script testScript && yarn rw exec testScript
         working-directory: ${{ steps.set-up-test-project.outputs.test-project-path }}
+
+      - name: Nested script | Run "rw exec"
+        # Using -f to overwrite script that already exists in the test-project
+        run: yarn rw g script -f i/am/nested && yarn rw exec i/am/nested
+        working-directory: ${{ steps.set-up-test-project.outputs.test-project-path }}
+
+      - name: Nested script | Run in /scripts "rw exec"
+        # This is probably stretching the definition of "smoke test" a bit too
+        # much. But we don't have a better place to run a test like this
+        run: yarn rw g script i/am/nested/too && yarn rw exec i/am/nested/too | grep "Executing script with args"
+        working-directory: ${{ steps.set-up-test-project.outputs.test-project-path }}/scripts/i/am
 
       - name: Run "prisma generate"
         run: yarn rw prisma generate
