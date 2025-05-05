@@ -3,8 +3,8 @@ import path from 'path'
 import fs from 'fs-extra'
 import terminalLink from 'terminal-link'
 
-import * as apiServerCLIConfig from '@redmix/api-server/dist/apiCLIConfig'
-import * as bothServerCLIConfig from '@redmix/api-server/dist/bothCLIConfig'
+import * as apiServerCLIConfig from '@redmix/api-server/dist/apiCLIConfig.js'
+import * as bothServerCLIConfig from '@redmix/api-server/dist/bothCLIConfig.js'
 import { recordTelemetryAttributes } from '@redmix/cli-helpers'
 import * as webServerCLIConfig from '@redmix/web-server'
 

@@ -168,7 +168,7 @@ export const files = async ({
   if (!fs.existsSync(scaffoldOutputPath)) {
     const scaffoldTemplate = await generateTemplate(
       path.join(
-        __dirname,
+        import.meta.dirname,
         '../scaffold/templates/assets/scaffold.css.template',
       ),
       { name: 'scaffold' },

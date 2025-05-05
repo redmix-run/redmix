@@ -31,7 +31,11 @@ export default async function extendStorybookConfiguration(
   if (!fse.existsSync(sbPreviewConfigPath)) {
     // If the Storybook preview config file doesn't exist, create it from the template
     const templateContent = read(
-      path.resolve(__dirname, 'templates', 'storybook.preview.tsx.template'),
+      path.resolve(
+        import.meta.dirname,
+        'templates',
+        'storybook.preview.tsx.template',
+      ),
     )
     const storybookPreviewContent = ts
       ? templateContent

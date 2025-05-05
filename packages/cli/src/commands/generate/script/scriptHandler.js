@@ -15,9 +15,13 @@ import {
 import { prepareForRollback } from '../../../lib/rollback.js'
 import { validateName } from '../helpers.js'
 
-const TEMPLATE_PATH = path.resolve(__dirname, 'templates', 'script.ts.template')
+const TEMPLATE_PATH = path.resolve(
+  import.meta.dirname,
+  'templates',
+  'script.ts.template',
+)
 const TSCONFIG_TEMPLATE = path.resolve(
-  __dirname,
+  import.meta.dirname,
   'templates',
   'tsconfig.json.template',
 )

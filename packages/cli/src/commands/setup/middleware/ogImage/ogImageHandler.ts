@@ -40,7 +40,10 @@ export async function handler({ force }: { force: boolean }) {
           }
 
           const transformResult = await runTransform({
-            transformPath: path.join(__dirname, 'codemodMiddleware.js'),
+            transformPath: path.join(
+              import.meta.dirname,
+              'codemodMiddleware.js',
+            ),
             targetPaths: [serverEntryPath],
           })
 
@@ -58,7 +61,10 @@ export async function handler({ force }: { force: boolean }) {
           }
 
           const transformResult = await runTransform({
-            transformPath: path.join(__dirname, 'codemodVitePlugin.js'),
+            transformPath: path.join(
+              import.meta.dirname,
+              'codemodVitePlugin.js',
+            ),
             targetPaths: [viteConfigPath],
           })
 

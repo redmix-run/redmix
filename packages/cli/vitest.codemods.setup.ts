@@ -8,7 +8,7 @@ import path from 'path'
 
 import { expect } from 'vitest'
 
-import { formatCode } from './src/testUtils'
+import { formatCode } from './src/testUtils/index.js'
 
 globalThis.matchInlineTransformSnapshot = (
   await import('./src/testUtils/matchInlineTransformSnapshot')
@@ -45,7 +45,7 @@ expect.extend({
       )
     } catch (e) {
       const relativePath = path.relative(
-        path.join(__dirname, 'src/commands/setup'),
+        path.join(import.meta.dirname, 'src/commands/setup'),
         expectedPath,
       )
       pass = false

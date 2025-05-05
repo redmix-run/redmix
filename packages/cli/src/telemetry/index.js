@@ -117,7 +117,7 @@ export function shutdownTelemetry() {
     // Send the telemetry in a background process, so we don't block the CLI
     spawnBackgroundProcess('telemetry', 'yarn', [
       'node',
-      path.join(__dirname, 'send.js'),
+      path.join(import.meta.dirname, 'send.js'),
     ])
   } catch (error) {
     console.error('Telemetry error')

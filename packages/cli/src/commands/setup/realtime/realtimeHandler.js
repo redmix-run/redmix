@@ -13,7 +13,10 @@ import { isTypeScriptProject, serverFileExists } from '../../../lib/project.js'
 import { setupServerFileTasks } from '../server-file/serverFileHandler.js'
 
 const { version } = JSON.parse(
-  fs.readFileSync(path.resolve(__dirname, '../../../../package.json'), 'utf-8'),
+  fs.readFileSync(
+    path.resolve(import.meta.dirname, '../../../../package.json'),
+    'utf-8',
+  ),
 )
 
 export async function handler({ force, includeExamples, verbose }) {
@@ -32,7 +35,11 @@ export async function handler({ force, includeExamples, verbose }) {
         title: 'Adding the realtime api lib ...',
         task: async () => {
           const serverFileTemplateContent = fs.readFileSync(
-            path.resolve(__dirname, 'templates', 'realtime.ts.template'),
+            path.resolve(
+              import.meta.dirname,
+              'templates',
+              'realtime.ts.template',
+            ),
             'utf-8',
           )
 
@@ -56,7 +63,7 @@ export async function handler({ force, includeExamples, verbose }) {
         task: async () => {
           const exampleSubscriptionTemplateContent = fs.readFileSync(
             path.resolve(
-              __dirname,
+              import.meta.dirname,
               'templates',
               'subscriptions',
               'countdown',
@@ -93,7 +100,7 @@ export async function handler({ force, includeExamples, verbose }) {
 
           const exampleSdlTemplateContent = fs.readFileSync(
             path.resolve(
-              __dirname,
+              import.meta.dirname,
               'templates',
               'subscriptions',
               'newMessage',
@@ -115,7 +122,7 @@ export async function handler({ force, includeExamples, verbose }) {
 
           const exampleServiceTemplateContent = fs.readFileSync(
             path.resolve(
-              __dirname,
+              import.meta.dirname,
               'templates',
               'subscriptions',
               'newMessage',
@@ -137,7 +144,7 @@ export async function handler({ force, includeExamples, verbose }) {
 
           const exampleSubscriptionTemplateContent = fs.readFileSync(
             path.resolve(
-              __dirname,
+              import.meta.dirname,
               'templates',
               'subscriptions',
               'newMessage',
@@ -181,7 +188,7 @@ export async function handler({ force, includeExamples, verbose }) {
 
           const exampleSdlTemplateContent = fs.readFileSync(
             path.resolve(
-              __dirname,
+              import.meta.dirname,
               'templates',
               'liveQueries',
               'auctions',
@@ -203,7 +210,7 @@ export async function handler({ force, includeExamples, verbose }) {
 
           const exampleServiceTemplateContent = fs.readFileSync(
             path.resolve(
-              __dirname,
+              import.meta.dirname,
               'templates',
               'liveQueries',
               'auctions',
@@ -241,7 +248,7 @@ export async function handler({ force, includeExamples, verbose }) {
 
           const exampleSdlTemplateContent = fs.readFileSync(
             path.resolve(
-              __dirname,
+              import.meta.dirname,
               'templates',
               'defer',
               'fastAndSlowFields',
@@ -263,7 +270,7 @@ export async function handler({ force, includeExamples, verbose }) {
 
           const exampleServiceTemplateContent = fs.readFileSync(
             path.resolve(
-              __dirname,
+              import.meta.dirname,
               'templates',
               'defer',
               'fastAndSlowFields',
@@ -301,7 +308,7 @@ export async function handler({ force, includeExamples, verbose }) {
 
           const exampleSdlTemplateContent = fs.readFileSync(
             path.resolve(
-              __dirname,
+              import.meta.dirname,
               'templates',
               'stream',
               'alphabet',
@@ -323,7 +330,7 @@ export async function handler({ force, includeExamples, verbose }) {
 
           const exampleServiceTemplateContent = fs.readFileSync(
             path.resolve(
-              __dirname,
+              import.meta.dirname,
               'templates',
               'stream',
               'alphabet',

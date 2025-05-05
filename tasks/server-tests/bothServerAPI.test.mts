@@ -88,10 +88,25 @@ describe.each([[[rw, 'serve']], [rwServer]])('serve both (%s)', (cmd) => {
 
   it('loads env vars', async () => {
     testContext.p = $`yarn node ${cmd}`
-    await sleep(2000)
-    const res = await fetch('http://[::]:8911/env')
-    const body = await res.json()
-    expect(res.status).toEqual(200)
+    await sleep(1000)
+
+    let body: Record<string, string> = {}
+    let status: number | undefined = undefined
+
+    let i = 0
+    while (i < 20 && Object.keys(body).length === 0) {
+      try {
+        const res = await fetch('http://[::]:8911/env')
+        status = res.status
+        body = await res.json()
+      } catch {
+        await sleep(100)
+      }
+
+      i++
+    }
+
+    expect(status).toEqual(200)
     expect(body).toEqual({ data: '42' })
   })
 })

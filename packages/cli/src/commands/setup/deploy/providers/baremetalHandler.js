@@ -45,7 +45,7 @@ export const handler = async ({ force }) => {
   })
   const tasks = new Listr(
     [
-      addPackagesTask({
+      await addPackagesTask({
         packages: ['node-ssh'],
         devDependency: true,
       }),

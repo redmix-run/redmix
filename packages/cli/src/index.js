@@ -226,9 +226,12 @@ async function runYargs() {
   // Load any CLI plugins
   await loadPlugins(yarg)
 
+  const pkgJson = await import('../package.json', {
+    with: { type: 'json' },
+  })
+
   // We explicitly set the version here so that it's always available
-  const pkgJson = require('../package.json')
-  yarg.version(pkgJson['version'])
+  yarg.version(pkgJson.default['version'])
 
   // Run
   await yarg.parse(process.argv.slice(2), {}, (err, _argv, output) => {

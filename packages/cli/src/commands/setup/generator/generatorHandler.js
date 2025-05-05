@@ -13,7 +13,12 @@ const SIDE_MAP = {
 
 const copyGenerator = (name, { force }) => {
   const side = SIDE_MAP['web'].includes(name) ? 'web' : 'api'
-  const from = path.join(__dirname, '../../generate', name, 'templates')
+  const from = path.join(
+    import.meta.dirname,
+    '../../generate',
+    name,
+    'templates',
+  )
   const to = path.join(getPaths()[side].generators, name)
 
   // copy entire template directory contents to appropriate side in app

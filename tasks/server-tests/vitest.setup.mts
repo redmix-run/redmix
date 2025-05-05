@@ -12,6 +12,7 @@ type TestContext = {
   p?: ProcessPromise
   projectConfig: ReturnType<typeof getConfig>
 }
+
 export const testContext: TestContext = {
   // Casting here because `beforeAll` below sets this and this file runs before all tests.
   // Working around it being possibly undefined muddies the code in the tests.
@@ -20,25 +21,28 @@ export const testContext: TestContext = {
 }
 
 const __dirname = fileURLToPath(new URL('./', import.meta.url))
+
 // @redmix/cli (yarn rw)
 export const rw = path.resolve(__dirname, '../../packages/cli/dist/index.js')
+
 // @redmix/api-server (yarn rw-server)
 export const rwServer = path.resolve(
   __dirname,
   '../../packages/api-server/dist/bin.js',
 )
+
 // @redmix/web-server (yarn rw-web-server)
 export const rwWebServer = path.resolve(
   __dirname,
   '../../packages/web-server/dist/bin.js',
 )
 
-let original_RWJS_CWD
+let original_RWJS_CWD: string | undefined
+
 beforeAll(() => {
   original_RWJS_CWD = process.env.RWJS_CWD
-  const FIXTURE_PATH = fileURLToPath(
-    new URL('./fixtures/redwood-app', import.meta.url),
-  )
+  const fixtureUrl = new URL('./fixtures/redwood-app', import.meta.url)
+  const FIXTURE_PATH = fileURLToPath(fixtureUrl)
   process.env.RWJS_CWD = FIXTURE_PATH
   testContext.projectConfig = getConfig()
 
@@ -55,6 +59,7 @@ beforeAll(() => {
     globalThis.loggedBinPaths = true
   }
 })
+
 afterAll(() => {
   process.env.RWJS_CWD = original_RWJS_CWD
 })
@@ -64,7 +69,9 @@ afterEach(async () => {
   if (!testContext.p) {
     return
   }
+
   testContext.p.kill()
+
   // Wait for child process to terminate
   try {
     await testContext.p
@@ -101,7 +108,7 @@ export async function test({
 
   const url = `http://${webHost}:${webPort}/about`
 
-  for (let i = 0; i < 20; i++) {
+  for (let i = 0; i < 40; i++) {
     try {
       await fetch(url)
     } catch {
@@ -126,11 +133,8 @@ export async function test({
   }
   apiPort ??= testContext.projectConfig?.api.port
   apiRootPath ??= '/'
-  apiRootPath = apiRootPath.charAt(0) === '/' ? apiRootPath : `/${apiRootPath}`
-  apiRootPath =
-    apiRootPath.charAt(apiRootPath.length - 1) === '/'
-      ? apiRootPath
-      : `${apiRootPath}/`
+  apiRootPath = apiRootPath.startsWith('/') ? apiRootPath : `/${apiRootPath}`
+  apiRootPath = apiRootPath.endsWith('/') ? apiRootPath : `${apiRootPath}/`
 
   const apiRes = await fetch(`http://${apiHost}:${apiPort}${apiRootPath}hello`)
   const apiBody = await apiRes.json()

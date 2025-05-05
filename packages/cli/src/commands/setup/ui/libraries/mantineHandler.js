@@ -115,7 +115,7 @@ export async function handler({ force, install, packages }) {
           } else {
             const postCSSConfig = fse.readFileSync(
               path.join(
-                __dirname,
+                import.meta.dirname,
                 '../templates/mantine-postcss.config.js.template',
               ),
               'utf-8',
@@ -140,7 +140,7 @@ export async function handler({ force, install, packages }) {
         task: async () =>
           await extendStorybookConfiguration(
             path.join(
-              __dirname,
+              import.meta.dirname,
               '..',
               'templates',
               'mantine.storybook.preview.tsx.template',

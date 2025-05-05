@@ -13,7 +13,11 @@ import {
 import { prepareForRollback } from '../../../lib/rollback.js'
 import { verifyModelName } from '../../../lib/schemaHelpers.js'
 import { validateName } from '../helpers.js'
-const TEMPLATE_PATH = path.resolve(__dirname, 'templates', 'model.js.template')
+const TEMPLATE_PATH = path.resolve(
+  import.meta.dirname,
+  'templates',
+  'model.js.template',
+)
 
 const files = async ({ name, typescript = false }) => {
   const outputFilename = `${name}.${typescript ? 'ts' : 'js'}`

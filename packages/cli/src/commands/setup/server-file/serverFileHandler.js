@@ -11,7 +11,10 @@ import { getPaths, transformTSToJS, writeFile } from '../../../lib/index.js'
 import { isTypeScriptProject } from '../../../lib/project.js'
 
 const { version } = JSON.parse(
-  fs.readFileSync(path.resolve(__dirname, '../../../../package.json'), 'utf-8'),
+  fs.readFileSync(
+    path.resolve(import.meta.dirname, '../../../../package.json'),
+    'utf-8',
+  ),
 )
 
 export function setupServerFileTasks({ force = false } = {}) {
@@ -27,7 +30,7 @@ export function setupServerFileTasks({ force = false } = {}) {
         )
 
         const serverFileTemplateContent = fs.readFileSync(
-          path.join(__dirname, 'templates', 'server.ts.template'),
+          path.join(import.meta.dirname, 'templates', 'server.ts.template'),
           'utf-8',
         )
 

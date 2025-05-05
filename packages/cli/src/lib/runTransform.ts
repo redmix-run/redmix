@@ -5,7 +5,7 @@
  * @see prisma/codemods {@link https://github.com/prisma/codemods/blob/main/utils/runner.ts}
  * @see react-codemod {@link https://github.com/reactjs/react-codemod/blob/master/bin/cli.js}
  */
-import * as jscodeshift from 'jscodeshift/src/Runner'
+import * as jscodeshift from 'jscodeshift/src/Runner.js'
 
 // jscodeshift has an `Options` type export we could use here, but currently
 // it's just a map of anys, so not really useful. In our case, leaving that

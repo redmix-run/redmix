@@ -1,6 +1,7 @@
 import path from 'path'
 
 import chalk from 'chalk'
+import enquirer from 'enquirer'
 import fs from 'fs-extra'
 
 import { getCompatibilityData } from '@redmix/cli-helpers'
@@ -9,7 +10,7 @@ import { installModule, isModuleInstalled } from './packages.js'
 
 import { getPaths } from './index.js'
 
-const { Select } = require('enquirer')
+const { Select } = enquirer
 
 /**
  * The file inside .redwood which will contain cached plugin command mappings

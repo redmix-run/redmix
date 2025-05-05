@@ -10,9 +10,6 @@ console.log('BASE_DIR:', BASE_DIR)
 console.log('CLI:', CLI)
 
 function rw(args, options) {
-  console.log('test cwd', BASE_DIR)
-  console.log('args', args)
-  console.log('options', options)
   const { status, stdout, stderr } = spawnSync('node', [CLI, ...args], {
     cwd: BASE_DIR,
     ...options,
