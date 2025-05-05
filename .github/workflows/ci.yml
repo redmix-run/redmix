@@ -470,12 +470,15 @@ jobs:
         working-directory: ${{ steps.set-up-test-project.outputs.test-project-path }}
 
       - name: Nested script | Run "rw exec"
-        run: yarn rw g script i/am/nested && yarn rw exec i/am/nested
+        # Using -f to overwrite script that already exists in the test-project
+        run: yarn rw g script -f i/am/nested && yarn rw exec i/am/nested
         working-directory: ${{ steps.set-up-test-project.outputs.test-project-path }}
 
       - name: Nested script | Run in /scripts "rw exec"
+        # This is probably stretching the definition of "smoke test" a bit too
+        # much. But we don't have a better place to run a test like this
         run: yarn rw g script i/am/nested/too && yarn rw exec i/am/nested/too | grep "Executing script with args"
-        working-directory: ${{ steps.set-up-test-project.outputs.test-project-path }}/scripts
+        working-directory: ${{ steps.set-up-test-project.outputs.test-project-path }}/scripts/i/am
 
       - name: Run "prisma generate"
         run: yarn rw prisma generate
