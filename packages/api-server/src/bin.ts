@@ -15,7 +15,7 @@ import {
   description as apiDescription,
   builder as apiBuilder,
 } from './apiCLIConfig'
-import { handler as apiHandler } from './apiCLIConfigHandler'
+import { handler as apiHandler } from './apiCLIConfigHandler.js'
 import {
   description as bothDescription,
   builder as bothBuilder,

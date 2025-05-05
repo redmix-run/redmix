@@ -7,8 +7,16 @@
   "rebaseWhen": "conflicted",
   "packageRules": [
     {
-      "matchUpdateTypes": ["minor", "patch"],
-      "automerge": true
+      "matchUpdateTypes": ["patch"],
+      "automerge": true,
+      "labels": ["release:dependency", "chagesets-ok"],
+      "milestone": 3
+    },
+    {
+      "matchUpdateTypes": ["minor"],
+      "automerge": true,
+      "labels": ["release:dependency", "chagesets-ok"],
+      "milestone": 4
     },
     {
       "groupName": "ESM and @redmix packages",

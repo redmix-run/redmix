@@ -26,13 +26,13 @@
   "dependencies": {
     "@babel/runtime-corejs3": "7.26.10",
     "@redmix/auth": "workspace:*",
-    "@simplewebauthn/browser": "7.4.0",
+    "@simplewebauthn/browser": "9.0.1",
     "core-js": "3.38.1"
   },
   "devDependencies": {
     "@babel/cli": "7.26.4",
     "@babel/core": "^7.26.10",
-    "@simplewebauthn/typescript-types": "7.4.0",
+    "@simplewebauthn/types": "9.0.1",
     "@types/react": "^18.2.55",
     "react": "19.0.0-rc-f2df5694-20240916",
     "typescript": "5.6.2",
