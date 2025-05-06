@@ -13,18 +13,18 @@
   "dependencies": {
     "@apollo/client-react-streaming": "0.10.0",
     "@jtoar/throw-on-client": "0.0.1",
-    "@redmix/auth-dbauth-middleware": "9.0.0-canary.613",
-    "@redmix/auth-dbauth-web": "9.0.0-canary.613",
-    "@redmix/forms": "9.0.0-canary.613",
-    "@redmix/router": "9.0.0-canary.613",
-    "@redmix/web": "9.0.0-canary.613",
+    "@redmix/auth-dbauth-middleware": "9.0.0-canary.620",
+    "@redmix/auth-dbauth-web": "9.0.0-canary.620",
+    "@redmix/forms": "9.0.0-canary.620",
+    "@redmix/router": "9.0.0-canary.620",
+    "@redmix/web": "9.0.0-canary.620",
     "@tobbe.dev/rsc-test": "0.0.5",
     "client-only": "0.0.1",
     "react": "18.3.1",
     "react-dom": "18.3.1"
   },
   "devDependencies": {
-    "@redmix/vite": "9.0.0-canary.613",
+    "@redmix/vite": "9.0.0-canary.620",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19"
   }
