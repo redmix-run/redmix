@@ -9,7 +9,7 @@ import {
   getAPIPort,
   getWebHost,
   getWebPort,
-} from '@redmix/api-server/dist/cliHelpers'
+} from '@redmix/api-server/dist/cliHelpers.js'
 import { getConfig, getPaths } from '@redmix/project-config'
 import { errorTelemetry } from '@redmix/telemetry'
 
