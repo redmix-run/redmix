@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "@redmix/api": "9.0.0-canary.613",
-    "@redmix/graphql-server": "9.0.0-canary.613"
+    "@redmix/api": "9.0.0-canary.620",
+    "@redmix/graphql-server": "9.0.0-canary.620"
   }
 }
