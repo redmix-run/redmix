@@ -16,7 +16,10 @@ const customRequire =
     ? require
     : // The argument to `createRequire` should be a file and node will strip
       // the last segment (the file name) to get to a base path. By appending a
-      // fake "foo" file we get the base path we want
+      // fake "foo" file we get the base path we want.
+      // If I knew this was only going to be run as an ESM I'd use
+      // `import.meta.url`, but for dual bundling I can't do that (without a
+      // bunch of warnings at build time at least)
       createRequire(path.join(process.env.RWJS_CWD || process.cwd(), 'foo'))
 
 const rxApiPath = customRequire.resolve('@redmix/api')
