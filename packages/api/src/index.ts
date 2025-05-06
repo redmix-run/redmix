@@ -12,7 +12,8 @@ export * from './event.js'
 
 const customRequire =
   // Look out for a stubbed require function
-  typeof require === 'function' && !require.toString().includes('@rollup')
+  // @ts-expect-error - Using `0, ` to work around bundler magic
+  typeof require === 'function' && !(0, require).toString().includes('@rollup')
     ? require
     : // The argument to `createRequire` should be a file and node will strip
       // the last segment (the file name) to get to a base path. By appending a
