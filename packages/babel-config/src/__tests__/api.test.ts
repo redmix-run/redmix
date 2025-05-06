@@ -59,7 +59,7 @@ describe('api', () => {
             {
               "corejs": {
                 "proposals": true,
-                "version": "3.38",
+                "version": "3.42",
               },
               "exclude": [
                 "@babel/plugin-transform-class-properties",

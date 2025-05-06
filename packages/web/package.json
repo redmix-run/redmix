@@ -148,7 +148,7 @@
     "@whatwg-node/fetch": "0.9.21",
     "apollo-upload-client": "18.0.1",
     "cookie": "1.0.2",
-    "core-js": "3.38.1",
+    "core-js": "3.42.0",
     "graphql": "16.9.0",
     "graphql-sse": "2.5.3",
     "graphql-tag": "2.12.6",
