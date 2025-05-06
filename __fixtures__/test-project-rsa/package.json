@@ -7,7 +7,7 @@
     ]
   },
   "devDependencies": {
-    "@redmix/core": "8.0.0-canary.144"
+    "@redmix/core": "9.0.0-canary.613"
   },
   "eslintConfig": {
     "extends": "@redmix/eslint-config",
