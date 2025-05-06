@@ -28,7 +28,7 @@
     "@prisma/internals": "5.20.0",
     "@redmix/cli-helpers": "workspace:*",
     "@simplewebauthn/browser": "7.4.0",
-    "core-js": "3.38.1",
+    "core-js": "3.42.0",
     "prompts": "2.4.2",
     "terminal-link": "2.1.1"
   },
