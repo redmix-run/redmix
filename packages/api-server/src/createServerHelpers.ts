@@ -17,14 +17,10 @@ export interface Server extends FastifyInstance {
 }
 
 export interface CreateServerOptions {
-  /**
-   * The prefix for all routes. Defaults to `/`.
-   */
+  /** The prefix for all routes. Defaults to `/` */
   apiRootPath?: string
 
-  /**
-   * Logger instance or options.
-   */
+  /** Logger instance or options */
   logger?: FastifyServerOptions['logger']
 
   /**
@@ -33,14 +29,10 @@ export interface CreateServerOptions {
    */
   fastifyServerOptions?: Omit<FastifyServerOptions, 'logger'>
 
-  /**
-   * Customise the API server fastify plugin before it is registered
-   */
+  /** Customise the API server fastify plugin before it is registered */
   configureApiServer?: (server: Server) => void | Promise<void>
 
-  /**
-   * Whether to parse args or not. Defaults to `true`.
-   */
+  /** Whether to parse args or not. Defaults to `true` */
   parseArgs?: boolean
 }
 
