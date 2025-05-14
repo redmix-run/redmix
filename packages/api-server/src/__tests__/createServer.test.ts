@@ -18,7 +18,7 @@ import { getConfig } from '@redmix/project-config'
 import type { createServer as tCreateServer } from '../createServer.js'
 import {
   resolveOptions,
-  DEFAULT_CREATE_SERVER_OPTIONS,
+  getDefaultCreateServerOptions,
 } from '../createServerHelpers'
 
 // Set up RWJS_CWD.
@@ -223,21 +223,28 @@ describe('createServer', () => {
 })
 
 describe('resolveOptions', () => {
-  it('nothing passed', () => {
+  it('uses defaults when no arguments are passed', () => {
     const resolvedOptions = resolveOptions()
+    const defaults = getDefaultCreateServerOptions()
 
     expect(resolvedOptions).toEqual({
-      apiRootPath: DEFAULT_CREATE_SERVER_OPTIONS.apiRootPath,
-      configureApiServer: DEFAULT_CREATE_SERVER_OPTIONS.configureApiServer,
+      apiRootPath: defaults.apiRootPath,
+      // Can't really compare functions with toEqual() unless it's the same
+      // reference. And when calling `getDefaulCreateServerOptions()` you get a
+      // new function, and thus a new reference, each time
+      configureApiServer: resolvedOptions.configureApiServer,
       fastifyServerOptions: {
-        requestTimeout:
-          DEFAULT_CREATE_SERVER_OPTIONS.fastifyServerOptions.requestTimeout,
-        logger: DEFAULT_CREATE_SERVER_OPTIONS.logger,
-        bodyLimit: DEFAULT_CREATE_SERVER_OPTIONS.fastifyServerOptions.bodyLimit,
+        requestTimeout: defaults.fastifyServerOptions.requestTimeout,
+        logger: defaults.logger,
+        bodyLimit: defaults.fastifyServerOptions.bodyLimit,
       },
-      apiPort: 65501,
       apiHost: '::',
+      apiPort: 65501,
     })
+
+    expect(resolvedOptions.configureApiServer.toString()).toEqual(
+      defaults.configureApiServer.toString(),
+    )
   })
 
   it('ensures `apiRootPath` has slashes', () => {
@@ -300,7 +307,7 @@ describe('resolveOptions', () => {
 
     expect(resolvedOptions).toMatchObject({
       fastifyServerOptions: {
-        logger: DEFAULT_CREATE_SERVER_OPTIONS.logger,
+        logger: getDefaultCreateServerOptions().logger,
       },
     })
   })
