@@ -48,22 +48,25 @@ type DefaultCreateServerOptions = Required<
   }
 >
 
-export const DEFAULT_CREATE_SERVER_OPTIONS: DefaultCreateServerOptions = {
-  apiRootPath: '/',
-  logger: {
-    level:
-      process.env.LOG_LEVEL ??
-      (process.env.NODE_ENV === 'development' ? 'debug' : 'warn'),
-  },
-  fastifyServerOptions: {
-    requestTimeout: 15_000,
-    bodyLimit: 1024 * 1024 * 100, // 100MB
-  },
-  configureApiServer: () => {},
-  parseArgs: true,
-  apiHost: getAPIHost(),
-  apiPort: getAPIPort(),
-}
+// This is a function instead of just a constant so that we don't execute
+// getAPIHost and getAPIPort just by importing this file.
+export const getDefaultCreateServerOptions: () => DefaultCreateServerOptions =
+  () => ({
+    apiRootPath: '/',
+    logger: {
+      level:
+        process.env.LOG_LEVEL ??
+        (process.env.NODE_ENV === 'development' ? 'debug' : 'warn'),
+    },
+    fastifyServerOptions: {
+      requestTimeout: 15_000,
+      bodyLimit: 1024 * 1024 * 100, // 100MB
+    },
+    configureApiServer: () => {},
+    parseArgs: true,
+    apiHost: getAPIHost(),
+    apiPort: getAPIPort(),
+  })
 
 type ResolvedOptions = Required<
   Omit<CreateServerOptions, 'logger' | 'fastifyServerOptions' | 'parseArgs'> & {
@@ -77,29 +80,28 @@ export function resolveOptions(
 ) {
   options.parseArgs ??= true
 
-  options.logger ??= DEFAULT_CREATE_SERVER_OPTIONS.logger
+  const defaults = getDefaultCreateServerOptions()
+
+  options.logger ??= defaults.logger
 
   // Set defaults.
   const resolvedOptions: ResolvedOptions = {
-    apiRootPath:
-      options.apiRootPath ?? DEFAULT_CREATE_SERVER_OPTIONS.apiRootPath,
+    apiRootPath: options.apiRootPath ?? defaults.apiRootPath,
 
     fastifyServerOptions: options.fastifyServerOptions ?? {
-      requestTimeout:
-        DEFAULT_CREATE_SERVER_OPTIONS.fastifyServerOptions.requestTimeout,
-      logger: options.logger ?? DEFAULT_CREATE_SERVER_OPTIONS.logger,
-      bodyLimit: DEFAULT_CREATE_SERVER_OPTIONS.fastifyServerOptions.bodyLimit,
+      requestTimeout: defaults.fastifyServerOptions.requestTimeout,
+      logger: options.logger ?? defaults.logger,
+      bodyLimit: defaults.fastifyServerOptions.bodyLimit,
     },
     configureApiServer:
-      options.configureApiServer ??
-      DEFAULT_CREATE_SERVER_OPTIONS.configureApiServer,
-    apiHost: options.apiHost ?? DEFAULT_CREATE_SERVER_OPTIONS.apiHost,
-    apiPort: options.apiPort ?? DEFAULT_CREATE_SERVER_OPTIONS.apiPort,
+      options.configureApiServer ?? defaults.configureApiServer,
+    apiHost: options.apiHost ?? defaults.apiHost,
+    apiPort: options.apiPort ?? defaults.apiPort,
   }
 
   // Merge fastifyServerOptions.
   resolvedOptions.fastifyServerOptions.requestTimeout ??=
-    DEFAULT_CREATE_SERVER_OPTIONS.fastifyServerOptions.requestTimeout
+    defaults.fastifyServerOptions.requestTimeout
   resolvedOptions.fastifyServerOptions.logger = options.logger
 
   if (options.parseArgs) {
