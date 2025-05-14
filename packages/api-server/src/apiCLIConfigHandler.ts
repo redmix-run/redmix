@@ -2,7 +2,6 @@ import chalk from 'chalk'
 
 import { coerceRootPath } from '@redmix/fastify-web'
 
-import { getAPIPort, getAPIHost } from './cliHelpers'
 import { createServer } from './createServer'
 import type { APIParsedOptions } from './types'
 
@@ -14,10 +13,9 @@ export async function handler(options: APIParsedOptions = {}) {
 
   const fastify = await createServer({
     apiRootPath: options.apiRootPath,
+    apiHost: options.host,
+    apiPort: options.port,
   })
-
-  options.host ??= getAPIHost()
-  options.port ??= getAPIPort()
 
   await fastify.start()
 

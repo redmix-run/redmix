@@ -34,6 +34,12 @@ export interface CreateServerOptions {
 
   /** Whether to parse args or not. Defaults to `true` */
   parseArgs?: boolean
+
+  /** The port to listen on. Defaults to what's configured in redwood.toml */
+  apiPort?: number
+
+  /** The host to bind to. Defaults to what's configured in redwood.toml */
+  apiHost?: string
 }
 
 type DefaultCreateServerOptions = Required<
@@ -55,13 +61,13 @@ export const DEFAULT_CREATE_SERVER_OPTIONS: DefaultCreateServerOptions = {
   },
   configureApiServer: () => {},
   parseArgs: true,
+  apiHost: getAPIHost(),
+  apiPort: getAPIPort(),
 }
 
 type ResolvedOptions = Required<
   Omit<CreateServerOptions, 'logger' | 'fastifyServerOptions' | 'parseArgs'> & {
     fastifyServerOptions: FastifyServerOptions
-    apiPort: number
-    apiHost: string
   }
 >
 
@@ -87,8 +93,8 @@ export function resolveOptions(
     configureApiServer:
       options.configureApiServer ??
       DEFAULT_CREATE_SERVER_OPTIONS.configureApiServer,
-    apiHost: getAPIHost(),
-    apiPort: getAPIPort(),
+    apiHost: options.apiHost ?? DEFAULT_CREATE_SERVER_OPTIONS.apiHost,
+    apiPort: options.apiPort ?? DEFAULT_CREATE_SERVER_OPTIONS.apiPort,
   }
 
   // Merge fastifyServerOptions.
