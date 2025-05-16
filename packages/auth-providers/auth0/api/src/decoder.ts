@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken'
 import jwksClient from 'jwks-rsa'
 
-import type { Decoder } from '@redmix/api'
+import type { Decoder } from '@cedarjs/api'
 
 /**
  * This takes an auth0 jwt and verifies it. It returns something like this:

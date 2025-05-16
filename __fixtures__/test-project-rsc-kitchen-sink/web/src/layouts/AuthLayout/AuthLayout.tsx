@@ -1,5 +1,5 @@
-import { namedRoutes as routes } from '@redmix/router/namedRoutes'
-import { NavLink } from '@redmix/router/NavLink'
+import { namedRoutes as routes } from '@cedarjs/router/namedRoutes'
+import { NavLink } from '@cedarjs/router/NavLink'
 
 import './AuthLayout.css'
 

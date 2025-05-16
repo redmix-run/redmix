@@ -1,6 +1,6 @@
 import { createClient } from '@supabase/supabase-js'
 
-import { createAuth } from '@redmix/auth-supabase-web'
+import { createAuth } from '@cedarjs/auth-supabase-web'
 
 const supabaseClient = createClient(
   process.env.SUPABASE_URL || '',

@@ -1,5 +1,5 @@
 export default `
-import { Router, Route } from '@redmix/router'
+import { Router, Route } from '@cedarjs/router'
 
 const Routes = () => {
   return (

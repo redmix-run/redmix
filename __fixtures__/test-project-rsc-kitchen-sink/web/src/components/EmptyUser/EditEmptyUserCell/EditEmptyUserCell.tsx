@@ -6,14 +6,14 @@ import type {
   UpdateEmptyUserMutationVariables,
 } from 'types/graphql'
 
-import { navigate, routes } from '@redmix/router'
+import { navigate, routes } from '@cedarjs/router'
 import type {
   CellSuccessProps,
   CellFailureProps,
   TypedDocumentNode,
-} from '@redmix/web'
-import { useMutation } from '@redmix/web'
-import { toast } from '@redmix/web/toast'
+} from '@cedarjs/web'
+import { useMutation } from '@cedarjs/web'
+import { toast } from '@cedarjs/web/toast'
 
 import EmptyUserForm from 'src/components/EmptyUser/EmptyUserForm'
 

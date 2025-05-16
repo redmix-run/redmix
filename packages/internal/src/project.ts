@@ -3,7 +3,7 @@ import path from 'path'
 
 import { parseConfigFileTextToJson } from 'typescript'
 
-import { getPaths } from '@redmix/project-config'
+import { getPaths } from '@cedarjs/project-config'
 
 export const getTsConfigs = () => {
   const rwPaths = getPaths()

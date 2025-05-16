@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "@redmix/api": "0.0.1",
-    "@redmix/auth-dbauth-api": "0.0.1",
-    "@redmix/graphql-server": "0.0.1"
+    "@cedarjs/api": "0.0.1",
+    "@cedarjs/auth-dbauth-api": "0.0.1",
+    "@cedarjs/graphql-server": "0.0.1"
   }
 }

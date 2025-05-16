@@ -4,8 +4,8 @@ import repl from 'node:repl'
 
 import fs from 'fs-extra'
 
-import { registerApiSideBabelHook } from '@redmix/babel-config'
-import { recordTelemetryAttributes } from '@redmix/cli-helpers'
+import { registerApiSideBabelHook } from '@cedarjs/babel-config'
+import { recordTelemetryAttributes } from '@cedarjs/cli-helpers'
 
 import { getPaths } from '../lib/index.js'
 

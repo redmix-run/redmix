@@ -1,6 +1,6 @@
 import type { EditPostById, UpdatePostInput } from 'types/graphql'
 
-import type { RWGqlError } from '@redmix/forms'
+import type { RWGqlError } from '@cedarjs/forms'
 import {
   Form,
   FormError,
@@ -9,7 +9,7 @@ import {
   TextField,
   NumberField,
   Submit,
-} from '@redmix/forms'
+} from '@cedarjs/forms'
 
 type FormPost = NonNullable<EditPostById['post']>
 

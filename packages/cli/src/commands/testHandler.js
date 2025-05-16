@@ -3,9 +3,9 @@ import path from 'path'
 import execa from 'execa'
 import fs from 'fs-extra'
 
-import { recordTelemetryAttributes } from '@redmix/cli-helpers'
-import { ensurePosixPath } from '@redmix/project-config'
-import { errorTelemetry, timedTelemetry } from '@redmix/telemetry'
+import { recordTelemetryAttributes } from '@cedarjs/cli-helpers'
+import { ensurePosixPath } from '@cedarjs/project-config'
+import { errorTelemetry, timedTelemetry } from '@cedarjs/telemetry'
 
 import c from '../lib/colors.js'
 import { getPaths } from '../lib/index.js'
@@ -42,7 +42,7 @@ function isJestConfigFile(sides) {
           console.error(
             c.error(
               `\nError: Missing Jest config file ${side}/jest.config.js` +
-                '\nTo add this file, run `npx @redmix/codemods update-jest-config`\n',
+                '\nTo add this file, run `npx @cedarjs/codemods update-jest-config`\n',
             ),
           )
           throw new Error(`Error: Jest config file not found in ${side} side`)

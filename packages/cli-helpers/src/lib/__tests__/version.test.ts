@@ -1,4 +1,4 @@
-vi.mock('@redmix/project-config', () => {
+vi.mock('@cedarjs/project-config', () => {
   return {
     getPaths: () => {
       return {
@@ -200,7 +200,7 @@ describe('version compatibility detection', () => {
     vi.spyOn(fs, 'readFileSync').mockReturnValue(
       JSON.stringify({
         devDependencies: {
-          '@redmix/core': '^6.0.0',
+          '@cedarjs/core': '^6.0.0',
         },
       }),
     )
@@ -329,7 +329,7 @@ describe('version compatibility detection', () => {
     vi.spyOn(fs, 'readFileSync').mockReturnValue(
       JSON.stringify({
         devDependencies: {
-          '@redmix/core': '5.2.0',
+          '@cedarjs/core': '5.2.0',
         },
       }),
     )
@@ -352,7 +352,7 @@ describe('version compatibility detection', () => {
     vi.spyOn(fs, 'readFileSync').mockReturnValue(
       JSON.stringify({
         devDependencies: {
-          '@redmix/core': '7.0.0',
+          '@cedarjs/core': '7.0.0',
         },
       }),
     )

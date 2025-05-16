@@ -1,4 +1,4 @@
-import { Metadata } from '@redmix/web/Metadata'
+import { Metadata } from '@cedarjs/web/Metadata'
 
 import BlogPostCell from 'src/components/BlogPostCell'
 

@@ -23,7 +23,7 @@ Let's create a very simple DAM (Digital Asset Manager) that lets users upload an
 Create a new Redwood app:
 
 ```bash
-yarn create redmix-app uploader
+yarn create cedar-app uploader
 cd uploader
 ```
 
@@ -89,7 +89,7 @@ import {
   Label,
   TextField,
   Submit,
-} from '@redmix/forms'
+} from '@cedarjs/forms'
 import { PickerInline } from 'filestack-react'
 
 const formatDatetime = (value) => {
@@ -199,7 +199,7 @@ import {
   Label,
   TextField,
   Submit,
-} from '@redmix/forms'
+} from '@cedarjs/forms'
 import { PickerInline } from 'filestack-react'
 import { useState } from 'react'
 
@@ -242,9 +242,9 @@ Now try uploading a file and saving the form:
 It worked! Next let's update the display here to actually show the image as a thumbnail and make it clickable to see the full version:
 
 ```jsx {76-78} title="web/src/components/Images/Images.js"
-import { useMutation } from '@redmix/web'
-import { toast } from '@redmix/web/toast'
-import { Link, routes } from '@redmix/router'
+import { useMutation } from '@cedarjs/web'
+import { toast } from '@cedarjs/web/toast'
+import { Link, routes } from '@cedarjs/router'
 
 import { QUERY } from 'src/components/Image/ImagesCell'
 

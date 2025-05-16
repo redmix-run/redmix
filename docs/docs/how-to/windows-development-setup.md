@@ -50,7 +50,7 @@ You now have everything ready to build your Redwood app.
 
 Next, you should start the amazing [**Redwood Tutorial**](tutorial/chapter1/installation.md) to learn how to use the framework.
 
-Or run `yarn create redmix-app myApp` to get started with a new project.
+Or run `yarn create cedar-app myApp` to get started with a new project.
 
 ## Troubleshooting
 

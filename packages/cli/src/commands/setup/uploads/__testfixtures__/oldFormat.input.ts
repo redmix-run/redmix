@@ -3,7 +3,7 @@
 
 import { PrismaClient } from '@prisma/client'
 
-import { emitLogLevels, handlePrismaLogging } from '@redmix/api/logger'
+import { emitLogLevels, handlePrismaLogging } from '@cedarjs/api/logger'
 
 import { logger } from './logger.js'
 

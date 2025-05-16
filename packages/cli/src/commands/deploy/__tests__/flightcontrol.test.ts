@@ -8,7 +8,7 @@ import { handler } from '../flightcontrolHandler.js'
 vi.mock('path')
 vi.mock('execa')
 vi.mock('fs-extra')
-vi.mock('@redmix/project-config', async (importOriginal) => {
+vi.mock('@cedarjs/project-config', async (importOriginal) => {
   const originalProjectConfig: object = await importOriginal()
 
   return {
@@ -18,7 +18,7 @@ vi.mock('@redmix/project-config', async (importOriginal) => {
     }),
   }
 })
-vi.mock('@redmix/cli-helpers', async (importOriginal) => {
+vi.mock('@cedarjs/cli-helpers', async (importOriginal) => {
   const originalCliHelpers: object = await importOriginal()
 
   return {
@@ -81,7 +81,7 @@ describe('handler', () => {
         dm: false,
       })
 
-      const { recordTelemetryAttributes } = await import('@redmix/cli-helpers')
+      const { recordTelemetryAttributes } = await import('@cedarjs/cli-helpers')
       expect(recordTelemetryAttributes).toHaveBeenCalled()
     })
 

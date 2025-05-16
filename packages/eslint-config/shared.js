@@ -30,7 +30,7 @@ module.exports = {
     'react',
     'react-hooks',
     'jest-dom',
-    '@redmix',
+    '@cedarjs',
   ],
   // In addition to this, eslint also has some implicit ignore patterns, like
   // `node_modules`.
@@ -49,7 +49,7 @@ module.exports = {
     'import/internal-regex': '^src/',
   },
   rules: {
-    '@redmix/process-env-computed': 'error',
+    '@cedarjs/process-env-computed': 'error',
     'prettier/prettier': 'warn',
     'no-console': 'off',
     'prefer-object-spread': 'warn',
@@ -100,7 +100,7 @@ module.exports = {
             position: 'after',
           },
           {
-            pattern: '@redmix/**',
+            pattern: '@cedarjs/**',
             group: 'external',
             position: 'after',
           },

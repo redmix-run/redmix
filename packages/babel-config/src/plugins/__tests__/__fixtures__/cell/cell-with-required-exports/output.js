@@ -1,4 +1,4 @@
-import { createCell } from '@redmix/web'
+import { createCell } from '@cedarjs/web'
 export const QUERY = gql`
   query {
     posts {

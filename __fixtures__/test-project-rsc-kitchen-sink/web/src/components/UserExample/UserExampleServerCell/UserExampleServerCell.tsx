@@ -1,4 +1,4 @@
-import type { CellSuccessProps, CellFailureProps } from '@redmix/web'
+import type { CellSuccessProps, CellFailureProps } from '@cedarjs/web'
 
 import { db } from 'api/src/lib/db'
 

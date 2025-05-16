@@ -19,7 +19,7 @@ It's usually better to add it at the App or Layout-level than the Page:
 
 ```jsx title="web/src/layouts/MainLayout/MainLayout.js"
 // highlight-next-line
-import { Toaster } from '@redmix/web/toast'
+import { Toaster } from '@cedarjs/web/toast'
 
 const MainLayout = ({ children }) => {
   return (
@@ -39,7 +39,7 @@ export default MainLayout
 To render a basic toast notification with default styles, call the `toast` function:
 
 ```jsx title="web/src/layouts/MainLayout/MainLayout.js"
-import { toast } from '@redmix/web/toast'
+import { toast } from '@cedarjs/web/toast'
 
 // ...
 
@@ -71,7 +71,7 @@ export default PostForm
 To render a toast notification with default icons and default styles, call the `toast` variants:
 
 ```jsx title="web/src/components/PostForm/PostForm.js"
-import { toast } from '@redmix/web/toast'
+import { toast } from '@cedarjs/web/toast'
 
 // ...
 
@@ -102,7 +102,7 @@ export default PostForm
 or render an async toast by calling the `toast.promise` function:
 
 ```jsx title="web/src/components/PostForm/PostForm.js"
-import { toast } from '@redmix/web/toast'
+import { toast } from '@cedarjs/web/toast'
 
 // ...
 

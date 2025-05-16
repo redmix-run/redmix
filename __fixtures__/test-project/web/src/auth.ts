@@ -1,4 +1,4 @@
-import { createDbAuthClient, createAuth } from '@redmix/auth-dbauth-web'
+import { createDbAuthClient, createAuth } from '@cedarjs/auth-dbauth-web'
 
 const dbAuthClient = createDbAuthClient()
 

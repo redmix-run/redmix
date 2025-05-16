@@ -8,10 +8,10 @@
     ]
   },
   "devDependencies": {
-    "@redmix/core": "canary"
+    "@cedarjs/core": "canary"
   },
   "eslintConfig": {
-    "extends": "@redmix/eslint-config",
+    "extends": "@cedarjs/eslint-config",
     "root": true
   },
   "engines": {

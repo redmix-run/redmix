@@ -1,6 +1,6 @@
 import { expect, test } from 'tstyche'
 
-import { createUploadsConfig, setupStorage } from '@redmix/storage'
+import { createUploadsConfig, setupStorage } from '@cedarjs/storage'
 
 import { MemoryStorage } from '../adapters/MemoryStorage/MemoryStorage.js'
 import { type UploadsConfig } from '../prismaExtension.js'

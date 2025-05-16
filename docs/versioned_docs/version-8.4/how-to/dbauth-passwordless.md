@@ -60,7 +60,7 @@ Now that you have the file, let's add the `generateToken` function.
 ```javascript title="/api/src/services/users/users.js"
 // add the following two imports to the top of the file
 import crypto from 'node:crypto'
-import { hashPassword } from '@redmix/auth-dbauth-api'
+import { hashPassword } from '@cedarjs/auth-dbauth-api'
 
 // add this to the bottom of the file
 export const generateLoginToken = async ({ email }) => {
@@ -216,10 +216,10 @@ import {
   PasswordField,
   Submit,
   FieldError,
-} from '@redmix/forms'
-import { navigate, routes, Link } from '@redmix/router'
-import { Metadata, useMutation } from '@redmix/web'
-import { Toaster, toast } from '@redmix/web/toast'
+} from '@cedarjs/forms'
+import { navigate, routes, Link } from '@cedarjs/router'
+import { Metadata, useMutation } from '@cedarjs/web'
+import { Toaster, toast } from '@cedarjs/web/toast'
 const GENERATE_LOGIN_TOKEN = gql`
   mutation generateLoginToken($email: String!) {
     generateLoginToken(email: $email) {
@@ -329,10 +329,10 @@ import {
   PasswordField,
   Submit,
   FieldError,
-} from '@redmix/forms'
-import { navigate, routes, Link } from '@redmix/router'
-import { Metadata, useMutation } from '@redmix/web'
-import { Toaster, toast } from '@redmix/web/toast'
+} from '@cedarjs/forms'
+import { navigate, routes, Link } from '@cedarjs/router'
+import { Metadata, useMutation } from '@cedarjs/web'
+import { Toaster, toast } from '@cedarjs/web/toast'
 
 import { useAuth } from 'src/auth'
 
@@ -451,8 +451,8 @@ yarn rw g page LoginPasswordless
 ```jsx title="/web/pages/LoginPasswordlessPage/LoginPasswordlessPage.js"
 import { useEffect, useState } from 'react'
 
-import { useLocation } from '@redmix/router'
-import { Metadata } from '@redmix/web'
+import { useLocation } from '@cedarjs/router'
+import { Metadata } from '@cedarjs/web'
 
 import LoginPasswordlessForm from 'src/components/LoginPasswordlessForm/LoginPasswordlessForm'
 import LoginPasswordlessTokenForm from 'src/components/LoginPasswordlessTokenForm/LoginPasswordlessTokenForm'
@@ -520,10 +520,10 @@ import {
   PasswordField,
   FieldError,
   Submit,
-} from '@redmix/forms'
-import { Link, navigate, routes } from '@redmix/router'
-import { Metadata } from '@redmix/web'
-import { toast, Toaster } from '@redmix/web/toast'
+} from '@cedarjs/forms'
+import { Link, navigate, routes } from '@cedarjs/router'
+import { Metadata } from '@cedarjs/web'
+import { toast, Toaster } from '@cedarjs/web/toast'
 
 import { useAuth } from 'src/auth'
 

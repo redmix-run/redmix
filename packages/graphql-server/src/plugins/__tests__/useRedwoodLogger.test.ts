@@ -6,8 +6,8 @@ import { useEngine } from '@envelop/core'
 import * as GraphQLJS from 'graphql'
 import { describe, expect, it } from 'vitest'
 
-import type { Logger, LoggerOptions } from '@redmix/api/logger'
-import { createLogger } from '@redmix/api/logger'
+import type { Logger, LoggerOptions } from '@cedarjs/api/logger'
+import { createLogger } from '@cedarjs/api/logger'
 
 import {
   testSchema,

@@ -16,7 +16,7 @@ const { redwoodProjectPath, dbSchemaPath, libPath, functionsPath } = vi.hoisted(
   },
 )
 
-vi.mock('@redmix/cli-helpers', () => {
+vi.mock('@cedarjs/cli-helpers', () => {
   return {
     getGraphqlPath: () => {
       return redwoodProjectPath + '/api/src/functions/graphql.ts'

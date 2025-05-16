@@ -4,10 +4,10 @@ import camelcase from 'camelcase'
 import { Listr } from 'listr2'
 import pascalcase from 'pascalcase'
 
-import { recordTelemetryAttributes } from '@redmix/cli-helpers'
-import { generate as generateTypes } from '@redmix/internal/dist/generate/generate'
-import { getConfig } from '@redmix/project-config'
-import { errorTelemetry } from '@redmix/telemetry'
+import { recordTelemetryAttributes } from '@cedarjs/cli-helpers'
+import { generate as generateTypes } from '@cedarjs/internal/dist/generate/generate'
+import { getConfig } from '@cedarjs/project-config'
+import { errorTelemetry } from '@cedarjs/telemetry'
 
 import c from '../../../lib/colors.js'
 import {

@@ -22,7 +22,7 @@ You will want to be on at least version 7.0.0 to complete the tutorial. If this 
 If you have an existing site created with a prior version, you'll need to upgrade and (most likely) apply code modifications. Follow this two step process:
 
 1. For _each_ version included in your upgrade, follow the "Code Modifications" section or "Upgrade Guide" of the specific version's Release Notes:
-   - [Redwood Releases](https://github.com/redmix-run/redmix/releases)
+   - [Redwood Releases](https://github.com/cedarjs/cedar/releases)
 2. Then upgrade to the latest version. Run the command:
    - `yarn redwood upgrade`
 

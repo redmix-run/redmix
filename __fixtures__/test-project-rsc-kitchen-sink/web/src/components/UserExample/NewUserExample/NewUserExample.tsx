@@ -1,8 +1,8 @@
 'use client'
 
-import { navigate, routes } from '@redmix/router'
-import { useMutation } from '@redmix/web'
-import { toast } from '@redmix/web/toast'
+import { navigate, routes } from '@cedarjs/router'
+import { useMutation } from '@cedarjs/web'
+import { toast } from '@cedarjs/web/toast'
 
 import UserExampleForm from 'src/components/UserExample/UserExampleForm'
 

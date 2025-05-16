@@ -16,14 +16,14 @@ export async function loadPlugins(yargs) {
   // Extract some useful information from the command line args
   const namespaceIsExplicit = process.argv[2]?.startsWith('@')
   const namespaceInUse =
-    (namespaceIsExplicit ? process.argv[2] : '@redmix') ?? '@redmix'
+    (namespaceIsExplicit ? process.argv[2] : '@cedarjs') ?? '@cedarjs'
   const commandString = namespaceIsExplicit
     ? process.argv.slice(3).join(' ')
     : process.argv.slice(2).join(' ')
   const commandFirstWord = commandString.split(' ')[0]
 
   // Check for possible early exit for `yarn rw --version`
-  if (commandFirstWord === '--version' && namespaceInUse === '@redmix') {
+  if (commandFirstWord === '--version' && namespaceInUse === '@cedarjs') {
     // We don't need to load any plugins in this case
     return yargs
   }
@@ -35,7 +35,7 @@ export async function loadPlugins(yargs) {
   // Check if the command is built in to the base CLI package
   if (
     pluginCommandCache._builtin.includes(commandFirstWord) &&
-    namespaceInUse === '@redmix'
+    namespaceInUse === '@cedarjs'
   ) {
     // If the command is built in we don't need to load any plugins
     return yargs
@@ -64,19 +64,19 @@ export async function loadPlugins(yargs) {
     if (!plugin.package.startsWith('@')) {
       continue
     }
-    if (plugin.package.startsWith('@redmix/')) {
+    if (plugin.package.startsWith('@cedarjs/')) {
       redwoodPackages.add(plugin.package)
     } else {
       thirdPartyPackages.add(plugin.package)
     }
   }
 
-  // Order alphabetically but with @redmix namespace first, orders the help output
+  // Order alphabetically but with @cedarjs namespace first, orders the help output
   const namespaces = Array.from(thirdPartyPackages)
     .map((p) => p.split('/')[0])
     .sort()
   if (redwoodPackages.size > 0) {
-    namespaces.unshift('@redmix')
+    namespaces.unshift('@cedarjs')
   }
 
   // There are cases where we can avoid loading the plugins if they are in the cache
@@ -94,7 +94,7 @@ export async function loadPlugins(yargs) {
     // In this case we wish to show all available redwoodjs commands and all the
     // third party namespaces available
     for (const namespace of namespaces) {
-      if (namespace === '@redmix') {
+      if (namespace === '@cedarjs') {
         for (const redwoodPluginPackage of redwoodPackages) {
           // We'll load the plugin information from the cache if there is a cache entry
           const commands = await loadCommandsFromCacheOrPackage(
@@ -130,7 +130,7 @@ export async function loadPlugins(yargs) {
       commandFirstWord === '')
   if (showingHelpAtNamespaceLevel) {
     // In this case we wish to show all available commands for the particular namespace
-    if (namespaceInUse === '@redmix') {
+    if (namespaceInUse === '@cedarjs') {
       for (const redwoodPluginPackage of redwoodPackages) {
         // We'll load the plugin information from the cache if there is a cache entry
         const commands = await loadCommandsFromCacheOrPackage(
@@ -239,8 +239,8 @@ export async function loadPlugins(yargs) {
   }
 
   // We need to nest the commands under the namespace remembering that the
-  // @redmix namespace is special and doesn't need to be nested
-  if (namespaceInUse === '@redmix') {
+  // @cedarjs namespace is special and doesn't need to be nested
+  if (namespaceInUse === '@cedarjs') {
     yargs.command(commandsToRegister)
   } else {
     yargs.command({
@@ -257,7 +257,7 @@ export async function loadPlugins(yargs) {
   // the namespace stubs if they didn't explicitly use a namespace
   if (!namespaceIsExplicit) {
     for (const namespace of namespaces) {
-      if (namespace === '@redmix') {
+      if (namespace === '@cedarjs') {
         continue
       }
       yargs.command({

@@ -1,4 +1,4 @@
-import { RedwoodError } from '@redmix/api'
+import { RedwoodError } from '@cedarjs/api'
 
 export class RedwoodRecordError extends RedwoodError {
   constructor() {

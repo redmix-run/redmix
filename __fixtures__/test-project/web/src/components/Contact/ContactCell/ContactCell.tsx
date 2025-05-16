@@ -4,7 +4,7 @@ import type {
   CellSuccessProps,
   CellFailureProps,
   TypedDocumentNode,
-} from '@redmix/web'
+} from '@cedarjs/web'
 
 import Contact from 'src/components/Contact/Contact'
 

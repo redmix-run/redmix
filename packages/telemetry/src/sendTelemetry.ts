@@ -8,13 +8,13 @@ import envinfo from 'envinfo'
 import system from 'systeminformation'
 import { v4 as uuidv4 } from 'uuid'
 
-import { getRawConfig } from '@redmix/project-config'
-import type { RWRoute } from '@redmix/structure/dist/model/RWRoute'
+import { getRawConfig } from '@cedarjs/project-config'
+import type { RWRoute } from '@cedarjs/structure/dist/model/RWRoute'
 
-// circular dependency when trying to import @redmix/structure so lets do it
+// circular dependency when trying to import @cedarjs/structure so lets do it
 // the old fashioned way
-const { DefaultHost } = require('@redmix/structure/dist/hosts')
-const { RWProject } = require('@redmix/structure/dist/model/RWProject')
+const { DefaultHost } = require('@cedarjs/structure/dist/hosts')
+const { RWProject } = require('@cedarjs/structure/dist/model/RWProject')
 
 interface SensitiveArgPositions {
   exec: {
@@ -87,7 +87,7 @@ const getInfo = async (presets: Args = {}) => {
       {
         System: ['OS', 'Shell'],
         Binaries: ['Node', 'Yarn', 'npm'],
-        npmPackages: '@redmix/*',
+        npmPackages: '@cedarjs/*',
         IDEs: ['VSCode'],
       },
       { json: true },
@@ -118,7 +118,7 @@ const getInfo = async (presets: Args = {}) => {
     npmVersion: info.Binaries?.npm?.version,
     vsCodeVersion: info.IDEs?.VSCode?.version,
     redwoodVersion:
-      presets.redwoodVersion || info.npmPackages?.['@redmix/core']?.installed,
+      presets.redwoodVersion || info.npmPackages?.['@cedarjs/core']?.installed,
     system: `${cpu.physicalCores}.${Math.round(mem.total / 1073741824)}`,
     webBundler: 'vite', // Hardcoded as this is now the only supported bundler
     experiments,

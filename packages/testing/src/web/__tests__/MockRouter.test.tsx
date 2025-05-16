@@ -5,7 +5,7 @@ import { describe, it, expect } from 'vitest'
 
 // Private is deprecated, but we still want to test it so we don't break
 // people's projects that still use it.
-import { Route, Private } from '@redmix/router'
+import { Route, Private } from '@cedarjs/router'
 
 import { routes, Router } from '../MockRouter'
 

@@ -250,8 +250,8 @@ test('templateForComponentFile creates a template', async () => {
   })
 
   expect(output[1]).toMatchInlineSnapshot(`
-    "// import { Link, routes } from '@redmix/router'
-    import { Metadata } from '@redmix/web'
+    "// import { Link, routes } from '@cedarjs/router'
+    import { Metadata } from '@cedarjs/web'
 
     const FooBarPage = () => {
       return (

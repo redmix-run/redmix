@@ -7,7 +7,7 @@ import fs from 'fs-extra'
 import { Listr } from 'listr2'
 import { titleCase } from 'title-case'
 
-import { recordTelemetryAttributes } from '@redmix/cli-helpers'
+import { recordTelemetryAttributes } from '@cedarjs/cli-helpers'
 
 import c from '../../../lib/colors.js'
 import {
@@ -422,7 +422,7 @@ function isDbAuthSetup() {
       'auth.' + webAuthExtension,
     )
 
-    return /^import (.*) from ['"]@redmix\/auth-dbauth-web['"]/m.test(
+    return /^import (.*) from ['"]@cedarjs\/auth-dbauth-web['"]/m.test(
       fs.readFileSync(webAuthPath),
     )
   }

@@ -14,7 +14,7 @@ afterAll(() => {
   delete process.env.RWJS_CWD
 })
 
-import { ensurePosixPath, getPaths } from '@redmix/project-config'
+import { ensurePosixPath, getPaths } from '@cedarjs/project-config'
 
 import {
   findApiServerFunctions,

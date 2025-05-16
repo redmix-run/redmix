@@ -1,6 +1,6 @@
 import terminalLink from 'terminal-link'
 
-import { recordTelemetryAttributes } from '@redmix/cli-helpers'
+import { recordTelemetryAttributes } from '@cedarjs/cli-helpers'
 
 export const command = 'baremetal [environment]'
 export const description = 'Deploy to baremetal server(s)'

@@ -1,9 +1,9 @@
 {
-  "name": "@redmix/cli-helpers",
+  "name": "@cedarjs/cli-helpers",
   "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/redmix-run/redmix.git",
+    "url": "git+https://github.com/cedarjs/cedar.git",
     "directory": "packages/cli-helpers"
   },
   "license": "MIT",
@@ -46,7 +46,7 @@
   ],
   "scripts": {
     "build": "tsx ./build.ts && yarn build:types",
-    "build:pack": "yarn pack -o redmix-cli-helpers.tgz",
+    "build:pack": "yarn pack -o cedar-cli-helpers.tgz",
     "build:types": "tsc --build --verbose ./tsconfig.build.json ./tsconfig.cjs.json",
     "build:watch": "nodemon --watch src --ext \"js,jsx,ts,tsx\" --ignore dist --exec \"yarn build\"",
     "prepublishOnly": "NODE_ENV=production yarn build",
@@ -55,9 +55,9 @@
   },
   "dependencies": {
     "@babel/core": "^7.26.10",
+    "@cedarjs/project-config": "workspace:*",
+    "@cedarjs/telemetry": "workspace:*",
     "@opentelemetry/api": "1.8.0",
-    "@redmix/project-config": "workspace:*",
-    "@redmix/telemetry": "workspace:*",
     "chalk": "4.1.2",
     "dotenv": "16.4.7",
     "dotenv-defaults": "5.0.2",
@@ -73,7 +73,7 @@
     "yargs-parser": "21.1.1"
   },
   "devDependencies": {
-    "@redmix/framework-tools": "workspace:*",
+    "@cedarjs/framework-tools": "workspace:*",
     "@types/dotenv-defaults": "^2.0.4",
     "@types/lodash": "4.17.15",
     "@types/pascalcase": "1.0.3",

@@ -3,15 +3,15 @@ import path from 'path'
 import concurrently from 'concurrently'
 import execa from 'execa'
 
-import { handler as apiServerHandler } from '@redmix/api-server/dist/apiCLIConfigHandler.js'
+import { handler as apiServerHandler } from '@cedarjs/api-server/dist/apiCLIConfigHandler.js'
 import {
   getAPIHost,
   getAPIPort,
   getWebHost,
   getWebPort,
-} from '@redmix/api-server/dist/cliHelpers.js'
-import { getConfig, getPaths } from '@redmix/project-config'
-import { errorTelemetry } from '@redmix/telemetry'
+} from '@cedarjs/api-server/dist/cliHelpers.js'
+import { getConfig, getPaths } from '@cedarjs/project-config'
+import { errorTelemetry } from '@cedarjs/telemetry'
 
 import { exitWithError } from '../lib/exit.js'
 

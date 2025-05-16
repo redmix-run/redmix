@@ -1,4 +1,4 @@
-import { Metadata } from '@redmix/web/Metadata'
+import { Metadata } from '@cedarjs/web/Metadata'
 
 import { savePost } from 'src/lib/actions'
 

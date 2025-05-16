@@ -1,9 +1,9 @@
 {
-  "name": "@redmix/auth-supabase-web",
+  "name": "@cedarjs/auth-supabase-web",
   "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/redmix-run/redmix.git",
+    "url": "git+https://github.com/cedarjs/cedar.git",
     "directory": "packages/auth-providers/supabase/web"
   },
   "license": "MIT",
@@ -38,7 +38,7 @@
   ],
   "scripts": {
     "build": "tsx ./build.ts",
-    "build:pack": "yarn pack -o redmix-auth-supabase-web.tgz",
+    "build:pack": "yarn pack -o cedar-auth-supabase-web.tgz",
     "build:types": "tsc --build --verbose ./tsconfig.build.json",
     "build:types-cjs": "tsc --build --verbose ./tsconfig.cjs.json",
     "build:watch": "nodemon --watch src --ext \"js,jsx,ts,tsx,template\" --ignore dist --exec \"yarn build\"",
@@ -49,10 +49,10 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@redmix/auth": "workspace:*"
+    "@cedarjs/auth": "workspace:*"
   },
   "devDependencies": {
-    "@redmix/framework-tools": "workspace:*",
+    "@cedarjs/framework-tools": "workspace:*",
     "@supabase/ssr": "0.5.1",
     "@supabase/supabase-js": "2.45.4",
     "@types/react": "^18.2.55",

@@ -1,12 +1,12 @@
 import fs from 'fs/promises'
 
-import { getPaths } from '@redmix/project-config'
+import { getPaths } from '@cedarjs/project-config'
 
 /**
  * RSC build. Step 7.
  * Make RW specific env vars available to server components.
  * For client components this is done as a side-effect of importing from
- * @redmix/web (see packages/web/src/config.ts).
+ * @cedarjs/web (see packages/web/src/config.ts).
  * The import of entries.js that we're adding this to is handled by the
  * RSC worker we've got set up
  */
@@ -33,17 +33,17 @@ globalThis.RWJS_EXP_RSC = RWJS_ENV.RWJS_EXP_RSC
   // while building, instead of having to do it as a manual step after
 
   // TODO (RSC): See if we can just import that config.ts file from
-  // @redmix/web/dist/config here
+  // @cedarjs/web/dist/config here
   // Or find some other way to not duplicate the definitions
   // Want to look at `noExternal` in our worker to do RWJS_ENV transforms.
   // And/or possibly optimizeDeps. I'm not sure. Also, right now we're getting
   // "`require` is not defined" errors. Probably some ESM/CJS issue
-  // Also seems like when using noExternal we have to use just @redmix/web
-  // instead of @redmix/web/dist/config which I think would be better
+  // Also seems like when using noExternal we have to use just @cedarjs/web
+  // instead of @cedarjs/web/dist/config which I think would be better
   //
   // console.log('adding rwjs/web import to entries.js')
   // return fs.appendFile(
   //   webDistServerEntries,
-  //   `\nimport '@redmix/web/dist/config'`
+  //   `\nimport '@cedarjs/web/dist/config'`
   // )
 }

@@ -3,7 +3,7 @@ import path from 'path'
 import execa from 'execa'
 import { Listr } from 'listr2'
 
-import { recordTelemetryAttributes } from '@redmix/cli-helpers'
+import { recordTelemetryAttributes } from '@cedarjs/cli-helpers'
 
 import c from '../../../../lib/colors.js'
 import extendStorybookConfiguration from '../../../../lib/configureStorybook.js'

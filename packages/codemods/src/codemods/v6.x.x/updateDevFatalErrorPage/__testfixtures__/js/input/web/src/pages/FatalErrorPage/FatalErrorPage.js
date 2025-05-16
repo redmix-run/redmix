@@ -11,7 +11,7 @@
 let RedwoodDevFatalErrorPage = undefined
 if (process.env.NODE_ENV === 'development') {
   RedwoodDevFatalErrorPage =
-    require('@redmix/web/dist/components/DevFatalErrorPage').DevFatalErrorPage
+    require('@cedarjs/web/dist/components/DevFatalErrorPage').DevFatalErrorPage
 }
 
 export default RedwoodDevFatalErrorPage ||

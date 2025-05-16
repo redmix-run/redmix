@@ -14,7 +14,7 @@ permissions: {}
 
 jobs:
   detect-changes:
-    if: github.repository == 'redmix-run/redmix'
+    if: github.repository == 'cedarjs/cedar'
     name: 🔍 Detect changes
     runs-on: ubuntu-latest
 

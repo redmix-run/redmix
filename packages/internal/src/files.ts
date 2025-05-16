@@ -2,7 +2,7 @@ import path from 'path'
 
 import fg from 'fast-glob'
 
-import { getPaths } from '@redmix/project-config'
+import { getPaths } from '@cedarjs/project-config'
 
 import { getNamedExports, hasDefaultExport, fileToAst } from './ast'
 

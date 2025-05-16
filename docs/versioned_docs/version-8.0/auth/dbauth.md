@@ -537,7 +537,7 @@ Next we need to let dbAuth know about the new field and model names, as well as 
 
 ```javascript title="api/src/functions/auth.js"
 import { db } from 'src/lib/db'
-import { DbAuthHandler } from '@redmix/api'
+import { DbAuthHandler } from '@cedarjs/api'
 
 export const handler = async (event, context) => {
   // assorted handler config here...
@@ -670,12 +670,12 @@ If you generated your login/signup pages with `yarn rw g dbAuth --webauthn` then
 First you'll need to import the `WebAuthnClient` and give it to the `<AuthProvider>` component:
 
 ```jsx title="web/src/App.js"
-import { AuthProvider } from '@redmix/auth'
+import { AuthProvider } from '@cedarjs/auth'
 // highlight-start
-import WebAuthnClient from '@redmix/auth-dbauth-web/webAuthn'
+import WebAuthnClient from '@cedarjs/auth-dbauth-web/webAuthn'
 // highlight-end
-import { FatalErrorBoundary, RedwoodProvider } from '@redmix/web'
-import { RedwoodApolloProvider } from '@redmix/web/apollo'
+import { FatalErrorBoundary, RedwoodProvider } from '@cedarjs/web'
+import { RedwoodApolloProvider } from '@cedarjs/web/apollo'
 
 import FatalErrorPage from 'src/pages/FatalErrorPage'
 import Routes from 'src/Routes'

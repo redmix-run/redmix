@@ -2,12 +2,12 @@
 
 import type { FindEmptyUsers, FindEmptyUsersVariables } from 'types/graphql'
 
-import { Link, routes } from '@redmix/router'
+import { Link, routes } from '@cedarjs/router'
 import type {
   CellSuccessProps,
   CellFailureProps,
   TypedDocumentNode,
-} from '@redmix/web'
+} from '@cedarjs/web'
 
 import EmptyUsers from 'src/components/EmptyUser/EmptyUsers'
 

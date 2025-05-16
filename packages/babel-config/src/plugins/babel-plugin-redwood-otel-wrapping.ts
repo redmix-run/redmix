@@ -2,7 +2,7 @@ import * as nodejsPath from 'path'
 
 import type { NodePath, PluginObj, PluginPass, types } from '@babel/core'
 
-import { getBaseDirFromFile } from '@redmix/project-config'
+import { getBaseDirFromFile } from '@cedarjs/project-config'
 
 // This wraps user code within opentelemetry spans to provide automatic tracing in your redwood API.
 

@@ -11,7 +11,7 @@ import {
 describe('validate absence', () => {
   it('checks if value is null or undefined', () => {
     expect(() =>
-      validate('rob@redmix.com', 'email', { absence: true }),
+      validate('rob@cedarjs.com', 'email', { absence: true }),
     ).toThrow(ValidationErrors.AbsenceValidationError)
     expect(() => validate('', 'email', { absence: true })).toThrow(
       ValidationErrors.AbsenceValidationError,
@@ -29,7 +29,7 @@ describe('validate absence', () => {
 
   it('throws with a default message', () => {
     try {
-      validate('rob@redmix.com', 'email', { absence: true })
+      validate('rob@cedarjs.com', 'email', { absence: true })
     } catch (e) {
       expect(e.message).toEqual('Email is not absent')
     }
@@ -37,7 +37,7 @@ describe('validate absence', () => {
 
   it('throws with a default message when input form field name is snake case', () => {
     try {
-      validate('rob@redmix.com', 'my_email', { absence: true })
+      validate('rob@cedarjs.com', 'my_email', { absence: true })
     } catch (e) {
       expect(e.message).toEqual('My Email is not absent')
     }
@@ -45,7 +45,7 @@ describe('validate absence', () => {
 
   it('throws with a default message when input form field name is camel case', () => {
     try {
-      validate('rob@redmix.com', 'myEmail', { absence: true })
+      validate('rob@cedarjs.com', 'myEmail', { absence: true })
     } catch (e) {
       expect(e.message).toEqual('My Email is not absent')
     }
@@ -53,7 +53,7 @@ describe('validate absence', () => {
 
   it('throws with a custom message', () => {
     try {
-      validate('rob@redmix.com', {
+      validate('rob@cedarjs.com', {
         absence: { message: 'No email please' },
       })
     } catch (e) {
@@ -130,22 +130,22 @@ describe('validate email', () => {
   it('checks for email format', () => {
     ;[
       'rob',
-      'tom@redmix',
-      'peter@redmix.',
+      'tom@cedarjs',
+      'peter@cedarjs.',
       'david@.com',
       'dom @redwood.com',
       'tobbe@redwood js.com',
-      'danny@redmix.co m',
-      ' dt@redmix.com',
+      'danny@cedarjs.co m',
+      ' dt@cedarjs.com',
     ].forEach((val) => {
       expect(() => validate(val, 'email', { email: true })).toThrow(
         ValidationErrors.EmailValidationError,
       )
     })
     ;[
-      'rob@redmix.com',
+      'rob@cedarjs.com',
       'tom+test@sub.domain.com',
-      'david🚀@redmix.com',
+      'david🚀@cedarjs.com',
     ].forEach((val) => {
       expect(() =>
         validate(val, 'email', {
@@ -1132,7 +1132,7 @@ describe('validate', () => {
 
     // fails second validator
     expect(() =>
-      validate('rob@redmix.com', 'email', {
+      validate('rob@cedarjs.com', 'email', {
         presence: true,
         format: /^\d+$/,
       }),
@@ -1245,11 +1245,11 @@ describe('validateUniqueness', () => {
   it('throws an error if record is not unique', async () => {
     mockFindFirst.mockImplementation(() => ({
       id: 1,
-      email: 'rob@redmix.com',
+      email: 'rob@cedarjs.com',
     }))
 
     try {
-      await validateUniqueness('user', { email: 'rob@redmix.com' }, () => {})
+      await validateUniqueness('user', { email: 'rob@cedarjs.com' }, () => {})
     } catch (e) {
       expect(e).toBeInstanceOf(ValidationErrors.UniquenessValidationError)
     }
@@ -1259,7 +1259,7 @@ describe('validateUniqueness', () => {
   it('calls callback if record is unique', async () => {
     mockFindFirst.mockImplementation(() => null)
 
-    await validateUniqueness('user', { email: 'rob@redmix.com' }, () => {
+    await validateUniqueness('user', { email: 'rob@cedarjs.com' }, () => {
       expect(true).toEqual(true)
     })
 
@@ -1269,12 +1269,12 @@ describe('validateUniqueness', () => {
   it('throws with a default error message', async () => {
     mockFindFirst.mockImplementation(() => ({
       id: 2,
-      email: 'rob@redmix.com',
+      email: 'rob@cedarjs.com',
     }))
 
     // single field
     try {
-      await validateUniqueness('user', { email: 'rob@redmix.com' }, () => {})
+      await validateUniqueness('user', { email: 'rob@cedarjs.com' }, () => {})
     } catch (e) {
       expect(e.message).toEqual('email must be unique')
     }
@@ -1283,7 +1283,7 @@ describe('validateUniqueness', () => {
     try {
       await validateUniqueness(
         'user',
-        { name: 'Rob', email: 'rob@redmix.com' },
+        { name: 'Rob', email: 'rob@cedarjs.com' },
         () => {},
       )
     } catch (e) {
@@ -1295,13 +1295,13 @@ describe('validateUniqueness', () => {
   it('throws with a custom error message', async () => {
     mockFindFirst.mockImplementation(() => ({
       id: 3,
-      email: 'rob@redmix.com',
+      email: 'rob@cedarjs.com',
     }))
 
     try {
       await validateUniqueness(
         'user',
-        { email: 'rob@redmix.com' },
+        { email: 'rob@cedarjs.com' },
         {
           message: 'Email already taken',
         },
@@ -1317,7 +1317,7 @@ describe('validateUniqueness', () => {
     const mockFindFirstOther = vi.fn()
     mockFindFirstOther.mockImplementation(() => ({
       id: 2,
-      email: 'rob@redmix.com',
+      email: 'rob@cedarjs.com',
     }))
     const mockPrismaClient = {
       $transaction: async (func) =>
@@ -1333,7 +1333,7 @@ describe('validateUniqueness', () => {
     await expect(
       validateUniqueness(
         'user',
-        { email: 'rob@redmix.com' },
+        { email: 'rob@cedarjs.com' },
         { db: mockPrismaClient },
         () => {},
       ),

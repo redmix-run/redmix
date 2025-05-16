@@ -195,28 +195,28 @@ rawData.push(`{
       "globby": "13.2.2",
       "glob-parent": "6.0.2"
     },
-    "@redmix/internal": {
+    "@cedarjs/internal": {
       "source-map": "0.7.4"
     },
-    "@redmix/cli": {
+    "@cedarjs/cli": {
       "decamelize": "5.0.1"
     },
-    "@redmix/testing": {
+    "@cedarjs/testing": {
       "@types/node": "18.18.9"
     },
-    "@redmix/api": {
+    "@cedarjs/api": {
       "@whatwg-node/fetch": "0.9.14"
     },
-    "@redmix/telemetry": {
+    "@cedarjs/telemetry": {
       "@whatwg-node/fetch": "0.9.14"
     },
-    "@redmix/prerender": {
+    "@cedarjs/prerender": {
       "@whatwg-node/fetch": "0.9.14"
     },
-    "@redmix/structure": {
+    "@cedarjs/structure": {
       "lru-cache": "7.18.3"
     },
-    "@redmix/graphql-server": {
+    "@cedarjs/graphql-server": {
       "@graphql-tools/utils": "10.0.11",
       "@graphql-tools/utils/cjs": "null",
       "@graphql-tools/schema": "10.0.2",
@@ -1165,32 +1165,32 @@ rawData.push(`{
       "globby": "13.2.2",
       "glob-parent": "6.0.2"
     },
-    "@redmix/internal": {
+    "@cedarjs/internal": {
       "source-map": "0.7.4"
     },
-    "@redmix/cli": {
+    "@cedarjs/cli": {
       "ci-info": "4.0.0",
       "decamelize": "5.0.1"
     },
-    "@redmix/testing": {
+    "@cedarjs/testing": {
       "@types/node": "18.18.9"
     },
-    "@redmix/api": {
+    "@cedarjs/api": {
       "pino/test/fixtures/transport": "0.0.1",
       "pino": "8.16.2",
       "@whatwg-node/fetch": "0.9.14"
     },
-    "@redmix/telemetry": {
+    "@cedarjs/telemetry": {
       "@whatwg-node/fetch": "0.9.14",
       "ci-info": "4.0.0"
     },
-    "@redmix/prerender": {
+    "@cedarjs/prerender": {
       "@whatwg-node/fetch": "0.9.14"
     },
-    "@redmix/structure": {
+    "@cedarjs/structure": {
       "lru-cache": "7.18.3"
     },
-    "@redmix/graphql-server": {
+    "@cedarjs/graphql-server": {
       "@graphql-tools/utils": "10.0.11",
       "@graphql-tools/utils/cjs": "null",
       "@graphql-tools/schema": "10.0.2",

@@ -1,4 +1,4 @@
-const { findUp } = require('@redmix/project-config')
+const { findUp } = require('@cedarjs/project-config')
 
 // Framework Babel config is monorepo root ./babel.config.js
 // `yarn lint` runs for each workspace, which needs findUp for path to root
@@ -35,7 +35,7 @@ module.exports = {
     'react',
     'react-hooks',
     'jest-dom',
-    '@redmix',
+    '@cedarjs',
   ],
   // Prevents unused eslint-disable comments
   reportUnusedDisableDirectives: true,
@@ -64,7 +64,7 @@ module.exports = {
   rules: {
     curly: 'error',
     'unused-imports/no-unused-imports': 'error',
-    '@redmix/process-env-computed': 'error',
+    '@cedarjs/process-env-computed': 'error',
     'no-console': 'off',
     'no-extra-semi': 'off',
     'prefer-object-spread': 'warn',
@@ -115,7 +115,7 @@ module.exports = {
             position: 'after',
           },
           {
-            pattern: '@redmix/**',
+            pattern: '@cedarjs/**',
             group: 'external',
             position: 'after',
           },
@@ -264,7 +264,7 @@ module.exports = {
         window: 'off', // Developers should use `global` instead of window. Since window is undefined in NodeJS.
       },
     },
-    // Prevent @redmix/internal imports in runtime (web+api) packages
+    // Prevent @cedarjs/internal imports in runtime (web+api) packages
     {
       files: [
         'packages/auth/src/**',
@@ -283,14 +283,14 @@ module.exports = {
           {
             patterns: [
               {
-                group: ['@redmix/internal', '@redmix/internal/*'],
+                group: ['@cedarjs/internal', '@cedarjs/internal/*'],
                 message:
-                  'Do not import "@redmix/internal" or subpackages in runtime modules, because it leads to MASSIVE bundle sizes',
+                  'Do not import "@cedarjs/internal" or subpackages in runtime modules, because it leads to MASSIVE bundle sizes',
               },
               {
-                group: ['@redmix/structure', '@redmix/structure/*'],
+                group: ['@cedarjs/structure', '@cedarjs/structure/*'],
                 message:
-                  'Do not import "@redmix/structure" or subpackages in runtime modules, because it leads to MASSIVE bundle sizes',
+                  'Do not import "@cedarjs/structure" or subpackages in runtime modules, because it leads to MASSIVE bundle sizes',
               },
             ],
           },
@@ -313,7 +313,7 @@ module.exports = {
         'packages/api/src/**',
         'packages/api-server/src/**',
         'packages/cli/src/**',
-        'packages/create-redmix-app/src/*.js',
+        'packages/create-cedar-app/src/*.js',
         'packages/internal/src/**',
         'packages/prerender/src/**',
         'packages/structure/src/**',
@@ -345,21 +345,21 @@ module.exports = {
       ],
       rules: {
         'no-restricted-imports': [
-          // for import x from ('@redmix/internal')
+          // for import x from ('@cedarjs/internal')
           'error',
           {
-            name: '@redmix/internal',
+            name: '@cedarjs/internal',
             message:
-              'To prevent bloat in CLI, do not import "@redmix/internal" directly. Instead import like @redmix/internal/dist/<file>, or await import',
+              'To prevent bloat in CLI, do not import "@cedarjs/internal" directly. Instead import like @cedarjs/internal/dist/<file>, or await import',
           },
         ],
         'no-restricted-modules': [
-          // for require('@redmix/internal')
+          // for require('@cedarjs/internal')
           'error',
           {
-            name: '@redmix/internal',
+            name: '@cedarjs/internal',
             message:
-              'To prevent bloat in CLI, do not require "@redmix/internal" directly. Instead require like @redmix/internal/dist/<file>',
+              'To prevent bloat in CLI, do not require "@cedarjs/internal" directly. Instead require like @cedarjs/internal/dist/<file>',
           },
         ],
       },
@@ -368,7 +368,7 @@ module.exports = {
     {
       files: ['packages/testing/**', 'packages/vite/src/index.ts'],
       rules: {
-        '@redmix/process-env-computed': 'off',
+        '@cedarjs/process-env-computed': 'off',
       },
     },
     {

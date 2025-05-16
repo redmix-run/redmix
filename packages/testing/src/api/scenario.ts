@@ -8,7 +8,7 @@ import type { A } from 'ts-toolbelt'
  *   user: {
  *     dom: {
  *       name: 'Dom Saadi',
- *       email: 'dom@redmix.com',
+ *       email: 'dom@cedarjs.com',
  *     },
  *   },
  * })
@@ -18,7 +18,7 @@ import type { A } from 'ts-toolbelt'
  *   user: {
  *     dom: {
  *       name: 'Dom Saadi',
- *       email: 'dom@redmix.com',
+ *       email: 'dom@cedarjs.com',
  *     },
  *   },
  * })

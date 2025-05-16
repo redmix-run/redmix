@@ -11,7 +11,7 @@ import {
 } from 'vitest'
 import type { MockInstance } from 'vitest'
 
-import { getPaths } from '@redmix/project-config'
+import { getPaths } from '@cedarjs/project-config'
 
 import { handler, NO_PENDING_MIGRATIONS_MESSAGE } from '../commands/upHandler'
 

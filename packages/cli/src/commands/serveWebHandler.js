@@ -1,6 +1,6 @@
 import execa from 'execa'
 
-import { getPaths } from '@redmix/project-config'
+import { getPaths } from '@cedarjs/project-config'
 
 export const webSsrServerHandler = async (rscEnabled) => {
   await execa('yarn', ['rw-serve-fe'], {

@@ -1,5 +1,5 @@
 import * as Cell from './${name}'
-import type { CellProps } from '@redmix/web'
+import type { CellProps } from '@cedarjs/web'
 import type { ${queryResultType}, ${queryVariablesType} } from 'types/graphql'
 
 type SuccessType = typeof Cell.Success

@@ -1,24 +1,24 @@
 {
-  "name": "@redmix/eslint-config",
+  "name": "@cedarjs/eslint-config",
   "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/redmix-run/redmix.git",
+    "url": "git+https://github.com/cedarjs/cedar.git",
     "directory": "packages/eslint-config"
   },
   "license": "MIT",
   "main": "index.js",
   "scripts": {
     "build": "echo 'Nothing to build..'",
-    "build:pack": "yarn pack -o redmix-eslint-config.tgz"
+    "build:pack": "yarn pack -o cedar-eslint-config.tgz"
   },
   "dependencies": {
     "@babel/core": "^7.26.10",
     "@babel/eslint-parser": "7.25.7",
     "@babel/eslint-plugin": "7.25.7",
-    "@redmix/eslint-plugin": "workspace:*",
-    "@redmix/internal": "workspace:*",
-    "@redmix/project-config": "workspace:*",
+    "@cedarjs/eslint-plugin": "workspace:*",
+    "@cedarjs/internal": "workspace:*",
+    "@cedarjs/project-config": "workspace:*",
     "@typescript-eslint/eslint-plugin": "8.19.1",
     "@typescript-eslint/parser": "8.19.1",
     "eslint": "8.57.1",

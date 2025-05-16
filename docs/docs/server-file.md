@@ -17,7 +17,7 @@ yarn rw setup server-file
 This should give you a new file at `api/src/server.ts`:
 
 ```typescript title="api/src/server.ts"
-import { createServer } from '@redmix/api-server'
+import { createServer } from '@cedarjs/api-server'
 
 import { logger } from 'src/lib/logger'
 
@@ -32,7 +32,7 @@ async function main() {
 main()
 ```
 
-Without the server file, to start the api side, you'd use binaries provided by `@redmix/api-server` such as `yarn rw-server api` (you may also see this as `./node_modules/.bin/rw-server api`).
+Without the server file, to start the api side, you'd use binaries provided by `@cedarjs/api-server` such as `yarn rw-server api` (you may also see this as `./node_modules/.bin/rw-server api`).
 
 With the server file, there's no indirection. Just use `node`:
 

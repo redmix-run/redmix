@@ -8,7 +8,7 @@ Having the admin screens at `/admin` is a reasonable thing to do. Let's update t
 <TabItem value="js" label="JavaScript">
 
 ```jsx title="web/src/Routes.jsx"
-import { Router, Route, Set } from '@redmix/router'
+import { Router, Route, Set } from '@cedarjs/router'
 import ScaffoldLayout from 'src/layouts/ScaffoldLayout'
 import BlogLayout from 'src/layouts/BlogLayout'
 
@@ -41,7 +41,7 @@ export default Routes
 <TabItem value="ts" label="TypeScript">
 
 ```jsx title="web/src/Routes.tsx"
-import { Router, Route, Set } from '@redmix/router'
+import { Router, Route, Set } from '@cedarjs/router'
 import ScaffoldLayout from 'src/layouts/ScaffoldLayout'
 import BlogLayout from 'src/layouts/BlogLayout'
 
@@ -202,7 +202,7 @@ Going to the admin section now prevents a non-logged in user from seeing posts, 
 
 ```jsx title="web/src/Routes.jsx"
 // highlight-next-line
-import { PrivateSet, Router, Route, Set } from '@redmix/router'
+import { PrivateSet, Router, Route, Set } from '@cedarjs/router'
 
 import ScaffoldLayout from 'src/layouts/ScaffoldLayout'
 import BlogLayout from 'src/layouts/BlogLayout'
@@ -241,7 +241,7 @@ export default Routes
 
 ```jsx title="web/src/Routes.tsx"
 // highlight-next-line
-import { PrivateSet, Router, Route, Set } from '@redmix/router'
+import { PrivateSet, Router, Route, Set } from '@cedarjs/router'
 
 import ScaffoldLayout from 'src/layouts/ScaffoldLayout'
 import BlogLayout from 'src/layouts/BlogLayout'
@@ -508,7 +508,7 @@ Redwood provides a [hook](../../authentication.md#destructuring-the-useauth-hook
 <TabItem value="js" label="JavaScript">
 
 ```jsx title="web/src/layouts/BlogLayout/BlogLayout.jsx"
-import { Link, routes } from '@redmix/router'
+import { Link, routes } from '@cedarjs/router'
 
 // highlight-next-line
 import { useAuth } from 'src/auth'
@@ -549,7 +549,7 @@ export default BlogLayout
 <TabItem value="ts" label="TypeScript">
 
 ```jsx title="web/src/layouts/BlogLayout/BlogLayout.tsx"
-import { Link, routes } from '@redmix/router'
+import { Link, routes } from '@cedarjs/router'
 
 // highlight-next-line
 import { useAuth } from 'src/auth'
@@ -605,7 +605,7 @@ At the top right of the page, let's show the email address of the user (if they'
 <TabItem value="js" label="JavaScript">
 
 ```jsx title="web/src/layouts/BlogLayout/BlogLayout.jsx"
-import { Link, routes } from '@redmix/router'
+import { Link, routes } from '@cedarjs/router'
 
 import { useAuth } from 'src/auth'
 
@@ -659,7 +659,7 @@ export default BlogLayout
 <TabItem value="ts" label="TypeScript">
 
 ```jsx title="web/src/layouts/BlogLayout/BlogLayout.tsx"
-import { Link, routes } from '@redmix/router'
+import { Link, routes } from '@cedarjs/router'
 
 import { useAuth } from 'src/auth'
 
@@ -724,7 +724,7 @@ Well, it's almost right! Where's our email address? By default, the function tha
 <TabItem value="js" label="JavaScript">
 
 ```javascript title="api/src/lib/auth.js"
-import { AuthenticationError, ForbiddenError } from '@redmix/graphql-server'
+import { AuthenticationError, ForbiddenError } from '@cedarjs/graphql-server'
 import { db } from './db'
 
 export const getCurrentUser = async (session) => {
@@ -786,10 +786,10 @@ export const requireAuth = ({ roles } = {}) => {
 <TabItem value="ts" label="TypeScript">
 
 ```ts title="api/src/lib/auth.ts"
-import { AuthenticationError, ForbiddenError } from '@redmix/graphql-server'
+import { AuthenticationError, ForbiddenError } from '@cedarjs/graphql-server'
 import { db } from './db'
 
-import type { DbAuthSession } from '@redmix/api'
+import type { DbAuthSession } from '@cedarjs/api'
 
 export const getCurrentUser = async (session: DbAuthSession<number>) => {
   return await db.user.findUnique({

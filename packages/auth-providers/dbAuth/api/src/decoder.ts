@@ -1,6 +1,6 @@
 import type { APIGatewayProxyEvent } from 'aws-lambda'
 
-import type { Decoder } from '@redmix/api'
+import type { Decoder } from '@cedarjs/api'
 
 import { dbAuthSession } from './shared'
 

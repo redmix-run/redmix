@@ -1,5 +1,5 @@
-import { FatalErrorBoundary, RedwoodProvider } from '@redmix/web'
-import { RedwoodApolloProvider } from '@redmix/web/apollo'
+import { FatalErrorBoundary, RedwoodProvider } from '@cedarjs/web'
+import { RedwoodApolloProvider } from '@cedarjs/web/apollo'
 
 import possibleTypes from 'src/graphql/possibleTypes'
 

@@ -1,4 +1,4 @@
-import { recordTelemetryAttributes } from '@redmix/cli-helpers'
+import { recordTelemetryAttributes } from '@cedarjs/cli-helpers'
 
 import c from '../lib/colors.js'
 import { getPaths } from '../lib/index.js'
@@ -12,7 +12,7 @@ export const handler = async () => {
   recordTelemetryAttributes({ command: 'check' })
 
   const { printDiagnostics, DiagnosticSeverity } = (
-    await import('@redmix/structure')
+    await import('@cedarjs/structure')
   ).default
 
   console.log('DiagnosticServerity', DiagnosticSeverity)

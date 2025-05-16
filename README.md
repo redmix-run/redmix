@@ -1,34 +1,34 @@
 <p align="center">
   <img src="https://avatars2.githubusercontent.com/u/197462962?v=4" width="200" />
-  <h1 align="center">Redmix</h1>
+  <h1 align="center">Cedar</h1>
 </p>
 
 ## About
 
-Redmix is a TypeScript Web App Framework that gives you all the tools you need
+Cedar is a TypeScript Web App Framework that gives you all the tools you need
 to build web applications quickly and efficiently.
 
-Redmix is a fork of the [RedwoodJS](https://redwoodjs.com/) framework with the
+Cedar is a fork of the [RedwoodJS](https://redwoodjs.com/) framework with the
 goal of taking it into the modern web development era with a smooth transition
 for existing RedwoodJS applications.
 
-Redmix would obviously not be where it is today without the vision and heroic
+Cedar would obviously not be where it is today without the vision and heroic
 efforts of the RedwoodJS founders, maintainers and community.
 
-## Migrating from RedwoodJS to Redmix
+## Migrating from RedwoodJS to Cedar
 
 Search and replace all instances of `"@redwoodjs/(.*)": "\d+\.\d+\.\d+"`
-with `"@redmix/$1": "0.0.3"` (or whatever the latest version of Redmix is when
+with `"@cedarjs/$1": "0.0.3"` (or whatever the latest version of Cedar is when
 you run this) in all three `package.json` files. Run `yarn install` to update
 your lock file.
 
-Search and replace all instances of `@redwoodjs` in all files with `@redmix`.
+Search and replace all instances of `@redwoodjs` in all files with `@cedarjs`.
 Pay attention to `yarn.lock`. If anything changed in there you probably have to
 do some manual editing. Also find all mentions of
 `storybook-framework-redwoodjs-vite` and replace with
-`storybook-framework-redmix-vite`
+`storybook-framework-cedar`
 
-Redmix doesn't have the equivalent of Redwood Studio yet. So Studio will not
+Cedar doesn't have the equivalent of Redwood Studio yet. So Studio will not
 work for now. Let me know if that's something you use and need.
 
 Delete all files and folders inside `.redwood/` except `README.md`
@@ -56,20 +56,20 @@ what you use so I know what to keep and what to remove!
 
 - [ ] Make all packages ESM only where possible and ESM+CJS where needed to
       keep compatibility with existing RW apps. Packages still to convert:
-  - [ ] `@redmix/cli` (in progress, see
-        [#23](https://github.com/redmix-run/redmix/pull/23),
-        [#26](https://github.com/redmix-run/redmix/pull/26),
-        [#34](https://github.com/redmix-run/redmix/pull/34),
-        [#40](https://github.com/redmix-run/redmix/pull/40), etc)
-  - [ ] `@redmix/fastify-web`
-  - [ ] `@redmix/api-server`
-  - [ ] `@redmix/api`
-  - [ ] etc. Full list: https://github.com/redmix-run/redmix/issues/19
+  - [ ] `@cedarjs/cli` (in progress, see
+        [#23](https://github.com/cedarjs/cedar/pull/23),
+        [#26](https://github.com/cedarjs/cedar/pull/26),
+        [#34](https://github.com/cedarjs/cedar/pull/34),
+        [#40](https://github.com/cedarjs/cedar/pull/40), etc)
+  - [ ] `@cedarjs/fastify-web`
+  - [ ] `@cedarjs/api-server`
+  - [ ] `@cedarjs/api`
+  - [ ] etc. Full list: https://github.com/cedarjs/cedar/issues/19
 - [ ] Future major version: Make all packages ESM only
-- [ ] Future major version: Make new Redmix apps ESM only
-- [ ] Future major version: Make it possible to switch existing Redmix apps to
+- [ ] Future major version: Make new Cedar apps ESM only
+- [ ] Future major version: Make it possible to switch existing Cedar apps to
       ESM
-- [ ] Enable strict mode for new Redmix TypeScript apps.
+- [ ] Enable strict mode for new Cedar TypeScript apps.
 - [ ] Upgrade to Node 24
 - [ ] Setup dependabot/renovate to automatically merge PRs that pass all checks
 
@@ -85,7 +85,7 @@ what you use so I know what to keep and what to remove!
 ### Docs
 
 - [ ] Mirror the RedwoodJS docs to make sure they don't get deleted
-- [ ] Document where Redmix diverges from RedwoodJS. (Future major version.)
+- [ ] Document where Cedar diverges from RedwoodJS. (Future major version.)
 
 ### New Features
 
@@ -97,15 +97,15 @@ what you use so I know what to keep and what to remove!
 
 ## Documentation
 
-The best documentation for Redmix is actually still the
+The best documentation for Cedar is actually still the
 [RedwoodJS documentation](https://redwoodjs.com/docs). The first version of
-Redmix will be fully compatible with RedwoodJS v8.6 and there will be no
-specific documentation written for Redmix for now.
+Cedar will be fully compatible with RedwoodJS v8.6 and there will be no
+specific documentation written for Cedar for now.
 
 The only thing you'll have to adjust are the package names and replace every
-`@redwoodjs` package with a `@redmix` package of the same name.
+`@redwoodjs` package with a `@cedarjs` package of the same name.
 
-## The Redmix Team
+## The Cedar Team
 
 <table>
   <tr>

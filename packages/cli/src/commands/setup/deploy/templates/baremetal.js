@@ -50,7 +50,7 @@ freeSpaceRequired = 2048
 # agentForward = true
 # sides = ["api"]
 # path = "/var/www/app"
-# repo = "git@github.com:redmix-run/redmix.git"
+# repo = "git@github.com:cedarjs/cedar.git"
 # branch = "main"
 # processNames = ["api"]
 #
@@ -60,7 +60,7 @@ freeSpaceRequired = 2048
 # agentForward = true
 # sides = ["web"]
 # path = "/var/www/app"
-# repo = "git@github.com:redmix-run/redmix.git"
+# repo = "git@github.com:cedarjs/cedar.git"
 # branch = "main"
 # migrate = false # only one server in a cluster needs to migrate
 # processNames = ["web"]

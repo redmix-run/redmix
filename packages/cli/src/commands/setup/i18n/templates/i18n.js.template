@@ -9,7 +9,7 @@ import en from './locales/en.json'
 // see: https://react.i18next.com
 // Here's an example of how to use it in your components, pages or layouts:
 /*
-import { Link, routes } from '@redmix/router'
+import { Link, routes } from '@cedarjs/router'
 import { useTranslation } from 'react-i18next'
 
 const HomePage = () => {

@@ -4,7 +4,7 @@ import { createRequire } from 'node:module'
 import { pathToFileURL } from 'node:url'
 
 const cliPackageJsonFileUrl = pathToFileURL(
-  require.resolve('@redmix/cli/package.json'),
+  require.resolve('@cedarjs/cli/package.json'),
 )
 
 const requireFromCli = createRequire(cliPackageJsonFileUrl)

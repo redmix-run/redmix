@@ -2,9 +2,9 @@ import crypto from 'node:crypto'
 
 import type { APIGatewayProxyEvent } from 'aws-lambda'
 
-import type { CorsHeaders } from '@redmix/api'
-import { getEventHeader, isFetchApiRequest } from '@redmix/api'
-import { getConfig, getConfigPath } from '@redmix/project-config'
+import type { CorsHeaders } from '@cedarjs/api'
+import { getEventHeader, isFetchApiRequest } from '@cedarjs/api'
+import { getConfig, getConfigPath } from '@cedarjs/project-config'
 
 import * as DbAuthError from './errors'
 

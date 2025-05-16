@@ -37,7 +37,7 @@ try {
   switch (mode) {
     case 'crwa':
       exitCode = await exec(
-        `yarn node ./packages/create-redmix-app/dist/create-redmix-app.js ../project-for-telemetry --typescript true --git false --no-yarn-install`,
+        `yarn node ./packages/create-cedar-app/dist/create-cedar-app.js ../project-for-telemetry --typescript true --git false --no-yarn-install`,
       )
       if (exitCode) {
         process.exit(1)
@@ -51,7 +51,7 @@ try {
         process.exit(1)
       }
       exitCode = await exec(
-        `yarn --cwd ../project-for-telemetry node ../redmix/packages/cli/dist/index.js info`,
+        `yarn --cwd ../project-for-telemetry node ../cedar/packages/cli/dist/index.js info`,
       )
       if (exitCode) {
         process.exit(1)

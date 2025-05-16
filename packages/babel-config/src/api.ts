@@ -4,7 +4,7 @@ import path from 'node:path'
 import type { PluginOptions, PluginTarget, TransformOptions } from '@babel/core'
 import { transformAsync } from '@babel/core'
 
-import { getPaths, projectSideIsEsm } from '@redmix/project-config'
+import { getPaths, projectSideIsEsm } from '@cedarjs/project-config'
 
 import type { RegisterHookOptions } from './common'
 import {
@@ -120,9 +120,9 @@ export const getApiSideBabelPlugins = ({
             path: 'graphql-tag',
           },
           {
-            // import { context } from '@redmix/context'
+            // import { context } from '@cedarjs/context'
             members: ['context'],
-            path: '@redmix/context',
+            path: '@cedarjs/context',
           },
         ],
       },

@@ -1,9 +1,9 @@
 import pascalcase from 'pascalcase'
 
-import { listQueryTypeFieldsInProject } from '@redmix/internal/dist/gql'
+import { listQueryTypeFieldsInProject } from '@cedarjs/internal/dist/gql'
 
 export const getCellOperationNames = async () => {
-  const { getProject } = await import('@redmix/structure')
+  const { getProject } = await import('@cedarjs/structure')
 
   return getProject()
     .cells.map((x) => {

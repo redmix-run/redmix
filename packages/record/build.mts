@@ -1,5 +1,5 @@
-import { build, defaultBuildOptions } from '@redmix/framework-tools'
-import { insertCommonJsPackageJson } from '@redmix/framework-tools/generateTypes'
+import { build, defaultBuildOptions } from '@cedarjs/framework-tools'
+import { insertCommonJsPackageJson } from '@cedarjs/framework-tools/generateTypes'
 
 // ESM build
 await build({

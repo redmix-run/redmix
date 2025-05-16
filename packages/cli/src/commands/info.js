@@ -5,8 +5,8 @@ import fs from 'node:fs'
 import envinfo from 'envinfo'
 import terminalLink from 'terminal-link'
 
-import { recordTelemetryAttributes } from '@redmix/cli-helpers'
-import { getPaths } from '@redmix/project-config'
+import { recordTelemetryAttributes } from '@cedarjs/cli-helpers'
+import { getPaths } from '@cedarjs/project-config'
 
 export const command = 'info'
 export const description = 'Print your system environment information'
@@ -26,7 +26,7 @@ export const handler = async () => {
     Binaries: ['Node', 'Yarn'],
     Browsers: ['Chrome', 'Edge', 'Firefox', 'Safari'],
     // yarn workspaces not supported :-/
-    npmPackages: '@redmix/*',
+    npmPackages: '@cedarjs/*',
     Databases: ['SQLite'],
   })
 

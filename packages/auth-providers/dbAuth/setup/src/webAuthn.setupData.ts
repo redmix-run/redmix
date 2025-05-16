@@ -1,7 +1,7 @@
 import path from 'path'
 
-import { getPaths, colors } from '@redmix/cli-helpers'
-import type { AuthGeneratorCtx } from '@redmix/cli-helpers/src/auth/authTasks.js'
+import { getPaths, colors } from '@cedarjs/cli-helpers'
+import type { AuthGeneratorCtx } from '@cedarjs/cli-helpers/src/auth/authTasks.js'
 
 import { addModels, functionsPath, hasModel, libPath } from './shared'
 

@@ -19,7 +19,7 @@ vi.mock('../../../../lib', async (importOriginal) => {
   }
 })
 
-vi.mock('@redmix/structure', () => {
+vi.mock('@cedarjs/structure', () => {
   return {
     getProject: () => ({
       cells: [{ queryOperationName: undefined }],

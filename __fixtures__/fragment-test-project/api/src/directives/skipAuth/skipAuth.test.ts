@@ -1,4 +1,4 @@
-import { getDirectiveName } from '@redmix/testing/api'
+import { getDirectiveName } from '@cedarjs/testing/api'
 
 import skipAuth from './skipAuth'
 

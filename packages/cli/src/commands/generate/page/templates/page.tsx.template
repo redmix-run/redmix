@@ -1,10 +1,10 @@
 <% if (rscEnabled) { %>
-import { Link } from '@redmix/router/Link'
-import { namedRoutes as routes } from '@redmix/router/namedRoutes'
-import { Metadata } from '@redmix/web/Metadata'
+import { Link } from '@cedarjs/router/Link'
+import { namedRoutes as routes } from '@cedarjs/router/namedRoutes'
+import { Metadata } from '@cedarjs/web/Metadata'
 <% } else { %>
-// import { Link, routes } from '@redmix/router'
-import { Metadata } from '@redmix/web'
+// import { Link, routes } from '@cedarjs/router'
+import { Metadata } from '@cedarjs/web'
 <% } %>
 
 <% if (paramName !== '') { %>

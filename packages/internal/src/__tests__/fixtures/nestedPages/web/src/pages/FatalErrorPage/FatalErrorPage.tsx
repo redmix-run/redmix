@@ -8,7 +8,7 @@
 // thoughtful :)
 
 // This import will be automatically removed when building for production
-import { DevFatalErrorPage } from '@redmix/web/dist/components/DevFatalErrorPage'
+import { DevFatalErrorPage } from '@cedarjs/web/dist/components/DevFatalErrorPage'
 
 export default DevFatalErrorPage ||
   (() => (

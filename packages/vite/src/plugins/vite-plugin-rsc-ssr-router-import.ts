@@ -10,11 +10,11 @@ import * as t from '@babel/types'
 import type { Plugin } from 'vite'
 import { normalizePath } from 'vite'
 
-import { getPaths } from '@redmix/project-config'
+import { getPaths } from '@cedarjs/project-config'
 
 /**
- * Transform `import { Router } from '@redmix/router/RscRouter'` to
- * `import { Router } from '@redmix/router/SsrRouter'`
+ * Transform `import { Router } from '@cedarjs/router/RscRouter'` to
+ * `import { Router } from '@cedarjs/router/SsrRouter'`
  */
 export function rscSsrRouterImport(): Plugin {
   // Vite IDs are always normalized and so we avoid windows path issues
@@ -45,8 +45,8 @@ export function rscSsrRouterImport(): Plugin {
       traverse(ast, {
         ImportDeclaration(path) {
           const source = path.node.source.value
-          if (source === '@redmix/router/RscRouter') {
-            path.node.source = t.stringLiteral('@redmix/router/SsrRouter')
+          if (source === '@cedarjs/router/RscRouter') {
+            path.node.source = t.stringLiteral('@cedarjs/router/SsrRouter')
           }
         },
       })

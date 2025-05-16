@@ -5,10 +5,10 @@ import {
   Label,
   TextField,
   Submit,
-} from '@redmix/forms'
+} from '@cedarjs/forms'
 
 import type { EditUserExampleById, UpdateUserExampleInput } from 'types/graphql'
-import type { RWGqlError } from '@redmix/forms'
+import type { RWGqlError } from '@cedarjs/forms'
 
 type FormUserExample = NonNullable<EditUserExampleById['userExample']>
 

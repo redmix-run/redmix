@@ -4,7 +4,7 @@ import { afterAll, afterEach, beforeAll, expect } from 'vitest'
 import { fs, path, $ } from 'zx'
 import type { ProcessPromise } from 'zx'
 
-import { getConfig } from '@redmix/project-config'
+import { getConfig } from '@cedarjs/project-config'
 
 $.verbose = !!process.env.VERBOSE
 
@@ -22,16 +22,16 @@ export const testContext: TestContext = {
 
 const __dirname = fileURLToPath(new URL('./', import.meta.url))
 
-// @redmix/cli (yarn rw)
+// @cedarjs/cli (yarn rw)
 export const rw = path.resolve(__dirname, '../../packages/cli/dist/index.js')
 
-// @redmix/api-server (yarn rw-server)
+// @cedarjs/api-server (yarn rw-server)
 export const rwServer = path.resolve(
   __dirname,
   '../../packages/api-server/dist/bin.js',
 )
 
-// @redmix/web-server (yarn rw-web-server)
+// @cedarjs/web-server (yarn rw-web-server)
 export const rwWebServer = path.resolve(
   __dirname,
   '../../packages/web-server/dist/bin.js',

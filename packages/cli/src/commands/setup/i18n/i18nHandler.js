@@ -4,7 +4,7 @@ import execa from 'execa'
 import fs from 'fs-extra'
 import { Listr } from 'listr2'
 
-import { errorTelemetry } from '@redmix/telemetry'
+import { errorTelemetry } from '@cedarjs/telemetry'
 
 import c from '../../../lib/colors.js'
 import extendStorybookConfiguration from '../../../lib/configureStorybook.js'

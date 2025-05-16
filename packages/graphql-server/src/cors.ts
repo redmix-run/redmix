@@ -1,6 +1,6 @@
 import type { CORSOptions } from 'graphql-yoga'
 
-import type { CorsConfig } from '@redmix/api'
+import type { CorsConfig } from '@cedarjs/api'
 
 export const mapRwCorsOptionsToYoga = (
   rwCorsConfig?: CorsConfig,

@@ -1,4 +1,4 @@
-import type { Decoder } from '@redmix/api'
+import type { Decoder } from '@cedarjs/api'
 
 /**
  * @deprecated This function will be removed; it uses a rate-limited API. Use `clerkAuthDecoder` instead.

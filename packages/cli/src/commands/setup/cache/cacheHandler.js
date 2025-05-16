@@ -3,8 +3,8 @@ import path from 'path'
 import fs from 'fs-extra'
 import { Listr } from 'listr2'
 
-import { addEnvVarTask } from '@redmix/cli-helpers'
-import { errorTelemetry } from '@redmix/telemetry'
+import { addEnvVarTask } from '@cedarjs/cli-helpers'
+import { errorTelemetry } from '@cedarjs/telemetry'
 
 import c from '../../../lib/colors.js'
 import { addPackagesTask, getPaths, writeFile } from '../../../lib/index.js'

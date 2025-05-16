@@ -8,8 +8,8 @@ description: What happens when you build your app
 >
 > There's more to document here. In the meantime, you can check the RedwoodJS [community forum](https://community.redwoodjs.com/search?q=yarn%20rw%20build) for answers.
 >
-> Want to contribute? Redmix welcomes contributions and loves helping people become contributors.
-> You can edit this doc [here](https://github.com/redmix-run/redmix.run/blob/main/docs/builds.md).
+> Want to contribute? Cedar welcomes contributions and loves helping people become contributors.
+> You can edit this doc [here](https://github.com/cedarjs/cedar.run/blob/main/docs/builds.md).
 > If you have any questions, just ask for help!
 
 ## API

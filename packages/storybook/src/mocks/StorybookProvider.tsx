@@ -5,7 +5,7 @@ import {
   setupRequestHandlers,
   startMSW,
   mockCurrentUser,
-} from '@redmix/testing/web'
+} from '@cedarjs/testing/web'
 
 import { MockProviders } from './MockProviders'
 

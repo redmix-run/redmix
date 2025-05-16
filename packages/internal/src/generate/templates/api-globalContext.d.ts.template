@@ -1,4 +1,4 @@
-import type { GlobalContext } from "@redmix/context"
+import type { GlobalContext } from "@cedarjs/context"
 
 export {}
 

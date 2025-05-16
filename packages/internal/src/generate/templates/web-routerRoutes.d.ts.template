@@ -1,6 +1,6 @@
-import { RouteParams, QueryParams } from '@redmix/router'
+import { RouteParams, QueryParams } from '@cedarjs/router'
 
-declare module '@redmix/router' {
+declare module '@cedarjs/router' {
   interface AvailableRoutes {
     // Only "<Route />" components with a "name" and "path" prop will be populated here.
 ${routes.map(

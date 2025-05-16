@@ -1,5 +1,5 @@
-import { Link, routes } from '@redmix/router'
-import { Toaster } from '@redmix/web/toast'
+import { Link, routes } from '@cedarjs/router'
+import { Toaster } from '@cedarjs/web/toast'
 
 type LayoutProps = {
   title: string

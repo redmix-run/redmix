@@ -1,9 +1,9 @@
 import type { Delete${singularPascalName}Mutation, Delete${singularPascalName}MutationVariables, Find${singularPascalName}By${pascalIdName} } from 'types/graphql'
 
-import { Link, routes, navigate } from '@redmix/router'
-import { useMutation } from '@redmix/web'
-import type { TypedDocumentNode } from '@redmix/web'
-import { toast } from '@redmix/web/toast'
+import { Link, routes, navigate } from '@cedarjs/router'
+import { useMutation } from '@cedarjs/web'
+import type { TypedDocumentNode } from '@cedarjs/web'
+import { toast } from '@cedarjs/web/toast'
 
 import { ${formattersImports} } from 'src/lib/formatters'
 

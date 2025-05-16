@@ -1,4 +1,4 @@
-import { Metadata } from '@redmix/web'
+import { Metadata } from '@cedarjs/web'
 import JobCell from 'src/components/Jobs/JobCell'
 
 const JobPage = ({ id }) => {

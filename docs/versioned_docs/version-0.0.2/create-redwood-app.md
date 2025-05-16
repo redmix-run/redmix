@@ -1,5 +1,5 @@
 ---
-slug: create-redmix-app
+slug: create-cedar-app
 description: Instructions and usage examples for Create Redwood App
 ---
 
@@ -8,7 +8,7 @@ description: Instructions and usage examples for Create Redwood App
 To get up and running with Redwood, you can use Create Redwood App:
 
 ```terminal
-yarn create redmix-app <your-app-name>
+yarn create cedar-app <your-app-name>
 ```
 
 ## Set up for success
@@ -102,5 +102,5 @@ You can by pass these prompts by using the following flags:
 For example, here's the project with all flags enabled:
 
 ```terminal
-yarn create redmix-app <your-app-name> --typescript --git-init --commit-message "Initial commit" --yarn-install
+yarn create cedar-app <your-app-name> --typescript --git-init --commit-message "Initial commit" --yarn-install
 ```

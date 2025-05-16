@@ -3,9 +3,9 @@ import type { Options as FastGlobOptions } from 'fast-glob'
 import type { FastifyInstance } from 'fastify'
 import fastifyRawBody from 'fastify-raw-body'
 
-import type { GlobalContext } from '@redmix/context'
-import { getAsyncStoreInstance } from '@redmix/context/dist/store'
-import { coerceRootPath } from '@redmix/fastify-web/dist/helpers'
+import type { GlobalContext } from '@cedarjs/context'
+import { getAsyncStoreInstance } from '@cedarjs/context/dist/store'
+import { coerceRootPath } from '@cedarjs/fastify-web/dist/helpers'
 
 import type { Server } from '../createServerHelpers'
 import { loadFastifyConfig } from '../fastify'

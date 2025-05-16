@@ -4,8 +4,8 @@ import type {
   Context,
 } from 'aws-lambda'
 
-import type { SupportedVerifierTypes } from '@redmix/api/webhooks'
-import { signPayload } from '@redmix/api/webhooks'
+import type { SupportedVerifierTypes } from '@cedarjs/api/webhooks'
+import { signPayload } from '@cedarjs/api/webhooks'
 
 interface BuildEventParams extends Partial<APIGatewayProxyEvent> {
   payload?: string | null | Record<any, any>

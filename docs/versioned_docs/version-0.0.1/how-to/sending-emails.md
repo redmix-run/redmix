@@ -9,7 +9,7 @@ The emails will be sent using the npm package [nodemailer](https://www.npmjs.com
 The first thing to do is to create a new RedwoodJS project.
 
 ```zsh
-yarn create redmix-app --typescript email
+yarn create cedar-app --typescript email
 ```
 
 When that's done, go into the `email` directory and install the `nodemailer` package.
@@ -85,9 +85,9 @@ Clicking to show the details on one of the users you should see a page similar t
 To add our button, and the actions connected to it, we need to add a fair bit of code to the User component. I've put the full code below to make sure you don't miss anything.
 
 ```tsx title="src/components/User/User.tsx"
-import { useMutation } from '@redmix/web'
-import { toast } from '@redmix/web/toast'
-import { Link, routes, navigate } from '@redmix/router'
+import { useMutation } from '@cedarjs/web'
+import { toast } from '@cedarjs/web/toast'
+import { Link, routes, navigate } from '@cedarjs/router'
 
 const DELETE_USER_MUTATION = gql`
   mutation DeleteUserMutation($id: String!) {

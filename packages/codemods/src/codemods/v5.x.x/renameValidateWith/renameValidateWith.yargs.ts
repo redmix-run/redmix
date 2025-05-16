@@ -2,7 +2,7 @@ import path from 'path'
 
 import task from 'tasuku'
 
-import { getPaths } from '@redmix/project-config'
+import { getPaths } from '@cedarjs/project-config'
 
 import getFilesWithPattern from '../../../lib/getFilesWithPattern'
 import runTransform from '../../../lib/runTransform'

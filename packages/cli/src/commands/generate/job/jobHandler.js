@@ -5,8 +5,8 @@ import * as changeCase from 'change-case'
 import execa from 'execa'
 import { Listr } from 'listr2'
 
-import { recordTelemetryAttributes } from '@redmix/cli-helpers'
-import { errorTelemetry } from '@redmix/telemetry'
+import { recordTelemetryAttributes } from '@cedarjs/cli-helpers'
+import { errorTelemetry } from '@cedarjs/telemetry'
 
 import c from '../../../lib/colors.js'
 import {
@@ -141,7 +141,7 @@ export const handler = async ({ name, force, ...rest }) => {
             'eslint',
             '--fix',
             '--config',
-            `${getPaths().base}/node_modules/@redmix/eslint-config/shared.js`,
+            `${getPaths().base}/node_modules/@cedarjs/eslint-config/shared.js`,
             `${getPaths().api.jobsConfig}`,
           ])
         },

@@ -5,8 +5,8 @@ import execa from 'execa'
 import { Listr } from 'listr2'
 import prompts from 'prompts'
 
-import { recordTelemetryAttributes } from '@redmix/cli-helpers'
-import { getConfig } from '@redmix/project-config'
+import { recordTelemetryAttributes } from '@cedarjs/cli-helpers'
+import { getConfig } from '@cedarjs/project-config'
 
 import c from '../../../lib/colors.js'
 import {

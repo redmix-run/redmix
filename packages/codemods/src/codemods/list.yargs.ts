@@ -29,6 +29,6 @@ export const handler = ({ rwVersion }: { rwVersion: string }) => {
   modsForVersion.forEach((codemod) => {
     // Use decamelize to match the usual yargs names,
     // instead of having to load the .yargs files
-    console.log(`- npx @redmix/codemods ${decamelize(codemod)}`)
+    console.log(`- npx @cedarjs/codemods ${decamelize(codemod)}`)
   })
 }

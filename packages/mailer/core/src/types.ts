@@ -1,4 +1,4 @@
-import type { Logger } from '@redmix/api/logger'
+import type { Logger } from '@cedarjs/api/logger'
 
 import type { AbstractMailHandler } from './handler'
 import type { AbstractMailRenderer } from './renderer'

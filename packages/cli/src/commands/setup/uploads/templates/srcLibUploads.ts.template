@@ -1,6 +1,6 @@
-import { createUploadsConfig, setupStorage } from '@redmix/storage'
-import { FileSystemStorage } from '@redmix/storage/FileSystemStorage'
-import { UrlSigner } from '@redmix/storage/UrlSigner'
+import { createUploadsConfig, setupStorage } from '@cedarjs/storage'
+import { FileSystemStorage } from '@cedarjs/storage/FileSystemStorage'
+import { UrlSigner } from '@cedarjs/storage/UrlSigner'
 
 const uploadsConfig = createUploadsConfig({
   // Configure your fields here

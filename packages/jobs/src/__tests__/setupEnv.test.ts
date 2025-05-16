@@ -2,7 +2,7 @@ import { describe, expect, it, vi, afterEach } from 'vitest'
 
 import { setupEnv } from '../setupEnv'
 
-vi.mock('@redmix/cli-helpers/loadEnvFiles', () => {
+vi.mock('@cedarjs/cli-helpers/loadEnvFiles', () => {
   return {
     loadEnvFiles: () => {},
   }

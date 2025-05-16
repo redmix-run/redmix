@@ -44,7 +44,7 @@ export default (file, api) => {
       j.importSpecifier(j.identifier('Link'), j.identifier('Link')),
       j.importSpecifier(j.identifier('routes'), j.identifier('routes')),
     ],
-    j.stringLiteral('@redmix/router'),
+    j.stringLiteral('@cedarjs/router'),
   )
 
   root.find(j.VariableDeclaration).insertBefore(routerImport)

@@ -2,7 +2,7 @@ import type { SupabaseClient, User } from '@supabase/supabase-js'
 import { renderHook, act } from '@testing-library/react'
 import { vi, it, describe, beforeAll, beforeEach, expect } from 'vitest'
 
-import type { CurrentUser } from '@redmix/auth'
+import type { CurrentUser } from '@cedarjs/auth'
 
 import { createAuth } from '../supabase.js'
 

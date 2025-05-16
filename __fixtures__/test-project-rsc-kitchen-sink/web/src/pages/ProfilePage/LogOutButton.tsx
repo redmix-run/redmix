@@ -1,6 +1,6 @@
 'use client'
 
-import { navigate, routes } from '@redmix/router'
+import { navigate, routes } from '@cedarjs/router'
 
 import { useAuth } from 'src/auth'
 

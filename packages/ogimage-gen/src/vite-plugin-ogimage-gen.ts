@@ -5,7 +5,7 @@ import fg from 'fast-glob'
 import type { O } from 'ts-toolbelt'
 import type { Plugin as VitePlugin } from 'vite'
 
-import { ensurePosixPath, getPaths } from '@redmix/project-config'
+import { ensurePosixPath, getPaths } from '@cedarjs/project-config'
 
 type ConfigPlugin = O.Required<VitePlugin, 'config'>
 

@@ -8,10 +8,10 @@ import {
   PasswordField,
   Submit,
   FieldError,
-} from '@redmix/forms'
-import { Link, navigate, routes } from '@redmix/router'
-import { Metadata } from '@redmix/web'
-import { toast, Toaster } from '@redmix/web/toast'
+} from '@cedarjs/forms'
+import { Link, navigate, routes } from '@cedarjs/router'
+import { Metadata } from '@cedarjs/web'
+import { toast, Toaster } from '@cedarjs/web/toast'
 
 import { useAuth } from 'src/auth'
 

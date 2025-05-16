@@ -15,9 +15,9 @@ In `api/src/uploads.ts` - setup uploads - processors, storage and the prisma ext
 ```ts
 // api/src/lib/uploads.ts
 nua
-import { setupUploads, UploadsConfig } from '@redmix/storage'
-import { FileSystemStorage } from '@redmix/storage/FileSystemStorage'
-import { UrlSigner } from '@redmix/storage/UrlSigner'
+import { setupUploads, UploadsConfig } from '@cedarjs/storage'
+import { FileSystemStorage } from '@cedarjs/storage/FileSystemStorage'
+import { UrlSigner } from '@cedarjs/storage/UrlSigner'
 
 const uploadsConfig: UploadsConfig = {
   // 👇 prisma model
@@ -55,7 +55,7 @@ export { saveFiles, storagePrismaExtension }
 
 import { PrismaClient } from '@prisma/client'
 
-import { emitLogLevels, handlePrismaLogging } from '@redmix/api/logger'
+import { emitLogLevels, handlePrismaLogging } from '@cedarjs/api/logger'
 
 import { logger } from './logger'
 import { storagePrismaExtension } from './uploads'

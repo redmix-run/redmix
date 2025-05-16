@@ -1,7 +1,7 @@
 import { vol, fs as memfs } from 'memfs'
 import { vi } from 'vitest'
 
-import { ensurePosixPath, getPaths } from '@redmix/project-config'
+import { ensurePosixPath, getPaths } from '@cedarjs/project-config'
 
 import type { PluginList } from '../api'
 import {
@@ -221,7 +221,7 @@ describe('api', () => {
             },
             {
               members: ['context'],
-              path: '@redmix/context',
+              path: '@cedarjs/context',
             },
           ],
         },

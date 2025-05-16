@@ -1,6 +1,6 @@
 import type { MutationResolvers } from 'types/graphql'
 
-import { setContext } from '@redmix/context'
+import { setContext } from '@cedarjs/context'
 
 export const magicNumber: MutationResolvers['magicNumber'] = async ({
   value,

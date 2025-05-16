@@ -1,9 +1,9 @@
 {
-  "name": "@redmix/graphql-server",
+  "name": "@cedarjs/graphql-server",
   "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/redmix-run/redmix.git",
+    "url": "git+https://github.com/cedarjs/cedar.git",
     "directory": "packages/graphql-server"
   },
   "license": "MIT",
@@ -14,7 +14,7 @@
   ],
   "scripts": {
     "build": "tsx ./build.mts && yarn build:types",
-    "build:pack": "yarn pack -o redmix-graphql-server.tgz",
+    "build:pack": "yarn pack -o cedar-graphql-server.tgz",
     "build:types": "tsc --build --verbose ./tsconfig.json",
     "build:watch": "nodemon --watch src --ext \"js,jsx,ts,tsx\" --ignore dist --exec \"yarn build\"",
     "prepublishOnly": "NODE_ENV=production yarn build",
@@ -23,6 +23,8 @@
   },
   "dependencies": {
     "@babel/runtime-corejs3": "7.26.10",
+    "@cedarjs/api": "workspace:*",
+    "@cedarjs/context": "workspace:*",
     "@envelop/core": "5.0.2",
     "@envelop/depth-limit": "4.0.0",
     "@envelop/disable-introspection": "6.0.0",
@@ -34,8 +36,6 @@
     "@graphql-tools/utils": "10.5.4",
     "@graphql-yoga/plugin-persisted-operations": "3.7.0",
     "@opentelemetry/api": "1.8.0",
-    "@redmix/api": "workspace:*",
-    "@redmix/context": "workspace:*",
     "core-js": "3.42.0",
     "graphql": "16.9.0",
     "graphql-scalars": "1.23.0",
@@ -47,10 +47,10 @@
   "devDependencies": {
     "@babel/cli": "7.26.4",
     "@babel/core": "^7.26.10",
+    "@cedarjs/framework-tools": "workspace:*",
+    "@cedarjs/project-config": "workspace:*",
+    "@cedarjs/realtime": "workspace:*",
     "@envelop/types": "5.0.0",
-    "@redmix/framework-tools": "workspace:*",
-    "@redmix/project-config": "workspace:*",
-    "@redmix/realtime": "workspace:*",
     "@types/aws-lambda": "8.10.145",
     "@types/jsonwebtoken": "9.0.8",
     "@types/lodash": "4.17.15",

@@ -419,7 +419,7 @@ And due to the nice encapsulation of our **Comment** component we can make all t
 
 ```jsx title="web/src/components/Comment/Comment.jsx"
 // highlight-next-line
-import { useMutation } from '@redmix/web'
+import { useMutation } from '@cedarjs/web'
 
 import { useAuth } from 'src/auth'
 
@@ -501,8 +501,8 @@ import type {
   DeleteCommentMutationVariables,
 } from 'types/graphql'
 
-import type { TypedDocumentNode } from '@redmix/web'
-import { useMutation } from '@redmix/web'
+import type { TypedDocumentNode } from '@cedarjs/web'
+import { useMutation } from '@cedarjs/web'
 
 import { QUERY as CommentsQuery } from 'src/components/CommentsCell'
 // highlight-end
@@ -801,7 +801,7 @@ We can use the same `mockCurrentUser()` function in our Jest tests as well. Let'
 
 ```jsx title="web/src/components/Comment/Comment.test.jsx"
 // highlight-next-line
-import { render, screen, waitFor } from '@redmix/testing'
+import { render, screen, waitFor } from '@cedarjs/testing'
 
 import Comment from './Comment'
 
@@ -857,7 +857,7 @@ describe('Comment', () => {
 
 ```tsx title="web/src/components/Comment/Comment.test.tsx"
 // highlight-next-line
-import { render, screen, waitFor } from '@redmix/testing'
+import { render, screen, waitFor } from '@cedarjs/testing'
 
 import Comment from './Comment'
 
@@ -1146,7 +1146,7 @@ We'll need a test to go along with that functionality. How do we test `requireAu
 
 ```javascript title="api/src/services/comments/comments.test.js"
 // highlight-next-line
-import { AuthenticationError, ForbiddenError } from '@redmix/graphql-server'
+import { AuthenticationError, ForbiddenError } from '@cedarjs/graphql-server'
 
 import { db } from 'src/lib/db'
 
@@ -1228,7 +1228,7 @@ describe('comments', () => {
 
 ```ts title="api/src/services/comments/comments.test.ts"
 // highlight-next-line
-import { AuthenticationError, ForbiddenError } from '@redmix/graphql-server'
+import { AuthenticationError, ForbiddenError } from '@cedarjs/graphql-server'
 
 import { db } from 'src/lib/db'
 

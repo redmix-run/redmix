@@ -6,7 +6,7 @@ import { config as dotenvDefaultsConfig } from 'dotenv-defaults'
 import { hideBin } from 'yargs/helpers'
 import parser from 'yargs-parser'
 
-import { getPaths } from '@redmix/project-config'
+import { getPaths } from '@cedarjs/project-config'
 
 export function loadEnvFiles() {
   if (process.env.REDWOOD_ENV_FILES_LOADED) {

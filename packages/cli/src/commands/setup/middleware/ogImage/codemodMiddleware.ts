@@ -4,7 +4,7 @@ export default function transform(file: FileInfo, api: API) {
   const j = api.jscodeshift
   const ast = j(file.source)
 
-  // Insert `import { OgImageMiddleware } from '@redmix/ogimage-gen/middleware'` at the top of the file
+  // Insert `import { OgImageMiddleware } from '@cedarjs/ogimage-gen/middleware'` at the top of the file
   const needsImport =
     ast.find(j.ImportDeclaration, {
       specifiers: [
@@ -16,7 +16,7 @@ export default function transform(file: FileInfo, api: API) {
         },
       ],
       source: {
-        value: '@redmix/ogimage-gen/middleware',
+        value: '@cedarjs/ogimage-gen/middleware',
         type: 'StringLiteral',
       },
     }).length === 0
@@ -27,7 +27,7 @@ export default function transform(file: FileInfo, api: API) {
       .insertBefore(
         j.importDeclaration(
           [j.importDefaultSpecifier(j.identifier('OgImageMiddleware'))],
-          j.stringLiteral('@redmix/ogimage-gen/middleware'),
+          j.stringLiteral('@cedarjs/ogimage-gen/middleware'),
         ),
       )
   }

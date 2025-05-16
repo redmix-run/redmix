@@ -18,15 +18,15 @@ export {
    * in a future version.
    */
   getApiSideBabelConfigPath,
-  /** Used by @redmix/internal and @redmix/testing */
+  /** Used by @cedarjs/internal and @cedarjs/testing */
   getApiSideBabelPlugins,
-  /** Used by @redmix/testing */
+  /** Used by @cedarjs/testing */
   getApiSideBabelPresets,
-  /** Used by @redmix/testing and @redmix/eslint-config */
+  /** Used by @cedarjs/testing and @cedarjs/eslint-config */
   getApiSideDefaultBabelConfig,
-  /** Used by @redmix/cli, @remix/cli-helpers and @redmix/prerender */
+  /** Used by @cedarjs/cli, @remix/cli-helpers and @cedarjs/prerender */
   registerApiSideBabelHook,
-  /** Used by @redmix/internal and @redmix/vite */
+  /** Used by @cedarjs/internal and @cedarjs/vite */
   transformWithBabel,
 } from './api'
 
@@ -46,14 +46,14 @@ export {
    * in a future version.
    */
   getWebSideBabelPresets,
-  /** Used by @redmix/cli, @remix/eslint-config and @redmix/vite */
+  /** Used by @cedarjs/cli, @remix/eslint-config and @cedarjs/vite */
   getWebSideDefaultBabelConfig,
   /**
    * @deprecated This export isn't used by the framework, so it'll be removed
    * in a future version.
    */
   getWebSideOverrides,
-  /** Used by @redmix/prerender */
+  /** Used by @cedarjs/prerender */
   registerWebSideBabelHook,
 } from './web'
 

@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url'
 
 import fg from 'fast-glob'
 
-import { build, defaultIgnorePatterns } from '@redmix/framework-tools'
+import { build, defaultIgnorePatterns } from '@cedarjs/framework-tools'
 
 await build()
 

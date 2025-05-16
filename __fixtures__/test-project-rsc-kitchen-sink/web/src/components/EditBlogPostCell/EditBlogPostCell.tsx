@@ -2,7 +2,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-import type { CellSuccessProps, CellFailureProps } from '@redmix/web'
+import type { CellSuccessProps, CellFailureProps } from '@cedarjs/web'
 
 import { savePost } from 'src/lib/actions'
 

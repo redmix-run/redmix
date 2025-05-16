@@ -2,7 +2,7 @@
 
 const config = {
   rootDir: '../',
-  preset: '@redmix/testing/config/jest/api',
+  preset: '@cedarjs/testing/config/jest/api',
 }
 
 module.exports = config

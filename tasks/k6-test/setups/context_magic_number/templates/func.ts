@@ -1,6 +1,6 @@
 import type { APIGatewayProxyEvent, Context } from 'aws-lambda'
 
-import { setContext } from '@redmix/context'
+import { setContext } from '@cedarjs/context'
 
 export const handler = async (
   event: APIGatewayProxyEvent,

@@ -4,12 +4,12 @@ import { config } from 'dotenv-defaults'
 import { hideBin } from 'yargs/helpers'
 import yargs from 'yargs/yargs'
 
-import { getPaths } from '@redmix/project-config'
+import { getPaths } from '@cedarjs/project-config'
 import {
   description as webDescription,
   builder as webBuilder,
   handler as webHandler,
-} from '@redmix/web-server'
+} from '@cedarjs/web-server'
 
 import {
   description as apiDescription,

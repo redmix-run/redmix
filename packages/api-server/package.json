@@ -1,10 +1,10 @@
 {
-  "name": "@redmix/api-server",
+  "name": "@cedarjs/api-server",
   "version": "0.0.1",
   "description": "Redwood's HTTP server for Serverless Functions",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/redmix-run/redmix.git",
+    "url": "git+https://github.com/cedarjs/cedar.git",
     "directory": "packages/api-server"
   },
   "license": "MIT",
@@ -20,7 +20,7 @@
   ],
   "scripts": {
     "build": "tsx ./build.mts && yarn build:types",
-    "build:pack": "yarn pack -o redmix-api-server.tgz",
+    "build:pack": "yarn pack -o cedar-api-server.tgz",
     "build:types": "tsc --build --verbose tsconfig.build.json",
     "build:watch": "nodemon --watch src --ext \"js,jsx,ts,tsx\" --ignore dist --exec \"yarn build && yarn fix:permissions\"",
     "fix:permissions": "chmod +x dist/index.js; chmod +x dist/watch.js",
@@ -29,13 +29,13 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
+    "@cedarjs/context": "workspace:*",
+    "@cedarjs/fastify-web": "workspace:*",
+    "@cedarjs/internal": "workspace:*",
+    "@cedarjs/project-config": "workspace:*",
+    "@cedarjs/web-server": "workspace:*",
     "@fastify/multipart": "8.3.1",
     "@fastify/url-data": "5.4.0",
-    "@redmix/context": "workspace:*",
-    "@redmix/fastify-web": "workspace:*",
-    "@redmix/internal": "workspace:*",
-    "@redmix/project-config": "workspace:*",
-    "@redmix/web-server": "workspace:*",
     "chalk": "4.1.2",
     "chokidar": "3.6.0",
     "dotenv-defaults": "5.0.2",
@@ -51,7 +51,7 @@
     "yargs": "17.7.2"
   },
   "devDependencies": {
-    "@redmix/framework-tools": "workspace:*",
+    "@cedarjs/framework-tools": "workspace:*",
     "@types/aws-lambda": "8.10.145",
     "@types/lodash": "4.17.15",
     "@types/qs": "6.9.16",
@@ -63,10 +63,10 @@
     "vitest": "2.1.9"
   },
   "peerDependencies": {
-    "@redmix/graphql-server": "workspace:*"
+    "@cedarjs/graphql-server": "workspace:*"
   },
   "peerDependenciesMeta": {
-    "@redmix/graphql-server": {
+    "@cedarjs/graphql-server": {
       "optional": true
     }
   },

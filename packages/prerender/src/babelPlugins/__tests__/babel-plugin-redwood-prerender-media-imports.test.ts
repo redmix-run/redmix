@@ -3,14 +3,14 @@ import path from 'path'
 import pluginTester from 'babel-plugin-tester'
 import { vi, describe, beforeEach, afterAll } from 'vitest'
 
-import type projectConfig from '@redmix/project-config'
+import type projectConfig from '@cedarjs/project-config'
 
 import plugin from '../babel-plugin-redwood-prerender-media-imports'
 
 let mockDistDir
 let mockSrcDir
 
-vi.mock('@redmix/project-config', async (importOriginal) => {
+vi.mock('@cedarjs/project-config', async (importOriginal) => {
   const originalProjectConfig = await importOriginal<typeof projectConfig>()
   return {
     ...originalProjectConfig,

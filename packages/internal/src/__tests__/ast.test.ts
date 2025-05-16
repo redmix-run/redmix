@@ -10,7 +10,7 @@ import {
   fileToAst,
 } from '../ast'
 
-vi.mock('@redmix/project-config', () => {
+vi.mock('@cedarjs/project-config', () => {
   const baseFixturePath = path.join(__dirname, 'fixtures')
   return {
     getPaths: () => ({

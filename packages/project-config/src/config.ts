@@ -184,10 +184,10 @@ const DEFAULT_CONFIG: Config = {
       autoInstall: true,
       plugins: [
         {
-          package: '@redmix/cli-storybook-vite',
+          package: '@cedarjs/cli-storybook-vite',
         },
         {
-          package: '@redmix/cli-data-migrate',
+          package: '@cedarjs/cli-data-migrate',
         },
       ],
     },

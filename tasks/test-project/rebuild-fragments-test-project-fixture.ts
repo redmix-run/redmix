@@ -8,7 +8,7 @@ import { rimraf } from 'rimraf'
 import { hideBin } from 'yargs/helpers'
 import yargs from 'yargs/yargs'
 
-import { RedwoodTUI, ReactiveTUIContent, RedwoodStyling } from '@redmix/tui'
+import { RedwoodTUI, ReactiveTUIContent, RedwoodStyling } from '@cedarjs/tui'
 
 import {
   addFrameworkDepsToProject,
@@ -237,7 +237,7 @@ if (resumePath && !fs.existsSync(path.join(resumePath, 'redwood.toml'))) {
 }
 
 const createProject = () => {
-  const cmd = `yarn node ./packages/create-redmix-app/dist/create-redmix-app.js ${OUTPUT_PROJECT_PATH}`
+  const cmd = `yarn node ./packages/create-cedar-app/dist/create-cedar-app.js ${OUTPUT_PROJECT_PATH}`
 
   const subprocess = exec(
     cmd,
@@ -467,7 +467,7 @@ async function runCommand() {
       fs.copyFileSync(
         path.join(
           __dirname,
-          '../../packages/create-redmix-app/templates/ts/package.json',
+          '../../packages/create-cedar-app/templates/ts/package.json',
         ),
         path.join(OUTPUT_PROJECT_PATH, 'package.json'),
       )

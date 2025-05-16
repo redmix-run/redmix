@@ -1,9 +1,9 @@
-import { recordTelemetryAttributes } from '@redmix/cli-helpers'
+import { recordTelemetryAttributes } from '@cedarjs/cli-helpers'
 import {
   convertTsProjectToJs,
   convertTsScriptsToJs,
-} from '@redmix/internal/dist/ts2js'
-import { getPaths } from '@redmix/project-config'
+} from '@cedarjs/internal/dist/ts2js'
+import { getPaths } from '@cedarjs/project-config'
 
 export const command = 'ts-to-js'
 export const description =

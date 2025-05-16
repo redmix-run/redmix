@@ -3,7 +3,7 @@ import { createRequire } from 'node:module'
 
 const require = createRequire(import.meta.url)
 const requireFromWebServer = createRequire(
-  require.resolve('@redmix/web-server/package.json'),
+  require.resolve('@cedarjs/web-server/package.json'),
 )
 
 const bins = requireFromWebServer('./package.json')['bin']

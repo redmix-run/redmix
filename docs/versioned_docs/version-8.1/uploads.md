@@ -49,7 +49,7 @@ Assuming you've built a [Form](forms.md) for profile
 
 ```tsx title="web/src/components/ProfileForm.tsx"
 // highlight-next-line
-import { FileField, TextField, FieldError } from '@redmix/forms'
+import { FileField, TextField, FieldError } from '@cedarjs/forms'
 
 export const ProfileForm = ({ onSubmit }) => {
   return {
@@ -78,7 +78,7 @@ A `FileField` is just a standard `<input type="file">` - that's integrated with 
 Now we need to send the file as a mutation!
 
 ```tsx title="web/src/components/EditProfile.tsx"
-import { useMutation } from '@redmix/web'
+import { useMutation } from '@cedarjs/web'
 
 const UPDATE_PROFILE_MUTATION = gql`
   // This is the Input type we setup with File earlier! 
@@ -208,9 +208,9 @@ This will do three things:
 Let's break down the key components of the configuration.
 
 ```ts title="api/src/lib/uploads.ts"
-import { createUploadsConfig, setupStorage } from '@redmix/storage'
-import { FileSystemStorage } from '@redmix/storage/FileSystemStorage'
-import { UrlSigner } from '@redmix/storage/signedUrl'
+import { createUploadsConfig, setupStorage } from '@cedarjs/storage'
+import { FileSystemStorage } from '@cedarjs/storage/FileSystemStorage'
+import { UrlSigner } from '@cedarjs/storage/signedUrl'
 
 // ⭐ (1)
 const uploadConfig = createUploadsConfig({
@@ -278,7 +278,7 @@ Now we need to extend our db client in `api/src/lib/db.ts` to use the configured
 ```ts title="api/src/lib/db.ts"
 import { PrismaClient } from '@prisma/client'
 
-import { emitLogLevels, handlePrismaLogging } from '@redmix/api/logger'
+import { emitLogLevels, handlePrismaLogging } from '@cedarjs/api/logger'
 
 import { logger } from './logger'
 // highlight-next-line
@@ -586,7 +586,7 @@ The extension is determined by the name of the uploaded file.
 When you setup uploads, we also generate an API function (an endpoint) for you - by default at `/signedUrl`. You can use this in conjunction with the `.withSignedUrl` helper. For example:
 
 ```ts title="api/src/services/profiles.ts"
-import { EXPIRES_IN } from '@redmix/storage/UrlSigner'
+import { EXPIRES_IN } from '@cedarjs/storage/UrlSigner'
 
 export const profile = async ({ id }) => {
   const profile = await db.profile.findUnique({
@@ -626,7 +626,7 @@ This will generate a URL that will expire in 2 days (from the point of query). L
 This function is automatically generated for you, but let's take a quick look at how it works:
 
 ```ts title="api/src/functions/signedUrl/signedUrl.ts"
-import type { SignatureValidationArgs } from '@redmix/storage/UrlSigner'
+import type { SignatureValidationArgs } from '@cedarjs/storage/UrlSigner'
 
 // The urlSigner and fsStorage instances were configured when we setup uploads
 // highlight-next-line
@@ -741,8 +741,8 @@ MemoryStorage: This adapter stores files in memory, making it ideal for temporar
 
 We build in two storage adapters:
 
-- [FileSystemStorage](https://github.com/redmix-run/redmix/blob/main/packages/storage/src/adapters/FileSystemStorage/FileSystemStorage.ts) - This adapter interacts with the file system, enabling the storage of files on disk.
-- [MemoryStorage](https://github.com/redmix-run/redmix/blob/main/packages/storage/src/adapters/MemoryStorage/MemoryStorage.ts) - this adapter stores files in memory, making it ideal for temporary storage needs or testing scenarios. It offers faster access times but does not persist data across application restarts.
+- [FileSystemStorage](https://github.com/cedarjs/cedar/blob/main/packages/storage/src/adapters/FileSystemStorage/FileSystemStorage.ts) - This adapter interacts with the file system, enabling the storage of files on disk.
+- [MemoryStorage](https://github.com/cedarjs/cedar/blob/main/packages/storage/src/adapters/MemoryStorage/MemoryStorage.ts) - this adapter stores files in memory, making it ideal for temporary storage needs or testing scenarios. It offers faster access times but does not persist data across application restarts.
 
 ## Configuring the server further
 
@@ -757,7 +757,7 @@ import path from 'path'
 // highlight-next-line
 import fastifyStatic from '@fastify/static'
 
-import { createServer } from '@redmix/api-server'
+import { createServer } from '@cedarjs/api-server'
 import { logger } from 'src/lib/logger'
 
 async function main() {
@@ -806,7 +806,7 @@ The default body size limit for the Redwood API server is 100MB (per request). D
 You can configure the `bodyLimit` option to increase or decrease the default limit.
 
 ```js title="api/server.js"
-import { createServer } from '@redmix/api-server'
+import { createServer } from '@cedarjs/api-server'
 
 import { logger } from 'src/lib/logger'
 

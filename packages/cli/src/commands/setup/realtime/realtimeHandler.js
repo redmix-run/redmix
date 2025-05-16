@@ -3,9 +3,9 @@ import path from 'path'
 import fs from 'fs-extra'
 import { Listr } from 'listr2'
 
-import { addApiPackages } from '@redmix/cli-helpers'
-import { generate as generateTypes } from '@redmix/internal/dist/generate/generate'
-import { errorTelemetry } from '@redmix/telemetry'
+import { addApiPackages } from '@cedarjs/cli-helpers'
+import { generate as generateTypes } from '@cedarjs/internal/dist/generate/generate'
+import { errorTelemetry } from '@cedarjs/telemetry'
 
 import c from '../../../lib/colors.js'
 import { getPaths, transformTSToJS, writeFile } from '../../../lib/index.js'
@@ -30,7 +30,7 @@ export async function handler({ force, includeExamples, verbose }) {
 
   const tasks = new Listr(
     [
-      addApiPackages(['ioredis@^5', `@redmix/realtime@${version}`]),
+      addApiPackages(['ioredis@^5', `@cedarjs/realtime@${version}`]),
       {
         title: 'Adding the realtime api lib ...',
         task: async () => {

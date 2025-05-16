@@ -50,7 +50,7 @@ export function createRedwoodJSApp({
 }) {
   try {
     execa.sync(
-      'yarn node dist/create-redmix-app.js',
+      'yarn node dist/create-cedar-app.js',
       [
         projectPath,
         '--no-yarn-install',
@@ -59,7 +59,7 @@ export function createRedwoodJSApp({
         '--no-git',
       ].filter(Boolean),
       {
-        cwd: path.join(frameworkPath, 'packages/create-redmix-app'),
+        cwd: path.join(frameworkPath, 'packages/create-cedar-app'),
         env: { REDWOOD_CI: '1' },
         shell: true,
         stdio: verbose ? 'inherit' : 'ignore',

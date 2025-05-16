@@ -1,6 +1,6 @@
 //@ts-nocheck
-import { parseJWT } from '@redmix/api'
-import { AuthenticationError, ForbiddenError } from '@redmix/graphql-server'
+import { parseJWT } from '@cedarjs/api'
+import { AuthenticationError, ForbiddenError } from '@cedarjs/graphql-server'
 
 import { logger } from 'src/lib/logger'
 
@@ -14,7 +14,7 @@ import { logger } from 'src/lib/logger'
  * @param { APIGatewayEvent event, Context context } - An object which contains information from the invoker
  * such as headers and cookies, and the context information about the invocation such as IP Address
  *
- * @see https://github.com/redmix-run/redmix/tree/main/packages/auth for examples
+ * @see https://github.com/cedarjs/cedar/tree/main/packages/auth for examples
  */
 export const getCurrentUser = async (
   decoded,
@@ -110,7 +110,7 @@ export const hasRole = (roles: AllowedRoles): boolean => {
  * @throws {@link AuthenticationError} - If the currentUser is not authenticated
  * @throws {@link ForbiddenError} If the currentUser is not allowed due to role permissions
  *
- * @see https://github.com/redmix-run/redmix/tree/main/packages/auth for examples
+ * @see https://github.com/cedarjs/cedar/tree/main/packages/auth for examples
  */
 export const requireAuth = ({ roles }: { roles?: AllowedRoles } = {}) => {
   if (!isAuthenticated()) {

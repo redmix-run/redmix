@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
 /**
- * This file lets users run the Redmix CLI commands inside the /web directory
+ * This file lets users run the Cedar CLI commands inside the /web directory
  * in their projects.
- * This works because of the "bin" field in the @redmix/web package.json file
+ * This works because of the "bin" field in the @cedarjs/web package.json file
  * that points to this file.
  */
 
@@ -11,7 +11,7 @@ import { createRequire } from 'node:module'
 import { pathToFileURL } from 'node:url'
 
 const cliPackageJsonFileUrl = pathToFileURL(
-  require.resolve('@redmix/cli/package.json'),
+  require.resolve('@cedarjs/cli/package.json'),
 )
 
 const requireFromCli = createRequire(cliPackageJsonFileUrl)

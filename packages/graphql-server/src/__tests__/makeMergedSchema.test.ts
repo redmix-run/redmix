@@ -15,7 +15,7 @@ import type {
   SdlGlobImports,
 } from '../types'
 
-vi.mock('@redmix/project-config', () => {
+vi.mock('@cedarjs/project-config', () => {
   return {
     getConfig: () => {
       return {

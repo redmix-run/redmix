@@ -1,4 +1,4 @@
-import type { Scenario, DefineScenario, DescribeScenario } from '@redmix/testing/api'
+import type { Scenario, DefineScenario, DescribeScenario } from '@cedarjs/testing/api'
 
 declare global {
   /**

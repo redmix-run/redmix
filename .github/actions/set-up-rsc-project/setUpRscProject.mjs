@@ -59,7 +59,7 @@ async function setUpRscProject(rscProjectPath, exec, execInProject) {
 
   console.log(`Creating project at ${rscProjectPath}`)
   console.log()
-  await exec('yarn', ['create', 'redmix-app', '-y', '--no-git', rscProjectPath])
+  await exec('yarn', ['create', 'cedar-app', '-y', '--no-git', rscProjectPath])
   await execInProject('yarn install')
   await execInProject('yarn rw upgrade -t canary')
 

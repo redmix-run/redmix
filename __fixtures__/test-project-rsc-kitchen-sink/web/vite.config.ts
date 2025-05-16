@@ -3,7 +3,7 @@ import dns from 'dns'
 import type { UserConfig } from 'vite'
 import { defineConfig } from 'vite'
 
-import redwood from '@redmix/vite'
+import redwood from '@cedarjs/vite'
 
 // So that Vite will load on localhost instead of `127.0.0.1`.
 // See: https://vitejs.dev/config/server-options.html#server-host.

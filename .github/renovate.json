@@ -19,7 +19,7 @@
       "milestone": 4
     },
     {
-      "groupName": "ESM and @redmix packages",
+      "groupName": "ESM and @cedarjs packages",
       "enabled": false,
       "matchPackageNames": [
         "boxen",
@@ -35,7 +35,7 @@
         "terminal-link",
         "title-case",
         "untildify",
-        "/^@redmix//"
+        "/^@cedarjs//"
       ]
     },
     {

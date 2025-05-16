@@ -30,7 +30,7 @@ import {
   TextField,
   TextAreaField,
   Submit,
-} from '@redmix/forms'
+} from '@cedarjs/forms'
 
 const CommentForm = () => {
   return (
@@ -75,7 +75,7 @@ export default CommentForm
 <TabItem value="ts" label="TypeScript">
 
 ```tsx title="web/src/components/CommentForm/CommentForm.tsx"
-import { Form, Label, TextField, TextAreaField, Submit } from '@redmix/forms'
+import { Form, Label, TextField, TextAreaField, Submit } from '@cedarjs/forms'
 
 const CommentForm = () => {
   return (
@@ -139,9 +139,9 @@ import {
   TextField,
   TextAreaField,
   Submit,
-} from '@redmix/forms'
+} from '@cedarjs/forms'
 // highlight-next-line
-import { useMutation } from '@redmix/web'
+import { useMutation } from '@cedarjs/web'
 
 // highlight-start
 const CREATE = gql`
@@ -230,9 +230,9 @@ import {
   Submit,
   // highlight-next-line
   SubmitHandler,
-} from '@redmix/forms'
+} from '@cedarjs/forms'
 // highlight-next-line
-import { useMutation } from '@redmix/web'
+import { useMutation } from '@cedarjs/web'
 
 // highlight-start
 const CREATE = gql`
@@ -418,7 +418,7 @@ So let's use `Article` as the cleaning house for where all these disparate parts
 <TabItem value="js" label="JavaScript">
 
 ```jsx title="web/src/components/Article/Article.jsx"
-import { Link, routes } from '@redmix/router'
+import { Link, routes } from '@cedarjs/router'
 
 // highlight-next-line
 import CommentForm from 'src/components/CommentForm'
@@ -461,7 +461,7 @@ export default Article
 <TabItem value="ts" label="TypeScript">
 
 ```tsx title="web/src/components/Article/Article.tsx"
-import { Link, routes } from '@redmix/router'
+import { Link, routes } from '@cedarjs/router'
 
 // highlight-next-line
 import CommentForm from 'src/components/CommentForm'
@@ -533,7 +533,7 @@ First let's pass the post's ID as a prop to `CommentForm`:
 <TabItem value="js" label="JavaScript">
 
 ```jsx title="web/src/components/Article/Article.jsx"
-import { Link, routes } from '@redmix/router'
+import { Link, routes } from '@cedarjs/router'
 import CommentsCell from 'src/components/CommentsCell'
 import CommentForm from 'src/components/CommentForm'
 
@@ -572,7 +572,7 @@ export default Article
 <TabItem value="ts" label="TypeScript">
 
 ```jsx title="web/src/components/Article/Article.tsx"
-import { Link, routes } from '@redmix/router'
+import { Link, routes } from '@cedarjs/router'
 import CommentsCell from 'src/components/CommentsCell'
 import CommentForm from 'src/components/CommentForm'
 
@@ -682,8 +682,8 @@ import {
   TextField,
   TextAreaField,
   Submit,
-} from '@redmix/forms'
-import { useMutation } from '@redmix/web'
+} from '@cedarjs/forms'
+import { useMutation } from '@cedarjs/web'
 
 // highlight-next-line
 import { QUERY as CommentsQuery } from 'src/components/CommentsCell'
@@ -712,8 +712,8 @@ import {
   TextField,
   TextAreaField,
   Submit,
-} from '@redmix/forms'
-import { useMutation } from '@redmix/web'
+} from '@cedarjs/forms'
+import { useMutation } from '@cedarjs/web'
 
 // highlight-next-line
 import { QUERY as CommentsQuery } from 'src/components/CommentsCell'
@@ -752,10 +752,10 @@ import {
   TextField,
   TextAreaField,
   Submit,
-} from '@redmix/forms'
-import { useMutation } from '@redmix/web'
+} from '@cedarjs/forms'
+import { useMutation } from '@cedarjs/web'
 // highlight-next-line
-import { toast } from '@redmix/web/toast'
+import { toast } from '@cedarjs/web/toast'
 
 import { QUERY as CommentsQuery } from 'src/components/CommentsCell'
 
@@ -849,10 +849,10 @@ import {
   TextField,
   TextAreaField,
   Submit,
-} from '@redmix/forms'
-import { useMutation } from '@redmix/web'
+} from '@cedarjs/forms'
+import { useMutation } from '@cedarjs/web'
 // highlight-next-line
-import { toast } from '@redmix/web/toast'
+import { toast } from '@cedarjs/web/toast'
 
 import { QUERY as CommentsQuery } from 'src/components/CommentsCell'
 
@@ -953,9 +953,9 @@ We used `hidden` to just hide the form and "Leave a comment" title completely fr
 <TabItem value="js" label="JavaScript">
 
 ```jsx title="web/src/layouts/BlogLayout/BlogLayout.jsx"
-import { Link, routes } from '@redmix/router'
+import { Link, routes } from '@cedarjs/router'
 // highlight-next-line
-import { Toaster } from '@redmix/web/toast'
+import { Toaster } from '@cedarjs/web/toast'
 
 import { useAuth } from 'src/auth'
 
@@ -1028,9 +1028,9 @@ export default BlogLayout
 <TabItem value="ts" label="TypeScript">
 
 ```jsx title="web/src/layouts/BlogLayout/BlogLayout.tsx"
-import { Link, routes } from '@redmix/router'
+import { Link, routes } from '@cedarjs/router'
 // highlight-next-line
-import { Toaster } from '@redmix/web/toast'
+import { Toaster } from '@cedarjs/web/toast'
 
 import { useAuth } from 'src/auth'
 

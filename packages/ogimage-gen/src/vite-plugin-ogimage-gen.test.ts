@@ -2,7 +2,7 @@ import { vol, fs as memfs } from 'memfs'
 import type { ConfigEnv } from 'vite'
 import { describe, expect, test, vi, beforeAll, afterAll } from 'vitest'
 
-import { ensurePosixPath } from '@redmix/project-config'
+import { ensurePosixPath } from '@cedarjs/project-config'
 
 import vitePluginOgGen from './vite-plugin-ogimage-gen'
 

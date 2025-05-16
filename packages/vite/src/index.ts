@@ -6,8 +6,8 @@ import type { PluginOption } from 'vite'
 import { normalizePath } from 'vite'
 import { nodePolyfills } from 'vite-plugin-node-polyfills'
 
-import { getWebSideDefaultBabelConfig } from '@redmix/babel-config'
-import { getConfig, getPaths } from '@redmix/project-config'
+import { getWebSideDefaultBabelConfig } from '@cedarjs/babel-config'
+import { getConfig, getPaths } from '@cedarjs/project-config'
 
 import { getMergedConfig } from './lib/getMergedConfig.js'
 import { handleJsAsJsx } from './plugins/vite-plugin-jsx-loader.js'
@@ -36,7 +36,7 @@ export default function redwoodPluginVite(): PluginOption[] {
   const apiPackageJsonPath = path.join(rwPaths.api.base, 'package.json')
   const realtimeEnabled =
     fs.existsSync(apiPackageJsonPath) &&
-    fs.readFileSync(apiPackageJsonPath, 'utf-8').includes('@redmix/realtime')
+    fs.readFileSync(apiPackageJsonPath, 'utf-8').includes('@cedarjs/realtime')
 
   const streamingEnabled = rwConfig.experimental.streamingSsr.enabled
   const rscEnabled = rwConfig.experimental?.rsc?.enabled
@@ -170,7 +170,7 @@ export default function redwoodPluginVite(): PluginOption[] {
     removeFromBundle(
       [
         {
-          id: /@redmix\/router\/dist\/splash-page/,
+          id: /@cedarjs\/router\/dist\/splash-page/,
         },
       ],
       ['SplashPage'],
@@ -178,7 +178,7 @@ export default function redwoodPluginVite(): PluginOption[] {
     !realtimeEnabled &&
       removeFromBundle([
         {
-          id: /@redmix\/web\/dist\/apollo\/sseLink/,
+          id: /@cedarjs\/web\/dist\/apollo\/sseLink/,
         },
       ]),
     react({

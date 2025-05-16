@@ -1,4 +1,4 @@
-import { render, waitFor, screen } from '@redmix/testing/web'
+import { render, waitFor, screen } from '@cedarjs/testing/web'
 
 import {
   formatEnum,

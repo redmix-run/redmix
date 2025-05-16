@@ -154,7 +154,7 @@ Roles may be stored within `app_metadata` or sometimes within `authorization` un
 The `parseJWT` helper will consider both locations to extract roles on the decoded JWT.
 
 ```javascript title="api/lib/auth.js"
-import { parseJWT } from '@redmix/api'
+import { parseJWT } from '@cedarjs/api'
 
 export const getCurrentUser = async (decoded) => {
   return (
@@ -243,7 +243,7 @@ export const getCurrentUser = async (decoded) => {
 To protect a `PrivateSet` route for access by a single role:
 
 ```jsx
-import { Router, Route, PrivateSet } from '@redmix/router'
+import { Router, Route, PrivateSet } from '@cedarjs/router'
 
 const Routes = () => {
   return (
@@ -259,7 +259,7 @@ const Routes = () => {
 To protect a `PrivateSet` route for access by a multiple roles:
 
 ```jsx
-import { Router, Route, PrivateSet } from '@redmix/router'
+import { Router, Route, PrivateSet } from '@cedarjs/router'
 
 const Routes = () => {
   return (
@@ -277,7 +277,7 @@ const Routes = () => {
 If the currentUser is not assigned the role, they will be redirected to the page specified in the `unauthenticated` property. Therefore, you can define a specific page to be seen when attempting to access the protected route and denied access such as a "forbidden" page:
 
 ```jsx
-import { Router, Route, PrivateSet } from '@redmix/router'
+import { Router, Route, PrivateSet } from '@cedarjs/router'
 
 const Routes = () => {
   return (
@@ -301,8 +301,8 @@ A `NavLink` is a specialized `Link` used for navigation or menu links that is st
 To protect the `NavLink` for access by a single role:
 
 ```jsx
-import { NavLink, Link, routes } from '@redmix/router'
-import { useAuth } from '@redmix/auth'
+import { NavLink, Link, routes } from '@cedarjs/router'
+import { useAuth } from '@cedarjs/auth'
 
 const SidebarLayout = ({ children }) => {
   const { hasRole } = useAuth()
@@ -324,8 +324,8 @@ const SidebarLayout = ({ children }) => {
 To protect the `NavLink` for access by multiple roles:
 
 ```jsx
-import { NavLink, Link, routes } from '@redmix/router'
-import { useAuth } from '@redmix/auth'
+import { NavLink, Link, routes } from '@cedarjs/router'
+import { useAuth } from '@cedarjs/auth'
 
 const SidebarLayout = ({ children }) => {
   const { hasRole } = useAuth()
@@ -351,7 +351,7 @@ Note that `hasRole()` also checks if the currentUser is authenticated.
 To protect content in a `Component` for access by a single role:
 
 ```jsx
-import { useAuth } from '@redmix/auth'
+import { useAuth } from '@cedarjs/auth'
 
 const Post = ({ post }) => {
   const { hasRole } = useAuth()
@@ -371,7 +371,7 @@ const Post = ({ post }) => {
 To protect content in a `Component` for access by multiple roles:
 
 ```jsx
-import { useAuth } from '@redmix/auth'
+import { useAuth } from '@cedarjs/auth'
 
 const Post = ({ post }) => {
   const { hasRole } = useAuth()
@@ -395,7 +395,7 @@ Note that `hasRole()` also checks if the currentUser is authenticated.
 To protect markup in a `Page` for access by a single role:
 
 ```jsx
-import { useAuth } from "@redmix/auth";
+import { useAuth } from "@cedarjs/auth";
 import SidebarLayout from "src/layouts/SidebarLayout";
 
 const SettingsPage = () => {
@@ -422,7 +422,7 @@ const SettingsPage = () => {
 To protect markup in a `Page` for access by multiple roles:
 
 ```jsx
-import { useAuth } from "@redmix/auth";
+import { useAuth } from "@cedarjs/auth";
 import SidebarLayout from "src/layouts/SidebarLayout";
 
 const SettingsPage = () => {
@@ -512,7 +512,7 @@ Since `requireAuth()` raises an exception, catch and return a `HTTP 401 Unauthor
 
 ```javascript
 import { requireAuth } from 'src/lib/auth'
-import { AuthenticationError, ForbiddenError } from '@redmix/api'
+import { AuthenticationError, ForbiddenError } from '@cedarjs/api'
 
 export const handler = async (event, context) => {
   try {

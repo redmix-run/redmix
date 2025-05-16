@@ -2,14 +2,14 @@ import fmw from 'find-my-way'
 import type Router from 'find-my-way'
 import type { ViteDevServer } from 'vite'
 
-import { getPaths } from '@redmix/project-config'
-import { MiddlewareResponse } from '@redmix/web/middleware'
+import { getPaths } from '@cedarjs/project-config'
+import { MiddlewareResponse } from '@cedarjs/web/middleware'
 import type {
   Middleware,
   MiddlewareClass,
   MiddlewareInvokeOptions,
   MiddlewareRequest,
-} from '@redmix/web/middleware'
+} from '@cedarjs/web/middleware'
 
 import type { EntryServer } from '../types.js'
 import { makeFilePath, ssrLoadEntryServer } from '../utils.js'

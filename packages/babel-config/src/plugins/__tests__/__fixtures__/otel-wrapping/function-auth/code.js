@@ -1,4 +1,4 @@
-import { DbAuthHandler, DbAuthHandlerOptions } from '@redmix/auth-dbauth-api'
+import { DbAuthHandler, DbAuthHandlerOptions } from '@cedarjs/auth-dbauth-api'
 
 import { db } from 'src/lib/db'
 

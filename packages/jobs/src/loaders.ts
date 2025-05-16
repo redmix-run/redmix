@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 
-import { getPaths } from '@redmix/project-config'
+import { getPaths } from '@cedarjs/project-config'
 
 import type { JobManager } from './core/JobManager.js'
 import { JobsLibNotFoundError, JobNotFoundError } from './errors.js'

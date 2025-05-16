@@ -3,8 +3,8 @@
   "name": "web",
   "version": "0.0.0",
   "dependencies": {
-    "@redmix/router": "canary",
-    "@redmix/web": "canary",
+    "@cedarjs/router": "canary",
+    "@cedarjs/web": "canary",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

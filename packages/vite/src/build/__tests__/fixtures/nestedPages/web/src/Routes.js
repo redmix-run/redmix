@@ -9,7 +9,7 @@
 
 // Private is deprecated, but we still want to test it so we don't break
 // people's projects that still use it.
-import { Private, Route, Router, Set } from '@redmix/router'
+import { Private, Route, Router, Set } from '@cedarjs/router'
 
 import AdminLayout from 'src/layouts/AdminLayout/AdminLayout'
 import MainLayout from 'src/layouts/MainLayout/MainLayout'

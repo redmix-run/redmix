@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { useLocation, ParamsContext, parseSearch } from '@redmix/router'
+import { useLocation, ParamsContext, parseSearch } from '@cedarjs/router'
 
 interface Props {
   children?: React.ReactNode

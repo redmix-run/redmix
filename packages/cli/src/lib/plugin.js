@@ -4,7 +4,7 @@ import chalk from 'chalk'
 import enquirer from 'enquirer'
 import fs from 'fs-extra'
 
-import { getCompatibilityData } from '@redmix/cli-helpers'
+import { getCompatibilityData } from '@cedarjs/cli-helpers'
 
 import { installModule, isModuleInstalled } from './packages.js'
 
@@ -25,14 +25,14 @@ export const PLUGIN_CACHE_FILENAME = 'commandCache.json'
  * incorrect.
  */
 export const PLUGIN_CACHE_DEFAULT = {
-  '@redmix/cli-storybook-vite': {
+  '@cedarjs/cli-storybook-vite': {
     storybook: {
       aliases: ['sb'],
       description:
         'Launch Storybook: a tool for building UI components and pages in isolation',
     },
   },
-  '@redmix/cli-data-migrate': {
+  '@cedarjs/cli-data-migrate': {
     'data-migrate <command>': {
       aliases: ['dataMigrate', 'dm'],
       description: 'Migrate the data in your database',
@@ -219,7 +219,7 @@ async function installPluginPackage(packageName, packageVersion) {
   // when no version is specified.
 
   let versionToInstall = packageVersion
-  const isRedwoodPackage = packageName.startsWith('@redmix/')
+  const isRedwoodPackage = packageName.startsWith('@cedarjs/')
   if (!isRedwoodPackage && versionToInstall === undefined) {
     versionToInstall = 'latest'
     try {

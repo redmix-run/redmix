@@ -11,10 +11,10 @@ description: Redwood quick start
 
 :::
 
-Create a Redwood project with `yarn create redmix-app`:
+Create a Redwood project with `yarn create cedar-app`:
 
 ```
-yarn create redmix-app my-redwood-project
+yarn create cedar-app my-redwood-project
 ```
 
 :::tip Prefer TypeScript?
@@ -22,7 +22,7 @@ yarn create redmix-app my-redwood-project
 Redwood comes with full TypeScript support from the get-go:
 
 ```
-yarn create redmix-app my-redwood-project --typescript
+yarn create cedar-app my-redwood-project --typescript
 ```
 
 :::

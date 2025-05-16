@@ -7,7 +7,7 @@ description: Redwood makes building forms easier with helper components
 Redwood provides several helpers to make building forms easier.
 All of Redwood's helpers are simple wrappers around [React Hook Form](https://react-hook-form.com/) (RHF) that make it even easier to use in most cases.
 
-If Redwood's helpers aren't flexible enough for you, you can use React Hook Form directly. `@redmix/forms` exports everything it does:
+If Redwood's helpers aren't flexible enough for you, you can use React Hook Form directly. `@cedarjs/forms` exports everything it does:
 
 ```jsx
 import {
@@ -18,12 +18,12 @@ import {
    *
    * @see {@link https://react-hook-form.com/api}
    */
-} from '@redmix/forms'
+} from '@cedarjs/forms'
 ```
 
 ## Overview
 
-`@redmix/forms` exports the following components:
+`@cedarjs/forms` exports the following components:
 
 | Component         | Description                                                                                                                                        |
 | :---------------- | :------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -93,7 +93,7 @@ import {
   TextAreaField,
   FieldError,
   Submit,
-} from '@redmix/forms'
+} from '@cedarjs/forms'
 
 const ContactPage = () => {
   const onSubmit = (data) => {
@@ -199,7 +199,7 @@ This helper renders a `<div>` containing a "title" message and a `<ul>` enumerat
 For example, let's say you have a form with a `<TextField>` for a user's email address, but you didn't specify any validation on it:
 
 ```jsx {22}
-import { useMutation } from '@redmix/web'
+import { useMutation } from '@cedarjs/web'
 
 const CREATE_CONTACT = gql`
   mutation CreateContactMutation($input: ContactInput!) {
@@ -349,7 +349,7 @@ Using these two together you can create custom input fields that replicate a Red
 In the following example we have an all-in-one custom required input field with label, input, and error display.
 
 ```jsx
-import { FieldError, useErrorStyles, useRegister } from '@redmix/forms'
+import { FieldError, useErrorStyles, useRegister } from '@cedarjs/forms'
 
 const RequiredField = ({ label, name, validation }) => {
   const register = useRegister({
@@ -394,7 +394,7 @@ The following example shows how you could go about integrating a component from 
 import { ToggleButton } from 'primereact/togglebutton'
 import type { ToggleButtonProps } from 'primereact/togglebutton'
 
-import { Controller, RegisterOptions, useErrorStyles } from '@redmix/forms'
+import { Controller, RegisterOptions, useErrorStyles } from '@cedarjs/forms'
 
 interface Props extends ToggleButtonProps {
   validation?: RegisterOptions

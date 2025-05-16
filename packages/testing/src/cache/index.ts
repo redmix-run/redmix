@@ -1,4 +1,4 @@
-import type { InMemoryClient } from '@redmix/api/cache'
+import type { InMemoryClient } from '@cedarjs/api/cache'
 
 type AsymmetricMatcher = {
   $$typeof: symbol
@@ -7,7 +7,7 @@ type AsymmetricMatcher = {
 type ExpectedValue = any[] | any | AsymmetricMatcher
 type ExpectedKey = string | RegExp
 // Custom Jest matchers to be used with Redwood's server caching
-// Just needs a global import like import '@redmix/testing/cache'
+// Just needs a global import like import '@cedarjs/testing/cache'
 
 expect.extend({
   toHaveCached(

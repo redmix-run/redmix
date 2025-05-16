@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 
-import { context as globalContext, setContext } from '@redmix/context'
-import { getAsyncStoreInstance } from '@redmix/context/dist/store'
+import { context as globalContext, setContext } from '@cedarjs/context'
+import { getAsyncStoreInstance } from '@cedarjs/context/dist/store'
 
 describe('Global context with context isolation', () => {
   it('Should work when assigning directly into context', async () => {

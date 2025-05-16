@@ -21,7 +21,7 @@ If you want to wrap your custom notfound page in a `Layout`, then you should add
 Each route is specified with a `Route`. Our first route will tell the router what to render when no other route matches:
 
 ```jsx title="Routes.jsx"
-import { Router, Route } from '@redmix/router'
+import { Router, Route } from '@cedarjs/router'
 
 const Routes = () => (
   <Router>
@@ -81,7 +81,7 @@ to:
 You can group Routes into sets using the `Set` component. `Set` allows you to wrap a set of Routes in another component or array of components—usually a Context, a Layout, or both:
 
 ```jsx title="Routes.jsx"
-import { Router, Route, Set } from '@redmix/router'
+import { Router, Route, Set } from '@cedarjs/router'
 import BlogContext from 'src/contexts/BlogContext'
 import BlogLayout from 'src/layouts/BlogLayout'
 
@@ -117,7 +117,7 @@ Conceptually, this fits with how we think about Context and Layouts as things th
 There's a lot of flexibility here. You can even nest `Sets` to great effect:
 
 ```jsx title="Routes.jsx"
-import { Router, Route, Set } from '@redmix/router'
+import { Router, Route, Set } from '@cedarjs/router'
 import BlogContext from 'src/contexts/BlogContext'
 import BlogLayout from 'src/layouts/BlogLayout'
 import BlogNavLayout from 'src/layouts/BlogNavLayout'
@@ -210,7 +210,7 @@ Redwood uses the `useAuth` hook under the hood to determine if the user is authe
 When it comes to routing, matching URLs to Pages is only half the equation. The other half is generating links to your pages. The router makes this really simple without having to hardcode URL paths. In a Page component, you can do this (only relevant bits are shown in code samples from now on):
 
 ```jsx title="SomePage.jsx"
-import { Link, routes } from '@redmix/router'
+import { Link, routes } from '@cedarjs/router'
 
 // Given the route in the last section, this produces: <a href="/">
 const SomePage = () => <Link to={routes.home()} />
@@ -227,7 +227,7 @@ Named route functions simply return a string, so you can still pass in hardcoded
 URL.
 
 ```jsx title="MainMenu.jsx"
-import { NavLink, routes } from '@redmix/router'
+import { NavLink, routes } from '@cedarjs/router'
 
 const MainMenu = () =>
   <ul>
@@ -264,7 +264,7 @@ The `activeMatchParams` prop can be used to control how query params are
 matched:
 
 ```jsx
-import { NavLink, routes } from '@redmix/router'
+import { NavLink, routes } from '@cedarjs/router'
 
 // Will render <a href="/?tab=tutorial&page=2" className="activeLink"> when on
 // any Home tutorial page
@@ -300,7 +300,7 @@ You can use `useMatch` to create your own component with active styles.
 > `NavLink` uses it internally!
 
 ```jsx
-import { Link, routes, useMatch } from '@redmix/router'
+import { Link, routes, useMatch } from '@cedarjs/router'
 
 const CustomLink = ({ to, ...rest }) => {
   const matchInfo = useMatch(to)
@@ -316,7 +316,7 @@ const MainMenu = () => {
 `useMatch` accepts `searchParams` in the `options` for matching granularity which is exactly the same as `activeMatchParams` of `NavLink`
 
 ```jsx
-import { Link, routes, useMatch } from '@redmix/router'
+import { Link, routes, useMatch } from '@cedarjs/router'
 
 const CustomLink = ({ to, ...rest }) => {
   const matchInfo = useMatch(to, { searchParams: [{ tab: 'tutorial' }, 'page'] })
@@ -493,7 +493,7 @@ In the following example, `/about/` will _not_ match `/about` and you will be se
 Sometimes it's convenient to receive route parameters as the props to the Page, but in the case where a deeply nested component needs access to the route parameters, it quickly becomes tedious to pass those props through every intervening component. The router solves this with the `useParams` hook:
 
 ```jsx title="SomeDeeplyNestedComponent.jsx"
-import { useParams } from '@redmix/router'
+import { useParams } from '@cedarjs/router'
 
 const SomeDeeplyNestedComponent = () => {
   const { id } = useParams()
@@ -508,7 +508,7 @@ In the above example, we've pulled in the `id` route parameter without needing t
 If you'd like to get access to the current URL, `useLocation` returns a read-only location object representing it. The location object has three properties, [pathname](https://developer.mozilla.org/en-US/docs/Web/API/Location/pathname), [search](https://developer.mozilla.org/en-US/docs/Web/API/Location/search), and [hash](https://developer.mozilla.org/en-US/docs/Web/API/Location/hash), that update when the URL changes. This makes it easy to fire off navigation side effects or use the URL as if it were state:
 
 ```jsx
-import { useLocation } from '@redmix/router'
+import { useLocation } from '@cedarjs/router'
 
 const App = () => {
   const { pathname, search, hash } = useLocation()
@@ -602,7 +602,7 @@ const routeUrl = routeName ? routes[routeName]() : undefined
 If you'd like to programmatically navigate to a different page, you can simply use the `navigate` function:
 
 ```jsx title="SomePage.jsx"
-import { navigate, routes } from '@redmix/router'
+import { navigate, routes } from '@cedarjs/router'
 
 const SomePage = () => {
   const onSomeAction = () => {
@@ -622,7 +622,7 @@ By default `navigate` will scroll to the top after navigating to a new route (ex
 Going back is as easy as using the `back()` function that's exported from the router.
 
 ```jsx title="SomePage.jsx"
-import { back } from '@redmix/router'
+import { back } from '@cedarjs/router'
 
 const SomePage = () => {
   const onSomeAction = () => {
@@ -639,8 +639,8 @@ const SomePage = () => {
 The `useBlocker` hook allows you to prevent navigation away from a page under certain conditions. This is useful for scenarios such as preventing a user from accidentally navigating away from a form with unsaved changes.
 
 ```jsx
-import { useBlocker } from '@redmix/router'
-import { useForm } from '@redmix/forms'
+import { useBlocker } from '@cedarjs/router'
+import { useForm } from '@cedarjs/forms'
 
 const SomeForm = () => {
   const form = useForm<FormInput>()
@@ -671,7 +671,7 @@ If you want to declaratively redirect to a different page, use the `<Redirect>` 
 In the example below, SomePage will redirect to the home page.
 
 ```jsx title="SomePage.jsx"
-import { Redirect, routes } from '@redmix/router'
+import { Redirect, routes } from '@cedarjs/router'
 
 const SomePage = () => <Redirect to={routes.home()} />
 ```
@@ -728,7 +728,7 @@ An alternative way to implement whileLoadingPage is to use `usePageLoadingContex
 > **VIDEO:** If you'd prefer to watch a video, there's one accompanying this section: https://www.youtube.com/watch?v=BVkyXjUQADs&feature=youtu.be
 
 ```jsx title="SomeLayout.jsx"
-import { usePageLoadingContext } from '@redmix/router'
+import { usePageLoadingContext } from '@cedarjs/router'
 
 const SomeLayout = (props) => {
   const { loading } = usePageLoadingContext()
@@ -802,7 +802,7 @@ If it does, the router still renders a generic error page, but your users will a
 ![fatal_something_went_wrong_custom](/img/router/fatal_something_went_wrong_custom.png)
 
 ```jsx title="web/src/pages/FatalErrorPage/FatalErrorPage.jsx"
-import { Link, routes } from '@redmix/router'
+import { Link, routes } from '@cedarjs/router'
 
 // ...
 
@@ -859,7 +859,7 @@ Every Redwood project ships with a default `NotFoundPage` located in `web/src/pa
 But just because it's called `NotFoundPage` doesn't mean the router knows that. The only way the router knows which page is the `NotFoundPage` is via the `notfound` prop, which tells the router what to render when no routes match:
 
 ```jsx title="web/src/Routes.jsx"
-import { Router, Route } from '@redmix/router'
+import { Router, Route } from '@cedarjs/router'
 
 const Routes = () => (
   <Router>
@@ -895,7 +895,7 @@ Here's an example using [Tailwind CSS](https://tailwindcss.com).
 ![custom_not_found](/img/router/custom_not_found_page.png)
 
 ```jsx title="web/src/pages/NotFoundPage/NotFoundPage.jsx"
-import { Link, routes } from '@redmix/router'
+import { Link, routes } from '@cedarjs/router'
 
 export default () => (
   <div className="bg-white min-h-full px-4 py-16 sm:px-6 sm:py-24 md:grid md:place-items-center lg:px-8">

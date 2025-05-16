@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url'
 import type {
   MiddlewareRequest,
   MiddlewareResponse,
-} from '@redmix/web/middleware'
+} from '@cedarjs/web/middleware'
 
 const __filename = fileURLToPath(import.meta.url)
 

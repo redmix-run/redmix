@@ -1,7 +1,7 @@
-// import { useRouteName } from '@redmix/router/dist/useRouteName'
-import { Link } from '@redmix/router/Link'
-import { namedRoutes as routes } from '@redmix/router/namedRoutes'
-import { getLocation } from '@redmix/server-store'
+// import { useRouteName } from '@cedarjs/router/dist/useRouteName'
+import { Link } from '@cedarjs/router/Link'
+import { namedRoutes as routes } from '@cedarjs/router/namedRoutes'
+import { getLocation } from '@cedarjs/server-store'
 
 import BlogPostsNavCell from 'src/components/BlogPostsNavCell/BlogPostsNavCell'
 import { deletePost } from 'src/lib/actions'

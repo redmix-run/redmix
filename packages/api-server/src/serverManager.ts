@@ -7,7 +7,7 @@ import chalk from 'chalk'
 import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
 
-import { getConfig, getPaths, resolveFile } from '@redmix/project-config'
+import { getConfig, getPaths, resolveFile } from '@cedarjs/project-config'
 
 const argv = yargs(hideBin(process.argv))
   .option('debugPort', {

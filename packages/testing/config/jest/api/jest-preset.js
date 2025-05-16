@@ -1,8 +1,8 @@
 // @ts-check
 const path = require('path')
 
-const { getApiSideDefaultBabelConfig } = require('@redmix/babel-config')
-const { getPaths } = require('@redmix/project-config')
+const { getApiSideDefaultBabelConfig } = require('@cedarjs/babel-config')
+const { getPaths } = require('@cedarjs/project-config')
 
 const rwjsPaths = getPaths()
 const NODE_MODULES_PATH = path.join(rwjsPaths.base, 'node_modules')
@@ -46,9 +46,9 @@ module.exports = {
   // Note this setup runs for each test file!
   setupFilesAfterEnv: [path.join(__dirname, './jest.setup.js')],
   moduleNameMapper: {
-    // @NOTE: Import @redmix/testing in api tests, and it automatically remaps to the api side only
+    // @NOTE: Import @cedarjs/testing in api tests, and it automatically remaps to the api side only
     // This is to prevent web stuff leaking into api, and vice versa
-    '^@redmix/testing$': path.join(NODE_MODULES_PATH, '@redmix/testing/api'),
+    '^@cedarjs/testing$': path.join(NODE_MODULES_PATH, '@cedarjs/testing/api'),
   },
   transform: {
     '\\.[jt]sx?$': [

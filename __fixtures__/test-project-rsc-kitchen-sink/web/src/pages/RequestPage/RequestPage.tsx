@@ -1,10 +1,10 @@
-import { getRequestCookies, getRequestHeaders } from '@redmix/web/request'
+import { getRequestCookies, getRequestHeaders } from '@cedarjs/web/request'
 
 const StorePage = () => {
   return (
     <>
       <h1>Request Details</h1>
-      <p>This page checks that we can get request cookies and headers imported from '@redmix/web/request'</p>
+      <p>This page checks that we can get request cookies and headers imported from '@cedarjs/web/request'</p>
       <ul>
         <li data-testid="user-agent-header">User-Agent Header: {getRequestHeaders().get('User-Agent') || 'NO USER AGENT!'}</li>
         {/* This cookie gets set in the playwright test */}

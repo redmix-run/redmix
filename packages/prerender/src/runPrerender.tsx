@@ -11,11 +11,11 @@ import ReactDOMServer from 'react-dom/server'
 import {
   registerApiSideBabelHook,
   registerWebSideBabelHook,
-} from '@redmix/babel-config'
-import { getPaths, ensurePosixPath } from '@redmix/project-config'
-import { LocationProvider } from '@redmix/router'
-import { matchPath } from '@redmix/router/dist/util'
-import type { QueryInfo } from '@redmix/web'
+} from '@cedarjs/babel-config'
+import { getPaths, ensurePosixPath } from '@cedarjs/project-config'
+import { LocationProvider } from '@cedarjs/router'
+import { matchPath } from '@cedarjs/router/dist/util'
+import type { QueryInfo } from '@cedarjs/web'
 
 import mediaImportsPlugin from './babelPlugins/babel-plugin-redwood-prerender-media-imports'
 import { detectPrerenderRoutes } from './detection'
@@ -38,7 +38,7 @@ async function recursivelyRender(
   queryCache: Record<string, QueryInfo>,
 ): Promise<string> {
   // Load this async, to prevent rwjs/web being loaded before shims
-  const { CellCacheContextProvider, getOperationName } = require('@redmix/web')
+  const { CellCacheContextProvider, getOperationName } = require('@cedarjs/web')
 
   let shouldShowGraphqlHandlerNotFoundWarn = false
   // Execute all gql queries we haven't already fetched

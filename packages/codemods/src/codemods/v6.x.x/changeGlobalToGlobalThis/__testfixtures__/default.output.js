@@ -1,5 +1,5 @@
-import { Link, routes } from '@redmix/router'
-import { MetaTags } from '@redmix/web'
+import { Link, routes } from '@cedarjs/router'
+import { MetaTags } from '@cedarjs/web'
 
 const HomePage = () => {
   console.log(globalThis)

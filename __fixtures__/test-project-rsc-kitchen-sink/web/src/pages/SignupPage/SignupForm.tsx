@@ -9,9 +9,9 @@ import {
   PasswordField,
   FieldError,
   Submit,
-} from '@redmix/forms'
-import { navigate, routes } from '@redmix/router'
-import { toast } from '@redmix/web/toast'
+} from '@cedarjs/forms'
+import { navigate, routes } from '@cedarjs/router'
+import { toast } from '@cedarjs/web/toast'
 
 import { useAuth } from 'src/auth'
 

@@ -6,7 +6,7 @@ description: Build and deploy secure applications
 
 RedwoodJS wants you to be able build and deploy secure applications and takes the topic of security seriously.
 
-- [RedwoodJS Security](https://github.com/redmix-run/redmix/security) on GitHub
+- [RedwoodJS Security](https://github.com/cedarjs/cedar/security) on GitHub
 - [CodeQL code scanning](https://github.com/features/security)
 - [Authentication](authentication.md)
 - [Webhook signature verification](webhooks.md)
@@ -17,13 +17,13 @@ RedwoodJS wants you to be able build and deploy secure applications and takes th
 > While Redwood offers the tools, practices, and information to keep your application secure, it remains your responsibility to put these in place. Proper password, token, and key protection using disciplined communication, password management systems, and environment management services like [Doppler](https://www.doppler.com) are strongly encouraged.
 
 > **Security Policy and Contact Information**
-> The RedwoodJS Security Policy is located [in the codebase repository on GitHub](https://github.com/redmix-run/redmix/security/policy).
+> The RedwoodJS Security Policy is located [in the codebase repository on GitHub](https://github.com/cedarjs/cedar/security/policy).
 >
-> To report a potential security vulnerability, contact us at [security@redmix.com](mailto:security@redmix.com).
+> To report a potential security vulnerability, contact us at [security@cedarjs.com](mailto:security@cedarjs.com).
 
 ## Authentication
 
-`@redmix/auth` is a lightweight wrapper around popular SPA authentication libraries. We currently support [the following authentication providers](authentication.md) as well as a self-hosted solution ([dbAuth](auth/dbauth.md)):
+`@cedarjs/auth` is a lightweight wrapper around popular SPA authentication libraries. We currently support [the following authentication providers](authentication.md) as well as a self-hosted solution ([dbAuth](auth/dbauth.md)):
 
 - Netlify Identity Widget
 - Auth0
@@ -35,7 +35,7 @@ RedwoodJS wants you to be able build and deploy secure applications and takes th
 - Supabase
 - Nhost
 
-For example implementations, please see [Authentication](https://github.com/redmix-run/redmix/tree/main/packages/auth) and the use of the `getCurrentUser` and `requireAuth` helpers.
+For example implementations, please see [Authentication](https://github.com/cedarjs/cedar/tree/main/packages/auth) and the use of the `getCurrentUser` and `requireAuth` helpers.
 
 For a demonstration, check out the [Auth Playground](https://redwood-playground-auth.netlify.app).
 

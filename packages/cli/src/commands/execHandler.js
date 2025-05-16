@@ -8,9 +8,9 @@ import { Listr } from 'listr2'
 import {
   getWebSideDefaultBabelConfig,
   registerApiSideBabelHook,
-} from '@redmix/babel-config'
-import { recordTelemetryAttributes } from '@redmix/cli-helpers'
-import { findScripts } from '@redmix/internal/dist/files'
+} from '@cedarjs/babel-config'
+import { recordTelemetryAttributes } from '@cedarjs/cli-helpers'
+import { findScripts } from '@cedarjs/internal/dist/files'
 
 import c from '../lib/colors.js'
 import { runScriptFunction } from '../lib/exec.js'

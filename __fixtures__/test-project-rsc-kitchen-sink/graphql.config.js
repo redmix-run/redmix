@@ -1,6 +1,6 @@
 // This file is used by the VSCode GraphQL extension
 
-const { getPaths } = require('@redmix/project-config')
+const { getPaths } = require('@cedarjs/project-config')
 
 /** @type {import('graphql-config').IGraphQLConfig} */
 const config = {

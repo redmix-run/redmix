@@ -31,7 +31,7 @@ You can start them both with a single command: `yarn redwood dev`
 When you open your web app in a browser, React does its thing initializing your app and monitoring the history for changes so that new content can be shown. Redwood features a custom, declarative Router that lets you specify URLs and the requisite pages (just a React component) will be shown. A simple routes file may look something like:
 
 ```jsx
-import { Route, Router, Set, PrivateSet } from '@redmix/router'
+import { Route, Router, Set, PrivateSet } from '@cedarjs/router'
 import ApplicationLayout from 'src/layouts/ApplicationLayout'
 import { useAuth } from './auth'
 
@@ -244,7 +244,7 @@ If a user is logged in, they will be available in any of your services in the `c
 
 ```js
 import { db } from 'src/lib/db'
-import { AuthenticationError } from '@redmix/graphql-server'
+import { AuthenticationError } from '@cedarjs/graphql-server'
 
 export const createTestimonial = ({ data }) => {
   if (context.currentUser.roles.includes('admin')) {

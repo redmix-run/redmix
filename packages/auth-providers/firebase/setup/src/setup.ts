@@ -1,6 +1,6 @@
 import type yargs from 'yargs'
 
-import { standardAuthBuilder } from '@redmix/cli-helpers'
+import { standardAuthBuilder } from '@cedarjs/cli-helpers'
 
 export const command = 'firebase'
 export const description = 'Set up auth for for Firebase'

@@ -1,12 +1,12 @@
 import type { ViteDevServer } from 'vite'
 
-import { parseSearch } from '@redmix/router/util'
+import { parseSearch } from '@cedarjs/router/util'
 import type {
   MetaHook,
   RouteHookEvent,
   RouteHookOutput,
   TagDescriptor,
-} from '@redmix/web'
+} from '@cedarjs/web'
 
 interface RouteHooks {
   meta?: MetaHook

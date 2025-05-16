@@ -1,7 +1,7 @@
 import type { ClientContext } from 'aws-lambda'
 import jwt, { TokenExpiredError } from 'jsonwebtoken'
 
-import type { Decoder } from '@redmix/api'
+import type { Decoder } from '@cedarjs/api'
 
 type NetlifyContext = ClientContext & {
   user?: Record<string, unknown>

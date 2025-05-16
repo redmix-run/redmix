@@ -9,7 +9,7 @@ export const autoImports = AutoImport({
   // global imports to register
   imports: [
     {
-      '@redmix/testing/web': [
+      '@cedarjs/testing/web': [
         'mockGraphQLQuery',
         'mockGraphQLMutation',
         'mockCurrentUser',

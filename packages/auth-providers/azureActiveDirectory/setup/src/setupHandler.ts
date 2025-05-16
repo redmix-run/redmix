@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 
-import { standardAuthHandler } from '@redmix/cli-helpers'
+import { standardAuthHandler } from '@cedarjs/cli-helpers'
 
 import type { Args } from './setup'
 
@@ -15,10 +15,10 @@ export async function handler({ force: forceArg }: Args) {
     forceArg,
     provider: 'azureActiveDirectory',
     authDecoderImport:
-      "import { authDecoder } from '@redmix/auth-azure-active-directory-api'",
-    apiPackages: [`@redmix/auth-azure-active-directory-api@${version}`],
+      "import { authDecoder } from '@cedarjs/auth-azure-active-directory-api'",
+    apiPackages: [`@cedarjs/auth-azure-active-directory-api@${version}`],
     webPackages: [
-      `@redmix/auth-azure-active-directory-web@${version}`,
+      `@cedarjs/auth-azure-active-directory-web@${version}`,
       '@azure/msal-browser@^2',
     ],
     notes: [

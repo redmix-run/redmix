@@ -38,7 +38,7 @@ describe('dbAuth', () => {
       vol.reset()
       vol.fromJSON({
         [path.join(getPaths().web.src, 'auth.js')]: `
-import { createDbAuthClient, createAuth } from '@redmix/auth-dbauth-web'
+import { createDbAuthClient, createAuth } from '@cedarjs/auth-dbauth-web'
 
 const dbAuthClient = createDbAuthClient()
 
@@ -62,7 +62,7 @@ export const { AuthProvider, useAuth } = createAuth(dbAuthClient)
       vol.reset()
       vol.fromJSON({
         [path.join(getPaths().web.src, 'auth.ts')]: `
-import { createDbAuthClient, createAuth } from '@redmix/auth-dbauth-web'
+import { createDbAuthClient, createAuth } from '@cedarjs/auth-dbauth-web'
 
 const dbAuthClient = createDbAuthClient()
 
@@ -86,7 +86,7 @@ export const { AuthProvider, useAuth } = createAuth(dbAuthClient)
       vol.reset()
       vol.fromJSON({
         [path.join(getPaths().web.src, 'auth.jsx')]: `
-import { createDbAuthClient, createAuth: renamedCreateAuth } from '@redmix/auth-dbauth-web'
+import { createDbAuthClient, createAuth: renamedCreateAuth } from '@cedarjs/auth-dbauth-web'
 
 const dbAuthClient = createDbAuthClient()
 
@@ -125,8 +125,8 @@ import React, { useEffect } from 'react'
 
 import { ClerkProvider, useUser } from '@clerk/clerk-react'
 
-import { createAuth } from '@redmix/auth-clerk-web'
-import { navigate } from '@redmix/router'
+import { createAuth } from '@cedarjs/auth-clerk-web'
+import { navigate } from '@cedarjs/router'
 
 export const { AuthProvider: ClerkRwAuthProvider, useAuth } = createAuth()
 
@@ -197,7 +197,7 @@ export const AuthProvider = ({ children }: Props) => {
       vol.reset()
       vol.fromJSON({
         [path.join(getPaths().web.src, 'auth.js')]: `
-import { createDbAuthClient, createAuth } from '@redmix/auth-dbauth-web'
+import { createDbAuthClient, createAuth } from '@cedarjs/auth-dbauth-web'
 
 const dbAuthClient = createDbAuthClient()
 

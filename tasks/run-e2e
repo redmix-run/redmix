@@ -52,7 +52,7 @@ const buildRedwoodFramework = () => {
 const createRedwoodJSApp = ({ typescript }) => {
   try {
     execa.sync(
-      'yarn node dist/create-redmix-app.js',
+      'yarn node dist/create-cedar-app.js',
       [
         REDWOOD_PROJECT_DIRECTORY,
         '--no-yarn-install',
@@ -62,7 +62,7 @@ const createRedwoodJSApp = ({ typescript }) => {
         '-m "first"',
       ].filter(Boolean),
       {
-        cwd: path.join(REDWOODJS_FRAMEWORK_PATH, 'packages/create-redmix-app'),
+        cwd: path.join(REDWOODJS_FRAMEWORK_PATH, 'packages/create-cedar-app'),
         env: { REDWOOD_CI: '1' },
         shell: true,
         stdio: 'inherit',

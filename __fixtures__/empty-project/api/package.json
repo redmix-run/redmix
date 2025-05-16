@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "@redmix/api": "canary",
-    "@redmix/graphql-server": "canary"
+    "@cedarjs/api": "canary",
+    "@cedarjs/graphql-server": "canary"
   }
 }

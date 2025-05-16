@@ -4,8 +4,8 @@ import chalk from 'chalk'
 import Fastify from 'fastify'
 import fs from 'fs-extra'
 
-import { redwoodFastifyWeb } from '@redmix/fastify-web'
-import { getConfig, getPaths } from '@redmix/project-config'
+import { redwoodFastifyWeb } from '@cedarjs/fastify-web'
+import { getConfig, getPaths } from '@cedarjs/project-config'
 
 import type { ParsedOptions } from './types'
 

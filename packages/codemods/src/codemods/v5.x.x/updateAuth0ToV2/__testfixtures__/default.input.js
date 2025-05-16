@@ -1,6 +1,6 @@
 import { Auth0Client } from '@auth0/auth0-spa-js'
 
-import { createAuth } from '@redmix/auth-auth0-web'
+import { createAuth } from '@cedarjs/auth-auth0-web'
 
 const auth0 = new Auth0Client({
   domain: process.env.AUTH0_DOMAIN || '',

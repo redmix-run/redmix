@@ -1,9 +1,9 @@
 import { useEffect, useRef } from 'react'
 
-import { Form, Label, TextField, Submit, FieldError } from '@redmix/forms'
-import { navigate, routes } from '@redmix/router'
-import { Metadata } from '@redmix/web'
-import { toast, Toaster } from '@redmix/web/toast'
+import { Form, Label, TextField, Submit, FieldError } from '@cedarjs/forms'
+import { navigate, routes } from '@cedarjs/router'
+import { Metadata } from '@cedarjs/web'
+import { toast, Toaster } from '@cedarjs/web/toast'
 
 import { useAuth } from 'src/auth'
 

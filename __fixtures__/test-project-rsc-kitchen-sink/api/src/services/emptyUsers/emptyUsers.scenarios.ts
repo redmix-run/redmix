@@ -1,5 +1,5 @@
 import type { Prisma, EmptyUser } from '@prisma/client'
-import type { ScenarioData } from '@redmix/testing/api'
+import type { ScenarioData } from '@cedarjs/testing/api'
 
 export const standard = defineScenario<Prisma.EmptyUserCreateArgs>({
   emptyUser: {

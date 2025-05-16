@@ -3,7 +3,7 @@
 .env
 .netlify
 .redwood
-.redmix
+.cedar
 dev.db*
 dist
 dist-babel

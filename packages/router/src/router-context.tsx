@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useMemo } from 'react'
 
-import type { AuthContextInterface } from '@redmix/auth' with { 'resolution-mode': 'import' }
-import { useNoAuth } from '@redmix/auth'
+import type { AuthContextInterface } from '@cedarjs/auth' with { 'resolution-mode': 'import' }
+import { useNoAuth } from '@cedarjs/auth'
 
 import type { analyzeRoutes } from './analyzeRoutes.js'
 import type { ParamType } from './util.js'

@@ -1,7 +1,7 @@
 import type { Plugin } from 'graphql-yoga'
 
-import type { AuthContextPayload, Decoder } from '@redmix/api'
-import { getAuthenticationContext } from '@redmix/api'
+import type { AuthContextPayload, Decoder } from '@cedarjs/api'
+import { getAuthenticationContext } from '@cedarjs/api'
 
 import type { RedwoodGraphQLContext, GraphQLHandlerOptions } from '../types'
 

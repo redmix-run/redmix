@@ -2,7 +2,7 @@ type BlogLayoutProps = {
   children?: React.ReactNode
 }
 
-import { Link, routes } from '@redmix/router'
+import { Link, routes } from '@cedarjs/router'
 
 import { useAuth } from 'src/auth'
 

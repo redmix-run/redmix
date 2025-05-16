@@ -1,6 +1,6 @@
 import chalk from 'chalk'
 
-import { redwoodFastifyWeb, coerceRootPath } from '@redmix/fastify-web'
+import { redwoodFastifyWeb, coerceRootPath } from '@cedarjs/fastify-web'
 
 import { getWebHost, getWebPort, getAPIHost, getAPIPort } from './cliHelpers'
 import { createServer as createApiServer } from './createServer'

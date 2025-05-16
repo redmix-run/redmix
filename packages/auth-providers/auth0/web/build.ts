@@ -1,9 +1,9 @@
-import { buildCjs, buildEsm } from '@redmix/framework-tools'
+import { buildCjs, buildEsm } from '@cedarjs/framework-tools'
 import {
   generateTypesCjs,
   generateTypesEsm,
   insertCommonJsPackageJson,
-} from '@redmix/framework-tools/generateTypes'
+} from '@cedarjs/framework-tools/generateTypes'
 
 // ESM build and type generation
 await buildEsm()

@@ -1,11 +1,11 @@
-import { recordTelemetryAttributes } from '@redmix/cli-helpers'
+import { recordTelemetryAttributes } from '@cedarjs/cli-helpers'
 
 export const handler = async () => {
   recordTelemetryAttributes({
     command: 'record',
   })
 
-  const { parseDatamodel } = await import('@redmix/record')
+  const { parseDatamodel } = await import('@cedarjs/record')
 
   parseDatamodel()
 }

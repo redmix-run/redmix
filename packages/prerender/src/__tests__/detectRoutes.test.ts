@@ -1,10 +1,10 @@
 import { vi, describe, it, expect } from 'vitest'
 
-import type { RWRoute } from '@redmix/structure/dist/model/RWRoute'
+import type { RWRoute } from '@cedarjs/structure/dist/model/RWRoute'
 
 import { detectPrerenderRoutes } from '../detection'
 
-vi.mock('@redmix/project-config', () => {
+vi.mock('@cedarjs/project-config', () => {
   return {
     getPaths: vi.fn(() => {
       return {
@@ -16,10 +16,10 @@ vi.mock('@redmix/project-config', () => {
   }
 })
 
-// Mock route detection, tested in @redmix/structure separately
+// Mock route detection, tested in @cedarjs/structure separately
 
 let mockedRoutes: Partial<RWRoute>[] = []
-vi.mock('@redmix/structure', () => {
+vi.mock('@cedarjs/structure', () => {
   return {
     getProject: vi.fn(() => {
       return {

@@ -1,7 +1,7 @@
 import execa from 'execa'
 import { Listr } from 'listr2'
 
-import { errorTelemetry } from '@redmix/telemetry'
+import { errorTelemetry } from '@cedarjs/telemetry'
 
 import c from '../../lib/colors.js'
 import { getPaths } from '../../lib/index.js'

@@ -3,8 +3,8 @@ import path from 'path'
 import execa from 'execa'
 import fs from 'fs-extra'
 
-import { recordTelemetryAttributes } from '@redmix/cli-helpers'
-import { getPaths } from '@redmix/project-config'
+import { recordTelemetryAttributes } from '@cedarjs/cli-helpers'
+import { getPaths } from '@cedarjs/project-config'
 
 export const handler = async ({ side, prisma, dataMigrate }) => {
   recordTelemetryAttributes({
@@ -37,17 +37,17 @@ export const handler = async ({ side, prisma, dataMigrate }) => {
         path.join(rwjsPaths.base, 'package.json'),
       )
       const hasDataMigratePackage =
-        !!packageJson.devDependencies['@redmix/cli-data-migrate']
+        !!packageJson.devDependencies['@cedarjs/cli-data-migrate']
 
       if (!hasDataMigratePackage) {
         console.error(
           [
-            "Skipping data migrations; your project doesn't have the `@redmix/cli-data-migrate` package as a dev dependency.",
+            "Skipping data migrations; your project doesn't have the `@cedarjs/cli-data-migrate` package as a dev dependency.",
             "Without it installed, you're likely to run into memory issues during deploy.",
             "If you want to run data migrations, add the package to your project's root package.json and deploy again:",
             '',
             '```',
-            'yarn add -D @redmix/cli-data-migrate',
+            'yarn add -D @cedarjs/cli-data-migrate',
             '```',
           ].join('\n'),
         )
@@ -63,7 +63,7 @@ export const handler = async ({ side, prisma, dataMigrate }) => {
       execa(`yarn node ${serverFilePath}`, execaConfig)
     } else {
       const { handler } = await import(
-        '@redmix/api-server/dist/apiCLIConfigHandler.js'
+        '@cedarjs/api-server/dist/apiCLIConfigHandler.js'
       )
       handler()
     }

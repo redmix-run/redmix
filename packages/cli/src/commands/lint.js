@@ -2,7 +2,7 @@ import execa from 'execa'
 import fs from 'fs-extra'
 import terminalLink from 'terminal-link'
 
-import { recordTelemetryAttributes } from '@redmix/cli-helpers'
+import { recordTelemetryAttributes } from '@cedarjs/cli-helpers'
 
 import { getPaths } from '../lib/index.js'
 

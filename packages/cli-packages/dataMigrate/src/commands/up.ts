@@ -1,7 +1,7 @@
 import terminalLink from 'terminal-link'
 import type { Argv } from 'yargs'
 
-import { getPaths } from '@redmix/project-config'
+import { getPaths } from '@cedarjs/project-config'
 
 import type { DataMigrateUpOptions } from '../types'
 

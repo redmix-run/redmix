@@ -2,7 +2,7 @@
 
 import type { FindUserExampleById } from 'types/graphql'
 
-import type { CellSuccessProps, CellFailureProps } from '@redmix/web'
+import type { CellSuccessProps, CellFailureProps } from '@cedarjs/web'
 
 import UserExample from 'src/components/UserExample/UserExample'
 

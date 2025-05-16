@@ -8,7 +8,7 @@ If you do prefer to set this up manually or are just curious how OAuth and dbAut
 
 ## Prerequisites
 
-This article assumes you have an app set up and are using dbAuth. We're going to make use of the dbAuth system to validate that you're who you say you are. If you just want to try this code out in a sandbox app, you can create a test blog app from scratch by checking out the [Redwood codebase](https://github.com/redmix-run/redmix) itself and then running a couple of commands:
+This article assumes you have an app set up and are using dbAuth. We're going to make use of the dbAuth system to validate that you're who you say you are. If you just want to try this code out in a sandbox app, you can create a test blog app from scratch by checking out the [Redwood codebase](https://github.com/cedarjs/cedar) itself and then running a couple of commands:
 
 ```bash
 yarn install
@@ -582,7 +582,7 @@ Don't forget the new `CryptoJS` import at the top!
 ```js title="/api/src/functions/oauth/oauth.js"
 // highlight-next-line
 import CryptoJS from 'crypto-js'
-import { cookieName } from '@redmix/auth-dbauth-api'
+import { cookieName } from '@cedarjs/auth-dbauth-api'
 import { cookieName as cookie } from 'src/lib/auth'
 
 const callback = async (event) => {
@@ -820,8 +820,8 @@ Right now we just copy the user details from GitHub right into our new User obje
 Right now if an error occurs in the OAuth flow, the browser just stays on the `/oauth/callback` function and sees a plain text error message. A better experience would be to redirect the user back to the login page, with the error message in a query string variable, something like `http://localhost:8910/login?error=Application+not+authorized` Then in the LoginPage, add a `useParams()` to pull out the query variables, and show a toast message if an error is present:
 
 ```jsx
-import { useParams } from '@redmix/router'
-import { toast, Toaster } from '@redmix/web/toast'
+import { useParams } from '@cedarjs/router'
+import { toast, Toaster } from '@cedarjs/web/toast'
 
 const LoginPage = () => {
   const params = useParams()
