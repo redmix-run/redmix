@@ -1,6 +1,6 @@
 {
   "name": "storybook-framework-cedar",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Storybook for Cedar with Vite",
   "keywords": [
     "Storybook",
