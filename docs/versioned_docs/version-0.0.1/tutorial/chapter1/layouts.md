@@ -27,7 +27,7 @@ Cut the `<header>` from both `HomePage` and `AboutPage` and paste it in the layo
 
 ```jsx title="web/src/layouts/BlogLayout/BlogLayout.jsx"
 // highlight-next-line
-import { Link, routes } from '@redmix/router'
+import { Link, routes } from '@cedarjs/router'
 
 const BlogLayout = ({ children }) => {
   return (
@@ -57,7 +57,7 @@ export default BlogLayout
 
 ```jsx title="web/src/layouts/BlogLayout/BlogLayout.tsx"
 // highlight-next-line
-import { Link, routes } from '@redmix/router'
+import { Link, routes } from '@cedarjs/router'
 
 type BlogLayoutProps = {
   children?: React.ReactNode
@@ -93,8 +93,8 @@ export default BlogLayout
 <TabItem value="js" label="JavaScript">
 
 ```jsx title="web/src/pages/AboutPage/AboutPage.jsx"
-import { Link, routes } from '@redmix/router'
-import { Metadata } from '@redmix/web'
+import { Link, routes } from '@cedarjs/router'
+import { Metadata } from '@cedarjs/web'
 
 const AboutPage = () => {
   return (
@@ -117,8 +117,8 @@ export default AboutPage
 <TabItem value="ts" label="TypeScript">
 
 ```jsx title="web/src/pages/AboutPage/AboutPage.tsx"
-import { Link, routes } from '@redmix/router'
-import { Metadata } from '@redmix/web'
+import { Link, routes } from '@cedarjs/router'
+import { Metadata } from '@cedarjs/web'
 
 const AboutPage = () => {
   return (
@@ -144,7 +144,7 @@ export default AboutPage
 <TabItem value="js" label="JavaScript">
 
 ```jsx title="web/src/pages/HomePage/HomePage.jsx"
-import { Metadata } from '@redmix/web'
+import { Metadata } from '@cedarjs/web'
 
 const HomePage = () => {
   return (
@@ -162,7 +162,7 @@ export default HomePage
 <TabItem value="ts" label="TypeScript">
 
 ```jsx title="web/src/pages/HomePage/HomePage.tsx"
-import { Metadata } from '@redmix/web'
+import { Metadata } from '@cedarjs/web'
 
 const HomePage = () => {
   return (
@@ -188,7 +188,7 @@ To actually render our layout we'll need to make a change to our routes files. W
 
 ```jsx title="web/src/Routes.jsx"
 // highlight-start
-import { Router, Route, Set } from '@redmix/router'
+import { Router, Route, Set } from '@cedarjs/router'
 import BlogLayout from 'src/layouts/BlogLayout'
 // highlight-end
 
@@ -214,7 +214,7 @@ export default Routes
 
 ```tsx title="web/src/Routes.tsx"
 // highlight-start
-import { Router, Route, Set } from '@redmix/router'
+import { Router, Route, Set } from '@cedarjs/router'
 import BlogLayout from 'src/layouts/BlogLayout'
 // highlight-end
 
@@ -266,7 +266,7 @@ A couple more `<Link>`s: let's have the title/logo link back to the homepage, an
 <TabItem value="js" label="JavaScript">
 
 ```jsx title="web/src/layouts/BlogLayout/BlogLayout.jsx"
-import { Link, routes } from '@redmix/router'
+import { Link, routes } from '@cedarjs/router'
 
 const BlogLayout = ({ children }) => {
   return (
@@ -302,7 +302,7 @@ export default BlogLayout
 <TabItem value="ts" label="TypeScript">
 
 ```jsx title="web/src/layouts/BlogLayout/BlogLayout.tsx"
-import { Link, routes } from '@redmix/router'
+import { Link, routes } from '@cedarjs/router'
 
 type BlogLayoutProps = {
   children?: React.ReactNode
@@ -347,7 +347,7 @@ And then we can remove the extra "Return to Home" link (and Link/routes import) 
 <TabItem value="js" label="JavaScript">
 
 ```jsx title="web/src/pages/AboutPage/AboutPage.jsx"
-import { Metadata } from '@redmix/web'
+import { Metadata } from '@cedarjs/web'
 
 const AboutPage = () => {
   return (
@@ -369,7 +369,7 @@ export default AboutPage
 <TabItem value="ts" label="TypeScript">
 
 ```jsx title="web/src/pages/AboutPage/AboutPage.tsx"
-import { Metadata } from '@redmix/web'
+import { Metadata } from '@cedarjs/web'
 
 const AboutPage = () => {
   return (

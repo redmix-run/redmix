@@ -1,4 +1,4 @@
-import { getPaths as _getPaths } from '@redmix/project-config'
+import { getPaths as _getPaths } from '@cedarjs/project-config'
 
 import { colors } from './colors.js'
 

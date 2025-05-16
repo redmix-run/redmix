@@ -1,4 +1,4 @@
-import { render } from '@redmix/testing/web'
+import { render } from '@cedarjs/testing/web'
 
 import GroceriesPage from './GroceriesPage'
 

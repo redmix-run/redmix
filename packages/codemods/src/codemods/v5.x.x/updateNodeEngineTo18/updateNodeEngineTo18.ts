@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 
-import { getPaths } from '@redmix/project-config'
+import { getPaths } from '@cedarjs/project-config'
 
 async function updateNodeEngineTo18() {
   const packageJSONPath = path.join(getPaths().base, 'package.json')

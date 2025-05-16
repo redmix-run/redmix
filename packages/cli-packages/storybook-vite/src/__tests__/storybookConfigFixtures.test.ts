@@ -8,18 +8,18 @@ describe('storybook config file fixtures', () => {
     console.log('mainTemplatePath', mainTemplatePath)
     const mainTemplate = fs.readFileSync(mainTemplatePath, { encoding: 'utf8' })
     expect(mainTemplate).toMatchInlineSnapshot(`
-      "import type { StorybookConfig } from 'storybook-framework-redmix-vite'
+      "import type { StorybookConfig } from 'storybook-framework-cedar'
 
-      import { getPaths, importStatementPath } from '@redmix/project-config'
+      import { getPaths, importStatementPath } from '@cedarjs/project-config'
 
-      const redmixProjectPaths = getPaths()
+      const cedarProjectPaths = getPaths()
 
       const config: StorybookConfig = {
-        framework: 'storybook-framework-redmix-vite',
+        framework: 'storybook-framework-cedar',
 
         stories: [
           \`\${importStatementPath(
-            redmixProjectPaths.web.src
+            cedarProjectPaths.web.src
           )}/**/*.stories.@(js|jsx|ts|tsx|mdx)\`,
         ],
 

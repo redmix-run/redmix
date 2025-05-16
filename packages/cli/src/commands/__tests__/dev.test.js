@@ -21,14 +21,14 @@ vi.mock('fs-extra', async () => {
   }
 })
 
-vi.mock('@redmix/internal/dist/dev', () => {
+vi.mock('@cedarjs/internal/dist/dev', () => {
   return {
     shutdownPort: vi.fn(),
   }
 })
 
-vi.mock('@redmix/project-config', async () => {
-  const actualProjectConfig = await vi.importActual('@redmix/project-config')
+vi.mock('@cedarjs/project-config', async () => {
+  const actualProjectConfig = await vi.importActual('@cedarjs/project-config')
 
   return {
     getConfig: vi.fn(),
@@ -72,7 +72,7 @@ import concurrently from 'concurrently'
 import { find } from 'lodash'
 import { vi, describe, afterEach, it, expect } from 'vitest'
 
-import { getConfig } from '@redmix/project-config'
+import { getConfig } from '@cedarjs/project-config'
 
 import { generatePrismaClient } from '../../lib/generatePrismaClient.js'
 import { handler } from '../dev.js'

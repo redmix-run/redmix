@@ -33,7 +33,7 @@ Open up `web/src/Routes.{jsx,tsx}` and take a look at the route that was created
 <TabItem value="js" label="JavaScript">
 
 ```jsx title="web/src/Routes.jsx"
-import { Router, Route } from '@redmix/router'
+import { Router, Route } from '@cedarjs/router'
 
 const Routes = () => {
   return (
@@ -52,7 +52,7 @@ export default Routes
 <TabItem value="ts" label="TypeScript">
 
 ```jsx title="web/src/Routes.tsx"
-import { Router, Route } from '@redmix/router'
+import { Router, Route } from '@cedarjs/router'
 
 const Routes = () => {
   return (

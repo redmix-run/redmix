@@ -1,7 +1,7 @@
 import React from 'react'
 
-import type { UseAuth } from '@redmix/auth'
-import { useNoAuth } from '@redmix/auth'
+import type { UseAuth } from '@cedarjs/auth'
+import { useNoAuth } from '@cedarjs/auth'
 
 export const getApiGraphQLUrl = () => {
   return globalThis.RWJS_API_GRAPHQL_URL

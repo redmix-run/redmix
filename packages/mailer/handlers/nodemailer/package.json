@@ -1,9 +1,9 @@
 {
-  "name": "@redmix/mailer-handler-nodemailer",
+  "name": "@cedarjs/mailer-handler-nodemailer",
   "version": "0.0.3",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/redmix-run/redmix.git",
+    "url": "git+https://github.com/cedarjs/cedar.git",
     "directory": "packages/mailer/handlers/nodemailer"
   },
   "license": "MIT",
@@ -14,17 +14,17 @@
   ],
   "scripts": {
     "build": "tsx ./build.mts && yarn build:types",
-    "build:pack": "yarn pack -o redmix-mailer-handler-nodemailer.tgz",
+    "build:pack": "yarn pack -o cedar-mailer-handler-nodemailer.tgz",
     "build:types": "tsc --build --verbose",
     "build:watch": "nodemon --watch src --ext \"js,jsx,ts,tsx\" --ignore dist --exec \"yarn build\"",
     "prepublishOnly": "NODE_ENV=production yarn build"
   },
   "dependencies": {
-    "@redmix/mailer-core": "workspace:*",
+    "@cedarjs/mailer-core": "0.0.3",
     "nodemailer": "6.9.16"
   },
   "devDependencies": {
-    "@redmix/framework-tools": "workspace:*",
+    "@cedarjs/framework-tools": "workspace:*",
     "@types/nodemailer": "^6",
     "tsx": "4.19.3",
     "typescript": "5.6.2"

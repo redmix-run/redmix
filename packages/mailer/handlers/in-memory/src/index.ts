@@ -3,8 +3,8 @@ import type {
   MailUtilities,
   MailRenderedContent,
   MailResult,
-} from '@redmix/mailer-core'
-import { AbstractMailHandler } from '@redmix/mailer-core'
+} from '@cedarjs/mailer-core'
+import { AbstractMailHandler } from '@cedarjs/mailer-core'
 
 export type InMemoryMail = {
   textContent: MailRenderedContent['text']

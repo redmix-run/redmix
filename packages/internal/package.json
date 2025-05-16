@@ -1,9 +1,9 @@
 {
-  "name": "@redmix/internal",
+  "name": "@cedarjs/internal",
   "version": "0.0.3",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/redmix-run/redmix.git",
+    "url": "git+https://github.com/cedarjs/cedar.git",
     "directory": "packages/internal"
   },
   "license": "MIT",
@@ -63,7 +63,7 @@
   "scripts": {
     "build": "tsx ./build.mts && yarn build:types",
     "build:clean-dist": "rimraf 'dist/**/*/__tests__' --glob",
-    "build:pack": "yarn pack -o redmix-internal.tgz",
+    "build:pack": "yarn pack -o cedar-internal.tgz",
     "build:types": "tsc --build --verbose ./tsconfig.json",
     "build:watch": "nodemon --watch src --ext \"js,jsx,ts,tsx\" --ignore dist --exec \"yarn build\"",
     "check:attw": "yarn attw -P",
@@ -80,6 +80,10 @@
     "@babel/plugin-transform-typescript": "^7.26.8",
     "@babel/runtime-corejs3": "7.26.10",
     "@babel/traverse": "7.26.10",
+    "@cedarjs/babel-config": "0.0.3",
+    "@cedarjs/graphql-server": "0.0.3",
+    "@cedarjs/project-config": "0.0.3",
+    "@cedarjs/router": "0.0.3",
     "@graphql-codegen/add": "4.0.1",
     "@graphql-codegen/cli": "3.3.1",
     "@graphql-codegen/client-preset": "4.3.3",
@@ -92,10 +96,6 @@
     "@graphql-codegen/typescript-react-apollo": "3.3.7",
     "@graphql-codegen/typescript-resolvers": "3.2.1",
     "@graphql-tools/documents": "1.0.1",
-    "@redmix/babel-config": "workspace:*",
-    "@redmix/graphql-server": "workspace:*",
-    "@redmix/project-config": "workspace:*",
-    "@redmix/router": "workspace:*",
     "@sdl-codegen/node": "2.0.1",
     "chalk": "4.1.2",
     "core-js": "3.42.0",
@@ -116,7 +116,7 @@
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "0.16.4",
-    "@redmix/framework-tools": "workspace:*",
+    "@cedarjs/framework-tools": "workspace:*",
     "@types/fs-extra": "11.0.4",
     "concurrently": "8.2.2",
     "graphql-tag": "2.12.6",

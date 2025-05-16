@@ -2,7 +2,7 @@
 import { createRequire } from 'node:module'
 
 const require = createRequire(import.meta.url)
-const pkgPath = require.resolve('@redmix/vite/package.json')
+const pkgPath = require.resolve('@cedarjs/vite/package.json')
 const vitePackageJsonFileUrl = pathToFileURL(pkgPath)
 const requireFromRxVite = createRequire(vitePackageJsonFileUrl)
 const bins = requireFromRxVite('./package.json')['bin']

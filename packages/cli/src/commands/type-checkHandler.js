@@ -4,7 +4,7 @@ import concurrently from 'concurrently'
 import execa from 'execa'
 import { Listr } from 'listr2'
 
-import { recordTelemetryAttributes } from '@redmix/cli-helpers'
+import { recordTelemetryAttributes } from '@cedarjs/cli-helpers'
 
 import { getCmdMajorVersion } from '../commands/upgrade.js'
 import { generatePrismaClient } from '../lib/generatePrismaClient.js'

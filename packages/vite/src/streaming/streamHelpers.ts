@@ -8,13 +8,13 @@ import type {
 } from 'react-dom/server'
 import type { default as RDServerModule } from 'react-dom/server.edge'
 
-import type { ServerAuthState } from '@redmix/auth/dist/AuthProvider/ServerAuthProvider.js'
-import type * as ServerAuthProviderModule from '@redmix/auth/dist/AuthProvider/ServerAuthProvider.js'
-import { getConfig, getPaths } from '@redmix/project-config'
-import type * as LocationModule from '@redmix/router/location'
-import type { TagDescriptor } from '@redmix/web'
-import type { MiddlewareResponse } from '@redmix/web/middleware'
-import type * as ServerInjectModule from '@redmix/web/serverInject'
+import type { ServerAuthState } from '@cedarjs/auth/dist/AuthProvider/ServerAuthProvider.js'
+import type * as ServerAuthProviderModule from '@cedarjs/auth/dist/AuthProvider/ServerAuthProvider.js'
+import { getConfig, getPaths } from '@cedarjs/project-config'
+import type * as LocationModule from '@cedarjs/router/location'
+import type { TagDescriptor } from '@cedarjs/web'
+import type { MiddlewareResponse } from '@cedarjs/web/middleware'
+import type * as ServerInjectModule from '@cedarjs/web/serverInject'
 
 import type { ServerEntryType } from '../types.js'
 import { makeFilePath } from '../utils.js'
@@ -111,7 +111,7 @@ export async function reactRenderToStreamResponse(
     ServerInjectedHtml,
   }: ServerInjectType = rscEnabled
     ? await importModule('__rwjs__server_inject')
-    : await import('@redmix/web/serverInject')
+    : await import('@cedarjs/web/serverInject')
   const { renderToString }: RDServerType = rscEnabled
     ? await importModule('rd-server')
     : await import('react-dom/server')
@@ -142,10 +142,10 @@ export async function reactRenderToStreamResponse(
 
   const { ServerAuthProvider }: ServerAuthProviderType = rscEnabled
     ? await importModule('__rwjs__server_auth_provider')
-    : await import('@redmix/auth/dist/AuthProvider/ServerAuthProvider.js')
+    : await import('@cedarjs/auth/dist/AuthProvider/ServerAuthProvider.js')
   const { LocationProvider }: LocationType = rscEnabled
     ? await importModule('__rwjs__location')
-    : await import('@redmix/router/location')
+    : await import('@cedarjs/router/location')
 
   const renderRoot = (url: URL) => {
     return createElement(

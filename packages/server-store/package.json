@@ -1,9 +1,9 @@
 {
-  "name": "@redmix/server-store",
+  "name": "@cedarjs/server-store",
   "version": "0.0.3",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/redmix-run/redmix.git",
+    "url": "git+https://github.com/cedarjs/cedar.git",
     "directory": "packages/server-store"
   },
   "license": "MIT",
@@ -18,18 +18,18 @@
   ],
   "scripts": {
     "build": "tsx ./build.mts && run build:types",
-    "build:pack": "yarn pack -o redmix-server-store.tgz",
+    "build:pack": "yarn pack -o cedar-server-store.tgz",
     "build:types": "tsc --build --verbose"
   },
   "dependencies": {
-    "@redmix/auth": "workspace:*",
-    "@redmix/cookie-jar": "workspace:*",
+    "@cedarjs/auth": "0.0.3",
+    "@cedarjs/cookie-jar": "0.0.3",
     "esbuild": "0.25.0",
     "fast-glob": "3.3.2",
     "fs-extra": "11.2.0"
   },
   "devDependencies": {
-    "@redmix/framework-tools": "workspace:*",
+    "@cedarjs/framework-tools": "workspace:*",
     "@types/fs-extra": "11.0.4",
     "tsx": "4.19.3",
     "typescript": "5.6.2"

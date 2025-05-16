@@ -1,5 +1,5 @@
 export default `
-import { Router, Route, Set } from '@redmix/router'
+import { Router, Route, Set } from '@cedarjs/router'
 import BlogLayout from 'src/layouts/BlogLayout'
 import ScaffoldLayout from 'src/layouts/ScaffoldLayout'
 

@@ -152,7 +152,7 @@ This is the same information that is created in `web/src/graphql/persisted-docum
 To enable trusted documents, configure `trustedDocuments` with the store.
 
 ```ts title=api/src/functions/graphql.ts
-import { createGraphQLHandler } from '@redmix/graphql-server'
+import { createGraphQLHandler } from '@cedarjs/graphql-server'
 
 // ...
 import { store } from 'src/lib/trustedDocumentsStore'

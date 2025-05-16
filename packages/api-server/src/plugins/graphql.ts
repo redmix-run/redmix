@@ -8,12 +8,12 @@ import type {
   FastifyRequest,
 } from 'fastify'
 
-import type { GlobalContext } from '@redmix/context'
-import { getAsyncStoreInstance } from '@redmix/context/dist/store'
-import { coerceRootPath } from '@redmix/fastify-web/dist/helpers'
-import { createGraphQLYoga } from '@redmix/graphql-server'
-import type { GraphQLYogaOptions } from '@redmix/graphql-server'
-import { getPaths } from '@redmix/project-config'
+import type { GlobalContext } from '@cedarjs/context'
+import { getAsyncStoreInstance } from '@cedarjs/context/dist/store'
+import { coerceRootPath } from '@cedarjs/fastify-web/dist/helpers'
+import { createGraphQLYoga } from '@cedarjs/graphql-server'
+import type { GraphQLYogaOptions } from '@cedarjs/graphql-server'
+import { getPaths } from '@cedarjs/project-config'
 
 import { lambdaEventForFastifyRequest } from '../requestHandlers/awsLambdaFastify'
 
@@ -60,7 +60,7 @@ export async function redwoodFastifyGraphQLServer(
       if (!__rw_graphqlOptions) {
         // Our babel plugin couldn't find any grapqhql config options, so we
         // assume the user is doing their own thing.
-        // Return here and skip creating a Redmix specific server
+        // Return here and skip creating a Cedar specific server
         return
       }
 
@@ -75,7 +75,7 @@ export async function redwoodFastifyGraphQLServer(
     //
     // These would be plugins that need a server instance such as Redwood Realtime
     if (graphqlOptions?.realtime) {
-      const { useRedwoodRealtime } = await import('@redmix/realtime')
+      const { useRedwoodRealtime } = await import('@cedarjs/realtime')
 
       const originalExtraPlugins = graphqlOptions.extraPlugins ?? []
       // @ts-expect-error TODO(jgmw): Fix this type issue introduced after switching to Node16 module resolution

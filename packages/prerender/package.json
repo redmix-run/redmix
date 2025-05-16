@@ -1,10 +1,10 @@
 {
-  "name": "@redmix/prerender",
+  "name": "@cedarjs/prerender",
   "version": "0.0.3",
-  "description": "Redmix prerender",
+  "description": "CedarJS prerender",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/redmix-run/redmix.git",
+    "url": "git+https://github.com/cedarjs/cedar.git",
     "directory": "packages/prerender"
   },
   "license": "MIT",
@@ -30,7 +30,7 @@
   ],
   "scripts": {
     "build": "tsx ./build.mts && yarn build:types",
-    "build:pack": "yarn pack -o redmix-prerender.tgz",
+    "build:pack": "yarn pack -o cedar-prerender.tgz",
     "build:types": "tsc --build --verbose ./tsconfig.build.json",
     "build:watch": "nodemon --watch src --ext \"js,jsx,ts,tsx,template\" --ignore dist --exec \"yarn build\"",
     "check:attw": "yarn rw-fwtools-attw",
@@ -40,11 +40,11 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@redmix/babel-config": "workspace:*",
-    "@redmix/project-config": "workspace:*",
-    "@redmix/router": "workspace:*",
-    "@redmix/structure": "workspace:*",
-    "@redmix/web": "workspace:*",
+    "@cedarjs/babel-config": "0.0.3",
+    "@cedarjs/project-config": "0.0.3",
+    "@cedarjs/router": "0.0.3",
+    "@cedarjs/structure": "0.0.3",
+    "@cedarjs/web": "0.0.3",
     "@whatwg-node/fetch": "0.9.21",
     "babel-plugin-ignore-html-and-css-imports": "0.1.0",
     "cheerio": "1.0.0",
@@ -52,7 +52,7 @@
     "mime-types": "2.1.35"
   },
   "devDependencies": {
-    "@redmix/framework-tools": "workspace:*",
+    "@cedarjs/framework-tools": "workspace:*",
     "@types/mime-types": "2.1.4",
     "babel-plugin-tester": "11.0.4",
     "concurrently": "8.2.2",

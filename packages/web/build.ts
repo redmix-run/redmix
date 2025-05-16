@@ -6,7 +6,7 @@ import {
   build,
   defaultBuildOptions,
   defaultIgnorePatterns,
-} from '@redmix/framework-tools'
+} from '@cedarjs/framework-tools'
 
 // CJS build
 /**

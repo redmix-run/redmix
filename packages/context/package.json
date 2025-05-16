@@ -1,9 +1,9 @@
 {
-  "name": "@redmix/context",
+  "name": "@cedarjs/context",
   "version": "0.0.3",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/redmix-run/redmix.git",
+    "url": "git+https://github.com/cedarjs/cedar.git",
     "directory": "packages/context"
   },
   "license": "MIT",
@@ -48,7 +48,7 @@
   ],
   "scripts": {
     "build": "tsx ./build.mts",
-    "build:pack": "yarn pack -o redmix-context.tgz",
+    "build:pack": "yarn pack -o cedar-context.tgz",
     "build:types": "tsc --build --verbose ./tsconfig.build.json",
     "build:types-cjs": "tsc --build --verbose ./tsconfig.cjs.json",
     "build:watch": "nodemon --watch src --ext \"js,jsx,ts,tsx\" --ignore dist --exec \"yarn build\"",
@@ -58,7 +58,7 @@
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "0.16.4",
-    "@redmix/framework-tools": "workspace:*",
+    "@cedarjs/framework-tools": "workspace:*",
     "concurrently": "8.2.2",
     "publint": "0.3.11",
     "tsx": "4.19.3",

@@ -1,12 +1,12 @@
 /**
- * @module @redmix/forms
+ * @module @cedarjs/forms
  *
  * Redwood's form library.
  * Mostly simple wrappers around `react-hook-form` that make it even easier to use.
  *
  * @remarks
  *
- * @redmix/forms slightly extends `react-hook-form`'s `valueAs` props because it's important for us to coerce values
+ * @cedarjs/forms slightly extends `react-hook-form`'s `valueAs` props because it's important for us to coerce values
  * to the correct type for GraphQL.
  * The properties that are exclusive to Redwood are:
  * - `valueAsBoolean`

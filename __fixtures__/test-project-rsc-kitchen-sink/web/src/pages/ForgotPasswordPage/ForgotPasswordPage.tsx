@@ -1,7 +1,7 @@
-import { Metadata } from '@redmix/web/dist/components/Metadata'
+import { Metadata } from '@cedarjs/web/dist/components/Metadata'
 
 import { ForgotPasswordForm } from './ForgotPasswordForm'
-// import { Toaster } from '@redmix/web/toast'
+// import { Toaster } from '@cedarjs/web/toast'
 
 const ForgotPasswordPage = () => {
   return (

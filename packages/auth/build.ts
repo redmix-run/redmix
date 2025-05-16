@@ -3,7 +3,7 @@ import { readFileSync, writeFileSync } from 'node:fs'
 import type { PackageJson } from 'type-fest'
 import { $ } from 'zx'
 
-import { build, defaultBuildOptions } from '@redmix/framework-tools'
+import { build, defaultBuildOptions } from '@cedarjs/framework-tools'
 
 // ESM build
 await build({

@@ -9,8 +9,8 @@ import type {
 } from 'graphql'
 import { Kind, parse, print, visit } from 'graphql'
 
-import { rootSchema } from '@redmix/graphql-server'
-import { getPaths } from '@redmix/project-config'
+import { rootSchema } from '@cedarjs/graphql-server'
+import { getPaths } from '@cedarjs/project-config'
 
 interface Operation {
   operation: OperationTypeNode

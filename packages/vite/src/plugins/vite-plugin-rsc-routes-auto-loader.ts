@@ -10,13 +10,13 @@ import * as t from '@babel/types'
 import type { Plugin } from 'vite'
 import { normalizePath } from 'vite'
 
-import type { PagesDependency } from '@redmix/project-config'
+import type { PagesDependency } from '@cedarjs/project-config'
 import {
   ensurePosixPath,
   getPaths,
   importStatementPath,
   processPagesDir,
-} from '@redmix/project-config'
+} from '@cedarjs/project-config'
 
 const getPathRelativeToSrc = (maybeAbsolutePath: string) => {
   // If the path is already relative
@@ -101,7 +101,7 @@ export function rscRoutesAutoLoader(): Plugin {
       // `import { MyLayout, SomethingElse } from './myLayout'`
       // and turning it into
       // `import { SomethingElse } from './myLayout'`
-      // `import { MyLayout } from '@redmix/router/dist/dummyComponent'`
+      // `import { MyLayout } from '@cedarjs/router/dist/dummyComponent'`
       // and also
       // `import MyLayout, { SomethingElse } from './myLayout'`
       const allImports = new Map<string, t.ImportDeclaration>()
@@ -175,9 +175,9 @@ export function rscRoutesAutoLoader(): Plugin {
 
         if (wrapperImport) {
           // This will turn all wrapper imports into something like
-          // import NavigationLayout from "@redmix/router/dist/dummyComponent";
+          // import NavigationLayout from "@cedarjs/router/dist/dummyComponent";
           // which is all we need for client side routing
-          wrapperImport.source.value = '@redmix/router/dist/dummyComponent'
+          wrapperImport.source.value = '@cedarjs/router/dist/dummyComponent'
         }
       })
 

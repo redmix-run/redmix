@@ -1,4 +1,4 @@
-import { getPaths } from '@redmix/project-config'
+import { getPaths } from '@cedarjs/project-config'
 
 import prettify from '../../../lib/prettify'
 

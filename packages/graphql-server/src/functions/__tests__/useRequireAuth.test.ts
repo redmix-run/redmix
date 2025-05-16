@@ -65,7 +65,7 @@ const handler = async (
 ): Promise<any> => {
   // @MARK
   // Don't use globalContext until beforeAll runs
-  const globalContext = (await import('@redmix/context')).context
+  const globalContext = (await import('@cedarjs/context')).context
   const currentUser = globalContext.currentUser
 
   return {
@@ -117,7 +117,7 @@ const handlerWithError = async (
 ): Promise<any> => {
   // @MARK
   // Don't use globalContext until beforeAll runs
-  const globalContext = (await import('@redmix/context')).context
+  const globalContext = (await import('@cedarjs/context')).context
   const currentUser = globalContext.currentUser
 
   try {

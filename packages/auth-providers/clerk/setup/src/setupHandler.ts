@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 
-import { standardAuthHandler } from '@redmix/cli-helpers'
+import { standardAuthHandler } from '@cedarjs/cli-helpers'
 
 import type { Args } from './setup'
 
@@ -13,10 +13,13 @@ export const handler = async ({ force: forceArg }: Args) => {
   standardAuthHandler({
     basedir: __dirname,
     forceArg,
-    authDecoderImport: `import { clerkAuthDecoder as authDecoder } from '@redmix/auth-clerk-api'`,
+    authDecoderImport: `import { clerkAuthDecoder as authDecoder } from '@cedarjs/auth-clerk-api'`,
     provider: 'clerk',
-    webPackages: ['@clerk/clerk-react@^4', `@redmix/auth-clerk-web@${version}`],
-    apiPackages: [`@redmix/auth-clerk-api@${version}`],
+    webPackages: [
+      '@clerk/clerk-react@^4',
+      `@cedarjs/auth-clerk-web@${version}`,
+    ],
+    apiPackages: [`@cedarjs/auth-clerk-api@${version}`],
     notes: [
       "You'll need to add two env vars to your .env file:",
       '',

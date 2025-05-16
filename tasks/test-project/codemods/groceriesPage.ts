@@ -35,14 +35,14 @@ export default (file: FileInfo, api: API) => {
   const root = j(file.source)
 
   // Replace
-  // import { Link, routes } from '@redmix/router'
+  // import { Link, routes } from '@cedarjs/router'
   // with
   // import type { GetGroceries, GetProduce } from 'types/graphql'
   root
     .find(j.ImportDeclaration, {
       source: {
         type: 'StringLiteral',
-        value: '@redmix/router',
+        value: '@cedarjs/router',
       },
     })
     .replaceWith(
@@ -57,14 +57,14 @@ export default (file: FileInfo, api: API) => {
     )
 
   // Replace
-  // import { Metadata } from '@redmix/web'
+  // import { Metadata } from '@cedarjs/web'
   // with
-  // import { Metadata, useQuery } from '@redmix/web'
+  // import { Metadata, useQuery } from '@cedarjs/web'
   root
     .find(j.ImportDeclaration, {
       source: {
         type: 'StringLiteral',
-        value: '@redmix/web',
+        value: '@cedarjs/web',
       },
     })
     .replaceWith((nodePath) => {
@@ -78,12 +78,12 @@ export default (file: FileInfo, api: API) => {
   // import ProduceInfo from 'src/components/ProduceInfo'
   // import VegetableInfo from 'src/components/VegetableInfo'
   // after
-  // import { Metadata, useQuery } from '@redmix/web'
+  // import { Metadata, useQuery } from '@cedarjs/web'
   root
     .find(j.ImportDeclaration, {
       source: {
         type: 'StringLiteral',
-        value: '@redmix/web',
+        value: '@cedarjs/web',
       },
     })
     .insertAfter(() => {

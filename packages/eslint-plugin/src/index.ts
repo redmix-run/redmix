@@ -5,7 +5,7 @@ import { serviceTypeAnnotations } from './service-type-annotations.js'
 import { unsupportedRouteComponents } from './unsupported-route-components.js'
 
 export const meta = {
-  name: '@redmix/eslint-plugin',
+  name: '@cedarjs/eslint-plugin',
   version: require('../package.json').version,
 }
 

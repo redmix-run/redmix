@@ -1,9 +1,9 @@
 {
-  "name": "@redmix/auth-netlify-api",
+  "name": "@cedarjs/auth-netlify-api",
   "version": "0.0.3",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/redmix-run/redmix.git",
+    "url": "git+https://github.com/cedarjs/cedar.git",
     "directory": "packages/auth-providers/netlify/api"
   },
   "license": "MIT",
@@ -29,7 +29,7 @@
   ],
   "scripts": {
     "build": "tsx ./build.mts && yarn build:types",
-    "build:pack": "yarn pack -o redmix-auth-netlify-api.tgz",
+    "build:pack": "yarn pack -o cedar-auth-netlify-api.tgz",
     "build:types": "tsc --build --verbose ./tsconfig.json",
     "build:watch": "nodemon --watch src --ext \"js,jsx,ts,tsx,template\" --ignore dist --exec \"yarn build\"",
     "check:attw": "yarn attw -P",
@@ -43,8 +43,8 @@
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "0.16.4",
-    "@redmix/api": "workspace:*",
-    "@redmix/framework-tools": "workspace:*",
+    "@cedarjs/api": "0.0.3",
+    "@cedarjs/framework-tools": "workspace:*",
     "@types/aws-lambda": "8.10.145",
     "@types/jsonwebtoken": "9.0.8",
     "concurrently": "8.2.2",

@@ -1,4 +1,4 @@
-import { AuthenticationError, ForbiddenError } from '@redmix/graphql-server'
+import { AuthenticationError, ForbiddenError } from '@cedarjs/graphql-server'
 
 import { db } from './db'
 

@@ -820,8 +820,8 @@ Right now we just copy the user details from GitHub right into our new User obje
 Right now if an error occurs in the OAuth flow, the browser just stays on the `/oauth/callback` function and sees a plain text error message. A better experience would be to redirect the user back to the login page, with the error message in a query string variable, something like `http://localhost:8910/login?error=Application+not+authorized` Then in the LoginPage, add a `useParams()` to pull out the query variables, and show a toast message if an error is present:
 
 ```jsx
-import { useParams } from '@redmix/router'
-import { toast, Toaster } from '@redmix/web/toast'
+import { useParams } from '@cedarjs/router'
+import { toast, Toaster } from '@cedarjs/web/toast'
 
 const LoginPage = () => {
   const params = useParams()

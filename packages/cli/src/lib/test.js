@@ -15,7 +15,7 @@ import { vi } from 'vitest'
 
 import './mockTelemetry.js'
 
-vi.mock('@redmix/internal/dist/generate/generate', () => {
+vi.mock('@cedarjs/internal/dist/generate/generate', () => {
   return {
     generate: () => {
       return { errors: [] }
@@ -23,7 +23,7 @@ vi.mock('@redmix/internal/dist/generate/generate', () => {
   }
 })
 
-vi.mock('@redmix/project-config', async (importOriginal) => {
+vi.mock('@cedarjs/project-config', async (importOriginal) => {
   const path = await import('path')
   const originalProjectConfig = await importOriginal()
   return {
@@ -73,7 +73,7 @@ vi.mock('@redmix/project-config', async (importOriginal) => {
   }
 })
 
-vi.mock('@redmix/cli-helpers', async (importOriginal) => {
+vi.mock('@cedarjs/cli-helpers', async (importOriginal) => {
   const originalCliHelpers = await importOriginal()
 
   return {

@@ -4,10 +4,10 @@ import { build as esbuildBuild } from 'esbuild'
 import {
   getRouteHookBabelPlugins,
   transformWithBabel,
-} from '@redmix/babel-config'
-import { findRouteHooksSrc } from '@redmix/internal/dist/files.js'
-import type { Paths } from '@redmix/project-config'
-import { getPaths } from '@redmix/project-config'
+} from '@cedarjs/babel-config'
+import { findRouteHooksSrc } from '@cedarjs/internal/dist/files.js'
+import type { Paths } from '@cedarjs/project-config'
+import { getPaths } from '@cedarjs/project-config'
 
 export async function buildRouteHooks(
   verbose: boolean | undefined,

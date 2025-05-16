@@ -6,8 +6,8 @@ const {
   getCommonPlugins,
   getApiSideDefaultBabelConfig,
   getWebSideDefaultBabelConfig,
-} = require('@redmix/babel-config')
-const { getConfig, isTypeScriptProject } = require('@redmix/project-config')
+} = require('@cedarjs/babel-config')
+const { getConfig, isTypeScriptProject } = require('@cedarjs/project-config')
 
 const config = getConfig()
 
@@ -74,7 +74,7 @@ module.exports = {
             ignoreNonDOM: true,
           },
         ],
-        '@redmix/unsupported-route-components': 'error',
+        '@cedarjs/unsupported-route-components': 'error',
       },
     },
     // `api` side
@@ -91,9 +91,9 @@ module.exports = {
     },
     {
       files: ['api/src/services/**/*.ts'],
-      plugins: ['@redmix'],
+      plugins: ['@cedarjs'],
       rules: {
-        '@redmix/service-type-annotations': 'off',
+        '@cedarjs/service-type-annotations': 'off',
       },
     },
     {

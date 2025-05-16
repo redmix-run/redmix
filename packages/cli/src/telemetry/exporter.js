@@ -2,7 +2,7 @@ import path from 'path'
 
 import fs from 'fs-extra'
 
-import { getPaths } from '@redmix/project-config'
+import { getPaths } from '@cedarjs/project-config'
 
 /**
  * Custom exporter which writes spans to a file inside of .redwood/spans

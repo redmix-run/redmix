@@ -12,9 +12,9 @@ import path from 'node:path'
 import { Listr } from 'listr2'
 import pascalcase from 'pascalcase'
 
-import { recordTelemetryAttributes } from '@redmix/cli-helpers'
-import { ensurePosixPath, getConfig } from '@redmix/project-config'
-import { errorTelemetry } from '@redmix/telemetry'
+import { recordTelemetryAttributes } from '@cedarjs/cli-helpers'
+import { ensurePosixPath, getConfig } from '@cedarjs/project-config'
+import { errorTelemetry } from '@cedarjs/telemetry'
 
 import c from '../../lib/colors.js'
 import { generateTemplate, getPaths, writeFilesTask } from '../../lib/index.js'

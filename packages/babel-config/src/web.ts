@@ -4,8 +4,8 @@ import path from 'path'
 import type { TransformOptions } from '@babel/core'
 
 // This import is for types safety. Its just a type, no harm importing from src.
-import type { PluginOptions as RoutesAutoLoaderOptions } from '@redmix/babel-config/src/plugins/babel-plugin-redwood-routes-auto-loader'
-import { getConfig, getPaths } from '@redmix/project-config'
+import type { PluginOptions as RoutesAutoLoaderOptions } from '@cedarjs/babel-config/src/plugins/babel-plugin-redwood-routes-auto-loader'
+import { getConfig, getPaths } from '@cedarjs/project-config'
 
 import type { RegisterHookOptions } from './common'
 import {

@@ -120,7 +120,7 @@ describe('dbAuth handler WebAuthn task title', () => {
   it("does not prompt for WebAuthn if it's already set up", async () => {
     const localMockFiles = { ...mockFiles }
     localMockFiles[path.join(getPaths().web.src, 'auth.ts')] = `
-import { createDbAuthClient, createAuth } from '@redmix/auth-dbauth-web'
+import { createDbAuthClient, createAuth } from '@cedarjs/auth-dbauth-web'
 
 const dbAuthClient = createDbAuthClient()
 
@@ -131,7 +131,7 @@ export const { AuthProvider, useAuth } = createAuth(dbAuthClient)
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "@redmix/auth-dbauth-web": "7.0.0",
+    "@cedarjs/auth-dbauth-web": "7.0.0",
     "@simplewebauthn/browser": "7.4.0"
   }
 }
@@ -155,7 +155,7 @@ export const { AuthProvider, useAuth } = createAuth(dbAuthClient)
   it('does not prompt for WebAuthn if dbAuth is set up', async () => {
     const localMockFiles = { ...mockFiles }
     localMockFiles[path.join(getPaths().web.src, 'auth.ts')] = `
-import { createDbAuthClient, createAuth } from '@redmix/auth-dbauth-web'
+import { createDbAuthClient, createAuth } from '@cedarjs/auth-dbauth-web'
 
 const dbAuthClient = createDbAuthClient()
 
@@ -166,7 +166,7 @@ export const { AuthProvider, useAuth } = createAuth(dbAuthClient)
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "@redmix/auth-dbauth-web": "7.0.0",
+    "@cedarjs/auth-dbauth-web": "7.0.0",
   }
 }
 `

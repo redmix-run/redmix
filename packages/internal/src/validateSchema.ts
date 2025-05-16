@@ -4,8 +4,8 @@ import { mergeTypeDefs } from '@graphql-tools/merge'
 import type { DocumentNode, ObjectTypeDefinitionNode } from 'graphql'
 import { Kind, visit } from 'graphql'
 
-import { rootSchema } from '@redmix/graphql-server'
-import { getPaths } from '@redmix/project-config'
+import { rootSchema } from '@cedarjs/graphql-server'
+import { getPaths } from '@cedarjs/project-config'
 
 import { isServerFileSetup, isRealtimeSetup } from './project'
 

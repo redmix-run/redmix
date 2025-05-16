@@ -3,9 +3,9 @@ import fs from 'node:fs'
 
 import yargsParser from 'yargs-parser'
 
-import { getConfig, getPaths } from '@redmix/project-config'
-import { buildWeb } from '@redmix/vite/build'
-import { buildFeServer } from '@redmix/vite/buildFeServer'
+import { getConfig, getPaths } from '@cedarjs/project-config'
+import { buildWeb } from '@cedarjs/vite/build'
+import { buildFeServer } from '@cedarjs/vite/buildFeServer'
 
 const rwPaths = getPaths()
 

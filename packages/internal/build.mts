@@ -1,4 +1,4 @@
-import { build, copyAssets } from '@redmix/framework-tools'
+import { build, copyAssets } from '@cedarjs/framework-tools'
 
 await build()
 await copyAssets({

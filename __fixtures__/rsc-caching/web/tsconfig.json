@@ -27,8 +27,8 @@
         "./types/*",
         "../types/*"
       ],
-      "@redmix/testing": [
-        "../node_modules/@redmix/testing/web"
+      "@cedarjs/testing": [
+        "../node_modules/@cedarjs/testing/web"
       ]
     },
     "typeRoots": [

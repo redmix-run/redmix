@@ -62,7 +62,7 @@ export function extendJSXFile(
 
   if (imports?.length) {
     content.splice(
-      content.findLastIndex((l) => l.includes('@redmix')) + 1,
+      content.findLastIndex((l) => l.includes('@cedarjs')) + 1,
       0,
       '', // Empty string to add a newline when we .join('\n') below.
       ...imports,

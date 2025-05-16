@@ -8,8 +8,8 @@ import {
   getApiSideBabelPlugins,
   getApiSideDefaultBabelConfig,
   transformWithBabel,
-} from '@redmix/babel-config'
-import { ensurePosixPath, getPaths } from '@redmix/project-config'
+} from '@cedarjs/babel-config'
+import { ensurePosixPath, getPaths } from '@cedarjs/project-config'
 
 import { cleanApiBuild } from '../build/api'
 import { findApiFiles } from '../files'

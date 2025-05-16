@@ -1,9 +1,9 @@
 {
-  "name": "@redmix/auth",
+  "name": "@cedarjs/auth",
   "version": "0.0.3",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/redmix-run/redmix.git",
+    "url": "git+https://github.com/cedarjs/cedar.git",
     "directory": "packages/auth"
   },
   "license": "MIT",
@@ -76,7 +76,7 @@
   ],
   "scripts": {
     "build": "tsx ./build.ts && yarn build:types",
-    "build:pack": "yarn pack -o redmix-auth.tgz",
+    "build:pack": "yarn pack -o cedar-auth.tgz",
     "build:types": "tsc --build --verbose tsconfig.build.json",
     "build:types-cjs": "tsc --build --verbose tsconfig.cjs.json",
     "build:watch": "nodemon --watch src --ext \"js,jsx,ts,tsx\" --ignore dist --exec \"yarn build\"",
@@ -92,7 +92,7 @@
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "0.16.4",
-    "@redmix/framework-tools": "workspace:*",
+    "@cedarjs/framework-tools": "workspace:*",
     "@testing-library/jest-dom": "6.5.0",
     "@testing-library/react": "14.3.1",
     "concurrently": "8.2.2",

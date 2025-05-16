@@ -19,7 +19,7 @@ permissions: {}
 jobs:
   publish-canary:
     name: 🦜 Publish Canary
-    if: github.repository == 'redmix-run/redmix'
+    if: github.repository == 'cedarjs/cedar'
     runs-on: ubuntu-latest
     outputs:
       version: ${{ steps.get-version.outputs.value }}

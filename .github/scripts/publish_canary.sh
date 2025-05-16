@@ -52,27 +52,27 @@ if [ ! -s canary_version ]; then
   exit 1
 fi
 
-# Update create-redmix-app templates to use canary packages
+# Update create-cedar-app templates to use canary packages
 
-sed "s/\"@redmix\/\(.*\)\": \".*\"/\"@redmix\/\1\": \"$(cat canary_version)\"/" \
-  packages/create-redmix-app/templates/js/package.json > tmpfile \
-  && mv tmpfile packages/create-redmix-app/templates/js/package.json
-sed "s/\"@redmix\/\(.*\)\": \".*\"/\"@redmix\/\1\": \"$(cat canary_version)\"/" \
-  packages/create-redmix-app/templates/js/api/package.json > tmpfile \
-  && mv tmpfile packages/create-redmix-app/templates/js/api/package.json
-sed "s/\"@redmix\/\(.*\)\": \".*\"/\"@redmix\/\1\": \"$(cat canary_version)\"/" \
-  packages/create-redmix-app/templates/js/web/package.json > tmpfile \
-  && mv tmpfile packages/create-redmix-app/templates/js/web/package.json
+sed "s/\"@cedarjs\/\(.*\)\": \".*\"/\"@cedarjs\/\1\": \"$(cat canary_version)\"/" \
+  packages/create-cedar-app/templates/js/package.json > tmpfile \
+  && mv tmpfile packages/create-cedar-app/templates/js/package.json
+sed "s/\"@cedarjs\/\(.*\)\": \".*\"/\"@cedarjs\/\1\": \"$(cat canary_version)\"/" \
+  packages/create-cedar-app/templates/js/api/package.json > tmpfile \
+  && mv tmpfile packages/create-cedar-app/templates/js/api/package.json
+sed "s/\"@cedarjs\/\(.*\)\": \".*\"/\"@cedarjs\/\1\": \"$(cat canary_version)\"/" \
+  packages/create-cedar-app/templates/js/web/package.json > tmpfile \
+  && mv tmpfile packages/create-cedar-app/templates/js/web/package.json
 
-sed "s/\"@redmix\/\(.*\)\": \".*\"/\"@redmix\/\1\": \"$(cat canary_version)\"/" \
-  packages/create-redmix-app/templates/ts/package.json > tmpfile \
-  && mv tmpfile packages/create-redmix-app/templates/ts/package.json
-sed "s/\"@redmix\/\(.*\)\": \".*\"/\"@redmix\/\1\": \"$(cat canary_version)\"/" \
-  packages/create-redmix-app/templates/ts/api/package.json > tmpfile \
-  && mv tmpfile packages/create-redmix-app/templates/ts/api/package.json
-sed "s/\"@redmix\/\(.*\)\": \".*\"/\"@redmix\/\1\": \"$(cat canary_version)\"/" \
-  packages/create-redmix-app/templates/ts/web/package.json > tmpfile \
-  && mv tmpfile packages/create-redmix-app/templates/ts/web/package.json
+sed "s/\"@cedarjs\/\(.*\)\": \".*\"/\"@cedarjs\/\1\": \"$(cat canary_version)\"/" \
+  packages/create-cedar-app/templates/ts/package.json > tmpfile \
+  && mv tmpfile packages/create-cedar-app/templates/ts/package.json
+sed "s/\"@cedarjs\/\(.*\)\": \".*\"/\"@cedarjs\/\1\": \"$(cat canary_version)\"/" \
+  packages/create-cedar-app/templates/ts/api/package.json > tmpfile \
+  && mv tmpfile packages/create-cedar-app/templates/ts/api/package.json
+sed "s/\"@cedarjs\/\(.*\)\": \".*\"/\"@cedarjs\/\1\": \"$(cat canary_version)\"/" \
+  packages/create-cedar-app/templates/ts/web/package.json > tmpfile \
+  && mv tmpfile packages/create-cedar-app/templates/ts/web/package.json
 
 # Update all packages to replace any "workspace:*" with this canary version
 
@@ -108,7 +108,7 @@ done
 git config user.name "GitHub Actions"
 git config user.email "<>"
 
-git commit -am "Update create-redmix-app templates to use canary packages"
+git commit -am "Update create-cedar-app templates to use canary packages"
 
 args+=(--yes)
 yarn lerna publish "${args[@]}"

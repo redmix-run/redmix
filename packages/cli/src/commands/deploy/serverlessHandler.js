@@ -8,7 +8,7 @@ import fs from 'fs-extra'
 import { Listr } from 'listr2'
 import prompts from 'prompts'
 
-import { recordTelemetryAttributes } from '@redmix/cli-helpers'
+import { recordTelemetryAttributes } from '@cedarjs/cli-helpers'
 
 import c from '../../lib/colors.js'
 import { getPaths } from '../../lib/index.js'

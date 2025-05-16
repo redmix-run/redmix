@@ -2,8 +2,8 @@ import {
   createGraphQLHandler,
   makeMergedSchema,
   makeServices,
-} from '@redmix/api'
-import importAll from '@redmix/api/importAll.macro'
+} from '@cedarjs/api'
+import importAll from '@cedarjs/api/importAll.macro'
 
 import { db } from 'src/lib/db'
 

@@ -1,5 +1,5 @@
-import { parseJWT, Decoded } from '@redmix/api'
-import { AuthenticationError, ForbiddenError } from '@redmix/graphql-server'
+import { parseJWT, Decoded } from '@cedarjs/api'
+import { AuthenticationError, ForbiddenError } from '@cedarjs/graphql-server'
 
 /**
  * Represents the user attributes returned by the decoding the
@@ -18,7 +18,7 @@ type RedwoodUser = Record<string, unknown> & { roles?: string[] }
  * fields to the return object only once you've decided they are safe to be seen
  * if someone were to open the Web Inspector in their browser.
  *
- * @see https://github.com/redmix-run/redmix/tree/main/packages/auth for examples
+ * @see https://github.com/cedarjs/cedar/tree/main/packages/auth for examples
  *
  * @param decoded - The decoded access token containing user info and JWT
  *   claims like `sub`. Note, this could be null.
@@ -113,7 +113,7 @@ export const hasRole = (roles: AllowedRoles): boolean => {
  * @throws {@link AuthenticationError} - If the currentUser is not authenticated
  * @throws {@link ForbiddenError} If the currentUser is not allowed due to role permissions
  *
- * @see https://github.com/redmix-run/redmix/tree/main/packages/auth for examples
+ * @see https://github.com/cedarjs/cedar/tree/main/packages/auth for examples
  */
 export const requireAuth = ({ roles }: { roles?: AllowedRoles } = {}) => {
   if (!isAuthenticated()) {

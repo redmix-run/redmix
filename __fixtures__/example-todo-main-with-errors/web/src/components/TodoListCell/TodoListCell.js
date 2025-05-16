@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import TodoItem from 'src/components/TodoItem'
-import { useMutation } from '@redmix/web'
+import { useMutation } from '@cedarjs/web'
 
 export const QUERY = gql`
   {

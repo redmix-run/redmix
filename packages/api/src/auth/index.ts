@@ -8,7 +8,7 @@ import { getEventHeader } from '../event.js'
 import type { Decoded } from './parseJWT.js'
 export type { Decoded }
 
-// This is shared by `@redmix/web` as well as used on auth middleware
+// This is shared by `@cedarjs/web` as well as used on auth middleware
 export const AUTH_PROVIDER_HEADER = 'auth-provider'
 
 export const getAuthProviderHeader = (

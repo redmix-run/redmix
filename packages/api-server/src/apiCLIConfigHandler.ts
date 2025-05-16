@@ -1,6 +1,6 @@
 import chalk from 'chalk'
 
-import { coerceRootPath } from '@redmix/fastify-web'
+import { coerceRootPath } from '@cedarjs/fastify-web'
 
 import { createServer } from './createServer'
 import type { APIParsedOptions } from './types'

@@ -2,7 +2,7 @@ import {
   build,
   defaultBuildOptions,
   defaultIgnorePatterns,
-} from '@redmix/framework-tools'
+} from '@cedarjs/framework-tools'
 
 // Build the package
 await build({

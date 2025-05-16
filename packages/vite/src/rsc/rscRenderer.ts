@@ -5,7 +5,7 @@ import { createElement } from 'react'
 
 import { renderToReadableStream } from 'react-server-dom-webpack/server.edge'
 
-import { getPaths } from '@redmix/project-config'
+import { getPaths } from '@cedarjs/project-config'
 
 import { getEntriesFromDist } from '../lib/entries.js'
 import { StatusError } from '../lib/StatusError.js'

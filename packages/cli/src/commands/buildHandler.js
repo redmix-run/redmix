@@ -6,12 +6,12 @@ import fs from 'fs-extra'
 import { Listr } from 'listr2'
 import terminalLink from 'terminal-link'
 
-import { recordTelemetryAttributes } from '@redmix/cli-helpers'
-import { buildApi, cleanApiBuild } from '@redmix/internal/dist/build/api'
-import { generate } from '@redmix/internal/dist/generate/generate'
-import { loadAndValidateSdls } from '@redmix/internal/dist/validateSchema'
-import { detectPrerenderRoutes } from '@redmix/prerender/detection'
-import { timedTelemetry } from '@redmix/telemetry'
+import { recordTelemetryAttributes } from '@cedarjs/cli-helpers'
+import { buildApi, cleanApiBuild } from '@cedarjs/internal/dist/build/api'
+import { generate } from '@cedarjs/internal/dist/generate/generate'
+import { loadAndValidateSdls } from '@cedarjs/internal/dist/validateSchema'
+import { detectPrerenderRoutes } from '@cedarjs/prerender/detection'
+import { timedTelemetry } from '@cedarjs/telemetry'
 
 import { generatePrismaCommand } from '../lib/generatePrismaClient.js'
 import { getPaths, getConfig } from '../lib/index.js'
@@ -107,7 +107,7 @@ export const handler = async ({
         // one in the future as a performance optimization.
         await execa(
           `node ${createdRequire.resolve(
-            '@redmix/vite/bins/rw-vite-build.mjs',
+            '@cedarjs/vite/bins/rw-vite-build.mjs',
           )} --webDir="${rwjsPaths.web.base}" --verbose=${verbose}`,
           {
             stdio: verbose ? 'inherit' : 'pipe',

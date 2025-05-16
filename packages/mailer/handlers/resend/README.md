@@ -15,7 +15,7 @@ yarn workspace api add @redwoodjs/mailer-handler-resend
 After this you should be able to import this handler into your `api/src/lib/mailer.ts` file and create an instance of this handler with your API key.
 
 ```typescript
-import { ResendMailHandler } from '@redmix/mailer-handler-resend'
+import { ResendMailHandler } from '@cedarjs/mailer-handler-resend'
 
 // ...
 

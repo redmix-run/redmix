@@ -166,7 +166,7 @@ Look for these key words when choosing a library: _universal module, SSR compati
 This higher-order component is great for JSX:
 
 ```jsx
-import { BrowserOnly } from '@redmix/prerender/browserUtils'
+import { BrowserOnly } from '@cedarjs/prerender/browserUtils'
 
 const MyFancyComponent = () => {
   <h2>👋🏾 I render on both the server and the browser</h2>
@@ -181,7 +181,7 @@ const MyFancyComponent = () => {
 If you prefer hooks, you can use the `useIsBrowser` hook:
 
 ```jsx
-import { useIsBrowser } from '@redmix/prerender/browserUtils'
+import { useIsBrowser } from '@cedarjs/prerender/browserUtils'
 
 const MySpecialComponent = () => {
   const browser = useIsBrowser()
@@ -201,7 +201,7 @@ const MySpecialComponent = () => {
 If you need to guard against prerendering outside React, you can use the `isBrowser` boolean. This is especially handy when running initializing code that only works in the browser:
 
 ```jsx
-import { isBrowser } from '@redmix/prerender/browserUtils'
+import { isBrowser } from '@cedarjs/prerender/browserUtils'
 
 if (isBrowser) {
   netlifyIdentity.init()
@@ -295,7 +295,7 @@ This error happens during builds when you have a Cell on a page you're prerender
 During prerender you are not logged in ([see point 1](#1-prerendering-always-happens-as-an-unauthenticated-user)), so you'll have to conditionally render the Cell - for example:
 
 ```js
-import { useAuth } from '@redmix/auth'
+import { useAuth } from '@cedarjs/auth'
 
 const HomePage = () => {
   // highlight-next-line
@@ -317,7 +317,7 @@ const HomePage = () => {
 If you dynamically load third-party libraries that aren't part of your JS bundle, using these prerendering utils can help you avoid loading them at build time:
 
 ```jsx
-import { useIsBrowser } from '@redmix/prerender/browserUtils'
+import { useIsBrowser } from '@cedarjs/prerender/browserUtils'
 
 const ComponentUsingAnExternalLibrary = () => {
   const browser = useIsBrowser()
@@ -379,7 +379,7 @@ You might notice a flash after page load. Prerendering pages still has various b
 A quick workaround for this is to make sure whatever page you're seeing the flash on isn't dynamically loaded i.e. prevent code splitting. You can do this by explicitly importing the page in `Routes.js`:
 
 ```jsx
-import { Router, Route } from '@redmix/router'
+import { Router, Route } from '@cedarjs/router'
 // We don't want HomePage to be dynamically loaded
 // highlight-next-line
 import HomePage from 'src/pages/HomePage'

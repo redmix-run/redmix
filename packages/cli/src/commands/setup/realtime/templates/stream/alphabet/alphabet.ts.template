@@ -1,4 +1,4 @@
-import { Repeater } from '@redmix/realtime'
+import { Repeater } from '@cedarjs/realtime'
 
 import { logger } from 'src/lib/logger'
 

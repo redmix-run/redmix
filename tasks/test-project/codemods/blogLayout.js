@@ -84,7 +84,7 @@ export default (file, api) => {
       j.importSpecifier(j.identifier('NavLink'), j.identifier('NavLink')),
       j.importSpecifier(j.identifier('routes'), j.identifier('routes')),
     ],
-    j.stringLiteral('@redmix/router'),
+    j.stringLiteral('@cedarjs/router'),
   )
 
   const authImport = j.importDeclaration(

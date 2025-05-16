@@ -23,7 +23,7 @@ import React, { useEffect, useState } from 'react'
 import { act, configure, render, waitFor } from '@testing-library/react'
 import { vi, beforeEach, afterEach, test, expect } from 'vitest'
 
-import type { AuthContextInterface } from '@redmix/auth'
+import type { AuthContextInterface } from '@cedarjs/auth'
 
 import {
   navigate,

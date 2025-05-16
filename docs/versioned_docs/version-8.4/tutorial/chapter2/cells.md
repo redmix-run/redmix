@@ -44,6 +44,7 @@ export const Success = ({ posts }) => {
 
 ```tsx
 import type { FindPosts } from 'types/graphql'
+import type { CellSuccessProps, CellFailureProps } from '@cedarjs/web'
 
 import type {
   CellSuccessProps,
@@ -368,7 +369,7 @@ Let's plug this cell into our `HomePage` and see what happens:
 <TabItem value="js" label="JavaScript">
 
 ```jsx title="web/src/pages/HomePage/HomePage.jsx"
-import { Metadata } from '@redmix/web'
+import { Metadata } from '@cedarjs/web'
 
 // highlight-next-line
 import ArticlesCell from 'src/components/ArticlesCell'
@@ -389,7 +390,8 @@ export default HomePage
 </TabItem>
 <TabItem value="ts" label="TypeScript">
 
-import { Metadata } from '@redmix/web'
+```jsx title="web/src/pages/HomePage/HomePage.tsx"
+import { Metadata } from '@cedarjs/web'
 
 // highlight-next-line
 import ArticlesCell from 'src/components/ArticlesCell'

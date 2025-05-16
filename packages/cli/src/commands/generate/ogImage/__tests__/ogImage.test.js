@@ -4,13 +4,13 @@ globalThis.__dirname = __dirname
 import { vol, fs as memfs } from 'memfs'
 import { afterEach, beforeEach, describe, test, expect, vi } from 'vitest'
 
-import { ensurePosixPath } from '@redmix/project-config'
+import { ensurePosixPath } from '@cedarjs/project-config'
 
 import * as ogImageHandler from '../ogImageHandler.js'
 
 vi.mock('fs', () => ({ ...memfs, default: { ...memfs } }))
 vi.mock('node:fs', () => ({ ...memfs, default: { ...memfs } }))
-vi.mock('@redmix/project-config', async (importOriginal) => {
+vi.mock('@cedarjs/project-config', async (importOriginal) => {
   const actual = await importOriginal()
 
   return {

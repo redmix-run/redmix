@@ -3,7 +3,7 @@ import { createRequire } from 'node:module'
 
 const require = createRequire(import.meta.url)
 const requireFromRwVite = createRequire(
-  require.resolve('@redmix/vite/package.json'),
+  require.resolve('@cedarjs/vite/package.json'),
 )
 
 const bins = requireFromRwVite('./package.json')['bin']

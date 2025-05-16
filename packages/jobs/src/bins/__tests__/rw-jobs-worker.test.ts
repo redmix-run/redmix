@@ -5,7 +5,7 @@ import { JobManager } from '../../core/JobManager.js'
 import { Worker } from '../../core/Worker.js'
 import { getWorker, processName } from '../rw-jobs-worker.js'
 
-vi.mock('@redmix/cli-helpers/loadEnvFiles', () => {
+vi.mock('@cedarjs/cli-helpers/loadEnvFiles', () => {
   return {
     loadEnvFiles: () => {},
   }

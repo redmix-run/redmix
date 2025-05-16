@@ -1,14 +1,14 @@
 import type { A } from 'ts-toolbelt'
 
-import { setContext, context as globalContext } from '@redmix/context'
+import { setContext, context as globalContext } from '@cedarjs/context'
 import type {
   DirectiveParams,
   ValidatorDirective,
   TransformerDirective,
-} from '@redmix/graphql-server'
-import { DirectiveType } from '@redmix/graphql-server'
+} from '@cedarjs/graphql-server'
+import { DirectiveType } from '@cedarjs/graphql-server'
 
-export { getDirectiveName } from '@redmix/graphql-server'
+export { getDirectiveName } from '@cedarjs/graphql-server'
 
 // @NOTE: overloaded interface
 interface DirectiveMocker {

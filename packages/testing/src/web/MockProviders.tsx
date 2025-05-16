@@ -5,10 +5,10 @@
 import React from 'react'
 
 // @ts-expect-error - We inject useAuth when testing, so it will be available
-import { useAuth } from '@redmix/auth'
-import { LocationProvider } from '@redmix/router'
-import { RedwoodProvider } from '@redmix/web'
-import { RedwoodApolloProvider } from '@redmix/web/apollo'
+import { useAuth } from '@cedarjs/auth'
+import { LocationProvider } from '@cedarjs/router'
+import { RedwoodProvider } from '@cedarjs/web'
+import { RedwoodApolloProvider } from '@cedarjs/web/apollo'
 
 import { MockParamsProvider } from './MockParamsProvider'
 

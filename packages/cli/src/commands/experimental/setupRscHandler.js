@@ -4,9 +4,9 @@ import execa from 'execa'
 import fs from 'fs-extra'
 import { Listr } from 'listr2'
 
-import { prettify } from '@redmix/cli-helpers'
-import { getConfig, getConfigPath } from '@redmix/project-config'
-import { errorTelemetry } from '@redmix/telemetry'
+import { prettify } from '@cedarjs/cli-helpers'
+import { getConfig, getConfigPath } from '@cedarjs/project-config'
+import { errorTelemetry } from '@cedarjs/telemetry'
 
 import c from '../../lib/colors.js'
 import { getPaths, transformTSToJS, writeFile } from '../../lib/index.js'
@@ -383,7 +383,7 @@ export const handler = async ({ force, verbose }) => {
         task: async () => {
           // Fetch the web package.json from the main branch
           const canaryWebPackageJsonUrl =
-            'https://raw.githubusercontent.com/redmix-run/redmix/main/packages/create-redmix-app/templates/ts/web/package.json'
+            'https://raw.githubusercontent.com/cedarjs/cedar/main/packages/create-cedar-app/templates/ts/web/package.json'
           const response = await fetch(canaryWebPackageJsonUrl)
           const canaryPackageJson = await response.json()
 

@@ -1,5 +1,5 @@
-import { authDecoder } from '@redmix/auth-dbauth-api'
-import { createGraphQLHandler } from '@redmix/graphql-server'
+import { authDecoder } from '@cedarjs/auth-dbauth-api'
+import { createGraphQLHandler } from '@cedarjs/graphql-server'
 
 import directives from 'src/directives/**/*.{js,ts}'
 import sdls from 'src/graphql/**/*.sdl.{js,ts}'

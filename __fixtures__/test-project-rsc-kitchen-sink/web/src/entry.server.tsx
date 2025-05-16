@@ -1,5 +1,5 @@
-import initDbAuthMiddleware from '@redmix/auth-dbauth-middleware'
-import type { TagDescriptor } from '@redmix/web/htmlTags'
+import initDbAuthMiddleware from '@cedarjs/auth-dbauth-middleware'
+import type { TagDescriptor } from '@cedarjs/web/htmlTags'
 
 import App from './App'
 import { Document } from './Document'

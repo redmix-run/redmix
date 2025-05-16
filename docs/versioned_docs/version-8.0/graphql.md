@@ -173,7 +173,7 @@ All this gets us closer to Redwood's goal of being able to deploy to a "generic 
 By default, Redwood Apps come ready-to-query with the `RedwoodApolloProvider`. As you can tell from the name, this Provider wraps [ApolloProvider](https://www.apollographql.com/docs/react/api/react/hooks/#the-apolloprovider-component). Omitting a few things, this is what you'll normally see in Redwood Apps:
 
 ```jsx title="web/src/App.js"
-import { RedwoodApolloProvider } from '@redmix/web/apollo'
+import { RedwoodApolloProvider } from '@cedarjs/web/apollo'
 
 // ...
 
@@ -186,10 +186,10 @@ const App = () => (
 // ...
 ```
 
-You can use Apollo's `useQuery` and `useMutation` hooks by importing them from `@redmix/web`, though if you're using `useQuery`, we recommend that you use a [Cell](cells.md):
+You can use Apollo's `useQuery` and `useMutation` hooks by importing them from `@cedarjs/web`, though if you're using `useQuery`, we recommend that you use a [Cell](cells.md):
 
 ```jsx title="web/src/components/MutateButton.js"
-import { useMutation } from '@redmix/web'
+import { useMutation } from '@cedarjs/web'
 
 const MUTATION = gql`
   # your mutation...
@@ -242,7 +242,7 @@ For example, if you have a query named `search` that supports [Apollo's offset p
 
 ### Swapping out the RedwoodApolloProvider
 
-As long as you're willing to do a bit of configuring yourself, you can swap out `RedwoodApolloProvider` with your GraphQL Client of choice. You'll just have to get to know a bit of the make up of the [RedwoodApolloProvider](https://github.com/redmix-run/redmix/blob/main/packages/web/src/apollo/index.tsx#L71-L84); it's actually composed of a few more Providers and hooks:
+As long as you're willing to do a bit of configuring yourself, you can swap out `RedwoodApolloProvider` with your GraphQL Client of choice. You'll just have to get to know a bit of the make up of the [RedwoodApolloProvider](https://github.com/cedarjs/cedar/blob/main/packages/web/src/apollo/index.tsx#L71-L84); it's actually composed of a few more Providers and hooks:
 
 - `FetchConfigProvider`
 - `useFetchConfig`
@@ -365,10 +365,10 @@ Of the four, you'll see `args` and `root` being used a lot.
 
 ### Context
 
-In Redwood, the `context` object that's passed to resolvers is actually available to all your Services, whether or not they're serving as resolvers. Just import it from `@redmix/graphql-server`:
+In Redwood, the `context` object that's passed to resolvers is actually available to all your Services, whether or not they're serving as resolvers. Just import it from `@cedarjs/graphql-server`:
 
 ```jsx
-import { context } from '@redmix/graphql-server'
+import { context } from '@cedarjs/graphql-server'
 ```
 
 #### How to Modify the Context
@@ -427,7 +427,7 @@ query {
 }
 ```
 
-How is this possible? Via Redwood's [root schema](https://github.com/redmix-run/redmix/blob/main/packages/graphql-server/src/rootSchema.ts). The root schema is where things like currentUser are defined:
+How is this possible? Via Redwood's [root schema](https://github.com/cedarjs/cedar/blob/main/packages/graphql-server/src/rootSchema.ts). The root schema is where things like currentUser are defined:
 
 ```graphql
 scalar BigInt
@@ -448,7 +448,7 @@ type Query {
 }
 ```
 
-Now that you've seen the sdl, be sure to check out [the resolvers](https://github.com/redmix-run/redmix/blob/main/packages/graphql-server/src/rootSchema.ts):
+Now that you've seen the sdl, be sure to check out [the resolvers](https://github.com/cedarjs/cedar/blob/main/packages/graphql-server/src/rootSchema.ts):
 
 ```ts
 export const resolvers: Resolvers = {
@@ -880,7 +880,7 @@ useCache is a custom hook that returns the cache object and some useful methods 
 - [clearStore](#clearstore)
 
 ```ts
-import { useCache } from '@redmix/web/apollo'
+import { useCache } from '@cedarjs/web/apollo'
 ```
 
 ### cache
@@ -888,7 +888,7 @@ import { useCache } from '@redmix/web/apollo'
 Returns the normalized, in-memory cache.
 
 ```ts
-import { useCache } from '@redmix/web/apollo'
+import { useCache } from '@cedarjs/web/apollo'
 
 const { cache } = useCache()
 ```
@@ -898,7 +898,7 @@ const { cache } = useCache()
 Either removes a normalized object from the cache or removes a specific field from a normalized object in the cache.
 
 ```ts
-import { useCache } from '@redmix/web/apollo'
+import { useCache } from '@cedarjs/web/apollo'
 
 const Fruit = ({ id }: { id: FragmentIdentifier }) => {
   const { evict } = useCache()
@@ -913,7 +913,7 @@ const Fruit = ({ id }: { id: FragmentIdentifier }) => {
 Returns a serialized representation of the cache's current contents
 
 ```ts
-import { useCache } from '@redmix/web/apollo'
+import { useCache } from '@cedarjs/web/apollo'
 
 const Fruit = ({ id }: { id: FragmentIdentifier }) => {
   const { extract } = useCache()
@@ -926,7 +926,7 @@ const Fruit = ({ id }: { id: FragmentIdentifier }) => {
 ### identify
 
 ```ts
-import { useCache } from '@redmix/web/apollo'
+import { useCache } from '@cedarjs/web/apollo'
 
 const Fruit = ({ id }: { id: FragmentIdentifier }) => {
   const { identify } = useCache()
@@ -944,7 +944,7 @@ Modifies one or more field values of a cached object. Must provide a modifier fu
 Returns true if the cache was modified successfully and false otherwise.
 
 ```ts
-import { useCache } from '@redmix/web/apollo'
+import { useCache } from '@cedarjs/web/apollo'
 
 const Fruit = ({ id }: { id: FragmentIdentifier }) => {
   const { modify } = useCache()
@@ -968,7 +968,7 @@ const Fruit = ({ id }: { id: FragmentIdentifier }) => {
 To reset the cache without refetching active queries, use the clearStore method.
 
 ```ts
-import { useCache } from '@redmix/web/apollo'
+import { useCache } from '@cedarjs/web/apollo'
 
 const Fruit = ({ id }: { id: FragmentIdentifier }) => {
   const { clearStore } = useCache()
@@ -982,7 +982,7 @@ const Fruit = ({ id }: { id: FragmentIdentifier }) => {
 Reset the cache entirely, such as when a user logs out.
 
 ```ts
-import { useCache } from '@redmix/web/apollo'
+import { useCache } from '@cedarjs/web/apollo'
 
 const Fruit = ({ id }: { id: FragmentIdentifier }) => {
   const { resetStore } = useCache()
@@ -1122,7 +1122,7 @@ Redwood makes it easy to code, organize, and map your directives into the GraphQ
 You simply add them to the `directives` directory and the `createGraphQLHandler` will do all the work.
 
 ```tsx title="api/src/functions/graphql.ts"
-import { createGraphQLHandler } from '@redmix/graphql-server'
+import { createGraphQLHandler } from '@cedarjs/graphql-server'
 
 import directives from 'src/directives/**/*.{js,ts}' // 👈 directives live here
 import sdls from 'src/graphql/**/*.sdl.{js,ts}'
@@ -1339,7 +1339,7 @@ For example, you have chosen to log `data` return by each request, then you may 
 Here is an example of an application `/api/src/lib/logger.ts` configured to redact email addresses. Take note of the path `data.users[*].email` as this says, in the `data` attribute, redact the `email` from every `user`:
 
 ```jsx title="/api/src/lib/logger.ts"
-import { createLogger, redactionsList } from '@redmix/api/logger'
+import { createLogger, redactionsList } from '@cedarjs/api/logger'
 
 export const logger = createLogger({
   options: {
@@ -2088,7 +2088,7 @@ export const handler = createGraphQLHandler({
 
 Redwood Errors are inspired from [Apollo Server Error codes](https://www.apollographql.com/docs/apollo-server/data/errors/#error-codes) for common use cases:
 
-To use a Redwood Error, import each from `@redmix/graphql-server`.
+To use a Redwood Error, import each from `@cedarjs/graphql-server`.
 
 - `SyntaxError` - An unspecified error occurred
 - `ValidationError` - Invalid input to a service
@@ -2099,7 +2099,7 @@ To use a Redwood Error, import each from `@redmix/graphql-server`.
 If you use one of the errors, then the message provided will not be masked and will be shared in the GraphQL response:
 
 ```tsx
-import { UserInputError } from '@redmix/graphql-server'
+import { UserInputError } from '@cedarjs/graphql-server'
 // ...
 throw new UserInputError('An email is required.')
 ```

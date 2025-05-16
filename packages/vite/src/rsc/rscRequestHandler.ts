@@ -11,7 +11,7 @@ import type Router from 'find-my-way'
 import type { HTTPMethod } from 'find-my-way'
 import type { ViteDevServer } from 'vite'
 
-import type { Middleware } from '@redmix/web/dist/server/middleware'
+import type { Middleware } from '@cedarjs/web/dist/server/middleware'
 
 import {
   decodeReply,
@@ -123,7 +123,7 @@ export function createRscRequestHandler(
         }
 
         // Getting a warning on GitHub about this
-        // https://github.com/redmix-run/redmix/security/code-scanning/211
+        // https://github.com/cedarjs/cedar/security/code-scanning/211
         // Handle according to TODO below
         res.end(String(err))
         // TODO (RSC): When we have `yarn rw dev` support we should do this:

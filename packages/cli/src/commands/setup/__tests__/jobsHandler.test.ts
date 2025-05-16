@@ -13,7 +13,7 @@ import {
   afterAll,
 } from 'vitest'
 
-import type * as ProjectConfig from '@redmix/project-config'
+import type * as ProjectConfig from '@cedarjs/project-config'
 
 import { Listr2Mock } from '../../../__tests__/Listr2Mock.js'
 // @ts-expect-error - This is a JS file
@@ -32,14 +32,14 @@ vi.mock('@prisma/internals', async () => ({
   },
 }))
 
-vi.mock('@redmix/cli-helpers', () => ({
+vi.mock('@cedarjs/cli-helpers', () => ({
   addApiPackages: () => ({
     title: 'Adding required api packages...',
     task: async () => {},
   }),
 }))
 
-vi.mock('@redmix/project-config', async (importOriginal) => {
+vi.mock('@cedarjs/project-config', async (importOriginal) => {
   const path = require('path')
   const originalProjectConfig = await importOriginal<typeof ProjectConfig>()
   return {

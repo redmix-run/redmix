@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 
-import { getPaths, standardAuthHandler } from '@redmix/cli-helpers'
+import { getPaths, standardAuthHandler } from '@cedarjs/cli-helpers'
 
 import type { Args } from './setup'
 
@@ -15,13 +15,13 @@ export async function handler({ force: forceArg }: Args) {
     forceArg,
     provider: 'supertokens',
     authDecoderImport:
-      "import { authDecoder } from '@redmix/auth-supertokens-api'",
+      "import { authDecoder } from '@cedarjs/auth-supertokens-api'",
     apiPackages: [
-      `@redmix/auth-supertokens-api@${version}`,
+      `@cedarjs/auth-supertokens-api@${version}`,
       'supertokens-node@^15',
     ],
     webPackages: [
-      `@redmix/auth-supertokens-web@${version}`,
+      `@cedarjs/auth-supertokens-web@${version}`,
       'supertokens-auth-react@~0.34.0',
       'supertokens-web-js@~0.7.0',
     ],
@@ -59,7 +59,7 @@ export const addRoutingLogic = {
           if (
             !hasImportedSuperTokensFunctions &&
             line.includes('import') &&
-            line.includes('@redmix')
+            line.includes('@cedarjs')
           ) {
             acc.push(
               "import { canHandleRoute, getRoutingComponent } from 'supertokens-auth-react/ui'",

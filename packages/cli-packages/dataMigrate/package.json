@@ -1,9 +1,9 @@
 {
-  "name": "@redmix/cli-data-migrate",
+  "name": "@cedarjs/cli-data-migrate",
   "version": "0.0.3",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/redmix-run/redmix.git",
+    "url": "git+https://github.com/cedarjs/cedar.git",
     "directory": "packages/cli-packages/dataMigrate"
   },
   "license": "MIT",
@@ -17,7 +17,7 @@
   ],
   "scripts": {
     "build": "tsx ./build.mts && yarn build:types",
-    "build:pack": "yarn pack -o redmix-cli-data-migrate.tgz",
+    "build:pack": "yarn pack -o cedar-cli-data-migrate.tgz",
     "build:types": "tsc --build --verbose",
     "prepublishOnly": "NODE_ENV=production yarn build",
     "test": "yarn test:unit && yarn test:dist",
@@ -25,8 +25,8 @@
     "test:unit": "yarn vitest run src/"
   },
   "dependencies": {
-    "@redmix/babel-config": "workspace:*",
-    "@redmix/project-config": "workspace:*",
+    "@cedarjs/babel-config": "0.0.3",
+    "@cedarjs/project-config": "0.0.3",
     "chalk": "4.1.2",
     "dotenv-defaults": "5.0.2",
     "execa": "5.1.1",
@@ -36,8 +36,8 @@
     "yargs": "17.7.2"
   },
   "devDependencies": {
+    "@cedarjs/framework-tools": "workspace:*",
     "@prisma/client": "5.20.0",
-    "@redmix/framework-tools": "workspace:*",
     "@types/fs-extra": "11.0.4",
     "@types/yargs": "17.0.33",
     "memfs": "4.17.1",

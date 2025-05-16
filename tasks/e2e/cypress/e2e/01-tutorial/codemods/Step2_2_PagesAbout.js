@@ -1,5 +1,5 @@
 export default `
-import { Link, routes } from '@redmix/router'
+import { Link, routes } from '@cedarjs/router'
 
 const AboutPage = () => {
   return (

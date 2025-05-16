@@ -5,8 +5,8 @@ import type {
   MailRenderedContent,
   MailUtilities,
   MailRendererOptions,
-} from '@redmix/mailer-core'
-import { AbstractMailRenderer } from '@redmix/mailer-core'
+} from '@cedarjs/mailer-core'
+import { AbstractMailRenderer } from '@cedarjs/mailer-core'
 
 export type SupportedOutputFormats = 'html'
 export type RendererOptions = MailRendererOptions<SupportedOutputFormats> &

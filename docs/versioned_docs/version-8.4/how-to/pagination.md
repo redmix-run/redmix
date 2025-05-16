@@ -256,7 +256,7 @@ Generate a new component with`yarn rw g component Pagination`
 <TabItem value="js" label="JavaScript">
   
 ```jsx title="web/src/components/Pagination/Pagination.jsx"
-import { Link, routes } from '@redmix/router'
+import { Link, routes } from '@cedarjs/router'
 
 const POSTS_PER_PAGE = 5
 

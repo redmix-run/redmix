@@ -5,7 +5,7 @@ import {
   build,
   defaultBuildOptions,
   defaultIgnorePatterns,
-} from '@redmix/framework-tools'
+} from '@cedarjs/framework-tools'
 
 // Some comments I wish I had a better place for...
 //  - The `exports` field in package.json must have the "types" condition first

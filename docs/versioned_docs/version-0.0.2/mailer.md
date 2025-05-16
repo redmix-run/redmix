@@ -27,8 +27,8 @@ A **renderer** transforms your React components into strings of text or HTML tha
 
 Mailer currently offers the following renderers:
 
-- [@redmix/mailer-renderer-react-email](https://github.com/redmix-run/redmix/tree/main/packages/mailer/renderers/react-email) based on [React Email](https://react.email/)
-- [@redmix/mailer-renderer-mjml-react](https://github.com/redmix-run/redmix/tree/main/packages/mailer/renderers/mjml-react) based on [MJML](https://github.com/Faire/mjml-react)
+- [@cedarjs/mailer-renderer-react-email](https://github.com/cedarjs/cedar/tree/main/packages/mailer/renderers/react-email) based on [React Email](https://react.email/)
+- [@cedarjs/mailer-renderer-mjml-react](https://github.com/cedarjs/cedar/tree/main/packages/mailer/renderers/mjml-react) based on [MJML](https://github.com/Faire/mjml-react)
 
 You can find community-maintained renderers by searching across npm, our forums, and other community spaces.
 
@@ -44,10 +44,10 @@ A **handler** is responsible for taking your rendered content and passing it on 
 
 Mailer currently offers the following handlers:
 
-- [@redmix/mailer-handler-in-memory](https://github.com/redmix-run/redmix/tree/main/packages/mailer/handlers/in-memory), a simple in-memory handler typically used for testing.
-- [@redmix/mailer-handler-nodemailer](https://github.com/redmix-run/redmix/tree/main/packages/mailer/handlers/nodemailer), which uses [Nodemailer](https://nodemailer.com/).
-- [@redmix/mailer-handler-studio](https://github.com/redmix-run/redmix/tree/main/packages/mailer/handlers/studio), which sends emails to the RedwoodJS Studio using nodemailer internally.
-- [@redmix/mailer-handler-resend](https://github.com/redmix-run/redmix/tree/main/packages/mailer/handlers/resend), which uses [Resend](https://resend.com/).
+- [@cedarjs/mailer-handler-in-memory](https://github.com/cedarjs/cedar/tree/main/packages/mailer/handlers/in-memory), a simple in-memory handler typically used for testing.
+- [@cedarjs/mailer-handler-nodemailer](https://github.com/cedarjs/cedar/tree/main/packages/mailer/handlers/nodemailer), which uses [Nodemailer](https://nodemailer.com/).
+- [@cedarjs/mailer-handler-studio](https://github.com/cedarjs/cedar/tree/main/packages/mailer/handlers/studio), which sends emails to the RedwoodJS Studio using nodemailer internally.
+- [@cedarjs/mailer-handler-resend](https://github.com/cedarjs/cedar/tree/main/packages/mailer/handlers/resend), which uses [Resend](https://resend.com/).
 
 You can find community-maintained handlers by searching across npm, our forums, and other community spaces.
 
@@ -56,9 +56,9 @@ You can find community-maintained handlers by searching across npm, our forums, 
 The core file for the Mailer functions is `api/src/lib/mailer.ts`. This file contains configuration defining which handlers and renderers to use and when. It starts out looking like this:
 
 ```ts title=api/src/lib/mailer.ts
-import { Mailer } from '@redmix/mailer-core'
-import { NodemailerMailHandler } from '@redmix/mailer-handler-nodemailer'
-import { ReactEmailRenderer } from '@redmix/mailer-renderer-react-email'
+import { Mailer } from '@cedarjs/mailer-core'
+import { NodemailerMailHandler } from '@cedarjs/mailer-handler-nodemailer'
+import { ReactEmailRenderer } from '@cedarjs/mailer-renderer-react-email'
 
 import { logger } from 'src/lib/logger'
 
@@ -174,7 +174,7 @@ This helps improve your experience as you don't have to worry about sending real
 
 When your `NODE_ENV` is set to `test`, then the Mailer will start in test mode. In this mode, all mail will be sent using a test handler rather than the default production one or any specific one set when calling `send` or `sendWithoutRendering`.
 
-By default, when the Mailer is created, it will check if the `@redmix/mailer-handler-in-memory` package is available. If it is, this will become the test handler; otherwise, the test handler will be a no-op that does nothing. The `yarn rw setup mailer` command adds this `@redmix/mailer-handler-in-memory` package as a `devDependency` automatically for you.
+By default, when the Mailer is created, it will check if the `@cedarjs/mailer-handler-in-memory` package is available. If it is, this will become the test handler; otherwise, the test handler will be a no-op that does nothing. The `yarn rw setup mailer` command adds this `@cedarjs/mailer-handler-in-memory` package as a `devDependency` automatically for you.
 
 If you want control over this test mode behavior, you can include the following configuration in the `mailer.ts` file:
 
@@ -242,7 +242,7 @@ Above we tested that our service did the following:
 
 ### Development
 
-Similar to the test mode, the Mailer also has a development mode. This mode is selected automatically when the Mailer is created if `NODE_ENV` is **not** set to `production`. This mode behaves similarly to the test mode and by default will attempt to use the `@redmix/mailer-handler-studio` package if it is available.
+Similar to the test mode, the Mailer also has a development mode. This mode is selected automatically when the Mailer is created if `NODE_ENV` is **not** set to `production`. This mode behaves similarly to the test mode and by default will attempt to use the `@cedarjs/mailer-handler-studio` package if it is available.
 
 You can control the development mode behavior with the following configuration in the `mailer.ts` file:
 
@@ -277,12 +277,12 @@ You can have a preview of what your mail templates will look like. These will re
 
 <img alt="mailer-local-inbox" src="/img/mailer/local_inbox.png" />
 
-When running in development mode, using the default `@redmix/mailer-handler-studio` development handler, your mail will be sent to a local SMTP inbox running inside of Studio. This allows you to use your app and have full emails sent without worrying about setting up a local inbox yourself or using some other online temporary inbox service.
+When running in development mode, using the default `@cedarjs/mailer-handler-studio` development handler, your mail will be sent to a local SMTP inbox running inside of Studio. This allows you to use your app and have full emails sent without worrying about setting up a local inbox yourself or using some other online temporary inbox service.
 
 ## Need a Renderer or Handler?
 
 If the Mailer does not currenly provide a [handler](notion://www.notion.so/redwoodjs/133467eb46b744fd8ae60df2d493d7d0#handlers) or [renderer](notion://www.notion.so/redwoodjs/133467eb46b744fd8ae60df2d493d7d0#renderers) for the service or technology you wish to use, this doesn't prevent you from using the Mailer. Instead, you can create your own handler or renderer which you can then open source to the wider RedwoodJS community.
 
-To do this, read over the existing implementations for handlers [here](https://github.com/redmix-run/redmix/tree/main/packages/mailer/handlers) and renderers [here](https://github.com/redmix-run/redmix/tree/main/packages/mailer/renderers). You can also find the interfaces that a handler or mailer must satisfy [here](https://github.com/redmix-run/redmix/tree/main/packages/mailer/core) in the `@redmix/mailer-core` package.
+To do this, read over the existing implementations for handlers [here](https://github.com/cedarjs/cedar/tree/main/packages/mailer/handlers) and renderers [here](https://github.com/cedarjs/cedar/tree/main/packages/mailer/renderers). You can also find the interfaces that a handler or mailer must satisfy [here](https://github.com/cedarjs/cedar/tree/main/packages/mailer/core) in the `@cedarjs/mailer-core` package.
 
 Be sure to check out the community forum for people working on similar work, to document your own creations, or to get help on anything.

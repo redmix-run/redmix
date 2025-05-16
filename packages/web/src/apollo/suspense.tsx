@@ -33,9 +33,9 @@ import {
 } from '@apollo/client-react-streaming'
 import { buildManualDataTransport } from '@apollo/client-react-streaming/manual-transport'
 
-import type { UseAuth } from '@redmix/auth'
-import { useNoAuth } from '@redmix/auth'
-import { ServerAuthContext } from '@redmix/auth/dist/AuthProvider/ServerAuthProvider.js'
+import type { UseAuth } from '@cedarjs/auth'
+import { useNoAuth } from '@cedarjs/auth'
+import { ServerAuthContext } from '@cedarjs/auth/dist/AuthProvider/ServerAuthProvider.js'
 import './typeOverride.js'
 
 import {

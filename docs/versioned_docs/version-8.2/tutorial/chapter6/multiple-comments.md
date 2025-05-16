@@ -87,7 +87,7 @@ export const Success = ({ comments }) => {
 import Comment from 'src/components/Comment'
 
 import type { CommentsQuery } from 'types/graphql'
-import type { CellSuccessProps, CellFailureProps } from '@redmix/web'
+import type { CellSuccessProps, CellFailureProps } from '@cedarjs/web'
 
 export const QUERY = gql`
   query CommentsQuery {
@@ -242,7 +242,7 @@ Looking good! Let's add our CommentsCell to the actual blog post display page:
 <TabItem value="js" label="JavaScript">
 
 ```jsx title="web/src/components/Article/Article.jsx"
-import { Link, routes } from '@redmix/router'
+import { Link, routes } from '@cedarjs/router'
 // highlight-next-line
 import CommentsCell from 'src/components/CommentsCell'
 
@@ -274,7 +274,7 @@ export default Article
 <TabItem value="ts" label="TypeScript">
 
 ```tsx title="web/src/components/Article/Article.tsx"
-import { Link, routes } from '@redmix/router'
+import { Link, routes } from '@cedarjs/router'
 // highlight-next-line
 import CommentsCell from 'src/components/CommentsCell'
 
@@ -410,7 +410,7 @@ The default `CommentsCell.test.{jsx,tsx}` actually tests every state for us, alb
 <TabItem value="js" label="JavaScript">
 
 ```jsx title="web/src/components/CommentsCell/CommentsCell.test.jsx"
-import { render } from '@redmix/testing/web'
+import { render } from '@cedarjs/testing/web'
 
 import { Loading, Empty, Failure, Success } from './CommentsCell'
 import { standard } from './CommentsCell.mock'
@@ -446,7 +446,7 @@ describe('CommentsCell', () => {
 <TabItem value="ts" label="TypeScript">
 
 ```tsx title="web/src/components/CommentsCell/CommentsCell.test.tsx"
-import { render } from '@redmix/testing/web'
+import { render } from '@cedarjs/testing/web'
 
 import { Loading, Empty, Failure, Success } from './CommentsCell'
 import { standard } from './CommentsCell.mock'
@@ -490,7 +490,7 @@ But in this case we can do a little more to make sure `CommentsCell` is doing wh
 
 ```jsx title="web/src/components/CommentsCell/CommentsCell.test.jsx"
 // highlight-next-line
-import { render, screen } from '@redmix/testing/web'
+import { render, screen } from '@cedarjs/testing/web'
 
 import { Loading, Empty, Failure, Success } from './CommentsCell'
 import { standard } from './CommentsCell.mock'
@@ -533,7 +533,7 @@ describe('CommentsCell', () => {
 
 ```tsx title="web/src/components/CommentsCell/CommentsCell.test.tsx"
 // highlight-next-line
-import { render, screen } from '@redmix/testing/web'
+import { render, screen } from '@cedarjs/testing/web'
 
 import { Loading, Empty, Failure, Success } from './CommentsCell'
 import { standard } from './CommentsCell.mock'
@@ -586,7 +586,7 @@ Let's add two additional tests for our new functionality:
 
 ```jsx title="web/src/components/Article/Article.test.jsx"
 // highlight-start
-import { render, screen, waitFor } from '@redmix/testing'
+import { render, screen, waitFor } from '@cedarjs/testing'
 
 import { standard } from 'src/components/CommentsCell/CommentsCell.mock'
 // highlight-end
@@ -648,7 +648,7 @@ describe('Article', () => {
 
 ```tsx title="web/src/components/Article/Article.test.tsx"
 // highlight-start
-import { render, screen, waitFor } from '@redmix/testing'
+import { render, screen, waitFor } from '@cedarjs/testing'
 
 import { standard } from 'src/components/CommentsCell/CommentsCell.mock'
 // highlight-end

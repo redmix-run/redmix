@@ -1,9 +1,9 @@
 {
-  "name": "@redmix/forms",
+  "name": "@cedarjs/forms",
   "version": "0.0.3",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/redmix-run/redmix.git",
+    "url": "git+https://github.com/cedarjs/cedar.git",
     "directory": "packages/forms"
   },
   "license": "MIT",
@@ -23,7 +23,7 @@
   ],
   "scripts": {
     "build": "tsx ./build.mts && yarn build:types",
-    "build:pack": "yarn pack -o redmix-forms.tgz",
+    "build:pack": "yarn pack -o cedar-forms.tgz",
     "build:types": "tsc --build --verbose ./tsconfig.build.json",
     "build:watch": "nodemon --watch src --ext \"js,jsx,ts,tsx\" --ignore dist --exec \"yarn build\"",
     "check:attw": "yarn rw-fwtools-attw",
@@ -38,7 +38,7 @@
     "react-hook-form": "7.54.2"
   },
   "devDependencies": {
-    "@redmix/framework-tools": "workspace:*",
+    "@cedarjs/framework-tools": "workspace:*",
     "@testing-library/dom": "9.3.4",
     "@testing-library/jest-dom": "6.5.0",
     "@testing-library/react": "14.3.1",

@@ -141,7 +141,7 @@ export default function transform(file: FileInfo, api: API) {
    * This finds the line:
    *
    * ```
-   * import { ... } from '@redmix/router'
+   * import { ... } from '@cedarjs/router'
    * ```
    */
   return root.find(j.ImportDeclaration, {
@@ -195,8 +195,8 @@ it('Modifies imports (inline)', async () => {
     `import {
         createGraphQLHandler,   // <-- input source
         makeMergedSchema,
-      } from '@redmix/api'`,
-    `import { createGraphQLHandler } from '@redmix/graphql-server'`, // <-- expected output
+      } from '@cedarjs/api'`,
+    `import { createGraphQLHandler } from '@cedarjs/graphql-server'`, // <-- expected output
   )
 })
 ```

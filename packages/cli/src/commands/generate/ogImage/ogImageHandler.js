@@ -4,9 +4,9 @@ import path from 'node:path'
 import fg from 'fast-glob'
 import { Listr } from 'listr2'
 
-import { recordTelemetryAttributes } from '@redmix/cli-helpers'
-import { ensurePosixPath } from '@redmix/project-config'
-import { errorTelemetry } from '@redmix/telemetry'
+import { recordTelemetryAttributes } from '@cedarjs/cli-helpers'
+import { ensurePosixPath } from '@cedarjs/project-config'
+import { errorTelemetry } from '@cedarjs/telemetry'
 
 import c from '../../../lib/colors.js'
 import {

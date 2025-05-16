@@ -83,7 +83,7 @@ export function fixProjectBinaries(projectPath) {
 }
 
 /**
- * Add all the `@redmix` packages' dependencies to the root `package.json` in a Redwood Project.
+ * Add all the `@cedarjs` packages' dependencies to the root `package.json` in a Redwood Project.
  *
  * @param {string} packageJsonPath - The path to the root `package.json` in a Redwood Project.
  * @param {{ [key: string]: string }?} dependencies - A map of package names to versions.

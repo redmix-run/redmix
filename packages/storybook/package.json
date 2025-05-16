@@ -1,19 +1,19 @@
 {
-  "name": "storybook-framework-redmix-vite",
+  "name": "storybook-framework-cedar",
   "version": "0.0.3",
-  "description": "Storybook for Redmix with Vite",
+  "description": "Storybook for CedarJS",
   "keywords": [
     "Storybook",
-    "Redmix",
+    "Cedar",
     "React",
     "Vite"
   ],
   "bugs": {
-    "url": "git+https://github.com/redmix-run/redmix/issues"
+    "url": "git+https://github.com/cedarjs/cedar/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/redmix-run/redmix.git",
+    "url": "git+https://github.com/cedarjs/cedar.git",
     "directory": "packages/storybook"
   },
   "license": "MIT",
@@ -44,12 +44,12 @@
   ],
   "scripts": {
     "build": "tsx build.ts && yarn build:types",
-    "build:pack": "yarn pack -o storybook-framework-redmix-vite.tgz",
+    "build:pack": "yarn pack -o storybook-framework-cedar.tgz",
     "build:types": "tsc --build --verbose"
   },
   "dependencies": {
+    "@cedarjs/testing": "0.0.3",
     "@joshwooding/vite-plugin-react-docgen-typescript": "0.4.2",
-    "@redmix/testing": "0.0.3",
     "@rollup/pluginutils": "5.1.4",
     "@storybook/addon-essentials": "7.6.20",
     "@storybook/builder-vite": "7.6.20",
@@ -66,8 +66,8 @@
     "vite": "5.4.16"
   },
   "peerDependencies": {
-    "@redmix/project-config": "0.0.3",
-    "@redmix/router": "0.0.3",
+    "@cedarjs/project-config": "0.0.3",
+    "@cedarjs/router": "0.0.3",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "storybook": "7.6.20"

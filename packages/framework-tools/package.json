@@ -1,10 +1,10 @@
 {
-  "name": "@redmix/framework-tools",
+  "name": "@cedarjs/framework-tools",
   "version": "0.0.3",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/redmix-run/redmix.git",
+    "url": "git+https://github.com/cedarjs/cedar.git",
     "directory": "packages/framework-tools"
   },
   "license": "MIT",

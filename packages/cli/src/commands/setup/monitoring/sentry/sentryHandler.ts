@@ -12,8 +12,8 @@ import {
   isTypeScriptProject,
   prettify,
   writeFilesTask,
-} from '@redmix/cli-helpers'
-import { errorTelemetry } from '@redmix/telemetry'
+} from '@cedarjs/cli-helpers'
+import { errorTelemetry } from '@cedarjs/telemetry'
 
 import type { Args } from './sentry.js'
 
@@ -114,14 +114,14 @@ export const handler = async ({ force }: Args) => {
           .split('\n')
 
         const webImportIndex = contentLines.findLastIndex((line) =>
-          /^import { FatalErrorBoundary, RedwoodProvider } from '@redmix\/web'$/.test(
+          /^import { FatalErrorBoundary, RedwoodProvider } from '@cedarjs\/web'$/.test(
             line,
           ),
         )
         contentLines.splice(
           webImportIndex,
           1,
-          "import { RedwoodProvider } from '@redmix/web'",
+          "import { RedwoodProvider } from '@cedarjs/web'",
         )
 
         const boundaryOpenIndex = contentLines.findLastIndex((line) =>

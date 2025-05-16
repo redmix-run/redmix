@@ -3,7 +3,7 @@ import { Listr } from 'listr2'
 import terminalLink from 'terminal-link'
 import type { Argv } from 'yargs'
 
-import { errorTelemetry } from '@redmix/telemetry'
+import { errorTelemetry } from '@cedarjs/telemetry'
 
 import { colors } from '../lib/colors.js'
 import {

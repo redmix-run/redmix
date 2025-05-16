@@ -7,11 +7,11 @@ import {
   Submit,
   FieldError,
   Label,
-} from '@redmix/forms'
-import { Link, routes } from '@redmix/router'
-import { Metadata } from '@redmix/web'
-import { useMutation } from '@redmix/web'
-import { toast, Toaster } from '@redmix/web/toast'
+} from '@cedarjs/forms'
+import { Link, routes } from '@cedarjs/router'
+import { Metadata } from '@cedarjs/web'
+import { useMutation } from '@cedarjs/web'
+import { toast, Toaster } from '@cedarjs/web/toast'
 
 const CREATE_CONTACT = gql`
   mutation CreateContactMutation($input: CreateContactInput!) {

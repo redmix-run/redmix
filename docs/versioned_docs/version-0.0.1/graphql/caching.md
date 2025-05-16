@@ -13,7 +13,7 @@ Please refer to Apollo's documentation for complete information about [Caching i
 `useCache` is a custom hook that returns the cache object and some useful methods to interact with the cache.
 
 ```ts title="Example of useCache() hook"
-import { useCache } from '@redmix/web/apollo'
+import { useCache } from '@cedarjs/web/apollo'
 
 const CacheExample = () => {
   const { cache, evict, extract, identify, modify, resetStore, clearStore } =
@@ -44,7 +44,7 @@ Alternatively, see [extract](#extract) to get a normalized cache object you can 
 Either removes a normalized object from the cache or removes a specific field from a normalized object in the cache.
 
 ```ts title="Example of evict"
-import { useCache } from '@redmix/web/apollo'
+import { useCache } from '@cedarjs/web/apollo'
 
 const CacheExample = () => {
   const { evict } = useCache()
@@ -62,7 +62,7 @@ const CacheExample = () => {
 Returns a serialized representation of the cache's current contents
 
 ```ts title="Example of extract"
-import { useCache } from '@redmix/web/apollo'
+import { useCache } from '@cedarjs/web/apollo'
 
 const CacheExample = () => {
   const { extract } = useCache()
@@ -80,7 +80,7 @@ This method takes an object and computes its ID based on both its `__typename` a
 This means you don't have to keep track of which fields make up each type's cache ID.
 
 ```ts title="Example of identify"
-import { useCache } from '@redmix/web/apollo'
+import { useCache } from '@cedarjs/web/apollo'
 
 const CacheExample = () => {
   const { identify } = useCache()
@@ -100,7 +100,7 @@ You must provide a modifier function for each field to modify. A modifier functi
 Returns `true` if the cache was modified successfully and `false` otherwise.
 
 ```ts title="Example of modify"
-import { useCache } from '@redmix/web/apollo'
+import { useCache } from '@cedarjs/web/apollo'
 
 const CacheExample = () => {
   const { modify } = useCache()
@@ -120,7 +120,7 @@ Reset the cache entirely, such as when a user logs out.
 See Apollo's [Resetting the Cache](https://www.apollographql.com/docs/react/caching/advanced-topics#resetting-the-cache) for more details.
 
 ```ts title="Example of resetStore"
-import { useCache } from '@redmix/web/apollo'
+import { useCache } from '@cedarjs/web/apollo'
 
 const Logout = () => {
   const { resetStore } = useCache()
@@ -140,7 +140,7 @@ To reset the cache without refetching active queries, use `clearStore`.
 See Apollo's documentation on [Resetting the Cache](https://www.apollographql.com/docs/react/caching/advanced-topics#resetting-the-cache) for more details.
 
 ```ts title="Example of clearStore"
-import { useCache } from '@redmix/web/apollo'
+import { useCache } from '@cedarjs/web/apollo'
 
 const Logout = () => {
   const { clearStore } = useCache()
@@ -168,7 +168,7 @@ The persistCache method is async and returns a Promise.
 ```jsx title="Example of persisting cache"
 import { persistCache, LocalStorageWrapper } from 'apollo3-cache-persist'
 
-import { useCache } from '@redmix/web/apollo'
+import { useCache } from '@cedarjs/web/apollo'
 
 const PersistCacheExample = async () => {
   const { cache } = useCache()
@@ -201,7 +201,7 @@ And then modify your `api/src/functions/graphql.ts` function to add (and configu
 ```ts title="Example of GraphQL Response Caching"
 import { useResponseCache } from '@graphql-yoga/plugin-response-cache'
 
-import { createGraphQLHandler } from '@redmix/graphql-server'
+import { createGraphQLHandler } from '@cedarjs/graphql-server'
 
 import directives from 'src/directives/**/*.{js,ts}'
 import sdls from 'src/graphql/**/*.sdl.{js,ts}'

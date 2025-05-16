@@ -5,8 +5,8 @@ import {
   parseAuthorizationCookie,
   type Decoded,
   type Decoder,
-} from '@redmix/api'
-import type { AuthorizationCookies } from '@redmix/api'
+} from '@cedarjs/api'
+import type { AuthorizationCookies } from '@cedarjs/api'
 
 const ERROR_MESSAGE = `Your project's URL, Key and Secret are required to create a Supabase client!\n\nCheck your Supabase project's API settings to find these values\n\nhttps://supabase.com/dashboard/project/_/settings/api`
 

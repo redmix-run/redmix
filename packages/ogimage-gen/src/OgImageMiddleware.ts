@@ -7,14 +7,14 @@ import mime from 'mime-types'
 import type { PageScreenshotOptions } from 'playwright'
 import { renderToString } from 'react-dom/server'
 
-import type { RWRouteManifestItem } from '@redmix/internal'
-import { getPaths } from '@redmix/project-config'
-import { LocationProvider, matchPath } from '@redmix/router'
+import type { RWRouteManifestItem } from '@cedarjs/internal'
+import { getPaths } from '@cedarjs/project-config'
+import { LocationProvider, matchPath } from '@cedarjs/router'
 import type {
   MiddlewareInvokeOptions,
   MiddlewareRequest,
   MiddlewareResponse,
-} from '@redmix/web/middleware' with { 'resolution-mode': 'import' }
+} from '@cedarjs/web/middleware' with { 'resolution-mode': 'import' }
 
 import { getRoutesList } from './getRoutesList.js'
 import { OGIMAGE_DEFAULTS } from './hooks.js'

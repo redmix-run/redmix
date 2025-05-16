@@ -2,13 +2,13 @@ import path from 'path'
 
 import type { PluginObj, types } from '@babel/core'
 
-import type { PagesDependency } from '@redmix/project-config'
+import type { PagesDependency } from '@cedarjs/project-config'
 import {
   ensurePosixPath,
   getPaths,
   importStatementPath,
   processPagesDir,
-} from '@redmix/project-config'
+} from '@cedarjs/project-config'
 
 export interface PluginOptions {
   forPrerender?: boolean

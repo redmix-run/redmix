@@ -2,10 +2,10 @@ import {
   ensurePosixPath,
   getPaths,
   importStatementPath,
-} from '@redmix/project-config'
-import { getProject } from '@redmix/structure/dist/index.js'
-import type { RWPage } from '@redmix/structure/dist/model/RWPage.js'
-import type { RWRoute } from '@redmix/structure/dist/model/RWRoute.js'
+} from '@cedarjs/project-config'
+import { getProject } from '@cedarjs/structure/dist/index.js'
+import type { RWPage } from '@cedarjs/structure/dist/model/RWPage.js'
+import type { RWRoute } from '@cedarjs/structure/dist/model/RWRoute.js'
 
 import { makeFilePath } from '../utils.js'
 

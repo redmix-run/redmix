@@ -1,10 +1,10 @@
 {
-  "name": "@redmix/structure",
+  "name": "@cedarjs/structure",
   "version": "0.0.3",
   "description": "noun: the arrangement of and relations between the parts or elements of something complex",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/redmix-run/redmix.git",
+    "url": "git+https://github.com/cedarjs/cedar.git",
     "directory": "packages/structure"
   },
   "license": "MIT",
@@ -16,7 +16,7 @@
   "scripts": {
     "build": "yarn build:js && yarn build:types",
     "build:js": "babel src -d dist --extensions \".js,.jsx,.ts,.tsx\"",
-    "build:pack": "yarn pack -o redmix-structure.tgz",
+    "build:pack": "yarn pack -o cedar-structure.tgz",
     "build:types": "tsc --build --verbose",
     "build:watch": "nodemon --watch src --ext \"js,jsx,ts,tsx\" --ignore dist --exec \"yarn build\"",
     "prepublishOnly": "NODE_ENV=production yarn build",
@@ -26,8 +26,8 @@
   },
   "dependencies": {
     "@babel/runtime-corejs3": "7.26.10",
+    "@cedarjs/project-config": "0.0.3",
     "@prisma/internals": "5.20.0",
-    "@redmix/project-config": "workspace:*",
     "@types/line-column": "1.0.2",
     "camelcase": "6.3.0",
     "core-js": "3.42.0",

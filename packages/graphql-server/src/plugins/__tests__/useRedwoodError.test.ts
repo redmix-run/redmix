@@ -5,8 +5,8 @@ import { vi, describe, expect, it } from 'vitest'
 import type {
   RedwoodError as RedwoodErrorType,
   EmailValidationError as EmailValidationErrorType,
-} from '@redmix/api'
-import { createLogger } from '@redmix/api/logger'
+} from '@cedarjs/api'
+import { createLogger } from '@cedarjs/api/logger'
 
 import { createGraphQLHandler } from '../../functions/graphql'
 
@@ -14,11 +14,11 @@ vi.mock('../../makeMergedSchema', async () => {
   const { createGraphQLError } = await import('graphql-yoga')
   const { makeExecutableSchema } = await import('@graphql-tools/schema')
   const { ForbiddenError, RedwoodGraphQLError } = await import(
-    '@redmix/graphql-server/dist/errors'
+    '@cedarjs/graphql-server/dist/errors'
   )
   const { CurrencyResolver } = await import('graphql-scalars')
   const { RedwoodError, EmailValidationError } = (await import(
-    '@redmix/api'
+    '@cedarjs/api'
   )) as {
     RedwoodError: typeof RedwoodErrorType
     EmailValidationError: typeof EmailValidationErrorType

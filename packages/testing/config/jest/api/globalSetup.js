@@ -1,6 +1,6 @@
 const { getSchema } = require('@prisma/internals')
 
-const { getPaths } = require('@redmix/project-config')
+const { getPaths } = require('@cedarjs/project-config')
 
 const {
   getDefaultDb,

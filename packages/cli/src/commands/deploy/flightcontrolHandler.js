@@ -3,8 +3,8 @@ import path from 'path'
 import execa from 'execa'
 import fs from 'fs-extra'
 
-import { recordTelemetryAttributes } from '@redmix/cli-helpers'
-import { getPaths } from '@redmix/project-config'
+import { recordTelemetryAttributes } from '@cedarjs/cli-helpers'
+import { getPaths } from '@cedarjs/project-config'
 
 export const handler = async ({ side, serve, prisma, dm: dataMigrate }) => {
   recordTelemetryAttributes({
@@ -50,7 +50,7 @@ export const handler = async ({ side, serve, prisma, dm: dataMigrate }) => {
       execa(`yarn node ${serverFilePath}`, execaConfig)
     } else {
       const { handler } = await import(
-        '@redmix/api-server/dist/apiCLIConfigHandler.js'
+        '@cedarjs/api-server/dist/apiCLIConfigHandler.js'
       )
       handler()
     }

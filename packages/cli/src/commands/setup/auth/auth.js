@@ -7,7 +7,7 @@ import terminalLink from 'terminal-link'
 import {
   recordTelemetryAttributes,
   standardAuthBuilder,
-} from '@redmix/cli-helpers'
+} from '@cedarjs/cli-helpers'
 
 import { getPaths } from '../../../lib/index.js'
 
@@ -41,7 +41,7 @@ export async function builder(yargs) {
           force: args.force,
           verbose: args.verbose,
         })
-        const handler = await getAuthSetupHandler('@redmix/auth-auth0-setup')
+        const handler = await getAuthSetupHandler('@cedarjs/auth-auth0-setup')
         console.log()
         handler(args)
       },
@@ -57,7 +57,7 @@ export async function builder(yargs) {
           verbose: args.verbose,
         })
         const handler = await getAuthSetupHandler(
-          '@redmix/auth-azure-active-directory-setup',
+          '@cedarjs/auth-azure-active-directory-setup',
         )
         console.log()
         handler(args)
@@ -73,7 +73,7 @@ export async function builder(yargs) {
           force: args.force,
           verbose: args.verbose,
         })
-        const handler = await getAuthSetupHandler('@redmix/auth-clerk-setup')
+        const handler = await getAuthSetupHandler('@cedarjs/auth-clerk-setup')
         console.log()
         handler(args)
       },
@@ -88,7 +88,7 @@ export async function builder(yargs) {
           force: args.force,
           verbose: args.verbose,
         })
-        const handler = await getAuthSetupHandler('@redmix/auth-custom-setup')
+        const handler = await getAuthSetupHandler('@cedarjs/auth-custom-setup')
         console.log()
         handler(args)
       },
@@ -124,7 +124,7 @@ export async function builder(yargs) {
           verbose: args.verbose,
           webauthn: args.webauthn,
         })
-        const handler = await getAuthSetupHandler('@redmix/auth-dbauth-setup')
+        const handler = await getAuthSetupHandler('@cedarjs/auth-dbauth-setup')
         console.log()
         handler(args)
       },
@@ -139,7 +139,9 @@ export async function builder(yargs) {
           force: args.force,
           verbose: args.verbose,
         })
-        const handler = await getAuthSetupHandler('@redmix/auth-firebase-setup')
+        const handler = await getAuthSetupHandler(
+          '@cedarjs/auth-firebase-setup',
+        )
         console.log()
         handler(args)
       },
@@ -154,7 +156,7 @@ export async function builder(yargs) {
           force: args.force,
           verbose: args.verbose,
         })
-        const handler = await getAuthSetupHandler('@redmix/auth-netlify-setup')
+        const handler = await getAuthSetupHandler('@cedarjs/auth-netlify-setup')
         console.log()
         handler(args)
       },
@@ -169,7 +171,9 @@ export async function builder(yargs) {
           force: args.force,
           verbose: args.verbose,
         })
-        const handler = await getAuthSetupHandler('@redmix/auth-supabase-setup')
+        const handler = await getAuthSetupHandler(
+          '@cedarjs/auth-supabase-setup',
+        )
         console.log()
         handler(args)
       },
@@ -185,7 +189,7 @@ export async function builder(yargs) {
           verbose: args.verbose,
         })
         const handler = await getAuthSetupHandler(
-          '@redmix/auth-supertokens-setup',
+          '@cedarjs/auth-supertokens-setup',
         )
         console.log()
         handler(args)
@@ -244,7 +248,7 @@ async function getAuthSetupHandler(module) {
     customRequire = require
   }
 
-  const packageJsonPath = customRequire.resolve('@redmix/cli/package.json')
+  const packageJsonPath = customRequire.resolve('@cedarjs/cli/package.json')
   let { version } = fs.readJSONSync(packageJsonPath)
 
   if (!isInstalled(module)) {

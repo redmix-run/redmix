@@ -23,18 +23,18 @@ const customRequire =
       // bunch of warnings at build time at least)
       createRequire(path.join(process.env.RWJS_CWD || process.cwd(), 'foo'))
 
-const rxApiPath = customRequire.resolve('@redmix/api')
+const rxApiPath = customRequire.resolve('@cedarjs/api')
 const rxApiRequire = createRequire(rxApiPath)
 
 let packageJson = rxApiRequire('./package.json')
 
 // Because of how we build the package we might have to walk up the directory
 // tree a few times to find the correct package.json file
-if (packageJson?.name !== '@redmix/api') {
+if (packageJson?.name !== '@cedarjs/api') {
   packageJson = rxApiRequire('../package.json')
 }
 
-if (packageJson?.name !== '@redmix/api') {
+if (packageJson?.name !== '@cedarjs/api') {
   packageJson = rxApiRequire('../../package.json')
 }
 

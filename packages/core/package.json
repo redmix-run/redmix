@@ -1,10 +1,10 @@
 {
-  "name": "@redmix/core",
+  "name": "@cedarjs/core",
   "version": "0.0.3",
-  "description": "Foundational packages and config required to build Redmix.",
+  "description": "Foundational packages and config required to build CedarJS",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/redmix-run/redmix.git",
+    "url": "git+https://github.com/cedarjs/cedar.git",
     "directory": "packages/core"
   },
   "license": "MIT",
@@ -33,19 +33,19 @@
   ],
   "scripts": {
     "build": "tsx ./build.mts",
-    "build:pack": "yarn pack -o redmix-core.tgz",
+    "build:pack": "yarn pack -o cedar-core.tgz",
     "check:package": "yarn publint",
     "prepublishOnly": "NODE_ENV=production yarn build"
   },
   "dependencies": {
     "@babel/cli": "7.26.4",
-    "@redmix/api-server": "workspace:*",
-    "@redmix/cli": "workspace:*",
-    "@redmix/eslint-config": "workspace:*",
-    "@redmix/internal": "workspace:*",
-    "@redmix/project-config": "workspace:*",
-    "@redmix/testing": "workspace:*",
-    "@redmix/web-server": "workspace:*",
+    "@cedarjs/api-server": "0.0.3",
+    "@cedarjs/cli": "0.0.3",
+    "@cedarjs/eslint-config": "0.0.3",
+    "@cedarjs/internal": "0.0.3",
+    "@cedarjs/project-config": "0.0.3",
+    "@cedarjs/testing": "0.0.3",
+    "@cedarjs/web-server": "0.0.3",
     "graphql-tag": "2.12.6",
     "lodash": "4.17.21",
     "nodemon": "3.1.9",
@@ -54,7 +54,7 @@
     "typescript": "5.6.2"
   },
   "devDependencies": {
-    "@redmix/framework-tools": "workspace:*",
+    "@cedarjs/framework-tools": "workspace:*",
     "@types/lodash": "4.17.15",
     "publint": "0.3.11",
     "tsx": "4.19.3"

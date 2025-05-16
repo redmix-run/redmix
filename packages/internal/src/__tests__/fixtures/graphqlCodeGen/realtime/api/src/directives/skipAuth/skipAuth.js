@@ -1,6 +1,6 @@
 import gql from 'graphql-tag'
 
-import { createValidatorDirective } from '@redmix/graphql-server'
+import { createValidatorDirective } from '@cedarjs/graphql-server'
 
 export const schema = gql`
   directive @skipAuth on FIELD_DEFINITION

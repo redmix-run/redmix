@@ -1,4 +1,4 @@
-import { Metadata } from '@redmix/web'
+import { Metadata } from '@cedarjs/web'
 import Hero from 'src/components/Hero/Hero'
 import { useTranslation, Trans } from 'react-i18next'
 import Highlight from 'react-highlight'

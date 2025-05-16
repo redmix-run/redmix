@@ -19,7 +19,7 @@ import {
   getPaths as getRedwoodPaths,
   resolveFile as internalResolveFile,
   findUp,
-} from '@redmix/project-config'
+} from '@cedarjs/project-config'
 
 import c from './colors.js'
 import { addFileToRollback } from './rollback.js'
@@ -179,14 +179,14 @@ export const saveRemoteFileToDisk = (
   return downloadPromise
 }
 
-export async function getInstalledRedmixVersion() {
+export async function getInstalledCedarVersion() {
   try {
     const packageJson = await import('../../package.json', {
       with: { type: 'json' },
     })
     return packageJson.default.version
   } catch (e) {
-    console.error(c.error('Could not find installed Redmix version'))
+    console.error(c.error('Could not find installed Cedar version'))
     process.exit(1)
   }
 }
@@ -508,11 +508,11 @@ export const addPackagesTask = async ({
   side = 'project',
   devDependency = false,
 }) => {
-  const redmixVersion = await getInstalledRedmixVersion()
+  const cedarVersion = await getInstalledCedarVersion()
 
   const packagesWithSameRWVersion = packages.map((pkg) => {
-    if (pkg.includes('@redmix')) {
-      return `${pkg}@${redmixVersion}`
+    if (pkg.includes('@cedarjs')) {
+      return `${pkg}@${cedarVersion}`
     } else {
       return pkg
     }

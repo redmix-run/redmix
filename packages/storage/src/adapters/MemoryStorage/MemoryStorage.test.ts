@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest'
 
-import { ensurePosixPath } from '@redmix/project-config'
+import { ensurePosixPath } from '@cedarjs/project-config'
 
 import { MemoryStorage } from './MemoryStorage.js'
 

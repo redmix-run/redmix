@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid'
 import {
   recordTelemetryAttributes,
   recordTelemetryError,
-} from '@redmix/cli-helpers'
+} from '@cedarjs/cli-helpers'
 
 const DEFAULT_ERROR_EPILOGUE = [
   'Need help?',
@@ -15,7 +15,7 @@ const DEFAULT_ERROR_EPILOGUE = [
   )}`,
   ` - Think you've found a bug? Open an issue on our ${terminalLink(
     'GitHub',
-    'https://github.com/redmix-run/redmix',
+    'https://github.com/cedarjs/cedar',
   )}`,
 ].join('\n')
 

@@ -13,7 +13,7 @@ import { vi, afterEach, test, expect } from 'vitest'
 
 import { handler } from '../test.js'
 
-vi.mock('@redmix/structure', () => {
+vi.mock('@cedarjs/structure', () => {
   return {
     getProject: () => ({
       sides: ['web', 'api'],

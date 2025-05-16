@@ -1,14 +1,14 @@
 globalThis.__dirname = __dirname
 
 // mock Telemetry for CLI commands so they don't try to spawn a process
-vi.mock('@redmix/telemetry', () => {
+vi.mock('@cedarjs/telemetry', () => {
   return {
     errorTelemetry: () => vi.fn(),
     timedTelemetry: () => vi.fn(),
   }
 })
 
-vi.mock('@redmix/project-config', async (importOriginal) => {
+vi.mock('@cedarjs/project-config', async (importOriginal) => {
   const originalProjectConfig = await importOriginal<typeof ProjectConfig>()
   return {
     ...originalProjectConfig,
@@ -23,15 +23,15 @@ vi.mock('../../lib/paths', () => {
   return {
     getPaths: () => ({
       api: {
-        src: path.join(__dirname, '../create-redmix-app/template/api/src'),
+        src: path.join(__dirname, '../create-cedar-app/template/api/src'),
         functions: path.join(
           __dirname,
-          '../create-redmix-app/template/api/src/functions',
+          '../create-cedar-app/template/api/src/functions',
         ),
-        lib: path.join(__dirname, '../create-redmix-app/template/api/src/lib'),
+        lib: path.join(__dirname, '../create-cedar-app/template/api/src/lib'),
       },
       web: { src: '' },
-      base: path.join(__dirname, '../create-redmix-app/template'),
+      base: path.join(__dirname, '../create-cedar-app/template'),
     }),
   }
 })
@@ -54,7 +54,7 @@ import prompts from 'prompts'
 import { vi, describe, afterEach, it, expect } from 'vitest'
 import type { Mock, MockedFunction } from 'vitest'
 
-import type * as ProjectConfig from '@redmix/project-config'
+import type * as ProjectConfig from '@cedarjs/project-config'
 
 import { standardAuthHandler } from '../setupHelpers.js'
 

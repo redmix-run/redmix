@@ -1,5 +1,5 @@
-import { Link, routes } from '@redmix/router'
-import { Metadata } from '@redmix/web'
+import { Link, routes } from '@cedarjs/router'
+import { Metadata } from '@cedarjs/web'
 
 import BlogPostsCell from 'src/components/BlogPostsCell'
 

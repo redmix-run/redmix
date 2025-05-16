@@ -1,9 +1,9 @@
 {
-  "name": "@redmix/telemetry",
+  "name": "@cedarjs/telemetry",
   "version": "0.0.3",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/redmix-run/redmix.git",
+    "url": "git+https://github.com/cedarjs/cedar.git",
     "directory": "packages/telemetry"
   },
   "license": "MIT",
@@ -14,15 +14,15 @@
   ],
   "scripts": {
     "build": "tsx build.mts && yarn build:types",
-    "build:pack": "yarn pack -o redmix-telemetry.tgz",
+    "build:pack": "yarn pack -o cedar-telemetry.tgz",
     "build:types": "tsc --build --verbose",
     "prepublishOnly": "NODE_ENV=production yarn build",
     "test": "vitest run",
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@redmix/project-config": "workspace:*",
-    "@redmix/structure": "workspace:*",
+    "@cedarjs/project-config": "0.0.3",
+    "@cedarjs/structure": "0.0.3",
     "@whatwg-node/fetch": "0.9.21",
     "ci-info": "4.0.0",
     "envinfo": "7.14.0",

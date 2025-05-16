@@ -3,8 +3,8 @@ import path from 'path'
 import fs from 'fs-extra'
 import { Listr } from 'listr2'
 
-import { addApiPackages } from '@redmix/cli-helpers'
-import { errorTelemetry } from '@redmix/telemetry'
+import { addApiPackages } from '@cedarjs/cli-helpers'
+import { errorTelemetry } from '@cedarjs/telemetry'
 
 import c from '../../../lib/colors.js'
 import { getPaths, transformTSToJS, writeFile } from '../../../lib/index.js'
@@ -45,7 +45,7 @@ export function setupServerFileTasks({ force = false } = {}) {
         ]
       },
     },
-    addApiPackages([`@redmix/api-server@${version}`]),
+    addApiPackages([`@cedarjs/api-server@${version}`]),
   ]
 }
 

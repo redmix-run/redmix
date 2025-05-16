@@ -4,9 +4,9 @@ import path from 'path'
 import type { FastifyInstance, FastifyServerOptions } from 'fastify'
 import Fastify from 'fastify'
 
-import type { GlobalContext } from '@redmix/context'
-import { getAsyncStoreInstance } from '@redmix/context/dist/store'
-import { getPaths, getConfig } from '@redmix/project-config'
+import type { GlobalContext } from '@cedarjs/context'
+import { getAsyncStoreInstance } from '@cedarjs/context/dist/store'
+import { getPaths, getConfig } from '@cedarjs/project-config'
 
 import type { FastifySideConfigFn } from './types'
 

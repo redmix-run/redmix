@@ -1,6 +1,6 @@
 import execa from 'execa'
 
-import { getPaths } from '@redmix/project-config'
+import { getPaths } from '@cedarjs/project-config'
 
 export const apiServerFileHandler = async (argv) => {
   const args = ['node', 'server.js', '--apiRootPath', argv.apiRootPath]

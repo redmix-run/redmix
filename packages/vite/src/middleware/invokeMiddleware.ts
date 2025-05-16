@@ -1,14 +1,14 @@
-import type { ServerAuthState } from '@redmix/auth/dist/AuthProvider/ServerAuthProvider.js'
-import { setServerAuthState } from '@redmix/server-store'
+import type { ServerAuthState } from '@cedarjs/auth/dist/AuthProvider/ServerAuthProvider.js'
+import { setServerAuthState } from '@cedarjs/server-store'
 import {
   MiddlewareResponse,
   MiddlewareRequest,
   MiddlewareShortCircuit,
-} from '@redmix/web/dist/server/middleware'
+} from '@cedarjs/web/dist/server/middleware'
 import type {
   Middleware,
   MiddlewareInvokeOptions,
-} from '@redmix/web/middleware'
+} from '@cedarjs/web/middleware'
 
 /**
  * Invokes the middleware function, and guarantees a MiddlewareResponse object
