@@ -1,16 +1,16 @@
 import { vi, describe, it, expect } from 'vitest'
 
-vi.mock('@redmix/project-config', () => ({
+vi.mock('@cedarjs/project-config', () => ({
   getPaths: () => ({
     base: '',
   }),
 }))
 
-vi.mock('@redmix/structure/dist/model/RWRoute', () => ({
+vi.mock('@cedarjs/structure/dist/model/RWRoute', () => ({
   RWRoute: {},
 }))
 
-vi.mock('@redmix/structure', () => {
+vi.mock('@cedarjs/structure', () => {
   return {
     getProject: () => {
       return {

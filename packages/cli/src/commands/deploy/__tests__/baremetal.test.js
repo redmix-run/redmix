@@ -1,7 +1,7 @@
 import { Listr } from 'listr2'
 import { vi, afterEach, beforeEach, describe, it, expect } from 'vitest'
 
-vi.mock('@redmix/project-config', async (importOriginal) => {
+vi.mock('@cedarjs/project-config', async (importOriginal) => {
   const originalProjectConfig = await importOriginal()
   return {
     ...originalProjectConfig,

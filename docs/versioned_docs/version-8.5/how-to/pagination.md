@@ -133,7 +133,7 @@ export const QUERY = gql`
 ```tsx title="web/src/components/BlogPostsCell/BlogPostsCell.tsx"
 import type { BlogPostsQuery, BlogPostsQueryVariables } from 'types/graphql'
 
-import type { TypedDocumentNode } from '@redmix/web'
+import type { TypedDocumentNode } from '@cedarjs/web'
 
 export const QUERY: TypedDocumentNode<BlogPostsQuery, BlogPostsQueryVariables> =
   gql`
@@ -256,7 +256,7 @@ Generate a new component with`yarn rw g component Pagination`
 <TabItem value="js" label="JavaScript">
   
 ```jsx title="web/src/components/Pagination/Pagination.jsx"
-import { Link, routes } from '@redmix/router'
+import { Link, routes } from '@cedarjs/router'
 
 const POSTS_PER_PAGE = 5
 
@@ -287,7 +287,7 @@ export default Pagination
 <TabItem value="ts" label="TypeScript">
 
 ```tsx title="web/src/components/Pagination/Pagination.tsx"
-import { Link, routes } from '@redmix/router'
+import { Link, routes } from '@cedarjs/router'
 
 const POSTS_PER_PAGE = 5
 

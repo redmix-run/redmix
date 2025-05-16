@@ -1,7 +1,7 @@
-import { Link } from '@redmix/router/Link'
-import { namedRoutes as routes } from '@redmix/router/namedRoutes'
-import { NavLink } from '@redmix/router/NavLink'
-import { getAuthState, getLocation } from '@redmix/server-store'
+import { Link } from '@cedarjs/router/Link'
+import { namedRoutes as routes } from '@cedarjs/router/namedRoutes'
+import { NavLink } from '@cedarjs/router/NavLink'
+import { getAuthState, getLocation } from '@cedarjs/server-store'
 
 import ReadFileServerCell from 'src/components/ReadFileServerCell'
 

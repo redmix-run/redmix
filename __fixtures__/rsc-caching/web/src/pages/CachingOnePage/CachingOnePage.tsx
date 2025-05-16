@@ -1,6 +1,6 @@
-import { Link } from '@redmix/router/Link'
-import { namedRoutes as routes } from '@redmix/router/namedRoutes'
-import { Metadata } from '@redmix/web/Metadata'
+import { Link } from '@cedarjs/router/Link'
+import { namedRoutes as routes } from '@cedarjs/router/namedRoutes'
+import { Metadata } from '@cedarjs/web/Metadata'
 
 const CachingOnePage = () => {
   return (

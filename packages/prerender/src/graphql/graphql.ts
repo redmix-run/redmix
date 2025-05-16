@@ -3,9 +3,9 @@ import path from 'path'
 import type { DocumentNode } from 'graphql'
 import { print } from 'graphql'
 
-import { getConfig, getPaths } from '@redmix/project-config'
+import { getConfig, getPaths } from '@cedarjs/project-config'
 // @MARK: have to do this, otherwise rwjs/web is loaded before shims
-import { getOperationName } from '@redmix/web/dist/graphql.js'
+import { getOperationName } from '@cedarjs/web/dist/graphql.js'
 
 import { GqlHandlerImportError } from '../errors'
 

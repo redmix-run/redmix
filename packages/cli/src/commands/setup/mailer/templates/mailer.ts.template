@@ -1,6 +1,6 @@
-import { Mailer } from '@redmix/mailer-core'
-import { NodemailerMailHandler } from '@redmix/mailer-handler-nodemailer'
-import { ReactEmailRenderer } from '@redmix/mailer-renderer-react-email'
+import { Mailer } from '@cedarjs/mailer-core'
+import { NodemailerMailHandler } from '@cedarjs/mailer-handler-nodemailer'
+import { ReactEmailRenderer } from '@cedarjs/mailer-renderer-react-email'
 
 import { logger } from 'src/lib/logger'
 

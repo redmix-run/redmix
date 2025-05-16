@@ -361,7 +361,7 @@ Our GraphQL mutation is ready to go on the backend so all that's left is to invo
 <TabItem value="js" label="JavaScript">
 
 ```jsx title="web/src/pages/ContactPage/ContactPage.jsx"
-import { Metadata } from '@redmix/web'
+import { Metadata } from '@cedarjs/web'
 import {
   FieldError,
   Form,
@@ -369,7 +369,7 @@ import {
   TextField,
   TextAreaField,
   Submit,
-} from '@redmix/forms'
+} from '@cedarjs/forms'
 
 // highlight-start
 const CREATE_CONTACT = gql`
@@ -440,7 +440,7 @@ export default ContactPage
 <TabItem value="ts" label="TypeScript">
 
 ```tsx title="web/src/pages/ContactPage/ContactPage.tsx"
-import { Metadata } from '@redmix/web'
+import { Metadata } from '@cedarjs/web'
 import {
   FieldError,
   Form,
@@ -449,7 +449,7 @@ import {
   TextAreaField,
   Submit,
   SubmitHandler,
-} from '@redmix/forms'
+} from '@cedarjs/forms'
 
 // highlight-start
 const CREATE_CONTACT = gql`
@@ -534,7 +534,7 @@ Next we'll call the `useMutation` hook provided by Redwood which will allow us t
 
 ```jsx title="web/src/pages/ContactPage/ContactPage.jsx"
 // highlight-next-line
-import { Metadata, useMutation } from '@redmix/web'
+import { Metadata, useMutation } from '@cedarjs/web'
 import {
   FieldError,
   Form,
@@ -542,7 +542,7 @@ import {
   TextField,
   TextAreaField,
   Submit,
-} from '@redmix/forms'
+} from '@cedarjs/forms'
 
 const CREATE_CONTACT = gql`
   mutation CreateContactMutation($input: CreateContactInput!) {
@@ -615,7 +615,7 @@ export default ContactPage
 
 ```tsx title="web/src/pages/ContactPage/ContactPage.tsx"
 // highlight-next-line
-import { Metadata, useMutation } from '@redmix/web'
+import { Metadata, useMutation } from '@cedarjs/web'
 import {
   FieldError,
   Form,
@@ -624,7 +624,7 @@ import {
   TextAreaField,
   Submit,
   SubmitHandler,
-} from '@redmix/forms'
+} from '@cedarjs/forms'
 
 // highlight-start
 import {
@@ -733,8 +733,8 @@ create({
   variables: {
     input: {
       name: 'Rob',
-      email: 'rob@redmix.com',
-      message: 'I love Redmix!',
+      email: 'rob@cedarjs.com',
+      message: 'I love Cedar!',
     },
   },
 })
@@ -748,7 +748,7 @@ That means we can update the `onSubmit` function to invoke the mutation with the
 <TabItem value="js" label="JavaScript">
 
 ```jsx title="web/src/pages/ContactPage/ContactPage.jsx"
-import { Metadata, useMutation } from '@redmix/web'
+import { Metadata, useMutation } from '@cedarjs/web'
 import {
   FieldError,
   Form,
@@ -756,7 +756,7 @@ import {
   TextField,
   TextAreaField,
   Submit,
-} from '@redmix/forms'
+} from '@cedarjs/forms'
 
 const CREATE_CONTACT = gql`
   mutation CreateContactMutation($input: CreateContactInput!) {
@@ -828,7 +828,7 @@ export default ContactPage
 <TabItem value="ts" label="TypeScript">
 
 ```tsx title="web/src/pages/ContactPage/ContactPage.tsx"
-import { Metadata, useMutation } from '@redmix/web'
+import { Metadata, useMutation } from '@cedarjs/web'
 import {
   FieldError,
   Form,
@@ -837,7 +837,7 @@ import {
   TextAreaField,
   Submit,
   SubmitHandler,
-} from '@redmix/forms'
+} from '@cedarjs/forms'
 
 import {
   CreateContactMutation,
@@ -1039,9 +1039,9 @@ Add the `onCompleted` callback to `useMutation` and include the **&lt;Toaster&gt
 <TabItem value="js" label="JavaScript">
 
 ```jsx title="web/src/pages/ContactPage/ContactPage.jsx"
-import { Metadata, useMutation } from '@redmix/web'
+import { Metadata, useMutation } from '@cedarjs/web'
 // highlight-next-line
-import { toast, Toaster } from '@redmix/web/toast'
+import { toast, Toaster } from '@cedarjs/web/toast'
 import {
   FieldError,
   Form,
@@ -1049,7 +1049,7 @@ import {
   TextField,
   TextAreaField,
   Submit,
-} from '@redmix/forms'
+} from '@cedarjs/forms'
 
 const CREATE_CONTACT = gql`
   mutation CreateContactMutation($input: CreateContactInput!) {
@@ -1128,9 +1128,9 @@ export default ContactPage
 <TabItem value="ts" label="TypeScript">
 
 ```tsx title="web/src/pages/ContactPage/ContactPage.tsx"
-import { Metadata, useMutation } from '@redmix/web'
+import { Metadata, useMutation } from '@cedarjs/web'
 // highlight-next-line
-import { toast, Toaster } from '@redmix/web/toast'
+import { toast, Toaster } from '@cedarjs/web/toast'
 import {
   FieldError,
   Form,
@@ -1139,7 +1139,7 @@ import {
   TextAreaField,
   Submit,
   SubmitHandler,
-} from '@redmix/forms'
+} from '@cedarjs/forms'
 
 import {
   CreateContactMutation,
@@ -1259,7 +1259,7 @@ We'll make a call to a new `validate` function to our `contacts` service, which 
 
 ```js title="api/src/services/contacts/contacts.js"
 // highlight-next-line
-import { validate } from '@redmix/api'
+import { validate } from '@cedarjs/api'
 
 // ...
 
@@ -1277,7 +1277,7 @@ export const createContact = ({ input }) => {
 import type { QueryResolvers, MutationResolvers } from 'types/graphql'
 
 // highlight-next-line
-import { validate } from '@redmix/api'
+import { validate } from '@cedarjs/api'
 
 // ...
 
@@ -1348,8 +1348,8 @@ Add a `<FormError>` component, passing the `error` constant we got from `useMuta
 <TabItem value="js" label="JavaScript">
 
 ```jsx title="web/src/pages/ContactPage/ContactPage.jsx"
-import { Metadata, useMutation } from '@redmix/web'
-import { toast, Toaster } from '@redmix/web/toast'
+import { Metadata, useMutation } from '@cedarjs/web'
+import { toast, Toaster } from '@cedarjs/web/toast'
 import {
   FieldError,
   Form,
@@ -1359,7 +1359,7 @@ import {
   TextField,
   TextAreaField,
   Submit,
-} from '@redmix/forms'
+} from '@cedarjs/forms'
 
 const CREATE_CONTACT = gql`
   mutation CreateContactMutation($input: CreateContactInput!) {
@@ -1435,8 +1435,8 @@ export default ContactPage
 <TabItem value="ts" label="TypeScript">
 
 ```tsx title="web/src/pages/ContactPage/ContactPage.tsx"
-import { Metadata, useMutation } from '@redmix/web'
-import { toast, Toaster } from '@redmix/web/toast'
+import { Metadata, useMutation } from '@cedarjs/web'
+import { toast, Toaster } from '@cedarjs/web/toast'
 import {
   FieldError,
   Form,
@@ -1447,7 +1447,7 @@ import {
   TextAreaField,
   Submit,
   SubmitHandler,
-} from '@redmix/forms'
+} from '@cedarjs/forms'
 
 import {
   CreateContactMutation,
@@ -1662,7 +1662,7 @@ import {
   TextField,
   // highlight-next-line
   useForm,
-} from '@redmix/forms'
+} from '@cedarjs/forms'
 ```
 
 </TabItem>
@@ -1679,7 +1679,7 @@ import {
   TextField,
   // highlight-next-line
   useForm,
-} from '@redmix/forms'
+} from '@cedarjs/forms'
 ```
 
 </TabItem>
@@ -1803,8 +1803,8 @@ Here's the entire page:
 <TabItem value="js" label="JavaScript">
 
 ```jsx title="web/src/pages/ContactPage/ContactPage.jsx"
-import { Metadata, useMutation } from '@redmix/web'
-import { toast, Toaster } from '@redmix/web/toast'
+import { Metadata, useMutation } from '@cedarjs/web'
+import { toast, Toaster } from '@cedarjs/web/toast'
 import {
   FieldError,
   Form,
@@ -1814,7 +1814,7 @@ import {
   TextAreaField,
   TextField,
   useForm,
-} from '@redmix/forms'
+} from '@cedarjs/forms'
 
 const CREATE_CONTACT = gql`
   mutation CreateContactMutation($input: CreateContactInput!) {
@@ -1900,8 +1900,8 @@ export default ContactPage
 <TabItem value="ts" label="TypeScript">
 
 ```tsx title="web/src/pages/ContactPage/ContactPage.tsx"
-import { Metadata, useMutation } from '@redmix/web'
-import { toast, Toaster } from '@redmix/web/toast'
+import { Metadata, useMutation } from '@cedarjs/web'
+import { toast, Toaster } from '@cedarjs/web/toast'
 import {
   FieldError,
   Form,
@@ -1912,7 +1912,7 @@ import {
   TextAreaField,
   TextField,
   useForm,
-} from '@redmix/forms'
+} from '@cedarjs/forms'
 
 import {
   CreateContactMutation,

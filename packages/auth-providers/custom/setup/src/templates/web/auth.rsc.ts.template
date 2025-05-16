@@ -1,6 +1,6 @@
 'use client'
 
-import { createAuthentication } from '@redmix/auth'
+import { createAuthentication } from '@cedarjs/auth'
 
 // If you're integrating with an auth service provider you should delete this interface.
 // Instead you should import the type from their auth client sdk.

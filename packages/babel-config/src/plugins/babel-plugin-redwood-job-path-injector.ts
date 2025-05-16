@@ -2,7 +2,7 @@ import fsPath from 'node:path'
 
 import type { PluginObj, types as babelTypes } from '@babel/core'
 
-import { getPaths } from '@redmix/project-config'
+import { getPaths } from '@cedarjs/project-config'
 
 // This plugin is responsible for injecting the import path and name of a job
 // into the object that is passed to createJob. This is later used by adapters

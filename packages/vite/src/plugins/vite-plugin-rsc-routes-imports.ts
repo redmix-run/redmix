@@ -10,13 +10,13 @@ import * as t from '@babel/types'
 import type { Plugin } from 'vite'
 import { normalizePath } from 'vite'
 
-import type { PagesDependency } from '@redmix/project-config'
+import type { PagesDependency } from '@cedarjs/project-config'
 import {
   ensurePosixPath,
   getPaths,
   importStatementPath,
   processPagesDir,
-} from '@redmix/project-config'
+} from '@cedarjs/project-config'
 
 const getPathRelativeToSrc = (maybeAbsolutePath: string) => {
   // If the path is already relative

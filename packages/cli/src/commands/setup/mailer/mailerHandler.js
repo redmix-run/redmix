@@ -3,8 +3,8 @@ import path from 'node:path'
 import fs from 'fs-extra'
 import { Listr } from 'listr2'
 
-import { addApiPackages } from '@redmix/cli-helpers'
-import { errorTelemetry } from '@redmix/telemetry'
+import { addApiPackages } from '@cedarjs/cli-helpers'
+import { errorTelemetry } from '@cedarjs/telemetry'
 
 import c from '../../../lib/colors.js'
 import { getPaths, transformTSToJS, writeFile } from '../../../lib/index.js'
@@ -15,7 +15,7 @@ export const handler = async ({ force, skipExamples }) => {
   const redwoodVersion =
     (await import(path.join(getPaths().base, 'package.json'), {
       with: { type: 'json ' },
-    }).default.devDependencies['@redmix/core']) ?? 'latest'
+    }).default.devDependencies['@cedarjs/core']) ?? 'latest'
 
   const tasks = new Listr(
     [
@@ -87,9 +87,9 @@ export const handler = async ({ force, skipExamples }) => {
       {
         // Add production dependencies
         ...addApiPackages([
-          `@redmix/mailer-core@${redwoodVersion}`,
-          `@redmix/mailer-handler-nodemailer@${redwoodVersion}`,
-          `@redmix/mailer-renderer-react-email@${redwoodVersion}`,
+          `@cedarjs/mailer-core@${redwoodVersion}`,
+          `@cedarjs/mailer-handler-nodemailer@${redwoodVersion}`,
+          `@cedarjs/mailer-renderer-react-email@${redwoodVersion}`,
           `@react-email/components`, // NOTE: Unpinned dependency here
         ]),
         title: 'Adding production dependencies to your api side...',
@@ -98,8 +98,8 @@ export const handler = async ({ force, skipExamples }) => {
         // Add development dependencies
         ...addApiPackages([
           '-D',
-          `@redmix/mailer-handler-in-memory@${redwoodVersion}`,
-          `@redmix/mailer-handler-studio@${redwoodVersion}`,
+          `@cedarjs/mailer-handler-in-memory@${redwoodVersion}`,
+          `@cedarjs/mailer-handler-studio@${redwoodVersion}`,
         ]),
         title: 'Adding development dependencies to your api side...',
       },

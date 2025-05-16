@@ -4,8 +4,8 @@ import path from 'node:path'
 import {
   getWebSideDefaultBabelConfig,
   registerApiSideBabelHook,
-} from '@redmix/babel-config'
-import { getPaths } from '@redmix/project-config'
+} from '@cedarjs/babel-config'
+import { getPaths } from '@cedarjs/project-config'
 
 export async function runScriptFunction({
   path: scriptPath,

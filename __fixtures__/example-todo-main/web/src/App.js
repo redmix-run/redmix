@@ -1,5 +1,5 @@
-import { FatalErrorBoundary } from '@redmix/web'
-import { RedwoodApolloProvider } from '@redmix/web/apollo'
+import { FatalErrorBoundary } from '@cedarjs/web'
+import { RedwoodApolloProvider } from '@cedarjs/web/apollo'
 
 import FatalErrorPage from 'src/pages/FatalErrorPage'
 import Routes from './Routes'

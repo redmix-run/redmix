@@ -1,4 +1,4 @@
-import { build, defaultBuildOptions } from '@redmix/framework-tools'
+import { build, defaultBuildOptions } from '@cedarjs/framework-tools'
 
 await build({
   buildOptions: {

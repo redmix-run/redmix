@@ -7,9 +7,9 @@
 // 'src/pages/HomePage/HomePage.js'         -> HomePage
 // 'src/pages/Admin/BooksPage/BooksPage.js' -> AdminBooksPage
 
-import { Route } from '@redmix/router/Route'
-import { Router } from '@redmix/router/RscRouter'
-import { Set } from '@redmix/router/Set'
+import { Route } from '@cedarjs/router/Route'
+import { Router } from '@cedarjs/router/RscRouter'
+import { Set } from '@cedarjs/router/Set'
 
 import NavigationLayout from './layouts/NavigationLayout/NavigationLayout'
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage'

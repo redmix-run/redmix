@@ -23,7 +23,7 @@ exports[`in javascript (default) mode > creates a form component 1`] = `
   NumberField,
   TextAreaField,
   Submit,
-} from '@redmix/forms'
+} from '@cedarjs/forms'
 
 const formatDatetime = (value) => {
   if (value) {
@@ -285,8 +285,8 @@ export default PostsPage
 `;
 
 exports[`in javascript (default) mode > creates a layout 1`] = `
-"import { Link, routes } from '@redmix/router'
-import { Toaster } from '@redmix/web/toast'
+"import { Link, routes } from '@cedarjs/router'
+import { Toaster } from '@cedarjs/web/toast'
 
 const ScaffoldLayout = ({
   title,
@@ -320,10 +320,10 @@ export default ScaffoldLayout
 exports[`in javascript (default) mode > creates a new component 1`] = `undefined`;
 
 exports[`in javascript (default) mode > creates a new component with int foreign keys converted in onSave 1`] = `
-"import { navigate, routes } from '@redmix/router'
-import { useMutation } from '@redmix/web'
+"import { navigate, routes } from '@cedarjs/router'
+import { useMutation } from '@cedarjs/web'
 
-import { toast } from '@redmix/web/toast'
+import { toast } from '@cedarjs/web/toast'
 
 import UserProfileForm from 'src/components/UserProfileForm'
 
@@ -418,10 +418,10 @@ export const Success = ({ post }) => {
 `;
 
 exports[`in javascript (default) mode > creates a show component 1`] = `
-"import { Link, routes, navigate } from '@redmix/router'
-import { useMutation } from '@redmix/web'
+"import { Link, routes, navigate } from '@cedarjs/router'
+import { useMutation } from '@cedarjs/web'
 
-import { toast } from '@redmix/web/toast'
+import { toast } from '@cedarjs/web/toast'
 
 import { checkboxInputTag, jsonDisplay, timeTag } from 'src/lib/formatters'
 
@@ -954,10 +954,10 @@ exports[`in javascript (default) mode > creates a stylesheet 1`] = `
 exports[`in javascript (default) mode > creates an edit cell 1`] = `undefined`;
 
 exports[`in javascript (default) mode > creates an edit component with int foreign keys converted in onSave 1`] = `
-"import { navigate, routes } from '@redmix/router'
+"import { navigate, routes } from '@cedarjs/router'
 
-import { useMutation } from '@redmix/web'
-import { toast } from '@redmix/web/toast'
+import { useMutation } from '@cedarjs/web'
+import { toast } from '@cedarjs/web/toast'
 
 import UserProfileForm from 'src/components/UserProfileForm'
 
@@ -1030,7 +1030,7 @@ export const Success = ({ userProfile }) => {
 `;
 
 exports[`in javascript (default) mode > creates an index cell 1`] = `
-"import { Link, routes } from '@redmix/router'
+"import { Link, routes } from '@cedarjs/router'
 
 import Posts from 'src/components/Posts'
 
@@ -1078,10 +1078,10 @@ export const Success = ({ posts }) => {
 `;
 
 exports[`in javascript (default) mode > creates an index component 1`] = `
-"import { Link, routes } from '@redmix/router'
-import { useMutation } from '@redmix/web'
+"import { Link, routes } from '@cedarjs/router'
+import { useMutation } from '@cedarjs/web'
 
-import { toast } from '@redmix/web/toast'
+import { toast } from '@cedarjs/web/toast'
 
 import { QUERY } from 'src/components/PostsCell'
 import {
@@ -1213,7 +1213,7 @@ export default EditPostPage
 exports[`in typescript mode > creates a form component 1`] = `
 "import type { EditPostById, UpdatePostInput } from 'types/graphql'
 
-import type { RWGqlError } from '@redmix/forms'
+import type { RWGqlError } from '@cedarjs/forms'
 import {
   Form,
   FormError,
@@ -1225,7 +1225,7 @@ import {
   NumberField,
   TextAreaField,
   Submit,
-} from '@redmix/forms'
+} from '@cedarjs/forms'
 
 const formatDatetime = (value) => {
   if (value) {
@@ -1496,8 +1496,8 @@ export default PostsPage
 `;
 
 exports[`in typescript mode > creates a layout 1`] = `
-"import { Link, routes } from '@redmix/router'
-import { Toaster } from '@redmix/web/toast'
+"import { Link, routes } from '@cedarjs/router'
+import { Toaster } from '@cedarjs/web/toast'
 
 type LayoutProps = {
   title: string
@@ -1545,10 +1545,10 @@ exports[`in typescript mode > creates a new component with int foreign keys conv
   CreateUserProfileMutationVariables,
 } from 'types/graphql'
 
-import { navigate, routes } from '@redmix/router'
-import { useMutation } from '@redmix/web'
-import type { TypedDocumentNode } from '@redmix/web'
-import { toast } from '@redmix/web/toast'
+import { navigate, routes } from '@cedarjs/router'
+import { useMutation } from '@cedarjs/web'
+import type { TypedDocumentNode } from '@cedarjs/web'
+import { toast } from '@cedarjs/web/toast'
 
 import UserProfileForm from 'src/components/UserProfileForm'
 
@@ -1615,7 +1615,7 @@ import type {
   CellSuccessProps,
   CellFailureProps,
   TypedDocumentNode,
-} from '@redmix/web'
+} from '@cedarjs/web'
 
 import Post from 'src/components/Post'
 
@@ -1663,10 +1663,10 @@ exports[`in typescript mode > creates a show component 1`] = `
   FindPostById,
 } from 'types/graphql'
 
-import { Link, routes, navigate } from '@redmix/router'
-import { useMutation } from '@redmix/web'
-import type { TypedDocumentNode } from '@redmix/web'
-import { toast } from '@redmix/web/toast'
+import { Link, routes, navigate } from '@cedarjs/router'
+import { useMutation } from '@cedarjs/web'
+import type { TypedDocumentNode } from '@cedarjs/web'
+import { toast } from '@cedarjs/web/toast'
 
 import { checkboxInputTag, jsonDisplay, timeTag } from 'src/lib/formatters'
 
@@ -2214,14 +2214,14 @@ exports[`in typescript mode > creates an edit cell 1`] = `
   UpdatePostMutationVariables,
 } from 'types/graphql'
 
-import { navigate, routes } from '@redmix/router'
+import { navigate, routes } from '@cedarjs/router'
 import type {
   CellSuccessProps,
   CellFailureProps,
   TypedDocumentNode,
-} from '@redmix/web'
-import { useMutation } from '@redmix/web'
-import { toast } from '@redmix/web/toast'
+} from '@cedarjs/web'
+import { useMutation } from '@cedarjs/web'
+import { toast } from '@cedarjs/web/toast'
 
 import PostForm from 'src/components/PostForm'
 
@@ -2312,14 +2312,14 @@ exports[`in typescript mode > creates an edit component with int foreign keys co
   UpdateUserProfileMutationVariables,
 } from 'types/graphql'
 
-import { navigate, routes } from '@redmix/router'
+import { navigate, routes } from '@cedarjs/router'
 import type {
   CellSuccessProps,
   CellFailureProps,
   TypedDocumentNode,
-} from '@redmix/web'
-import { useMutation } from '@redmix/web'
-import { toast } from '@redmix/web/toast'
+} from '@cedarjs/web'
+import { useMutation } from '@cedarjs/web'
+import { toast } from '@cedarjs/web/toast'
 
 import UserProfileForm from 'src/components/UserProfileForm'
 
@@ -2402,12 +2402,12 @@ export const Success = ({
 exports[`in typescript mode > creates an index cell 1`] = `
 "import type { FindPosts, FindPostsVariables } from 'types/graphql'
 
-import { Link, routes } from '@redmix/router'
+import { Link, routes } from '@cedarjs/router'
 import type {
   CellSuccessProps,
   CellFailureProps,
   TypedDocumentNode,
-} from '@redmix/web'
+} from '@cedarjs/web'
 
 import Posts from 'src/components/Posts'
 
@@ -2463,10 +2463,10 @@ exports[`in typescript mode > creates an index component 1`] = `
   FindPosts,
 } from 'types/graphql'
 
-import { Link, routes } from '@redmix/router'
-import { useMutation } from '@redmix/web'
-import type { TypedDocumentNode } from '@redmix/web'
-import { toast } from '@redmix/web/toast'
+import { Link, routes } from '@cedarjs/router'
+import { useMutation } from '@cedarjs/web'
+import type { TypedDocumentNode } from '@cedarjs/web'
+import { toast } from '@cedarjs/web/toast'
 
 import { QUERY } from 'src/components/PostsCell'
 import {

@@ -6,14 +6,14 @@ We'll use yarn ([yarn](https://yarnpkg.com/getting-started/install) is a require
 <TabItem value="js" label="JavaScript">
 
 ```bash
-yarn create redmix-app ./redwoodblog
+yarn create cedar-app ./redwoodblog
 ```
 
 </TabItem>
 <TabItem value="ts" label="TypeScript">
 
 ```bash
-yarn create redmix-app --ts ./redwoodblog
+yarn create cedar-app --ts ./redwoodblog
 ```
 
 </TabItem>

@@ -1,7 +1,7 @@
 import camelcase from 'camelcase'
 import { Listr } from 'listr2'
 
-import { recordTelemetryAttributes } from '@redmix/cli-helpers'
+import { recordTelemetryAttributes } from '@cedarjs/cli-helpers'
 
 import c from '../../../lib/colors.js'
 import {

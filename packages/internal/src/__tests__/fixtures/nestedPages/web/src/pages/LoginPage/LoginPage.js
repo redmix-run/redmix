@@ -1,4 +1,4 @@
-import { Link, navigate, routes } from '@redmix/router'
+import { Link, navigate, routes } from '@cedarjs/router'
 import { useEffect, useRef } from 'react'
 import {
   FieldError,
@@ -7,10 +7,10 @@ import {
   PasswordField,
   Submit,
   TextField,
-} from '@redmix/forms'
-import { useAuth } from '@redmix/auth'
-import { Metadata } from '@redmix/web'
-import { toast, Toaster } from '@redmix/web/toast'
+} from '@cedarjs/forms'
+import { useAuth } from '@cedarjs/auth'
+import { Metadata } from '@cedarjs/web'
+import { toast, Toaster } from '@cedarjs/web/toast'
 
 const LoginPage = () => {
   const { isAuthenticated, logIn } = useAuth()

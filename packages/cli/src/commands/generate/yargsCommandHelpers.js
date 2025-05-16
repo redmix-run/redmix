@@ -2,7 +2,7 @@
 import terminalLink from 'terminal-link'
 
 // Don't import anything here that isn't already imported by the CLI
-import { isTypeScriptProject } from '@redmix/cli-helpers'
+import { isTypeScriptProject } from '@cedarjs/cli-helpers'
 
 /**
  * Don't invoke this function at the top level of a file. Always call it within

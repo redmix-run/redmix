@@ -7,8 +7,8 @@ import type {
   SignOutOptions,
 } from '@clerk/types'
 
-import type { CurrentUser } from '@redmix/auth'
-import { createAuthentication } from '@redmix/auth'
+import type { CurrentUser } from '@cedarjs/auth'
+import { createAuthentication } from '@cedarjs/auth'
 
 type Clerk = ClerkClient | undefined | null
 

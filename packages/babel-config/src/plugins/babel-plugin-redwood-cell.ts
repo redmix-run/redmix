@@ -6,7 +6,7 @@ import type { PluginObj, types } from '@babel/core'
 // order component. The HOC deals with the lifecycle methods during a GraphQL query.
 //
 // ```js
-// import { createCell } from '@redmix/web'
+// import { createCell } from '@cedarjs/web'
 // <YOUR CODE>
 // export default createCell({ QUERY, Loading, Success, Failure, isEmpty, Empty, beforeQuery, afterQuery, displayName })
 // ```
@@ -94,11 +94,11 @@ export default function ({ types: t }: { types: typeof types }): PluginObj {
             ? 'createServerCell'
             : 'createCell'
           const importFrom = exportNames.includes('data')
-            ? '@redmix/web/dist/components/cell/createServerCell'
-            : '@redmix/web'
+            ? '@cedarjs/web/dist/components/cell/createServerCell'
+            : '@cedarjs/web'
 
           // Insert at the top of the file:
-          // + import { createCell } from '@redmix/web'
+          // + import { createCell } from '@cedarjs/web'
           path.node.body.unshift(
             t.importDeclaration(
               [

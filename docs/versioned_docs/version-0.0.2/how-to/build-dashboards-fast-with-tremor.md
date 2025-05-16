@@ -26,7 +26,7 @@ Let's get started!
 In our terminal, we create a new RedwoodJS project:
 
 ```bash
-yarn create redmix-app my-project --ts
+yarn create cedar-app my-project --ts
 ```
 
 > **Note:** If you already have a RedwoodJS project, you can skip this step and continue with the next section.
@@ -92,7 +92,7 @@ Add simple area chart to the `DashboardPage`:
 ```jsx
 import { Grid, Col, Card, Title, AreaChart } from '@tremor/react'
 
-import { MetaTags } from '@redmix/web'
+import { MetaTags } from '@cedarjs/web'
 
 const DashboardPage = () => {
   const chartdata = [
@@ -293,7 +293,7 @@ Your Dashboard page should now look like:
 ```tsx
 import { Grid, Col, Card, Title, AreaChart } from '@tremor/react'
 
-import { MetaTags } from '@redmix/web'
+import { MetaTags } from '@cedarjs/web'
 
 import KpiCard from 'src/components/KpiCard/KpiCard' // 👈 Import the KpiCard component
 import type { Kpi } from 'src/components/KpiCard/KpiCard' // 👈 Import the Kpi type

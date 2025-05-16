@@ -8,12 +8,12 @@ describe('excludeModule', () => {
 
     // @ts-expect-error The PluginOption type is 'false | Plugin_2 | PluginOption[] | Promise<false | Plugin_2 | PluginOption[] | null | undefined>' which does not gaurentee that the transform method exists.
     const output = await plugin.transform(
-      `import ApolloProvider from '@redmix/web/apollo'`,
+      `import ApolloProvider from '@cedarjs/web/apollo'`,
       '/Users/dac09/Experiments/ssr-2354/web/src/App.tsx',
     )
 
     expect(output).toEqual(
-      "import ApolloProvider from '@redmix/web/dist/apollo/suspense'",
+      "import ApolloProvider from '@cedarjs/web/dist/apollo/suspense'",
     )
   })
 })

@@ -1,6 +1,6 @@
 import pascalcase from 'pascalcase'
 
-import { generate as generateTypes } from '@redmix/internal/dist/generate/generate'
+import { generate as generateTypes } from '@cedarjs/internal/dist/generate/generate'
 
 import { nameVariants, transformTSToJS } from '../../../lib/index.js'
 import { isWordPluralizable } from '../../../lib/pluralHelpers.js'

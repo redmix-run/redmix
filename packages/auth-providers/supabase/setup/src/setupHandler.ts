@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 
-import { standardAuthHandler } from '@redmix/cli-helpers'
+import { standardAuthHandler } from '@cedarjs/cli-helpers'
 
 import type { Args } from './setup'
 
@@ -14,10 +14,10 @@ export const handler = async ({ force: forceArg }: Args) => {
     basedir: __dirname,
     forceArg,
     provider: 'supabase',
-    authDecoderImport: `import { authDecoder } from '@redmix/auth-supabase-api'`,
-    apiPackages: [`@redmix/auth-supabase-api@${version}`],
+    authDecoderImport: `import { authDecoder } from '@cedarjs/auth-supabase-api'`,
+    apiPackages: [`@cedarjs/auth-supabase-api@${version}`],
     webPackages: [
-      `@redmix/auth-supabase-web@${version}`,
+      `@cedarjs/auth-supabase-web@${version}`,
       '@supabase/supabase-js@^2',
     ],
     notes: [

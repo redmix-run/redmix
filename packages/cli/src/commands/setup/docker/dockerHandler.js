@@ -5,9 +5,9 @@ import execa from 'execa'
 import fs from 'fs-extra'
 import { Listr } from 'listr2'
 
-import { writeFile } from '@redmix/cli-helpers'
-import { getConfig, getConfigPath, getPaths } from '@redmix/project-config'
-import { errorTelemetry } from '@redmix/telemetry'
+import { writeFile } from '@cedarjs/cli-helpers'
+import { getConfig, getConfigPath, getPaths } from '@cedarjs/project-config'
+import { errorTelemetry } from '@cedarjs/telemetry'
 
 import c from '../../../lib/colors.js'
 
@@ -70,16 +70,16 @@ export async function handler({ force }) {
         },
       },
       {
-        title: 'Adding @redmix/api-server and @redmix/web-server...',
+        title: 'Adding @cedarjs/api-server and @cedarjs/web-server...',
         task: async (_ctx, task) => {
-          const apiServerPackageName = '@redmix/api-server'
+          const apiServerPackageName = '@cedarjs/api-server'
           const { dependencies: apiDependencies } = fs.readJSONSync(
             path.join(getPaths().api.base, 'package.json'),
           )
           const hasApiServerPackage =
             Object.keys(apiDependencies).includes(apiServerPackageName)
 
-          const webServerPackageName = '@redmix/web-server'
+          const webServerPackageName = '@cedarjs/web-server'
           const { dependencies: webDependencies } = fs.readJSONSync(
             path.join(getPaths().web.base, 'package.json'),
           )
@@ -286,7 +286,7 @@ export async function handler({ force }) {
 
 export async function getVersionOfRedwoodPackageToInstall(module) {
   const createdRequire = createRequire(import.meta.url)
-  const packageJsonPath = createdRequire.resolve('@redmix/cli/package.json', {
+  const packageJsonPath = createdRequire.resolve('@cedarjs/cli/package.json', {
     paths: [getPaths().base],
   })
   let { version } = fs.readJSONSync(packageJsonPath)

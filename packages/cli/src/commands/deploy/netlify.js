@@ -1,4 +1,4 @@
-import { recordTelemetryAttributes } from '@redmix/cli-helpers'
+import { recordTelemetryAttributes } from '@cedarjs/cli-helpers'
 
 import { deployBuilder } from './helpers/deployBuilder.js'
 

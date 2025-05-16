@@ -274,7 +274,7 @@ export const SplashPage = ({
                   <h1 className="intro-heading">Welcome to</h1>
                   <img
                     src="https://github.com/user-attachments/assets/06da6bb6-d2f7-4bd5-941b-ef897b4ed64b"
-                    alt="Redmix Logo"
+                    alt="Cedar Logo"
                     className="intro-logo"
                   />
                   {!hasGeneratedRoutes ? (
@@ -349,7 +349,7 @@ export const SplashPage = ({
 
                     <p className="resource-description">
                       Start here to learn how to build full-stack apps with
-                      Redmix.
+                      Cedar.
                     </p>
                   </div>
 
@@ -377,7 +377,7 @@ export const SplashPage = ({
                     </div>
 
                     <p className="resource-description">
-                      Find in-depth information about Redmix features and API.
+                      Find in-depth information about Cedar features and API.
                     </p>
                   </div>
 
@@ -402,7 +402,7 @@ export const SplashPage = ({
                     </div>
 
                     <p className="resource-description">
-                      Get help, share tips, and collaborate together on Redmix.
+                      Get help, share tips, and collaborate together on Cedar.
                     </p>
                   </div>
 
@@ -438,7 +438,7 @@ export const SplashPage = ({
                       <h2 className="resource-title">Become a Contributor</h2>
                     </div>
                     <p className="resource-description">
-                      Love Redmix and want to get involved? Contribute today!
+                      Love Cedar and want to get involved? Contribute today!
                     </p>
                   </div>
                 </div>
@@ -449,10 +449,10 @@ export const SplashPage = ({
               <div className="social">
                 <a
                   className="social-link"
-                  href="https://github.com/redmix-run/redmix"
+                  href="https://github.com/cedarjs/cedar"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Go to the Redmix GitHub repo"
+                  aria-label="Go to the Cedar GitHub repo"
                 >
                   <svg viewBox="0 0 32 32" focusable="false">
                     <path
@@ -506,9 +506,9 @@ export const SplashPage = ({
               </div>
               {version && (
                 <>
-                  Redmix version{' '}
+                  Cedar version{' '}
                   <a
-                    href="https://github.com/redmix-run/redmix/releases"
+                    href="https://github.com/cedarjs/cedar/releases"
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -545,7 +545,7 @@ const useVersion = () => {
         const versionData = await response.json()
         setVersion(versionData?.data?.redwood?.version || null)
       } catch (err) {
-        console.error('Unable to get Redmix version: ', err)
+        console.error('Unable to get Cedar version: ', err)
       }
     }
 

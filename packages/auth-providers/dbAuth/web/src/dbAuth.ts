@@ -1,8 +1,8 @@
-import type { CurrentUser, CustomProviderHooks } from '@redmix/auth'
+import type { CurrentUser, CustomProviderHooks } from '@cedarjs/auth'
 import {
   createAuthentication,
   getCurrentUserFromMiddleware,
-} from '@redmix/auth'
+} from '@cedarjs/auth'
 
 import type { WebAuthnClientType } from './webAuthn'
 

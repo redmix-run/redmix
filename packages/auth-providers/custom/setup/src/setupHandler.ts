@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 
-import { isTypeScriptProject, standardAuthHandler } from '@redmix/cli-helpers'
+import { isTypeScriptProject, standardAuthHandler } from '@cedarjs/cli-helpers'
 
 import type { Args } from './setup'
 
@@ -16,7 +16,7 @@ export async function handler({ force: forceArg }: Args) {
     basedir: __dirname,
     forceArg,
     provider: 'custom',
-    webPackages: [`@redmix/auth@${version}`],
+    webPackages: [`@cedarjs/auth@${version}`],
     notes: [
       'Done! But you have a little more work to do.',
       "You'll have to write the actual implementation yourself.",

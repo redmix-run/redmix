@@ -1,6 +1,6 @@
 import execa from 'execa'
 
-import { getPaths } from '@redmix/project-config'
+import { getPaths } from '@cedarjs/project-config'
 
 import c from '../../../lib/colors.js'
 

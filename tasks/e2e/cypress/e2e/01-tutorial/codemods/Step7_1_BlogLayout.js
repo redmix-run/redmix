@@ -1,7 +1,7 @@
 export default `
 // web/src/layouts/BlogLayout/BlogLayout.js
 
-import { Link, routes } from '@redmix/router'
+import { Link, routes } from '@cedarjs/router'
 
 const BlogLayout = ({ children }) => {
   return (

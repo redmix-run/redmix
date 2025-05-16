@@ -1,5 +1,5 @@
-import { Link, routes } from '@redmix/router'
-import { Metadata } from '@redmix/web'
+import { Link, routes } from '@cedarjs/router'
+import { Metadata } from '@cedarjs/web'
 import JobsCell from 'src/components/Jobs/JobsCell'
 import JobProfilesCell from 'src/components/Jobs/JobProfilesCell'
 

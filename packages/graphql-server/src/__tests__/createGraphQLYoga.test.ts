@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { createLogger } from '@redmix/api/logger'
+import { createLogger } from '@cedarjs/api/logger'
 
 import { createGraphQLYoga } from '../createGraphQLYoga'
 

@@ -2,7 +2,7 @@ import {
   createGraphQLHandler,
   makeMergedSchema,
   makeServices,
-} from '@redmix/api'
+} from '@cedarjs/api'
 import schemas from 'src/graphql/**/*.{js,ts}'
 import services from 'src/services/**/*.{js,ts}'
 

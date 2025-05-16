@@ -9,7 +9,7 @@ import type {
   CellSuccessProps,
   CellFailureProps,
   TypedDocumentNode,
-} from '@redmix/web'
+} from '@cedarjs/web'
 
 import EmptyUser from 'src/components/EmptyUser/EmptyUser'
 

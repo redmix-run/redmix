@@ -59,8 +59,8 @@ Now that you have the file, let's add the `generateToken` function.
 // add the following three imports to the top of the file
 import crypto from 'node:crypto'
 
-import { hashPassword } from '@redmix/auth-dbauth-api'
-import { UserInputError } from '@redmix/graphql-server'
+import { hashPassword } from '@cedarjs/auth-dbauth-api'
+import { UserInputError } from '@cedarjs/graphql-server'
 
 // add this to the bottom of the file
 export const generateLoginToken = async ({ email }) => {
@@ -220,10 +220,10 @@ yarn rw g component LoginPasswordlessForm
 This created a component in `web/src/components/LoginPasswordlessForm/LoginPasswordlessForm.{js|tsx}`. Let's update it.
 
 ```jsx title="/web/src/components/LoginPasswordlessForm/LoginPasswordlessForm.js"
-import { Form, Label, TextField, Submit, FieldError } from '@redmix/forms'
-import { routes, Link } from '@redmix/router'
-import { Metadata, useMutation } from '@redmix/web'
-import { Toaster, toast } from '@redmix/web/toast'
+import { Form, Label, TextField, Submit, FieldError } from '@cedarjs/forms'
+import { routes, Link } from '@cedarjs/router'
+import { Metadata, useMutation } from '@cedarjs/web'
+import { Toaster, toast } from '@cedarjs/web/toast'
 
 const GENERATE_LOGIN_TOKEN_MUTATION = gql`
   mutation GenerateLoginTokenMutation($email: String!) {
@@ -327,10 +327,10 @@ yarn rw g component LoginPasswordlessTokenForm
 ```jsx title="/web/src/components/LoginPasswordlessTokenForm/LoginPasswordlessTokenForm.js"
 import { useEffect } from 'react'
 
-import { Form, Label, TextField, Submit, FieldError } from '@redmix/forms'
-import { navigate, routes, Link } from '@redmix/router'
-import { Metadata } from '@redmix/web'
-import { Toaster, toast } from '@redmix/web/toast'
+import { Form, Label, TextField, Submit, FieldError } from '@cedarjs/forms'
+import { navigate, routes, Link } from '@cedarjs/router'
+import { Metadata } from '@cedarjs/web'
+import { Toaster, toast } from '@cedarjs/web/toast'
 
 import { useAuth } from 'src/auth'
 
@@ -452,8 +452,8 @@ yarn rw g page LoginPasswordless
 ```jsx title="/web/pages/LoginPasswordlessPage/LoginPasswordlessPage.js"
 import { useEffect, useState } from 'react'
 
-import { useLocation } from '@redmix/router'
-import { Metadata } from '@redmix/web'
+import { useLocation } from '@cedarjs/router'
+import { Metadata } from '@cedarjs/web'
 
 import LoginPasswordlessForm from 'src/components/LoginPasswordlessForm/LoginPasswordlessForm'
 import LoginPasswordlessTokenForm from 'src/components/LoginPasswordlessTokenForm/LoginPasswordlessTokenForm'
@@ -514,10 +514,10 @@ We need to update the signup page to just take the email.
 ```jsx title="/web/src/pages/SignupPage/SignupPage.js"
 import { useEffect, useRef } from 'react'
 
-import { Form, Label, TextField, FieldError, Submit } from '@redmix/forms'
-import { Link, navigate, routes } from '@redmix/router'
-import { Metadata } from '@redmix/web'
-import { toast, Toaster } from '@redmix/web/toast'
+import { Form, Label, TextField, FieldError, Submit } from '@cedarjs/forms'
+import { Link, navigate, routes } from '@cedarjs/router'
+import { Metadata } from '@cedarjs/web'
+import { toast, Toaster } from '@cedarjs/web/toast'
 
 import { useAuth } from 'src/auth'
 

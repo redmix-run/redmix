@@ -6,23 +6,23 @@ slug: contributing
 
 # Contributing: Overview and Orientation
 
-Love Redwood and want to get involved? You’re in the right place and in good company! As of this writing, there are more than [250 contributors](https://github.com/redmix-run/redmix/blob/main/README.md#contributors) who have helped make Redwood awesome by contributing code and documentation. This doesn't include all those who participate in the vibrant, helpful, and encouraging Forums and Discord, which are both great places to get started if you have any questions.
+Love Redwood and want to get involved? You’re in the right place and in good company! As of this writing, there are more than [250 contributors](https://github.com/cedarjs/cedar/blob/main/README.md#contributors) who have helped make Redwood awesome by contributing code and documentation. This doesn't include all those who participate in the vibrant, helpful, and encouraging Forums and Discord, which are both great places to get started if you have any questions.
 
 There are several ways you can contribute to Redwood:
 
 - join the [community Forums](https://community.redwoodjs.com/) and [Discord server](https://discord.com/invite/redwoodjs) — encourage and help others 🙌
-- [triage issues on the repo](https://github.com/redmix-run/redmix/issues) and [review PRs](https://github.com/redmix-run/redmix/pulls) 🩺
+- [triage issues on the repo](https://github.com/cedarjs/cedar/issues) and [review PRs](https://github.com/cedarjs/cedar/pulls) 🩺
 - write and edit [docs](#contributing-docs) ✍️
 - and of course, write code! 👩‍💻
 
-_Before interacting with the Redwood community, please read and understand our [Code of Conduct](https://github.com/redmix-run/redmix/blob/main/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct)._
+_Before interacting with the Redwood community, please read and understand our [Code of Conduct](https://github.com/cedarjs/cedar/blob/main/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct)._
 
 > ⚡️ **Quick Links**
 >
 > There are several contributing docs and references, each covering specific topics:
 >
 > 1. 🧭 **Overview and Orientation** (👈 you are here)
-> 2. 📓 [Reference: Contributing to the Framework Packages](https://github.com/redmix-run/redmix/blob/main/CONTRIBUTING.md)
+> 2. 📓 [Reference: Contributing to the Framework Packages](https://github.com/cedarjs/cedar/blob/main/CONTRIBUTING.md)
 > 3. 🪜 [Step-by-step Walkthrough](contributing-walkthrough.md) (including Video Recording)
 > 4. 📈 [Current Project Status](https://github.com/orgs/redwoodjs/projects/11)
 > 5. 🤔 What should I work on?
@@ -55,9 +55,9 @@ The Redwood Core Team is working publicly — progress is updated daily on the [
 
 Eventually, all this leads you back to Redwood’s GitHub Issues page. Here you’ll find open items that need help, which are organized by labels. There are four labels helpful for contributing:
 
-1. [Good First Issue](https://github.com/redmix-run/redmix/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22): these items are more likely to be an accessible entry point to the Framework. It’s less about skill level and more about focused scope.
-2. [Help Wanted](https://github.com/redmix-run/redmix/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22): these items especially need contribution help from the community.
-3. [Bugs 🐛](https://github.com/redmix-run/redmix/issues?q=is%3Aissue+is%3Aopen+label%3Abug%2Fconfirmed): last but not least, we always need help with bugs. Some are technically less challenging than others. Sometimes the best way you can help is to attempt to reproduce the bug and confirm whether or not it’s still an issue.
+1. [Good First Issue](https://github.com/cedarjs/cedar/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22): these items are more likely to be an accessible entry point to the Framework. It’s less about skill level and more about focused scope.
+2. [Help Wanted](https://github.com/cedarjs/cedar/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22): these items especially need contribution help from the community.
+3. [Bugs 🐛](https://github.com/cedarjs/cedar/issues?q=is%3Aissue+is%3Aopen+label%3Abug%2Fconfirmed): last but not least, we always need help with bugs. Some are technically less challenging than others. Sometimes the best way you can help is to attempt to reproduce the bug and confirm whether or not it’s still an issue.
 
 ### Create a New Issue
 
@@ -71,7 +71,7 @@ Lastly, it can often be helpful to start with brief discussion in the community 
 
 Redwood's composed of many packages that are designed to work together. Some of these packages are designed to be used outside Redwood too!
 
-Before you start contributing, you'll want to set up your local development environment. The Redwood repo's top-level [contributing guide](https://github.com/redmix-run/redmix/blob/main/CONTRIBUTING.md#local-development) walks you through this. Make sure to give it an initial read.
+Before you start contributing, you'll want to set up your local development environment. The Redwood repo's top-level [contributing guide](https://github.com/cedarjs/cedar/blob/main/CONTRIBUTING.md#local-development) walks you through this. Make sure to give it an initial read.
 
 For details on contributing to a specific package, see the package's README (links provided in the table below). Each README has a section named Roadmap. If you want to get involved but don't quite know how, the Roadmap's a good place to start. See anything that interests you? Go for it! And be sure to let us know&mdash;you don't have to have a finished product before opening an issue or pull request. In fact, we're big fans of [Readme Driven Development](https://tom.preston-werner.com/2010/08/23/readme-driven-development.html).
 
@@ -81,24 +81,24 @@ What you want to do not on the roadmap? Well, still go for it! We love spikes an
 
 | Package                                                                                                                 | Description                                                                                                                                                                                                  |
 | :---------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [`@redmix/api-server`](https://github.com/redmix-run/redmix/blob/main/packages/api-server/README.md)                 | Run a Redwood app using Fastify server (alternative to serverless API)                                                                                                                                       |
-| [`@redmix/api`](https://github.com/redmix-run/redmix/blob/main/packages/api/README.md)                               | Infrastructure components for your applications UI including logging, webhooks, authentication decoders and parsers, as well as tools to test custom serverless functions and webhooks                       |
-| [`@redmix/auth`](https://github.com/redmix-run/redmix/blob/main/packages/auth/README.md#contributing)                | A lightweight wrapper around popular SPA authentication libraries                                                                                                                                            |
-| [`@redmix/cli`](https://github.com/redmix-run/redmix/blob/main/packages/cli/README.md)                               | All the commands for Redwood's built-in CLI                                                                                                                                                                  |
-| [`@redmix/codemods`](https://github.com/redmix-run/redmix/blob/main/packages/codemods/README.md)                     | Codemods that automate upgrading a Redwood project                                                                                                                                                           |
-| [`@redmix/core`](https://github.com/redmix-run/redmix/blob/main/packages/core/README.md)                             | Defines babel plugins and config files                                                                                                                                                                       |
-| [`@redmix/create-redmix-app`](https://github.com/redmix-run/redmix/blob/main/packages/create-redmix-app/README.md) | Enables `yarn create redwood-app`&mdash;downloads the latest release of Redwood and extracts it into the supplied directory                                                                                  |
-| [`@redmix/eslint-config`](https://github.com/redmix-run/redmix/blob/main/packages/eslint-config/README.md)           | Defines Redwood's eslint config                                                                                                                                                                              |
-| [`@redmix/forms`](https://github.com/redmix-run/redmix/blob/main/packages/forms/README.md)                           | Provides Form helpers                                                                                                                                                                                        |
-| [`@redmix/graphql-server`](https://github.com/redmix-run/redmix/blob/main/packages/graphql-server/README.md)         | Exposes functions to build the GraphQL API, provides services with `context`, and a set of envelop plugins to supercharge your GraphQL API with logging, authentication, error handling, directives and more |
-| [`@redmix/internal`](https://github.com/redmix-run/redmix/blob/main/packages/internal/README.md)                     | Provides tooling to parse Redwood configs and get a project's paths                                                                                                                                          |
-| [`@redmix/prerender`](https://github.com/redmix-run/redmix/blob/main/packages/prerender/README.md)                   | Defines functionality for prerendering static content                                                                                                                                                        |
-| [`@redmix/record`](https://github.com/redmix-run/redmix/blob/main/packages/record/README.md)                         | ORM built on top of Prisma. It may be extended in the future to wrap other database access packages                                                                                                          |
-| [`@redmix/router`](https://github.com/redmix-run/redmix/blob/main/packages/router/README.md)                         | The built-in router for Redwood                                                                                                                                                                              |
-| [`@redmix/structure`](https://github.com/redmix-run/redmix/blob/main/packages/structure/README.md)                   | Provides a way to build, validate and inspect an object graph that represents a complete Redwood project                                                                                                     |
-| [`@redmix/telemetry`](https://github.com/redmix-run/redmix/blob/main/packages/telemetry/README.md)                   | Provides functionality for anonymous data collection                                                                                                                                                         |
-| [`@redmix/testing`](https://github.com/redmix-run/redmix/blob/main/packages/testing/README.md)                       | Provides helpful defaults when testing a Redwood project's web side                                                                                                                                          |
-| [`@redmix/web`](https://github.com/redmix-run/redmix/blob/main/packages/web/README.md)                               | Configures a Redwood's app web side: wraps the Apollo Client in `RedwoodApolloProvider`; defines the Cell HOC                                                                                                |
+| [`@cedarjs/api-server`](https://github.com/cedarjs/cedar/blob/main/packages/api-server/README.md)                 | Run a Redwood app using Fastify server (alternative to serverless API)                                                                                                                                       |
+| [`@cedarjs/api`](https://github.com/cedarjs/cedar/blob/main/packages/api/README.md)                               | Infrastructure components for your applications UI including logging, webhooks, authentication decoders and parsers, as well as tools to test custom serverless functions and webhooks                       |
+| [`@cedarjs/auth`](https://github.com/cedarjs/cedar/blob/main/packages/auth/README.md#contributing)                | A lightweight wrapper around popular SPA authentication libraries                                                                                                                                            |
+| [`@cedarjs/cli`](https://github.com/cedarjs/cedar/blob/main/packages/cli/README.md)                               | All the commands for Redwood's built-in CLI                                                                                                                                                                  |
+| [`@cedarjs/codemods`](https://github.com/cedarjs/cedar/blob/main/packages/codemods/README.md)                     | Codemods that automate upgrading a Redwood project                                                                                                                                                           |
+| [`@cedarjs/core`](https://github.com/cedarjs/cedar/blob/main/packages/core/README.md)                             | Defines babel plugins and config files                                                                                                                                                                       |
+| [`@cedarjs/create-cedar-app`](https://github.com/cedarjs/cedar/blob/main/packages/create-cedar-app/README.md) | Enables `yarn create redwood-app`&mdash;downloads the latest release of Redwood and extracts it into the supplied directory                                                                                  |
+| [`@cedarjs/eslint-config`](https://github.com/cedarjs/cedar/blob/main/packages/eslint-config/README.md)           | Defines Redwood's eslint config                                                                                                                                                                              |
+| [`@cedarjs/forms`](https://github.com/cedarjs/cedar/blob/main/packages/forms/README.md)                           | Provides Form helpers                                                                                                                                                                                        |
+| [`@cedarjs/graphql-server`](https://github.com/cedarjs/cedar/blob/main/packages/graphql-server/README.md)         | Exposes functions to build the GraphQL API, provides services with `context`, and a set of envelop plugins to supercharge your GraphQL API with logging, authentication, error handling, directives and more |
+| [`@cedarjs/internal`](https://github.com/cedarjs/cedar/blob/main/packages/internal/README.md)                     | Provides tooling to parse Redwood configs and get a project's paths                                                                                                                                          |
+| [`@cedarjs/prerender`](https://github.com/cedarjs/cedar/blob/main/packages/prerender/README.md)                   | Defines functionality for prerendering static content                                                                                                                                                        |
+| [`@cedarjs/record`](https://github.com/cedarjs/cedar/blob/main/packages/record/README.md)                         | ORM built on top of Prisma. It may be extended in the future to wrap other database access packages                                                                                                          |
+| [`@cedarjs/router`](https://github.com/cedarjs/cedar/blob/main/packages/router/README.md)                         | The built-in router for Redwood                                                                                                                                                                              |
+| [`@cedarjs/structure`](https://github.com/cedarjs/cedar/blob/main/packages/structure/README.md)                   | Provides a way to build, validate and inspect an object graph that represents a complete Redwood project                                                                                                     |
+| [`@cedarjs/telemetry`](https://github.com/cedarjs/cedar/blob/main/packages/telemetry/README.md)                   | Provides functionality for anonymous data collection                                                                                                                                                         |
+| [`@cedarjs/testing`](https://github.com/cedarjs/cedar/blob/main/packages/testing/README.md)                       | Provides helpful defaults when testing a Redwood project's web side                                                                                                                                          |
+| [`@cedarjs/web`](https://github.com/cedarjs/cedar/blob/main/packages/web/README.md)                               | Configures a Redwood's app web side: wraps the Apollo Client in `RedwoodApolloProvider`; defines the Cell HOC                                                                                                |
 
 ## Contributing Docs
 
@@ -106,7 +106,7 @@ First off, thank you for your interest in contributing docs! Redwood prides itse
 
 Before you get started, there's an implicit doc-distinction that we should make explicit: all the docs on redwoodjs.com are for helping people develop apps using Redwood, while all the docs on the Redwood repo are for helping people contribute to Redwood.
 
-Although Developing and Contributing docs are in different places, they most definitely should be linked and referenced as needed. For example, it's appropriate to have a "Contributing" doc on redwoodjs.com that's context-appropriate, but it should link to the Framework's [CONTRIBUTING.md](https://github.com/redmix-run/redmix/blob/main/CONTRIBUTING.md) (the way this doc does).
+Although Developing and Contributing docs are in different places, they most definitely should be linked and referenced as needed. For example, it's appropriate to have a "Contributing" doc on redwoodjs.com that's context-appropriate, but it should link to the Framework's [CONTRIBUTING.md](https://github.com/cedarjs/cedar/blob/main/CONTRIBUTING.md) (the way this doc does).
 
 ### How Redwood Thinks about Docs
 
@@ -115,7 +115,7 @@ Before we get into the how-to, a little explanation. When thinking about docs, w
 ### Docs for Developing Redwood Apps
 
 redwoodjs.com has three kinds of Developing docs: References, How To's, and The Tutorial.
-You can find References and How To's within their respective directories on the redwood/redwood repo: [docs/](https://github.com/redmix-run/redmix/tree/main/docs) and [how-to/](https://github.com/redmix-run/redmix/tree/main/docs/how-to).
+You can find References and How To's within their respective directories on the redwood/redwood repo: [docs/](https://github.com/cedarjs/cedar/tree/main/docs) and [how-to/](https://github.com/cedarjs/cedar/tree/main/docs/how-to).
 
 The Tutorial is a standalone document that serves a specific purpose as an introduction to Redwood, an aspirational roadmap, and an example of developer experience. As such, it's distinct from the categories mentioned, although it's most similar to How To's.
 

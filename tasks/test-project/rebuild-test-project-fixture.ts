@@ -9,7 +9,7 @@ import semver from 'semver'
 import { hideBin } from 'yargs/helpers'
 import yargs from 'yargs/yargs'
 
-import { RedwoodTUI, ReactiveTUIContent, RedwoodStyling } from '@redmix/tui'
+import { RedwoodTUI, ReactiveTUIContent, RedwoodStyling } from '@cedarjs/tui'
 
 import {
   addFrameworkDepsToProject,
@@ -25,7 +25,7 @@ import {
   exec,
 } from './util'
 
-// If the current Node.js version is outside of the recommended range the Redmix
+// If the current Node.js version is outside of the recommended range the Cedar
 // setup command will pause and ask the user if they want to continue. This
 // hangs this script without any information to the user that tries to rebuild
 // the test-project. It's better to fail early so the correct node version can
@@ -70,7 +70,7 @@ const OUTPUT_PROJECT_PATH = resumePath
   ? /* path.resolve(String(resumePath)) */ resumePath
   : path.join(
       os.tmpdir(),
-      'redmix-test-project',
+      'cedar-test-project',
       // ":" is problematic with paths
       new Date().toISOString().split(':').join('-'),
     )
@@ -253,7 +253,7 @@ if (resumePath && !fs.existsSync(path.join(resumePath, 'redwood.toml'))) {
 }
 
 const createProject = () => {
-  const cmd = `yarn node ./packages/create-redmix-app/dist/create-redmix-app.js ${OUTPUT_PROJECT_PATH}`
+  const cmd = `yarn node ./packages/create-cedar-app/dist/create-cedar-app.js ${OUTPUT_PROJECT_PATH}`
 
   const subprocess = exec(
     cmd,
@@ -299,7 +299,7 @@ async function runCommand() {
   // build:clean part (and/or combine it with the tarsync)
   await tuiTask({
     step: 1,
-    title: '[link] Building Redmix framework',
+    title: '[link] Building Cedar framework',
     content: 'yarn build:clean && yarn build',
     task: async () => {
       return exec(
@@ -554,7 +554,7 @@ async function runCommand() {
       )
       const templateRootPackageJsonPath = path.join(
         __dirname,
-        '../../packages/create-redmix-app/templates/ts/package.json',
+        '../../packages/create-cedar-app/templates/ts/package.json',
       )
       const newRootPackageJson = JSON.parse(
         fs.readFileSync(templateRootPackageJsonPath, 'utf8'),

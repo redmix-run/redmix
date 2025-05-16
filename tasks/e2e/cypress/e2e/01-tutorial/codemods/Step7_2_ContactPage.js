@@ -8,7 +8,7 @@ import {
   Submit,
   FieldError,
   Label,
-} from '@redmix/forms'
+} from '@cedarjs/forms'
 
 const ContactPage = () => {
   const onSubmit = (data) => {

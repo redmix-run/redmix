@@ -7,7 +7,7 @@ import type {
   CellSuccessProps,
   CellFailureProps,
   TypedDocumentNode,
-} from '@redmix/web'
+} from '@cedarjs/web'
 
 import AuthorCell from 'src/components/AuthorCell'
 

@@ -1,6 +1,6 @@
 import { writeFileSync } from 'node:fs'
 
-import { build, defaultBuildOptions } from '@redmix/framework-tools'
+import { build, defaultBuildOptions } from '@cedarjs/framework-tools'
 
 // ESM build
 await build({

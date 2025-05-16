@@ -50,7 +50,7 @@ import { vi, afterEach, test, expect, describe } from 'vitest'
 // Load mocks
 import '../../../../lib/test'
 
-import { ensurePosixPath } from '@redmix/project-config'
+import { ensurePosixPath } from '@cedarjs/project-config'
 
 import { getDefaultArgs } from '../../../../lib/index.js'
 import * as sdl from '../sdl.js'

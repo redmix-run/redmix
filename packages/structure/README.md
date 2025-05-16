@@ -20,7 +20,7 @@
 The most common use-case is getting the diagnostics of a complete Redwood project:
 
 ```ts
-import { getProject } from '@redmix/structure'
+import { getProject } from '@cedarjs/structure'
 async function test() {
   const project = getProject('/path/to/app') // or "file:///path/to/app"
   for (const d of await project.collectDiagnostics()) {
@@ -45,7 +45,7 @@ You can also traverse the graph to get more detailed information on multiple asp
 For example, iterating over the routes of a Redwood project:
 
 ```ts
-import { getProject } from '@redmix/structure'
+import { getProject } from '@cedarjs/structure'
 async function test() {
   const project = getProject('/path/to/app')
   for (const route of project.router.routes) {
@@ -73,7 +73,7 @@ async function test() {
 - Requesting a node using its id will not require the complete project to be processed. Only the subset that is needed (usually only the node's ancestors). This is important to enable efficient IDE-like tooling to interact with the project graph and get diagnostics for quickly changing files.
 
 ```ts
-import { getProject } from '@redmix/structure'
+import { getProject } from '@cedarjs/structure'
 async function test() {
   const project = getProject('/path/to/app')
   const router = await project.findNode('file:///path/to/app/web/src/Routes.js')
@@ -104,7 +104,7 @@ Anatomy of an id:
 To allow use cases like dealing with unsaved files in IDEs, some filesystem methods can be overridden via the Host interface.
 
 ```ts
-import { Host, getProject } from '@redmix/structure'
+import { Host, getProject } from '@cedarjs/structure'
 const myHost: Host {
   readFileSync(path:string){
     // ...
@@ -124,7 +124,7 @@ When possible, the project graph is constructed synchronously. There are only a 
 - If you want to check for structural validity, gather all diagnostics and look for errors.
 
 ```ts
-import { getProject, DiagnosticSeverity } from '@redmix/structure'
+import { getProject, DiagnosticSeverity } from '@cedarjs/structure'
 async function test() {
   try {
     const project = getProject('/path/to/app')

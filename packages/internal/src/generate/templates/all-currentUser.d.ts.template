@@ -1,5 +1,5 @@
-import '@redmix/api'
-import '@redmix/auth'
+import '@cedarjs/api'
+import '@cedarjs/auth'
 
 import { getCurrentUser } from '../../../api/src/lib/auth'
 
@@ -17,12 +17,12 @@ type UndefinedRoles = {
 
 type Overwrite<T, U> = Omit<T, keyof U> & U
 
-declare module '@redmix/context' {
+declare module '@cedarjs/context' {
   interface GlobalContext {
     currentUser?: Overwrite<UndefinedRoles, InferredCurrentUser>
   }
 }
 
-declare module '@redmix/auth' {
+declare module '@cedarjs/auth' {
   interface CurrentUser extends InferredCurrentUser {}
 }

@@ -79,7 +79,7 @@ export interface OutlineItem {
  *   - the string must start with end with "..." (this means interactive)
  *   - the interactive process will start when this item is selected
  *   - not all redwood commands are supported in interactive mode
- *   - see: https://github.com/redmix-run/redmix/tree/main/packages/structure/src/interactive_cli
+ *   - see: https://github.com/cedarjs/cedar/tree/main/packages/structure/src/interactive_cli
  */
 type OutlineLinkString = string
 

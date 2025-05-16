@@ -1,4 +1,4 @@
-import { createLogger } from '@redmix/api/logger'
+import { createLogger } from '@cedarjs/api/logger'
 
 /**
  * Creates a logger with RedwoodLoggerOptions

@@ -1,3 +1,3 @@
-const { getWebSideDefaultBabelConfig } = require('@redmix/babel-config')
+const { getWebSideDefaultBabelConfig } = require('@cedarjs/babel-config')
 
 module.exports = getWebSideDefaultBabelConfig({ forJest: true })

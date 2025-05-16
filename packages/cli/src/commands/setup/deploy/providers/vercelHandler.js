@@ -2,8 +2,8 @@ import path from 'path'
 
 import { Listr } from 'listr2'
 
-import { recordTelemetryAttributes } from '@redmix/cli-helpers'
-import { errorTelemetry } from '@redmix/telemetry'
+import { recordTelemetryAttributes } from '@cedarjs/cli-helpers'
+import { errorTelemetry } from '@cedarjs/telemetry'
 
 import c from '../../../../lib/colors.js'
 import { getPaths, printSetupNotes, writeFile } from '../../../../lib/index.js'

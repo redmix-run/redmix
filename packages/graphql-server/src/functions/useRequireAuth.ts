@@ -1,10 +1,10 @@
 import type { APIGatewayEvent, Context as LambdaContext } from 'aws-lambda'
 
-import type { Decoder } from '@redmix/api'
-import { getAuthenticationContext } from '@redmix/api'
-import type { GlobalContext } from '@redmix/context'
-import { context as globalContext } from '@redmix/context'
-import { getAsyncStoreInstance } from '@redmix/context/dist/store'
+import type { Decoder } from '@cedarjs/api'
+import { getAuthenticationContext } from '@cedarjs/api'
+import type { GlobalContext } from '@cedarjs/context'
+import { context as globalContext } from '@cedarjs/context'
+import { getAsyncStoreInstance } from '@cedarjs/context/dist/store'
 
 import type { GetCurrentUser } from '../types'
 

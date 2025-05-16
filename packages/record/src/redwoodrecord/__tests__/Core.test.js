@@ -103,11 +103,11 @@ describe('User subclass', () => {
         db.user.findMany = vi.fn(() => [
           {
             id: 1,
-            email: 'rob@redmix.com',
+            email: 'rob@cedarjs.com',
           },
         ])
 
-        const where = { email: 'rob@redmix.com' }
+        const where = { email: 'rob@cedarjs.com' }
         await User.where(where)
 
         expect(db.user.findMany).toHaveBeenCalledWith({ where })
@@ -128,7 +128,7 @@ describe('User subclass', () => {
         db.user.findMany = vi.fn(() => [
           {
             id: 1,
-            email: 'rob@redmix.com',
+            email: 'rob@cedarjs.com',
           },
         ])
 
@@ -139,7 +139,7 @@ describe('User subclass', () => {
     describe('create', () => {
       it('initializes and saves a new record from a list of attributes', async () => {
         const attributes = {
-          email: 'peter@redmix.com',
+          email: 'peter@cedarjs.com',
           name: 'Peter Pistorius',
           hashedPassword: 'abc',
           salt: 'abc',
@@ -151,7 +151,7 @@ describe('User subclass', () => {
         expect(db.user.create).toHaveBeenCalledWith({ data: attributes })
         expect(user instanceof User).toEqual(true)
         expect(user.id).not.toEqual(undefined)
-        expect(user.email).toEqual('peter@redmix.com')
+        expect(user.email).toEqual('peter@cedarjs.com')
         expect(user.name).toEqual('Peter Pistorius')
       })
     })
@@ -161,7 +161,7 @@ describe('User subclass', () => {
         const id = 1
         db.user.findFirst = vi.fn(() => ({
           id,
-          email: 'rob@redmix.com',
+          email: 'rob@cedarjs.com',
         }))
         const user = await User.find(id)
 
@@ -187,7 +187,7 @@ describe('User subclass', () => {
         const id = 1
         db.user.findFirst = vi.fn(() => ({
           id,
-          email: 'rob@redmix.com',
+          email: 'rob@cedarjs.com',
         }))
 
         const user = await User.findBy()
@@ -200,13 +200,13 @@ describe('User subclass', () => {
         const id = 1
         db.user.findFirst = vi.fn(() => ({
           id,
-          email: 'tom@redmix.com',
+          email: 'tom@cedarjs.com',
         }))
 
-        const user = await User.findBy({ email: 'tom@redmix.com' })
+        const user = await User.findBy({ email: 'tom@cedarjs.com' })
 
         expect(db.user.findFirst).toHaveBeenCalledWith({
-          where: { email: 'tom@redmix.com' },
+          where: { email: 'tom@cedarjs.com' },
         })
         expect(user.id).toEqual(id)
       })
@@ -223,7 +223,7 @@ describe('User subclass', () => {
         const id = 1
         db.user.findFirst = vi.fn(() => ({
           id,
-          email: 'tom@redmix.com',
+          email: 'tom@cedarjs.com',
         }))
 
         const userFirst = await User.first()
@@ -239,7 +239,7 @@ describe('User subclass', () => {
   describe('instance methods', () => {
     describe('destroy', () => {
       it('deletes a record', async () => {
-        const data = { id: 1, email: 'tom@redmix.com' }
+        const data = { id: 1, email: 'tom@cedarjs.com' }
         db.user.delete = vi.fn(() => data)
         const user = User.build(data)
 
@@ -251,7 +251,7 @@ describe('User subclass', () => {
       })
 
       it('returns the record that was deleted', async () => {
-        const data = { id: 1, email: 'tom@redmix.com' }
+        const data = { id: 1, email: 'tom@cedarjs.com' }
         db.user.delete = vi.fn(() => data)
         const user = User.build(data)
         const result = await user.destroy()
@@ -284,7 +284,7 @@ describe('User subclass', () => {
       describe('create new', () => {
         it('returns true if create is successful', async () => {
           const attributes = {
-            email: 'peter@redmix.com',
+            email: 'peter@cedarjs.com',
             name: 'Peter Pistorius',
             hashedPassword: 'abc',
             salt: 'abc',
@@ -361,7 +361,7 @@ describe('User subclass', () => {
       describe('update existing', () => {
         it('returns true if update is successful', async () => {
           const attributes = {
-            email: 'updated@redmix.com',
+            email: 'updated@cedarjs.com',
             name: 'Peter Pistorius',
             hashedPassword: 'abc',
             salt: 'abc',
@@ -374,13 +374,13 @@ describe('User subclass', () => {
             where: { id: 1 },
             data: attributes,
           })
-          expect(result.email).toEqual('updated@redmix.com')
+          expect(result.email).toEqual('updated@cedarjs.com')
         })
 
         it('allows different primary key', async () => {
           User.primaryKey = 'userId'
           const attributes = {
-            email: 'updated@redmix.com',
+            email: 'updated@cedarjs.com',
             name: 'Peter Pistorius',
             hashedPassword: 'abc',
             salt: 'abc',
@@ -443,7 +443,7 @@ describe('User subclass', () => {
     describe('update', () => {
       it('updates an existing record with new data', async () => {
         const attributes = {
-          email: 'updated@redmix.com',
+          email: 'updated@cedarjs.com',
           name: 'Robert Cameron',
           hashedPassword: 'abc',
           salt: 'abc',

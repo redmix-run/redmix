@@ -1,7 +1,7 @@
 import type {
   Middleware,
   MiddlewareClass,
-} from '@redmix/web/dist/server/middleware'
+} from '@cedarjs/web/dist/server/middleware'
 
 // Tuple of [mw, '*.{extension}']
 export type MiddlewareReg = (

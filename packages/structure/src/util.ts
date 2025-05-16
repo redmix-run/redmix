@@ -1,5 +1,5 @@
 export function validateRoutePath(path: string) {
-  // copied from https://github.com/redmix-run/redmix/blob/master/packages/router/src/util.js
+  // copied from https://github.com/cedarjs/cedar/blob/master/packages/router/src/util.js
   // Check that path begins with a slash.
   if (!path.startsWith('/')) {
     throw new Error(`Route path does not begin with a slash: "${path}"`)

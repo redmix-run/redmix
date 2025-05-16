@@ -1,9 +1,9 @@
 {
-  "name": "@redmix/web",
+  "name": "@cedarjs/web",
   "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/redmix-run/redmix.git",
+    "url": "git+https://github.com/cedarjs/cedar.git",
     "directory": "packages/web"
   },
   "license": "MIT",
@@ -130,7 +130,7 @@
   ],
   "scripts": {
     "build": "tsx ./build.ts && yarn build:types",
-    "build:pack": "yarn pack -o redmix-web.tgz",
+    "build:pack": "yarn pack -o cedar-web.tgz",
     "build:types": "tsc --build --verbose ./tsconfig.build.json ./tsconfig.cjs.json",
     "build:watch": "nodemon --watch src --ext \"js,jsx,ts,tsx\" --ignore dist --exec \"yarn build\"",
     "check:attw": "tsx ./attw.ts",
@@ -143,8 +143,8 @@
   "dependencies": {
     "@apollo/client": "3.11.1",
     "@babel/runtime-corejs3": "7.26.10",
-    "@redmix/auth": "workspace:*",
-    "@redmix/server-store": "workspace:*",
+    "@cedarjs/auth": "workspace:*",
+    "@cedarjs/server-store": "workspace:*",
     "@whatwg-node/fetch": "0.9.21",
     "apollo-upload-client": "18.0.1",
     "cookie": "1.0.2",
@@ -164,8 +164,8 @@
     "@babel/core": "^7.26.10",
     "@babel/plugin-transform-runtime": "7.26.10",
     "@babel/runtime": "7.25.7",
-    "@redmix/framework-tools": "workspace:*",
-    "@redmix/internal": "workspace:*",
+    "@cedarjs/framework-tools": "workspace:*",
+    "@cedarjs/internal": "workspace:*",
     "@rollup/plugin-babel": "6.0.4",
     "@testing-library/jest-dom": "6.5.0",
     "@testing-library/react": "14.3.1",

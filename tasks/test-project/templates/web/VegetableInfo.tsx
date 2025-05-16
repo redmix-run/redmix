@@ -1,6 +1,6 @@
 import type { Vegetable } from 'types/graphql'
 
-import { registerFragment } from '@redmix/web/apollo'
+import { registerFragment } from '@cedarjs/web/apollo'
 
 import Card from 'src/components/Card'
 import StallInfo from 'src/components/StallInfo'

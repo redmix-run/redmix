@@ -14,8 +14,8 @@ import {
   expect,
 } from 'vitest'
 
-import type { AuthHandlerArgs } from '@redmix/cli-helpers'
-import type { AuthGeneratorCtx } from '@redmix/cli-helpers/src/auth/authTasks'
+import type { AuthHandlerArgs } from '@cedarjs/cli-helpers'
+import type { AuthGeneratorCtx } from '@cedarjs/cli-helpers/src/auth/authTasks'
 
 vi.mock('fs', async () => ({ ...memfs, default: memfs }))
 vi.mock('node:fs', async () => ({ ...memfs, default: memfs }))
@@ -37,7 +37,7 @@ const { redwoodProjectPath, dbSchemaPath, libPath, functionsPath } = vi.hoisted(
   },
 )
 
-vi.mock('@redmix/cli-helpers', () => {
+vi.mock('@cedarjs/cli-helpers', () => {
   return {
     getGraphqlPath: () => {
       return redwoodProjectPath + '/api/src/functions/graphql.ts'
@@ -60,7 +60,7 @@ vi.mock('@redmix/cli-helpers', () => {
     },
     addEnvVarTask: () => {},
     // I wish I could have used something like
-    // vi.requireActual(@redmix/cli-helpers) here, but I couldn't because
+    // vi.requireActual(@cedarjs/cli-helpers) here, but I couldn't because
     // jest doesn't support ESM
     standardAuthHandler: async (args: AuthHandlerArgs) => {
       if (args.extraTasks) {
@@ -251,7 +251,7 @@ model Post {
       {
         [packageJsonPath]: '{ "version": "0.0.0" }',
         'api/src/functions/graphql.ts': `
-import { createGraphQLHandler } from "@redmix/graphql-server"
+import { createGraphQLHandler } from "@cedarjs/graphql-server"
 
 import { getCurrentUser } from 'src/lib/auth'
 `,
@@ -305,14 +305,14 @@ model UserExample {
       {
         [packageJsonPath]: '{ "version": "0.0.0" }',
         'api/src/functions/graphql.ts': `
-import { createGraphQLHandler } from "@redmix/graphql-server"
+import { createGraphQLHandler } from "@cedarjs/graphql-server"
 
 import { getCurrentUser } from 'src/lib/auth'
 `,
         'api/db/schema.prisma': actualFs.readFileSync(
           path.resolve(
             __dirname +
-              '/../../../../../create-redmix-app/templates/ts/api/db/schema.prisma',
+              '/../../../../../create-cedar-app/templates/ts/api/db/schema.prisma',
           ),
           'utf-8',
         ),
@@ -350,7 +350,7 @@ import { getCurrentUser } from 'src/lib/auth'
       {
         [packageJsonPath]: '{ "version": "0.0.0" }',
         'api/src/functions/graphql.ts': `
-import { createGraphQLHandler } from "@redmix/graphql-server"
+import { createGraphQLHandler } from "@cedarjs/graphql-server"
 
 import { getCurrentUser } from 'src/lib/auth'
 `,

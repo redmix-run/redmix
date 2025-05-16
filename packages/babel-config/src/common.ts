@@ -5,7 +5,7 @@ import type { PluginItem, PluginOptions, TransformOptions } from '@babel/core'
 import type { RegisterOptions } from '@babel/register'
 import { parseConfigFileTextToJson } from 'typescript'
 
-import { getPaths } from '@redmix/project-config'
+import { getPaths } from '@cedarjs/project-config'
 
 import pkgJson from '../package.json'
 
@@ -172,8 +172,8 @@ export const getPathsFromTypeScriptConfig = (
     // "src/*"
     // "$api/*"
     // "types/*"
-    // "@redmix/testing"
-    if (key.match(/src\/|\$api\/\*|types\/\*|\@redmix\/.*/g)) {
+    // "@cedarjs/testing"
+    if (key.match(/src\/|\$api\/\*|types\/\*|\@cedarjs\/.*/g)) {
       continue
     }
     const aliasKey = key.replace('/*', '')

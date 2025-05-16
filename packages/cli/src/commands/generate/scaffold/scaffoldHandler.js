@@ -8,9 +8,9 @@ import humanize from 'humanize-string'
 import { Listr } from 'listr2'
 import pascalcase from 'pascalcase'
 
-import { recordTelemetryAttributes } from '@redmix/cli-helpers'
-import { generate as generateTypes } from '@redmix/internal/dist/generate/generate'
-import { getConfig } from '@redmix/project-config'
+import { recordTelemetryAttributes } from '@cedarjs/cli-helpers'
+import { generate as generateTypes } from '@cedarjs/internal/dist/generate/generate'
+import { getConfig } from '@cedarjs/project-config'
 
 import c from '../../../lib/colors.js'
 import {
@@ -673,8 +673,8 @@ const addLayoutImport = () => {
 
   if (!routesContent.match(importLayout)) {
     const newRoutesContent = routesContent.replace(
-      /['"]@redmix\/router['"](\s*)/,
-      `'@redmix/router'\n\n${importLayout}$1`,
+      /['"]@cedarjs\/router['"](\s*)/,
+      `'@cedarjs/router'\n\n${importLayout}$1`,
     )
     writeFile(routesPath, newRoutesContent, { overwriteExisting: true })
 
@@ -707,11 +707,13 @@ const addSetImport = (task) => {
   const routesContent = readFile(routesPath).toString()
   const [redwoodRouterImport, importStart, spacing, importContent, importEnd] =
     routesContent.match(
-      /(import {)(\s*)([^]*)(} from ['"]@redmix\/router['"])/,
+      /(import {)(\s*)([^]*)(} from ['"]@cedarjs\/router['"])/,
     ) || []
 
   if (!redwoodRouterImport) {
-    task.skip("Couldn't add Set import from @redmix/router to Routes.{jsx,tsx}")
+    task.skip(
+      "Couldn't add Set import from @cedarjs/router to Routes.{jsx,tsx}",
+    )
     return undefined
   }
 

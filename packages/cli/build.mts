@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url'
 
 import fg from 'fast-glob'
 
-import { buildEsm, defaultIgnorePatterns } from '@redmix/framework-tools'
+import { buildEsm, defaultIgnorePatterns } from '@cedarjs/framework-tools'
 
 await buildEsm()
 

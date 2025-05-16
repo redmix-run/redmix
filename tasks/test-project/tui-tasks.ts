@@ -145,7 +145,7 @@ export async function webTasks(
           await createPage('profile /profile')
 
           // Update the profile page test
-          const testFileContent = `import { render, waitFor, screen } from '@redmix/testing/web'
+          const testFileContent = `import { render, waitFor, screen } from '@cedarjs/testing/web'
 
           import ProfilePage from './ProfilePage'
 
@@ -425,13 +425,13 @@ export async function apiTasks(
     await exec('yarn build:pack', [], getExecaOptions(apiPkg))
     await exec('yarn build:pack', [], getExecaOptions(webPkg))
 
-    const setupTgz = path.join(setupPkg, 'redmix-auth-dbauth-setup.tgz')
-    const apiTgz = path.join(apiPkg, 'redmix-auth-dbauth-api.tgz')
-    const webTgz = path.join(webPkg, 'redmix-auth-dbauth-web.tgz')
+    const setupTgz = path.join(setupPkg, 'cedar-auth-dbauth-setup.tgz')
+    const apiTgz = path.join(apiPkg, 'cedar-auth-dbauth-api.tgz')
+    const webTgz = path.join(webPkg, 'cedar-auth-dbauth-web.tgz')
 
-    const setupTgzDest = path.join(outputPath, 'redmix-auth-dbauth-setup.tgz')
-    const apiTgzDest = path.join(outputPath, 'redmix-auth-dbauth-api.tgz')
-    const webTgzDest = path.join(outputPath, 'redmix-auth-dbauth-web.tgz')
+    const setupTgzDest = path.join(outputPath, 'cedar-auth-dbauth-setup.tgz')
+    const apiTgzDest = path.join(outputPath, 'cedar-auth-dbauth-api.tgz')
+    const webTgzDest = path.join(outputPath, 'cedar-auth-dbauth-web.tgz')
 
     fs.copyFileSync(setupTgz, setupTgzDest)
     fs.copyFileSync(apiTgz, apiTgzDest)
@@ -449,9 +449,9 @@ export async function apiTasks(
     projectPackageJson.resolutions ??= {}
     projectPackageJson.resolutions = {
       ...projectPackageJson.resolutions,
-      '@redmix/auth-dbauth-setup': './redmix-auth-dbauth-setup.tgz',
-      '@redmix/auth-dbauth-api': './redmix-auth-dbauth-api.tgz',
-      '@redmix/auth-dbauth-web': './redmix-auth-dbauth-web.tgz',
+      '@cedarjs/auth-dbauth-setup': './cedar-auth-dbauth-setup.tgz',
+      '@cedarjs/auth-dbauth-api': './cedar-auth-dbauth-api.tgz',
+      '@cedarjs/auth-dbauth-web': './cedar-auth-dbauth-web.tgz',
     }
 
     fs.writeFileSync(
@@ -604,7 +604,7 @@ export async function apiTasks(
           const createPage = createBuilder('yarn redwood g page')
           await createPage('double')
 
-          const doublePageContent = `import { Metadata } from '@redmix/web'
+          const doublePageContent = `import { Metadata } from '@cedarjs/web'
 
 const DoublePage = () => {
   return (

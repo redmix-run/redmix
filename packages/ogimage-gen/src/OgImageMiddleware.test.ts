@@ -5,9 +5,9 @@ import React from 'react'
 import { vol, fs as memfs } from 'memfs'
 import { vi, describe, beforeEach, afterEach, test, expect } from 'vitest'
 
-import type { RWRouteManifestItem } from '@redmix/internal'
-import { ensurePosixPath } from '@redmix/project-config'
-import { MiddlewareResponse } from '@redmix/web/middleware'
+import type { RWRouteManifestItem } from '@cedarjs/internal'
+import { ensurePosixPath } from '@cedarjs/project-config'
+import { MiddlewareResponse } from '@cedarjs/web/middleware'
 
 import OgImageMiddleware from './OgImageMiddleware'
 

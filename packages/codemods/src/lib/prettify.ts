@@ -2,7 +2,7 @@ import path from 'path'
 
 import { format } from 'prettier'
 
-import { getPaths } from '@redmix/project-config'
+import { getPaths } from '@cedarjs/project-config'
 
 const getPrettierConfig = async () => {
   try {

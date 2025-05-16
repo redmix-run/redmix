@@ -11,7 +11,7 @@ The Redwood CLI has two entry-point commands:
 1. **redwood** (alias `rw`), which is for developing an application, and
 2. **redwood-tools** (alias `rwt`), which is for contributing to the framework.
 
-This document covers the `redwood` command . For `redwood-tools`, see [Contributing](https://github.com/redmix-run/redmix/blob/main/CONTRIBUTING.md#cli-reference-redwood-tools) in the Redwood repo.
+This document covers the `redwood` command . For `redwood-tools`, see [Contributing](https://github.com/cedarjs/cedar/blob/main/CONTRIBUTING.md#cli-reference-redwood-tools) in the Redwood repo.
 
 **A Quick Note on Syntax**
 
@@ -146,7 +146,7 @@ Right now, you can only use the Redwood console to interact with your database (
 ~/redwood-app$ yarn redwood console
 yarn run v1.22.4
 > await db.user.findMany()
-> [ { id: 1, email: 'tom@redmix.com', name: 'Tom'  } ]
+> [ { id: 1, email: 'tom@cedarjs.com', name: 'Tom'  } ]
 ```
 
 ## data-migrate
@@ -947,7 +947,7 @@ Done in 1.02s.
 The generated page will get the route parameter as a prop:
 
 ```jsx {5,12,14} title="./web/src/pages/QuotePage/QuotePage.js"
-import { Link, routes } from '@redmix/router'
+import { Link, routes } from '@cedarjs/router'
 
 const QuotePage = ({ id }) => {
   return (
@@ -1512,7 +1512,7 @@ $ /redwood-app/node_modules/.bin/redwood info
     Chrome: 78.0.3904.108
     Firefox: 76.0.1
   npmPackages:
-    @redmix/core: ^0.7.0-rc.3 => 0.7.0-rc.3
+    @cedarjs/core: ^0.7.0-rc.3 => 0.7.0-rc.3
 
 Done in 1.98s.
 ```
@@ -1525,7 +1525,7 @@ Lint your files.
 yarn redwood lint
 ```
 
-[Our ESLint configuration](https://github.com/redmix-run/redmix/blob/master/packages/eslint-config/index.js) is a mix of [ESLint's recommended rules](https://eslint.org/docs/rules/), [React's recommended rules](https://www.npmjs.com/package/eslint-plugin-react#list-of-supported-rules), and a bit of our own stylistic flair:
+[Our ESLint configuration](https://github.com/cedarjs/cedar/blob/master/packages/eslint-config/index.js) is a mix of [ESLint's recommended rules](https://eslint.org/docs/rules/), [React's recommended rules](https://www.npmjs.com/package/eslint-plugin-react#list-of-supported-rules), and a bit of our own stylistic flair:
 
 - no semicolons
 - comma dangle when multiline
@@ -1767,7 +1767,7 @@ yarn rw record init
 
 ## redwood-tools (alias rwt)
 
-Redwood's companion CLI development tool. You'll be using this if you're contributing to Redwood. See [Contributing](https://github.com/redmix-run/redmix/blob/main/CONTRIBUTING.md#cli-reference-redwood-tools) in the Redwood repo.
+Redwood's companion CLI development tool. You'll be using this if you're contributing to Redwood. See [Contributing](https://github.com/cedarjs/cedar/blob/main/CONTRIBUTING.md#cli-reference-redwood-tools) in the Redwood repo.
 
 ## setup
 
@@ -1968,21 +1968,21 @@ yarn redwood setup package <npm-package>
 
 #### Usage
 
-Run the made up `@redmix/setup-example` package:
+Run the made up `@cedarjs/setup-example` package:
 
 ```bash
-~/redwood-app$ yarn rw setup package @redmix/setup-example
+~/redwood-app$ yarn rw setup package @cedarjs/setup-example
 ```
 
 Run the same package but using a particular npm tag and avoiding any compatibility checks:
 
 ```bash
-~/redwood-app$ yarn rw setup package @redmix/setup-example@beta --force
+~/redwood-app$ yarn rw setup package @cedarjs/setup-example@beta --force
 ```
 
 **Compatibility Checks**
 
-We perform a simple compatibility check in an attempt to make you aware of potential compatibility issues with setup packages you might wish to run. This works by examining the version of `@redmix/core` you are using within your root `package.json`. We compare this value with a compatibility range the npm package specifies in the `engines.redwoodjs` field of its own `package.json`. If the version of `@redmix/core` you are using falls outside of the compatibility range specified by the package you are attempting to run, we will warn you and ask you to confirm that you wish to continue.
+We perform a simple compatibility check in an attempt to make you aware of potential compatibility issues with setup packages you might wish to run. This works by examining the version of `@cedarjs/core` you are using within your root `package.json`. We compare this value with a compatibility range the npm package specifies in the `engines.redwoodjs` field of its own `package.json`. If the version of `@cedarjs/core` you are using falls outside of the compatibility range specified by the package you are attempting to run, we will warn you and ask you to confirm that you wish to continue.
 
 It's the author of the npm package's responsibility to specify the correct compatibility range, so **you should always research the packages you use with this command**. Especially since they will be executing code on your machine!
 
@@ -2244,7 +2244,7 @@ yarn rw serve web | yarn rw-log-formatter
 
 ## upgrade
 
-Upgrade all `@redmix` packages via an interactive CLI.
+Upgrade all `@cedarjs` packages via an interactive CLI.
 
 ```bash
 yarn redwood upgrade

@@ -122,7 +122,7 @@ export default (file, api) => {
         ),
         j.importSpecifier(j.identifier('Label'), j.identifier('Label')),
       ],
-      j.stringLiteral('@redmix/forms'),
+      j.stringLiteral('@cedarjs/forms'),
     ),
     j.importDeclaration(
       [
@@ -131,14 +131,14 @@ export default (file, api) => {
           j.identifier('useMutation'),
         ),
       ],
-      j.stringLiteral('@redmix/web'),
+      j.stringLiteral('@cedarjs/web'),
     ),
     j.importDeclaration(
       [
         j.importSpecifier(j.identifier('toast'), j.identifier('toast')),
         j.importSpecifier(j.identifier('Toaster'), j.identifier('Toaster')),
       ],
-      j.stringLiteral('@redmix/web/toast'),
+      j.stringLiteral('@cedarjs/web/toast'),
     ),
     j.importDeclaration(
       [j.importSpecifier(j.identifier('useForm'), j.identifier('useForm'))],
@@ -155,7 +155,7 @@ export default (file, api) => {
           j.identifier('useBlocker'),
         ),
       ],
-      j.stringLiteral('@redmix/router'),
+      j.stringLiteral('@cedarjs/router'),
     ),
   ]
 
@@ -164,7 +164,7 @@ export default (file, api) => {
     .find(j.ImportDeclaration, {
       source: {
         type: 'StringLiteral',
-        value: '@redmix/router',
+        value: '@cedarjs/router',
       },
     })
     .remove()
@@ -173,7 +173,7 @@ export default (file, api) => {
     .find(j.ImportDeclaration, {
       source: {
         type: 'StringLiteral',
-        value: '@redmix/web',
+        value: '@cedarjs/web',
       },
     })
     .remove()

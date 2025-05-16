@@ -1,8 +1,8 @@
 import crypto from 'node:crypto'
 import path from 'path'
 
-import { getPaths, colors, addEnvVarTask } from '@redmix/cli-helpers'
-import type { AuthGeneratorCtx } from '@redmix/cli-helpers/src/auth/authTasks'
+import { getPaths, colors, addEnvVarTask } from '@cedarjs/cli-helpers'
+import type { AuthGeneratorCtx } from '@cedarjs/cli-helpers/src/auth/authTasks'
 
 import { addModels, functionsPath, hasModel, libPath } from './shared'
 

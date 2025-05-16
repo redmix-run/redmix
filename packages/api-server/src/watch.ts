@@ -8,9 +8,9 @@ import {
   buildApi,
   cleanApiBuild,
   rebuildApi,
-} from '@redmix/internal/dist/build/api'
-import { loadAndValidateSdls } from '@redmix/internal/dist/validateSchema'
-import { ensurePosixPath, getPaths } from '@redmix/project-config'
+} from '@cedarjs/internal/dist/build/api'
+import { loadAndValidateSdls } from '@cedarjs/internal/dist/validateSchema'
+import { ensurePosixPath, getPaths } from '@cedarjs/project-config'
 
 import type { BuildAndRestartOptions } from './buildManager'
 import { BuildManager } from './buildManager'
