@@ -238,8 +238,8 @@ describe('resolveOptions', () => {
         logger: defaults.logger,
         bodyLimit: defaults.fastifyServerOptions.bodyLimit,
       },
-      apiHost: '::',
-      apiPort: 65501,
+      apiHost: defaults.apiHost,
+      apiPort: defaults.apiPort,
     })
 
     expect(resolvedOptions.configureApiServer.toString()).toEqual(
