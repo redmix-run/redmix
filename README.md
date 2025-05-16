@@ -1,21 +1,21 @@
 <p align="center">
-  <img src="https://avatars2.githubusercontent.com/u/197462962?v=4" width="200" />
-  <h1 align="center">Cedar</h1>
+  <img src="https://avatars.githubusercontent.com/u/211931789?s=200&v=4" width="200" />
+  <h1 align="center">CedarJS</h1>
 </p>
 
 ## About
 
-Cedar is a TypeScript Web App Framework that gives you all the tools you need
-to build web applications quickly and efficiently.
-
-Cedar is a fork of the [RedwoodJS](https://redwoodjs.com/) framework with the
+CedarJS is a fork of the [RedwoodJS](https://redwoodjs.com/) framework with the
 goal of taking it into the modern web development era with a smooth transition
-for existing RedwoodJS applications.
+path for existing RedwoodJS applications.
+
+CedarJS is a reliable, modern, and actively maintained full-stack React
+framework used in production by both large and small companies.
 
 Cedar would obviously not be where it is today without the vision and heroic
 efforts of the RedwoodJS founders, maintainers and community.
 
-## Migrating from RedwoodJS to Cedar
+## Migrating from RedwoodJS to CedarJS
 
 Search and replace all instances of `"@redwoodjs/(.*)": "\d+\.\d+\.\d+"`
 with `"@cedarjs/$1": "0.0.3"` (or whatever the latest version of Cedar is when
