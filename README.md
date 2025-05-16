@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://avatars2.githubusercontent.com/u/197462962?v=4" width="200" />
+  <img src="https://avatars.githubusercontent.com/u/211931789?s=200&v=4" width="200" />
   <h1 align="center">Cedar</h1>
 </p>
 
