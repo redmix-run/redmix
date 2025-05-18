@@ -1,6 +1,6 @@
 {
   "name": "@cedarjs/ogimage-gen",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cedarjs/cedar.git",
@@ -40,10 +40,10 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@cedarjs/internal": "0.0.3",
-    "@cedarjs/project-config": "0.0.3",
-    "@cedarjs/router": "0.0.3",
-    "@cedarjs/web": "0.0.3",
+    "@cedarjs/internal": "0.0.4",
+    "@cedarjs/project-config": "0.0.4",
+    "@cedarjs/router": "0.0.4",
+    "@cedarjs/web": "0.0.4",
     "fast-glob": "3.3.2",
     "lodash": "4.17.21",
     "react": "18.3.1",
