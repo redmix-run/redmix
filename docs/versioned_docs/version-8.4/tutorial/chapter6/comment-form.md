@@ -867,14 +867,9 @@ import {
   TextField,
   TextAreaField,
   Submit,
-<<<<<<< HEAD
-} from '@redmix/forms'
-import type { TypedDocumentNode } from '@redmix/web'
-import { useMutation } from '@redmix/web'
-=======
 } from '@cedarjs/forms'
+import type { TypedDocumentNode } from '@cedarjs/web'
 import { useMutation } from '@cedarjs/web'
->>>>>>> 5918737c3 (Rename to CedarJS)
 // highlight-next-line
 import { toast } from '@cedarjs/web/toast'
 
