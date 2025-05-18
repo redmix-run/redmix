@@ -13,7 +13,7 @@ Here's a diff of what this codemod will do
 -let RedwoodDevFatalErrorPage = undefined
 -if (process.env.NODE_ENV === 'development') {
 -  RedwoodDevFatalErrorPage =
--    require('@redmix/web/dist/components/DevFatalErrorPage').DevFatalErrorPage
+-    require('@cedarjs/web/dist/components/DevFatalErrorPage').DevFatalErrorPage
 -}
 +// This import will be automatically removed when building for production
 +import { DevFatalErrorPage } from '@cedarjs/web/dist/components/DevFatalErrorPage'

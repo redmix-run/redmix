@@ -1780,15 +1780,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cedarjs/api-server@npm:0.0.4":
-  version: 0.0.4
-  resolution: "@cedarjs/api-server@npm:0.0.4"
+"@cedarjs/api-server@npm:0.0.5":
+  version: 0.0.5
+  resolution: "@cedarjs/api-server@npm:0.0.5"
   dependencies:
-    "@cedarjs/context": "npm:0.0.4"
-    "@cedarjs/fastify-web": "npm:0.0.4"
-    "@cedarjs/internal": "npm:0.0.4"
-    "@cedarjs/project-config": "npm:0.0.4"
-    "@cedarjs/web-server": "npm:0.0.4"
+    "@cedarjs/context": "npm:0.0.5"
+    "@cedarjs/fastify-web": "npm:0.0.5"
+    "@cedarjs/internal": "npm:0.0.5"
+    "@cedarjs/project-config": "npm:0.0.5"
+    "@cedarjs/web-server": "npm:0.0.5"
     "@fastify/multipart": "npm:8.3.1"
     "@fastify/url-data": "npm:5.4.0"
     chalk: "npm:4.1.2"
@@ -1805,7 +1805,7 @@ __metadata:
     split2: "npm:4.2.0"
     yargs: "npm:17.7.2"
   peerDependencies:
-    "@cedarjs/graphql-server": 0.0.3
+    "@cedarjs/graphql-server": 0.0.5
   peerDependenciesMeta:
     "@cedarjs/graphql-server":
       optional: true
@@ -1813,13 +1813,13 @@ __metadata:
     rw-api-server-watch: ./dist/watch.js
     rw-log-formatter: ./dist/logFormatter/bin.js
     rw-server: ./dist/bin.js
-  checksum: 10c0/88e597c07fcab6053c1db57054924c13612ba1408ee30cb84016153c7f9f222d52b8dfcfde448c7383cf33572ed1f9e6f4c57c05f44443d86bb57fc01bb26495
+  checksum: 10c0/576d408db40d8f11ccb45f211cf1da25d9ce04362fb8702532d8e04fe43a6de4feae4f1536c7cc495113ea30b517aedde039a901b71a4f99a274ebdf8dc76363
   languageName: node
   linkType: hard
 
-"@cedarjs/api@npm:0.0.4":
-  version: 0.0.4
-  resolution: "@cedarjs/api@npm:0.0.4"
+"@cedarjs/api@npm:0.0.5":
+  version: 0.0.5
+  resolution: "@cedarjs/api@npm:0.0.5"
   dependencies:
     "@prisma/client": "npm:5.20.0"
     "@whatwg-node/fetch": "npm:0.9.21"
@@ -1842,23 +1842,23 @@ __metadata:
     rw: ./dist/cjs/bins/redwood.js
     rwfw: ./dist/cjs/bins/rwfw.js
     tsc: ./dist/cjs/bins/tsc.js
-  checksum: 10c0/d63d38173cb85ac3f819bef078d4f36b6b1d74c288e24382d219d8f543b8c676610436bd4e71ca907df60de6505931023528a06da5fb730efdcaca8db67c143d
+  checksum: 10c0/ac13e24a8ef46fb86dd90990923ea77ca2c6e9494934f9b0a96624835cc9ecc95c6d10d5510d775114156e9520c392b445c29c4e309611f101b7fd41a63b0e61
   languageName: node
   linkType: hard
 
-"@cedarjs/auth@npm:0.0.4":
-  version: 0.0.4
-  resolution: "@cedarjs/auth@npm:0.0.4"
+"@cedarjs/auth@npm:0.0.5":
+  version: 0.0.5
+  resolution: "@cedarjs/auth@npm:0.0.5"
   dependencies:
     core-js: "npm:3.42.0"
     react: "npm:18.3.1"
-  checksum: 10c0/d200d7e2bf09bffac58a019c0f545dbe7f77a242324bd07be97d82b25bb303b26e257147af923fff5c79896ac62954f9dd3b743e0a5185ebf14f9b9dc7bfd2ac
+  checksum: 10c0/2b48e87e42b60d7f4133ad62e65487b5ff720d96d166683435e8a1d2dead339a660a9b982c0763b291445590ab61dc8955f3006c00b1c832d00e92d9ab5365f9
   languageName: node
   linkType: hard
 
-"@cedarjs/babel-config@npm:0.0.4":
-  version: 0.0.4
-  resolution: "@cedarjs/babel-config@npm:0.0.4"
+"@cedarjs/babel-config@npm:0.0.5":
+  version: 0.0.5
+  resolution: "@cedarjs/babel-config@npm:0.0.5"
   dependencies:
     "@babel/core": "npm:^7.26.10"
     "@babel/parser": "npm:7.26.10"
@@ -1873,7 +1873,7 @@ __metadata:
     "@babel/register": "npm:7.25.9"
     "@babel/runtime-corejs3": "npm:7.26.10"
     "@babel/traverse": "npm:7.26.10"
-    "@cedarjs/project-config": "npm:0.0.4"
+    "@cedarjs/project-config": "npm:0.0.5"
     babel-plugin-auto-import: "npm:1.1.0"
     babel-plugin-graphql-tag: "npm:3.3.0"
     babel-plugin-module-resolver: "npm:5.0.2"
@@ -1881,17 +1881,17 @@ __metadata:
     fast-glob: "npm:3.3.2"
     graphql: "npm:16.9.0"
     typescript: "npm:5.6.2"
-  checksum: 10c0/9ba6e00c0ba3e46f918a5446c7c66e87bfbca3abcc1ac9cfebdda96b1c1abdfa172a72ca3d06ae1347e8db2ab655082d7ca73d5e9c0eefc1b60b1260f81b0d6c
+  checksum: 10c0/441a6cb161ec704f463d657c879023e47b048f0eab8f9988e9a92f2bc0d37f333ac1feb082dda5246a038fe4a9f364e0f86ae0fc74d5a79209909233a29f4baf
   languageName: node
   linkType: hard
 
-"@cedarjs/cli-helpers@npm:0.0.4":
-  version: 0.0.4
-  resolution: "@cedarjs/cli-helpers@npm:0.0.4"
+"@cedarjs/cli-helpers@npm:0.0.5":
+  version: 0.0.5
+  resolution: "@cedarjs/cli-helpers@npm:0.0.5"
   dependencies:
     "@babel/core": "npm:^7.26.10"
-    "@cedarjs/project-config": "npm:0.0.4"
-    "@cedarjs/telemetry": "npm:0.0.4"
+    "@cedarjs/project-config": "npm:0.0.5"
+    "@cedarjs/telemetry": "npm:0.0.5"
     "@opentelemetry/api": "npm:1.8.0"
     chalk: "npm:4.1.2"
     dotenv: "npm:16.4.7"
@@ -1906,24 +1906,24 @@ __metadata:
     smol-toml: "npm:1.3.1"
     terminal-link: "npm:2.1.1"
     yargs-parser: "npm:21.1.1"
-  checksum: 10c0/9e3795922c85d2bf4d1035864d23308a148d3426c6240257e09f63623f5c44e7763932bd2513fee4a136e979434d548bf4841bdde59c576cd598d10081c843f4
+  checksum: 10c0/ea4e8c104669fb491494140a8a68d14900f68d6004d90ab422acd01625e6269556e294934c4250bdaea20bb74c8db88b5c3d5166dba8c3248b9616a002b5f16d
   languageName: node
   linkType: hard
 
-"@cedarjs/cli@npm:0.0.4":
-  version: 0.0.4
-  resolution: "@cedarjs/cli@npm:0.0.4"
+"@cedarjs/cli@npm:0.0.5":
+  version: 0.0.5
+  resolution: "@cedarjs/cli@npm:0.0.5"
   dependencies:
     "@babel/runtime-corejs3": "npm:7.26.10"
-    "@cedarjs/api-server": "npm:0.0.4"
-    "@cedarjs/cli-helpers": "npm:0.0.4"
-    "@cedarjs/fastify-web": "npm:0.0.4"
-    "@cedarjs/internal": "npm:0.0.4"
-    "@cedarjs/prerender": "npm:0.0.4"
-    "@cedarjs/project-config": "npm:0.0.4"
-    "@cedarjs/structure": "npm:0.0.4"
-    "@cedarjs/telemetry": "npm:0.0.4"
-    "@cedarjs/web-server": "npm:0.0.4"
+    "@cedarjs/api-server": "npm:0.0.5"
+    "@cedarjs/cli-helpers": "npm:0.0.5"
+    "@cedarjs/fastify-web": "npm:0.0.5"
+    "@cedarjs/internal": "npm:0.0.5"
+    "@cedarjs/prerender": "npm:0.0.5"
+    "@cedarjs/project-config": "npm:0.0.5"
+    "@cedarjs/structure": "npm:0.0.5"
+    "@cedarjs/telemetry": "npm:0.0.5"
+    "@cedarjs/web-server": "npm:0.0.5"
     "@listr2/prompt-adapter-enquirer": "npm:2.0.12"
     "@opentelemetry/api": "npm:1.8.0"
     "@opentelemetry/core": "npm:1.22.0"
@@ -1974,41 +1974,41 @@ __metadata:
     redwood: ./dist/index.js
     rw: ./dist/index.js
     rwfw: ./dist/rwfw.js
-  checksum: 10c0/790ac649fdc842981aeabf4dd4d2680836a3c340de4d5cfe01970917792d443307b43c59adf8dde66050153aaf7264ce91bca0d453eee7663a2dab07b3617653
+  checksum: 10c0/2d0a9559ff0632665ba3400cccf14a92d3574fc8792d2406e1088e7fe5693c8f1e0dc5e789d0400e9da70cb28ee19bc0f903b55c4fffe908163aca2d54b0b272
   languageName: node
   linkType: hard
 
-"@cedarjs/context@npm:0.0.4":
-  version: 0.0.4
-  resolution: "@cedarjs/context@npm:0.0.4"
-  checksum: 10c0/9687d316df50cb15b5be18ff72eeace4e5dbb90571b63f47b16ae14a5fa4cb7a692c321db83589896d4405c2c5a0cedf03b6ba00bc2a5cd8cb80bc33a3219811
+"@cedarjs/context@npm:0.0.5":
+  version: 0.0.5
+  resolution: "@cedarjs/context@npm:0.0.5"
+  checksum: 10c0/a02c026371d06c95ea5f8843244278385ab0637a74cd2e50358856d51a7fe50dd84bef34eb77c0cc8daec828a439f61ada2befd2df06cfd2d6833280dd1aaff8
   languageName: node
   linkType: hard
 
-"@cedarjs/cookie-jar@npm:0.0.4":
-  version: 0.0.4
-  resolution: "@cedarjs/cookie-jar@npm:0.0.4"
+"@cedarjs/cookie-jar@npm:0.0.5":
+  version: 0.0.5
+  resolution: "@cedarjs/cookie-jar@npm:0.0.5"
   dependencies:
     cookie: "npm:0.7.2"
     esbuild: "npm:0.25.0"
     fast-glob: "npm:3.3.2"
     fs-extra: "npm:11.2.0"
-  checksum: 10c0/a0aac848a9959c7aec01093fd5aaadc89bcf49f7a31bde8502267aafdfd9205337e5cedc59bf8156845cf1863ba2392b6fe78da936b508cf35b39373e83da53f
+  checksum: 10c0/0dfae559559498de5f046558ea657121627517de0c1b79da018c45c4397d7aa5ee27dac7352795ba97a7394700ee6083294fdbbd05aa7798dd2157e363ea6379
   languageName: node
   linkType: hard
 
-"@cedarjs/core@npm:0.0.4":
-  version: 0.0.4
-  resolution: "@cedarjs/core@npm:0.0.4"
+"@cedarjs/core@npm:0.0.5":
+  version: 0.0.5
+  resolution: "@cedarjs/core@npm:0.0.5"
   dependencies:
     "@babel/cli": "npm:7.26.4"
-    "@cedarjs/api-server": "npm:0.0.4"
-    "@cedarjs/cli": "npm:0.0.4"
-    "@cedarjs/eslint-config": "npm:0.0.4"
-    "@cedarjs/internal": "npm:0.0.4"
-    "@cedarjs/project-config": "npm:0.0.4"
-    "@cedarjs/testing": "npm:0.0.4"
-    "@cedarjs/web-server": "npm:0.0.4"
+    "@cedarjs/api-server": "npm:0.0.5"
+    "@cedarjs/cli": "npm:0.0.5"
+    "@cedarjs/eslint-config": "npm:0.0.5"
+    "@cedarjs/internal": "npm:0.0.5"
+    "@cedarjs/project-config": "npm:0.0.5"
+    "@cedarjs/testing": "npm:0.0.5"
+    "@cedarjs/web-server": "npm:0.0.5"
     graphql-tag: "npm:2.12.6"
     lodash: "npm:4.17.21"
     nodemon: "npm:3.1.9"
@@ -2033,20 +2033,20 @@ __metadata:
     rw-serve-fe: ./dist/bins/rw-serve-fe.js
     rw-web-server: ./dist/bins/rw-web-server.js
     rwfw: ./dist/bins/rwfw.js
-  checksum: 10c0/f680df19751ffc23024cfaac9e2ba57e9873bfc9f50dffc8136ec7297477e3df2136a64163d5dd88cd2e426dbb7f8a120701cb60e2ef7dc77c82ec2462a9254d
+  checksum: 10c0/82bd1fa65b1f55f65a61e1688a0b64d5d320f1d7f442f1b9c9e529364b4dd1024273087f0a1311195e0400faf0a1fc681da23ff11a1c0622ff9b84dcfd371a17
   languageName: node
   linkType: hard
 
-"@cedarjs/eslint-config@npm:0.0.4":
-  version: 0.0.4
-  resolution: "@cedarjs/eslint-config@npm:0.0.4"
+"@cedarjs/eslint-config@npm:0.0.5":
+  version: 0.0.5
+  resolution: "@cedarjs/eslint-config@npm:0.0.5"
   dependencies:
     "@babel/core": "npm:^7.26.10"
     "@babel/eslint-parser": "npm:7.25.7"
     "@babel/eslint-plugin": "npm:7.25.7"
-    "@cedarjs/eslint-plugin": "npm:0.0.4"
-    "@cedarjs/internal": "npm:0.0.4"
-    "@cedarjs/project-config": "npm:0.0.4"
+    "@cedarjs/eslint-plugin": "npm:0.0.5"
+    "@cedarjs/internal": "npm:0.0.5"
+    "@cedarjs/project-config": "npm:0.0.5"
     "@typescript-eslint/eslint-plugin": "npm:8.19.1"
     "@typescript-eslint/parser": "npm:8.19.1"
     eslint: "npm:8.57.1"
@@ -2060,53 +2060,53 @@ __metadata:
     eslint-plugin-react: "npm:7.36.1"
     eslint-plugin-react-hooks: "npm:4.6.2"
     prettier: "npm:3.5.3"
-  checksum: 10c0/feb867123a1820a22bdc42cce46fe6bccd1fa4cd0c00c44426dbd3a06d567f7d259bbab0a0d7ca117713b55e59de4856b74dba5634ae7fb1751be4fec0fa019c
+  checksum: 10c0/b9b1f537dbb8e249e29b44ec466b12cb9f58c07daef7dc5bf75c65b556a9d11e99ff9e9acfced0809d16348ac6d80c63fc0ea2e2f28733df7bceb686a1275368
   languageName: node
   linkType: hard
 
-"@cedarjs/eslint-plugin@npm:0.0.4":
-  version: 0.0.4
-  resolution: "@cedarjs/eslint-plugin@npm:0.0.4"
+"@cedarjs/eslint-plugin@npm:0.0.5":
+  version: 0.0.5
+  resolution: "@cedarjs/eslint-plugin@npm:0.0.5"
   dependencies:
     "@typescript-eslint/utils": "npm:8.19.1"
     eslint: "npm:8.57.1"
-  checksum: 10c0/c61cbbaeaf733e44a53a455ccda9db8cfe5ac4fb663c8bbd1a7347d9e62b86ad8a869dea30b324117c92862cf50d4343fdadc4762944d676a345dd441e1bc54f
+  checksum: 10c0/b8423bfae899608eaf6f1fac381c8d610285a6b832d09fa64e5fa603b8b79660b6e0b1220ab21b6a7595b57c0d8c5c3692cb000d2db809981dee5f18e066fe73
   languageName: node
   linkType: hard
 
-"@cedarjs/fastify-web@npm:0.0.4":
-  version: 0.0.4
-  resolution: "@cedarjs/fastify-web@npm:0.0.4"
+"@cedarjs/fastify-web@npm:0.0.5":
+  version: 0.0.5
+  resolution: "@cedarjs/fastify-web@npm:0.0.5"
   dependencies:
-    "@cedarjs/project-config": "npm:0.0.4"
+    "@cedarjs/project-config": "npm:0.0.5"
     "@fastify/http-proxy": "npm:9.5.0"
     "@fastify/static": "npm:6.12.0"
     "@fastify/url-data": "npm:5.4.0"
     fast-glob: "npm:3.3.2"
-  checksum: 10c0/a59efd3f4ddea4ed92b20104a4dc5f5d36d40e6d3c4215d573a8238eb9a2258b2cd627cd07cb7a1ce4b92f3463c4646c1b883f03f339350763fad3a5a9420093
+  checksum: 10c0/32d62a42e763369696307b68f81defe05a9bee60556331d3e0c0ffd691c6f7d4ed5213394259d72def1d23c05095cf93e0a697099a6858c3d5d8ea5474957bd8
   languageName: node
   linkType: hard
 
-"@cedarjs/forms@npm:0.0.4":
-  version: 0.0.4
-  resolution: "@cedarjs/forms@npm:0.0.4"
+"@cedarjs/forms@npm:0.0.5":
+  version: 0.0.5
+  resolution: "@cedarjs/forms@npm:0.0.5"
   dependencies:
     graphql: "npm:16.9.0"
     pascalcase: "npm:1.0.0"
     react-hook-form: "npm:7.54.2"
   peerDependencies:
     react: 18.3.1
-  checksum: 10c0/9c4761a5c6c669ab589bf5d6db9ca4ba3701d11ffd478acf19f0fca58f9e6b3024569c06cb594fe9b931ce96b4cf5454d9911996b55aef0f00e3861300d2daa0
+  checksum: 10c0/4ddc1d11cb477d47380420532a185494e2624649d5ed4a53c8a6c9862f3ebad66f664766d59a29818bc578fae16549c504b0e0a5fd70a2e946002b1fa74db4ad
   languageName: node
   linkType: hard
 
-"@cedarjs/graphql-server@npm:0.0.4":
-  version: 0.0.4
-  resolution: "@cedarjs/graphql-server@npm:0.0.4"
+"@cedarjs/graphql-server@npm:0.0.5":
+  version: 0.0.5
+  resolution: "@cedarjs/graphql-server@npm:0.0.5"
   dependencies:
     "@babel/runtime-corejs3": "npm:7.26.10"
-    "@cedarjs/api": "npm:0.0.4"
-    "@cedarjs/context": "npm:0.0.4"
+    "@cedarjs/api": "npm:0.0.5"
+    "@cedarjs/context": "npm:0.0.5"
     "@envelop/core": "npm:5.0.2"
     "@envelop/depth-limit": "npm:4.0.0"
     "@envelop/disable-introspection": "npm:6.0.0"
@@ -2125,13 +2125,13 @@ __metadata:
     graphql-yoga: "npm:5.7.0"
     lodash: "npm:4.17.21"
     uuid: "npm:10.0.0"
-  checksum: 10c0/75c41cca43193e2469b374c9041f88c3467c503860eb84732fa479686cfa579c32e65f9c6f94efdfb5002b56e285098d31044513f0d17282699cf6516ba13046
+  checksum: 10c0/df40fcc49f13a53e976d9309d978f8107901034670e12bba2511a40de1c1c55bd908bdcfd9bee9acd77e505acf507445c3cbfec14230a48dbfdd9cabaf495f81
   languageName: node
   linkType: hard
 
-"@cedarjs/internal@npm:0.0.4":
-  version: 0.0.4
-  resolution: "@cedarjs/internal@npm:0.0.4"
+"@cedarjs/internal@npm:0.0.5":
+  version: 0.0.5
+  resolution: "@cedarjs/internal@npm:0.0.5"
   dependencies:
     "@babel/core": "npm:^7.26.10"
     "@babel/parser": "npm:7.26.10"
@@ -2139,10 +2139,10 @@ __metadata:
     "@babel/plugin-transform-typescript": "npm:^7.26.8"
     "@babel/runtime-corejs3": "npm:7.26.10"
     "@babel/traverse": "npm:7.26.10"
-    "@cedarjs/babel-config": "npm:0.0.4"
-    "@cedarjs/graphql-server": "npm:0.0.4"
-    "@cedarjs/project-config": "npm:0.0.4"
-    "@cedarjs/router": "npm:0.0.4"
+    "@cedarjs/babel-config": "npm:0.0.5"
+    "@cedarjs/graphql-server": "npm:0.0.5"
+    "@cedarjs/project-config": "npm:0.0.5"
+    "@cedarjs/router": "npm:0.0.5"
     "@graphql-codegen/add": "npm:4.0.1"
     "@graphql-codegen/cli": "npm:3.3.1"
     "@graphql-codegen/client-preset": "npm:4.3.3"
@@ -2175,19 +2175,19 @@ __metadata:
   bin:
     rw-gen: ./dist/generate/generate.js
     rw-gen-watch: ./dist/generate/watch.js
-  checksum: 10c0/63d347dd28e7bb57d788e5ccaf808fe358e1fd3ba91b1927d982bbe8e86fcd882bd04532b89262cb61aaee48d1bfdc767dcf03da624f63d10462372d36c75227
+  checksum: 10c0/c22b089c3f37c05974de02b768251a032f3be3d910a6e02c0429e6dcb9f387506381a9664c3b5509b7e5aa21d5e5bfc811bd70dd78c22dd32e8b9f65eec459e6
   languageName: node
   linkType: hard
 
-"@cedarjs/prerender@npm:0.0.4":
-  version: 0.0.4
-  resolution: "@cedarjs/prerender@npm:0.0.4"
+"@cedarjs/prerender@npm:0.0.5":
+  version: 0.0.5
+  resolution: "@cedarjs/prerender@npm:0.0.5"
   dependencies:
-    "@cedarjs/babel-config": "npm:0.0.4"
-    "@cedarjs/project-config": "npm:0.0.4"
-    "@cedarjs/router": "npm:0.0.4"
-    "@cedarjs/structure": "npm:0.0.4"
-    "@cedarjs/web": "npm:0.0.4"
+    "@cedarjs/babel-config": "npm:0.0.5"
+    "@cedarjs/project-config": "npm:0.0.5"
+    "@cedarjs/router": "npm:0.0.5"
+    "@cedarjs/structure": "npm:0.0.5"
+    "@cedarjs/web": "npm:0.0.5"
     "@whatwg-node/fetch": "npm:0.9.21"
     babel-plugin-ignore-html-and-css-imports: "npm:0.1.0"
     cheerio: "npm:1.0.0"
@@ -2196,58 +2196,58 @@ __metadata:
   peerDependencies:
     react: 18.3.1
     react-dom: 18.3.1
-  checksum: 10c0/ce3b3eccbfa6beaf0f5edd68fe22b39a7ef3bfc606954cc45d692e47e8dd680d33a14b42d963e2beceefbad8016322dc25f06ee215b6186edd6266554293f84e
+  checksum: 10c0/92b11f0cc75f3cc414af008fbf2d2118dd14c4367a1cc8b68a592b1897edee6c3a7bb85d9d467f3d10f279ded86d843d7ade54078ac038381cbacfde52dfb9fc
   languageName: node
   linkType: hard
 
-"@cedarjs/project-config@npm:0.0.4":
-  version: 0.0.4
-  resolution: "@cedarjs/project-config@npm:0.0.4"
+"@cedarjs/project-config@npm:0.0.5":
+  version: 0.0.5
+  resolution: "@cedarjs/project-config@npm:0.0.5"
   dependencies:
     deepmerge: "npm:4.3.1"
     fast-glob: "npm:3.3.2"
     smol-toml: "npm:1.3.1"
     string-env-interpolation: "npm:1.0.1"
-  checksum: 10c0/949752a642cd7386c17647ea3471ded5ec43e26ba3db9f1c14409842cca93c608562a9f25edca594c983d098614c1aa7138e36917b1bcd546b8e4a885e8ba288
+  checksum: 10c0/90e6e8531e91d1f9955258bdc73e970accbe497f37e26de5800da947fa5087a15cadc4608a9d1123ed34b218e247719d65f8134a7e90e4d0d84ab858701b06f4
   languageName: node
   linkType: hard
 
-"@cedarjs/router@npm:0.0.4":
-  version: 0.0.4
-  resolution: "@cedarjs/router@npm:0.0.4"
+"@cedarjs/router@npm:0.0.5":
+  version: 0.0.5
+  resolution: "@cedarjs/router@npm:0.0.5"
   dependencies:
     "@babel/runtime-corejs3": "npm:7.26.10"
-    "@cedarjs/auth": "npm:0.0.4"
-    "@cedarjs/server-store": "npm:0.0.4"
+    "@cedarjs/auth": "npm:0.0.5"
+    "@cedarjs/server-store": "npm:0.0.5"
     core-js: "npm:3.42.0"
     react: "npm:18.3.1"
     react-dom: "npm:18.3.1"
   peerDependencies:
     react: 18.3.1
     react-dom: 18.3.1
-  checksum: 10c0/37b0624d91ec6b3decbf9e637e3f4ef934b0962325fa9b27b613d5141c327644e42c70045a5bf3b2eff1f5f91e1cadc01723776a4a5de41d050c80fad0be1e72
+  checksum: 10c0/500e43cd1255920153d8cdb2ab30a8774fff4ab0ffdbc571f8b3121a97a446e949e47ae5d7bc40b6f3cd1069e64d3a4a756a66c1e6ff66d6b70e177fc096630f
   languageName: node
   linkType: hard
 
-"@cedarjs/server-store@npm:0.0.4":
-  version: 0.0.4
-  resolution: "@cedarjs/server-store@npm:0.0.4"
+"@cedarjs/server-store@npm:0.0.5":
+  version: 0.0.5
+  resolution: "@cedarjs/server-store@npm:0.0.5"
   dependencies:
-    "@cedarjs/auth": "npm:0.0.4"
-    "@cedarjs/cookie-jar": "npm:0.0.4"
+    "@cedarjs/auth": "npm:0.0.5"
+    "@cedarjs/cookie-jar": "npm:0.0.5"
     esbuild: "npm:0.25.0"
     fast-glob: "npm:3.3.2"
     fs-extra: "npm:11.2.0"
-  checksum: 10c0/43b1b097c6d5651b0026e8c1b5fb57e7df29468b64d44622c2e6af28b0cb1325e3e671b9606ba003c29176b13383f05a62a506fca6006404cc406e00724344fb
+  checksum: 10c0/d184e1cc7e49cfb9869c43695981133f2bf098e4278b9f5314ed00e2d4c6dfe0b63d98758586741d9e3d438c3a3fb124e4a071a6338652f628620230138ae3e3
   languageName: node
   linkType: hard
 
-"@cedarjs/structure@npm:0.0.4":
-  version: 0.0.4
-  resolution: "@cedarjs/structure@npm:0.0.4"
+"@cedarjs/structure@npm:0.0.5":
+  version: 0.0.5
+  resolution: "@cedarjs/structure@npm:0.0.5"
   dependencies:
     "@babel/runtime-corejs3": "npm:7.26.10"
-    "@cedarjs/project-config": "npm:0.0.4"
+    "@cedarjs/project-config": "npm:0.0.5"
     "@prisma/internals": "npm:5.20.0"
     "@types/line-column": "npm:1.0.2"
     camelcase: "npm:6.3.0"
@@ -2270,37 +2270,37 @@ __metadata:
     vscode-languageserver-textdocument: "npm:1.0.12"
     vscode-languageserver-types: "npm:3.17.5"
     yargs-parser: "npm:21.1.1"
-  checksum: 10c0/6427e4c57c85893ffe46805b52d59bb56e6038f8d72dcfd7aae1214f79bed553058ef48e19fa01ae64a0d42d46d0b04eb761e9dc5112a71410fbda76a6ce344c
+  checksum: 10c0/485181d0d0102cb401c4abd61fa5f137b8df467ac3355317a97aed0f05728a7c1f195e793aa28042df1f7c4343d391b96dcf75adf77a0cbc175da5a9238d82f4
   languageName: node
   linkType: hard
 
-"@cedarjs/telemetry@npm:0.0.4":
-  version: 0.0.4
-  resolution: "@cedarjs/telemetry@npm:0.0.4"
+"@cedarjs/telemetry@npm:0.0.5":
+  version: 0.0.5
+  resolution: "@cedarjs/telemetry@npm:0.0.5"
   dependencies:
-    "@cedarjs/project-config": "npm:0.0.4"
-    "@cedarjs/structure": "npm:0.0.4"
+    "@cedarjs/project-config": "npm:0.0.5"
+    "@cedarjs/structure": "npm:0.0.5"
     "@whatwg-node/fetch": "npm:0.9.21"
     ci-info: "npm:4.0.0"
     envinfo: "npm:7.14.0"
     systeminformation: "npm:5.23.8"
     uuid: "npm:10.0.0"
     yargs: "npm:17.7.2"
-  checksum: 10c0/bfd05ab0e86e0861e77b8fcf4fc2105939ab0549afc122fd8cf2fe5efd02dea04109802fb463fc6c681045dc52a0f909bc3c1dd302b4d8c1e81f6250f91b51f5
+  checksum: 10c0/39c781d93ae869087b3420cf70a6dc793a6350426736d42e8d8df5e4f25c93152378d67a217b5f9fb066110587b9f3ceaaab022f6a5a070f7e92f9e938a8f0df
   languageName: node
   linkType: hard
 
-"@cedarjs/testing@npm:0.0.4":
-  version: 0.0.4
-  resolution: "@cedarjs/testing@npm:0.0.4"
+"@cedarjs/testing@npm:0.0.5":
+  version: 0.0.5
+  resolution: "@cedarjs/testing@npm:0.0.5"
   dependencies:
-    "@cedarjs/auth": "npm:0.0.4"
-    "@cedarjs/babel-config": "npm:0.0.4"
-    "@cedarjs/context": "npm:0.0.4"
-    "@cedarjs/graphql-server": "npm:0.0.4"
-    "@cedarjs/project-config": "npm:0.0.4"
-    "@cedarjs/router": "npm:0.0.4"
-    "@cedarjs/web": "npm:0.0.4"
+    "@cedarjs/auth": "npm:0.0.5"
+    "@cedarjs/babel-config": "npm:0.0.5"
+    "@cedarjs/context": "npm:0.0.5"
+    "@cedarjs/graphql-server": "npm:0.0.5"
+    "@cedarjs/project-config": "npm:0.0.5"
+    "@cedarjs/router": "npm:0.0.5"
+    "@cedarjs/web": "npm:0.0.5"
     "@testing-library/jest-dom": "npm:6.5.0"
     "@testing-library/react": "npm:14.3.1"
     "@testing-library/user-event": "npm:14.5.2"
@@ -2316,24 +2316,24 @@ __metadata:
     msw: "npm:1.3.4"
     ts-toolbelt: "npm:9.6.0"
     whatwg-fetch: "npm:3.6.20"
-  checksum: 10c0/ad71278f1a00d045f60bffdaaa2d353a5fcb1e010bf32c9fc8561703f4e781d42c0050d26f1147377d864a5ad14b712468092eafc0202f7d3d7df2deaca58ec9
+  checksum: 10c0/40b9dfe19581aa225757fdad8702341f1f15f6dcd2f4eb1b74e46c0c3ab79e307dfda12a8203bdff1f6e65b1e659a498905f035391fdf5bf752e3fb8d78b134e
   languageName: node
   linkType: hard
 
-"@cedarjs/vite@npm:0.0.4":
-  version: 0.0.4
-  resolution: "@cedarjs/vite@npm:0.0.4"
+"@cedarjs/vite@npm:0.0.5":
+  version: 0.0.5
+  resolution: "@cedarjs/vite@npm:0.0.5"
   dependencies:
     "@babel/generator": "npm:7.26.10"
     "@babel/parser": "npm:7.26.10"
     "@babel/traverse": "npm:7.26.10"
-    "@cedarjs/auth": "npm:0.0.4"
-    "@cedarjs/babel-config": "npm:0.0.4"
-    "@cedarjs/cookie-jar": "npm:0.0.4"
-    "@cedarjs/internal": "npm:0.0.4"
-    "@cedarjs/project-config": "npm:0.0.4"
-    "@cedarjs/server-store": "npm:0.0.4"
-    "@cedarjs/web": "npm:0.0.4"
+    "@cedarjs/auth": "npm:0.0.5"
+    "@cedarjs/babel-config": "npm:0.0.5"
+    "@cedarjs/cookie-jar": "npm:0.0.5"
+    "@cedarjs/internal": "npm:0.0.5"
+    "@cedarjs/project-config": "npm:0.0.5"
+    "@cedarjs/server-store": "npm:0.0.5"
+    "@cedarjs/web": "npm:0.0.5"
     "@swc/core": "npm:1.7.28"
     "@vitejs/plugin-react": "npm:4.3.4"
     "@whatwg-node/fetch": "npm:0.9.21"
@@ -2364,16 +2364,16 @@ __metadata:
     rw-vite-build: ./bins/rw-vite-build.mjs
     rw-vite-dev: ./bins/rw-vite-dev.mjs
     vite: ./bins/vite.mjs
-  checksum: 10c0/3028cab19557513f95b9b413940ff1be139a8f95661158635b11b9d655598b29dc3c1ef126570ba339d62c44d17d675873f33f08be4d578bcaac4eff940f4cd7
+  checksum: 10c0/761321bbc15b8604df014775886870390b69d6c4916d39c57c1fdd77ec171eb062535e9ef676e188ce6256e116f857bf9471dd1ffe692d663303f1d3ec072f62
   languageName: node
   linkType: hard
 
-"@cedarjs/web-server@npm:0.0.4":
-  version: 0.0.4
-  resolution: "@cedarjs/web-server@npm:0.0.4"
+"@cedarjs/web-server@npm:0.0.5":
+  version: 0.0.5
+  resolution: "@cedarjs/web-server@npm:0.0.5"
   dependencies:
-    "@cedarjs/fastify-web": "npm:0.0.4"
-    "@cedarjs/project-config": "npm:0.0.4"
+    "@cedarjs/fastify-web": "npm:0.0.5"
+    "@cedarjs/project-config": "npm:0.0.5"
     chalk: "npm:4.1.2"
     dotenv-defaults: "npm:5.0.2"
     fastify: "npm:4.28.1"
@@ -2381,18 +2381,18 @@ __metadata:
     yargs: "npm:17.7.2"
   bin:
     rw-web-server: ./dist/bin.js
-  checksum: 10c0/d9c4e57261ce1097683b6a168b591c5e3cab48d2a7d9ce76aaebd6ddc458271b09cf8dbcb3e797e6f2a84fde5c04f68481e5aa5b24d038fbd6d7f738241e503f
+  checksum: 10c0/a807eb548962896d8853ea680851081c3407d583486b78b8b82472c553e40a53301ecf29a1f3fe21e42a6ec1dafacca6d016fb59653acea309a7d1c14273d579
   languageName: node
   linkType: hard
 
-"@cedarjs/web@npm:0.0.4":
-  version: 0.0.4
-  resolution: "@cedarjs/web@npm:0.0.4"
+"@cedarjs/web@npm:0.0.5":
+  version: 0.0.5
+  resolution: "@cedarjs/web@npm:0.0.5"
   dependencies:
     "@apollo/client": "npm:3.11.1"
     "@babel/runtime-corejs3": "npm:7.26.10"
-    "@cedarjs/auth": "npm:0.0.4"
-    "@cedarjs/server-store": "npm:0.0.4"
+    "@cedarjs/auth": "npm:0.0.5"
+    "@cedarjs/server-store": "npm:0.0.5"
     "@whatwg-node/fetch": "npm:0.9.21"
     apollo-upload-client: "npm:18.0.1"
     cookie: "npm:0.7.2"
@@ -2415,7 +2415,7 @@ __metadata:
     rwfw: ./dist/cjs/bins/rwfw.js
     storybook: ./dist/cjs/bins/storybook.js
     tsc: ./dist/cjs/bins/tsc.js
-  checksum: 10c0/00a06e2e7039bed7d6115f89629f7a5f0c9df55ea2d448cb261dc172a34adec396f4d8e0b29657472e04c325b33f06a01cfd3c8eac7f541ae211c898ea394b3d
+  checksum: 10c0/3696b097b008f003904574b210df55752774402921903d86c12a98a5f48e56f59a11a6640b8225b304bb04c463149cd0e3ad4ab0386942ea4c26897f6e4588cf
   languageName: node
   linkType: hard
 
@@ -6620,8 +6620,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "api@workspace:api"
   dependencies:
-    "@cedarjs/api": "npm:0.0.4"
-    "@cedarjs/graphql-server": "npm:0.0.4"
+    "@cedarjs/api": "npm:0.0.5"
+    "@cedarjs/graphql-server": "npm:0.0.5"
   languageName: unknown
   linkType: soft
 
@@ -15447,8 +15447,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
-    "@cedarjs/core": "npm:0.0.4"
-    "@cedarjs/project-config": "npm:0.0.4"
+    "@cedarjs/core": "npm:0.0.5"
+    "@cedarjs/project-config": "npm:0.0.5"
   languageName: unknown
   linkType: soft
 
@@ -17417,10 +17417,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "web@workspace:web"
   dependencies:
-    "@cedarjs/forms": "npm:0.0.4"
-    "@cedarjs/router": "npm:0.0.4"
-    "@cedarjs/vite": "npm:0.0.4"
-    "@cedarjs/web": "npm:0.0.4"
+    "@cedarjs/forms": "npm:0.0.5"
+    "@cedarjs/router": "npm:0.0.5"
+    "@cedarjs/vite": "npm:0.0.5"
+    "@cedarjs/web": "npm:0.0.5"
     "@types/react": "npm:^18.2.55"
     "@types/react-dom": "npm:^18.2.19"
     react: "npm:18.3.1"
