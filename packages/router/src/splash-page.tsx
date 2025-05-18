@@ -126,14 +126,15 @@ export const SplashPage = ({
             }
 
             .intro-heading {
-              font-size: var(--space-5);
-              line-height: 1;
+              font-size: var(--space-8);
+              line-height: 1.25;
               font-weight: 700;
             }
 
             .intro-logo {
               max-width: 100%;
               height: auto;
+              margin-bottom: var(--space-4);
             }
 
             .intro-instructions-container {
@@ -271,12 +272,12 @@ export const SplashPage = ({
             <section className="content-container">
               <div className="content">
                 <div className="intro">
-                  <h1 className="intro-heading">Welcome to</h1>
                   <img
-                    src="https://github.com/user-attachments/assets/06da6bb6-d2f7-4bd5-941b-ef897b4ed64b"
-                    alt="Cedar Logo"
+                    src="https://avatars.githubusercontent.com/u/211931789?s=200&v=4"
+                    alt="CedarJS Logo"
                     className="intro-logo"
                   />
+                  <h1 className="intro-heading">Welcome to CedarJS</h1>
                   {!hasGeneratedRoutes ? (
                     <div
                       className="intro-instructions-container"
