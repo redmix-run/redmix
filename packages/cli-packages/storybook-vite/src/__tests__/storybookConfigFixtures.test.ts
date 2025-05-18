@@ -8,14 +8,14 @@ describe('storybook config file fixtures', () => {
     console.log('mainTemplatePath', mainTemplatePath)
     const mainTemplate = fs.readFileSync(mainTemplatePath, { encoding: 'utf8' })
     expect(mainTemplate).toMatchInlineSnapshot(`
-      "import type { StorybookConfig } from 'storybook-framework-cedar'
+      "import type { StorybookConfig } from 'storybook-framework-cedarjs'
 
       import { getPaths, importStatementPath } from '@cedarjs/project-config'
 
       const cedarProjectPaths = getPaths()
 
       const config: StorybookConfig = {
-        framework: 'storybook-framework-cedar',
+        framework: 'storybook-framework-cedarjs',
 
         stories: [
           \`\${importStatementPath(

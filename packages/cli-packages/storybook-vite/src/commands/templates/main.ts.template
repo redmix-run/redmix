@@ -1,11 +1,11 @@
-import type { StorybookConfig } from 'storybook-framework-cedar'
+import type { StorybookConfig } from 'storybook-framework-cedarjs'
 
 import { getPaths, importStatementPath } from '@cedarjs/project-config'
 
 const cedarProjectPaths = getPaths()
 
 const config: StorybookConfig = {
-  framework: 'storybook-framework-cedar',
+  framework: 'storybook-framework-cedarjs',
 
   stories: [
     `${importStatementPath(

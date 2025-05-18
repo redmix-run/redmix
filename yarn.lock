@@ -2753,7 +2753,7 @@ __metadata:
     execa: "npm:5.1.1"
     semver: "npm:7.6.3"
     storybook: "npm:7.6.20"
-    storybook-framework-cedar: "npm:0.0.4"
+    storybook-framework-cedarjs: "npm:0.0.4"
     terminal-link: "npm:2.1.1"
     tsx: "npm:4.19.3"
     typescript: "npm:5.6.2"
@@ -27631,9 +27631,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"storybook-framework-cedar@npm:0.0.4, storybook-framework-cedar@workspace:packages/storybook":
+"storybook-framework-cedarjs@npm:0.0.4, storybook-framework-cedarjs@workspace:packages/storybook":
   version: 0.0.0-use.local
-  resolution: "storybook-framework-cedar@workspace:packages/storybook"
+  resolution: "storybook-framework-cedarjs@workspace:packages/storybook"
   dependencies:
     "@cedarjs/testing": "npm:0.0.4"
     "@joshwooding/vite-plugin-react-docgen-typescript": "npm:0.4.2"

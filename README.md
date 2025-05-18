@@ -26,7 +26,7 @@ Search and replace all instances of `@redwoodjs` in all files with `@cedarjs`.
 Pay attention to `yarn.lock`. If anything changed in there you probably have to
 do some manual editing. Also find all mentions of
 `storybook-framework-redwoodjs-vite` and replace with
-`storybook-framework-cedar`
+`storybook-framework-cedarjs`
 
 Cedar doesn't have the equivalent of Redwood Studio yet. So Studio will not
 work for now. Let me know if that's something you use and need.

@@ -1,5 +1,5 @@
 {
-  "name": "storybook-framework-cedar",
+  "name": "storybook-framework-cedarjs",
   "version": "0.0.4",
   "description": "Storybook for CedarJS",
   "keywords": [
@@ -44,7 +44,7 @@
   ],
   "scripts": {
     "build": "tsx build.ts && yarn build:types",
-    "build:pack": "yarn pack -o storybook-framework-cedar.tgz",
+    "build:pack": "yarn pack -o storybook-framework-cedarjs.tgz",
     "build:types": "tsc --build --verbose"
   },
   "dependencies": {

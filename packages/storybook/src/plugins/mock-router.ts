@@ -8,7 +8,7 @@ export function mockRouter(): PluginOption {
       if (id.includes('src')) {
         code = code.replace(
           "'@cedarjs/router'",
-          "'storybook-framework-cedar/dist/mocks/MockRouter'",
+          "'storybook-framework-cedarjs/dist/mocks/MockRouter'",
         )
       }
       return code
