@@ -1,6 +1,6 @@
 {
   "name": "@cedarjs/prerender",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "CedarJS prerender",
   "repository": {
     "type": "git",
@@ -40,11 +40,11 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@cedarjs/babel-config": "0.0.4",
-    "@cedarjs/project-config": "0.0.4",
-    "@cedarjs/router": "0.0.4",
-    "@cedarjs/structure": "0.0.4",
-    "@cedarjs/web": "0.0.4",
+    "@cedarjs/babel-config": "0.0.5",
+    "@cedarjs/project-config": "0.0.5",
+    "@cedarjs/router": "0.0.5",
+    "@cedarjs/structure": "0.0.5",
+    "@cedarjs/web": "0.0.5",
     "@whatwg-node/fetch": "0.9.21",
     "babel-plugin-ignore-html-and-css-imports": "0.1.0",
     "cheerio": "1.0.0",
