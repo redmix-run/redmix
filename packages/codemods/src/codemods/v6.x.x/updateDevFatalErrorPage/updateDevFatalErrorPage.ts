@@ -15,7 +15,7 @@ export const updateDevFatalErrorPage = async () => {
   const webFatalErrorPagesDir = path.join(rwPaths.web.pages, 'FatalErrorPage')
   const filename = path.join(webFatalErrorPagesDir, 'FatalErrorPage')
   const url =
-    'https://raw.githubusercontent.com/cedarjs/cedar/0acd00946f9ad235320ea9b0b9a380d366e8936f/packages/create-cedar-app/templates/ts/web/src/pages/FatalErrorPage/FatalErrorPage.tsx'
+    'https://raw.githubusercontent.com/cedarjs/cedar/aa89556781dddc4730d3c8605040dc63a1ba6c1a/packages/create-cedar-app/templates/ts/web/src/pages/FatalErrorPage/FatalErrorPage.tsx'
 
   const isTsxPage = fs.existsSync(
     path.join(webFatalErrorPagesDir, 'FatalErrorPage.tsx'),
