@@ -1,7 +1,7 @@
 {
   "name": "@cedarjs/vite",
-  "version": "0.0.3",
-  "description": "Vite configuration package for Redwood",
+  "version": "0.0.5",
+  "description": "Vite configuration package for CedarJS",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cedarjs/cedar.git",

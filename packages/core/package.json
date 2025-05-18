@@ -1,6 +1,6 @@
 {
   "name": "@cedarjs/core",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "Foundational packages and config required to build RedwoodJS.",
   "repository": {
     "type": "git",
