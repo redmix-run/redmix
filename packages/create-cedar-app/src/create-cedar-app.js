@@ -692,9 +692,9 @@ async function createRedwoodApp() {
   tui.drawText(
     [
       `${RedwoodStyling.redwood('-'.repeat(66))}`,
-      `${' '.repeat(18)}🌲⚡️ ${RedwoodStyling.header(
-        'Welcome to Cedar!',
-      )} ⚡️🌲`,
+      `-- ${' '.repeat(14)}🌲🌲 ${RedwoodStyling.header(
+        'Welcome to CedarJS!',
+      )} 🌲🌲${' '.repeat(14)} --`,
       `${RedwoodStyling.redwood('-'.repeat(66))}`,
     ].join('\n'),
   )
@@ -783,7 +783,7 @@ async function createRedwoodApp() {
   tui.drawText(
     [
       '',
-      RedwoodStyling.success('Thanks for trying out Redwood!'),
+      RedwoodStyling.success('Thanks for trying out CedarJS!'),
       '',
       ` ⚡️ ${RedwoodStyling.redwood(
         'Get up and running fast with this Quick Start guide',

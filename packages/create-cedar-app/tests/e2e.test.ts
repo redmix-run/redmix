@@ -60,7 +60,7 @@ describe('create-cedar-app', () => {
     expect(p.exitCode).toEqual(0)
     expect(p.stdout).toMatchInlineSnapshot(`
       "------------------------------------------------------------------
-                        🌲⚡️ Welcome to Cedar! ⚡️🌲
+      --               🌲🌲 Welcome to CedarJS! 🌲🌲               --
       ------------------------------------------------------------------
       [?25l⠋ Checking node and yarn compatibility
       [?25h[?25l✔ Compatibility checks passed
@@ -74,7 +74,7 @@ describe('create-cedar-app', () => {
       [?25l⠋ Initializing a git repo
       [?25h[?25l✔ Initialized a git repo with commit message "Initial commit"
       [?25h
-      Thanks for trying out Redwood!
+      Thanks for trying out CedarJS!
 
        ⚡️ Get up and running fast with this Quick Start guide: https://redwoodjs.com/quick-start
 
