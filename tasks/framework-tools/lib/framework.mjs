@@ -81,7 +81,7 @@ export function getFrameworkDependencies(
       }
 
       // Skip storybook packages because they're installed manually by the user.
-      if (name.startsWith('storybook-framework-cedar')) {
+      if (name.startsWith('storybook-framework-cedarjs')) {
         continue
       }
 
