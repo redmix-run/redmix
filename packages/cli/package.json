@@ -28,7 +28,7 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@babel/runtime-corejs3": "7.26.10",
+    "@babel/runtime-corejs3": "7.27.1",
     "@cedarjs/api-server": "0.0.5",
     "@cedarjs/cli-helpers": "0.0.5",
     "@cedarjs/fastify-web": "0.0.5",
@@ -86,7 +86,7 @@
     "yargs": "17.7.2"
   },
   "devDependencies": {
-    "@babel/cli": "7.26.4",
+    "@babel/cli": "7.27.2",
     "@babel/core": "^7.26.10",
     "@types/archiver": "^6",
     "memfs": "4.17.1",

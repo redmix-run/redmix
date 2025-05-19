@@ -56,9 +56,9 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@babel/generator": "7.26.10",
-    "@babel/parser": "7.26.10",
-    "@babel/traverse": "7.26.10",
+    "@babel/generator": "7.27.1",
+    "@babel/parser": "7.27.2",
+    "@babel/traverse": "7.27.1",
     "@cedarjs/auth": "0.0.5",
     "@cedarjs/babel-config": "0.0.5",
     "@cedarjs/cookie-jar": "0.0.5",

@@ -24,12 +24,12 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@babel/cli": "7.26.4",
+    "@babel/cli": "7.27.2",
     "@babel/core": "^7.26.10",
-    "@babel/parser": "7.26.10",
+    "@babel/parser": "7.27.2",
     "@babel/plugin-transform-typescript": "^7.26.8",
-    "@babel/runtime-corejs3": "7.26.10",
-    "@babel/traverse": "7.26.10",
+    "@babel/runtime-corejs3": "7.27.1",
+    "@babel/traverse": "7.27.1",
     "@cedarjs/project-config": "0.0.5",
     "@svgr/core": "8.1.0",
     "@svgr/plugin-jsx": "8.1.0",

@@ -94,7 +94,7 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@babel/runtime-corejs3": "7.26.10",
+    "@babel/runtime-corejs3": "7.27.1",
     "@cedarjs/auth": "0.0.5",
     "@cedarjs/server-store": "0.0.5",
     "core-js": "3.42.0",
@@ -103,7 +103,7 @@
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "0.16.4",
-    "@babel/cli": "7.26.4",
+    "@babel/cli": "7.27.2",
     "@babel/core": "^7.26.10",
     "@cedarjs/framework-tools": "workspace:*",
     "@testing-library/jest-dom": "6.5.0",
