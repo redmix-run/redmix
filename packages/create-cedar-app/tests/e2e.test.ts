@@ -59,7 +59,8 @@ describe('create-cedar-app', () => {
 
     expect(p.exitCode).toEqual(0)
     expect(p.stdout).toMatchInlineSnapshot(`
-      "🌲🌲🌲🌲🌲
+      "
+      🌲🌲🌲🌲🌲
       🌲🌲
       🌲🌲  Welcome to CedarJS!
       🌲🌲
