@@ -21,7 +21,7 @@ blog-test-project/*
 .pnp.*
 *.code-workspace
 .nova
-packages/**/cedar-*.tgz
+packages/**/cedarjs-*.tgz
 packages/**/storybook-*.tgz
 packages/create-cedar-app/create-cedar-app.tgz
 

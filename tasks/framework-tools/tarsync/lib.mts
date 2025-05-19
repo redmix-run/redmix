@@ -125,7 +125,7 @@ export async function updateResolutions(projectPath: string) {
     .reduce((resolutions, { name }) => {
       return {
         ...resolutions,
-        // Turn a Redwood package name like `@cedarjs/project-config` into `cedar-project-config.tgz`.
+        // Turn a Redwood package name like `@cedarjs/project-config` into `cedarjs-project-config.tgz`.
         [name]: `./${TARBALL_DEST_DIRNAME}/${
           name.replace('@', '').replaceAll('/', '-') + '.tgz'
         }`,
