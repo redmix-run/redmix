@@ -691,11 +691,13 @@ async function createRedwoodApp() {
 
   tui.drawText(
     [
-      `${RedwoodStyling.redwood('-'.repeat(66))}`,
-      `-- ${' '.repeat(14)}🌲🌲 ${RedwoodStyling.header(
-        'Welcome to CedarJS!',
-      )} 🌲🌲${' '.repeat(14)} --`,
-      `${RedwoodStyling.redwood('-'.repeat(66))}`,
+      '',
+      '🌲🌲🌲🌲🌲',
+      '🌲🌲',
+      `🌲🌲  ${RedwoodStyling.header('Welcome to CedarJS!')}`,
+      '🌲🌲',
+      '🌲🌲🌲🌲🌲',
+      '',
     ].join('\n'),
   )
 

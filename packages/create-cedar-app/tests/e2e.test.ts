@@ -59,9 +59,13 @@ describe('create-cedar-app', () => {
 
     expect(p.exitCode).toEqual(0)
     expect(p.stdout).toMatchInlineSnapshot(`
-      "------------------------------------------------------------------
-      --               🌲🌲 Welcome to CedarJS! 🌲🌲               --
-      ------------------------------------------------------------------
+      "
+      🌲🌲🌲🌲🌲
+      🌲🌲
+      🌲🌲  Welcome to CedarJS!
+      🌲🌲
+      🌲🌲🌲🌲🌲
+
       [?25l⠋ Checking node and yarn compatibility
       [?25h[?25l✔ Compatibility checks passed
       [?25h✔ Creating your Redwood app in ./redwood-app based on command line argument
