@@ -1,9 +1,8 @@
 import path from 'path'
 
-// Babel 7 packages are CJS, and need to be imported as such
 import babelGenerator from '@babel/generator'
 const generate = babelGenerator.default
-import { parse as babelParse } from '@babel/parser/index.cjs'
+import { parse as babelParse } from '@babel/parser'
 import babelTraverse from '@babel/traverse'
 const traverse = babelTraverse.default
 import * as t from '@babel/types'
