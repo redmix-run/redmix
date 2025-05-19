@@ -4,8 +4,13 @@
 
 echo "//registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN}" > .npmrc
 
+if [[ -z "$NPM_AUTH_TOKEN" ]]; then
+  echo "Error: NPM_AUTH_TOKEN is not set or is empty"
+  exit 1
+fi
+
 TAG='canary' && [[ "$GITHUB_REF_NAME" = 'next' ]] && TAG='next'
-echo "Publishing $TAG"
+echo "Publishing $TAG from $GITHUB_REF_NAME using npm token ${NPM_AUTH_TOKEN:0:5}"
 
 args=()
 
