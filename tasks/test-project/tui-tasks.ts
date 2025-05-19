@@ -425,13 +425,13 @@ export async function apiTasks(
     await exec('yarn build:pack', [], getExecaOptions(apiPkg))
     await exec('yarn build:pack', [], getExecaOptions(webPkg))
 
-    const setupTgz = path.join(setupPkg, 'cedar-auth-dbauth-setup.tgz')
-    const apiTgz = path.join(apiPkg, 'cedar-auth-dbauth-api.tgz')
-    const webTgz = path.join(webPkg, 'cedar-auth-dbauth-web.tgz')
+    const setupTgz = path.join(setupPkg, 'cedarjs-auth-dbauth-setup.tgz')
+    const apiTgz = path.join(apiPkg, 'cedarjs-auth-dbauth-api.tgz')
+    const webTgz = path.join(webPkg, 'cedarjs-auth-dbauth-web.tgz')
 
-    const setupTgzDest = path.join(outputPath, 'cedar-auth-dbauth-setup.tgz')
-    const apiTgzDest = path.join(outputPath, 'cedar-auth-dbauth-api.tgz')
-    const webTgzDest = path.join(outputPath, 'cedar-auth-dbauth-web.tgz')
+    const setupTgzDest = path.join(outputPath, 'cedarjs-auth-dbauth-setup.tgz')
+    const apiTgzDest = path.join(outputPath, 'cedarjs-auth-dbauth-api.tgz')
+    const webTgzDest = path.join(outputPath, 'cedarjs-auth-dbauth-web.tgz')
 
     fs.copyFileSync(setupTgz, setupTgzDest)
     fs.copyFileSync(apiTgz, apiTgzDest)
@@ -449,9 +449,9 @@ export async function apiTasks(
     projectPackageJson.resolutions ??= {}
     projectPackageJson.resolutions = {
       ...projectPackageJson.resolutions,
-      '@cedarjs/auth-dbauth-setup': './cedar-auth-dbauth-setup.tgz',
-      '@cedarjs/auth-dbauth-api': './cedar-auth-dbauth-api.tgz',
-      '@cedarjs/auth-dbauth-web': './cedar-auth-dbauth-web.tgz',
+      '@cedarjs/auth-dbauth-setup': './cedarjs-auth-dbauth-setup.tgz',
+      '@cedarjs/auth-dbauth-api': './cedarjs-auth-dbauth-api.tgz',
+      '@cedarjs/auth-dbauth-web': './cedarjs-auth-dbauth-web.tgz',
     }
 
     fs.writeFileSync(

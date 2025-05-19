@@ -18,7 +18,7 @@
   ],
   "scripts": {
     "build": "tsx ./build.mts && run build:types",
-    "build:pack": "yarn pack -o cedar-server-store.tgz",
+    "build:pack": "yarn pack -o cedarjs-server-store.tgz",
     "build:types": "tsc --build --verbose"
   },
   "dependencies": {
