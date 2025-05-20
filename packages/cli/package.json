@@ -28,7 +28,6 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@babel/core": "^7.26.10",
     "@babel/preset-typescript": "7.27.1",
     "@babel/runtime-corejs3": "7.27.1",
     "@cedarjs/api-server": "workspace:*",
