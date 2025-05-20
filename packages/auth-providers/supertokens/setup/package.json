@@ -1,6 +1,6 @@
 {
   "name": "@cedarjs/auth-supertokens-setup",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cedarjs/cedar.git",
@@ -39,7 +39,7 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@cedarjs/cli-helpers": "0.0.5"
+    "@cedarjs/cli-helpers": "0.1.0"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "0.16.4",
