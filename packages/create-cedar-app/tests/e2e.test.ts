@@ -36,7 +36,7 @@ describe('create-cedar-app', () => {
                                                              [boolean] [default: null]
 
       Examples:
-        create-cedar-app my-redwood-app
+        create-cedar-app my-cedar-app
       [?25l[?25h"
     `)
     expect(p.stderr).toMatchInlineSnapshot(`"[?25l[?25h"`)
@@ -54,8 +54,7 @@ describe('create-cedar-app', () => {
     // Running `yarn install` in Jest test times out and the subsequent step,
     // generating types, is also flakey since `yarn pack` seems to skip
     // `.yarnrc.yml` which is necessary for configuring a proper install.
-    const p =
-      await $`yarn create-cedar-app ./redwood-app --no-yarn-install --yes`
+    const p = await $`yarn create-cedar-app ./cedar-app --no-yarn-install --yes`
 
     expect(p.exitCode).toEqual(0)
     expect(p.stdout).toMatchInlineSnapshot(`
@@ -68,7 +67,7 @@ describe('create-cedar-app', () => {
 
       [?25l⠋ Checking node and yarn compatibility
       [?25h[?25l✔ Compatibility checks passed
-      [?25h✔ Creating your Redwood app in ./redwood-app based on command line argument
+      [?25h✔ Creating your CedarJS app in ./cedar-app based on command line argument
       ✔ Using TypeScript based on command line flag
       ✔ Will initialize a git repo based on command line flag
       ✔ Will not run yarn install based on command line flag
@@ -84,7 +83,7 @@ describe('create-cedar-app', () => {
 
       Fire it up! 🚀
 
-       > cd redwood-app
+       > cd cedar-app
        > yarn install
        > yarn rw dev
 
@@ -95,7 +94,7 @@ describe('create-cedar-app', () => {
       `"[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h"`,
     )
 
-    await fs.rm('./redwood-app', { recursive: true, force: true })
+    await fs.rm('./cedar-app', { recursive: true, force: true })
   })
 
   it.fails('fails on unknown options', async () => {

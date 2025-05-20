@@ -13,7 +13,7 @@ set projectDirectory "redwood-app-prompt-m-test"
 
 spawn yarn create-cedar-app --no-yarn-install -m "first"
 
-expect "Where would you like to create your Redwood app?"
+expect "Where would you like to create your CedarJS app?"
 send "$projectDirectory\n"
 
 expect "Select your preferred language"
