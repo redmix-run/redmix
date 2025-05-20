@@ -2,6 +2,7 @@ import fs from 'fs'
 import { createRequire } from 'module'
 import path from 'path'
 
+// Import babel from devDependencies
 import * as babel from '@babel/core'
 import * as esbuild from 'esbuild'
 
@@ -83,16 +84,17 @@ export async function runScriptFunction({
         {
           name: 'redwood-path-resolver',
           setup(build) {
-            // Custom resolver for redwood-specific imports
-            build.onResolve({ filter: /^(api|web)(\/|$)/ }, (args) => {
-              const match = args.path.match(/^(api|web)(\/|$)/)
+            // Custom resolver for redwood-specific imports (both with and without $ prefix)
+            build.onResolve({ filter: /^(\$?api|\$?web)(\/|$)/ }, (args) => {
+              const match = args.path.match(/^(\$?api|\$?web)(\/|$)/)
               if (!match) {
                 return null
               }
 
-              const side = match[1] // 'api' or 'web'
+              // Handle both 'api', '$api', 'web', and '$web'
+              const side = match[1].replace('$', '') // Remove $ if present, giving us 'api' or 'web'
               const restOfPath = args.path.slice(
-                side.length + (match[2] === '/' ? 1 : 0),
+                match[1].length + (match[2] === '/' ? 1 : 0),
               )
 
               // Convert .js extension to .ts if needed (or other appropriate extensions)
@@ -102,8 +104,6 @@ export async function runScriptFunction({
               )
 
               // If the path has a .js extension, check if a corresponding .ts file exists
-              // If a .ts file exists, it returns that path instead of the .js path
-              // It also tries `.tsx` as a fallback
               if (path.extname(fullPath) === '.js') {
                 const tsPath = fullPath.replace(/\.js$/, '.ts')
                 const tsxPath = fullPath.replace(/\.js$/, '.tsx')
@@ -213,7 +213,6 @@ export async function runScriptFunction({
 
     return returnValue
   } catch (error) {
-    console.error(`Error details: ${error.message}`)
     if (error.message.includes('Could not resolve')) {
       throw new Error(
         `Error bundling '${scriptPath}': ${error.message}. Make sure all imports are available.`,
