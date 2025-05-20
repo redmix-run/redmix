@@ -38,6 +38,7 @@
     "@cedarjs/structure": "workspace:*",
     "@cedarjs/telemetry": "workspace:*",
     "@cedarjs/web-server": "workspace:*",
+    "esbuild": "0.25.0",
     "@listr2/prompt-adapter-enquirer": "2.0.12",
     "@opentelemetry/api": "1.8.0",
     "@opentelemetry/core": "1.22.0",
