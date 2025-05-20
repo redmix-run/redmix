@@ -110,14 +110,14 @@ export const addApiConfig = ({
   }
 
   const hasCurrentUserImport =
-    /(^import {.*?getCurrentUser(?!getCurrentUser).*?} from ['"]src\/lib\/auth(?:\.js)['"])/s.test(
+    /(^import {.*?getCurrentUser(?!getCurrentUser).*?} from ['"]src\/lib\/auth(?:\.js)?['"])/s.test(
       newContent,
     )
 
   if (!hasCurrentUserImport) {
     // add import statement
     newContent = newContent.replace(
-      /^(import { db } from ['"]src\/lib\/db(?:\.js)['"])$/m,
+      /^(import { db } from ['"]src\/lib\/db(?:\.js)?['"])$/m,
       `import { getCurrentUser } from 'src/lib/auth.js'\n$1`,
     )
 
