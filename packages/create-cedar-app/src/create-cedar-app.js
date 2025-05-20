@@ -370,7 +370,7 @@ async function handleTargetDirPreference(targetDir) {
       targetDir === '.' ? 'the current directory' : targetDir
 
     tui.drawText(
-      `${RedwoodStyling.green('✔')} Creating your Redwood app in ` +
+      `${RedwoodStyling.green('✔')} Creating your CedarJS app in ` +
         `${targetDirText} based on command line argument`,
     )
 
@@ -382,8 +382,8 @@ async function handleTargetDirPreference(targetDir) {
     const response = await tui.prompt({
       type: 'input',
       name: 'targetDir',
-      message: 'Where would you like to create your Redwood app?',
-      initial: 'my-redwood-app',
+      message: 'Where would you like to create your CedarJS app?',
+      initial: 'my-cedar-app',
     })
 
     if (/^~\w/.test(response.targetDir)) {
@@ -559,7 +559,7 @@ async function handleNewDirectoryNamePreference() {
       type: 'input',
       name: 'targetDirectoryInput',
       message: 'What directory would you like to create the app in?',
-      initial: 'my-redwood-app',
+      initial: 'my-cedar-app',
     })
     return response.targetDirectoryInput
   } catch (_error) {
@@ -638,7 +638,7 @@ async function createRedwoodApp() {
   const cli = yargs(hideBin(process.argv))
     .scriptName(name)
     .usage('Usage: $0 <project directory>')
-    .example('$0 my-redwood-app')
+    .example('$0 my-cedar-app')
     .version(version)
     .option('yes', {
       alias: 'y',

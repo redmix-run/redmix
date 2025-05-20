@@ -16,7 +16,7 @@ exec touch $projectDirectory/README.md
 
 spawn yarn create-cedar-app --no-yarn-install
 
-expect "Where would you like to create your Redwood app?"
+expect "Where would you like to create your CedarJS app?"
 send "$projectDirectory\n"
 
 expect "Select your preferred language"
