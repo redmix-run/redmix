@@ -15,9 +15,8 @@ framework used in production by both large and small companies.
 CedarJS would obviously not be where it is today without the vision and heroic
 efforts of the RedwoodJS founders, maintainers and community.
 
-> cedar has become a powerful symbol of strength and revitalization
-
-_— https://indigenousfoundations.arts.ubc.ca/cedar/_
+> cedar has become a powerful symbol of strength and revitalization<br>
+> _— https://indigenousfoundations.arts.ubc.ca/cedar/_
 
 ## Migrating from RedwoodJS to CedarJS
 
