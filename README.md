@@ -56,11 +56,7 @@ what you use so I know what to keep and what to remove!
 
 - [ ] Make all packages ESM only where possible and ESM+CJS where needed to
       keep compatibility with existing RW apps. Packages still to convert:
-  - [ ] `@cedarjs/cli` (in progress, see
-        [#23](https://github.com/cedarjs/cedar/pull/23),
-        [#26](https://github.com/cedarjs/cedar/pull/26),
-        [#34](https://github.com/cedarjs/cedar/pull/34),
-        [#40](https://github.com/cedarjs/cedar/pull/40), etc)
+  - [x] `@cedarjs/cli` 
   - [ ] `@cedarjs/fastify-web`
   - [ ] `@cedarjs/api-server`
   - [ ] `@cedarjs/api`
@@ -71,7 +67,8 @@ what you use so I know what to keep and what to remove!
       ESM
 - [ ] Enable strict mode for new Cedar TypeScript apps.
 - [ ] Upgrade to Node 24
-- [ ] Setup dependabot/renovate to automatically merge PRs that pass all checks
+- [x] Setup dependabot/renovate to automatically merge PRs that pass all checks
+- [ ] Move to Vitest for Cedar apps to prepare for ESM support
 
 ### Package Updates
 
@@ -85,7 +82,7 @@ what you use so I know what to keep and what to remove!
 ### Docs
 
 - [ ] Mirror the RedwoodJS docs to make sure they don't get deleted
-- [ ] Document where Cedar diverges from RedwoodJS. (Future major version.)
+- [ ] Document where CedarJS diverges from RedwoodJS. (Future major version.)
 
 ### New Features
 
@@ -97,10 +94,10 @@ what you use so I know what to keep and what to remove!
 
 ## Documentation
 
-The best documentation for Cedar is actually still the
-[RedwoodJS documentation](https://redwoodjs.com/docs). The first version of
-Cedar will be fully compatible with RedwoodJS v8.6 and there will be no
-specific documentation written for Cedar for now.
+The best documentation for CedarJS is actually still the
+[RedwoodJS documentation](https://redwoodjs.com/docs). 0.x versions of
+CedarJS will be fully compatible with RedwoodJS v8.6 and there will be no
+specific documentation written for CedarJS for now.
 
 The only thing you'll have to adjust are the package names and replace every
 `@redwoodjs` package with a `@cedarjs` package of the same name.
