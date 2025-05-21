@@ -86,7 +86,7 @@
     "react-server-dom-webpack": "19.0.0-rc-f2df5694-20240916",
     "rimraf": "6.0.1",
     "vite": "5.4.16",
-    "vite-plugin-cjs-interop": "2.1.4",
+    "vite-plugin-cjs-interop": "2.2.0",
     "vite-plugin-node-polyfills": "0.23.0",
     "ws": "8.18.0",
     "yargs-parser": "21.1.1"
@@ -103,7 +103,7 @@
     "concurrently": "8.2.2",
     "glob": "11.0.0",
     "memfs": "4.17.1",
-    "publint": "0.3.11",
+    "publint": "0.3.12",
     "rollup": "4.24.0",
     "tsx": "4.19.3",
     "typescript": "5.6.2",
