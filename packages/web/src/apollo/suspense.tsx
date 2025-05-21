@@ -1,16 +1,18 @@
-/***
- *
- * This is a lift and shift of the original ApolloProvider
- * but with suspense specific bits. Look for @MARK to find bits I've changed
- *
- * Done this way, to avoid making changes breaking on main, due to the experimental-nextjs import
- * Eventually we will have one ApolloProvider, not multiple.
- */
+// Comment below written by Danny, originally here:
+// https://github.com/redwoodjs/graphql/pull/9038
+// and then further updated here:
+// https://github.com/redwoodjs/graphql/pull/9074
+// This is a lift and shift of the original ApolloProvider
+// but with suspense specific bits. Look for @MARK to find bits I've changed
+//
+// Done this way, to avoid making changes breaking on main, due to the
+// experimental-nextjs import
+// Eventually we will have one ApolloProvider, not multiple.
+
 'use client'
 import React, { useContext } from 'react'
 
 import type {
-  ApolloCache,
   ApolloClientOptions,
   ApolloLink,
   HttpOptions,
@@ -72,7 +74,7 @@ export type GraphQLClientConfigProp = Omit<
   ApolloClientOptions<unknown>,
   'cache' | 'link'
 > & {
-  cache?: ApolloCache<unknown>
+  cache?: InMemoryCache
   /**
    * Configuration for Apollo Client's `InMemoryCache`.
    * See https://www.apollographql.com/docs/react/caching/cache-configuration/.
@@ -129,7 +131,7 @@ const WrappedApolloProvider = WrapApolloProvider(
 
 const ApolloProviderWithFetchConfig: React.FunctionComponent<{
   config: Omit<GraphQLClientConfigProp, 'cacheConfig' | 'cache'> & {
-    cache: ApolloCache<unknown>
+    cache: InMemoryCache
   }
   useAuth?: UseAuth
   logLevel: ReturnType<typeof setLogVerbosity>
