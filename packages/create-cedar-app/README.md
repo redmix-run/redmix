@@ -1,4 +1,4 @@
-[![RedwoodJS](https://raw.githubusercontent.com/redwoodjs/redwoodjs.com/main/publish/images/mark-logo-cover.png)](https://redwoodjs.com)
+[![CedarJS](https://avatars.githubusercontent.com/u/211931789?s=200&v=4)](https://cedarjs.com)
 
 <!-- prettier-ignore-start -->
 <p align="center">
@@ -18,17 +18,17 @@
 
 <h2 align="center">Ship today with architecture for tomorrow.</h2>
 
-Redwood is an opinionated framework for modern multi-client applications, built on React, GraphQL, and Prisma with full TypeScript support and ready to go with zero config.
+CedarJS is an opinionated framework for modern multi-client applications, built on React, GraphQL, and Prisma with full TypeScript support and ready to go with zero config.
 
-Want great developer experience and easy scaling? How about an integrated front- and back-end test suite, boilerplate code generators, component design, logging, API security + auth, and serverless or traditional deploy support? Redwood is here! Redwood works with the components and development workflow you love but with simple conventions and helpers to make your experience even better.
+Want great developer experience and easy scaling? How about an integrated front- and back-end test suite, boilerplate code generators, component design, logging, API security + auth, and serverless or traditional deploy support? Cedar is here! Cedar works with the components and development workflow you love but with simple conventions and helpers to make your experience even better.
 
 <h2>Quick Start</h2>
 
-Redwood requires Node.js =20.x.
+CedarJS requires Node.js =20.x.
 
 ```bash
-yarn create cedar-app my-redwood-app
-cd my-redwood-app
+yarn create cedar-app my-cedar-app
+cd my-cedar-app
 yarn install
 yarn redwood dev
 ```
@@ -57,7 +57,7 @@ _Contributors are Welcome! Get started [here](https://redwoodjs.com/docs/contrib
 
 ## Description
 
-This package creates and installs a Redwood project, which is the entry point for anyone using Redwood. It has two parts:
+This package creates and installs a Cedar project, which is the entry point for anyone using CedarJS. It has two parts:
 
 - The installation script [`src/create-cedar-app.js`](./src/create-cedar-app.js)
 - Project template code in the [`templates/`](./templates/) directory
@@ -70,7 +70,7 @@ The installation script is built with [Yargs](https://github.com/yargs/yargs).
 
 ### Template Codebase
 
-The project codebase in [`templates/`](./templates/) uses [Yarn Workspaces](https://yarnpkg.com/features/workspaces) for a monorepo project containing the API and Web Sides. Redwood packages are included in `templates/ts/package.json`, `templates/ts/web/package.json`, and `templates/ts/api/package.json`, respectively.
+The project codebase in [`templates/`](./templates/) uses [Yarn Workspaces](https://yarnpkg.com/features/workspaces) for a monorepo project containing the API and Web Sides. Cedar packages are included in `templates/ts/package.json`, `templates/ts/web/package.json`, and `templates/ts/api/package.json`, respectively.
 
 ### How to run `create-cedar-app` from your local repo and create a project
 
@@ -81,7 +81,7 @@ yarn install
 yarn build
 ```
 
-Then, navigate to the create redwood app package:
+Then, navigate to the create-cedar-app package:
 
 ```bash
 cd packages/create-cedar-app
@@ -90,11 +90,11 @@ cd packages/create-cedar-app
 Run `yarn node` on the built file (`dist/create-cedar-app.js`) and pass in the path to the new project:
 
 ```bash
-yarn node ./dist/create-cedar-app.js /path/to/new/redwood-app
+yarn node ./dist/create-cedar-app.js /path/to/new/cedar-app
 ```
 
 > [!NOTE]
-> the new project will install with the most recent major Redwood package version by default.
+> the new project will install with the most recent major CedarJS package version by default.
 
 ### How to run other published versions for debugging
 
@@ -106,7 +106,7 @@ To try the canary version, run:
 npx create-cedar-app@canary /path/to/project
 ```
 
-Note that this will still create a project with the latest stable version, but run the canary version of create-cedar-app, and is mainly useful for debugging this package, and not the redwood canary release.
+Note that this will still create a project with the latest stable version, but run the canary version of create-cedar-app, and is mainly useful for debugging this package, and not the CedarJS canary release.
 
 You can specify any tag or version instead of `@canary`
 
@@ -117,7 +117,7 @@ There are three options for developing with the installed project:
 **1. Upgrade the project to use the latest canary release**
 
 ```bash
-cd /path/to/new/redwood-app
+cd /path/to/new/cedar-app
 yarn rw upgrade -t canary
 ```
 
