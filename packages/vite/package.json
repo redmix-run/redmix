@@ -102,7 +102,7 @@
     "@types/yargs-parser": "21.0.3",
     "concurrently": "8.2.2",
     "glob": "11.0.0",
-    "memfs": "4.17.1",
+    "memfs": "4.17.2",
     "publint": "0.3.12",
     "rollup": "4.24.0",
     "tsx": "4.19.3",
