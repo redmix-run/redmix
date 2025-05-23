@@ -15,7 +15,7 @@ framework used in production by both large and small companies.
 CedarJS would obviously not be where it is today without the vision and heroic
 efforts of the RedwoodJS founders, maintainers and community.
 
-> cedar has become a powerful symbol of strength and revitalization<br>
+> cedar has become a powerful symbol of strength and revitalization\
 > _— https://indigenousfoundations.arts.ubc.ca/cedar/_
 
 ## Migrating from RedwoodJS to CedarJS
@@ -59,7 +59,7 @@ what you use so I know what to keep and what to remove!
 
 - [ ] Make all packages ESM only where possible and ESM+CJS where needed to
       keep compatibility with existing RW apps. Packages still to convert:
-  - [x] `@cedarjs/cli` 
+  - [x] `@cedarjs/cli`
   - [ ] `@cedarjs/fastify-web`
   - [ ] `@cedarjs/api-server`
   - [ ] `@cedarjs/api`
@@ -105,7 +105,7 @@ specific documentation written for CedarJS for now.
 The only thing you'll have to adjust are the package names and replace every
 `@redwoodjs` package with a `@cedarjs` package of the same name.
 
-## The Cedar Team
+## The CedarJS Team
 
 <table>
   <tr>
