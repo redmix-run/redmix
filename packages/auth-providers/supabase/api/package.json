@@ -44,7 +44,7 @@
     "jsonwebtoken": "9.0.2"
   },
   "devDependencies": {
-    "@arethetypeswrong/cli": "0.16.4",
+    "@arethetypeswrong/cli": "0.18.1",
     "@cedarjs/framework-tools": "workspace:*",
     "@types/aws-lambda": "8.10.145",
     "@types/jsonwebtoken": "9.0.8",

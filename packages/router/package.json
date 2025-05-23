@@ -102,7 +102,7 @@
     "react-dom": "18.3.1"
   },
   "devDependencies": {
-    "@arethetypeswrong/cli": "0.16.4",
+    "@arethetypeswrong/cli": "0.18.1",
     "@babel/cli": "7.27.2",
     "@babel/core": "^7.26.10",
     "@cedarjs/framework-tools": "workspace:*",
