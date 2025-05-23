@@ -105,7 +105,7 @@ specific documentation written for CedarJS for now.
 The only thing you'll have to adjust are the package names and replace every
 `@redwoodjs` package with a `@cedarjs` package of the same name.
 
-## The Cedar Team
+## The CedarJS Team
 
 <table>
   <tr>
