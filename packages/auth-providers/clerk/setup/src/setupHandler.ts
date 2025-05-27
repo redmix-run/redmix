@@ -17,7 +17,7 @@ export const handler = async ({ force: forceArg }: Args) => {
     provider: 'clerk',
     webPackages: [
       '@clerk/clerk-react@^5',
-      `@redwoodjs/auth-clerk-web@${version}`,
+      `@cedarjs/auth-clerk-web@${version}`,
     ],
     apiPackages: [`@cedarjs/auth-clerk-api@${version}`],
     notes: [
