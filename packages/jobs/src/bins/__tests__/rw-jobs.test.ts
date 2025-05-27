@@ -3,7 +3,7 @@ import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { mockLogger } from '../../core/__tests__/mocks.js'
 import { buildNumWorkers, clearQueue, startWorkers } from '../rw-jobs.js'
 
-vi.mock('@redwoodjs/cli-helpers/loadEnvFiles', () => {
+vi.mock('@cedarjs/cli-helpers/loadEnvFiles', () => {
   return {
     loadEnvFiles: () => {},
   }

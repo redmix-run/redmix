@@ -1,6 +1,6 @@
-import { Link } from '@redwoodjs/router/Link'
-import { namedRoutes as routes } from '@redwoodjs/router/namedRoutes'
-import { Metadata } from '@redwoodjs/web/Metadata'
+import { Link } from '@cedarjs/router/Link'
+import { namedRoutes as routes } from '@cedarjs/router/namedRoutes'
+import { Metadata } from '@cedarjs/web/Metadata'
 
 const CachingOnePage = () => {
   return (

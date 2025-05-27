@@ -3,15 +3,18 @@ import path from 'path'
 import fs from 'fs-extra'
 import { Listr } from 'listr2'
 
-import { addApiPackages } from '@redwoodjs/cli-helpers'
-import { errorTelemetry } from '@redwoodjs/telemetry'
+import { addApiPackages } from '@cedarjs/cli-helpers'
+import { errorTelemetry } from '@cedarjs/telemetry'
 
-import { getPaths, transformTSToJS, writeFile } from '../../../lib'
-import c from '../../../lib/colors'
-import { isTypeScriptProject } from '../../../lib/project'
+import c from '../../../lib/colors.js'
+import { getPaths, transformTSToJS, writeFile } from '../../../lib/index.js'
+import { isTypeScriptProject } from '../../../lib/project.js'
 
 const { version } = JSON.parse(
-  fs.readFileSync(path.resolve(__dirname, '../../../../package.json'), 'utf-8'),
+  fs.readFileSync(
+    path.resolve(import.meta.dirname, '../../../../package.json'),
+    'utf-8',
+  ),
 )
 
 export function setupServerFileTasks({ force = false } = {}) {
@@ -27,7 +30,7 @@ export function setupServerFileTasks({ force = false } = {}) {
         )
 
         const serverFileTemplateContent = fs.readFileSync(
-          path.join(__dirname, 'templates', 'server.ts.template'),
+          path.join(import.meta.dirname, 'templates', 'server.ts.template'),
           'utf-8',
         )
 
@@ -42,7 +45,7 @@ export function setupServerFileTasks({ force = false } = {}) {
         ]
       },
     },
-    addApiPackages([`@redwoodjs/api-server@${version}`]),
+    addApiPackages([`@cedarjs/api-server@${version}`]),
   ]
 }
 

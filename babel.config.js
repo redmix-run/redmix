@@ -57,7 +57,7 @@ module.exports = {
      * Needed for react@18
      *
      * ```
-     * ✖  @redwoodjs/router:build
+     * ✖  @cedarjs/router:build
      *  SyntaxError: /code/redwood/packages/router/src/location.tsx: TypeScript 'declare' fields must first be transformed by @babel/plugin-transform-typescript.
      *  If you have already enabled that plugin (or '@babel/preset-typescript'), make sure that it runs before any plugin related to additional class features:
      *   - @babel/plugin-proposal-class-properties
@@ -83,7 +83,7 @@ module.exports = {
     ],
     /**
      * NOTE
-     * Experimental decorators are used in `@redwoodjs/structure`.
+     * Experimental decorators are used in `@cedarjs/structure`.
      * https://github.com/tc39/proposal-decorators
      **/
     ['@babel/plugin-proposal-decorators', { legacy: true }],
@@ -145,6 +145,9 @@ module.exports = {
     },
   ],
   // Ignore test directories when we're not testing
+  // Note: No matter what you try to do here, babel will still include
+  // snapshot files in the dist output.
+  // See https://github.com/babel/babel/issues/11394
   ignore:
     process.env.NODE_ENV === 'test'
       ? []

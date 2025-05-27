@@ -1,10 +1,10 @@
 {
-  "name": "@redwoodjs/api-server",
-  "version": "8.0.0",
-  "description": "Redwood's HTTP server for Serverless Functions",
+  "name": "@cedarjs/api-server",
+  "version": "0.0.5",
+  "description": "CedarJS's HTTP server for Serverless Functions",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/redwoodjs/redwood.git",
+    "url": "git+https://github.com/cedarjs/cedar.git",
     "directory": "packages/api-server"
   },
   "license": "MIT",
@@ -20,7 +20,7 @@
   ],
   "scripts": {
     "build": "tsx ./build.mts && yarn build:types",
-    "build:pack": "yarn pack -o redwoodjs-api-server.tgz",
+    "build:pack": "yarn pack -o cedarjs-api-server.tgz",
     "build:types": "tsc --build --verbose tsconfig.build.json",
     "build:watch": "nodemon --watch src --ext \"js,jsx,ts,tsx\" --ignore dist --exec \"yarn build && yarn fix:permissions\"",
     "fix:permissions": "chmod +x dist/index.js; chmod +x dist/watch.js",
@@ -29,13 +29,13 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@fastify/multipart": "8.3.0",
+    "@cedarjs/context": "workspace:*",
+    "@cedarjs/fastify-web": "workspace:*",
+    "@cedarjs/internal": "workspace:*",
+    "@cedarjs/project-config": "workspace:*",
+    "@cedarjs/web-server": "workspace:*",
+    "@fastify/multipart": "8.3.1",
     "@fastify/url-data": "5.4.0",
-    "@redwoodjs/context": "workspace:*",
-    "@redwoodjs/fastify-web": "workspace:*",
-    "@redwoodjs/internal": "workspace:*",
-    "@redwoodjs/project-config": "workspace:*",
-    "@redwoodjs/web-server": "workspace:*",
     "chalk": "4.1.2",
     "chokidar": "3.6.0",
     "dotenv-defaults": "5.0.2",
@@ -51,22 +51,22 @@
     "yargs": "17.7.2"
   },
   "devDependencies": {
-    "@redwoodjs/framework-tools": "workspace:*",
+    "@cedarjs/framework-tools": "workspace:*",
     "@types/aws-lambda": "8.10.145",
-    "@types/lodash": "4.17.10",
+    "@types/lodash": "4.17.15",
     "@types/qs": "6.9.16",
     "@types/split2": "4.2.3",
     "@types/yargs": "17.0.33",
     "pino-abstract-transport": "1.2.0",
-    "tsx": "4.19.1",
+    "tsx": "4.19.3",
     "typescript": "5.6.2",
-    "vitest": "2.0.5"
+    "vitest": "2.1.9"
   },
   "peerDependencies": {
-    "@redwoodjs/graphql-server": "workspace:*"
+    "@cedarjs/graphql-server": "workspace:*"
   },
   "peerDependenciesMeta": {
-    "@redwoodjs/graphql-server": {
+    "@cedarjs/graphql-server": {
       "optional": true
     }
   },

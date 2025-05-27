@@ -4,8 +4,8 @@ import path from 'node:path'
 import { getDMMF, getSchema } from '@prisma/internals'
 import execa from 'execa'
 
-import { getPaths } from '@redwoodjs/cli-helpers'
-import { processPagesDir } from '@redwoodjs/project-config'
+import { getPaths } from '@cedarjs/cli-helpers'
+import { processPagesDir } from '@cedarjs/project-config'
 
 export const libPath = getPaths().api.lib.replace(getPaths().base, '')
 export const functionsPath = getPaths().api.functions.replace(

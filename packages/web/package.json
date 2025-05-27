@@ -1,9 +1,9 @@
 {
-  "name": "@redwoodjs/web",
-  "version": "8.0.0",
+  "name": "@cedarjs/web",
+  "version": "0.0.5",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/redwoodjs/redwood.git",
+    "url": "git+https://github.com/cedarjs/cedar.git",
     "directory": "packages/web"
   },
   "license": "MIT",
@@ -130,7 +130,7 @@
   ],
   "scripts": {
     "build": "tsx ./build.ts && yarn build:types",
-    "build:pack": "yarn pack -o redwoodjs-web.tgz",
+    "build:pack": "yarn pack -o cedarjs-web.tgz",
     "build:types": "tsc --build --verbose ./tsconfig.build.json ./tsconfig.cjs.json",
     "build:watch": "nodemon --watch src --ext \"js,jsx,ts,tsx\" --ignore dist --exec \"yarn build\"",
     "check:attw": "tsx ./attw.ts",
@@ -141,13 +141,14 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@apollo/client": "3.11.1",
-    "@babel/runtime-corejs3": "7.25.7",
-    "@redwoodjs/auth": "workspace:*",
-    "@redwoodjs/server-store": "workspace:*",
+    "@apollo/client": "3.13.8",
+    "@babel/runtime-corejs3": "7.27.1",
+    "@cedarjs/auth": "workspace:*",
+    "@cedarjs/server-store": "workspace:*",
     "@whatwg-node/fetch": "0.9.21",
     "apollo-upload-client": "18.0.1",
-    "core-js": "3.38.1",
+    "cookie": "1.0.2",
+    "core-js": "3.42.0",
     "graphql": "16.9.0",
     "graphql-sse": "2.5.3",
     "graphql-tag": "2.12.6",
@@ -157,14 +158,14 @@
     "ts-toolbelt": "9.6.0"
   },
   "devDependencies": {
-    "@apollo/client-react-streaming": "0.10.0",
+    "@apollo/client-react-streaming": "0.12.2",
     "@arethetypeswrong/cli": "0.16.4",
-    "@babel/cli": "7.25.7",
-    "@babel/core": "^7.22.20",
-    "@babel/plugin-transform-runtime": "7.25.7",
-    "@babel/runtime": "7.25.7",
-    "@redwoodjs/framework-tools": "workspace:*",
-    "@redwoodjs/internal": "workspace:*",
+    "@babel/cli": "7.27.2",
+    "@babel/core": "^7.26.10",
+    "@babel/plugin-transform-runtime": "7.27.1",
+    "@babel/runtime": "7.27.1",
+    "@cedarjs/framework-tools": "workspace:*",
+    "@cedarjs/internal": "workspace:*",
     "@rollup/plugin-babel": "6.0.4",
     "@testing-library/jest-dom": "6.5.0",
     "@testing-library/react": "14.3.1",
@@ -172,14 +173,14 @@
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
     "concurrently": "8.2.2",
-    "nodemon": "3.1.7",
-    "publint": "0.2.11",
+    "nodemon": "3.1.9",
+    "publint": "0.3.12",
     "react": "19.0.0-rc-f2df5694-20240916",
     "react-dom": "19.0.0-rc-f2df5694-20240916",
-    "tstyche": "2.1.1",
-    "tsx": "4.19.1",
+    "tstyche": "3.0.0",
+    "tsx": "4.19.3",
     "typescript": "5.6.2",
-    "vitest": "2.0.5"
+    "vitest": "2.1.9"
   },
   "peerDependencies": {
     "react": "19.0.0-rc-f2df5694-20240916",

@@ -1,4 +1,4 @@
-import { build, copyAssets } from '@redwoodjs/framework-tools'
+import { build, copyAssets } from '@cedarjs/framework-tools'
 
 await build()
 

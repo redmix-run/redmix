@@ -1,4 +1,4 @@
-import { recordTelemetryAttributes } from '@redwoodjs/cli-helpers'
+import { recordTelemetryAttributes } from '@cedarjs/cli-helpers'
 
 export const command = 'studio'
 export const description = 'Run the Redwood development studio'

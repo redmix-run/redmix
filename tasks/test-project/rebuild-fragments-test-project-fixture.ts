@@ -8,14 +8,14 @@ import { rimraf } from 'rimraf'
 import { hideBin } from 'yargs/helpers'
 import yargs from 'yargs/yargs'
 
-import { RedwoodTUI, ReactiveTUIContent, RedwoodStyling } from '@redwoodjs/tui'
+import { RedwoodTUI, ReactiveTUIContent, RedwoodStyling } from '@cedarjs/tui'
 
 import {
   addFrameworkDepsToProject,
   copyFrameworkPackages,
 } from './frameworkLinking'
 import { webTasks, apiTasks, fragmentsTasks } from './tui-tasks'
-import { isAwaitable } from './typing'
+import { isAwaitable, isTuiError } from './typing'
 import type { TuiTaskDef } from './typing'
 import {
   getExecaOptions as utilGetExecaOptions,
@@ -140,13 +140,16 @@ async function tuiTask({ step, title, content, task, parent }: TuiTaskDef) {
         'stdout:\n' + e.stdout + '\n\n' + 'stderr:\n' + e.stderr,
       )
     } else {
+      const message = isTuiError(e) ? e.message : ''
+
       tui.displayError(
         'Failed ' + title.toLowerCase().replace('...', ''),
-        e.message,
+        message || '',
       )
     }
 
-    process.exit(e.exitCode)
+    const exitCode = isTuiError(e) ? e.exitCode : undefined
+    process.exit(exitCode)
   }
 
   if (isAwaitable(promise)) {
@@ -197,11 +200,8 @@ async function tuiTask({ step, title, content, task, parent }: TuiTaskDef) {
 /**
  * Function that returns a string to show when skipping the task, or just
  * true|false to indicate whether the task should be skipped or not.
- *
- * @param {string} startStep
- * @param {string} currentStep
  */
-function skipFn(startStep, currentStep) {
+function skipFn(startStep: string, currentStep: string) {
   const startStepNrs = startStep.split('.').map((s) => parseInt(s, 10))
   const currentStepNrs = currentStep.split('.').map((s) => parseInt(s, 10))
 
@@ -237,7 +237,7 @@ if (resumePath && !fs.existsSync(path.join(resumePath, 'redwood.toml'))) {
 }
 
 const createProject = () => {
-  const cmd = `yarn node ./packages/create-redwood-app/dist/create-redwood-app.js ${OUTPUT_PROJECT_PATH}`
+  const cmd = `yarn node ./packages/create-cedar-app/dist/create-cedar-app.js ${OUTPUT_PROJECT_PATH}`
 
   const subprocess = exec(
     cmd,
@@ -467,7 +467,7 @@ async function runCommand() {
       fs.copyFileSync(
         path.join(
           __dirname,
-          '../../packages/create-redwood-app/templates/ts/package.json',
+          '../../packages/create-cedar-app/templates/ts/package.json',
         ),
         path.join(OUTPUT_PROJECT_PATH, 'package.json'),
       )

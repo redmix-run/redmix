@@ -4,20 +4,20 @@ import fs from 'fs-extra'
 import { Listr } from 'listr2'
 import { format } from 'prettier'
 
-import { addApiPackages, getPrettierOptions } from '@redwoodjs/cli-helpers'
-import { errorTelemetry } from '@redwoodjs/telemetry'
+import { addApiPackages, getPrettierOptions } from '@cedarjs/cli-helpers'
+import { errorTelemetry } from '@cedarjs/telemetry'
 
-import { getPaths, transformTSToJS, writeFile } from '../../../lib'
-import c from '../../../lib/colors'
-import { isTypeScriptProject } from '../../../lib/project'
-import { runTransform } from '../../../lib/runTransform'
+import c from '../../../lib/colors.js'
+import { getPaths, transformTSToJS, writeFile } from '../../../lib/index.js'
+import { isTypeScriptProject } from '../../../lib/project.js'
+import { runTransform } from '../../../lib/runTransform.js'
 
 export const handler = async ({ force }) => {
   const projectIsTypescript = isTypeScriptProject()
   const redwoodVersion =
-    require(path.join(getPaths().base, 'package.json')).devDependencies[
-      '@redwoodjs/core'
-    ] ?? 'latest'
+    (await import(path.join(getPaths().base, 'package.json'), {
+      with: { type: 'json ' },
+    }).default.devDependencies['@cedarjs/core']) ?? 'latest'
 
   const tasks = new Listr(
     [
@@ -27,7 +27,7 @@ export const handler = async ({ force }) => {
         }...`,
         task: async () => {
           const templatePath = path.resolve(
-            __dirname,
+            import.meta.dirname,
             'templates',
             'srcLibUploads.ts.template',
           )
@@ -53,7 +53,7 @@ export const handler = async ({ force }) => {
         title: `Adding signedUrl function...`,
         task: async () => {
           const templatePath = path.resolve(
-            __dirname,
+            import.meta.dirname,
             'templates',
             'signedUrl.ts.template',
           )
@@ -76,7 +76,7 @@ export const handler = async ({ force }) => {
         },
       },
       {
-        ...addApiPackages([`@redwoodjs/storage@${redwoodVersion}`]),
+        ...addApiPackages([`@cedarjs/storage@${redwoodVersion}`]),
         title: 'Adding dependencies to your api side...',
       },
       {
@@ -88,7 +88,7 @@ export const handler = async ({ force }) => {
           )
 
           const transformResult = await runTransform({
-            transformPath: path.join(__dirname, 'dbCodemod.js'),
+            transformPath: path.join(import.meta.dirname, 'dbCodemod.js'),
             targetPaths: [dbPath],
           })
 

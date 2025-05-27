@@ -16,11 +16,11 @@ import type {
 } from '@supabase/supabase-js'
 import { AuthError } from '@supabase/supabase-js'
 
-import type { CurrentUser, CustomProviderHooks } from '@redwoodjs/auth'
+import type { CurrentUser, CustomProviderHooks } from '@cedarjs/auth'
 import {
   createAuthentication,
   getCurrentUserFromMiddleware,
-} from '@redwoodjs/auth'
+} from '@cedarjs/auth'
 
 export type SignInWithOAuthOptions = SignInWithOAuthCredentials & {
   authMethod: 'oauth'

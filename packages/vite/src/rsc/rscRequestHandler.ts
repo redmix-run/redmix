@@ -11,7 +11,7 @@ import type Router from 'find-my-way'
 import type { HTTPMethod } from 'find-my-way'
 import type { ViteDevServer } from 'vite'
 
-import type { Middleware } from '@redwoodjs/web/dist/server/middleware'
+import type { Middleware } from '@cedarjs/web/dist/server/middleware'
 
 import {
   decodeReply,
@@ -24,7 +24,7 @@ const BASE_PATH = '/rw-rsc/'
 
 interface CreateRscRequestHandlerOptions {
   getMiddlewareRouter: () => Promise<Router.Instance<any>>
-  viteDevServer?: ViteDevServer
+  viteSsrDevServer?: ViteDevServer
 }
 
 export async function createRscRequestHandler(
@@ -51,7 +51,7 @@ export async function createRscRequestHandler(
     if (mwRouter) {
       // @MARK: Temporarily create Fetch Request here.
       // Ideally we'll have converted this whole handler to be Fetch Req and Response
-      const webReq = normalizeNodeRequest(req, DefaultFetchAPI.Request)
+      const webReq = normalizeNodeRequest(req, DefaultFetchAPI)
       const matchedMw = mwRouter.find(webReq.method as HTTPMethod, webReq.url)
 
       const [mwResponse] = await invoke(
@@ -59,7 +59,7 @@ export async function createRscRequestHandler(
         matchedMw?.handler as Middleware | undefined,
         {
           params: matchedMw?.params,
-          viteDevServer: options.viteDevServer,
+          viteSsrDevServer: options.viteSsrDevServer,
         },
       )
 
@@ -123,7 +123,7 @@ export async function createRscRequestHandler(
         }
 
         // Getting a warning on GitHub about this
-        // https://github.com/redwoodjs/redwood/security/code-scanning/211
+        // https://github.com/cedarjs/cedar/security/code-scanning/211
         // Handle according to TODO below
         res.end(String(err))
         // TODO (RSC): When we have `yarn rw dev` support we should do this:

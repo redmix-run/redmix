@@ -5,12 +5,13 @@ import fs from 'fs-extra'
 import { Listr } from 'listr2'
 import terminalLink from 'terminal-link'
 
-import { recordTelemetryAttributes } from '@redwoodjs/cli-helpers'
+import { recordTelemetryAttributes } from '@cedarjs/cli-helpers'
 
-import { getPaths, writeFilesTask } from '../../../lib'
-import c from '../../../lib/colors'
-import { prepareForRollback } from '../../../lib/rollback'
-import { validateName, yargsDefaults } from '../helpers'
+import c from '../../../lib/colors.js'
+import { getPaths, writeFilesTask } from '../../../lib/index.js'
+import { prepareForRollback } from '../../../lib/rollback.js'
+import { validateName } from '../helpers.js'
+import { getYargsDefaults } from '../yargsCommandHelpers.js'
 
 const POST_RUN_INSTRUCTIONS = `Next steps...\n\n   ${c.warning(
   'After writing your migration, you can run it with:',
@@ -20,8 +21,16 @@ const POST_RUN_INSTRUCTIONS = `Next steps...\n\n   ${c.warning(
 `
 
 const TEMPLATE_PATHS = {
-  js: path.resolve(__dirname, 'templates', 'dataMigration.js.template'),
-  ts: path.resolve(__dirname, 'templates', 'dataMigration.ts.template'),
+  js: path.resolve(
+    import.meta.dirname,
+    'templates',
+    'dataMigration.js.template',
+  ),
+  ts: path.resolve(
+    import.meta.dirname,
+    'templates',
+    'dataMigration.ts.template',
+  ),
 }
 
 export const files = ({ name, typescript }) => {
@@ -59,7 +68,7 @@ export const builder = (yargs) => {
     )
 
   // Merge generator defaults in
-  Object.entries(yargsDefaults).forEach(([option, config]) => {
+  Object.entries(getYargsDefaults()).forEach(([option, config]) => {
     yargs.option(option, config)
   })
 }

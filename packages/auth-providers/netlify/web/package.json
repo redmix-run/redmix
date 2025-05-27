@@ -1,9 +1,9 @@
 {
-  "name": "@redwoodjs/auth-netlify-web",
-  "version": "8.0.0",
+  "name": "@cedarjs/auth-netlify-web",
+  "version": "0.0.5",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/redwoodjs/redwood.git",
+    "url": "git+https://github.com/cedarjs/cedar.git",
     "directory": "packages/auth-providers/netlify/web"
   },
   "license": "MIT",
@@ -38,7 +38,7 @@
   ],
   "scripts": {
     "build": "tsx ./build.ts",
-    "build:pack": "yarn pack -o redwoodjs-auth-netlify-web.tgz",
+    "build:pack": "yarn pack -o cedarjs-auth-netlify-web.tgz",
     "build:types": "tsc --build --verbose ./tsconfig.build.json",
     "build:types-cjs": "tsc --build --verbose ./tsconfig.cjs.json",
     "build:watch": "nodemon --watch src --ext \"js,jsx,ts,tsx,template\" --ignore dist --exec \"yarn build\"",
@@ -49,18 +49,18 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@redwoodjs/auth": "workspace:*"
+    "@cedarjs/auth": "workspace:*"
   },
   "devDependencies": {
-    "@redwoodjs/framework-tools": "workspace:*",
+    "@cedarjs/framework-tools": "workspace:*",
     "@types/netlify-identity-widget": "1.9.6",
     "@types/react": "^18.2.55",
     "concurrently": "8.2.2",
-    "publint": "0.2.11",
+    "publint": "0.3.12",
     "react": "19.0.0-rc-f2df5694-20240916",
-    "tsx": "4.19.1",
+    "tsx": "4.19.3",
     "typescript": "5.6.2",
-    "vitest": "2.0.5"
+    "vitest": "2.1.9"
   },
   "peerDependencies": {
     "netlify-identity-widget": "1.9.2"

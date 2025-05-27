@@ -1,8 +1,8 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Plural word files > creates a page component with a plural word for name 1`] = `
-"// import { Link, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
+"// import { Link, routes } from '@cedarjs/router'
+import { Metadata } from '@cedarjs/web'
 
 const CatsPage = () => {
   return (
@@ -26,8 +26,8 @@ export default CatsPage
 `;
 
 exports[`Single world files > creates a page component 1`] = `
-"// import { Link, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
+"// import { Link, routes } from '@cedarjs/router'
+import { Metadata } from '@cedarjs/web'
 
 const HomePage = () => {
   return (
@@ -64,7 +64,7 @@ export const Primary = {}
 `;
 
 exports[`Single world files > creates a page test 1`] = `
-"import { render } from '@redwoodjs/testing/web'
+"import { render } from '@cedarjs/testing/web'
 
 import HomePage from './HomePage'
 
@@ -82,8 +82,8 @@ describe('HomePage', () => {
 `;
 
 exports[`TS Files > TS Params 1`] = `
-"// import { Link, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
+"// import { Link, routes } from '@cedarjs/router'
+import { Metadata } from '@cedarjs/web'
 
 type TsParamFilesPageProps = {
   id: string
@@ -115,8 +115,8 @@ export default TsParamFilesPage
 `;
 
 exports[`TS Files > TS Params with type 1`] = `
-"// import { Link, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
+"// import { Link, routes } from '@cedarjs/router'
+import { Metadata } from '@cedarjs/web'
 
 type TsParamTypeFilesPageProps = {
   id: number
@@ -150,8 +150,8 @@ export default TsParamTypeFilesPage
 `;
 
 exports[`TS Files > generates typescript pages 1`] = `
-"// import { Link, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
+"// import { Link, routes } from '@cedarjs/router'
+import { Metadata } from '@cedarjs/web'
 
 const TsFilesPage = () => {
   return (
@@ -192,7 +192,7 @@ export const Primary: Story = {}
 `;
 
 exports[`TS Files > generates typescript pages 3`] = `
-"import { render } from '@redwoodjs/testing/web'
+"import { render } from '@cedarjs/testing/web'
 
 import TsFilesPage from './TsFilesPage'
 
@@ -227,7 +227,7 @@ export const Primary = {}
 
 exports[`handler > file generation 2`] = `
 {
-  "fileContent": "import { render } from '@redwoodjs/testing/web'
+  "fileContent": "import { render } from '@cedarjs/testing/web'
 
 import HomePage from './HomePage'
 
@@ -248,8 +248,8 @@ describe('HomePage', () => {
 
 exports[`handler > file generation 3`] = `
 {
-  "fileContent": "// import { Link, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
+  "fileContent": "// import { Link, routes } from '@cedarjs/router'
+import { Metadata } from '@cedarjs/web'
 
 const HomePage = () => {
   return (
@@ -276,7 +276,7 @@ export default HomePage
 
 exports[`handler > file generation 4`] = `
 {
-  "fileContent": "import { Router, Route } from '@redwoodjs/router'
+  "fileContent": "import { Router, Route } from '@cedarjs/router'
 
 const Routes = () => {
   return (
@@ -311,7 +311,7 @@ export const Primary = {}
 
 exports[`handler > file generation with route params 2`] = `
 {
-  "fileContent": "import { render } from '@redwoodjs/testing/web'
+  "fileContent": "import { render } from '@cedarjs/testing/web'
 
 import PostPage from './PostPage'
 
@@ -332,8 +332,8 @@ describe('PostPage', () => {
 
 exports[`handler > file generation with route params 3`] = `
 {
-  "fileContent": "// import { Link, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
+  "fileContent": "// import { Link, routes } from '@cedarjs/router'
+import { Metadata } from '@cedarjs/web'
 
 const PostPage = ({ id }) => {
   return (
@@ -363,7 +363,7 @@ export default PostPage
 
 exports[`handler > file generation with route params 4`] = `
 {
-  "fileContent": "import { Router, Route } from '@redwoodjs/router'
+  "fileContent": "import { Router, Route } from '@cedarjs/router'
 
 const Routes = () => {
   return (
@@ -381,8 +381,8 @@ export default Routes",
 `;
 
 exports[`multiWorldFiles > creates a page component 1`] = `
-"// import { Link, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
+"// import { Link, routes } from '@cedarjs/router'
+import { Metadata } from '@cedarjs/web'
 
 const ContactUsPage = () => {
   return (
@@ -419,7 +419,7 @@ export const Primary = {}
 `;
 
 exports[`multiWorldFiles > creates a test for a component with multiple words for a name 1`] = `
-"import { render } from '@redwoodjs/testing/web'
+"import { render } from '@cedarjs/testing/web'
 
 import ContactUsPage from './ContactUsPage'
 
@@ -437,8 +437,8 @@ describe('ContactUsPage', () => {
 `;
 
 exports[`paramFiles > creates a page component with params 1`] = `
-"// import { Link, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
+"// import { Link, routes } from '@cedarjs/router'
+import { Metadata } from '@cedarjs/web'
 
 const PostPage = ({ id }) => {
   return (
@@ -465,7 +465,7 @@ export default PostPage
 `;
 
 exports[`paramFiles > creates a test for page component with params 1`] = `
-"import { render } from '@redwoodjs/testing/web'
+"import { render } from '@cedarjs/testing/web'
 
 import PostPage from './PostPage'
 

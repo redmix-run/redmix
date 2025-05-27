@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'tstyche'
 
-import type { CellSuccessData } from '@redwoodjs/web'
+import type { CellSuccessData } from '@cedarjs/web'
 
 describe('CellSuccessData', () => {
   describe('when there is exactly one non-typename property', () => {

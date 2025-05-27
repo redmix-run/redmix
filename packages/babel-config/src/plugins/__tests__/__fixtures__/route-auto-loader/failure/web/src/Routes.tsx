@@ -1,4 +1,4 @@
-import { Router, Route } from '@redwoodjs/router'
+import { Router, Route } from '@cedarjs/router'
 
 const Routes = () => {
   return (

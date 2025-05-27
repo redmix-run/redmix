@@ -1,7 +1,7 @@
 import { Listr } from 'listr2'
-import { vi, beforeEach, describe, it, expect } from 'vitest'
+import { vi, afterEach, beforeEach, describe, it, expect } from 'vitest'
 
-vi.mock('@redwoodjs/project-config', async (importOriginal) => {
+vi.mock('@cedarjs/project-config', async (importOriginal) => {
   const originalProjectConfig = await importOriginal()
   return {
     ...originalProjectConfig,
@@ -11,7 +11,7 @@ vi.mock('@redwoodjs/project-config', async (importOriginal) => {
   }
 })
 
-import * as baremetal from '../baremetal'
+import * as baremetal from '../baremetal/baremetalHandler.js'
 
 describe('verifyConfig', () => {
   it('throws an error if no environment specified', () => {
@@ -267,9 +267,9 @@ describe('serverConfigWithDefaults', () => {
     expect(config.branch).toEqual('moon')
   })
 
-  it('does not provide default freeSpaceRequired', () => {
+  it('provides default freeSpaceRequired', () => {
     const config = baremetal.serverConfigWithDefaults({}, {})
-    expect(config.freeSpaceRequired).toBeUndefined()
+    expect(config.freeSpaceRequired).toEqual(2048)
   })
 })
 
@@ -688,9 +688,9 @@ describe('deployTasks', () => {
     expect(tasks[0].skip()).toBeTruthy()
   })
 
-  it('warns if there is not enough available space on the server and freeSpaceRequired is not configured', async () => {
+  it('throws an error if there is not enough available space on the server and freeSpaceRequired is not configured', async () => {
     const ssh = {
-      exec: () => ({ stdout: 'df:1875' }),
+      exec: () => ({ stdout: 'df:1875893' }),
     }
 
     const { freeSpaceRequired: _, ...serverConfig } = defaultServerConfig
@@ -702,29 +702,29 @@ describe('deployTasks', () => {
       {}, // lifecycle
     )
 
-    await tasks[0].task({}, mockTask)
-
-    expect(mockTask.skip).toHaveBeenCalledWith(
-      expect.stringContaining(
-        'Warning: Your server is running low on disk space.',
-      ),
+    await expect(() => tasks[0].task({}, {})).rejects.toThrowError(
+      /Not enough disk space\. You need at least 2048MB free space to continue\. \(Currently 1832MB available\)/,
     )
   })
 
-  it('throws an error if there is less available space on the server than freeSpaceRequired', () => {
+  it('throws an error if there is less available space on the server than freeSpaceRequired', async () => {
     const ssh = {
-      exec: () => ({ stdout: 'df:1875' }),
+      exec: () => ({ stdout: 'df:3875893' }),
     }
 
     const tasks = baremetal.deployTasks(
       defaultYargs,
       ssh,
-      { ...defaultServerConfig, sides: ['api', 'web'] },
+      {
+        ...defaultServerConfig,
+        sides: ['api', 'web'],
+        freeSpaceRequired: 4096,
+      },
       {}, // lifecycle
     )
 
-    expect(() => tasks[0].task({}, {})).rejects.toThrowError(
-      /Not enough disk space/,
+    await expect(() => tasks[0].task({}, {})).rejects.toThrowError(
+      /Not enough disk space\. You need at least 4096MB free space to continue/,
     )
   })
 
@@ -1044,5 +1044,26 @@ describe('commands', () => {
 
     expect(tasks[2].title).toEqual('Before update: `touch update`')
     expect(tasks[6].title).toEqual('After install: `touch install`')
+  })
+})
+
+describe('handler', () => {
+  beforeEach(() => {
+    vi.spyOn(console, 'error').mockImplementation(() => {})
+    vi.spyOn(process, 'exit').mockImplementation((number) => {
+      throw new Error('process.exit: ' + number)
+    })
+  })
+
+  afterEach(() => {
+    vi.mocked(console).error.mockRestore?.()
+    vi.mocked(process).exit.mockRestore?.()
+  })
+
+  it("should fail if there's no deploy.toml", async () => {
+    await expect(baremetal.handler({})).rejects.toThrowError('process.exit: 1')
+    expect(vi.mocked(console).error).toHaveBeenCalledWith(
+      expect.stringContaining('Baremetal deploy has not been properly setup'),
+    )
   })
 })

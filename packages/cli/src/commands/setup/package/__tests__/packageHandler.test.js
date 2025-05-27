@@ -1,4 +1,4 @@
-vi.mock('@redwoodjs/project-config', () => {
+vi.mock('@cedarjs/project-config', () => {
   return {
     getPaths: () => {
       const path = require('path')
@@ -8,7 +8,7 @@ vi.mock('@redwoodjs/project-config', () => {
     },
   }
 })
-vi.mock('@redwoodjs/cli-helpers', () => {
+vi.mock('@cedarjs/cli-helpers', () => {
   return {
     getCompatibilityData: vi.fn(() => {
       throw new Error('Mock Not Implemented')
@@ -44,9 +44,9 @@ import execa from 'execa'
 import { vol } from 'memfs'
 import { vi, describe, beforeEach, afterEach, test, expect } from 'vitest'
 
-import { getCompatibilityData } from '@redwoodjs/cli-helpers'
+import { getCompatibilityData } from '@cedarjs/cli-helpers'
 
-import { handler } from '../packageHandler'
+import { handler } from '../packageHandler.js'
 
 describe('packageHandler', () => {
   beforeEach(() => {
@@ -56,7 +56,7 @@ describe('packageHandler', () => {
     vol.fromJSON({
       ['package.json']: JSON.stringify({
         devDependencies: {
-          '@redwoodjs/core': '1.0.0',
+          '@cedarjs/core': '1.0.0',
         },
       }),
     })

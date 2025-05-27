@@ -2,9 +2,9 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-import { Link } from '@redwoodjs/router/Link'
-import { namedRoutes as routes } from '@redwoodjs/router/namedRoutes'
-import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
+import { Link } from '@cedarjs/router/Link'
+import { namedRoutes as routes } from '@cedarjs/router/namedRoutes'
+import type { CellSuccessProps, CellFailureProps } from '@cedarjs/web'
 
 type BlogPost = {
   slug: string

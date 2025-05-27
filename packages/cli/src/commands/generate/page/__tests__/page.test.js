@@ -10,7 +10,6 @@ vi.mock('fs', async (importOriginal) => {
     default: {
       ...originalFs,
       existsSync: (...args) => {
-        console.log('existsSync', args)
         if (mockFiles[args[0]]) {
           return true
         }
@@ -70,7 +69,7 @@ import { vi, describe, it, test, expect, beforeEach, afterEach } from 'vitest'
 
 import '../../../../lib/mockTelemetry'
 
-vi.mock('@redwoodjs/project-config', async (importOriginal) => {
+vi.mock('@cedarjs/project-config', async (importOriginal) => {
   const path = require('path')
   const originalProjectConfig = await importOriginal()
   return {
@@ -92,7 +91,7 @@ vi.mock('@redwoodjs/project-config', async (importOriginal) => {
   }
 })
 
-vi.mock('@redwoodjs/cli-helpers', async (importOriginal) => {
+vi.mock('@cedarjs/cli-helpers', async (importOriginal) => {
   const originalCliHelpers = await importOriginal()
 
   return {
@@ -101,7 +100,7 @@ vi.mock('@redwoodjs/cli-helpers', async (importOriginal) => {
   }
 })
 
-vi.mock('@redwoodjs/internal/dist/generate/generate', () => {
+vi.mock('@cedarjs/internal/dist/generate/generate', () => {
   return {
     generate: () => {
       return { errors: [] }
@@ -109,18 +108,19 @@ vi.mock('@redwoodjs/internal/dist/generate/generate', () => {
   }
 })
 
-import { ensurePosixPath } from '@redwoodjs/project-config'
+import { ensurePosixPath } from '@cedarjs/project-config'
 
-import { getPaths } from '../../../../lib'
-import { pathName } from '../../helpers'
-import * as page from '../page'
+import { getPaths } from '../../../../lib/index.js'
+import { pathName } from '../../helpers.js'
+import * as page from '../page.js'
+import * as pageHandler from '../pageHandler.js'
 
 describe('Single world files', async () => {
-  const singleWordFiles = await page.files({
+  const singleWordFiles = await pageHandler.files({
     name: 'Home',
     tests: true,
     stories: true,
-    ...page.paramVariants(pathName(undefined, 'home')),
+    ...pageHandler.paramVariants(pathName(undefined, 'home')),
   })
 
   it('returns exactly 3 files', () => {
@@ -157,11 +157,11 @@ describe('Single world files', async () => {
 })
 
 describe('multiWorldFiles', async () => {
-  const multiWordFiles = await page.files({
+  const multiWordFiles = await pageHandler.files({
     name: 'ContactUs',
     tests: true,
     stories: true,
-    ...page.paramVariants(pathName(undefined, 'contact-us')),
+    ...pageHandler.paramVariants(pathName(undefined, 'contact-us')),
   })
 
   it('creates a page component', () => {
@@ -196,11 +196,11 @@ describe('multiWorldFiles', async () => {
 })
 
 describe('Plural word files', async () => {
-  const pluralWordFiles = await page.files({
+  const pluralWordFiles = await pageHandler.files({
     name: 'Cats',
     tests: true,
     stories: true,
-    ...page.paramVariants(pathName(undefined, 'cats')),
+    ...pageHandler.paramVariants(pathName(undefined, 'cats')),
   })
 
   test('creates a page component with a plural word for name', () => {
@@ -213,11 +213,11 @@ describe('Plural word files', async () => {
 })
 
 describe('paramFiles', async () => {
-  const paramFiles = await page.files({
+  const paramFiles = await pageHandler.files({
     name: 'Post',
     tests: true,
     stories: true,
-    ...page.paramVariants(pathName('{id}', 'post')),
+    ...pageHandler.paramVariants(pathName('{id}', 'post')),
   })
 
   it('creates a page component with params', () => {
@@ -240,11 +240,11 @@ describe('paramFiles', async () => {
 })
 
 describe('No test files', async () => {
-  const noTestsFiles = await page.files({
+  const noTestsFiles = await pageHandler.files({
     name: 'NoTests',
     tests: false,
     stories: true,
-    ...page.paramVariants(pathName(undefined, 'no-tests')),
+    ...pageHandler.paramVariants(pathName(undefined, 'no-tests')),
   })
 
   it('doesnt create a test for page component when tests=false', () => {
@@ -260,11 +260,11 @@ describe('No test files', async () => {
 })
 
 describe('No stories files', async () => {
-  const noStoriesFiles = await page.files({
+  const noStoriesFiles = await pageHandler.files({
     name: 'NoStories',
     tests: true,
     stories: false,
-    ...page.paramVariants(pathName(undefined, 'no-stories')),
+    ...pageHandler.paramVariants(pathName(undefined, 'no-stories')),
   })
 
   it('doesnt create a story for page component when stories=false', () => {
@@ -283,7 +283,7 @@ test('creates a single-word route name', () => {
   const names = ['Home', 'home']
 
   names.forEach((name) => {
-    expect(page.routes({ name: name, path: '/' })).toEqual([
+    expect(pageHandler.routes({ name: name, path: '/' })).toEqual([
       '<Route path="/" page={HomePage} name="home" />',
     ])
   })
@@ -293,7 +293,7 @@ test('creates a camelCase route name for lowercase words', () => {
   const names = ['FooBar', 'foo_bar', 'foo-bar', 'fooBar']
 
   names.forEach((name) => {
-    expect(page.routes({ name: name, path: 'foo-bar' })).toEqual([
+    expect(pageHandler.routes({ name: name, path: 'foo-bar' })).toEqual([
       '<Route path="foo-bar" page={FooBarPage} name="fooBar" />',
     ])
   })
@@ -303,7 +303,7 @@ test('creates a camelCase route name for uppercase words', () => {
   const names = ['FOO_BAR', 'FOO-BAR']
 
   names.forEach((name) => {
-    expect(page.routes({ name: name, path: 'foo-bar' })).toEqual([
+    expect(pageHandler.routes({ name: name, path: 'foo-bar' })).toEqual([
       '<Route path="foo-bar" page={FOOBARPage} name="fooBar" />',
     ])
   })
@@ -313,7 +313,7 @@ test('creates a camelCase route name for uppercase and lowercase mixed words', (
   const names = ['FOOBar', 'FOO-Bar', 'FOO_Bar']
 
   names.forEach((name) => {
-    expect(page.routes({ name: name, path: 'foo-bar' })).toEqual([
+    expect(pageHandler.routes({ name: name, path: 'foo-bar' })).toEqual([
       '<Route path="foo-bar" page={FOOBarPage} name="fooBar" />',
     ])
   })
@@ -323,7 +323,7 @@ test('creates a camelCase route name for multiple word names', () => {
   const names = ['AbTest', 'abTest', 'ab-test', 'ab_test']
 
   names.forEach((name) => {
-    expect(page.routes({ name: name, path: 'foo-bar' })).toEqual([
+    expect(pageHandler.routes({ name: name, path: 'foo-bar' })).toEqual([
       '<Route path="foo-bar" page={AbTestPage} name="abTest" />',
     ])
   })
@@ -333,7 +333,7 @@ test('creates a camelCase route name for multiple words with uppercase character
   const names = ['ABtest', 'aBtest', 'a-Btest', 'a_Btest']
 
   names.forEach((name) => {
-    expect(page.routes({ name: name, path: 'foo-bar' })).toEqual([
+    expect(pageHandler.routes({ name: name, path: 'foo-bar' })).toEqual([
       '<Route path="foo-bar" page={ABtestPage} name="aBtest" />',
     ])
   })
@@ -343,14 +343,14 @@ test('creates a camelCase route name for multiple words starting with uppercase 
   const names = ['ABTest', 'AB_test', 'AB-test']
 
   names.forEach((name) => {
-    expect(page.routes({ name: name, path: 'foo-bar' })).toEqual([
+    expect(pageHandler.routes({ name: name, path: 'foo-bar' })).toEqual([
       '<Route path="foo-bar" page={ABTestPage} name="abTest" />',
     ])
   })
 })
 
 test('creates a path equal to passed path', () => {
-  expect(page.routes({ name: 'FooBar', path: 'fooBar-baz' })).toEqual([
+  expect(pageHandler.routes({ name: 'FooBar', path: 'fooBar-baz' })).toEqual([
     '<Route path="fooBar-baz" page={FooBarPage} name="fooBar" />',
   ])
 })
@@ -364,14 +364,14 @@ test('paramVariants returns empty strings for no params', () => {
     paramValue: '',
     paramType: '',
   }
-  expect(page.paramVariants()).toEqual(emptyParams)
-  expect(page.paramVariants('')).toEqual(emptyParams)
-  expect(page.paramVariants('/')).toEqual(emptyParams)
-  expect(page.paramVariants('/post/edit')).toEqual(emptyParams)
+  expect(pageHandler.paramVariants()).toEqual(emptyParams)
+  expect(pageHandler.paramVariants('')).toEqual(emptyParams)
+  expect(pageHandler.paramVariants('/')).toEqual(emptyParams)
+  expect(pageHandler.paramVariants('/post/edit')).toEqual(emptyParams)
 })
 
 test('paramVariants finds the param and type in the middle of the path', () => {
-  expect(page.paramVariants('/post/{id:Int}/edit')).toEqual({
+  expect(pageHandler.paramVariants('/post/{id:Int}/edit')).toEqual({
     propParam: '{ id }',
     propValueParam: 'id={42}',
     argumentParam: '{ id: 42 }',
@@ -382,7 +382,7 @@ test('paramVariants finds the param and type in the middle of the path', () => {
 })
 
 test('paramVariants handles boolean type', () => {
-  expect(page.paramVariants('/post/edit/{debug:Boolean}')).toEqual({
+  expect(pageHandler.paramVariants('/post/edit/{debug:Boolean}')).toEqual({
     propParam: '{ debug }',
     propValueParam: 'debug={true}',
     argumentParam: '{ debug: true }',
@@ -393,7 +393,7 @@ test('paramVariants handles boolean type', () => {
 })
 
 test('paramVariants paramType defaults to string', () => {
-  expect(page.paramVariants('/posts/{id}')).toEqual({
+  expect(pageHandler.paramVariants('/posts/{id}')).toEqual({
     propParam: '{ id }',
     propValueParam: "id={'42'}",
     argumentParam: "{ id: '42' }",
@@ -417,7 +417,7 @@ describe('handler', () => {
   test('file generation', async () => {
     mockFiles = {
       [getPaths().web.routes]: [
-        "import { Router, Route } from '@redwoodjs/router'",
+        "import { Router, Route } from '@cedarjs/router'",
         '',
         'const Routes = () => {',
         '  return (',
@@ -462,7 +462,7 @@ describe('handler', () => {
   test('file generation with route params', async () => {
     mockFiles = {
       [getPaths().web.routes]: [
-        "import { Router, Route } from '@redwoodjs/router'",
+        "import { Router, Route } from '@cedarjs/router'",
         '',
         'const Routes = () => {',
         '  return (',
@@ -504,12 +504,12 @@ describe('handler', () => {
 })
 
 describe('TS Files', async () => {
-  const typescriptFiles = await page.files({
+  const typescriptFiles = await pageHandler.files({
     name: 'TSFiles',
     typescript: true,
     tests: true,
     stories: true,
-    ...page.paramVariants(pathName(undefined, 'typescript')),
+    ...pageHandler.paramVariants(pathName(undefined, 'typescript')),
   }) //?
 
   it('generates typescript pages', () => {
@@ -539,12 +539,12 @@ describe('TS Files', async () => {
   })
 
   test('TS Params', async () => {
-    const typescriptParamFiles = await page.files({
+    const typescriptParamFiles = await pageHandler.files({
       name: 'TSParamFiles',
       typescript: true,
       tests: true,
       stories: true,
-      ...page.paramVariants(pathName('{id}', 'typescript-param')),
+      ...pageHandler.paramVariants(pathName('{id}', 'typescript-param')),
     })
 
     expect(
@@ -557,12 +557,12 @@ describe('TS Files', async () => {
   })
 
   test('TS Params with type', async () => {
-    const typescriptParamTypeFiles = await page.files({
+    const typescriptParamTypeFiles = await pageHandler.files({
       name: 'TSParamTypeFiles',
       typescript: true,
       tests: false,
       stories: false,
-      ...page.paramVariants(
+      ...pageHandler.paramVariants(
         pathName('/bazinga-ts/{id:Int}', 'typescript-param-with-type'),
       ),
     })

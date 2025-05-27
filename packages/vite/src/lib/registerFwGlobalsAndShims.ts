@@ -1,6 +1,6 @@
 import path from 'node:path'
 
-import { getConfig, getPaths } from '@redwoodjs/project-config'
+import { getConfig, getPaths } from '@cedarjs/project-config'
 
 /**
  * Use this function on the web server

@@ -5,10 +5,10 @@ import execa from 'execa'
 import { Listr } from 'listr2'
 import { format } from 'prettier'
 
-import { getPrettierOptions, setTomlSetting } from '@redwoodjs/cli-helpers'
-import { getConfig, getPaths, resolveFile } from '@redwoodjs/project-config'
+import { getPrettierOptions, setTomlSetting } from '@cedarjs/cli-helpers'
+import { getConfig, getPaths, resolveFile } from '@cedarjs/project-config'
 
-import { runTransform } from '../../../../../lib/runTransform'
+import { runTransform } from '../../../../../lib/runTransform.js'
 
 export async function handler({ force }: { force: boolean }) {
   const tasks = new Listr(
@@ -52,7 +52,10 @@ export async function handler({ force }: { force: boolean }) {
           }
 
           const transformResult = await runTransform({
-            transformPath: path.join(__dirname, 'graphqlTransform.js'),
+            transformPath: path.join(
+              import.meta.dirname,
+              'graphqlTransform.js',
+            ),
             targetPaths: [graphqlPath],
           })
 

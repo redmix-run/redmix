@@ -163,7 +163,7 @@ model BackgroundJob {
 Let's look at the config file that was generated. Comments have been removed for brevity:
 
 ```js
-import { PrismaAdapter, JobManager } from '@redwoodjs/jobs'
+import { PrismaAdapter, JobManager } from '@cedarjs/jobs'
 
 import { db } from 'src/lib/db'
 import { logger } from 'src/lib/logger'

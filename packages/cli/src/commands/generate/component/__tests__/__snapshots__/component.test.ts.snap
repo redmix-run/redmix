@@ -17,7 +17,7 @@ export default TypescriptUser
 `;
 
 exports[`creates a TS component and test 2`] = `
-"import { render } from '@redwoodjs/testing/web'
+"import { render } from '@cedarjs/testing/web'
 
 import TypescriptUser from './TypescriptUser'
 
@@ -59,7 +59,7 @@ exports[`creates a multi word component story 1`] = `
 // }
 // \`\`\`
 //
-// See https://storybook.js.org/docs/react/writing-stories/args.
+// See https://storybook.js.org/docs/7/writing-stories/args
 
 import UserProfile from './UserProfile'
 
@@ -70,7 +70,7 @@ export const Primary = {}
 `;
 
 exports[`creates a multi word component test 1`] = `
-"import { render } from '@redwoodjs/testing/web'
+"import { render } from '@cedarjs/testing/web'
 
 import UserProfile from './UserProfile'
 
@@ -112,7 +112,7 @@ exports[`creates a single word component story 1`] = `
 // }
 // \`\`\`
 //
-// See https://storybook.js.org/docs/react/writing-stories/args.
+// See https://storybook.js.org/docs/7/writing-stories/args
 
 import User from './User'
 
@@ -123,7 +123,7 @@ export const Primary = {}
 `;
 
 exports[`creates a single word component test 1`] = `
-"import { render } from '@redwoodjs/testing/web'
+"import { render } from '@cedarjs/testing/web'
 
 import User from './User'
 

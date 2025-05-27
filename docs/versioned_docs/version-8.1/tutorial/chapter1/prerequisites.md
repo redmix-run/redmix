@@ -13,7 +13,7 @@ Redwood is composed of several popular libraries to make full-stack web developm
 
 **Don't panic!** You can work through this tutorial without knowing much of anything about these technologies. You may find yourself getting lost in terminology that we don't stop and take the time to explain, but that's okay: just know that the nitty-gritty details of how those technologies work is out there and there will be plenty of time to learn them. As you learn more about them you'll start to see the lines between what Redwood provides on top of the stock implementations of these projects.
 
-You could definitely learn them all at once, but it will be harder to determine where one ends and another begins, which makes it more difficult to find help once you're past the tutorial and want to dive deeper into one technology or another. Our advice? Make it through the tutorial and then start building something on your own! When you find that what you learned in the tutorial doesn't exactly apply to a feature you're trying to build, Google for where you're stuck ("prisma select only some fields") and you'll be an expert in no time. And don't forget our [Discourse](https://community.redwoodjs.com/) and [Discord](https://discord.gg/jjSYEQd) where you can get help from the creators of the framework, as well as tons of helpful community members.
+You could definitely learn them all at once, but it will be harder to determine where one ends and another begins, which makes it more difficult to find help once you're past the tutorial and want to dive deeper into one technology or another. Our advice? Make it through the tutorial and then start building something on your own! When you find that what you learned in the tutorial doesn't exactly apply to a feature you're trying to build, Google for where you're stuck ("prisma select only some fields") and you'll be an expert in no time. And don't forget our [Discourse](https://community.redwoodjs.com/) and [Discord](https://discord.com/invite/redwoodjs) where you can get help from the creators of the framework, as well as tons of helpful community members.
 
 ### Redwood Versions
 
@@ -22,7 +22,7 @@ You will want to be on at least version 7.0.0 to complete the tutorial. If this 
 If you have an existing site created with a prior version, you'll need to upgrade and (most likely) apply code modifications. Follow this two step process:
 
 1. For _each_ version included in your upgrade, follow the "Code Modifications" section or "Upgrade Guide" of the specific version's Release Notes:
-   - [Redwood Releases](https://github.com/redwoodjs/redwood/releases)
+   - [Redwood Releases](https://github.com/cedarjs/cedar/releases)
 2. Then upgrade to the latest version. Run the command:
    - `yarn redwood upgrade`
 

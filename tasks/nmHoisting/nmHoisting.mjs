@@ -26,13 +26,13 @@ async function main() {
     if (projectProvided) {
       cd(CRWA_DIR)
     } else {
-      await $`yarn create redwood-app ${CRWA_DIR} -y`
+      await $`yarn create cedar-app ${CRWA_DIR} -y`
       cd(CRWA_DIR)
       await $`yarn`
     }
 
     data.version = (
-      await $`jq -r '.devDependencies."@redwoodjs/core"' < package.json`
+      await $`jq -r '.devDependencies."@cedarjs/core"' < package.json`
     ).stdout.trim()
 
     let stdout = (

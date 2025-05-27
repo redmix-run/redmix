@@ -7,21 +7,26 @@
   "rebaseWhen": "conflicted",
   "packageRules": [
     {
-      "matchUpdateTypes": ["minor", "patch"],
-      "automerge": true
+      "matchUpdateTypes": ["patch"],
+      "automerge": true,
+      "labels": ["release:dependency", "changesets-ok"],
+      "milestone": 3
     },
     {
-      "groupName": "ESM and @redwoodjs packages",
+      "matchUpdateTypes": ["minor"],
+      "automerge": true,
+      "labels": ["release:dependency", "changesets-ok"],
+      "milestone": 4
+    },
+    {
+      "groupName": "ESM and @cedarjs packages",
       "enabled": false,
       "matchPackageNames": [
         "boxen",
         "chalk",
         "camelcase",
-        "configstore",
-        "decamelize",
         "execa",
         "humanize-string",
-        "latest-version",
         "pascalcase",
         "pretty-bytes",
         "pretty-ms",
@@ -30,13 +35,12 @@
         "terminal-link",
         "title-case",
         "untildify",
-        "/^@redwoodjs//"
+        "/^@cedarjs//"
       ]
     },
     {
       "groupName": "chore",
       "matchPackageNames": [
-        "all-contributors-cli",
         "cypress",
         "cypress-wait-until",
         "dependency-cruiser",

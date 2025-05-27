@@ -2,8 +2,8 @@ import enq from 'enquirer'
 import execa from 'execa'
 import semver from 'semver'
 
-import { getCompatibilityData } from '@redwoodjs/cli-helpers'
-import { getPaths } from '@redwoodjs/project-config'
+import { getCompatibilityData } from '@cedarjs/cli-helpers'
+import { getPaths } from '@cedarjs/project-config'
 
 export async function handler({ npmPackage, force, _: _args }) {
   // Extract package name and version which the user provided

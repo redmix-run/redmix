@@ -1,4 +1,4 @@
-vi.mock('@redwoodjs/project-config', async (importOriginal) => {
+vi.mock('@cedarjs/project-config', async (importOriginal) => {
   const originalProjectConfig = await importOriginal()
   return {
     ...originalProjectConfig,
@@ -52,7 +52,7 @@ vi.mock('execa', () => ({
   })),
 }))
 
-import { handler } from '../build'
+import { handler } from '../build.js'
 
 afterEach(() => {
   vi.clearAllMocks()
@@ -70,7 +70,7 @@ test('the build tasks are in the correct sequence', async () => {
   `)
 })
 
-vi.mock('@redwoodjs/prerender/detection', () => {
+vi.mock('@cedarjs/prerender/detection', () => {
   return { detectPrerenderRoutes: () => [] }
 })
 

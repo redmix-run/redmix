@@ -1,10 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi, vitest } from 'vitest'
 
-import type { Middleware, MiddlewareClass } from '@redwoodjs/web/middleware'
-import {
-  MiddlewareRequest,
-  MiddlewareResponse,
-} from '@redwoodjs/web/middleware'
+import type { Middleware, MiddlewareClass } from '@cedarjs/web/middleware'
+import { MiddlewareRequest, MiddlewareResponse } from '@cedarjs/web/middleware'
 
 import {
   addMiddlewareHandlers,

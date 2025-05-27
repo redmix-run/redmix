@@ -4,7 +4,7 @@ import type { AssignmentExpression, Program } from 'acorn'
 import * as acorn from 'acorn-loose'
 import { normalizePath, type Plugin } from 'vite'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@cedarjs/project-config'
 
 export function rscTransformUseClientPlugin(
   clientEntryFiles: Record<string, string>,

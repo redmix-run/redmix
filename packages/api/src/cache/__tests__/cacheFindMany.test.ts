@@ -1,8 +1,8 @@
 import { PrismaClient } from '@prisma/client'
 import { describe, afterEach, it, vi, expect } from 'vitest'
 
-import InMemoryClient from '../clients/InMemoryClient'
-import { createCache } from '../index'
+import InMemoryClient from '../clients/InMemoryClient.js'
+import { createCache } from '../index.js'
 
 const mockFindFirst = vi.fn()
 const mockFindMany = vi.fn()
@@ -28,7 +28,7 @@ describe('cacheFindMany', () => {
 
     const user = {
       id: 1,
-      email: 'rob@redwoodjs.com',
+      email: 'rob@cedarjs.com',
       updatedAt: now,
     }
     mockFindFirst.mockImplementation(() => user)
@@ -50,7 +50,7 @@ describe('cacheFindMany', () => {
     const now = new Date()
     const user = {
       id: 1,
-      email: 'rob@redwoodjs.com',
+      email: 'rob@cedarjs.com',
       updatedAt: now,
     }
     const client = new InMemoryClient({

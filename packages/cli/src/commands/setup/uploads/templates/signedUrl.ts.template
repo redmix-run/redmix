@@ -1,6 +1,6 @@
 import type { APIGatewayEvent, Context } from 'aws-lambda'
 
-import type { SignatureValidationArgs } from '@redwoodjs/storage/UrlSigner'
+import type { SignatureValidationArgs } from '@cedarjs/storage/UrlSigner'
 
 import { urlSigner, fsStorage } from 'src/lib/uploads'
 

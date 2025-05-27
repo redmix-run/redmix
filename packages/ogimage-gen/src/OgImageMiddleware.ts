@@ -7,14 +7,14 @@ import mime from 'mime-types'
 import type { PageScreenshotOptions } from 'playwright'
 import { renderToString } from 'react-dom/server'
 
-import type { RWRouteManifestItem } from '@redwoodjs/internal'
-import { getPaths } from '@redwoodjs/project-config'
-import { LocationProvider, matchPath } from '@redwoodjs/router'
+import type { RWRouteManifestItem } from '@cedarjs/internal'
+import { getPaths } from '@cedarjs/project-config'
+import { LocationProvider, matchPath } from '@cedarjs/router'
 import type {
   MiddlewareInvokeOptions,
   MiddlewareRequest,
   MiddlewareResponse,
-} from '@redwoodjs/web/middleware' with { 'resolution-mode': 'import' }
+} from '@cedarjs/web/middleware' with { 'resolution-mode': 'import' }
 
 import { getRoutesList } from './getRoutesList.js'
 import { OGIMAGE_DEFAULTS } from './hooks.js'
@@ -304,9 +304,9 @@ export default class OgImageMiddleware {
     invokeOptions: MiddlewareInvokeOptions,
   ) {
     try {
-      if (invokeOptions.viteDevServer) {
+      if (invokeOptions.viteSsrDevServer) {
         const { data, output } =
-          await invokeOptions.viteDevServer.ssrLoadModule(filePath)
+          await invokeOptions.viteSsrDevServer.ssrLoadModule(filePath)
         return { data, Component: output }
       } else {
         const { data, output } = await import(filePath)

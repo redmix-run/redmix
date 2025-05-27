@@ -1,10 +1,10 @@
 <% if (rscEnabled) { %>
-import { Link } from '@redwoodjs/router/Link'
-import { namedRoutes as routes } from '@redwoodjs/router/namedRoutes'
-import { Metadata } from '@redwoodjs/web/Metadata'
+import { Link } from '@cedarjs/router/Link'
+import { namedRoutes as routes } from '@cedarjs/router/namedRoutes'
+import { Metadata } from '@cedarjs/web/Metadata'
 <% } else { %>
-// import { Link, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
+// import { Link, routes } from '@cedarjs/router'
+import { Metadata } from '@cedarjs/web'
 <% } %>
 
 <% if (paramName !== '') { %>

@@ -4,7 +4,7 @@ import { config } from 'dotenv-defaults'
 import { hideBin } from 'yargs/helpers'
 import yargs from 'yargs/yargs'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@cedarjs/project-config'
 
 import { description, builder } from './commands/up'
 import { handler } from './commands/upHandler'

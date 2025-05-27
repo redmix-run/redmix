@@ -285,7 +285,7 @@ export const Comment = {
 
 ```ts title="api/src/services/comments/comments.ts"
 import type { Prisma } from '@prisma/client'
-import type { ResolverArgs } from '@redwoodjs/graphql-server'
+import type { ResolverArgs } from '@cedarjs/graphql-server'
 
 import { db } from 'src/lib/db'
 

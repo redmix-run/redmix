@@ -10,7 +10,7 @@ import decamelize from 'decamelize'
 import execa from 'execa'
 import fs from 'fs-extra'
 import { Listr } from 'listr2'
-import { memoize, template } from 'lodash'
+import lodash from 'lodash'
 import pascalcase from 'pascalcase'
 import { format } from 'prettier'
 
@@ -19,13 +19,15 @@ import {
   getPaths as getRedwoodPaths,
   resolveFile as internalResolveFile,
   findUp,
-} from '@redwoodjs/project-config'
+} from '@cedarjs/project-config'
 
-import c from './colors'
-import { addFileToRollback } from './rollback'
-import { pluralize, singularize } from './rwPluralize'
+import c from './colors.js'
+import { addFileToRollback } from './rollback.js'
+import { pluralize, singularize } from './rwPluralize.js'
 
 export { findUp }
+
+const { memoize, template } = lodash
 
 /**
  * Returns variants of the passed `name` for usage in templates. If the given
@@ -177,13 +179,14 @@ export const saveRemoteFileToDisk = (
   return downloadPromise
 }
 
-export const getInstalledRedwoodVersion = () => {
+export async function getInstalledCedarVersion() {
   try {
-    // @ts-ignore TS Config issue, due to src being the rootDir
-    const packageJson = require('../../package.json')
-    return packageJson.version
+    const packageJson = await import('../../package.json', {
+      with: { type: 'json' },
+    })
+    return packageJson.default.version
   } catch (e) {
-    console.error(c.error('Could not find installed redwood version'))
+    console.error(c.error('Could not find installed Cedar version'))
     process.exit(1)
   }
 }
@@ -494,20 +497,22 @@ export const removeRoutesFromRouterTask = (routes, layout) => {
  *
  * Use this util to install dependencies on a user's Redwood app
  *
- * @example addPackagesTask({
+ * @example await addPackagesTask({
  * packages: ['fs-extra', 'somePackage@2.1.0'],
  * side: 'api', // <-- leave empty for project root
  * devDependency: true
  * })
  */
-export const addPackagesTask = ({
+export const addPackagesTask = async ({
   packages,
   side = 'project',
   devDependency = false,
 }) => {
+  const cedarVersion = await getInstalledCedarVersion()
+
   const packagesWithSameRWVersion = packages.map((pkg) => {
-    if (pkg.includes('@redwoodjs')) {
-      return `${pkg}@${getInstalledRedwoodVersion()}`
+    if (pkg.includes('@cedarjs')) {
+      return `${pkg}@${cedarVersion}`
     } else {
       return pkg
     }
@@ -550,7 +555,9 @@ export const addPackagesTask = ({
   }
 }
 
-export const runCommandTask = async (commands, { verbose }) => {
+// TODO: Move this to generatePrismaClient.js. Possibly just inlining it
+// instead of creating a new Listr for generating the client
+export const runCommandTask = async (commands, { verbose, silent }) => {
   const tasks = new Listr(
     commands.map(({ title, cmd, args, opts = {}, cwd = getPaths().base }) => ({
       title,
@@ -558,7 +565,7 @@ export const runCommandTask = async (commands, { verbose }) => {
         return execa(cmd, args, {
           shell: true,
           cwd,
-          stdio: verbose ? 'inherit' : 'pipe',
+          stdio: verbose && !silent ? 'inherit' : 'pipe',
           extendEnv: true,
           cleanup: true,
           ...opts,
@@ -566,7 +573,7 @@ export const runCommandTask = async (commands, { verbose }) => {
       },
     })),
     {
-      renderer: verbose && 'verbose',
+      renderer: silent ? 'silent' : verbose ? 'verbose' : 'default',
       rendererOptions: { collapseSubtasks: false, dateFormat: false },
     },
   )

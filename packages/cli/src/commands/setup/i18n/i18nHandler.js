@@ -4,12 +4,12 @@ import execa from 'execa'
 import fs from 'fs-extra'
 import { Listr } from 'listr2'
 
-import { errorTelemetry } from '@redwoodjs/telemetry'
+import { errorTelemetry } from '@cedarjs/telemetry'
 
-import { getPaths, writeFile } from '../../../lib'
-import c from '../../../lib/colors'
+import c from '../../../lib/colors.js'
 import extendStorybookConfiguration from '../../../lib/configureStorybook.js'
-import { fileIncludes } from '../../../lib/extendFile'
+import { fileIncludes } from '../../../lib/extendFile.js'
+import { getPaths, writeFile } from '../../../lib/index.js'
 
 const APP_JS_PATH = getPaths().web.app
 
@@ -45,16 +45,15 @@ export const handler = async ({ force }) => {
             [
               {
                 title:
-                  'Install i18n, i18next, react-i18next and i18next-browser-languagedetector',
+                  'Install i18next, react-i18next and i18next-browser-languagedetector',
                 task: async () => {
                   /**
-                   * Install i18n, i18next, react-i18next and i18next-browser-languagedetector
+                   * Install i18next, react-i18next and i18next-browser-languagedetector
                    */
                   await execa('yarn', [
                     'workspace',
                     'web',
                     'add',
-                    'i18n',
                     'i18next',
                     'react-i18next',
                     'i18next-browser-languagedetector',
@@ -84,7 +83,11 @@ export const handler = async ({ force }) => {
               path.join(getPaths().web.src, 'i18n.js'),
               fs
                 .readFileSync(
-                  path.resolve(__dirname, 'templates', 'i18n.js.template'),
+                  path.resolve(
+                    import.meta.dirname,
+                    'templates',
+                    'i18n.js.template',
+                  ),
                 )
                 .toString(),
               { overwriteExisting: force },
@@ -112,7 +115,11 @@ export const handler = async ({ force }) => {
               path.join(getPaths().web.src, '/locales/fr.json'),
               fs
                 .readFileSync(
-                  path.resolve(__dirname, 'templates', 'fr.json.template'),
+                  path.resolve(
+                    import.meta.dirname,
+                    'templates',
+                    'fr.json.template',
+                  ),
                 )
                 .toString(),
               { overwriteExisting: force },
@@ -139,7 +146,11 @@ export const handler = async ({ force }) => {
               path.join(getPaths().web.src, '/locales/en.json'),
               fs
                 .readFileSync(
-                  path.resolve(__dirname, 'templates', 'en.json.template'),
+                  path.resolve(
+                    import.meta.dirname,
+                    'templates',
+                    'en.json.template',
+                  ),
                 )
                 .toString(),
               { overwriteExisting: force },
@@ -170,7 +181,11 @@ export const handler = async ({ force }) => {
         skip: () => fileIncludes(rwPaths.web.storybookConfig, 'withI18n'),
         task: async () =>
           extendStorybookConfiguration(
-            path.join(__dirname, 'templates', 'storybook.preview.tsx.template'),
+            path.join(
+              import.meta.dirname,
+              'templates',
+              'storybook.preview.tsx.template',
+            ),
           ),
       },
       {

@@ -6,8 +6,8 @@ import type {
 } from '@azure/msal-browser'
 import { InteractionRequiredAuthError } from '@azure/msal-browser'
 
-import type { CurrentUser } from '@redwoodjs/auth'
-import { createAuthentication } from '@redwoodjs/auth'
+import type { CurrentUser } from '@cedarjs/auth'
+import { createAuthentication } from '@cedarjs/auth'
 
 export function createAuth(
   azureActiveDirectoryClient: AzureActiveDirectoryClient,

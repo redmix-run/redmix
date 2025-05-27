@@ -3,13 +3,13 @@ import path from 'path'
 import execa from 'execa'
 import fs from 'fs-extra'
 
-import { recordTelemetryAttributes } from '@redwoodjs/cli-helpers'
-import { ensurePosixPath } from '@redwoodjs/project-config'
-import { errorTelemetry, timedTelemetry } from '@redwoodjs/telemetry'
+import { recordTelemetryAttributes } from '@cedarjs/cli-helpers'
+import { ensurePosixPath } from '@cedarjs/project-config'
+import { errorTelemetry, timedTelemetry } from '@cedarjs/telemetry'
 
-import { getPaths } from '../lib'
-import c from '../lib/colors'
-import * as project from '../lib/project'
+import c from '../lib/colors.js'
+import { getPaths } from '../lib/index.js'
+import * as project from '../lib/project.js'
 
 // https://github.com/facebook/create-react-app/blob/cbad256a4aacfc3084be7ccf91aad87899c63564/packages/react-scripts/scripts/test.js#L39
 function isInGitRepository() {
@@ -42,7 +42,7 @@ function isJestConfigFile(sides) {
           console.error(
             c.error(
               `\nError: Missing Jest config file ${side}/jest.config.js` +
-                '\nTo add this file, run `npx @redwoodjs/codemods update-jest-config`\n',
+                '\nTo add this file, run `npx @cedarjs/codemods update-jest-config`\n',
             ),
           )
           throw new Error(`Error: Jest config file not found in ${side} side`)
@@ -71,25 +71,28 @@ export const handler = async ({
   const rwjsPaths = getPaths()
   const forwardJestFlags = Object.keys(others).flatMap((flagName) => {
     if (
-      ['watch', 'collect-coverage', 'db-push', '$0', '_'].includes(flagName)
+      [
+        'collect-coverage',
+        'db-push',
+        'loadEnvFiles',
+        'watch',
+        '$0',
+        '_',
+      ].includes(flagName)
     ) {
       // filter out flags meant for the rw test command only
       return []
     } else {
       // and forward on the other flags
+      const flag = flagName.length > 1 ? `--${flagName}` : `-${flagName}`
       const flagValue = others[flagName]
 
       if (Array.isArray(flagValue)) {
         // jest does not collapse flags e.g. --coverageReporters=html --coverageReporters=text
         // so we pass it on. Yargs collapses these flags into an array of values
-        return flagValue.flatMap((val) => {
-          return [flagName.length > 1 ? `--${flagName}` : `-${flagName}`, val]
-        })
+        return flagValue.flatMap((val) => [flag, val])
       } else {
-        return [
-          flagName.length > 1 ? `--${flagName}` : `-${flagName}`,
-          flagValue,
-        ]
+        return [flag, flagValue]
       }
     }
   })

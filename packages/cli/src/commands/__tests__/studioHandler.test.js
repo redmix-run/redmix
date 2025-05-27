@@ -2,7 +2,7 @@
 
 var mockedRedwoodVersion = '0.0.0'
 
-vi.mock('@redwoodjs/project-config', async (importOriginal) => {
+vi.mock('@cedarjs/project-config', async (importOriginal) => {
   const originalProjectConfig = await importOriginal()
   return {
     ...originalProjectConfig,
@@ -14,7 +14,7 @@ vi.mock('fs-extra', () => ({
   default: {
     readJSONSync: () => ({
       devDependencies: {
-        '@redwoodjs/core': mockedRedwoodVersion,
+        '@cedarjs/core': mockedRedwoodVersion,
       },
     }),
   },
@@ -22,7 +22,7 @@ vi.mock('fs-extra', () => ({
 
 import { vi, describe, it, afterEach, afterAll, expect } from 'vitest'
 
-import { assertRedwoodVersion } from '../studioHandler'
+import { assertRedwoodVersion } from '../studioHandler.js'
 
 describe('studioHandler', () => {
   describe('assertRedwoodVersion', () => {
@@ -30,7 +30,7 @@ describe('studioHandler', () => {
       throw new Error(`process.exit(${code})`)
     })
 
-    vi.spyOn(console, 'error').mockImplementation()
+    vi.spyOn(console, 'error').mockImplementation(() => {})
 
     afterEach(() => {
       vi.clearAllMocks()

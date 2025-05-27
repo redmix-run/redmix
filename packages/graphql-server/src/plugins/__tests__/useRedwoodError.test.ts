@@ -1,24 +1,25 @@
 import type { APIGatewayProxyEvent, Context } from 'aws-lambda'
 import { CurrencyDefinition, CurrencyResolver } from 'graphql-scalars'
+import { vi, describe, expect, it } from 'vitest'
 
 import type {
   RedwoodError as RedwoodErrorType,
   EmailValidationError as EmailValidationErrorType,
-} from '@redwoodjs/api'
-import { createLogger } from '@redwoodjs/api/logger'
+} from '@cedarjs/api'
+import { createLogger } from '@cedarjs/api/logger'
 
 import { createGraphQLHandler } from '../../functions/graphql'
 
-jest.mock('../../makeMergedSchema', () => {
-  const { createGraphQLError } = require('graphql-yoga')
-  const { makeExecutableSchema } = require('@graphql-tools/schema')
-  const {
-    ForbiddenError,
-    RedwoodGraphQLError,
-  } = require('@redwoodjs/graphql-server/dist/errors')
-
-  const { CurrencyResolver } = require('graphql-scalars')
-  const { RedwoodError, EmailValidationError } = require('@redwoodjs/api') as {
+vi.mock('../../makeMergedSchema', async () => {
+  const { createGraphQLError } = await import('graphql-yoga')
+  const { makeExecutableSchema } = await import('@graphql-tools/schema')
+  const { ForbiddenError, RedwoodGraphQLError } = await import(
+    '@cedarjs/graphql-server/dist/errors'
+  )
+  const { CurrencyResolver } = await import('graphql-scalars')
+  const { RedwoodError, EmailValidationError } = (await import(
+    '@cedarjs/api'
+  )) as {
     RedwoodError: typeof RedwoodErrorType
     EmailValidationError: typeof EmailValidationErrorType
   }
@@ -128,7 +129,7 @@ jest.mock('../../makeMergedSchema', () => {
   }
 })
 
-jest.mock('../../directives/makeDirectives', () => {
+vi.mock('../../directives/makeDirectives', () => {
   return {
     makeDirectivesForPlugin: () => [],
   }

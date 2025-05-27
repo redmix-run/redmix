@@ -3,15 +3,18 @@ import path from 'path'
 import fs from 'fs-extra'
 import { Listr } from 'listr2'
 
-import { addWebPackages } from '@redwoodjs/cli-helpers'
-import { errorTelemetry } from '@redwoodjs/telemetry'
+import { addWebPackages } from '@cedarjs/cli-helpers'
+import { errorTelemetry } from '@cedarjs/telemetry'
 
-import { getPaths, transformTSToJS, writeFile } from '../../../lib'
-import c from '../../../lib/colors'
-import { isTypeScriptProject } from '../../../lib/project'
+import c from '../../../lib/colors.js'
+import { getPaths, transformTSToJS, writeFile } from '../../../lib/index.js'
+import { isTypeScriptProject } from '../../../lib/project.js'
 
 const { version } = JSON.parse(
-  fs.readFileSync(path.resolve(__dirname, '../../../../package.json'), 'utf-8'),
+  fs.readFileSync(
+    path.resolve(import.meta.dirname, '../../../../package.json'),
+    'utf-8',
+  ),
 )
 
 export const handler = async ({ force, verbose, addPackage }) => {
@@ -28,7 +31,11 @@ export const handler = async ({ force, verbose, addPackage }) => {
           }`
 
           const templateContent = fs.readFileSync(
-            path.resolve(__dirname, 'templates', 'vite.config.ts.template'),
+            path.resolve(
+              import.meta.dirname,
+              'templates',
+              'vite.config.ts.template',
+            ),
             'utf-8',
           )
 
@@ -55,7 +62,7 @@ export const handler = async ({ force, verbose, addPackage }) => {
               path.join(
                 getPaths().base,
                 // NOTE we're copying over the index.js before babel transform
-                'node_modules/@redwoodjs/web/src/entry/index.js',
+                'node_modules/@cedarjs/web/src/entry/index.js',
               ),
               'utf-8',
             )
@@ -68,11 +75,11 @@ export const handler = async ({ force, verbose, addPackage }) => {
       },
       {
         // @NOTE: make sure its added as a dev package.
-        ...addWebPackages(['-D', `@redwoodjs/vite@${version}`]),
-        title: 'Adding @redwoodjs/vite dev dependency to web side...',
+        ...addWebPackages(['-D', `@cedarjs/vite@${version}`]),
+        title: 'Adding @cedarjs/vite dev dependency to web side...',
         skip: () => {
           if (!addPackage) {
-            return 'Skipping package install, you will need to add @redwoodjs/vite manaually as a dev-dependency on the web workspace'
+            return 'Skipping package install, you will need to add @cedarjs/vite manaually as a dev-dependency on the web workspace'
           }
         },
       },

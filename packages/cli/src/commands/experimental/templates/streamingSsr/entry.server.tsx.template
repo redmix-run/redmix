@@ -1,4 +1,4 @@
-import type { TagDescriptor } from '@redwoodjs/web'
+import type { TagDescriptor } from '@cedarjs/web'
 
 import App from './App'
 import { Document } from './Document'

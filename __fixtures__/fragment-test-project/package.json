@@ -7,11 +7,11 @@
     ]
   },
   "devDependencies": {
-    "@redwoodjs/core": "7.0.0",
-    "@redwoodjs/project-config": "7.0.0"
+    "@cedarjs/core": "7.0.0",
+    "@cedarjs/project-config": "7.0.0"
   },
   "eslintConfig": {
-    "extends": "@redwoodjs/eslint-config",
+    "extends": "@cedarjs/eslint-config",
     "root": true
   },
   "engines": {
@@ -20,5 +20,5 @@
   "prisma": {
     "seed": "yarn rw exec seed"
   },
-  "packageManager": "yarn@4.1.1"
+  "packageManager": "yarn@4.6.0"
 }

@@ -1,6 +1,6 @@
 import { vi, describe, it, expect } from 'vitest'
 
-import * as ValidationErrors from '@redwoodjs/api'
+import * as ValidationErrors from '@cedarjs/api'
 
 import datamodel from '../__fixtures__/datamodel.js'
 import RedwoodRecord from '../RedwoodRecord'

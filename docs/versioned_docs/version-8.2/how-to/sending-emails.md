@@ -85,9 +85,9 @@ Clicking to show the details on one of the users you should see a page similar t
 To add our button, and the actions connected to it, we need to add a fair bit of code to the User component. I've put the full code below to make sure you don't miss anything.
 
 ```tsx title="src/components/User/User.tsx"
-import { useMutation } from '@redwoodjs/web'
-import { toast } from '@redwoodjs/web/toast'
-import { Link, routes, navigate } from '@redwoodjs/router'
+import { useMutation } from '@cedarjs/web'
+import { toast } from '@cedarjs/web/toast'
+import { Link, routes, navigate } from '@cedarjs/router'
 
 const DELETE_USER_MUTATION = gql`
   mutation DeleteUserMutation($id: String!) {
@@ -386,4 +386,4 @@ That's it! We just import the audits service and call the exported `createAudit`
 
 To view the audit logs you can use the scaffolded pages we created earlier. Just navigate to http://localhost:8910/audits and you should see them there.
 
-Thanks for reading this! If you liked it, or have any questions, don't hesitate to reach out on [our forums](https://community.redwoodjs.com) or in our [Discord chat](https://discord.gg/jjSYEQd).
+Thanks for reading this! If you liked it, or have any questions, don't hesitate to reach out on [our forums](https://community.redwoodjs.com) or in our [Discord chat](https://discord.com/invite/redwoodjs).

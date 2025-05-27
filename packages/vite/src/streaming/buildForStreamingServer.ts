@@ -1,7 +1,7 @@
 import { build as viteBuild } from 'vite'
 import { cjsInterop } from 'vite-plugin-cjs-interop'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@cedarjs/project-config'
 
 export async function buildForStreamingServer({
   verbose = false,
@@ -21,10 +21,10 @@ export async function buildForStreamingServer({
       cjsInterop({
         dependencies: [
           // Skip ESM modules: rwjs/auth, rwjs/web, rwjs/auth-*-middleware, rwjs/router
-          '@redwoodjs/forms',
-          '@redwoodjs/prerender/*',
-          '@redwoodjs/auth-*-api',
-          '@redwoodjs/auth-*-web',
+          '@cedarjs/forms',
+          '@cedarjs/prerender/*',
+          '@cedarjs/auth-*-api',
+          '@cedarjs/auth-*-web',
         ],
       }),
     ],

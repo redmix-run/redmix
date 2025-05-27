@@ -1,8 +1,8 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`JavaScript: includes skip link when --skipLink is set to true 1`] = `
-"import { SkipNavLink, SkipNavContent } from '@redwoodjs/router'
-import '@redwoodjs/router/skip-nav.css'
+"import { SkipNavLink, SkipNavContent } from '@cedarjs/router'
+import '@cedarjs/router/skip-nav.css'
 
 /**
  * since the main content isn't usually the first thing in the document,
@@ -37,7 +37,7 @@ export default SinglePageLayout
 `;
 
 exports[`Multi word default files > creates a multi word layout test 1`] = `
-"import { render } from '@redwoodjs/testing/web'
+"import { render } from '@cedarjs/testing/web'
 
 import SinglePageLayout from './SinglePageLayout'
 
@@ -90,7 +90,7 @@ export const Primary = {}
 `;
 
 exports[`Single Word default files > creates a single word layout test 1`] = `
-"import { render } from '@redwoodjs/testing/web'
+"import { render } from '@cedarjs/testing/web'
 
 import AppLayout from './AppLayout'
 
@@ -108,8 +108,8 @@ describe('AppLayout', () => {
 `;
 
 exports[`TypeScript: includes skip link when --skipLink is set to true 1`] = `
-"import { SkipNavLink, SkipNavContent } from '@redwoodjs/router'
-import '@redwoodjs/router/skip-nav.css'
+"import { SkipNavLink, SkipNavContent } from '@cedarjs/router'
+import '@cedarjs/router/skip-nav.css'
 
 /**
  * since the main content isn't usually the first thing in the document,

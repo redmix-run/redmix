@@ -1,4 +1,4 @@
-import type { ScenarioData } from '@redwoodjs/testing/api'
+import type { ScenarioData } from '@cedarjs/testing/api'
 
 export const standard = defineScenario({
   // Define the "fixture" to write into your test database here

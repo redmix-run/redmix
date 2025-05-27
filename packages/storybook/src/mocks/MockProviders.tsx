@@ -4,10 +4,10 @@
  */
 import React from 'react'
 
-import { LocationProvider } from '@redwoodjs/router'
-import { useAuth } from '@redwoodjs/testing/web'
-import { RedwoodProvider } from '@redwoodjs/web'
-import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
+import { LocationProvider } from '@cedarjs/router'
+import { useAuth } from '@cedarjs/testing/web'
+import { RedwoodProvider } from '@cedarjs/web'
+import { RedwoodApolloProvider } from '@cedarjs/web/apollo'
 
 import { MockParamsProvider } from './MockParamsProvider'
 

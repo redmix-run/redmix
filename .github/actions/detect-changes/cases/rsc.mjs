@@ -25,7 +25,8 @@ export function rscChanged(changedFiles) {
       changedFile.startsWith('packages/vite/') ||
       changedFile.startsWith('packages/router/') ||
       changedFile.startsWith('__fixtures__/test-project-rsa') ||
-      changedFile.startsWith('__fixtures__/test-project-rsc-kitchen-sink')
+      changedFile.startsWith('__fixtures__/test-project-rsc-kitchen-sink') ||
+      changedFile.startsWith('packages/create-cedar-rsc-app')
     ) {
       console.log('RSC change detected:', changedFile)
       return true

@@ -9,8 +9,6 @@ body:
       value: >
         Thanks for taking the time to open an RFC!
         Please note that this is for detailed proposals.
-        If you have a feature request, or would like to brainstorm,
-        the [forums](https://community.redwoodjs.com/) is a better place to start.
 
   - type: textarea
     attributes:
@@ -41,12 +39,12 @@ body:
 
         - What's this about? (The CLI? The web side? The api side? Both?)
         - What's the design in detail?
-        - Is this a breaking change? How easy will it be for existing Redwood apps to adopt? Can we write a codemod for it?
+        - Is this a breaking change? How easy will it be for existing Cedar apps to adopt? Can we write a codemod for it?
         - What parts of the design are still TBD?
 
         Lastly, consider reading some great examples:
 
-        - [Prerender proposal](https://community.redwoodjs.com/t/prerender-proposal/849)
+        - [Prerender proposal](https://community.cedarjs.com/t/prerender-proposal/849)
         - [Optional path parameters](https://github.com/redwoodjs/redwood/issues/2429)
         - [Multitenant support](https://github.com/redwoodjs/redwood/issues/5821)
     validations:
@@ -57,7 +55,7 @@ body:
       label: Are you interested in working on this?
       description: >
         No pressure—this is totally optional!
-        We just want to invite you to contribute to Redwood.
+        We just want to invite you to contribute to Cedar.
         If you choose to contribute, the core team will be there to help you the whole way.
 
 

@@ -56,7 +56,7 @@ First, RedwoodJS instructs the VS Code GraphQL Plugin where to look for fragment
 ```js
 // graphql.config.js
 
-const { getPaths } = require('@redwoodjs/internal')
+const { getPaths } = require('@cedarjs/internal')
 
 module.exports = {
   schema: getPaths().generated.schema,
@@ -66,10 +66,10 @@ module.exports = {
 
 Second, RedwoodJS automatically creates the [fragmentRegistry](https://www.apollographql.com/docs/react/data/fragments/#registering-named-fragments-using-createfragmentregistry) needed for Apollo to know about the fragments in your project without needing to interpolate their declarations.
 
-Redwood exports ways to interact with fragments in the `@redwoodjs/web/apollo` package.
+Redwood exports ways to interact with fragments in the `@cedarjs/web/apollo` package.
 
 ```
-import { fragmentRegistry, registerFragment } from '@redwoodjs/web/apollo'
+import { fragmentRegistry, registerFragment } from '@cedarjs/web/apollo'
 ```
 
 With `fragmentRegistry`, you can interact with the registry directly.
@@ -95,7 +95,7 @@ See more in [cli commands - setup graphql fragments](../cli-commands.md#setup-gr
 To register a fragment, you can simply register it with `registerFragment`.
 
 ```ts
-import { registerFragment } from '@redwoodjs/web/apollo'
+import { registerFragment } from '@cedarjs/web/apollo'
 
 registerFragment(gql`
   fragment BookInfo on Book {
@@ -112,7 +112,7 @@ This makes the `BookInfo` available to use in your query:
 ```ts
 import type { GetBookDetails } from 'types/graphql'
 
-import { useQuery } from '@redwoodjs/web'
+import { useQuery } from '@cedarjs/web'
 
 import BookInfo from 'src/components/BookInfo'
 
@@ -147,7 +147,7 @@ You can then access the book info from `data` and render:
 Access the original fragment you registered.
 
 ```ts
-import { fragment } from '@redwoodjs/web/apollo'
+import { fragment } from '@cedarjs/web/apollo'
 ```
 
 ### typename
@@ -155,7 +155,7 @@ import { fragment } from '@redwoodjs/web/apollo'
 Access typename of fragment you registered.
 
 ```ts
-import { typename } from '@redwoodjs/web/apollo'
+import { typename } from '@cedarjs/web/apollo'
 ```
 
 For example, with
@@ -177,7 +177,7 @@ the `typename` is `Book`.
 A helper function to create the cache key for the data associated with the fragment in Apollo cache.
 
 ```ts
-import { getCacheKey } from '@redwoodjs/web/apollo'
+import { getCacheKey } from '@cedarjs/web/apollo'
 ```
 
 For example, with
@@ -201,7 +201,7 @@ We describe how [cache keys and identifiers](./caching.md#identify) are used in 
 ### useRegisteredFragment
 
 ```ts
-import { registerFragment } from '@redwoodjs/web/apollo'
+import { registerFragment } from '@cedarjs/web/apollo'
 
 const { useRegisteredFragment } = registerFragment()
 // ...
@@ -218,7 +218,7 @@ Also, anywhere the fragment component is rendered will be updated with the lates
 ```ts
 import type { Book } from 'types/graphql'
 
-import { registerFragment } from '@redwoodjs/web/apollo'
+import { registerFragment } from '@cedarjs/web/apollo'
 
 const { useRegisteredFragment } = registerFragment(
   gql`
@@ -314,7 +314,7 @@ For example, consider the fragment `BookInfo` used by the query `GetBookDetails`
 ```ts
 import type { Book } from 'types/graphql'
 
-import { registerFragment } from '@redwoodjs/web/apollo'
+import { registerFragment } from '@cedarjs/web/apollo'
 
 const { useRegisteredFragment } = registerFragment(gql`
   fragment BookInfo on Book {
@@ -329,7 +329,7 @@ const { useRegisteredFragment } = registerFragment(gql`
 ```ts
 import type { GetBookDetails } from 'types/graphql'
 
-import { useQuery } from '@redwoodjs/web'
+import { useQuery } from '@cedarjs/web'
 
 import BookInfo from 'src/components/BookInfo'
 

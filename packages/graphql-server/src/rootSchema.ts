@@ -9,15 +9,15 @@ import {
 } from 'graphql-scalars'
 import gql from 'graphql-tag'
 
-import { prismaVersion, redwoodVersion } from '@redwoodjs/api'
-import type { GlobalContext } from '@redwoodjs/context'
+import { prismaVersion, redwoodVersion } from '@cedarjs/api'
+import type { GlobalContext } from '@cedarjs/context'
 
 /**
  * This adds scalar types for dealing with Date, Time, DateTime, and JSON.
  * This also adds a root Query type which is needed to start the GraphQL server on a fresh install.
  *
  * NOTE: When you add a new Scalar type you must add it to
- * "generateTypeDefGraphQL" in @redwoodjs/internal.
+ * "generateTypeDefGraphQL" in @cedarjs/internal.
  */
 export const schema = gql`
   scalar BigInt
@@ -29,9 +29,9 @@ export const schema = gql`
   scalar Byte
 
   """
-  The RedwoodJS Root Schema
+  The Cedar Root Schema
 
-  Defines details about RedwoodJS such as the current user and version information.
+  Defines details about Cedar such as the current user and version information.
   """
   type Redwood {
     "The version of Redwood."

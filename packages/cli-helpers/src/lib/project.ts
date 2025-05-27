@@ -4,13 +4,13 @@ import * as path from 'node:path'
 import dotenv from 'dotenv'
 import * as toml from 'smol-toml'
 
-import type { Config } from '@redwoodjs/project-config'
+import type { Config } from '@cedarjs/project-config'
 import {
   findUp,
   getConfigPath,
   getConfig,
   resolveFile,
-} from '@redwoodjs/project-config'
+} from '@cedarjs/project-config'
 
 import { colors } from './colors.js'
 import { getPaths } from './paths.js'
@@ -37,7 +37,7 @@ export const getInstalledRedwoodVersion = () => {
     const packageJson = require('../../package.json')
     return packageJson.version
   } catch {
-    console.error(colors.error('Could not find installed redwood version'))
+    console.error(colors.error('Could not find installed Cedar version'))
     process.exit(1)
   }
 }
@@ -162,7 +162,7 @@ export const addEnvVar = (name: string, value: string, comment: string) => {
 
 /**
  * This sets the `RWJS_CWD` env var to the redwood project directory. This is typically required for internal
- * redwood packages to work correctly. For example, `@redwoodjs/project-config` uses this when reading config
+ * redwood packages to work correctly. For example, `@cedarjs/project-config` uses this when reading config
  * or paths.
  *
  * @param cwd Explicitly set the redwood cwd. If not set, we'll try to determine it automatically. You likely

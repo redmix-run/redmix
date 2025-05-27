@@ -1,7 +1,7 @@
 import type SuperTokens from 'supertokens-auth-react'
 
-import type { CurrentUser } from '@redwoodjs/auth'
-import { createAuthentication } from '@redwoodjs/auth'
+import type { CurrentUser } from '@cedarjs/auth'
+import { createAuthentication } from '@cedarjs/auth'
 
 export interface SuperTokensUser {
   userId: string

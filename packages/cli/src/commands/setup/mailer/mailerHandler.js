@@ -1,21 +1,21 @@
-import path from 'path'
+import path from 'node:path'
 
 import fs from 'fs-extra'
 import { Listr } from 'listr2'
 
-import { addApiPackages } from '@redwoodjs/cli-helpers'
-import { errorTelemetry } from '@redwoodjs/telemetry'
+import { addApiPackages } from '@cedarjs/cli-helpers'
+import { errorTelemetry } from '@cedarjs/telemetry'
 
-import { getPaths, transformTSToJS, writeFile } from '../../../lib'
-import c from '../../../lib/colors'
-import { isTypeScriptProject } from '../../../lib/project'
+import c from '../../../lib/colors.js'
+import { getPaths, transformTSToJS, writeFile } from '../../../lib/index.js'
+import { isTypeScriptProject } from '../../../lib/project.js'
 
 export const handler = async ({ force, skipExamples }) => {
   const projectIsTypescript = isTypeScriptProject()
   const redwoodVersion =
-    require(path.join(getPaths().base, 'package.json')).devDependencies[
-      '@redwoodjs/core'
-    ] ?? 'latest'
+    (await import(path.join(getPaths().base, 'package.json'), {
+      with: { type: 'json ' },
+    }).default.devDependencies['@cedarjs/core']) ?? 'latest'
 
   const tasks = new Listr(
     [
@@ -25,7 +25,7 @@ export const handler = async ({ force, skipExamples }) => {
         }...`,
         task: async () => {
           const templatePath = path.resolve(
-            __dirname,
+            import.meta.dirname,
             'templates',
             'mailer.ts.template',
           )
@@ -61,7 +61,7 @@ export const handler = async ({ force, skipExamples }) => {
         skip: () => skipExamples,
         task: async () => {
           const templatePath = path.resolve(
-            __dirname,
+            import.meta.dirname,
             'templates',
             're-example.tsx.template',
           )
@@ -87,9 +87,9 @@ export const handler = async ({ force, skipExamples }) => {
       {
         // Add production dependencies
         ...addApiPackages([
-          `@redwoodjs/mailer-core@${redwoodVersion}`,
-          `@redwoodjs/mailer-handler-nodemailer@${redwoodVersion}`,
-          `@redwoodjs/mailer-renderer-react-email@${redwoodVersion}`,
+          `@cedarjs/mailer-core@${redwoodVersion}`,
+          `@cedarjs/mailer-handler-nodemailer@${redwoodVersion}`,
+          `@cedarjs/mailer-renderer-react-email@${redwoodVersion}`,
           `@react-email/components`, // NOTE: Unpinned dependency here
         ]),
         title: 'Adding production dependencies to your api side...',
@@ -98,8 +98,8 @@ export const handler = async ({ force, skipExamples }) => {
         // Add development dependencies
         ...addApiPackages([
           '-D',
-          `@redwoodjs/mailer-handler-in-memory@${redwoodVersion}`,
-          `@redwoodjs/mailer-handler-studio@${redwoodVersion}`,
+          `@cedarjs/mailer-handler-in-memory@${redwoodVersion}`,
+          `@cedarjs/mailer-handler-studio@${redwoodVersion}`,
         ]),
         title: 'Adding development dependencies to your api side...',
       },

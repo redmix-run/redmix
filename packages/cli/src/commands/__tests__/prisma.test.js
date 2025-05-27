@@ -1,4 +1,4 @@
-vi.mock('@redwoodjs/project-config', async (importOriginal) => {
+vi.mock('@cedarjs/project-config', async (importOriginal) => {
   const originalProjectConfig = await importOriginal()
   return {
     ...originalProjectConfig,
@@ -39,7 +39,7 @@ vi.mock('fs-extra', async (importOriginal) => {
 import execa from 'execa'
 import { vi, beforeEach, afterEach, test, expect } from 'vitest'
 
-import { handler } from '../prisma'
+import { handler } from '../prisma.js'
 
 beforeEach(() => {
   vi.spyOn(console, 'info').mockImplementation(() => {})

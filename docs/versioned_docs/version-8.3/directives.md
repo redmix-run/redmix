@@ -112,7 +112,7 @@ import {
   ForbiddenError,
   createValidatorDirective,
   ValidatorDirectiveFunc,
-} from '@redwoodjs/graphql-server'
+} from '@cedarjs/graphql-server'
 import { hasRole } from 'src/lib/auth'
 
 export const schema = gql`
@@ -139,7 +139,7 @@ Since validator directives can access arguments (such as `roles`), you can quick
 ```tsx
 import gql from 'graphql-tag'
 
-import { createValidatorDirective } from '@redwoodjs/graphql-server'
+import { createValidatorDirective } from '@cedarjs/graphql-server'
 
 import { requireAuth as applicationRequireAuth } from 'src/lib/auth'
 import { logger } from 'src/lib/logger'
@@ -188,7 +188,7 @@ type user {
 and if the `currentUser` is an `ADMIN`, then skip the masking transform and simply return the original resolved field value:
 
 ```jsx title="./api/src/directives/maskedEmail.directive.js"
-import { createTransformerDirective, TransformerDirectiveFunc } from '@redwoodjs/graphql-server'
+import { createTransformerDirective, TransformerDirectiveFunc } from '@cedarjs/graphql-server'
 
 export const schema = gql`
   directive @maskedEmail(permittedRoles: [String]) on FIELD_DEFINITION
@@ -378,7 +378,7 @@ You simply add them to the `directives` directory and the `createGraphQLHandler`
 > **Note**: Redwood has a generator that will do all the heavy lifting setup for you!
 
 ```tsx title="api/src/functions/graphql.ts"
-import { createGraphQLHandler } from '@redwoodjs/graphql-server'
+import { createGraphQLHandler } from '@cedarjs/graphql-server'
 
 import directives from 'src/directives/**/*.{js,ts}' // 👈 directives live here
 import sdls from 'src/graphql/**/*.sdl.{js,ts}'
@@ -573,7 +573,7 @@ Since we stub out the `Error('Implementation missing for isSubscriber')` case wh
 But once you begin implementing the validate logic, it's on you to update appropriately.
 
 ```tsx
-import { mockRedwoodDirective, getDirectiveName } from '@redwoodjs/testing/api'
+import { mockRedwoodDirective, getDirectiveName } from '@cedarjs/testing/api'
 
 import isSubscriber from './isSubscriber'
 
@@ -653,7 +653,7 @@ Here we mock the value `foo` and, since the generated `transform` function repla
 But once you begin implementing the validate logic, it's on you to update appropriately.
 
 ```tsx
-import { mockRedwoodDirective, getDirectiveName } from '@redwoodjs/testing/api'
+import { mockRedwoodDirective, getDirectiveName } from '@cedarjs/testing/api'
 
 import maskedEmail from './maskedEmail'
 

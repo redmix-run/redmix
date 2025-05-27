@@ -18,7 +18,7 @@ describe('useArmor', () => {
     it('Modifies depthLimitOptions to use GraphQL Armor settings (inline)', async () => {
       await matchInlineTransformSnapshot(
         'useArmor',
-        `import { createGraphQLHandler } from '@redwoodjs/graphql-server'
+        `import { createGraphQLHandler } from '@cedarjs/graphql-server'
 
       import directives from 'src/directives/**/*.{js,ts}'
       import sdls from 'src/graphql/**/*.sdl.{js,ts}'
@@ -41,7 +41,7 @@ describe('useArmor', () => {
           db.$disconnect()
         },
       })`,
-        `import { createGraphQLHandler } from '@redwoodjs/graphql-server'
+        `import { createGraphQLHandler } from '@cedarjs/graphql-server'
 
       import directives from 'src/directives/**/*.{js,ts}'
       import sdls from 'src/graphql/**/*.sdl.{js,ts}'

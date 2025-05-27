@@ -7,9 +7,9 @@
 // 'src/pages/HomePage/HomePage.js'         -> HomePage
 // 'src/pages/Admin/BooksPage/BooksPage.js' -> AdminBooksPage
 
-import { Route } from '@redwoodjs/router/Route'
-import { Router } from '@redwoodjs/router/RscRouter'
-import { Set, PrivateSet } from '@redwoodjs/router/Set'
+import { Route } from '@cedarjs/router/Route'
+import { Router } from '@cedarjs/router/RscRouter'
+import { Set, PrivateSet } from '@cedarjs/router/Set'
 
 import { useAuth } from './auth'
 import AuthLayout from './layouts/AuthLayout/AuthLayout'

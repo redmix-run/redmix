@@ -1,4 +1,4 @@
-import { createServer } from '@redwoodjs/api-server'
+import { createServer } from '@cedarjs/api-server'
 
 import { logger } from 'src/lib/logger'
 

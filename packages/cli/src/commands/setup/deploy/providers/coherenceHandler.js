@@ -1,6 +1,6 @@
 import path from 'path'
 
-import { getSchema, getConfig } from '@prisma/internals'
+import prismaInternals from '@prisma/internals'
 import fs from 'fs-extra'
 import { Listr } from 'listr2'
 import * as toml from 'smol-toml'
@@ -9,13 +9,14 @@ import {
   colors as c,
   getPaths,
   isTypeScriptProject,
-} from '@redwoodjs/cli-helpers'
-import { errorTelemetry } from '@redwoodjs/telemetry'
+} from '@cedarjs/cli-helpers'
+import { errorTelemetry } from '@cedarjs/telemetry'
 
-import { printSetupNotes } from '../../../../lib'
-import { serverFileExists } from '../../../../lib/project'
-import { addFilesTask } from '../helpers'
+import { printSetupNotes } from '../../../../lib/index.js'
+import { serverFileExists } from '../../../../lib/project.js'
+import { addFilesTask } from '../helpers/index.js'
 
+const { getSchema, getConfig } = prismaInternals
 const redwoodProjectPaths = getPaths()
 
 const EXTENSION = isTypeScriptProject ? 'ts' : 'js'

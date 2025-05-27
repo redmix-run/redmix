@@ -3,17 +3,20 @@ import path from 'path'
 import fs from 'fs-extra'
 import { Listr } from 'listr2'
 
-import { addApiPackages } from '@redwoodjs/cli-helpers'
-import { generate as generateTypes } from '@redwoodjs/internal/dist/generate/generate'
-import { errorTelemetry } from '@redwoodjs/telemetry'
+import { addApiPackages } from '@cedarjs/cli-helpers'
+import { generate as generateTypes } from '@cedarjs/internal/dist/generate/generate'
+import { errorTelemetry } from '@cedarjs/telemetry'
 
-import { getPaths, transformTSToJS, writeFile } from '../../../lib'
-import c from '../../../lib/colors'
-import { isTypeScriptProject, serverFileExists } from '../../../lib/project'
-import { setupServerFileTasks } from '../server-file/serverFileHandler'
+import c from '../../../lib/colors.js'
+import { getPaths, transformTSToJS, writeFile } from '../../../lib/index.js'
+import { isTypeScriptProject, serverFileExists } from '../../../lib/project.js'
+import { setupServerFileTasks } from '../server-file/serverFileHandler.js'
 
 const { version } = JSON.parse(
-  fs.readFileSync(path.resolve(__dirname, '../../../../package.json'), 'utf-8'),
+  fs.readFileSync(
+    path.resolve(import.meta.dirname, '../../../../package.json'),
+    'utf-8',
+  ),
 )
 
 export async function handler({ force, includeExamples, verbose }) {
@@ -27,12 +30,16 @@ export async function handler({ force, includeExamples, verbose }) {
 
   const tasks = new Listr(
     [
-      addApiPackages(['ioredis@^5', `@redwoodjs/realtime@${version}`]),
+      addApiPackages(['ioredis@^5', `@cedarjs/realtime@${version}`]),
       {
         title: 'Adding the realtime api lib ...',
         task: async () => {
           const serverFileTemplateContent = fs.readFileSync(
-            path.resolve(__dirname, 'templates', 'realtime.ts.template'),
+            path.resolve(
+              import.meta.dirname,
+              'templates',
+              'realtime.ts.template',
+            ),
             'utf-8',
           )
 
@@ -56,7 +63,7 @@ export async function handler({ force, includeExamples, verbose }) {
         task: async () => {
           const exampleSubscriptionTemplateContent = fs.readFileSync(
             path.resolve(
-              __dirname,
+              import.meta.dirname,
               'templates',
               'subscriptions',
               'countdown',
@@ -93,7 +100,7 @@ export async function handler({ force, includeExamples, verbose }) {
 
           const exampleSdlTemplateContent = fs.readFileSync(
             path.resolve(
-              __dirname,
+              import.meta.dirname,
               'templates',
               'subscriptions',
               'newMessage',
@@ -115,7 +122,7 @@ export async function handler({ force, includeExamples, verbose }) {
 
           const exampleServiceTemplateContent = fs.readFileSync(
             path.resolve(
-              __dirname,
+              import.meta.dirname,
               'templates',
               'subscriptions',
               'newMessage',
@@ -137,7 +144,7 @@ export async function handler({ force, includeExamples, verbose }) {
 
           const exampleSubscriptionTemplateContent = fs.readFileSync(
             path.resolve(
-              __dirname,
+              import.meta.dirname,
               'templates',
               'subscriptions',
               'newMessage',
@@ -181,7 +188,7 @@ export async function handler({ force, includeExamples, verbose }) {
 
           const exampleSdlTemplateContent = fs.readFileSync(
             path.resolve(
-              __dirname,
+              import.meta.dirname,
               'templates',
               'liveQueries',
               'auctions',
@@ -203,7 +210,7 @@ export async function handler({ force, includeExamples, verbose }) {
 
           const exampleServiceTemplateContent = fs.readFileSync(
             path.resolve(
-              __dirname,
+              import.meta.dirname,
               'templates',
               'liveQueries',
               'auctions',
@@ -241,7 +248,7 @@ export async function handler({ force, includeExamples, verbose }) {
 
           const exampleSdlTemplateContent = fs.readFileSync(
             path.resolve(
-              __dirname,
+              import.meta.dirname,
               'templates',
               'defer',
               'fastAndSlowFields',
@@ -263,7 +270,7 @@ export async function handler({ force, includeExamples, verbose }) {
 
           const exampleServiceTemplateContent = fs.readFileSync(
             path.resolve(
-              __dirname,
+              import.meta.dirname,
               'templates',
               'defer',
               'fastAndSlowFields',
@@ -301,7 +308,7 @@ export async function handler({ force, includeExamples, verbose }) {
 
           const exampleSdlTemplateContent = fs.readFileSync(
             path.resolve(
-              __dirname,
+              import.meta.dirname,
               'templates',
               'stream',
               'alphabet',
@@ -323,7 +330,7 @@ export async function handler({ force, includeExamples, verbose }) {
 
           const exampleServiceTemplateContent = fs.readFileSync(
             path.resolve(
-              __dirname,
+              import.meta.dirname,
               'templates',
               'stream',
               'alphabet',

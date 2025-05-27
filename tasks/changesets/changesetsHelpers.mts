@@ -50,7 +50,7 @@ export async function resolveArgv() {
     const currentBranch = await getStdout($`git branch --show-current`)
 
     const url =
-      'https://api.github.com/repos/redwoodjs/redwood/pulls?state=open&sort=updated&direction=desc&per_page=100'
+      'https://api.github.com/repos/cedarjs/cedar/pulls?state=open&sort=updated&direction=desc&per_page=100'
     const res = await fetch(url, {
       headers: {
         Authorization: `Bearer ${getGitHubToken()}`,
@@ -144,7 +144,7 @@ fragment PullRequestDetails on PullRequest {
 const getPrByNumberQuery = `\
 ${pullRequestFragment}
 query ($prNumber: Int!) {
-  repository(owner: "redwoodjs", name: "redwood") {
+  repository(owner: "cedarjs", name: "cedar") {
     pullRequest(number: $prNumber) {
       ...PullRequestDetails
     }
@@ -155,7 +155,7 @@ query ($prNumber: Int!) {
 function getPlaceholderForPr(pr: PR) {
   return [
     "(Delete this help paragraph when you're done.) Thanks for writing a changeset! Here's a place to start.",
-    "Don't edit the title, but in editing the body, try to explain what this PR means for Redwood users.",
+    "Don't edit the title, but in editing the body, try to explain what this PR means for Cedar users.",
     'The more detail the better. E.g., is it a new feature? How do they use it? Code examples go a long way!',
     '',
     `- ${pr.title} (#${pr.number}) by @${pr.author.login}`,

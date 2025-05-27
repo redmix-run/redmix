@@ -1,23 +1,24 @@
 import path from 'path'
 
+import { ListrEnquirerPromptAdapter } from '@listr2/prompt-adapter-enquirer'
 import execa from 'execa'
 import fs from 'fs-extra'
 import { Listr } from 'listr2'
 
-import { addApiPackages } from '@redwoodjs/cli-helpers'
-import { getConfigPath, resolveFile } from '@redwoodjs/project-config'
-import { errorTelemetry } from '@redwoodjs/telemetry'
+import { addApiPackages } from '@cedarjs/cli-helpers'
+import { getConfigPath, resolveFile } from '@cedarjs/project-config'
+import { errorTelemetry } from '@cedarjs/telemetry'
 
-import { getPaths, transformTSToJS, writeFile } from '../../lib'
-import c from '../../lib/colors'
-import { isTypeScriptProject } from '../../lib/project'
+import c from '../../lib/colors.js'
+import { getPaths, transformTSToJS, writeFile } from '../../lib/index.js'
+import { isTypeScriptProject } from '../../lib/project.js'
 
 import {
   command,
   description,
   EXPERIMENTAL_TOPIC_ID,
-} from './setupOpentelemetry'
-import { printTaskEpilogue } from './util'
+} from './setupOpentelemetry.js'
+import { printTaskEpilogue } from './util.js'
 
 export const handler = async ({ force, verbose }) => {
   const ts = isTypeScriptProject()
@@ -45,7 +46,11 @@ export const handler = async ({ force, verbose }) => {
       title: `Adding OpenTelemetry setup files...`,
       task: async () => {
         const setupTemplateContent = fs.readFileSync(
-          path.resolve(__dirname, 'templates', 'opentelemetry.ts.template'),
+          path.resolve(
+            import.meta.dirname,
+            'templates',
+            'opentelemetry.ts.template',
+          ),
           'utf-8',
         )
         const setupScriptContent = ts
@@ -103,7 +108,7 @@ export const handler = async ({ force, verbose }) => {
           )}`,
         ].join('\n')
       },
-      options: { persistentOutput: true },
+      rendererOptions: { persistentOutput: true },
     },
     {
       title: 'Notice: GraphQL function update (server file)...',
@@ -126,7 +131,7 @@ export const handler = async ({ force, verbose }) => {
           )}`,
         ].join('\n')
       },
-      options: { persistentOutput: true },
+      rendererOptions: { persistentOutput: true },
     },
     addApiPackages(opentelemetryPackages),
   ]
@@ -193,7 +198,8 @@ export const handler = async ({ force, verbose }) => {
       {
         title: 'Confirmation',
         task: async (_ctx, task) => {
-          const confirmation = await task.prompt({
+          const prompt = task.prompt(ListrEnquirerPromptAdapter)
+          const confirmation = await prompt.run({
             type: 'Confirm',
             message: 'OpenTelemetry support is experimental. Continue?',
           })

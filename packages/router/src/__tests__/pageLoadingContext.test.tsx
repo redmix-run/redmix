@@ -1,6 +1,6 @@
 let mockDelay = 0
 vi.mock('../page.js', async (importOriginal) => {
-  const actualUtil = await importOriginal<Page>()
+  const actualUtil = await importOriginal<PageType>()
   const { lazy } = await vi.importActual<typeof React>('react')
 
   return {
@@ -23,7 +23,7 @@ import React, { useEffect, useState } from 'react'
 import { act, configure, render, waitFor } from '@testing-library/react'
 import { vi, beforeEach, afterEach, test, expect } from 'vitest'
 
-import type { AuthContextInterface } from '@redwoodjs/auth'
+import type { AuthContextInterface } from '@cedarjs/auth'
 
 import {
   navigate,
@@ -36,8 +36,7 @@ import {
   useParams,
 } from '../index.js'
 import { useLocation } from '../location.js'
-import type Page from '../page.js'
-import type { Spec } from '../page.js'
+import type { Spec, PageType } from '../page.js'
 import { usePageLoadingContext } from '../PageLoadingContext.js'
 
 // Running into intermittent test timeout behavior in

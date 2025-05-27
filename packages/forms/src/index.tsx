@@ -1,12 +1,12 @@
 /**
- * @module @redwoodjs/forms
+ * @module @cedarjs/forms
  *
  * Redwood's form library.
  * Mostly simple wrappers around `react-hook-form` that make it even easier to use.
  *
  * @remarks
  *
- * @redwoodjs/forms slightly extends `react-hook-form`'s `valueAs` props because it's important for us to coerce values
+ * @cedarjs/forms slightly extends `react-hook-form`'s `valueAs` props because it's important for us to coerce values
  * to the correct type for GraphQL.
  * The properties that are exclusive to Redwood are:
  * - `valueAsBoolean`
@@ -49,6 +49,7 @@
 export * from 'react-hook-form'
 
 export { CheckboxField } from './CheckboxField'
+export type { EmptyAsValue, RedwoodRegisterOptions } from './coercion'
 export { FieldError } from './FieldError'
 export { Form, FormProps } from './Form'
 export { default as FormError } from './FormError'
@@ -77,6 +78,7 @@ export {
   UrlField,
   WeekField,
 } from './InputComponents'
+export type { InputFieldProps } from './InputComponents'
 export { Label } from './Label'
 export { SelectField } from './SelectField'
 export { ServerErrorsContext } from './ServerErrorsContext'

@@ -17,13 +17,14 @@ import {
   describe,
   it,
   expect,
+  afterEach,
   beforeEach,
   afterAll,
   beforeAll,
 } from 'vitest'
 
-import { getPaths } from '../../../../lib'
-import * as dbAuth from '../dbAuth'
+import { getPaths } from '../../../../lib/index.js'
+import * as dbAuth from '../dbAuthHandler.js'
 
 // Mock files needed for each test
 const mockFiles = {}
@@ -105,31 +106,35 @@ describe('dbAuth', () => {
   })
 
   describe('handler', () => {
-    it('exits when all files are skipped', async () => {
-      const mockExit = vi.spyOn(process, 'exit').mockImplementation(() => {})
-      const mockConsoleInfo = vi
-        .spyOn(console, 'info')
-        .mockImplementation(() => {})
-
-      await dbAuth.handler({
-        listr2: { silentRendererCondition: true },
-        usernameLabel: 'email',
-        passwordLabel: 'password',
-        webauthn: false,
-        skipForgot: true,
-        skipLogin: true,
-        skipReset: true,
-        skipSignup: true,
+    describe('process.exit behavior', () => {
+      beforeEach(() => {
+        vi.spyOn(process, 'exit').mockImplementation(() => {})
+        vi.spyOn(console, 'info').mockImplementation(() => {})
       })
 
-      expect(mockConsoleInfo.mock.calls[0]).toMatchSnapshot()
-      expect(mockExit).toHaveBeenCalledWith(0)
+      afterEach(() => {
+        vi.mocked(process).exit.mockRestore?.()
+        vi.mocked(console).info.mockRestore?.()
+      })
 
-      mockExit.mockRestore()
-      mockConsoleInfo.mockRestore()
+      it('exits when all files are skipped', async () => {
+        await dbAuth.handler({
+          listr2: { silentRendererCondition: true },
+          usernameLabel: 'email',
+          passwordLabel: 'password',
+          webauthn: false,
+          skipForgot: true,
+          skipLogin: true,
+          skipReset: true,
+          skipSignup: true,
+        })
+
+        expect(vi.mocked(console).info.mock.calls[0]).toMatchSnapshot()
+        expect(vi.mocked(process).exit).toHaveBeenCalledWith(0)
+      })
     })
 
-    it('prompt for username label', async () => {
+    it('prompts for username label', async () => {
       let correctPrompt = false
 
       const customEnquirer = new Enquirer({ show: false })
@@ -166,7 +171,7 @@ describe('dbAuth', () => {
       expect(correctPrompt).toBe(false)
     })
 
-    it('prompt for password label', async () => {
+    it('prompts for password label', async () => {
       let correctPrompt = false
 
       const customEnquirer = new Enquirer({ show: false })

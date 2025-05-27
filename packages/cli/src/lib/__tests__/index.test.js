@@ -1,5 +1,5 @@
 global.__dirname = __dirname
-vi.mock('@redwoodjs/project-config', async (importOriginal) => {
+vi.mock('@cedarjs/project-config', async (importOriginal) => {
   const originalProjectConfig = await importOriginal()
   const path = require('path')
   return {
@@ -21,7 +21,7 @@ import path from 'path'
 import fs from 'fs-extra'
 import { vi, test, expect, describe } from 'vitest'
 
-import * as index from '../index'
+import * as index from '../index.js'
 
 test('nameVariants returns a single word cased variables', () => {
   const names = ['Home', 'home']

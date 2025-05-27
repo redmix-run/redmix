@@ -4,8 +4,8 @@ import url from 'node:url'
 
 import type { Manifest as ViteBuildManifest } from 'vite'
 
-import { getProjectRoutes } from '@redwoodjs/internal/dist/routes.js'
-import { getAppRouteHook, getPaths } from '@redwoodjs/project-config'
+import { getProjectRoutes } from '@cedarjs/internal/dist/routes.js'
+import { getAppRouteHook, getPaths } from '@cedarjs/project-config'
 
 import type { RWRouteManifest } from './types.js'
 

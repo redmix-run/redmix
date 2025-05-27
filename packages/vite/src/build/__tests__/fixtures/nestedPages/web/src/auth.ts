@@ -1,3 +1,3 @@
-import { createAuthentication } from "@redwoodjs/auth";
+import { createAuthentication } from "@cedarjs/auth";
 
 export const { AuthProvider, useAuth } = createAuthentication({} as any)

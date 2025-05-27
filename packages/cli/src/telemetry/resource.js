@@ -7,11 +7,14 @@ import fs from 'fs-extra'
 import system from 'systeminformation'
 import { v4 as uuidv4, validate as validateUUID } from 'uuid'
 
-import { getPaths, getRawConfig } from '@redwoodjs/project-config'
-import { DefaultHost } from '@redwoodjs/structure/dist/hosts'
-import { RWProject } from '@redwoodjs/structure/dist/model/RWProject'
+import { getPaths, getRawConfig } from '@cedarjs/project-config'
+import { DefaultHost } from '@cedarjs/structure/dist/hosts'
+import { RWProject } from '@cedarjs/structure/dist/model/RWProject'
 
-import { name as packageName, version as packageVersion } from '../../package'
+import {
+  name as packageName,
+  version as packageVersion,
+} from '../../package.js'
 
 export async function getResources() {
   // Read the UUID from the file within .redwood or generate a new one if it doesn't exist
@@ -42,7 +45,7 @@ export async function getResources() {
       {
         System: ['OS', 'Shell'],
         Binaries: ['Node', 'Yarn', 'npm'],
-        npmPackages: '@redwoodjs/*',
+        npmPackages: '@cedarjs/*',
         IDEs: ['VSCode'],
       },
       { json: true },

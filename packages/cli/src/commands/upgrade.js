@@ -1,27 +1,28 @@
 import path from 'path'
 
+import { ListrEnquirerPromptAdapter } from '@listr2/prompt-adapter-enquirer'
 import execa from 'execa'
 import fs from 'fs-extra'
 import latestVersion from 'latest-version'
 import { Listr } from 'listr2'
 import terminalLink from 'terminal-link'
 
-import { recordTelemetryAttributes } from '@redwoodjs/cli-helpers'
-import { getConfig } from '@redwoodjs/project-config'
+import { recordTelemetryAttributes } from '@cedarjs/cli-helpers'
+import { getConfig } from '@cedarjs/project-config'
 
-import { getPaths } from '../lib'
-import c from '../lib/colors'
-import { generatePrismaClient } from '../lib/generatePrismaClient'
-import { PLUGIN_CACHE_FILENAME } from '../lib/plugin'
+import c from '../lib/colors.js'
+import { generatePrismaClient } from '../lib/generatePrismaClient.js'
+import { getPaths } from '../lib/index.js'
+import { PLUGIN_CACHE_FILENAME } from '../lib/plugin.js'
 
 export const command = 'upgrade'
-export const description = 'Upgrade all @redwoodjs packages via interactive CLI'
+export const description = 'Upgrade all @cedarjs packages via interactive CLI'
 
 export const builder = (yargs) => {
   yargs
     .example(
       'rw upgrade -t 0.20.1-canary.5',
-      'Specify a version. URL for Version History:\nhttps://www.npmjs.com/package/@redwoodjs/core',
+      'Specify a version. URL for Version History:\nhttps://www.npmjs.com/package/@cedarjs/core',
     )
     .option('dry-run', {
       alias: 'd',
@@ -47,13 +48,19 @@ export const builder = (yargs) => {
       type: 'boolean',
       default: true,
     })
+    .option('yes', {
+      alias: 'y',
+      describe: 'Skip prompts and use defaults',
+      default: false,
+      type: 'boolean',
+    })
     .epilogue(
       `Also see the ${terminalLink(
-        'Redwood CLI Reference for the upgrade command',
+        'Cedar CLI Reference for the upgrade command',
         'https://redwoodjs.com/docs/cli-commands#upgrade',
       )}.\nAnd the ${terminalLink(
         'GitHub releases page',
-        'https://github.com/redwoodjs/redwood/releases',
+        'https://github.com/cedarjs/cedar/releases',
       )} for more information on the current release.`,
     )
 }
@@ -66,12 +73,12 @@ const isValidSemver = (string) => {
   return SEMVER_REGEX.test(string)
 }
 
-const isValidRedwoodJSTag = (tag) => {
+const isValidCedarTag = (tag) => {
   return ['rc', 'canary', 'latest', 'next', 'experimental'].includes(tag)
 }
 
 export const validateTag = (tag) => {
-  const isTagValid = isValidSemver(tag) || isValidRedwoodJSTag(tag)
+  const isTagValid = isValidSemver(tag) || isValidCedarTag(tag)
 
   if (!isTagValid) {
     // Stop execution
@@ -85,25 +92,56 @@ export const validateTag = (tag) => {
   return tag
 }
 
-export const handler = async ({ dryRun, tag, verbose, dedupe }) => {
+export const handler = async ({ dryRun, tag, verbose, dedupe, yes }) => {
   recordTelemetryAttributes({
     command: 'upgrade',
     dryRun,
     tag,
     verbose,
     dedupe,
+    yes,
   })
 
   // structuring as nested tasks to avoid bug with task.title causing duplicates
   const tasks = new Listr(
     [
       {
+        title: 'Confirm upgrade',
+        task: async (ctx, task) => {
+          if (yes) {
+            task.skip('Skipping confirmation prompt because of --yes flag.')
+            return
+          }
+
+          const prompt = task.prompt(ListrEnquirerPromptAdapter)
+          const proceed = await prompt.run({
+            type: 'Confirm',
+            message:
+              'This will upgrade your Cedar project to the latest version. Do you want to proceed?',
+            initial: 'Y',
+            default: '(Yes/no)',
+            format: function (value) {
+              if (this.state.submitted) {
+                return this.isTrue(value) ? 'yes' : 'no'
+              }
+
+              return 'Yes'
+            },
+          })
+
+          if (!proceed) {
+            task.skip('Upgrade cancelled by user.')
+            process.exit(0)
+          }
+        },
+      },
+      {
         title: 'Checking latest version',
         task: async (ctx) => setLatestVersionToContext(ctx, tag),
       },
       {
-        title: 'Updating your Redwood version',
-        task: (ctx) => updateRedwoodDepsForAllSides(ctx, { dryRun, verbose }),
+        title: 'Updating your Cedar version',
+        task: (ctx) => updateCedarDepsForAllSides(ctx, { dryRun, verbose }),
         enabled: (ctx) => !!ctx.versionToUpgradeTo,
       },
       {
@@ -142,7 +180,7 @@ export const handler = async ({ dryRun, tag, verbose, dedupe }) => {
           const version = ctx.versionToUpgradeTo
           const messageSections = [
             `One more thing...\n\n   ${c.warning(
-              `🎉 Your project has been upgraded to RedwoodJS ${version}!`,
+              `🎉 Your project has been upgraded to Cedar ${version}!`,
             )} \n\n`,
           ]
           // Show links when switching to 'latest' or 'rc', undefined is essentially an alias of 'latest'
@@ -153,7 +191,7 @@ export const handler = async ({ dryRun, tag, verbose, dedupe }) => {
                 `https://community.redwoodjs.com/c/announcements/releases-and-upgrade-guides/`,
               )}\n   ❖ ${terminalLink(
                 `GitHub Release notes`,
-                `https://github.com/redwoodjs/redwood/releases`, // intentionally not linking to specific version
+                `https://github.com/cedarjs/cedar/releases`, // intentionally not linking to specific version
               )} \n\n`,
             )
           }
@@ -164,7 +202,7 @@ export const handler = async ({ dryRun, tag, verbose, dedupe }) => {
             // Reminder to update the `notifications.versionUpdates` TOML option
             if (
               !getConfig().notifications.versionUpdates.includes(tag) &&
-              isValidRedwoodJSTag(tag)
+              isValidCedarTag(tag)
             ) {
               additionalMessages.push(
                 `   ❖ You may want to update your redwood.toml config so that \`notifications.versionUpdates\` includes "${tag}"\n`,
@@ -183,7 +221,7 @@ export const handler = async ({ dryRun, tag, verbose, dedupe }) => {
       },
     ],
     {
-      renderer: verbose && 'verbose',
+      renderer: verbose ? 'verbose' : 'default',
       rendererOptions: { collapseSubtasks: false },
     },
   )
@@ -213,7 +251,7 @@ async function yarnInstall({ verbose }) {
 
 /**
  * Removes the CLI plugin cache. This prevents the CLI from using outdated versions of the plugin,
- * when the plugins share the same alias. e.g. `rw sb` used to point to `@redwoodjs/cli-storybook` but now points to `@redwoodjs/cli-storybook-vite`
+ * when the plugins share the same alias. e.g. `rw sb` used to point to `@cedarjs/cli-storybook` but now points to `@cedarjs/cli-storybook-vite`
  */
 async function removeCliCache(ctx, { dryRun, verbose }) {
   const cliCacheDir = path.join(
@@ -233,19 +271,23 @@ async function removeCliCache(ctx, { dryRun, verbose }) {
 async function setLatestVersionToContext(ctx, tag) {
   try {
     const foundVersion = await latestVersion(
-      '@redwoodjs/core',
+      '@cedarjs/core',
       tag ? { version: tag } : {},
     )
 
     ctx.versionToUpgradeTo = foundVersion
     return foundVersion
   } catch (e) {
+    if (tag) {
+      throw new Error('Could not find the latest `' + tag + '` version')
+    }
+
     throw new Error('Could not find the latest version')
   }
 }
 
 /**
- * Iterates over Redwood dependencies in package.json files and updates the version.
+ * Iterates over Cedar dependencies in package.json files and updates the version.
  */
 function updatePackageJsonVersion(pkgPath, version, { dryRun, verbose }) {
   const pkg = JSON.parse(
@@ -254,7 +296,7 @@ function updatePackageJsonVersion(pkgPath, version, { dryRun, verbose }) {
 
   if (pkg.dependencies) {
     for (const depName of Object.keys(pkg.dependencies).filter(
-      (x) => x.startsWith('@redwoodjs/') && x !== '@redwoodjs/studio',
+      (x) => x.startsWith('@cedarjs/') && x !== '@cedarjs/studio',
     )) {
       if (verbose || dryRun) {
         console.log(` - ${depName}: ${pkg.dependencies[depName]} => ${version}`)
@@ -264,7 +306,7 @@ function updatePackageJsonVersion(pkgPath, version, { dryRun, verbose }) {
   }
   if (pkg.devDependencies) {
     for (const depName of Object.keys(pkg.devDependencies).filter(
-      (x) => x.startsWith('@redwoodjs/') && x !== '@redwoodjs/studio',
+      (x) => x.startsWith('@cedarjs/') && x !== '@cedarjs/studio',
     )) {
       if (verbose || dryRun) {
         console.log(
@@ -283,7 +325,7 @@ function updatePackageJsonVersion(pkgPath, version, { dryRun, verbose }) {
   }
 }
 
-function updateRedwoodDepsForAllSides(ctx, options) {
+function updateCedarDepsForAllSides(ctx, options) {
   if (!ctx.versionToUpgradeTo) {
     throw new Error('Failed to upgrade')
   }
@@ -315,15 +357,15 @@ async function updatePackageVersionsFromTemplate(ctx, { dryRun, verbose }) {
   const packageJsons = [
     {
       basePath: getPaths().base,
-      url: 'https://raw.githubusercontent.com/redwoodjs/redwood/main/packages/create-redwood-app/templates/ts/package.json',
+      url: 'https://raw.githubusercontent.com/cedarjs/cedar/main/packages/create-cedar-app/templates/ts/package.json',
     },
     {
       basePath: getPaths().api.base,
-      url: 'https://raw.githubusercontent.com/redwoodjs/redwood/main/packages/create-redwood-app/templates/ts/api/package.json',
+      url: 'https://raw.githubusercontent.com/cedarjs/cedar/main/packages/create-cedar-app/templates/ts/api/package.json',
     },
     {
       basePath: getPaths().web.base,
-      url: 'https://raw.githubusercontent.com/redwoodjs/redwood/main/packages/create-redwood-app/templates/ts/web/package.json',
+      url: 'https://raw.githubusercontent.com/cedarjs/cedar/main/packages/create-cedar-app/templates/ts/web/package.json',
     },
   ]
 
@@ -343,8 +385,8 @@ async function updatePackageVersionsFromTemplate(ctx, { dryRun, verbose }) {
 
           Object.entries(templatePackageJson.dependencies || {}).forEach(
             ([depName, depVersion]) => {
-              // Redwood packages are handled in another task
-              if (!depName.startsWith('@redwoodjs/')) {
+              // Cedar packages are handled in another task
+              if (!depName.startsWith('@cedarjs/')) {
                 if (verbose || dryRun) {
                   console.log(
                     ` - ${depName}: ${localPackageJson.dependencies[depName]} => ${depVersion}`,
@@ -358,8 +400,8 @@ async function updatePackageVersionsFromTemplate(ctx, { dryRun, verbose }) {
 
           Object.entries(templatePackageJson.devDependencies || {}).forEach(
             ([depName, depVersion]) => {
-              // Redwood packages are handled in another task
-              if (!depName.startsWith('@redwoodjs/')) {
+              // Cedar packages are handled in another task
+              if (!depName.startsWith('@cedarjs/')) {
                 if (verbose || dryRun) {
                   console.log(
                     ` - ${depName}: ${localPackageJson.devDependencies[depName]} => ${depVersion}`,
@@ -395,7 +437,7 @@ async function downloadYarnPatches(ctx, { dryRun, verbose }) {
     process.env.REDWOOD_GITHUB_TOKEN
 
   const res = await fetch(
-    'https://api.github.com/repos/redwoodjs/redwood/git/trees/main?recursive=1',
+    'https://api.github.com/repos/cedarjs/cedar/git/trees/main?recursive=1',
     {
       headers: {
         Authorization: githubToken ? `Bearer ${githubToken}` : undefined,
@@ -408,7 +450,7 @@ async function downloadYarnPatches(ctx, { dryRun, verbose }) {
   const json = await res.json()
   const patches = json.tree?.filter((patchInfo) =>
     patchInfo.path.startsWith(
-      'packages/create-redwood-app/templates/ts/.yarn/patches/',
+      'packages/create-cedar-app/templates/ts/.yarn/patches/',
     ),
   )
 
@@ -493,8 +535,8 @@ const dedupeDeps = async (task, { verbose }) => {
     if (yarnVersion > 1) {
       await execa('yarn', ['dedupe'], baseExecaArgsForDedupe)
     } else {
-      // Redwood projects should not be using yarn 1.x as we specify a version of yarn in the package.json
-      // with "packageManager": "yarn@4.1.1" or similar.
+      // Cedar projects should not be using yarn 1.x as we specify a version of yarn in the package.json
+      // with "packageManager": "yarn@4.6.0" or similar.
       // Although we could (and previous did) automatically run `npx yarn-deduplicate` here, that would require
       // the user to have `npx` installed, which is not guaranteed and we do not wish to enforce that.
       task.skip(
@@ -504,7 +546,7 @@ const dedupeDeps = async (task, { verbose }) => {
   } catch (e) {
     console.log(c.error(e.message))
     throw new Error(
-      'Could not finish de-duplication. For yarn 1.x, please run `npx yarn-deduplicate`, or for yarn 3 run `yarn dedupe` before continuing',
+      'Could not finish de-duplication. For yarn 1.x, please run `npx yarn-deduplicate`, or for yarn >= 3 run `yarn dedupe` before continuing',
     )
   }
   await yarnInstall({ verbose })

@@ -6,7 +6,7 @@ import path from 'path'
 import chalk from 'chalk'
 import chokidar from 'chokidar'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@cedarjs/project-config'
 
 import { cliLogger } from '../cliLogger'
 import {

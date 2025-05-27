@@ -1,15 +1,16 @@
 import path from 'path'
 
 import chalk from 'chalk'
+import enquirer from 'enquirer'
 import fs from 'fs-extra'
 
-import { getCompatibilityData } from '@redwoodjs/cli-helpers'
+import { getCompatibilityData } from '@cedarjs/cli-helpers'
 
-import { installModule, isModuleInstalled } from './packages'
+import { installModule, isModuleInstalled } from './packages.js'
 
-import { getPaths } from './index'
+import { getPaths } from './index.js'
 
-const { Select } = require('enquirer')
+const { Select } = enquirer
 
 /**
  * The file inside .redwood which will contain cached plugin command mappings
@@ -24,14 +25,14 @@ export const PLUGIN_CACHE_FILENAME = 'commandCache.json'
  * incorrect.
  */
 export const PLUGIN_CACHE_DEFAULT = {
-  '@redwoodjs/cli-storybook-vite': {
+  '@cedarjs/cli-storybook-vite': {
     storybook: {
       aliases: ['sb'],
       description:
         'Launch Storybook: a tool for building UI components and pages in isolation',
     },
   },
-  '@redwoodjs/cli-data-migrate': {
+  '@cedarjs/cli-data-migrate': {
     'data-migrate <command>': {
       aliases: ['dataMigrate', 'dm'],
       description: 'Migrate the data in your database',
@@ -218,7 +219,7 @@ async function installPluginPackage(packageName, packageVersion) {
   // when no version is specified.
 
   let versionToInstall = packageVersion
-  const isRedwoodPackage = packageName.startsWith('@redwoodjs/')
+  const isRedwoodPackage = packageName.startsWith('@cedarjs/')
   if (!isRedwoodPackage && versionToInstall === undefined) {
     versionToInstall = 'latest'
     try {

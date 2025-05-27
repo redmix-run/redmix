@@ -1,9 +1,9 @@
 {
-  "name": "@redwoodjs/storage",
-  "version": "8.0.0",
+  "name": "@cedarjs/storage",
+  "version": "0.0.5",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/redwoodjs/redwood.git",
+    "url": "git+https://github.com/cedarjs/cedar.git",
     "directory": "packages/storage"
   },
   "license": "MIT",
@@ -42,7 +42,7 @@
   ],
   "scripts": {
     "build": "yarn setup:test && tsx ./build.mts",
-    "build:pack": "yarn pack -o redwoodjs-storage.tgz",
+    "build:pack": "yarn pack -o cedarjs-storage.tgz",
     "build:types": "tsc --build --verbose ./tsconfig.build.json",
     "build:types-cjs": "tsc --build --verbose tsconfig.types-cjs.json",
     "check:attw": "tsx attw.ts",
@@ -53,22 +53,22 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@redwoodjs/project-config": "workspace:*",
+    "@cedarjs/project-config": "workspace:*",
     "mime-types": "2.1.35",
     "ulid": "2.3.0"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "0.16.4",
+    "@cedarjs/framework-tools": "workspace:*",
     "@prisma/client": "5.20.0",
-    "@redwoodjs/framework-tools": "workspace:*",
     "@types/mime-types": "2.1.4",
     "concurrently": "8.2.2",
-    "esbuild": "0.24.0",
-    "publint": "0.2.11",
-    "tstyche": "2.1.1",
-    "tsx": "4.19.1",
+    "esbuild": "0.25.0",
+    "publint": "0.3.12",
+    "tstyche": "3.0.0",
+    "tsx": "4.19.3",
     "typescript": "5.6.2",
-    "vitest": "2.0.5"
+    "vitest": "2.1.9"
   },
   "gitHead": "3905ed045508b861b495f8d5630d76c7a157d8f1"
 }

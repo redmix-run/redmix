@@ -1,7 +1,7 @@
 export default `
 // web/src/Routes.js
 
-import { Router, Route, Set } from '@redwoodjs/router'
+import { Router, Route, Set } from '@cedarjs/router'
 import BlogLayout from 'src/layouts/BlogLayout'
 
 const Routes = () => {

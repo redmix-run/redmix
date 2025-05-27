@@ -1,5 +1,5 @@
-import { Link, routes } from '@redwoodjs/router'
-import { Toaster } from '@redwoodjs/web/toast'
+import { Link, routes } from '@cedarjs/router'
+import { Toaster } from '@cedarjs/web/toast'
 import { Popover, Transition } from '@headlessui/react'
 import { Fragment } from 'react'
 import i18n, { Languages } from 'src/i18n'
@@ -71,7 +71,7 @@ const MainLayout = ({ children }: MainLayoutProps) => {
               <div className="ml-4">
                 <a
                   className="rounded-full px-2 py-1 bg-orange-200 hover:bg-orange-300 text-orange-600 hover:text-orange-700 text-xs font-mono font-normal no-underline transition duration-100"
-                  href="https://github.com/redwoodjs/redwood/releases"
+                  href="https://github.com/cedarjs/cedar/releases"
                   title="Go to Redwood's Releases"
                 >
                   v1.0
@@ -200,7 +200,7 @@ const MainLayout = ({ children }: MainLayoutProps) => {
                                 <PopoverLink
                                   link="https://twitter.com/redwoodjs"
                                   title="Twitter"
-                                  desc="Follow @redwoodjs for updates, new releases and community meetup announcements"
+                                  desc="Follow @cedarjs for updates, new releases and community meetup announcements"
                                 >
                                   <svg
                                     viewBox="0 0 34 34"
@@ -256,7 +256,7 @@ const MainLayout = ({ children }: MainLayoutProps) => {
                 <li className="ml-4">
                   <a
                     className="block flex no-underline"
-                    href="https://github.com/redwoodjs/redwood"
+                    href="https://github.com/cedarjs/cedar"
                     title="Go to Redwood's GitHub repo"
                   >
                     <div className="flex items-center pt-[1px] text-xs font-semibold bg-orange-600 text-orange-100 px-2 rounded-l">
@@ -270,7 +270,7 @@ const MainLayout = ({ children }: MainLayoutProps) => {
                 <li className="mr-3">
                   <a
                     className="block w-6"
-                    href="https://github.com/redwoodjs/redwood"
+                    href="https://github.com/cedarjs/cedar"
                     title="Go to Redwood's GitHub repo"
                   >
                     <svg

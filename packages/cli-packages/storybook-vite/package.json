@@ -1,9 +1,9 @@
 {
-  "name": "@redwoodjs/cli-storybook-vite",
-  "version": "8.0.0",
+  "name": "@cedarjs/cli-storybook-vite",
+  "version": "0.0.5",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/redwoodjs/redwood.git",
+    "url": "git+https://github.com/cedarjs/cedar.git",
     "directory": "packages/cli-packages/storybook-vite"
   },
   "license": "MIT",
@@ -14,7 +14,7 @@
   ],
   "scripts": {
     "build": "tsx ./build.mts && yarn build:types",
-    "build:pack": "yarn pack -o redwoodjs-cli-storybook-vite.tgz",
+    "build:pack": "yarn pack -o cedarjs-cli-storybook-vite.tgz",
     "build:types": "tsc --build --verbose",
     "build:watch": "nodemon --watch src --ext \"js,jsx,ts,tsx\" --ignore dist --exec \"yarn build\"",
     "prepublishOnly": "NODE_ENV=production yarn build",
@@ -22,21 +22,23 @@
     "test:unit": "vitest run"
   },
   "dependencies": {
-    "@redwoodjs/cli-helpers": "workspace:*",
-    "@redwoodjs/project-config": "workspace:*",
-    "@redwoodjs/telemetry": "workspace:*",
+    "@cedarjs/cli-helpers": "workspace:*",
+    "@cedarjs/project-config": "workspace:*",
+    "@cedarjs/telemetry": "workspace:*",
     "chalk": "4.1.2",
     "execa": "5.1.1",
-    "storybook": "7.6.17",
-    "storybook-framework-redwoodjs-vite": "workspace:*",
+    "semver": "7.6.3",
+    "storybook": "7.6.20",
+    "storybook-framework-cedarjs": "workspace:*",
     "terminal-link": "2.1.1",
-    "vitest": "2.0.5",
+    "vitest": "2.1.9",
     "yargs": "17.7.2"
   },
   "devDependencies": {
-    "@redwoodjs/framework-tools": "workspace:*",
+    "@cedarjs/framework-tools": "workspace:*",
+    "@types/semver": "^7",
     "@types/yargs": "17.0.33",
-    "tsx": "4.19.1",
+    "tsx": "4.19.3",
     "typescript": "5.6.2"
   },
   "gitHead": "3905ed045508b861b495f8d5630d76c7a157d8f1"

@@ -1,19 +1,20 @@
-import path from 'path'
+import { createRequire } from 'node:module'
+import path from 'node:path'
 
 import execa from 'execa'
 import fs from 'fs-extra'
 
-import { getPaths } from './index'
+import { getPaths } from './index.js'
 
 // Note: Have to add backslash (\) before @ below for intellisense to display
 // the doc comments properly
 /**
  * Installs a module into a user's project. If the module is already installed,
  * this function does nothing. If no version is specified, the version will be
- * assumed to be the same as that of \@redwoodjs/cli.
+ * assumed to be the same as that of \@cedarjs/cli.
  *
  * @param {string} name The name of the module to install
- * @param {string} version The version of the module to install, otherwise the same as that of \@redwoodjs/cli
+ * @param {string} version The version of the module to install, otherwise the same as that of \@cedarjs/cli
  * @param {boolean} isDevDependency Whether to install as a devDependency or not
  * @returns Whether the module was installed or not
  */
@@ -36,17 +37,19 @@ export async function installModule(name, version = undefined) {
 
 /**
  * Installs a Redwood module into a user's project keeping the version
- * consistent with that of \@redwoodjs/cli.
+ * consistent with that of \@cedarjs/cli.
  * If the module is already installed, this function does nothing.
  * If no remote version can not be found which matches the local cli version
  * then the latest canary version will be used.
  *
- * @param {string} module A redwoodjs module, e.g. \@redwoodjs/web
+ * @param {string} module A redwoodjs module, e.g. \@cedarjs/web
  * @returns {boolean} Whether the module was installed or not
  */
 export async function installRedwoodModule(module) {
-  const packageJsonPath = require.resolve('@redwoodjs/cli/package.json')
-  let { version } = fs.readJSONSync(packageJsonPath)
+  const packageJson = await import('@cedarjs/cli/package.json', {
+    with: { type: 'json' },
+  })
+  let version = packageJson.default.version
 
   if (!isModuleInstalled(module)) {
     // If the version includes a plus, like '4.0.0-rc.428+dd79f1726'
@@ -115,12 +118,14 @@ export function isModuleInstalled(module) {
     return true
   }
 
+  const createdRequire = createRequire(import.meta.url)
+
   // Check any of the places require would look for this module.
   // This enables testing with `yarn rwfw project:copy`.
   //
   // We can't use require.resolve here because it caches the exception
   // Making it impossible to require when we actually do install it...
-  return require.resolve
+  return createdRequire.resolve
     .paths(`${module}/package.json`)
     .some((requireResolvePath) => {
       return fs.existsSync(path.join(requireResolvePath, module))

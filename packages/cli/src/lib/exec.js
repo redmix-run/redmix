@@ -1,21 +1,23 @@
-import path from 'path'
+import { createRequire } from 'node:module'
+import path from 'node:path'
 
 import {
   getWebSideDefaultBabelConfig,
   registerApiSideBabelHook,
-} from '@redwoodjs/babel-config'
-import { getPaths } from '@redwoodjs/project-config'
+} from '@cedarjs/babel-config'
+import { getPaths } from '@cedarjs/project-config'
 
 export async function runScriptFunction({
   path: scriptPath,
   functionName,
   args,
 }) {
-  const script = require(scriptPath)
+  const createdRequire = createRequire(import.meta.url)
+  const script = createdRequire(scriptPath)
   const returnValue = await script[functionName](args)
 
   try {
-    const { db } = require(path.join(getPaths().api.lib, 'db'))
+    const { db } = createdRequire(path.join(getPaths().api.lib, 'db'))
     db.$disconnect()
   } catch (e) {
     // silence

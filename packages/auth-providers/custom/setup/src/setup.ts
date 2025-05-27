@@ -1,6 +1,6 @@
 import type yargs from 'yargs'
 
-import { standardAuthBuilder } from '@redwoodjs/cli-helpers'
+import { standardAuthBuilder } from '@cedarjs/cli-helpers'
 
 export const command = 'custom'
 export const description = 'Generate a custom auth configuration'

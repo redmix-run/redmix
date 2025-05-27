@@ -2,7 +2,7 @@ import {
   createCache,
   InMemoryClient,
   RedisClient,
-} from '@redwoodjs/api/cache'
+} from '@cedarjs/api/cache'
 
 import { logger } from './logger'
 

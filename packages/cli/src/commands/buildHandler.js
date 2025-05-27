@@ -1,19 +1,20 @@
-import path from 'path'
+import { createRequire } from 'node:module'
+import path from 'node:path'
 
 import execa from 'execa'
 import fs from 'fs-extra'
 import { Listr } from 'listr2'
 import terminalLink from 'terminal-link'
 
-import { recordTelemetryAttributes } from '@redwoodjs/cli-helpers'
-import { buildApi, cleanApiBuild } from '@redwoodjs/internal/dist/build/api'
-import { generate } from '@redwoodjs/internal/dist/generate/generate'
-import { loadAndValidateSdls } from '@redwoodjs/internal/dist/validateSchema'
-import { detectPrerenderRoutes } from '@redwoodjs/prerender/detection'
-import { timedTelemetry } from '@redwoodjs/telemetry'
+import { recordTelemetryAttributes } from '@cedarjs/cli-helpers'
+import { buildApi, cleanApiBuild } from '@cedarjs/internal/dist/build/api'
+import { generate } from '@cedarjs/internal/dist/generate/generate'
+import { loadAndValidateSdls } from '@cedarjs/internal/dist/validateSchema'
+import { detectPrerenderRoutes } from '@cedarjs/prerender/detection'
+import { timedTelemetry } from '@cedarjs/telemetry'
 
-import { getPaths, getConfig } from '../lib'
-import { generatePrismaCommand } from '../lib/generatePrismaClient'
+import { generatePrismaCommand } from '../lib/generatePrismaClient.js'
+import { getPaths, getConfig } from '../lib/index.js'
 
 export const handler = async ({
   side = ['api', 'web'],
@@ -89,6 +90,12 @@ export const handler = async ({
     side.includes('web') && {
       title: 'Building Web...',
       task: async () => {
+        // Disable the new warning in Vite v5 about the CJS build being deprecated
+        // so that users don't have to see it when this command is called with --verbose
+        process.env.VITE_CJS_IGNORE_WARNING = 'true'
+
+        const createdRequire = createRequire(import.meta.url)
+
         // @NOTE: we're using the vite build command here, instead of the
         // buildWeb function directly because we want the process.cwd to be
         // the web directory, not the root of the project.
@@ -98,13 +105,9 @@ export const handler = async ({
         // it could affect other things that run in parallel while building.
         // We don't have any parallel tasks right now, but someone might add
         // one in the future as a performance optimization.
-        //
-        // Disable the new warning in Vite v5 about the CJS build being deprecated
-        // so that users don't have to see it when this command is called with --verbose
-        process.env.VITE_CJS_IGNORE_WARNING = 'true'
         await execa(
-          `node ${require.resolve(
-            '@redwoodjs/vite/bins/rw-vite-build.mjs',
+          `node ${createdRequire.resolve(
+            '@cedarjs/vite/bins/rw-vite-build.mjs',
           )} --webDir="${rwjsPaths.web.base}" --verbose=${verbose}`,
           {
             stdio: verbose ? 'inherit' : 'pipe',

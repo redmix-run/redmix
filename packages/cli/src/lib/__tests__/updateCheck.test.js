@@ -3,7 +3,7 @@ global.__dirname = __dirname
 vi.mock('fs-extra')
 vi.mock('latest-version')
 
-vi.mock('@redwoodjs/project-config', async (importOriginal) => {
+vi.mock('@cedarjs/project-config', async (importOriginal) => {
   const originalProjectConfig = await importOriginal()
   return {
     ...originalProjectConfig,
@@ -33,10 +33,10 @@ import {
   afterEach,
 } from 'vitest'
 
-import { getConfig } from '@redwoodjs/project-config'
+import { getConfig } from '@cedarjs/project-config'
 
-import { setLock } from '../locking'
-import * as updateCheck from '../updateCheck'
+import { setLock } from '../locking.js'
+import * as updateCheck from '../updateCheck.js'
 
 const TESTING_CURRENT_DATETIME = 1640995200000
 
@@ -77,7 +77,7 @@ describe('Update is not available (1.0.0 -> 1.0.0)', () => {
       // Users package.json containing the redwood version
       'package.json': JSON.stringify({
         devDependencies: {
-          '@redwoodjs/core': '^1.0.0',
+          '@cedarjs/core': '^1.0.0',
         },
       }),
     })
@@ -156,7 +156,7 @@ describe('Update is available (1.0.0 -> 2.0.0)', () => {
       // Users package.json containing the redwood version
       'package.json': JSON.stringify({
         devDependencies: {
-          '@redwoodjs/core': '^1.0.0',
+          '@cedarjs/core': '^1.0.0',
         },
       }),
     })
@@ -235,7 +235,7 @@ describe('Update is available with rc tag (1.0.0-rc.1 -> 1.0.1-rc.58)', () => {
       // Users package.json containing the redwood version
       'package.json': JSON.stringify({
         devDependencies: {
-          '@redwoodjs/core': '^1.0.0-rc.1',
+          '@cedarjs/core': '^1.0.0-rc.1',
         },
       }),
     })

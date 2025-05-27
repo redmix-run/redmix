@@ -1,5 +1,5 @@
 global.__dirname = __dirname
-vi.mock('@redwoodjs/project-config', async (importOriginal) => {
+vi.mock('@cedarjs/project-config', async (importOriginal) => {
   const originalProjectConfig = await importOriginal()
   const path = require('path')
   return {
@@ -20,7 +20,7 @@ vi.mock('@redwoodjs/project-config', async (importOriginal) => {
 import prompts from 'prompts'
 import { vi, test, expect, describe, it } from 'vitest'
 
-import { getSchema, verifyModelName } from '../schemaHelpers'
+import { getSchema, verifyModelName } from '../schemaHelpers.js'
 
 test('getSchema returns a parsed schema.prisma', async () => {
   let schema = await getSchema('Post')

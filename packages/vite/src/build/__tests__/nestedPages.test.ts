@@ -13,7 +13,7 @@ import {
   vi,
 } from 'vitest'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@cedarjs/project-config'
 
 import { transform, prebuildWebFile } from '../build.js'
 

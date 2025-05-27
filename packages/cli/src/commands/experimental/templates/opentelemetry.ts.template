@@ -11,7 +11,7 @@ import {
 import { SemanticResourceAttributes } from '@opentelemetry/semantic-conventions'
 import { PrismaInstrumentation } from '@prisma/instrumentation'
 
-import { getConfig } from '@redwoodjs/project-config'
+import { getConfig } from '@cedarjs/project-config'
 
 // You may wish to set this to DiagLogLevel.DEBUG when you need to debug opentelemetry itself
 diag.setLogger(new DiagConsoleLogger(), DiagLogLevel.INFO)

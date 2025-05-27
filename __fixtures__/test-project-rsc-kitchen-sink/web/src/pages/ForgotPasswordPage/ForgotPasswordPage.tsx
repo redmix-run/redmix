@@ -1,7 +1,7 @@
-import { Metadata } from '@redwoodjs/web/dist/components/Metadata'
+import { Metadata } from '@cedarjs/web/dist/components/Metadata'
 
 import { ForgotPasswordForm } from './ForgotPasswordForm'
-// import { Toaster } from '@redwoodjs/web/toast'
+// import { Toaster } from '@cedarjs/web/toast'
 
 const ForgotPasswordPage = () => {
   return (

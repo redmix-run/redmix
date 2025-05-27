@@ -1,10 +1,10 @@
 {
-  "name": "@redwoodjs/core",
-  "version": "8.0.0",
+  "name": "@cedarjs/core",
+  "version": "0.0.5",
   "description": "Foundational packages and config required to build RedwoodJS.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/redwoodjs/redwood.git",
+    "url": "git+https://github.com/cedarjs/cedar.git",
     "directory": "packages/core"
   },
   "license": "MIT",
@@ -33,31 +33,31 @@
   ],
   "scripts": {
     "build": "tsx ./build.mts",
-    "build:pack": "yarn pack -o redwoodjs-core.tgz",
+    "build:pack": "yarn pack -o cedarjs-core.tgz",
     "check:package": "yarn publint",
     "prepublishOnly": "NODE_ENV=production yarn build"
   },
   "dependencies": {
-    "@babel/cli": "7.25.7",
-    "@redwoodjs/api-server": "workspace:*",
-    "@redwoodjs/cli": "workspace:*",
-    "@redwoodjs/eslint-config": "workspace:*",
-    "@redwoodjs/internal": "workspace:*",
-    "@redwoodjs/project-config": "workspace:*",
-    "@redwoodjs/testing": "workspace:*",
-    "@redwoodjs/web-server": "workspace:*",
+    "@babel/cli": "7.27.2",
+    "@cedarjs/api-server": "workspace:*",
+    "@cedarjs/cli": "workspace:*",
+    "@cedarjs/eslint-config": "workspace:*",
+    "@cedarjs/internal": "workspace:*",
+    "@cedarjs/project-config": "workspace:*",
+    "@cedarjs/testing": "workspace:*",
+    "@cedarjs/web-server": "workspace:*",
     "graphql-tag": "2.12.6",
     "lodash": "4.17.21",
-    "nodemon": "3.1.7",
+    "nodemon": "3.1.9",
     "react-refresh": "0.14.0",
     "rimraf": "6.0.1",
     "typescript": "5.6.2"
   },
   "devDependencies": {
-    "@redwoodjs/framework-tools": "workspace:*",
-    "@types/lodash": "4.17.10",
-    "publint": "0.2.11",
-    "tsx": "4.19.1"
+    "@cedarjs/framework-tools": "workspace:*",
+    "@types/lodash": "4.17.15",
+    "publint": "0.3.12",
+    "tsx": "4.19.3"
   },
   "gitHead": "3905ed045508b861b495f8d5630d76c7a157d8f1"
 }

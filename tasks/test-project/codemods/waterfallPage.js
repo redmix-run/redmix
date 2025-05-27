@@ -14,12 +14,10 @@ export default (file, api) => {
   root.find(j.ImportDeclaration).at(-1).insertAfter(importComponent)
 
   root
-    .find(j.ImportDeclaration, { source: { value: '@redwoodjs/router' } })
+    .find(j.ImportDeclaration, { source: { value: '@cedarjs/router' } })
     .remove()
 
-  root
-    .find(j.ImportDeclaration, { source: { value: '@redwoodjs/web' } })
-    .remove()
+  root.find(j.ImportDeclaration, { source: { value: '@cedarjs/web' } }).remove()
 
   return root
     .find(j.VariableDeclarator, {

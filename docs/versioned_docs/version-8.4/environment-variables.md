@@ -137,7 +137,7 @@ yarn-error.log
 
 For all the variables in your `.env` and `.env.defaults` files to make their way to `process.env`, there has to be a call to `dotenv`'s `config` function somewhere. So where is it?
 
-It's in [the CLI](https://github.com/redwoodjs/redwood/blob/main/packages/cli/src/index.js#L6-L12)&mdash;every time you run a `yarn rw` command:
+It's in [the CLI](https://github.com/cedarjs/cedar/blob/main/packages/cli/src/index.js#L6-L12)&mdash;every time you run a `yarn rw` command:
 
 ```jsx title="packages/cli/src/index.js"
 import { config } from 'dotenv-defaults'

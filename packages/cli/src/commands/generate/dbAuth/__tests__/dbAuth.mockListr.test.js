@@ -20,9 +20,12 @@ import {
   afterAll,
 } from 'vitest'
 
+// Can't use .js when importing TS files from JS files in Vitest
+// TODO: Add .js when we've upgraded to Vite 6.1.0
+// https://github.com/vitest-dev/vitest/issues/5999
 import { Listr2Mock } from '../../../../__tests__/Listr2Mock'
-import { getPaths } from '../../../../lib'
-import * as dbAuth from '../dbAuth'
+import { getPaths } from '../../../../lib/index.js'
+import * as dbAuth from '../dbAuthHandler.js'
 
 vi.mock('listr2', () => ({
   Listr: Listr2Mock,
@@ -100,11 +103,16 @@ describe('dbAuth handler WebAuthn task title', () => {
     })
 
     await dbAuth.handler({
+      usernameLabel: 'email',
+      passwordLabel: 'password',
       enquirer: customEnquirer,
       listr2: { silentRendererCondition: true },
     })
 
-    expect(Listr2Mock.executedTaskTitles[1]).toEqual(
+    const taskTitles = Listr2Mock.executedTaskTitles
+    console.log('taskTitles', taskTitles)
+
+    expect(Listr2Mock.executedTaskTitles[0]).toEqual(
       'Querying WebAuthn addition: WebAuthn addition included',
     )
   })
@@ -112,7 +120,7 @@ describe('dbAuth handler WebAuthn task title', () => {
   it("does not prompt for WebAuthn if it's already set up", async () => {
     const localMockFiles = { ...mockFiles }
     localMockFiles[path.join(getPaths().web.src, 'auth.ts')] = `
-import { createDbAuthClient, createAuth } from '@redwoodjs/auth-dbauth-web'
+import { createDbAuthClient, createAuth } from '@cedarjs/auth-dbauth-web'
 
 const dbAuthClient = createDbAuthClient()
 
@@ -123,8 +131,8 @@ export const { AuthProvider, useAuth } = createAuth(dbAuthClient)
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "@redwoodjs/auth-dbauth-web": "7.0.0",
-    "@simplewebauthn/browser": "7.4.0"
+    "@cedarjs/auth-dbauth-web": "7.0.0",
+    "@simplewebauthn/browser": "9.0.1"
   }
 }
 `
@@ -147,7 +155,7 @@ export const { AuthProvider, useAuth } = createAuth(dbAuthClient)
   it('does not prompt for WebAuthn if dbAuth is set up', async () => {
     const localMockFiles = { ...mockFiles }
     localMockFiles[path.join(getPaths().web.src, 'auth.ts')] = `
-import { createDbAuthClient, createAuth } from '@redwoodjs/auth-dbauth-web'
+import { createDbAuthClient, createAuth } from '@cedarjs/auth-dbauth-web'
 
 const dbAuthClient = createDbAuthClient()
 
@@ -158,7 +166,7 @@ export const { AuthProvider, useAuth } = createAuth(dbAuthClient)
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "@redwoodjs/auth-dbauth-web": "7.0.0",
+    "@cedarjs/auth-dbauth-web": "7.0.0",
   }
 }
 `
@@ -193,9 +201,11 @@ export const { AuthProvider, useAuth } = createAuth(dbAuthClient)
     await dbAuth.handler({
       enquirer: customEnquirer,
       listr2: { silentRendererCondition: true },
+      usernameLabel: 'email',
+      passwordLabel: 'password',
     })
 
-    expect(Listr2Mock.executedTaskTitles[1]).toEqual(
+    expect(Listr2Mock.executedTaskTitles[0]).toEqual(
       'Querying WebAuthn addition: WebAuthn addition not included',
     )
   })
@@ -210,9 +220,11 @@ export const { AuthProvider, useAuth } = createAuth(dbAuthClient)
       enquirer: customEnquirer,
       listr2: { silentRendererCondition: true },
       webauthn: true,
+      usernameLabel: 'email',
+      passwordLabel: 'password',
     })
 
-    expect(Listr2Mock.skippedTaskTitles[0]).toEqual(
+    expect(Listr2Mock.skippedTaskTitles[1]).toEqual(
       'Querying WebAuthn addition: argument webauthn passed, WebAuthn included',
     )
   })
@@ -227,9 +239,11 @@ export const { AuthProvider, useAuth } = createAuth(dbAuthClient)
       enquirer: customEnquirer,
       listr2: { silentRendererCondition: true },
       webauthn: false,
+      usernameLabel: 'email',
+      passwordLabel: 'password',
     })
 
-    expect(Listr2Mock.skippedTaskTitles[0]).toEqual(
+    expect(Listr2Mock.skippedTaskTitles[1]).toEqual(
       'Querying WebAuthn addition: argument webauthn passed, WebAuthn not included',
     )
   })

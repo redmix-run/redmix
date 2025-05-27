@@ -4,16 +4,16 @@ import execa from 'execa'
 import fs from 'fs-extra'
 import { Listr } from 'listr2'
 
-import { prettify } from '@redwoodjs/cli-helpers'
-import { getConfig, getConfigPath } from '@redwoodjs/project-config'
-import { errorTelemetry } from '@redwoodjs/telemetry'
+import { prettify } from '@cedarjs/cli-helpers'
+import { getConfig, getConfigPath } from '@cedarjs/project-config'
+import { errorTelemetry } from '@cedarjs/telemetry'
 
-import { getPaths, transformTSToJS, writeFile } from '../../lib'
-import c from '../../lib/colors'
-import { isTypeScriptProject } from '../../lib/project'
+import c from '../../lib/colors.js'
+import { getPaths, transformTSToJS, writeFile } from '../../lib/index.js'
+import { isTypeScriptProject } from '../../lib/project.js'
 
-import { command, description, EXPERIMENTAL_TOPIC_ID } from './setupRsc'
-import { printTaskEpilogue } from './util'
+import { command, description, EXPERIMENTAL_TOPIC_ID } from './setupRsc.js'
+import { printTaskEpilogue } from './util.js'
 
 export const handler = async ({ force, verbose }) => {
   const rwPaths = getPaths()
@@ -76,14 +76,14 @@ export const handler = async ({ force, verbose }) => {
             }
           }
         },
-        options: { persistentOutput: true },
+        rendererOptions: { persistentOutput: true },
       },
       {
         title: `Overwriting entry.client${ext}...`,
         task: async () => {
           const entryClientTemplate = fs.readFileSync(
             path.resolve(
-              __dirname,
+              import.meta.dirname,
               'templates',
               'rsc',
               'entry.client.tsx.template',
@@ -107,7 +107,7 @@ export const handler = async ({ force, verbose }) => {
         task: async () => {
           const entryServerTemplate = fs.readFileSync(
             path.resolve(
-              __dirname,
+              import.meta.dirname,
               'templates',
               'rsc',
               'entry.server.tsx.template',
@@ -133,7 +133,7 @@ export const handler = async ({ force, verbose }) => {
         task: async () => {
           const documentTemplate = fs.readFileSync(
             path.resolve(
-              __dirname,
+              import.meta.dirname,
               'templates',
               'rsc',
               'Document.tsx.template',
@@ -155,7 +155,7 @@ export const handler = async ({ force, verbose }) => {
         task: async () => {
           const homePageTemplate = fs.readFileSync(
             path.resolve(
-              __dirname,
+              import.meta.dirname,
               'templates',
               'rsc',
               'HomePage.tsx.template',
@@ -174,7 +174,7 @@ export const handler = async ({ force, verbose }) => {
 
           const aboutPageTemplate = fs.readFileSync(
             path.resolve(
-              __dirname,
+              import.meta.dirname,
               'templates',
               'rsc',
               'AboutPage.tsx.template',
@@ -196,7 +196,12 @@ export const handler = async ({ force, verbose }) => {
         title: 'Adding Counter.tsx...',
         task: async () => {
           const counterTemplate = fs.readFileSync(
-            path.resolve(__dirname, 'templates', 'rsc', 'Counter.tsx.template'),
+            path.resolve(
+              import.meta.dirname,
+              'templates',
+              'rsc',
+              'Counter.tsx.template',
+            ),
             'utf-8',
           )
           const counterPath = path.join(
@@ -215,7 +220,7 @@ export const handler = async ({ force, verbose }) => {
         task: async () => {
           const counterTemplate = fs.readFileSync(
             path.resolve(
-              __dirname,
+              import.meta.dirname,
               'templates',
               'rsc',
               'AboutCounter.tsx.template',
@@ -261,7 +266,12 @@ export const handler = async ({ force, verbose }) => {
 
           files.forEach((file) => {
             const template = fs.readFileSync(
-              path.resolve(__dirname, 'templates', 'rsc', file.template),
+              path.resolve(
+                import.meta.dirname,
+                'templates',
+                'rsc',
+                file.template,
+              ),
               'utf-8',
             )
             const filePath = path.join(rwPaths.web.src, ...file.path)
@@ -277,7 +287,7 @@ export const handler = async ({ force, verbose }) => {
         task: async () => {
           const layoutTemplate = fs.readFileSync(
             path.resolve(
-              __dirname,
+              import.meta.dirname,
               'templates',
               'rsc',
               'NavigationLayout.tsx.template',
@@ -294,7 +304,7 @@ export const handler = async ({ force, verbose }) => {
 
           const cssTemplate = fs.readFileSync(
             path.resolve(
-              __dirname,
+              import.meta.dirname,
               'templates',
               'rsc',
               'NavigationLayout.css.template',
@@ -314,7 +324,12 @@ export const handler = async ({ force, verbose }) => {
         title: 'Overwriting index.css...',
         task: async () => {
           const template = fs.readFileSync(
-            path.resolve(__dirname, 'templates', 'rsc', 'index.css.template'),
+            path.resolve(
+              import.meta.dirname,
+              'templates',
+              'rsc',
+              'index.css.template',
+            ),
             'utf-8',
           )
           const filePath = path.join(rwPaths.web.src, 'index.css')
@@ -349,7 +364,12 @@ export const handler = async ({ force, verbose }) => {
         title: 'Overwriting routes...',
         task: async () => {
           const routesTemplate = fs.readFileSync(
-            path.resolve(__dirname, 'templates', 'rsc', 'Routes.tsx.template'),
+            path.resolve(
+              import.meta.dirname,
+              'templates',
+              'rsc',
+              'Routes.tsx.template',
+            ),
             'utf-8',
           )
 
@@ -363,7 +383,7 @@ export const handler = async ({ force, verbose }) => {
         task: async () => {
           // Fetch the web package.json from the main branch
           const canaryWebPackageJsonUrl =
-            'https://raw.githubusercontent.com/redwoodjs/redwood/main/packages/create-redwood-app/templates/ts/web/package.json'
+            'https://raw.githubusercontent.com/cedarjs/cedar/main/packages/create-cedar-app/templates/ts/web/package.json'
           const response = await fetch(canaryWebPackageJsonUrl)
           const canaryPackageJson = await response.json()
 

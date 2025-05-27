@@ -132,7 +132,7 @@ To enable defer and streaming, set `enableDeferStream` to true.
 Configure a Redis store and defer and stream in:
 
 ```ts title="api/lib/realtime.ts"
-import { RedwoodRealtimeOptions } from '@redwoodjs/realtime'
+import { RedwoodRealtimeOptions } from '@cedarjs/realtime'
 
 import subscriptions from 'src/subscriptions/**/*.{js,ts}'
 
@@ -376,7 +376,7 @@ The service uses `Repeater` to write a safe stream resolver.
 :::
 
 ```ts
-import { Repeater } from '@redwoodjs/realtime'
+import { Repeater } from '@cedarjs/realtime'
 
 import { logger } from 'src/lib/logger'
 

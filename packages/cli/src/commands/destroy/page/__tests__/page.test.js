@@ -14,7 +14,7 @@ import { vi, beforeEach, afterEach, test, expect } from 'vitest'
 
 import '../../../../lib/mockTelemetry'
 
-vi.mock('@redwoodjs/project-config', async (importOriginal) => {
+vi.mock('@cedarjs/project-config', async (importOriginal) => {
   const path = require('path')
   const originalProjectConfig = await importOriginal()
   return {
@@ -37,7 +37,7 @@ vi.mock('@redwoodjs/project-config', async (importOriginal) => {
   }
 })
 
-vi.mock('@redwoodjs/cli-helpers', async (importOriginal) => {
+vi.mock('@cedarjs/cli-helpers', async (importOriginal) => {
   const originalCliHelpers = await importOriginal()
 
   return {
@@ -46,7 +46,7 @@ vi.mock('@redwoodjs/cli-helpers', async (importOriginal) => {
   }
 })
 
-vi.mock('@redwoodjs/internal/dist/generate/generate', () => {
+vi.mock('@cedarjs/internal/dist/generate/generate', () => {
   return {
     generate: () => {
       return { errors: [] }
@@ -54,9 +54,9 @@ vi.mock('@redwoodjs/internal/dist/generate/generate', () => {
   }
 })
 
-import { getPaths } from '../../../../lib'
-import { files } from '../../../generate/page/page'
-import { tasks } from '../page'
+import { getPaths } from '../../../../lib/index.js'
+import { files } from '../../../generate/page/pageHandler.js'
+import { tasks } from '../pageHandler.js'
 
 beforeEach(async () => {
   const f = await files({ name: 'About' })

@@ -1,9 +1,9 @@
 {
-  "name": "@redwoodjs/mailer-handler-nodemailer",
-  "version": "8.0.0",
+  "name": "@cedarjs/mailer-handler-nodemailer",
+  "version": "0.0.5",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/redwoodjs/redwood.git",
+    "url": "git+https://github.com/cedarjs/cedar.git",
     "directory": "packages/mailer/handlers/nodemailer"
   },
   "license": "MIT",
@@ -14,19 +14,19 @@
   ],
   "scripts": {
     "build": "tsx ./build.mts && yarn build:types",
-    "build:pack": "yarn pack -o redwoodjs-mailer-handler-nodemailer.tgz",
+    "build:pack": "yarn pack -o cedarjs-mailer-handler-nodemailer.tgz",
     "build:types": "tsc --build --verbose",
     "build:watch": "nodemon --watch src --ext \"js,jsx,ts,tsx\" --ignore dist --exec \"yarn build\"",
     "prepublishOnly": "NODE_ENV=production yarn build"
   },
   "dependencies": {
-    "@redwoodjs/mailer-core": "workspace:*",
-    "nodemailer": "6.9.15"
+    "@cedarjs/mailer-core": "workspace:*",
+    "nodemailer": "6.9.16"
   },
   "devDependencies": {
-    "@redwoodjs/framework-tools": "workspace:*",
+    "@cedarjs/framework-tools": "workspace:*",
     "@types/nodemailer": "^6",
-    "tsx": "4.19.1",
+    "tsx": "4.19.3",
     "typescript": "5.6.2"
   },
   "gitHead": "3905ed045508b861b495f8d5630d76c7a157d8f1"

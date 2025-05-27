@@ -12,10 +12,10 @@ import {
   isTypeScriptProject,
   prettify,
   writeFilesTask,
-} from '@redwoodjs/cli-helpers'
-import { errorTelemetry } from '@redwoodjs/telemetry'
+} from '@cedarjs/cli-helpers'
+import { errorTelemetry } from '@cedarjs/telemetry'
 
-import type { Args } from './sentry'
+import type { Args } from './sentry.js'
 
 const rwPaths = getPaths()
 
@@ -39,12 +39,18 @@ export const handler = async ({ force }: Args) => {
           {
             [path.join(rwPaths.api.lib, `sentry.${extension}`)]: fs
               .readFileSync(
-                path.join(__dirname, 'templates/sentryApi.ts.template'),
+                path.join(
+                  import.meta.dirname,
+                  'templates/sentryApi.ts.template',
+                ),
               )
               .toString(),
             [path.join(rwPaths.web.src, 'lib', `sentry.${extension}`)]: fs
               .readFileSync(
-                path.join(__dirname, 'templates/sentryWeb.ts.template'),
+                path.join(
+                  import.meta.dirname,
+                  'templates/sentryWeb.ts.template',
+                ),
               )
               .toString(),
           },
@@ -108,14 +114,14 @@ export const handler = async ({ force }: Args) => {
           .split('\n')
 
         const webImportIndex = contentLines.findLastIndex((line) =>
-          /^import { FatalErrorBoundary, RedwoodProvider } from '@redwoodjs\/web'$/.test(
+          /^import { FatalErrorBoundary, RedwoodProvider } from '@cedarjs\/web'$/.test(
             line,
           ),
         )
         contentLines.splice(
           webImportIndex,
           1,
-          "import { RedwoodProvider } from '@redwoodjs/web'",
+          "import { RedwoodProvider } from '@cedarjs/web'",
         )
 
         const boundaryOpenIndex = contentLines.findLastIndex((line) =>

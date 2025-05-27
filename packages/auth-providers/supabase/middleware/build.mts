@@ -1,9 +1,9 @@
-import { buildExternalCjs, buildExternalEsm } from '@redwoodjs/framework-tools'
+import { buildExternalCjs, buildExternalEsm } from '@cedarjs/framework-tools'
 import {
   generateTypesCjs,
   generateTypesEsm,
   insertCommonJsPackageJson,
-} from '@redwoodjs/framework-tools/generateTypes'
+} from '@cedarjs/framework-tools/generateTypes'
 
 await buildExternalEsm()
 await generateTypesEsm()

@@ -2,7 +2,7 @@ import type { PluginOption } from 'vite'
 
 export function mockAuth(): PluginOption {
   return {
-    name: 'mock-@redwoodjs/auth',
+    name: 'mock-@cedarjs/auth',
     enforce: 'pre',
     transform(code: string, id: string) {
       if (id.includes('web/src/auth')) {
@@ -15,7 +15,7 @@ export function mockAuth(): PluginOption {
         )
         // Add import to mocked `createAuth` at the top of the file.
         code =
-          "import { createAuthentication as createAuth } from '@redwoodjs/testing/dist/web/mockAuth.js'\n" +
+          "import { createAuthentication as createAuth } from '@cedarjs/testing/dist/web/mockAuth.js'\n" +
           code
       }
       return code

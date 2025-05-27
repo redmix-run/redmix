@@ -1,4 +1,4 @@
-import { validate as validateField } from '@redwoodjs/api'
+import { validate as validateField } from '@cedarjs/api'
 
 export default (Base) =>
   class extends Base {

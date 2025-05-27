@@ -18,7 +18,7 @@
         "../.redwood/types/mirror/api/src/*"
       ],
       "types/*": ["./types/*", "../types/*"],
-      "@redwoodjs/testing": ["../node_modules/@redwoodjs/testing/api"]
+      "@cedarjs/testing": ["../node_modules/@cedarjs/testing/api"]
     },
     "typeRoots": [
       "../node_modules/@types",

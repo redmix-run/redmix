@@ -6,9 +6,10 @@ import { vi, beforeEach, afterEach, test, expect, describe } from 'vitest'
 
 import '../../../../lib/test'
 
-import { getDefaultArgs } from '../../../../lib'
-import { builder, files } from '../../../generate/sdl/sdl'
-import { tasks } from '../sdl'
+import { getDefaultArgs } from '../../../../lib/index.js'
+import { builder } from '../../../generate/sdl/sdl.js'
+import { files } from '../../../generate/sdl/sdlHandler.js'
+import { tasks } from '../sdlHandler.js'
 
 vi.mock('fs-extra')
 

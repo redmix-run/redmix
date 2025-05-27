@@ -1,8 +1,8 @@
 import fg from 'fast-glob'
 import * as fs from 'fs-extra'
 
-import type { Paths } from '@redwoodjs/project-config'
-import { getPaths } from '@redwoodjs/project-config'
+import type { Paths } from '@cedarjs/project-config'
+import { getPaths } from '@cedarjs/project-config'
 
 import { lazy } from './x/decorators'
 

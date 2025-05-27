@@ -4,18 +4,18 @@ import { config } from 'dotenv-defaults'
 import { hideBin } from 'yargs/helpers'
 import yargs from 'yargs/yargs'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@cedarjs/project-config'
 import {
   description as webDescription,
   builder as webBuilder,
   handler as webHandler,
-} from '@redwoodjs/web-server'
+} from '@cedarjs/web-server'
 
 import {
   description as apiDescription,
   builder as apiBuilder,
 } from './apiCLIConfig'
-import { handler as apiHandler } from './apiCLIConfigHandler'
+import { handler as apiHandler } from './apiCLIConfigHandler.js'
 import {
   description as bothDescription,
   builder as bothBuilder,

@@ -12,7 +12,7 @@ tasks:
     command: yarn rw build -v && yarn rw serve
 ports:
   - port: 8910
-    name: RedwoodJS web application
+    name: Cedar web application
     onOpen: notify # because we already have [browser].open = true in redwood.toml
   - port: 8911
     name: Serverless functions

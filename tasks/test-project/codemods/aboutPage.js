@@ -14,7 +14,7 @@ export default (file, api) => {
     .find(j.ImportDeclaration, {
       source: {
         type: 'StringLiteral',
-        value: '@redwoodjs/router',
+        value: '@cedarjs/router',
       },
     })
     .remove()
@@ -23,7 +23,7 @@ export default (file, api) => {
     .find(j.ImportDeclaration, {
       source: {
         type: 'StringLiteral',
-        value: '@redwoodjs/web',
+        value: '@cedarjs/web',
       },
     })
     .remove()

@@ -9,9 +9,9 @@ import {
 } from '@opentelemetry/sdk-trace-node'
 import { hideBin } from 'yargs/helpers'
 
-import { spawnBackgroundProcess } from '../lib/background'
+import { spawnBackgroundProcess } from '../lib/background.js'
 
-import { CustomFileExporter } from './exporter'
+import { CustomFileExporter } from './exporter.js'
 
 /**
  * @type NodeTracerProvider
@@ -117,7 +117,7 @@ export function shutdownTelemetry() {
     // Send the telemetry in a background process, so we don't block the CLI
     spawnBackgroundProcess('telemetry', 'yarn', [
       'node',
-      path.join(__dirname, 'send.js'),
+      path.join(import.meta.dirname, 'send.js'),
     ])
   } catch (error) {
     console.error('Telemetry error')

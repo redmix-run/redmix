@@ -8,14 +8,14 @@ import { Listr } from 'listr2'
 import {
   getWebSideDefaultBabelConfig,
   registerApiSideBabelHook,
-} from '@redwoodjs/babel-config'
-import { recordTelemetryAttributes } from '@redwoodjs/cli-helpers'
-import { findScripts } from '@redwoodjs/internal/dist/files'
+} from '@cedarjs/babel-config'
+import { recordTelemetryAttributes } from '@cedarjs/cli-helpers'
+import { findScripts } from '@cedarjs/internal/dist/files'
 
-import { getPaths } from '../lib'
-import c from '../lib/colors'
-import { runScriptFunction } from '../lib/exec'
-import { generatePrismaClient } from '../lib/generatePrismaClient'
+import c from '../lib/colors.js'
+import { runScriptFunction } from '../lib/exec.js'
+import { generatePrismaClient } from '../lib/generatePrismaClient.js'
+import { getPaths } from '../lib/index.js'
 
 const printAvailableScriptsToConsole = () => {
   // Loop through all scripts and get their relative path
@@ -58,6 +58,34 @@ export const handler = async (args) => {
     printAvailableScriptsToConsole()
     return
   }
+
+  // The command the user is running is something like this:
+  //
+  // yarn rw exec scriptName arg1 arg2 --positional1=foo --positional2=bar
+  //
+  // Further up in the command chain we've parsed this with yargs. We asked
+  // yargs to parse the command `exec [name]`. So it plucked `scriptName` from
+  // the command and placed that in a named variable called `name`.
+  // And even further up the chain yargs has already eaten the `yarn` part and
+  // assigned 'rw' to `$0`
+  // So what yargs has left in args._ is ['exec', 'arg1', 'arg2'] (and it has
+  // also assigned 'foo' to `args.positional1` and 'bar' to `args.positional2`).
+  // 'exec', 'arg1' and 'arg2' are in `args._` because those are positional
+  // arguments we haven't given a name.
+  // `'exec'` is of no interest to the user, as its not meant to be an argument
+  // to their script. And so we remove it from the array.
+  scriptArgs._ = scriptArgs._.slice(1)
+
+  // 'rw' is not meant for the script's args, so delete that
+  delete scriptArgs.$0
+
+  // Other arguments that yargs adds are `prisma`, `list`, `l`, `silent` and
+  // `s`.
+  // We eat `prisma` and `list` above. So that leaves us with `l`, `s` and
+  // `silent` that we need to delete as well
+  delete scriptArgs.l
+  delete scriptArgs.s
+  delete scriptArgs.silent
 
   const {
     overrides: _overrides,
@@ -133,7 +161,12 @@ export const handler = async (args) => {
     {
       title: 'Generating Prisma client',
       enabled: () => prisma,
-      task: () => generatePrismaClient({ force: false }),
+      task: () =>
+        generatePrismaClient({
+          force: false,
+          verbose: !args.silent,
+          silent: args.silent,
+        }),
     },
     {
       title: 'Running script',

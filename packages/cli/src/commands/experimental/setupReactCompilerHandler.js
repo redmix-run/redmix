@@ -5,18 +5,18 @@ import fs from 'fs-extra'
 import { Listr } from 'listr2'
 import semver from 'semver'
 
-import { getConfigPath } from '@redwoodjs/project-config'
-import { errorTelemetry } from '@redwoodjs/telemetry'
+import { getConfigPath } from '@cedarjs/project-config'
+import { errorTelemetry } from '@cedarjs/telemetry'
 
-import { getPaths, writeFile } from '../../lib'
-import c from '../../lib/colors'
+import c from '../../lib/colors.js'
+import { getPaths, writeFile } from '../../lib/index.js'
 
 import {
   command,
   description,
   EXPERIMENTAL_TOPIC_ID,
-} from './setupReactCompiler'
-import { printTaskEpilogue } from './util'
+} from './setupReactCompiler.js'
+import { printTaskEpilogue } from './util.js'
 
 export const handler = async ({ force, verbose }) => {
   const rwPaths = getPaths()
@@ -84,7 +84,7 @@ export const handler = async ({ force, verbose }) => {
             }
           }
         },
-        options: { persistentOutput: true },
+        rendererOptions: { persistentOutput: true },
       },
       // We are using two different yarn commands here which is fine because they're operating on different
       // workspaces - web and the root

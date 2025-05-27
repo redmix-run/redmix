@@ -1,5 +1,5 @@
-import { Metadata } from '@redwoodjs/web/dist/components/Metadata'
-// import { Toaster } from '@redwoodjs/web/toast'
+import { Metadata } from '@cedarjs/web/dist/components/Metadata'
+// import { Toaster } from '@cedarjs/web/toast'
 
 import { ResetPasswordForm } from './ResetPasswordForm'
 

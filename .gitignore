@@ -21,9 +21,9 @@ blog-test-project/*
 .pnp.*
 *.code-workspace
 .nova
-packages/**/redwoodjs-*.tgz
+packages/**/cedarjs-*.tgz
 packages/**/storybook-*.tgz
-packages/create-redwood-app/create-redwood-app.tgz
+packages/create-cedar-app/create-cedar-app.tgz
 
 # For esbuild.
 **/meta.json

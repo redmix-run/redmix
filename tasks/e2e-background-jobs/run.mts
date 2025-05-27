@@ -73,9 +73,9 @@ async function main() {
   const apiPackageJson = await import(
     makeFilePath(path.join(projectPath, 'api/package.json'))
   )
-  if (!apiPackageJson.dependencies['@redwoodjs/jobs']) {
+  if (!apiPackageJson.dependencies['@cedarjs/jobs']) {
     console.error(
-      "Expected dependency '@redwoodjs/jobs' not found in 'api/package.json'",
+      "Expected dependency '@cedarjs/jobs' not found in 'api/package.json'",
     )
     process.exit(1)
   }
@@ -104,12 +104,19 @@ async function main() {
 
   console.log('Testing: the prisma model exists in the database')
   const prismaData = (await $`yarn rw exec prisma --silent`).toString()
-  const { name } = JSON.parse(prismaData)
-  if (name !== 'BackgroundJob') {
-    console.error('Expected model not found in the database')
+  try {
+    const { name } = JSON.parse(prismaData)
+    if (name !== 'BackgroundJob') {
+      console.error('Expected model not found in the database')
+      process.exit(1)
+    }
+    console.log('Confirmed: prisma model exists')
+  } catch (error) {
+    console.error('Error: Failed to parse prisma script output')
+    console.error(prismaData)
+    console.error(error?.toString())
     process.exit(1)
   }
-  console.log('Confirmed: prisma model exists')
 
   // Step 3: Generate a job
   console.log('Testing: `yarn rw generate job SampleJob`')
@@ -207,19 +214,29 @@ async function main() {
   // Step 10: Confirm the job was scheduled into the database
   console.log('Testing: Confirming the job was scheduled into the database')
   const rawJobs = (await $`yarn rw exec jobs --silent`).toString()
-  const jobs = JSON.parse(rawJobs)
-  if (!jobs?.length) {
-    console.error('Expected job not found in the database')
+  let job = undefined
+  try {
+    const jobs = JSON.parse(rawJobs)
+    if (!jobs?.length) {
+      console.error('Expected job not found in the database')
+      process.exit(1)
+    }
+    job = jobs[0]
+    const handler = JSON.parse(job?.handler ?? '{}')
+    const args = handler.args ?? []
+    if (args[0] !== location || args[1] !== data) {
+      console.error('Expected job arguments do not match')
+      process.exit(1)
+    }
+    console.log('Confirmed: job was scheduled into the database')
+  } catch (error) {
+    console.error(
+      'Error: Failed to confirm job was scheduled into the database',
+    )
+    console.error(rawJobs)
+    console.error(error)
     process.exit(1)
   }
-  const job = jobs[0]
-  const handler = JSON.parse(job?.handler ?? '{}')
-  const args = handler.args ?? []
-  if (args[0] !== location || args[1] !== data) {
-    console.error('Expected job arguments do not match')
-    process.exit(1)
-  }
-  console.log('Confirmed: job was scheduled into the database')
 
   // Step 11: Run the jobs worker
   console.log('Testing: `yarn rw jobs workoff`')

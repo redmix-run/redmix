@@ -1,4 +1,4 @@
-import { build, defaultBuildOptions } from '@redwoodjs/framework-tools'
+import { build, defaultBuildOptions } from '@cedarjs/framework-tools'
 
 // ESM build
 await build({

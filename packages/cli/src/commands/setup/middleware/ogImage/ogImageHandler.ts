@@ -4,15 +4,15 @@ import fs from 'fs-extra'
 import { Listr } from 'listr2'
 import { format } from 'prettier'
 
-import { addWebPackages, getPrettierOptions } from '@redwoodjs/cli-helpers'
-import { getConfig, getPaths } from '@redwoodjs/project-config'
+import { addWebPackages, getPrettierOptions } from '@cedarjs/cli-helpers'
+import { getConfig, getPaths } from '@cedarjs/project-config'
 
-import { runTransform } from '../../../../lib/runTransform'
+import { runTransform } from '../../../../lib/runTransform.js'
 
 export async function handler({ force }: { force: boolean }) {
   const rwPaths = getPaths()
   const rootPkgJson = fs.readJSONSync(path.join(rwPaths.base, 'package.json'))
-  const currentProjectVersion = rootPkgJson.devDependencies['@redwoodjs/core']
+  const currentProjectVersion = rootPkgJson.devDependencies['@cedarjs/core']
 
   const notes: string[] = ['']
   const tasks = new Listr(
@@ -28,7 +28,7 @@ export async function handler({ force }: { force: boolean }) {
           }
         },
       },
-      addWebPackages([`@redwoodjs/ogimage-gen@${currentProjectVersion}`]),
+      addWebPackages([`@cedarjs/ogimage-gen@${currentProjectVersion}`]),
       {
         title: 'Add OG Image middleware ...',
         task: async () => {
@@ -40,7 +40,10 @@ export async function handler({ force }: { force: boolean }) {
           }
 
           const transformResult = await runTransform({
-            transformPath: path.join(__dirname, 'codemodMiddleware.js'),
+            transformPath: path.join(
+              import.meta.dirname,
+              'codemodMiddleware.js',
+            ),
             targetPaths: [serverEntryPath],
           })
 
@@ -58,7 +61,10 @@ export async function handler({ force }: { force: boolean }) {
           }
 
           const transformResult = await runTransform({
-            transformPath: path.join(__dirname, 'codemodVitePlugin.js'),
+            transformPath: path.join(
+              import.meta.dirname,
+              'codemodVitePlugin.js',
+            ),
             targetPaths: [viteConfigPath],
           })
 

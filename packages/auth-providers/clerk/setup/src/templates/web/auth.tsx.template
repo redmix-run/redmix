@@ -2,8 +2,8 @@ import React, { useEffect } from 'react'
 
 import { ClerkProvider, useUser } from '@clerk/clerk-react'
 
-import { createAuth } from '@redwoodjs/auth-clerk-web'
-import { navigate } from '@redwoodjs/router'
+import { createAuth } from '@cedarjs/auth-clerk-web'
+import { navigate } from '@cedarjs/router'
 
 export const { AuthProvider: ClerkRwAuthProvider, useAuth } = createAuth()
 

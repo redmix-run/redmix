@@ -8,12 +8,12 @@ import type {
   FastifyRequest,
 } from 'fastify'
 
-import type { GlobalContext } from '@redwoodjs/context'
-import { getAsyncStoreInstance } from '@redwoodjs/context/dist/store'
-import { coerceRootPath } from '@redwoodjs/fastify-web/dist/helpers'
-import { createGraphQLYoga } from '@redwoodjs/graphql-server'
-import type { GraphQLYogaOptions } from '@redwoodjs/graphql-server'
-import { getPaths } from '@redwoodjs/project-config'
+import type { GlobalContext } from '@cedarjs/context'
+import { getAsyncStoreInstance } from '@cedarjs/context/dist/store'
+import { coerceRootPath } from '@cedarjs/fastify-web/dist/helpers'
+import { createGraphQLYoga } from '@cedarjs/graphql-server'
+import type { GraphQLYogaOptions } from '@cedarjs/graphql-server'
+import { getPaths } from '@cedarjs/project-config'
 
 import { lambdaEventForFastifyRequest } from '../requestHandlers/awsLambdaFastify'
 
@@ -44,16 +44,26 @@ export async function redwoodFastifyGraphQLServer(
   })
 
   try {
-    // Load the graphql options from the user's graphql function if none are explicitly provided
+    // Load the graphql options from the user's graphql function if none are
+    // explicitly provided
     if (!redwoodOptions.graphql) {
       const [graphqlFunctionPath] = await fg('dist/functions/graphql.{ts,js}', {
         cwd: getPaths().api.base,
         absolute: true,
       })
+      const filePath = `file://${graphqlFunctionPath}`
 
-      const { __rw_graphqlOptions } = await import(
-        `file://${graphqlFunctionPath}`
-      )
+      // This comes from a babel plugin that's applied to
+      // api/dist/functions/graphql.{ts,js} in user projects
+      const { __rw_graphqlOptions } = await import(filePath)
+
+      if (!__rw_graphqlOptions) {
+        // Our babel plugin couldn't find any grapqhql config options, so we
+        // assume the user is doing their own thing.
+        // Return here and skip creating a Cedar specific server
+        return
+      }
+
       redwoodOptions.graphql = __rw_graphqlOptions as GraphQLYogaOptions
     }
 
@@ -65,7 +75,7 @@ export async function redwoodFastifyGraphQLServer(
     //
     // These would be plugins that need a server instance such as Redwood Realtime
     if (graphqlOptions?.realtime) {
-      const { useRedwoodRealtime } = await import('@redwoodjs/realtime')
+      const { useRedwoodRealtime } = await import('@cedarjs/realtime')
 
       const originalExtraPlugins = graphqlOptions.extraPlugins ?? []
       // @ts-expect-error TODO(jgmw): Fix this type issue introduced after switching to Node16 module resolution

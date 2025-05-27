@@ -6,7 +6,7 @@ describe('excludeModule', () => {
   it('should return true if idToExclude matches id', () => {
     const loadOutput = excludeOnMatch(
       [{ id: /router\/dist\/splash-page/ }],
-      '/Users/dac09/Experiments/splash-page-null-loader/node_modules/@redwoodjs/router/dist/splash-page.js?commonjs-exports',
+      '/Users/dac09/Experiments/splash-page-null-loader/node_modules/@cedarjs/router/dist/splash-page.js?commonjs-exports',
     )
 
     expect(loadOutput).not.toEqual({
@@ -17,7 +17,7 @@ describe('excludeModule', () => {
   it("should return false if idToExclude doesn't match id", () => {
     const loadOutput = excludeOnMatch(
       [{ id: /bazinga-page/ }],
-      '/Users/dac09/Experiments/splash-page-null-loader/node_modules/@redwoodjs/router/dist/params.js',
+      '/Users/dac09/Experiments/splash-page-null-loader/node_modules/@cedarjs/router/dist/params.js',
     )
 
     expect(loadOutput).toEqual(null)

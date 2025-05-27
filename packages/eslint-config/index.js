@@ -6,8 +6,8 @@ const {
   getCommonPlugins,
   getApiSideDefaultBabelConfig,
   getWebSideDefaultBabelConfig,
-} = require('@redwoodjs/babel-config')
-const { getConfig, isTypeScriptProject } = require('@redwoodjs/project-config')
+} = require('@cedarjs/babel-config')
+const { getConfig, isTypeScriptProject } = require('@cedarjs/project-config')
 
 const config = getConfig()
 
@@ -55,6 +55,8 @@ module.exports = {
     './shared.js',
     config.web.a11y && 'plugin:jsx-a11y/recommended',
   ].filter(Boolean),
+  // This is merged with `ignorePatterns` in shared.js
+  ignorePatterns: ['!.storybook/'],
   parserOptions: {
     requireConfigFile: false,
     babelOptions: getProjectBabelOptions(),
@@ -72,7 +74,7 @@ module.exports = {
             ignoreNonDOM: true,
           },
         ],
-        '@redwoodjs/unsupported-route-components': 'error',
+        '@cedarjs/unsupported-route-components': 'error',
       },
     },
     // `api` side
@@ -89,9 +91,9 @@ module.exports = {
     },
     {
       files: ['api/src/services/**/*.ts'],
-      plugins: ['@redwoodjs'],
+      plugins: ['@cedarjs'],
       rules: {
-        '@redwoodjs/service-type-annotations': 'off',
+        '@cedarjs/service-type-annotations': 'off',
       },
     },
     {

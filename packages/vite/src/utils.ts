@@ -3,7 +3,7 @@ import { pathToFileURL } from 'node:url'
 import type { Request as ExpressRequest } from 'express'
 import type { ViteDevServer } from 'vite'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@cedarjs/project-config'
 
 import type { EntryServer } from './types.js'
 

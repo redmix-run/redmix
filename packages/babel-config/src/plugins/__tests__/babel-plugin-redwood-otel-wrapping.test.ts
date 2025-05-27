@@ -5,7 +5,7 @@ import { vi } from 'vitest'
 
 import redwoodOtelWrappingPlugin from '../babel-plugin-redwood-otel-wrapping'
 
-vi.mock('@redwoodjs/project-config', () => {
+vi.mock('@cedarjs/project-config', () => {
   return {
     getBaseDirFromFile: () => {
       return ''

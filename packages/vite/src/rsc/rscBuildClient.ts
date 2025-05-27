@@ -1,6 +1,6 @@
 import { build as viteBuild } from 'vite'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@cedarjs/project-config'
 
 import { onWarn } from '../lib/onWarn.js'
 import { rscRoutesAutoLoader } from '../plugins/vite-plugin-rsc-routes-auto-loader.js'

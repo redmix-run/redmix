@@ -5,7 +5,7 @@ import { fetch } from '@whatwg-node/fetch'
 import fg from 'fast-glob'
 import task from 'tasuku'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@cedarjs/project-config'
 
 import prettify from '../../../lib/prettify'
 import runTransform from '../../../lib/runTransform'
@@ -42,7 +42,7 @@ export const handler = () => {
       setOutput('All done!')
     } else {
       const res = await fetch(
-        'https://raw.githubusercontent.com/redwoodjs/redwood/main/packages/create-redwood-app/template/api/server.config.js',
+        'https://raw.githubusercontent.com/cedarjs/cedar/main/packages/create-cedar-app/template/api/server.config.js',
       )
       const text = await res.text()
 

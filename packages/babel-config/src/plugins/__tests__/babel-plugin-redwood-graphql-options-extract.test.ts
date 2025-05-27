@@ -5,7 +5,7 @@ import { vi } from 'vitest'
 
 import redwoodGraphqlOptionsExtract from '../babel-plugin-redwood-graphql-options-extract'
 
-vi.mock('@redwoodjs/project-config', () => {
+vi.mock('@cedarjs/project-config', () => {
   return {
     getBaseDirFromFile: () => {
       return ''

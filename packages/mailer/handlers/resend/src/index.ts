@@ -4,8 +4,8 @@ import type {
   MailSendOptionsComplete,
   MailRenderedContent,
   MailResult,
-} from '@redwoodjs/mailer-core'
-import { AbstractMailHandler } from '@redwoodjs/mailer-core'
+} from '@cedarjs/mailer-core'
+import { AbstractMailHandler } from '@cedarjs/mailer-core'
 
 export type ResendMailHandlerOptions = {
   // Note: Resend SDK no longer exports the type Tag but it's simple enough to copy

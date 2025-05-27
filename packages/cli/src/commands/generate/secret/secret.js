@@ -2,7 +2,7 @@ import crypto from 'node:crypto'
 
 import terminalLink from 'terminal-link'
 
-import { recordTelemetryAttributes } from '@redwoodjs/cli-helpers'
+import { recordTelemetryAttributes } from '@cedarjs/cli-helpers'
 
 export const DEFAULT_LENGTH = 32
 

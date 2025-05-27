@@ -4,7 +4,7 @@ import path from 'path'
 import { getDMMF, getSchema } from '@prisma/internals'
 import * as esbuild from 'esbuild'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@cedarjs/project-config'
 
 const DATAMODEL_PATH = path.join(getPaths().api.models, 'datamodel.js')
 const MODELS_PATH = path.join(getPaths().api.src, 'models')
@@ -15,7 +15,7 @@ const indexLines = [
   '',
   "import { db } from 'src/lib/db'",
   "import datamodel from 'src/models/datamodel'",
-  "import { RedwoodRecord } from '@redwoodjs/record'",
+  "import { RedwoodRecord } from '@cedarjs/record'",
   '',
   'RedwoodRecord.db = db',
   'RedwoodRecord.schema = datamodel',

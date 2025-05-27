@@ -5,12 +5,8 @@ import fs from 'fs-extra'
 import {
   getApiSideBabelPlugins,
   transformWithBabel,
-} from '@redwoodjs/babel-config'
-import {
-  getConfig,
-  getPaths,
-  projectSideIsEsm,
-} from '@redwoodjs/project-config'
+} from '@cedarjs/babel-config'
+import { getConfig, getPaths, projectSideIsEsm } from '@cedarjs/project-config'
 
 import { findApiFiles } from '../files'
 

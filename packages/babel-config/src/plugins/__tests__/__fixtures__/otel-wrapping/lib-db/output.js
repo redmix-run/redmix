@@ -1,6 +1,6 @@
 import { trace as RW_OTEL_WRAPPER_TRACE } from '@opentelemetry/api'
 import { PrismaClient } from '@prisma/client'
-import { emitLogLevels, handlePrismaLogging } from '@redwoodjs/api/logger'
+import { emitLogLevels, handlePrismaLogging } from '@cedarjs/api/logger'
 import { logger } from './logger'
 
 /*

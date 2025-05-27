@@ -5,9 +5,9 @@ import * as babel from '@babel/core'
 import fse from 'fs-extra'
 import { transformWithEsbuild } from 'vite'
 
-import type { Flags } from '@redwoodjs/babel-config'
-import { getWebSideDefaultBabelConfig } from '@redwoodjs/babel-config'
-import { getPaths } from '@redwoodjs/project-config'
+import type { Flags } from '@cedarjs/babel-config'
+import { getWebSideDefaultBabelConfig } from '@cedarjs/babel-config'
+import { getPaths } from '@cedarjs/project-config'
 
 export const cleanWebBuild = () => {
   const rwjsPaths = getPaths()

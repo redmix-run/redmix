@@ -1,6 +1,7 @@
 import type { NodePath, PluginObj, PluginPass, types } from '@babel/core'
 
-// This extracts the options passed to the graphql function and stores them in an exported variable so they can be imported elsewhere.
+// This extracts the options passed to the graphql function and stores them in
+// an exported variable so they can be imported elsewhere.
 
 const exportVariableName = '__rw_graphqlOptions'
 
@@ -36,13 +37,13 @@ export default function ({ types: t }: { types: typeof types }): PluginObj {
     name: 'babel-plugin-redwood-graphql-options-extract',
     visitor: {
       Program(path, state) {
-        // Find all imports of the 'createGraphQLHandler' function from '@redwoodjs/graphql-server'
+        // Find all imports of the 'createGraphQLHandler' function from '@cedarjs/graphql-server'
         const importNames = new Set<string>()
         path.traverse({
           ImportDeclaration(p) {
             if (
               t.isStringLiteral(p.node.source, {
-                value: '@redwoodjs/graphql-server',
+                value: '@cedarjs/graphql-server',
               })
             ) {
               for (const specifier of p.node.specifiers) {
@@ -70,12 +71,17 @@ export default function ({ types: t }: { types: typeof types }): PluginObj {
             }
           },
         })
+
         if (callExpressionPaths.length > 1) {
           console.log(
-            `There are ${callExpressionPaths.length} calls to 'createGraphQLHandler' in '${state.file.opts.filename}'. The automatic extraction of graphql options will fallback to the first usage.`,
+            `There are ${callExpressionPaths.length} calls to ` +
+              `'createGraphQLHandler' in '${state.file.opts.filename}'. The ` +
+              'automatic extraction of graphql options will fallback to the ' +
+              'first usage.',
           )
           return
         }
+
         const callExpressionPath = callExpressionPaths[0]
         if (!callExpressionPath) {
           return

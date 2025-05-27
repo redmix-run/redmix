@@ -2,9 +2,9 @@ import execa from 'execa'
 import fs from 'fs-extra'
 import terminalLink from 'terminal-link'
 
-import { recordTelemetryAttributes } from '@redwoodjs/cli-helpers'
+import { recordTelemetryAttributes } from '@cedarjs/cli-helpers'
 
-import { getPaths } from '../lib'
+import { getPaths } from '../lib/index.js'
 
 export const command = 'lint [path..]'
 export const description = 'Lint your files'
@@ -42,6 +42,9 @@ export const handler = async ({ path, fix }) => {
         fix && '--fix',
         !pathString && fs.existsSync(getPaths().web.src) && 'web/src',
         !pathString && fs.existsSync(getPaths().web.config) && 'web/config',
+        !pathString &&
+          fs.existsSync(getPaths().web.storybook) &&
+          'web/.storybook',
         !pathString && fs.existsSync(getPaths().scripts) && 'scripts',
         !pathString && fs.existsSync(getPaths().api.src) && 'api/src',
         pathString,

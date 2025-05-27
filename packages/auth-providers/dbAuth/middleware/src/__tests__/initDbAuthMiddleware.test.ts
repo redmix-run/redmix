@@ -6,7 +6,7 @@ import {
   MiddlewareRequest as MWRequest,
   MiddlewareRequest,
   MiddlewareResponse,
-} from '@redwoodjs/web/middleware'
+} from '@cedarjs/web/middleware'
 
 import { middlewareDefaultAuthProviderState } from '../../../../../auth/dist/AuthProvider/AuthProviderState.js'
 import type { DbAuthMiddlewareOptions } from '../index.js'
@@ -21,7 +21,7 @@ beforeAll(() => {
   process.env.RWJS_CWD = FIXTURE_PATH
 
   // Mock the session decryption
-  vi.mock('@redwoodjs/auth-dbauth-api', async (importOriginal) => {
+  vi.mock('@cedarjs/auth-dbauth-api', async (importOriginal) => {
     const original = (await importOriginal()) as any
     return {
       default: {

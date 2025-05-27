@@ -1,6 +1,6 @@
 import { describe, test, expect } from 'vitest'
 
-import { parseJWT } from '../parseJWT'
+import { parseJWT } from '../parseJWT.js'
 
 const JWT_CLAIMS: Record<string, unknown> = {
   iss: 'https://app.us.auth0.com/',

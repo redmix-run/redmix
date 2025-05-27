@@ -1,17 +1,19 @@
-import path from 'path'
-import repl from 'repl'
+import { createRequire } from 'node:module'
+import path from 'node:path'
+import repl from 'node:repl'
 
 import fs from 'fs-extra'
 
-import { registerApiSideBabelHook } from '@redwoodjs/babel-config'
-import { recordTelemetryAttributes } from '@redwoodjs/cli-helpers'
+import { registerApiSideBabelHook } from '@cedarjs/babel-config'
+import { recordTelemetryAttributes } from '@cedarjs/cli-helpers'
 
-import { getPaths } from '../lib'
+import { getPaths } from '../lib/index.js'
 
 const paths = getPaths()
 
 const loadPrismaClient = (replContext) => {
-  const { db } = require(path.join(paths.api.lib, 'db'))
+  const createdRequire = createRequire(import.meta.url)
+  const { db } = createdRequire(path.join(paths.api.lib, 'db'))
   // workaround for Prisma issue: https://github.com/prisma/prisma/issues/18292
   db[Symbol.for('nodejs.util.inspect.custom')] = 'PrismaClient'
   replContext.db = db

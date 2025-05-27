@@ -1,5 +1,5 @@
 export default `
-import { ForbiddenError } from '@redwoodjs/graphql-server'
+import { ForbiddenError } from '@cedarjs/graphql-server'
 
 export const isAuthenticated = () => {
   throw new ForbiddenError("I'm sorry, Dave")

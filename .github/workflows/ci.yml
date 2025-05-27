@@ -19,7 +19,7 @@ env:
 
 jobs:
   detect-changes:
-    if: github.repository == 'redwoodjs/redwood'
+    if: github.repository == 'cedarjs/cedar'
     name: 🔍 Detect changes
     runs-on: ubuntu-latest
 
@@ -29,7 +29,7 @@ jobs:
       ssr: ${{ steps.detect-changes.outputs.ssr }}
 
     steps:
-      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
       - name: Set up job
         uses: ./.github/actions/set-up-job
         with:
@@ -49,7 +49,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
       - name: Set up job
         uses: ./.github/actions/set-up-job
         with:
@@ -75,7 +75,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
       - name: Set up job
         uses: ./.github/actions/set-up-job
         with:
@@ -101,7 +101,7 @@ jobs:
         if: matrix.os != 'ubuntu-latest'
         run: echo "echo "::remove-matcher owner=tsc::""
 
-      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
       - name: Set up job
         uses: ./.github/actions/set-up-job
 
@@ -144,19 +144,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
       - name: Set up job
         uses: ./.github/actions/set-up-job
 
       - name: 🌲 Install Cypress
         run: yarn cypress install
 
-      - name: 🌲 Create a Redwood App
+      - name: 🌲 Create a Cedar App
         id: crwa
         env:
           YARN_ENABLE_IMMUTABLE_INSTALLS: false
         run: |
-          project_path=$(mktemp -d -t redwood.XXXXXX)
+          project_path=$(mktemp -d -t cedar.XXXXXX)
           echo "project-path=$project_path" >> $GITHUB_OUTPUT
 
           git config --global user.email "you@example.com"
@@ -172,7 +172,7 @@ jobs:
         working-directory: ${{ steps.crwa.outputs.project-path }}
 
       - name: 🌲 Run Cypress
-        uses: cypress-io/github-action@df7484c5ba85def7eef30db301afa688187bc378 # v6
+        uses: cypress-io/github-action@0ee1130f05f69098ab5c560bd198fecf5a14d75b # v6
         env:
           CYPRESS_RW_PATH: ${{ steps.crwa.outputs.project-path }}
         with:
@@ -184,7 +184,7 @@ jobs:
           spec: |
             cypress/e2e/01-tutorial/*.cy.js
 
-      - uses: actions/upload-artifact@50769540e7f4bd5e21e526ee35c689e35e0d6874 # v4
+      - uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08 # v4
         if: always()
         with:
           name: logs
@@ -218,7 +218,7 @@ jobs:
 
     steps:
       - name: Checkout the framework code
-        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
 
       - name: Set up job
         uses: ./.github/actions/set-up-job
@@ -255,6 +255,16 @@ jobs:
       - name: Run `rw prerender`
         run: |
           yarn rw prerender --verbose
+        working-directory: ${{ steps.set-up-test-project.outputs.test-project-path }}
+
+      - name: Run `rw test web`
+        run: |
+          yarn rw test web --no-watch
+        working-directory: ${{ steps.set-up-test-project.outputs.test-project-path }}
+
+      - name: Run `rw test api`
+        run: |
+          yarn rw test api --no-watch
         working-directory: ${{ steps.set-up-test-project.outputs.test-project-path }}
 
       - name: 🖥️ Run serve smoke tests
@@ -308,7 +318,7 @@ jobs:
 
     steps:
       - name: Checkout the framework code
-        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
 
       - name: Set up job
         uses: ./.github/actions/set-up-job
@@ -416,7 +426,7 @@ jobs:
       REDWOOD_VERBOSE_TELEMETRY: 1
 
     steps:
-      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
       - name: Set up job
         uses: ./.github/actions/set-up-job
 
@@ -428,8 +438,12 @@ jobs:
           YARN_ENABLE_IMMUTABLE_INSTALLS: false
 
       - name: Run `rw info`
-        run: yarn rw info
+        run: yarn rw info | tr -d '\n' | grep "npmPackages:.*@cedarjs/core:"
         working-directory: ${{ steps.set-up-test-project.outputs.test-project-path }}
+
+      - name: Run in /scripts `rw info`
+        run: yarn rw info | tr -d '\n' | grep "npmPackages:.*@cedarjs/core:"
+        working-directory: ${{ steps.set-up-test-project.outputs.test-project-path }}/scripts
 
       - name: Run `rw lint`
         run: yarn rw lint ./api/src --fix
@@ -454,6 +468,17 @@ jobs:
       - name: Run "rw exec"
         run: yarn rw g script testScript && yarn rw exec testScript
         working-directory: ${{ steps.set-up-test-project.outputs.test-project-path }}
+
+      - name: Nested script | Run "rw exec"
+        # Using -f to overwrite script that already exists in the test-project
+        run: yarn rw g script -f i/am/nested && yarn rw exec i/am/nested
+        working-directory: ${{ steps.set-up-test-project.outputs.test-project-path }}
+
+      - name: Nested script | Run in /scripts "rw exec"
+        # This is probably stretching the definition of "smoke test" a bit too
+        # much. But we don't have a better place to run a test like this
+        run: yarn rw g script i/am/nested/too && yarn rw exec i/am/nested/too | grep "Executing script with args"
+        working-directory: ${{ steps.set-up-test-project.outputs.test-project-path }}/scripts/i/am
 
       - name: Run "prisma generate"
         run: yarn rw prisma generate
@@ -524,7 +549,7 @@ jobs:
       REDWOOD_REDIRECT_TELEMETRY: 'http://127.0.0.1:48619' # Random port
 
     steps:
-      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
       - name: Set up job
         uses: ./.github/actions/set-up-job
 
@@ -566,7 +591,7 @@ jobs:
       REDWOOD_VERBOSE_TELEMETRY: 1
 
     steps:
-      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
       - name: Set up job
         uses: ./.github/actions/set-up-job
 
@@ -661,7 +686,7 @@ jobs:
       REDWOOD_VERBOSE_TELEMETRY: 1
 
     steps:
-      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
       - name: Set up job
         uses: ./.github/actions/set-up-job
 
@@ -732,7 +757,7 @@ jobs:
       REDWOOD_VERBOSE_TELEMETRY: 1
 
     steps:
-      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
       - name: Set up job
         uses: ./.github/actions/set-up-job
 
@@ -801,7 +826,7 @@ jobs:
   crwa:
     needs: check
 
-    name: 🌲 Create Redwood App
+    name: 🌲 Create Cedar App
     runs-on: ubuntu-latest
 
     env:
@@ -809,7 +834,7 @@ jobs:
       REDWOOD_DISABLE_TELEMETRY: 1
 
     steps:
-      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
       - name: Set up job
         uses: ./.github/actions/set-up-job
 
@@ -818,7 +843,7 @@ jobs:
           yarn build:pack
           PROJECT_PATH=$(yarn set-up-test-project)
           echo "PROJECT_PATH=$PROJECT_PATH" >> $GITHUB_ENV
-        working-directory: ./packages/create-redwood-app
+        working-directory: ./packages/create-cedar-app
         env:
           YARN_ENABLE_IMMUTABLE_INSTALLS: false
 
@@ -829,7 +854,7 @@ jobs:
 
       - name: e2e test
         run: yarn test:e2e
-        working-directory: ./packages/create-redwood-app
+        working-directory: ./packages/create-cedar-app
         env:
           PROJECT_PATH: ${{ env.PROJECT_PATH }}
 
@@ -845,29 +870,29 @@ jobs:
           ./tests/e2e_prompts_m.sh
           ./tests/e2e_prompts_ts.sh
           ./tests/e2e_prompts_overwrite.sh
-        working-directory: ./packages/create-redwood-app
+        working-directory: ./packages/create-cedar-app
         env:
           PROJECT_PATH: ${{ env.PROJECT_PATH }}
 
       - name: ⬢ Set up Node.js
-        uses: actions/setup-node@0a44ba7841725637a19e28fa30b79a866c81b0a6 # v4
+        uses: actions/setup-node@1d0ff469b7ec7b3cb9d8673fde0c81c44821de2a # v4
         with:
           node-version: 18
 
       - name: Prompt tests
         run: ./tests/e2e_prompts_node_less.sh
-        working-directory: ./packages/create-redwood-app
+        working-directory: ./packages/create-cedar-app
         env:
           PROJECT_PATH: ${{ env.PROJECT_PATH }}
 
       - name: ⬢ Set up Node.js
-        uses: actions/setup-node@0a44ba7841725637a19e28fa30b79a866c81b0a6 # v4
+        uses: actions/setup-node@1d0ff469b7ec7b3cb9d8673fde0c81c44821de2a # v4
         with:
           node-version: 21
 
       - name: Prompt tests
         run: ./tests/e2e_prompts_node_greater.sh
-        working-directory: ./packages/create-redwood-app
+        working-directory: ./packages/create-cedar-app
         env:
           PROJECT_PATH: ${{ env.PROJECT_PATH }}
 
@@ -875,7 +900,7 @@ jobs:
     needs: detect-changes
     if: needs.detect-changes.outputs.code == 'false'
 
-    name: 🌲 Create Redwood App
+    name: 🌲 Create Cedar App
     runs-on: ubuntu-latest
 
     steps:
@@ -888,7 +913,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
       - name: Set up job
         uses: ./.github/actions/set-up-job
 
@@ -920,7 +945,7 @@ jobs:
       REDWOOD_VERBOSE_TELEMETRY: 1
 
     steps:
-      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
       - name: Set up job
         uses: ./.github/actions/set-up-job
 

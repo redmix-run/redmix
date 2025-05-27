@@ -3,7 +3,7 @@ import path from 'path'
 
 import { SourceMapGenerator } from 'source-map'
 
-import { getPaths, processPagesDir } from '@redwoodjs/project-config'
+import { getPaths, processPagesDir } from '@cedarjs/project-config'
 
 import {
   getCellGqlQuery,
@@ -415,7 +415,7 @@ declare module '@storybook/react' {
 
   const hasCliStorybookVite = Object.keys(
     packageJson['devDependencies'],
-  ).includes('@redwoodjs/cli-storybook-vite')
+  ).includes('@cedarjs/cli-storybook-vite')
 
   if (hasCliStorybookVite) {
     return []

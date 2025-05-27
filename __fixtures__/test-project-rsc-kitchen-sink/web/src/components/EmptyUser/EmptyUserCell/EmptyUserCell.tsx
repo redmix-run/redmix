@@ -9,7 +9,7 @@ import type {
   CellSuccessProps,
   CellFailureProps,
   TypedDocumentNode,
-} from '@redwoodjs/web'
+} from '@cedarjs/web'
 
 import EmptyUser from 'src/components/EmptyUser/EmptyUser'
 

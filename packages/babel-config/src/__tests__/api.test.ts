@@ -1,7 +1,7 @@
 import { vol, fs as memfs } from 'memfs'
 import { vi } from 'vitest'
 
-import { ensurePosixPath, getPaths } from '@redwoodjs/project-config'
+import { ensurePosixPath, getPaths } from '@cedarjs/project-config'
 
 import type { PluginList } from '../api'
 import {
@@ -59,7 +59,7 @@ describe('api', () => {
             {
               "corejs": {
                 "proposals": true,
-                "version": "3.38",
+                "version": "3.42",
               },
               "exclude": [
                 "@babel/plugin-transform-class-properties",
@@ -176,7 +176,7 @@ describe('api', () => {
             proposals: true,
             version: 3,
           },
-          version: '7.25.7',
+          version: '7.27.1',
         },
       ])
 
@@ -221,7 +221,7 @@ describe('api', () => {
             },
             {
               members: ['context'],
-              path: '@redwoodjs/context',
+              path: '@cedarjs/context',
             },
           ],
         },

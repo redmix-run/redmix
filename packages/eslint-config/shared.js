@@ -30,9 +30,12 @@ module.exports = {
     'react',
     'react-hooks',
     'jest-dom',
-    '@redwoodjs',
+    '@cedarjs',
   ],
-  ignorePatterns: ['node_modules', 'dist'],
+  // In addition to this, eslint also has some implicit ignore patterns, like
+  // `node_modules`.
+  // See https://eslint.org/docs/latest/use/configure/ignore-deprecated
+  ignorePatterns: ['dist'],
   settings: {
     react: {
       version: 'detect',
@@ -46,7 +49,7 @@ module.exports = {
     'import/internal-regex': '^src/',
   },
   rules: {
-    '@redwoodjs/process-env-computed': 'error',
+    '@cedarjs/process-env-computed': 'error',
     'prettier/prettier': 'warn',
     'no-console': 'off',
     'prefer-object-spread': 'warn',
@@ -97,7 +100,7 @@ module.exports = {
             position: 'after',
           },
           {
-            pattern: '@redwoodjs/**',
+            pattern: '@cedarjs/**',
             group: 'external',
             position: 'after',
           },

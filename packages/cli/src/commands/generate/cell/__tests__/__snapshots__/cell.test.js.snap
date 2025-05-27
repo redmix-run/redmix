@@ -140,7 +140,7 @@ export const success = {
 `;
 
 exports[`Custom Id Field files > List cell > creates a cell list test with a custom id field 1`] = `
-"import { render } from '@redwoodjs/testing/web'
+"import { render } from '@cedarjs/testing/web'
 
 import { Loading, Empty, Failure, Success } from './CustomIdFieldsCell'
 import { standard } from './CustomIdFieldsCell.mock'
@@ -173,7 +173,7 @@ describe('CustomIdFieldsCell', () => {
   // When you're ready to test the actual output of your component render
   // you could test that, for example, certain text is present:
   //
-  // 1. import { screen } from '@redwoodjs/testing/web'
+  // 1. import { screen } from '@cedarjs/testing/web'
   // 2. Add test: expect(screen.getByText('Hello, world')).toBeInTheDocument()
 
   it('renders Success successfully', async () => {
@@ -257,7 +257,7 @@ export const success = {
 `;
 
 exports[`Custom Id Field files > Single cell > creates a cell test with a custom id field 1`] = `
-"import { render } from '@redwoodjs/testing/web'
+"import { render } from '@cedarjs/testing/web'
 
 import { Loading, Empty, Failure, Success } from './CustomIdFieldCell'
 import { standard } from './CustomIdFieldCell.mock'
@@ -283,19 +283,19 @@ describe('CustomIdFieldCell', () => {
 
   it('renders Failure successfully', async () => {
     expect(() => {
-      render(<Failure error={new Error('Oh no')} />)
+      render(<Failure uuid={'42'} error={new Error('Oh no')} />)
     }).not.toThrow()
   })
 
   // When you're ready to test the actual output of your component render
   // you could test that, for example, certain text is present:
   //
-  // 1. import { screen } from '@redwoodjs/testing/web'
+  // 1. import { screen } from '@cedarjs/testing/web'
   // 2. Add test: expect(screen.getByText('Hello, world')).toBeInTheDocument()
 
   it('renders Success successfully', async () => {
     expect(() => {
-      render(<Success customIdField={standard().customIdField} />)
+      render(<Success uuid={'42'} customIdField={standard().customIdField} />)
     }).not.toThrow()
   })
 })
@@ -374,7 +374,7 @@ export const success = {
 `;
 
 exports[`Kebab case words > creates a cell test with a kebabCase word name 1`] = `
-"import { render } from '@redwoodjs/testing/web'
+"import { render } from '@cedarjs/testing/web'
 
 import { Loading, Empty, Failure, Success } from './UserProfileCell'
 import { standard } from './UserProfileCell.mock'
@@ -400,19 +400,19 @@ describe('UserProfileCell', () => {
 
   it('renders Failure successfully', async () => {
     expect(() => {
-      render(<Failure error={new Error('Oh no')} />)
+      render(<Failure id={42} error={new Error('Oh no')} />)
     }).not.toThrow()
   })
 
   // When you're ready to test the actual output of your component render
   // you could test that, for example, certain text is present:
   //
-  // 1. import { screen } from '@redwoodjs/testing/web'
+  // 1. import { screen } from '@cedarjs/testing/web'
   // 2. Add test: expect(screen.getByText('Hello, world')).toBeInTheDocument()
 
   it('renders Success successfully', async () => {
     expect(() => {
-      render(<Success userProfile={standard().userProfile} />)
+      render(<Success id={42} userProfile={standard().userProfile} />)
     }).not.toThrow()
   })
 })
@@ -491,7 +491,7 @@ export const success = {
 `;
 
 exports[`Multiword files > creates a cell test with a multi word name 1`] = `
-"import { render } from '@redwoodjs/testing/web'
+"import { render } from '@cedarjs/testing/web'
 
 import { Loading, Empty, Failure, Success } from './UserProfileCell'
 import { standard } from './UserProfileCell.mock'
@@ -517,19 +517,19 @@ describe('UserProfileCell', () => {
 
   it('renders Failure successfully', async () => {
     expect(() => {
-      render(<Failure error={new Error('Oh no')} />)
+      render(<Failure id={42} error={new Error('Oh no')} />)
     }).not.toThrow()
   })
 
   // When you're ready to test the actual output of your component render
   // you could test that, for example, certain text is present:
   //
-  // 1. import { screen } from '@redwoodjs/testing/web'
+  // 1. import { screen } from '@cedarjs/testing/web'
   // 2. Add test: expect(screen.getByText('Hello, world')).toBeInTheDocument()
 
   it('renders Success successfully', async () => {
     expect(() => {
-      render(<Success userProfile={standard().userProfile} />)
+      render(<Success id={42} userProfile={standard().userProfile} />)
     }).not.toThrow()
   })
 })
@@ -608,7 +608,7 @@ export const success = {
 `;
 
 exports[`Single word files > creates a cell test with a single word name 1`] = `
-"import { render } from '@redwoodjs/testing/web'
+"import { render } from '@cedarjs/testing/web'
 
 import { Loading, Empty, Failure, Success } from './UserCell'
 import { standard } from './UserCell.mock'
@@ -634,19 +634,19 @@ describe('UserCell', () => {
 
   it('renders Failure successfully', async () => {
     expect(() => {
-      render(<Failure error={new Error('Oh no')} />)
+      render(<Failure id={42} error={new Error('Oh no')} />)
     }).not.toThrow()
   })
 
   // When you're ready to test the actual output of your component render
   // you could test that, for example, certain text is present:
   //
-  // 1. import { screen } from '@redwoodjs/testing/web'
+  // 1. import { screen } from '@cedarjs/testing/web'
   // 2. Add test: expect(screen.getByText('Hello, world')).toBeInTheDocument()
 
   it('renders Success successfully', async () => {
     expect(() => {
-      render(<Success user={standard().user} />)
+      render(<Success id={42} user={standard().user} />)
     }).not.toThrow()
   })
 })
@@ -725,7 +725,7 @@ export const success = {
 `;
 
 exports[`Snake case words > creates a cell test with a snakeCase word name 1`] = `
-"import { render } from '@redwoodjs/testing/web'
+"import { render } from '@cedarjs/testing/web'
 
 import { Loading, Empty, Failure, Success } from './UserProfileCell'
 import { standard } from './UserProfileCell.mock'
@@ -751,19 +751,19 @@ describe('UserProfileCell', () => {
 
   it('renders Failure successfully', async () => {
     expect(() => {
-      render(<Failure error={new Error('Oh no')} />)
+      render(<Failure id={42} error={new Error('Oh no')} />)
     }).not.toThrow()
   })
 
   // When you're ready to test the actual output of your component render
   // you could test that, for example, certain text is present:
   //
-  // 1. import { screen } from '@redwoodjs/testing/web'
+  // 1. import { screen } from '@cedarjs/testing/web'
   // 2. Add test: expect(screen.getByText('Hello, world')).toBeInTheDocument()
 
   it('renders Success successfully', async () => {
     expect(() => {
-      render(<Success userProfile={standard().userProfile} />)
+      render(<Success id={42} userProfile={standard().userProfile} />)
     }).not.toThrow()
   })
 })
@@ -777,7 +777,7 @@ import type {
   CellSuccessProps,
   CellFailureProps,
   TypedDocumentNode,
-} from '@redwoodjs/web'
+} from '@cedarjs/web'
 
 export const QUERY: TypedDocumentNode<
   FindBazingaQuery,
@@ -809,7 +809,7 @@ export const Success = ({
 `;
 
 exports[`TypeScript: generates list cells if list flag passed in 2`] = `
-"import { render } from '@redwoodjs/testing/web'
+"import { render } from '@cedarjs/testing/web'
 
 import { Loading, Empty, Failure, Success } from './BazingaCell'
 import { standard } from './BazingaCell.mock'
@@ -835,19 +835,19 @@ describe('BazingaCell', () => {
 
   it('renders Failure successfully', async () => {
     expect(() => {
-      render(<Failure error={new Error('Oh no')} />)
+      render(<Failure id={42} error={new Error('Oh no')} />)
     }).not.toThrow()
   })
 
   // When you're ready to test the actual output of your component render
   // you could test that, for example, certain text is present:
   //
-  // 1. import { screen } from '@redwoodjs/testing/web'
+  // 1. import { screen } from '@cedarjs/testing/web'
   // 2. Add test: expect(screen.getByText('Hello, world')).toBeInTheDocument()
 
   it('renders Success successfully', async () => {
     expect(() => {
-      render(<Success bazinga={standard().bazinga} />)
+      render(<Success id={42} bazinga={standard().bazinga} />)
     }).not.toThrow()
   })
 })
@@ -911,7 +911,7 @@ import type {
   CellSuccessProps,
   CellFailureProps,
   TypedDocumentNode,
-} from '@redwoodjs/web'
+} from '@cedarjs/web'
 
 export const QUERY: TypedDocumentNode<MembersQuery, MembersQueryVariables> =
   gql\`
@@ -926,11 +926,13 @@ export const Loading = () => <div>Loading...</div>
 
 export const Empty = () => <div>Empty</div>
 
-export const Failure = ({ error }: CellFailureProps) => (
+export const Failure = ({ error }: CellFailureProps<MembersQueryVariables>) => (
   <div style={{ color: 'red' }}>Error: {error?.message}</div>
 )
 
-export const Success = ({ members }: CellSuccessProps<MembersQuery>) => {
+export const Success = ({
+  members,
+}: CellSuccessProps<MembersQuery, MembersQueryVariables>) => {
   return (
     <ul>
       {members.map((item) => {
@@ -1014,7 +1016,7 @@ export const success = {
 `;
 
 exports[`camelCase words > creates a cell test with a camelCase word name 1`] = `
-"import { render } from '@redwoodjs/testing/web'
+"import { render } from '@cedarjs/testing/web'
 
 import { Loading, Empty, Failure, Success } from './UserProfileCell'
 import { standard } from './UserProfileCell.mock'
@@ -1040,19 +1042,19 @@ describe('UserProfileCell', () => {
 
   it('renders Failure successfully', async () => {
     expect(() => {
-      render(<Failure error={new Error('Oh no')} />)
+      render(<Failure id={42} error={new Error('Oh no')} />)
     }).not.toThrow()
   })
 
   // When you're ready to test the actual output of your component render
   // you could test that, for example, certain text is present:
   //
-  // 1. import { screen } from '@redwoodjs/testing/web'
+  // 1. import { screen } from '@cedarjs/testing/web'
   // 2. Add test: expect(screen.getByText('Hello, world')).toBeInTheDocument()
 
   it('renders Success successfully', async () => {
     expect(() => {
-      render(<Success userProfile={standard().userProfile} />)
+      render(<Success id={42} userProfile={standard().userProfile} />)
     }).not.toThrow()
   })
 })
@@ -1083,7 +1085,7 @@ export const Success = ({ address }) => {
 `;
 
 exports[`generates a cell with a string primary id key 2`] = `
-"import { render } from '@redwoodjs/testing/web'
+"import { render } from '@cedarjs/testing/web'
 
 import { Loading, Empty, Failure, Success } from './AddressCell'
 import { standard } from './AddressCell.mock'
@@ -1109,19 +1111,19 @@ describe('AddressCell', () => {
 
   it('renders Failure successfully', async () => {
     expect(() => {
-      render(<Failure error={new Error('Oh no')} />)
+      render(<Failure id={'42'} error={new Error('Oh no')} />)
     }).not.toThrow()
   })
 
   // When you're ready to test the actual output of your component render
   // you could test that, for example, certain text is present:
   //
-  // 1. import { screen } from '@redwoodjs/testing/web'
+  // 1. import { screen } from '@cedarjs/testing/web'
   // 2. Add test: expect(screen.getByText('Hello, world')).toBeInTheDocument()
 
   it('renders Success successfully', async () => {
     expect(() => {
-      render(<Success address={standard().address} />)
+      render(<Success id={'42'} address={standard().address} />)
     }).not.toThrow()
   })
 })
@@ -1206,7 +1208,7 @@ export const Success = ({ addresses }) => {
 `;
 
 exports[`generates list a cell with a string primary id keys 2`] = `
-"import { render } from '@redwoodjs/testing/web'
+"import { render } from '@cedarjs/testing/web'
 
 import { Loading, Empty, Failure, Success } from './AddressesCell'
 import { standard } from './AddressesCell.mock'
@@ -1239,7 +1241,7 @@ describe('AddressesCell', () => {
   // When you're ready to test the actual output of your component render
   // you could test that, for example, certain text is present:
   //
-  // 1. import { screen } from '@redwoodjs/testing/web'
+  // 1. import { screen } from '@cedarjs/testing/web'
   // 2. Add test: expect(screen.getByText('Hello, world')).toBeInTheDocument()
 
   it('renders Success successfully', async () => {
@@ -1339,7 +1341,7 @@ export const Success = ({ members }) => {
 `;
 
 exports[`generates list cells if list flag passed in 2`] = `
-"import { render } from '@redwoodjs/testing/web'
+"import { render } from '@cedarjs/testing/web'
 
 import { Loading, Empty, Failure, Success } from './MembersCell'
 import { standard } from './MembersCell.mock'
@@ -1372,7 +1374,7 @@ describe('MembersCell', () => {
   // When you're ready to test the actual output of your component render
   // you could test that, for example, certain text is present:
   //
-  // 1. import { screen } from '@redwoodjs/testing/web'
+  // 1. import { screen } from '@cedarjs/testing/web'
   // 2. Add test: expect(screen.getByText('Hello, world')).toBeInTheDocument()
 
   it('renders Success successfully', async () => {

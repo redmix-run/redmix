@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { Css, Meta } from '@redwoodjs/web/htmlTags'
+import { Css, Meta } from '@cedarjs/web/htmlTags'
 
-import type { TagDescriptor } from '@redwoodjs/web/htmlTags'
+import type { TagDescriptor } from '@cedarjs/web/htmlTags'
 
 interface DocumentProps {
   children: React.ReactNode

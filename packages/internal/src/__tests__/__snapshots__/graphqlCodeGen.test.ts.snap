@@ -2,10 +2,10 @@
 
 exports[`Generate gql typedefs api 1`] = `
 "import { Prisma } from "@prisma/client"
-import { MergePrismaWithSdlTypes, MakeRelationsOptional } from '@redwoodjs/api'
+import { MergePrismaWithSdlTypes, MakeRelationsOptional } from '@cedarjs/api'
 import { PrismaModelOne as PrismaPrismaModelOne, PrismaModelTwo as PrismaPrismaModelTwo, Post as PrismaPost, Todo as PrismaTodo } from '@prisma/client'
 import { GraphQLResolveInfo, GraphQLScalarType, GraphQLScalarTypeConfig } from 'graphql';
-import { RedwoodGraphQLContext } from '@redwoodjs/graphql-server/dist/types';
+import { RedwoodGraphQLContext } from '@cedarjs/graphql-server/dist/types';
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
@@ -77,9 +77,9 @@ export type Query = {
 };
 
 /**
- * The RedwoodJS Root Schema
+ * The Cedar Root Schema
  *
- * Defines details about RedwoodJS such as the current user and version information.
+ * Defines details about Cedar such as the current user and version information.
  */
 export type Redwood = {
   __typename?: 'Redwood';
@@ -373,9 +373,9 @@ export type Query = {
 };
 
 /**
- * The RedwoodJS Root Schema
+ * The Cedar Root Schema
  *
- * Defines details about RedwoodJS such as the current user and version information.
+ * Defines details about Cedar such as the current user and version information.
  */
 export type Redwood = {
   __typename?: 'Redwood';

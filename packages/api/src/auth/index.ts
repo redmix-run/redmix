@@ -1,14 +1,14 @@
-export * from './parseJWT'
+export * from './parseJWT.js'
 
 import type { APIGatewayProxyEvent, Context as LambdaContext } from 'aws-lambda'
-import { parse as parseCookie } from 'cookie'
+import * as cookie from 'cookie'
 
-import { getEventHeader } from '../event'
+import { getEventHeader } from '../event.js'
 
-import type { Decoded } from './parseJWT'
+import type { Decoded } from './parseJWT.js'
 export type { Decoded }
 
-// This is shared by `@redwoodjs/web` as well as used on auth middleware
+// This is shared by `@cedarjs/web` as well as used on auth middleware
 export const AUTH_PROVIDER_HEADER = 'auth-provider'
 
 export const getAuthProviderHeader = (
@@ -29,26 +29,26 @@ export interface AuthorizationHeader {
 }
 
 export type AuthorizationCookies = {
-  parsedCookie: Record<string, string>
+  parsedCookie: Record<string, string | undefined>
   rawCookie: string
-  type: string
+  type: string | undefined
 } | null
 
 export const parseAuthorizationCookie = (
   event: APIGatewayProxyEvent | Request,
 ): AuthorizationCookies => {
-  const cookie = getEventHeader(event, 'Cookie')
+  const cookieHeader = getEventHeader(event, 'Cookie')
 
   // Unauthenticated request
-  if (!cookie) {
+  if (!cookieHeader) {
     return null
   }
 
-  const parsedCookie = parseCookie(cookie)
+  const parsedCookie = cookie.parse(cookieHeader)
 
   return {
     parsedCookie,
-    rawCookie: cookie,
+    rawCookie: cookieHeader,
     // When not unauthenticated, this will be null/undefined
     // Remember that the cookie header could contain other (unrelated) values!
     type: parsedCookie[AUTH_PROVIDER_HEADER],

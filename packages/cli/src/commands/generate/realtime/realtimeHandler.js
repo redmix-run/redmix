@@ -6,18 +6,18 @@ import pascalcase from 'pascalcase'
 import pluralize, { singular } from 'pluralize'
 import prompts from 'prompts'
 
-import { generate as generateTypes } from '@redwoodjs/internal/dist/generate/generate'
-import { errorTelemetry } from '@redwoodjs/telemetry'
+import { generate as generateTypes } from '@cedarjs/internal/dist/generate/generate'
+import { errorTelemetry } from '@cedarjs/telemetry'
 
 // Move this check out of experimental when server file is moved as well
+import c from '../../../lib/colors.js'
 import {
   generateTemplate,
   getPaths,
   transformTSToJS,
   writeFile,
-} from '../../../lib'
-import c from '../../../lib/colors'
-import { isTypeScriptProject } from '../../../lib/project'
+} from '../../../lib/index.js'
+import { isTypeScriptProject } from '../../../lib/project.js'
 import { isRealtimeSetup, isServerFileSetup } from '../../experimental/util.js'
 
 const templateVariables = (name) => {
@@ -86,7 +86,7 @@ export async function handler({ name, type, force, verbose }) {
           // sdl
 
           const exampleSdlTemplateContent = path.resolve(
-            __dirname,
+            import.meta.dirname,
             'templates',
             'subscriptions',
             'blank',
@@ -105,7 +105,7 @@ export async function handler({ name, type, force, verbose }) {
           // service
 
           const exampleServiceTemplateContent = path.resolve(
-            __dirname,
+            import.meta.dirname,
             'templates',
             'subscriptions',
             'blank',
@@ -124,7 +124,7 @@ export async function handler({ name, type, force, verbose }) {
           // subscription
 
           const exampleSubscriptionTemplateContent = path.resolve(
-            __dirname,
+            import.meta.dirname,
             'templates',
             'subscriptions',
             'blank',
@@ -179,7 +179,7 @@ export async function handler({ name, type, force, verbose }) {
         task: async () => {
           // sdl
           const exampleSdlTemplateContent = path.resolve(
-            __dirname,
+            import.meta.dirname,
             'templates',
             'liveQueries',
             'blank',
@@ -195,7 +195,7 @@ export async function handler({ name, type, force, verbose }) {
 
           // service
           const exampleServiceTemplateContent = path.resolve(
-            __dirname,
+            import.meta.dirname,
             'templates',
             'liveQueries',
             'blank',

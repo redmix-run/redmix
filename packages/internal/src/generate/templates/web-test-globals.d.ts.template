@@ -1,5 +1,5 @@
 // Import other mocking function globals
-import '@redwoodjs/testing'
+import '@cedarjs/testing'
 import { InferredCurrentUser } from './all-currentUser'
 
 declare global {

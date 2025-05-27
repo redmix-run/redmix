@@ -4,7 +4,7 @@
 // @NOTE without these imports in the setup file, mockCurrentUser
 // will remain undefined in the user's tests
 // Remember to use specific imports
-const { defineScenario } = require('@redwoodjs/testing/dist/api/scenario')
+const { defineScenario } = require('@cedarjs/testing/dist/api/scenario')
 
 // @NOTE we do this because jest.setup.js runs every time in each context
 // while jest-preset runs once. This significantly reduces memory footprint, and testing time
@@ -248,7 +248,7 @@ const wasDbUsed = () => {
 
 // Attempt to emulate the request context isolation behavior
 // This is a little more complicated than it would necessarily need to be
-// but we're following the same pattern as in `@redwoodjs/context`
+// but we're following the same pattern as in `@cedarjs/context`
 const mockContextStore = new Map()
 const mockContext = new Proxy(
   {},
@@ -267,7 +267,7 @@ const mockContext = new Proxy(
     },
   },
 )
-jest.mock('@redwoodjs/context', () => {
+jest.mock('@cedarjs/context', () => {
   return {
     context: mockContext,
     setContext: (newContext) => {

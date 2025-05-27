@@ -1,22 +1,21 @@
 import path from 'path'
 
-// Babel 7 packages are CJS, and need to be imported as such
 import babelGenerator from '@babel/generator'
 const generate = babelGenerator.default
-import { parse as babelParse } from '@babel/parser/index.cjs'
+import { parse as babelParse } from '@babel/parser'
 import babelTraverse from '@babel/traverse'
 const traverse = babelTraverse.default
 import * as t from '@babel/types'
 import type { Plugin } from 'vite'
 import { normalizePath } from 'vite'
 
-import type { PagesDependency } from '@redwoodjs/project-config'
+import type { PagesDependency } from '@cedarjs/project-config'
 import {
   ensurePosixPath,
   getPaths,
   importStatementPath,
   processPagesDir,
-} from '@redwoodjs/project-config'
+} from '@cedarjs/project-config'
 
 const getPathRelativeToSrc = (maybeAbsolutePath: string) => {
   // If the path is already relative
@@ -101,7 +100,7 @@ export function rscRoutesAutoLoader(): Plugin {
       // `import { MyLayout, SomethingElse } from './myLayout'`
       // and turning it into
       // `import { SomethingElse } from './myLayout'`
-      // `import { MyLayout } from '@redwoodjs/router/dist/dummyComponent'`
+      // `import { MyLayout } from '@cedarjs/router/dist/dummyComponent'`
       // and also
       // `import MyLayout, { SomethingElse } from './myLayout'`
       const allImports = new Map<string, t.ImportDeclaration>()
@@ -175,9 +174,9 @@ export function rscRoutesAutoLoader(): Plugin {
 
         if (wrapperImport) {
           // This will turn all wrapper imports into something like
-          // import NavigationLayout from "@redwoodjs/router/dist/dummyComponent";
+          // import NavigationLayout from "@cedarjs/router/dist/dummyComponent";
           // which is all we need for client side routing
-          wrapperImport.source.value = '@redwoodjs/router/dist/dummyComponent'
+          wrapperImport.source.value = '@cedarjs/router/dist/dummyComponent'
         }
       })
 

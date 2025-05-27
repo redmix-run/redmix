@@ -86,7 +86,7 @@ web/dist/
 You can reference these files in your code without any special handling:
 
 ```jsx title="web/src/components/Header/Header.js"
-import { Head } from '@redwoodjs/web'
+import { Head } from '@cedarjs/web'
 
 const Header = () => {
   return (

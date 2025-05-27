@@ -1,11 +1,11 @@
-import { AbstractMailHandler } from '@redwoodjs/mailer-core'
+import { AbstractMailHandler } from '@cedarjs/mailer-core'
 import type {
   MailRenderedContent,
   MailResult,
   MailSendOptionsComplete,
-} from '@redwoodjs/mailer-core'
-import { NodemailerMailHandler } from '@redwoodjs/mailer-handler-nodemailer'
-import type { HandlerOptions } from '@redwoodjs/mailer-handler-nodemailer'
+} from '@cedarjs/mailer-core'
+import { NodemailerMailHandler } from '@cedarjs/mailer-handler-nodemailer'
+import type { HandlerOptions } from '@cedarjs/mailer-handler-nodemailer'
 
 export class StudioMailHandler extends AbstractMailHandler {
   private nodemailerHandler: NodemailerMailHandler

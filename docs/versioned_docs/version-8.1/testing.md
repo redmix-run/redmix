@@ -240,7 +240,7 @@ const Article = ({ article }) => {
 
 // web/src/components/Article/Article.test.js
 
-import { render } from '@redwoodjs/testing/web'
+import { render } from '@cedarjs/testing/web'
 import Article from 'src/components/Article'
 
 describe('Article', () => {
@@ -258,10 +258,10 @@ Because as far as we can tell there's no easy way to simply render to a string. 
 
 Note that Redwood's `render` function is based on React Testing Library's. The only difference is that Redwood's wraps everything with mock providers for the various providers in Redwood, such as auth, the GraphQL client, the router, etc.
 
-If you were to use React Testing Library's `render` function, you'd need to provide your own wrapper function. In this case you probably want to compose the mock providers from `@redwoodjs/testing/web`:
+If you were to use React Testing Library's `render` function, you'd need to provide your own wrapper function. In this case you probably want to compose the mock providers from `@cedarjs/testing/web`:
 
 ```jsx
-import { render, MockProviders } from '@redwoodjs/testing/web'
+import { render, MockProviders } from '@cedarjs/testing/web'
 
 // ...
 
@@ -281,7 +281,7 @@ render(<Article article={ title: 'Foobar' } />, {
 To mock `useLocation` in your component tests, wrap the component with `LocationProvider`:
 
 ```jsx
-import { LocationProvider } from '@redwoodjs/router'
+import { LocationProvider } from '@cedarjs/router'
 
 render(
   <LocationProvider location={{ pathname: '', search: '?cancelled=true' }}>
@@ -295,7 +295,7 @@ render(
 To mock `useParams` in your component tests, wrap the component with `ParamsProvider`:
 
 ```jsx
-import { ParamsProvider } from '@redwoodjs/router';
+import { ParamsProvider } from '@cedarjs/router';
 
 render(
   <ParamsProvider allParams={{ param1: 'val1', param2: 'val2' }}>
@@ -315,7 +315,7 @@ In most cases you will want to exclude the design elements and structure of your
 In our **&lt;Article&gt;** component it seems like we really just want to test that the title of the product is rendered. _How_ and _what it looks like_ aren't really a concern for this test. Let's update the test to just check for the presence of the title itself:
 
 ```jsx {3,7-9} title="web/src/components/Article/Article.test.js"
-import { render, screen } from '@redwoodjs/testing/web'
+import { render, screen } from '@cedarjs/testing/web'
 
 describe('Article', () => {
   it('renders an article', () => {
@@ -339,7 +339,7 @@ Why not use `getByText()` for everything? Because it will raise an error if the 
 Consider an update to our **&lt;Article&gt;** component:
 
 ```jsx title="web/src/components/Article/Article.js"
-import { Link, routes } from '@redwoodjs/router'
+import { Link, routes } from '@cedarjs/router'
 
 const Article = ({ article, summary }) => {
   return (
@@ -359,7 +359,7 @@ export default Article
 If we're only displaying the summary of an article then we'll only show the first 100 characters with an ellipsis on the end ("...") and include a link to "Read more" to see the full article. A reasonable test for this component would be that when the `summary` prop is `true` then the "Read more" text should be present. If `summary` is `false` then it should _not_ be present. That's where `queryByText()` comes in (relevant test lines are highlighted):
 
 ```jsx {22} title="web/src/components/Article/Article.test.js"
-import { render, screen } from '@redwoodjs/testing/web'
+import { render, screen } from '@cedarjs/testing/web'
 import Article from 'src/components/Article'
 
 describe('Article', () => {
@@ -419,7 +419,7 @@ it('renders a link with a name', () => {
 But what if we wanted to check the `href` of the link itself to be sure it's correct? In that case we can capture the `screen.getByRole()` return and run expectations on that as well (the `forEach()` loop has been removed here for simplicity):
 
 ```jsx {1,6-8}
-import { routes } from '@redwoodjs/router'
+import { routes } from '@cedarjs/router'
 
 it('renders a link with a name', () => {
   render(<List data={[{ id: 1, name: 'Rob' }]} />)
@@ -506,7 +506,7 @@ If you're using GraphQL inside your components, you can mock them to return the 
 > Normally we recommend using a cell for exactly this functionality, but for the sake of completeness we're showing how to test when doing GraphQL queries the manual way!
 
 ```jsx title="web/src/components/Article/Article.js"
-import { useQuery } from '@redwoodjs/web'
+import { useQuery } from '@cedarjs/web'
 
 const GET_ARTICLE = gql`
   query getArticle($id: Int!) {
@@ -541,7 +541,7 @@ export default Article
 Redwood provides the test function `mockGraphQLQuery()` for providing the result of a given named GraphQL. In this case our query is named `getArticle` and we can mock that in our test as follows:
 
 ```jsx {6-14,18} title="web/src/components/Article/Article.test.js"
-import { render, screen } from '@redwoodjs/testing/web'
+import { render, screen } from '@cedarjs/testing/web'
 import Article from 'src/components/Article'
 
 describe('Article', () => {
@@ -628,7 +628,7 @@ Most applications will eventually add [Authentication/Authorization](authenticat
 Consider the following component (that happens to be a page) which displays a "welcome" message if the user is logged in, and a button to log in if they aren't:
 
 ```jsx title="web/src/pages/HomePage/HomePage.js"
-import { useAuth } from '@redwoodjs/auth'
+import { useAuth } from '@cedarjs/auth'
 
 const HomePage = () => {
   const { isAuthenticated, currentUser, logIn } = useAuth()
@@ -649,7 +649,7 @@ const HomePage = () => {
 If we didn't do anything special, there would be no user logged in and we could only ever test the not-logged-in state:
 
 ```jsx title="web/src/pages/HomePage/HomePage.test.js"
-import { render, screen } from '@redwoodjs/testing/web'
+import { render, screen } from '@cedarjs/testing/web'
 import HomePage from './HomePage'
 
 describe('HomePage', () => {
@@ -668,7 +668,7 @@ This test is a little more explicit in that it expects an actual `<button>` elem
 How do we test that when a user _is_ logged in, it outputs a message welcoming them, and that the button is _not_ present? Similar to `mockGraphQLQuery()` Redwood also provides a `mockCurrentUser()` which tells Redwood what to return when the `getCurrentUser()` function of `api/src/lib/auth.js` is invoked:
 
 ```jsx title="web/src/pages/HomePage/HomePage.test.js"
-import { render, screen, waitFor } from '@redwoodjs/testing/web'
+import { render, screen, waitFor } from '@cedarjs/testing/web'
 import HomePage from './HomePage'
 
 describe('HomePage', () => {
@@ -780,15 +780,15 @@ Some schools of thought say you should keep your test files flat (that is, no ne
 ## Testing Custom Hooks
 
 Custom hooks are a great way to encapsulate non-presentational code.
-To test custom hooks, we'll use the `renderHook` function from `@redwoodjs/testing/web`.
+To test custom hooks, we'll use the `renderHook` function from `@cedarjs/testing/web`.
 
 :::info
 Note that Redwood's `renderHook` function is based on React Testing Library's. The only difference is that Redwood's wraps everything with mock providers for the various providers in Redwood, such as auth, the GraphQL client, the router, etc.
 
-If you were to use React Testing Library's `renderHook` function, you'd need to provide your own wrapper function. In this case you probably want to compose the mock providers from `@redwoodjs/testing/web`:
+If you were to use React Testing Library's `renderHook` function, you'd need to provide your own wrapper function. In this case you probably want to compose the mock providers from `@cedarjs/testing/web`:
 
 ```jsx
-import { renderHook, MockProviders } from '@redwoodjs/testing/web'
+import { renderHook, MockProviders } from '@cedarjs/testing/web'
 
 // ...
 
@@ -835,7 +835,7 @@ const useAccumulator = (initialValue) => {
 The test could look as follows:
 
 ```js title="web/src/hooks/useAccumulator/useAccumulator.test.js"
-import { renderHook } from '@redwoodjs/testing/web'
+import { renderHook } from '@cedarjs/testing/web'
 import { useAccumulator } from './useAccumulator'
 
 describe('useAccumulator hook example in docs', () => {
@@ -915,7 +915,7 @@ export const Success = ({ article }) => {
 Here we're exporting four components and if you created this Cell with the [Cell generator](cli-commands.md#generate-cell) then you'll already have four tests that make sure that each component renders without errors:
 
 ```jsx title="web/src/components/ArticleCell/ArticleCell.test.js"
-import { render, screen } from '@redwoodjs/testing/web'
+import { render, screen } from '@cedarjs/testing/web'
 import { Loading, Empty, Failure, Success } from './ArticleCell'
 import { standard } from './ArticleCell.mock'
 
@@ -996,7 +996,7 @@ export const missingBody = {
 And then you just reference that new mock in your test:
 
 ```jsx title="web/src/components/ArticleCell/ArticleCell.test.js"
-import { render, screen } from '@redwoodjs/testing/web'
+import { render, screen } from '@cedarjs/testing/web'
 import { Loading, Empty, Failure, Success } from './ArticleCell'
 import { standard, missingBody } from './ArticleCell.mock'
 
@@ -1069,7 +1069,7 @@ const ProductPage = ({ status }) => {
 Which, in your page test, would let you do something like:
 
 ```jsx title="web/src/pages/ProductPage/ProductPage.test.js"
-import { render, screen } from '@redwoodjs/testing/web'
+import { render, screen } from '@cedarjs/testing/web'
 import ArticleCell from 'src/components/ArticleCell'
 
 describe('ProductPage', () => {
@@ -1131,10 +1131,10 @@ yarn workspace web add -D @testing-library/user-event
 
 ### Building a Form
 
-Let's assume you've already created a component using `yarn rw g component`. This component is built using the `@redwoodjs/forms` package and provides a simple interface for using the form: we subscribe to changes via an `onSubmit` callback-prop.
+Let's assume you've already created a component using `yarn rw g component`. This component is built using the `@cedarjs/forms` package and provides a simple interface for using the form: we subscribe to changes via an `onSubmit` callback-prop.
 
 ```jsx title="NameForm.js"
-import { Form, Submit, TextField } from '@redwoodjs/forms'
+import { Form, Submit, TextField } from '@cedarjs/forms'
 
 const NameForm = ({ onSubmit }) => {
   return (
@@ -1165,12 +1165,12 @@ export default NameForm
 
 Now, we can extend the `test` file which Redwood generated. We're going to want to:
 
-1. Import `waitFor` from the `@redwoodjs/testing/web` library.
+1. Import `waitFor` from the `@cedarjs/testing/web` library.
 2. Add an import to `@testing-library/user-event` for its `default`.
 3. Provide an `onSubmit` prop to our "renders successfully" test.
 
 ```jsx title="NameForm.test.js"
-import { render, screen, waitFor } from '@redwoodjs/testing/web'
+import { render, screen, waitFor } from '@cedarjs/testing/web'
 import userEvent from '@testing-library/user-event'
 
 import NameForm from './NameForm'
@@ -1199,7 +1199,7 @@ The important takeaways are:
   - `waitFor` acts as our declaration of [`act`](https://reactjs.org/docs/test-utils.html#act), required when updating the state of a React component from a test.
 
 ```jsx title="NameForm.test.js"
-import { render, screen, waitFor } from '@redwoodjs/testing/web'
+import { render, screen, waitFor } from '@cedarjs/testing/web'
 import userEvent from '@testing-library/user-event'
 
 import NameForm from './NameForm'
@@ -1401,13 +1401,13 @@ export const standard = defineScenario({
     anthony: {
       data: {
         name: 'Anthony Campolo',
-        email: 'anthony@redwoodjs.com',
+        email: 'anthony@cedarjs.com',
       },
     },
     dom: {
       data: {
         name: 'Dom Saadi',
-        email: 'dom@redwoodjs.com',
+        email: 'dom@cedarjs.com',
       },
     },
   },
@@ -1444,13 +1444,13 @@ export const standard = defineScenario({
     anthony: {
       data: {
         name: 'Anthony Campolo',
-        email: 'anthony@redwoodjs.com',
+        email: 'anthony@cedarjs.com',
       },
     },
     dom: {
       data: {
         name: 'Dom Saadi',
-        email: 'dom@redwoodjs.com',
+        email: 'dom@cedarjs.com',
       },
     },
   },
@@ -1461,13 +1461,13 @@ export const incomplete = defineScenario({
     david: {
       data: {
         name: 'David Thyresson',
-        email: 'dt@redwoodjs.com',
+        email: 'dt@cedarjs.com',
       },
     },
     forrest: {
       data: {
         name: '',
-        email: 'forrest@redwoodjs.com',
+        email: 'forrest@cedarjs.com',
       },
     },
   },
@@ -1925,7 +1925,7 @@ There's a few different things you may want to test, but let's start with the ba
 In your test let's import your cache client and clear after each test:
 
 ```ts
-import type { InMemoryClient } from '@redwoodjs/api/cache'
+import type { InMemoryClient } from '@cedarjs/api/cache'
 import { client } from 'src/lib/cache'
 
 // For TypeScript users
@@ -1947,7 +1947,7 @@ We have a custom Jest matcher included in Redwood to make things a little easier
 
 ```ts
 // highlight-next-line
-import '@redwoodjs/testing/cache'
+import '@cedarjs/testing/cache'
 // ^^ make `.toHaveCached` available
 ```
 
@@ -2003,7 +2003,7 @@ To help with this, we've provided a helper for partial matching!
 
 ```ts
 // highlight-next-line
-import { partialMatch } from '@redwoodjs/testing/cache'
+import { partialMatch } from '@cedarjs/testing/cache'
 
 scenario('returns all products', async (scenario: StandardScenario) => {
   await products()

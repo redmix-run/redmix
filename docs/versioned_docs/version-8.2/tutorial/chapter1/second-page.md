@@ -24,8 +24,8 @@ But no one's going to find it by manually changing the URL so let's add a link f
 <TabItem value="js" label="JavaScript">
 
 ```jsx title="web/src/pages/HomePage/HomePage.jsx"
-import { Link, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
+import { Link, routes } from '@cedarjs/router'
+import { Metadata } from '@cedarjs/web'
 
 const HomePage = () => {
   return (
@@ -56,8 +56,8 @@ export default HomePage
 <TabItem value="ts" label="TypeScript">
 
 ```jsx title="web/src/pages/HomePage/HomePage.tsx"
-import { Link, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
+import { Link, routes } from '@cedarjs/router'
+import { Metadata } from '@cedarjs/web'
 
 const HomePage = () => {
   return (
@@ -104,8 +104,8 @@ Once we get to the About page we don't have any way to get back so let's add a l
 <TabItem value="js" label="JavaScript">
 
 ```jsx title="web/src/pages/AboutPage/AboutPage.jsx"
-import { Link, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
+import { Link, routes } from '@cedarjs/router'
+import { Metadata } from '@cedarjs/web'
 
 const AboutPage = () => {
   return (
@@ -142,8 +142,8 @@ export default AboutPage
 <TabItem value="ts" label="TypeScript">
 
 ```jsx title="web/src/pages/AboutPage/AboutPage.tsx"
-import { Link, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
+import { Link, routes } from '@cedarjs/router'
+import { Metadata } from '@cedarjs/web'
 
 const AboutPage = () => {
   return (

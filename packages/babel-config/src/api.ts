@@ -1,11 +1,10 @@
-import { existsSync } from 'fs'
-import fs from 'fs/promises'
-import path from 'path'
+import fs from 'node:fs'
+import path from 'node:path'
 
 import type { PluginOptions, PluginTarget, TransformOptions } from '@babel/core'
 import { transformAsync } from '@babel/core'
 
-import { getPaths, projectSideIsEsm } from '@redwoodjs/project-config'
+import { getPaths, projectSideIsEsm } from '@cedarjs/project-config'
 
 import type { RegisterHookOptions } from './common'
 import {
@@ -121,9 +120,9 @@ export const getApiSideBabelPlugins = ({
             path: 'graphql-tag',
           },
           {
-            // import { context } from '@redwoodjs/context'
+            // import { context } from '@cedarjs/context'
             members: ['context'],
-            path: '@redwoodjs/context',
+            path: '@cedarjs/context',
           },
         ],
       },
@@ -150,7 +149,7 @@ export const getApiSideBabelPlugins = ({
 
 export const getApiSideBabelConfigPath = () => {
   const p = path.join(getPaths().api.base, 'babel.config.js')
-  if (existsSync(p)) {
+  if (fs.existsSync(p)) {
     return p
   } else {
     return
@@ -225,7 +224,7 @@ export const transformWithBabel = async (
   srcPath: string,
   plugins: TransformOptions['plugins'],
 ) => {
-  const code = await fs.readFile(srcPath, 'utf-8')
+  const code = await fs.promises.readFile(srcPath, 'utf-8')
   const defaultOptions = getApiSideDefaultBabelConfig({
     projectIsEsm: projectSideIsEsm('api'),
   })

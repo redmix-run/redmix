@@ -1,7 +1,7 @@
 import { EnvelopArmorPlugin } from '@escape.tech/graphql-armor'
 import type { GraphQLError, ValidationContext } from 'graphql'
 
-import type { Logger } from '@redwoodjs/api/logger'
+import type { Logger } from '@cedarjs/api/logger'
 
 import type { ArmorConfig } from '../types'
 

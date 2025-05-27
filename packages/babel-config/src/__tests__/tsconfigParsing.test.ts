@@ -1,7 +1,7 @@
 import { vol, fs as memfs } from 'memfs'
 import { vi } from 'vitest'
 
-import { ensurePosixPath } from '@redwoodjs/project-config'
+import { ensurePosixPath } from '@cedarjs/project-config'
 
 import {
   getPathsFromTypeScriptConfig,
@@ -79,9 +79,9 @@ describe('TypeScript config file parsing', () => {
 
   it('handles invalid JSON', () => {
     const apiTSConfig =
-      '{"compilerOptions": {"noEmit": true,"allowJs": true,"esModuleInterop": true,"target": "esnext","module": "esnext","moduleResolution": "node","baseUrl": "./","rootDirs": ["./src","../.redwood/types/mirror/api/src"],"paths": {"src/*": ["./src/*","../.redwood/types/mirror/api/src/*"],"types/*": ["./types/*", "../types/*"],"@redwoodjs/testing": ["../node_modules/@redwoodjs/testing/api"]},"typeRoots": ["../node_modules/@types","./node_modules/@types"],"types": ["jest"],},"include": ["src","../.redwood/types/includes/all-*","../.redwood/types/includes/api-*","../types"]}'
+      '{"compilerOptions": {"noEmit": true,"allowJs": true,"esModuleInterop": true,"target": "esnext","module": "esnext","moduleResolution": "node","baseUrl": "./","rootDirs": ["./src","../.redwood/types/mirror/api/src"],"paths": {"src/*": ["./src/*","../.redwood/types/mirror/api/src/*"],"types/*": ["./types/*", "../types/*"],"@cedarjs/testing": ["../node_modules/@cedarjs/testing/api"]},"typeRoots": ["../node_modules/@types","./node_modules/@types"],"types": ["jest"],},"include": ["src","../.redwood/types/includes/all-*","../.redwood/types/includes/api-*","../types"]}'
     const webTSConfig =
-      '{"compilerOptions": {"noEmit": true,"allowJs": true,"esModuleInterop": true,"target": "esnext","module": "esnext","moduleResolution": "node","baseUrl": "./","rootDirs": ["./src","../.redwood/types/mirror/web/src","../api/src","../.redwood/types/mirror/api/src"],"paths": {"src/*": ["./src/*","../.redwood/types/mirror/web/src/*","../api/src/*","../.redwood/types/mirror/api/src/*"],"$api/*": [ "../api/*" ],"types/*": ["./types/*", "../types/*"],"@redwoodjs/testing": ["../node_modules/@redwoodjs/testing/web"]},"typeRoots": ["../node_modules/@types", "./node_modules/@types"],"types": ["jest", "@testing-library/jest-dom"],"jsx": "preserve",},"include": ["src","../.redwood/types/includes/all-*","../.redwood/types/includes/web-*","../types","./types"]}'
+      '{"compilerOptions": {"noEmit": true,"allowJs": true,"esModuleInterop": true,"target": "esnext","module": "esnext","moduleResolution": "node","baseUrl": "./","rootDirs": ["./src","../.redwood/types/mirror/web/src","../api/src","../.redwood/types/mirror/api/src"],"paths": {"src/*": ["./src/*","../.redwood/types/mirror/web/src/*","../api/src/*","../.redwood/types/mirror/api/src/*"],"$api/*": [ "../api/*" ],"types/*": ["./types/*", "../types/*"],"@cedarjs/testing": ["../node_modules/@cedarjs/testing/web"]},"typeRoots": ["../node_modules/@types", "./node_modules/@types"],"types": ["jest", "@testing-library/jest-dom"],"jsx": "preserve",},"include": ["src","../.redwood/types/includes/all-*","../.redwood/types/includes/web-*","../types","./types"]}'
 
     vol.fromNestedJSON(
       {
@@ -163,11 +163,11 @@ describe('getPathsFromTypeScriptConfig', () => {
     expect(webPaths).toMatchInlineSnapshot(`{}`)
   })
 
-  it('excludes "src/*", "$api/*", "types/*", and "@redwoodjs/testing"', () => {
+  it('excludes "src/*", "$api/*", "types/*", and "@cedarjs/testing"', () => {
     const apiTSConfig =
-      '{"compilerOptions":{"baseUrl":"./","paths":{"src/*":["./src/*","../.redwood/types/mirror/api/src/*"],"types/*":["./types/*","../types/*"],"@redwoodjs/testing":["../node_modules/@redwoodjs/testing/api"]}}}'
+      '{"compilerOptions":{"baseUrl":"./","paths":{"src/*":["./src/*","../.redwood/types/mirror/api/src/*"],"types/*":["./types/*","../types/*"],"@cedarjs/testing":["../node_modules/@cedarjs/testing/api"]}}}'
     const webTSConfig =
-      '{"compilerOptions":{"baseUrl":"./","paths":{"src/*":["./src/*","../.redwood/types/mirror/web/src/*"],"$api/*":[ "../api/*" ],"types/*":["./types/*", "../types/*"],"@redwoodjs/testing":["../node_modules/@redwoodjs/testing/web"]}}}'
+      '{"compilerOptions":{"baseUrl":"./","paths":{"src/*":["./src/*","../.redwood/types/mirror/web/src/*"],"$api/*":[ "../api/*" ],"types/*":["./types/*", "../types/*"],"@cedarjs/testing":["../node_modules/@cedarjs/testing/web"]}}}'
 
     vol.fromNestedJSON(
       {

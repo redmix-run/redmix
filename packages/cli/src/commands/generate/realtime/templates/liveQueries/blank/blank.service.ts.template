@@ -1,5 +1,5 @@
 // api/src/services/${name}s/${name}s.ts
-import type { LiveQueryStorageMechanism } from '@redwoodjs/realtime'
+import type { LiveQueryStorageMechanism } from '@cedarjs/realtime'
 
 import { logger } from 'src/lib/logger'
 

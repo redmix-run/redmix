@@ -3,7 +3,7 @@ import path from 'path'
 import fs from 'fs-extra'
 import terminalLink from 'terminal-link'
 
-import { recordTelemetryAttributes } from '@redwoodjs/cli-helpers'
+import { recordTelemetryAttributes } from '@cedarjs/cli-helpers'
 
 export const command = 'generator <name>'
 export const description =
@@ -19,11 +19,11 @@ const EXCLUDE_GENERATORS = [
 
 // This could be built using createYargsForComponentGeneration;
 // however, functions wouldn't have a `stories` option. createYargs...
-// should be reversed to provide `yargsDefaults` as the default configuration
+// should be reversed to provide `getYargsDefaults` as the default configuration
 // and accept a configuration such as its CURRENT default to append onto a command.
 export const builder = (yargs) => {
   const availableGenerators = fs
-    .readdirSync(path.join(__dirname, '../../generate'), {
+    .readdirSync(path.join(import.meta.dirname, '../../generate'), {
       withFileTypes: true,
     })
     .filter((dir) => dir.isDirectory() && !dir.name.match(/__/))

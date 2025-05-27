@@ -1,7 +1,7 @@
 export default `
 // web/src/components/BlogPost/BlogPost.test.js
 
-import { render } from '@redwoodjs/testing'
+import { render } from '@cedarjs/testing'
 
 import BlogPost from './BlogPost'
 

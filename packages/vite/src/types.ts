@@ -9,8 +9,8 @@
  *
  * **All** of these properties are used by the prod FE server
  */
-import type { RWRouteManifestItem } from '@redwoodjs/internal'
-import type { TagDescriptor } from '@redwoodjs/web'
+import type { RWRouteManifestItem } from '@cedarjs/internal'
+import type { TagDescriptor } from '@cedarjs/web'
 
 import type { MiddlewareReg } from './middleware/types.js'
 

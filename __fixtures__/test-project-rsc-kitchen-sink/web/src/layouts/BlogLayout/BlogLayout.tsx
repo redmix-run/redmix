@@ -1,7 +1,7 @@
-// import { useRouteName } from '@redwoodjs/router/dist/useRouteName'
-import { Link } from '@redwoodjs/router/Link'
-import { namedRoutes as routes } from '@redwoodjs/router/namedRoutes'
-import { getLocation } from '@redwoodjs/server-store'
+// import { useRouteName } from '@cedarjs/router/dist/useRouteName'
+import { Link } from '@cedarjs/router/Link'
+import { namedRoutes as routes } from '@cedarjs/router/namedRoutes'
+import { getLocation } from '@cedarjs/server-store'
 
 import BlogPostsNavCell from 'src/components/BlogPostsNavCell/BlogPostsNavCell'
 import { deletePost } from 'src/lib/actions'

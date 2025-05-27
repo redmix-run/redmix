@@ -2,22 +2,22 @@ import path from 'path'
 
 import { Listr } from 'listr2'
 
-import { errorTelemetry } from '@redwoodjs/telemetry'
+import { errorTelemetry } from '@cedarjs/telemetry'
 
+import c from '../../../lib/colors.js'
 import {
-  getInstalledRedwoodVersion,
+  getInstalledCedarVersion,
   getPaths,
   saveRemoteFileToDisk,
-} from '../../../lib'
-import c from '../../../lib/colors'
+} from '../../../lib/index.js'
 
 export const handler = async ({ force }) => {
-  const installedRwVersion = getInstalledRedwoodVersion()
+  const installedRwVersion = await getInstalledCedarVersion()
   const GITHUB_VERSION_TAG = installedRwVersion.match('canary')
     ? 'main'
     : `v${installedRwVersion}`
 
-  const CRWA_TEMPLATE_URL = `https://raw.githubusercontent.com/redwoodjs/redwood/${GITHUB_VERSION_TAG}/packages/create-redwood-app/templates/ts`
+  const CRWA_TEMPLATE_URL = `https://raw.githubusercontent.com/redwoodjs/redwood/${GITHUB_VERSION_TAG}/packages/create-cedar-app/templates/ts`
 
   const tasks = new Listr(
     [

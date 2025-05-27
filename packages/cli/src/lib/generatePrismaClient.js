@@ -1,10 +1,11 @@
 // helper used in Dev and Build commands
 
-import path from 'path'
+import { createRequire } from 'node:module'
+import path from 'node:path'
 
 import fs from 'fs-extra'
 
-import { runCommandTask, getPaths } from '../lib'
+import { runCommandTask, getPaths } from '../lib/index.js'
 
 const skipTask = (schema = getPaths().api.dbSchema) => {
   if (!fs.existsSync(schema)) {
@@ -21,8 +22,16 @@ export const generatePrismaCommand = (schema) => {
     return {}
   }
 
+  const createdRequire = createRequire(import.meta.url)
+  // I wanted to use `import.meta.resolve` here, but it's not supported by
+  // vitest yet
+  // https://github.com/vitest-dev/vitest/issues/6953
+  // The path will be something like
+  // /Users/tobbe/tmp/rx-test-project/node_modules/prisma/build/index.js
+  const prismaIndexPath = createdRequire.resolve('prisma/build/index.js')
+
   return {
-    cmd: `node "${require.resolve('prisma/build/index.js')}"`,
+    cmd: `node "${prismaIndexPath}"`,
     args: ['generate', schema && `--schema="${schema}"`],
   }
 }
@@ -33,6 +42,7 @@ export const generatePrismaCommand = (schema) => {
 export const generatePrismaClient = async ({
   verbose = true,
   force = true,
+  silent = false,
   schema = getPaths().api.dbSchema,
 }) => {
   if (skipTask(schema)) {
@@ -41,21 +51,33 @@ export const generatePrismaClient = async ({
 
   // Do not generate the Prisma client if it exists.
   if (!force) {
-    // The Prisma client throws if it is not generated.
-    try {
-      // Import the client from the redwood apps node_modules path.
-      const { PrismaClient } = require(
-        path.join(getPaths().base, 'node_modules/.prisma/client'),
-      )
-      // eslint-disable-next-line
-      new PrismaClient()
-      return // Client exists, so abort.
-    } catch (e) {
-      // Swallow your pain, and generate.
+    const prismaClientPath = path.join(
+      getPaths().base,
+      'node_modules/.prisma/client/index.js',
+    )
+
+    const prismaClientFile = fs.readFileSync(prismaClientPath, 'utf8')
+
+    // This is a hack, and is likely to break. A better solution would be to
+    // try to import the Prisma client. But that gets cached, so we'd have to
+    // do it in a worker thread.
+    // See https://github.com/nodejs/node/issues/49442#issuecomment-1703472299
+    // for an idea on how to do that
+    // Just reading the file and manually looking for known strings is faster
+    // and works around the caching issue. But is less future proof. But it's
+    // good enough for now.
+    // If we want to go back to `await import(...)` we could try appending
+    // `?cache_busting=${Date.now()}` to the URL.
+    if (
+      !prismaClientFile.includes('@prisma/client did not initialize yet.') &&
+      prismaClientFile.includes('exports.Prisma.')
+    ) {
+      // Client exists, so abort.
+      return
     }
   }
 
-  return await runCommandTask(
+  await runCommandTask(
     [
       {
         title: 'Generating the Prisma client...',
@@ -64,6 +86,7 @@ export const generatePrismaClient = async ({
     ],
     {
       verbose,
+      silent,
     },
   )
 }

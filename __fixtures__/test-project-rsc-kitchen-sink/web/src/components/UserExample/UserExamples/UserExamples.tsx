@@ -1,14 +1,14 @@
 'use client'
 
-// import { Link, routes } from '@redwoodjs/router'
-import { Link } from '@redwoodjs/router'
+// import { Link, routes } from '@cedarjs/router'
+import { Link } from '@cedarjs/router'
 import type {
   DeleteUserExampleMutationVariables,
   FindUserExamples,
 } from 'types/graphql'
 
-import { useMutation } from '@redwoodjs/web/dist/components/GraphQLHooksProvider'
-import { toast } from '@redwoodjs/web/toast'
+import { useMutation } from '@cedarjs/web/dist/components/GraphQLHooksProvider'
+import { toast } from '@cedarjs/web/toast'
 
 import { truncate } from '../../../lib/formatters'
 // import { QUERY } from '../UserExamplesCell/UserExamplesCell'

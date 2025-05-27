@@ -5,9 +5,9 @@ import React from 'react'
 import { vol, fs as memfs } from 'memfs'
 import { vi, describe, beforeEach, afterEach, test, expect } from 'vitest'
 
-import type { RWRouteManifestItem } from '@redwoodjs/internal'
-import { ensurePosixPath } from '@redwoodjs/project-config'
-import { MiddlewareResponse } from '@redwoodjs/web/middleware'
+import type { RWRouteManifestItem } from '@cedarjs/internal'
+import { ensurePosixPath } from '@cedarjs/project-config'
+import { MiddlewareResponse } from '@cedarjs/web/middleware'
 
 import OgImageMiddleware from './OgImageMiddleware'
 
@@ -183,7 +183,7 @@ describe('OgImageMiddleware', () => {
   test('importComponent should import the component using viteDevServer', async () => {
     const filePath = '/path/to/component.js'
     const invokeOptions = {
-      viteDevServer: {
+      viteSsrDevServer: {
         ssrLoadModule: vi.fn().mockResolvedValue({
           data: 'some data',
           output: 'Component output',
@@ -198,7 +198,7 @@ describe('OgImageMiddleware', () => {
       Component: 'Component output',
     })
 
-    expect(invokeOptions.viteDevServer.ssrLoadModule).toHaveBeenCalledWith(
+    expect(invokeOptions.viteSsrDevServer.ssrLoadModule).toHaveBeenCalledWith(
       filePath,
     )
   })

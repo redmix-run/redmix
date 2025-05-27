@@ -30,12 +30,12 @@ Redwood has a simple API to integrate any auth provider you can think of. But to
 
 :::tip how to tell if an integration is official
 
-To tell if an integration is official, look for the `@redwoodjs` scope.
-For example, Redwood's Auth0 integration comprises two npm packages: `@redwoodjs/auth-auth0-web` and `@redwoodjs/auth-auth0-api`.
+To tell if an integration is official, look for the `@cedarjs` scope.
+For example, Redwood's Auth0 integration comprises two npm packages: `@cedarjs/auth-auth0-web` and `@cedarjs/auth-auth0-api`.
 
 :::
 
-Other than bearing the `@redwoodjs` scope, the reason these providers are official is that we're committed to keeping them up to date.
+Other than bearing the `@cedarjs` scope, the reason these providers are official is that we're committed to keeping them up to date.
 You can set up any of them via the corresponding auth setup command:
 
 ```
@@ -65,8 +65,8 @@ The `createGraphQLHandler` function in `api/src/functions/graphql.ts` takes two 
 
 ```ts title="api/src/functions/graphql.ts"
 // highlight-next-line
-import { authDecoder } from '@redwoodjs/auth-auth0-api'
-import { createGraphQLHandler } from '@redwoodjs/graphql-server'
+import { authDecoder } from '@cedarjs/auth-auth0-api'
+import { createGraphQLHandler } from '@cedarjs/graphql-server'
 
 import directives from 'src/directives/**/*.{js,ts}'
 import sdls from 'src/graphql/**/*.sdl.{js,ts}'
@@ -121,7 +121,7 @@ You can require that a user be authenticated to navigate to a route by wrapping 
 An unauthenticated user will be redirected to the route specified in either component's `unauthenticated` prop:
 
 ```tsx title="web/src/Routes.tsx"
-import { Router, Route, PrivateSet } from '@redwoodjs/router'
+import { Router, Route, PrivateSet } from '@cedarjs/router'
 
 const Routes = () => {
   return (
@@ -141,7 +141,7 @@ const Routes = () => {
 You can also restrict access by role by passing a role or an array of roles to the `PrivateSet` component's `roles` prop:
 
 ```tsx title="web/src/Routes.tsx"
-import { Router, Route, PrivateSet } from '@redwoodjs/router'
+import { Router, Route, PrivateSet } from '@cedarjs/router'
 
 const Routes = () => {
   return (
@@ -185,10 +185,10 @@ export const handler = createGraphQLHandler({
 })
 ```
 
-If you're using one of Redwood's official integrations, `authDecoder` comes from the corresponding integration package (in auth0's case, `@redwoodjs/auth-auth0-api`):
+If you're using one of Redwood's official integrations, `authDecoder` comes from the corresponding integration package (in auth0's case, `@cedarjs/auth-auth0-api`):
 
 ```ts
-import { authDecoder } from '@redwoodjs/auth-auth0-api'
+import { authDecoder } from '@cedarjs/auth-auth0-api'
 ```
 
 If you're rolling your own, you'll have to write it yourself. See the [Custom Auth](./auth/custom.md#api-side) docs for an example.

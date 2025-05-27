@@ -3,13 +3,13 @@ import fs from 'fs'
 import { vi, describe, it, expect } from 'vitest'
 import type { Mock } from 'vitest'
 
-import { ensurePosixPath, getPaths } from '@redwoodjs/project-config'
+import { ensurePosixPath, getPaths } from '@cedarjs/project-config'
 
 import { handler } from '../commands/storybookHandler'
 
 vi.mock('fs')
 
-vi.mock('@redwoodjs/project-config', async (importOriginal) => {
+vi.mock('@cedarjs/project-config', async (importOriginal) => {
   const actual: any = await importOriginal()
   return {
     ...actual,

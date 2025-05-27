@@ -1,6 +1,6 @@
-import { Mailer } from '@redwoodjs/mailer-core'
-import { NodemailerMailHandler } from '@redwoodjs/mailer-handler-nodemailer'
-import { ReactEmailRenderer } from '@redwoodjs/mailer-renderer-react-email'
+import { Mailer } from '@cedarjs/mailer-core'
+import { NodemailerMailHandler } from '@cedarjs/mailer-handler-nodemailer'
+import { ReactEmailRenderer } from '@cedarjs/mailer-renderer-react-email'
 
 import { logger } from 'src/lib/logger'
 

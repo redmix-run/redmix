@@ -1,8 +1,7 @@
-import { files as cellFiles } from '../../generate/cell/cell'
-import { createYargsForComponentDestroy } from '../helpers'
+import { files as cellFiles } from '../../generate/cell/cellHandler.js'
+import { createYargsForComponentDestroy, createHandler } from '../helpers.js'
 
-export const { command, description, builder, handler, tasks } =
-  createYargsForComponentDestroy({
-    componentName: 'cell',
-    filesFn: cellFiles,
-  })
+export const { command, description, builder } = createYargsForComponentDestroy(
+  { componentName: 'cell', filesFn: cellFiles },
+)
+export const handler = createHandler('cell')

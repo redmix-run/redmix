@@ -12,9 +12,9 @@ import type { DocumentNode } from 'graphql'
 import { print } from 'graphql'
 import terminalLink from 'terminal-link'
 
-import { rootSchema } from '@redwoodjs/graphql-server'
-import type { ScalarSchemaKeys } from '@redwoodjs/graphql-server/src/rootSchema'
-import { getPaths, getConfig, resolveFile } from '@redwoodjs/project-config'
+import { rootSchema } from '@cedarjs/graphql-server'
+import type { ScalarSchemaKeys } from '@cedarjs/graphql-server/src/rootSchema'
+import { getPaths, getConfig, resolveFile } from '@cedarjs/project-config'
 
 export const generateGraphQLSchema = async () => {
   const redwoodProjectPaths = getPaths()
@@ -35,11 +35,11 @@ export const generateGraphQLSchema = async () => {
 
   // If we're serverful and the user is using realtime, we need to include the live directive for realtime support.
   // Note the `ERR_  prefix in`ERR_MODULE_NOT_FOUND`. Since we're using `await import`,
-  // if the package (here, `@redwoodjs/realtime`) can't be found, it throws this error, with the prefix.
-  // Whereas `require('@redwoodjs/realtime')` would throw `MODULE_NOT_FOUND`.
+  // if the package (here, `@cedarjs/realtime`) can't be found, it throws this error, with the prefix.
+  // Whereas `require('@cedarjs/realtime')` would throw `MODULE_NOT_FOUND`.
   if (resolveFile(`${getPaths().api.src}/server`)) {
     try {
-      const { liveDirectiveTypeDefs } = await import('@redwoodjs/realtime')
+      const { liveDirectiveTypeDefs } = await import('@cedarjs/realtime')
       schemaPointerMap[liveDirectiveTypeDefs] = {}
     } catch (error) {
       if ((error as { code: string }).code !== 'ERR_MODULE_NOT_FOUND') {

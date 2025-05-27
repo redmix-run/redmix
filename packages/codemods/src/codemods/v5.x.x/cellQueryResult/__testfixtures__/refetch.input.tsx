@@ -1,6 +1,6 @@
 import type { FindAuthorQuery, FindAuthorQueryVariables } from 'types/graphql'
 
-import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
+import type { CellSuccessProps, CellFailureProps } from '@cedarjs/web'
 
 import Author from 'src/components/Author'
 

@@ -1,22 +1,23 @@
 import path from 'path'
 
+import { ListrEnquirerPromptAdapter } from '@listr2/prompt-adapter-enquirer'
 import fs from 'fs-extra'
 import { Listr } from 'listr2'
 
-import { addWebPackages } from '@redwoodjs/cli-helpers'
-import { getConfigPath } from '@redwoodjs/project-config'
-import { errorTelemetry } from '@redwoodjs/telemetry'
+import { addWebPackages } from '@cedarjs/cli-helpers'
+import { getConfigPath } from '@cedarjs/project-config'
+import { errorTelemetry } from '@cedarjs/telemetry'
 
-import { getPaths, transformTSToJS, writeFile } from '../../lib'
-import c from '../../lib/colors'
-import { isTypeScriptProject } from '../../lib/project'
+import c from '../../lib/colors.js'
+import { getPaths, transformTSToJS, writeFile } from '../../lib/index.js'
+import { isTypeScriptProject } from '../../lib/project.js'
 
 import {
   command,
   description,
   EXPERIMENTAL_TOPIC_ID,
-} from './setupStreamingSsr'
-import { printTaskEpilogue } from './util'
+} from './setupStreamingSsr.js'
+import { printTaskEpilogue } from './util.js'
 
 export const handler = async ({ force, verbose }) => {
   const rwPaths = getPaths()
@@ -72,14 +73,14 @@ export const handler = async ({ force, verbose }) => {
             }
           }
         },
-        options: { persistentOutput: true },
+        rendererOptions: { persistentOutput: true },
       },
       {
         title: `Adding entry.client${ext}...`,
         task: async (_ctx, task) => {
           const entryClientTemplate = fs.readFileSync(
             path.resolve(
-              __dirname,
+              import.meta.dirname,
               'templates',
               'streamingSsr',
               'entry.client.tsx.template',
@@ -94,7 +95,8 @@ export const handler = async ({ force, verbose }) => {
           let overwriteExisting = force
 
           if (!force) {
-            overwriteExisting = await task.prompt({
+            const prompt = task.prompt(ListrEnquirerPromptAdapter)
+            overwriteExisting = await prompt.run({
               type: 'Confirm',
               message: `Overwrite ${entryClientPath}?`,
             })
@@ -109,14 +111,14 @@ export const handler = async ({ force, verbose }) => {
 
           writeFile(entryClientPath, entryClientContent, { overwriteExisting })
         },
-        options: { persistentOutput: true },
+        rendererOptions: { persistentOutput: true },
       },
       {
         title: `Adding entry.server${ext}...`,
         task: async () => {
           const entryServerTemplate = fs.readFileSync(
             path.resolve(
-              __dirname,
+              import.meta.dirname,
               'templates',
               'streamingSsr',
               'entry.server.tsx.template',
@@ -142,7 +144,7 @@ export const handler = async ({ force, verbose }) => {
         task: async () => {
           const documentTemplate = fs.readFileSync(
             path.resolve(
-              __dirname,
+              import.meta.dirname,
               'templates',
               'streamingSsr',
               'Document.tsx.template',
@@ -164,7 +166,7 @@ export const handler = async ({ force, verbose }) => {
         task: async () => {
           const tsconfigTemplate = fs.readFileSync(
             path.resolve(
-              __dirname,
+              import.meta.dirname,
               'templates',
               'streamingSsr',
               'tsconfig.json.template',

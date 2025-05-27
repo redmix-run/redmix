@@ -2,7 +2,7 @@ import path from 'path'
 
 import { vi, describe, it, expect, afterAll, beforeAll } from 'vitest'
 
-import { getConfigPath } from '@redwoodjs/project-config'
+import { getConfigPath } from '@cedarjs/project-config'
 
 describe('getConfigPath', () => {
   it('throws an error when not in a project', () => {

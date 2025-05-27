@@ -1,5 +1,7 @@
-import { context as globalContext, setContext } from '@redwoodjs/context'
-import { getAsyncStoreInstance } from '@redwoodjs/context/dist/store'
+import { describe, expect, it } from 'vitest'
+
+import { context as globalContext, setContext } from '@cedarjs/context'
+import { getAsyncStoreInstance } from '@cedarjs/context/dist/store'
 
 describe('Global context with context isolation', () => {
   it('Should work when assigning directly into context', async () => {

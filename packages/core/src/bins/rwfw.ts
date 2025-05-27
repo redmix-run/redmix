@@ -1,11 +1,13 @@
 #!/usr/bin/env node
+
 import { createRequire } from 'node:module'
+import { pathToFileURL } from 'node:url'
 
 const require = createRequire(import.meta.url)
-const requireFromCli = createRequire(
-  require.resolve('@redwoodjs/cli/package.json'),
-)
-
+const pkgJsonPath = require.resolve('@cedarjs/cli/package.json')
+const cliPackageJsonFileUrl = pathToFileURL(pkgJsonPath)
+const requireFromCli = createRequire(cliPackageJsonFileUrl)
 const bins = requireFromCli('./package.json')['bin']
+const cliEntryPointUrl = new URL(bins['rwfw'], cliPackageJsonFileUrl)
 
-requireFromCli(bins['rwfw'])
+import(cliEntryPointUrl.toString())

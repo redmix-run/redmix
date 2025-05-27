@@ -36,11 +36,11 @@ async function run() {
   })
   console.log()
 
-  // Updates create-redwood-app template
+  // Updates create-cedar-app template
   console.log('Updating CRWA template...')
   const tsTemplatePath = path.join(
     cwd,
-    'packages/create-redwood-app/templates/ts',
+    'packages/create-cedar-app/templates/ts',
   )
   updateRWJSPkgsVersion(tsTemplatePath, version)
   updateRWJSPkgsVersion(path.join(tsTemplatePath, 'api'), version)
@@ -49,7 +49,7 @@ async function run() {
 
   const jsTemplatePath = path.join(
     cwd,
-    'packages/create-redwood-app/templates/js',
+    'packages/create-cedar-app/templates/js',
   )
   updateRWJSPkgsVersion(jsTemplatePath, version)
   updateRWJSPkgsVersion(path.join(jsTemplatePath, 'api'), version)
@@ -66,7 +66,7 @@ async function run() {
 }
 
 /**
- * Iterates over `@redwoodjs/*` dependencies in a package.json and updates their version.
+ * Iterates over `@cedarjs/*` dependencies in a package.json and updates their version.
  *
  * @param {string} pkgPath
  * @param {string} version
@@ -87,6 +87,6 @@ function updateRWJSPkgsVersion(pkgPath, version) {
   fs.writeJSONSync(path.join(pkgPath, 'package.json'), pkg, { spaces: 2 })
 }
 
-const isRWJSPkg = (pkg) => pkg.startsWith('@redwoodjs/')
+const isRWJSPkg = (pkg) => pkg.startsWith('@cedarjs/')
 
 run()

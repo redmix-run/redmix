@@ -1,9 +1,9 @@
 {
-  "name": "@redwoodjs/auth-dbauth-middleware",
-  "version": "8.0.0",
+  "name": "@cedarjs/auth-dbauth-middleware",
+  "version": "0.0.5",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/redwoodjs/redwood.git",
+    "url": "git+https://github.com/cedarjs/cedar.git",
     "directory": "packages/auth-providers/dbAuth/middleware"
   },
   "license": "MIT",
@@ -27,7 +27,7 @@
   ],
   "scripts": {
     "build": "tsx ./build.mts",
-    "build:pack": "yarn pack -o redwoodjs-auth-dbauth-middleware.tgz",
+    "build:pack": "yarn pack -o cedarjs-auth-dbauth-middleware.tgz",
     "build:types": "tsc --build --verbose ./tsconfig.build.json",
     "build:types-cjs": "tsc --build --verbose tsconfig.cjs.json",
     "check:attw": "yarn attw -P",
@@ -37,21 +37,21 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@redwoodjs/auth-dbauth-api": "workspace:*",
-    "@redwoodjs/web": "workspace:*"
+    "@cedarjs/auth-dbauth-api": "workspace:*",
+    "@cedarjs/web": "workspace:*"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "0.16.4",
-    "@redwoodjs/api": "workspace:*",
-    "@redwoodjs/framework-tools": "workspace:*",
-    "@redwoodjs/graphql-server": "workspace:*",
+    "@cedarjs/api": "workspace:*",
+    "@cedarjs/framework-tools": "workspace:*",
+    "@cedarjs/graphql-server": "workspace:*",
     "@types/aws-lambda": "8.10.145",
     "concurrently": "8.2.2",
-    "publint": "0.2.11",
+    "publint": "0.3.12",
     "ts-toolbelt": "9.6.0",
-    "tsx": "4.19.1",
+    "tsx": "4.19.3",
     "typescript": "5.6.2",
-    "vitest": "2.0.5"
+    "vitest": "2.1.9"
   },
   "gitHead": "3905ed045508b861b495f8d5630d76c7a157d8f1"
 }

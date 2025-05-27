@@ -3,7 +3,7 @@ import fs from 'node:fs/promises'
 import type { MockedFunction } from 'vitest'
 import { describe, it, vi, expect, beforeEach, beforeAll } from 'vitest'
 
-import { ensurePosixPath } from '@redwoodjs/project-config'
+import { ensurePosixPath } from '@cedarjs/project-config'
 
 import { FileSystemStorage } from '../adapters/FileSystemStorage/FileSystemStorage.js'
 import { createUploadsConfig, setupStorage } from '../index.js'

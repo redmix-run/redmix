@@ -15,7 +15,7 @@ import type {
 } from 'graphql'
 import { Kind, parse, visit } from 'graphql'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@cedarjs/project-config'
 
 export const findCells = (cwd: string = getPaths().web.src) => {
   const modules = fg.sync('**/*Cell.{js,jsx,ts,tsx}', {
@@ -123,7 +123,7 @@ export const getNamedExports = (ast: types.Node): NamedExports[] => {
         })
       } else if (declaration.type === 'ClassDeclaration') {
         namedExports.push({
-          name: declaration?.id?.name,
+          name: declaration?.id?.name || '',
           type: 'class',
         })
       }

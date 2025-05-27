@@ -1,22 +1,21 @@
 import path from 'path'
 
-// Babel 7 packages are CJS, and need to be imported as such
 import babelGenerator from '@babel/generator'
 const { default: generate } = babelGenerator
-import { parse as babelParse } from '@babel/parser/index.cjs'
+import { parse as babelParse } from '@babel/parser'
 import babelTraverse from '@babel/traverse'
 const { default: traverse } = babelTraverse
 import * as t from '@babel/types'
 import type { Plugin } from 'vite'
 import { normalizePath } from 'vite'
 
-import type { PagesDependency } from '@redwoodjs/project-config'
+import type { PagesDependency } from '@cedarjs/project-config'
 import {
   ensurePosixPath,
   getPaths,
   importStatementPath,
   processPagesDir,
-} from '@redwoodjs/project-config'
+} from '@cedarjs/project-config'
 
 const getPathRelativeToSrc = (maybeAbsolutePath: string) => {
   // If the path is already relative

@@ -1,15 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 
-import {
-  Form,
-  Label,
-  PasswordField,
-  Submit,
-  FieldError,
-} from '@redwoodjs/forms'
-import { navigate, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
-import { toast, Toaster } from '@redwoodjs/web/toast'
+import { Form, Label, PasswordField, Submit, FieldError } from '@cedarjs/forms'
+import { navigate, routes } from '@cedarjs/router'
+import { Metadata } from '@cedarjs/web'
+import { toast, Toaster } from '@cedarjs/web/toast'
 
 import { useAuth } from 'src/auth'
 

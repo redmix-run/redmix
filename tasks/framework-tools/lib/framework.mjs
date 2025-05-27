@@ -18,7 +18,7 @@ export const REDWOOD_PACKAGES_PATH = path.join(
   'packages',
 )
 
-const IGNORE_PACKAGES = ['@redwoodjs/codemods', 'create-redwood-app']
+const IGNORE_PACKAGES = ['@cedarjs/codemods', 'create-cedar-app']
 
 /**
  * Get the names, locations, and absolute package.json file paths of all the packages we publish to NPM.
@@ -60,7 +60,7 @@ export function getFrameworkPackageJsonPaths() {
 }
 
 /**
- * The dependencies used by `@redwoodjs` packages.
+ * The dependencies used by `@cedarjs` packages.
  *
  * @returns {{ [key: string]: string }?} A map of package names to versions.
  */
@@ -75,13 +75,13 @@ export function getFrameworkDependencies(
     for (const [name, version] of Object.entries(
       packageJson?.dependencies ?? {},
     )) {
-      // Skip `@redwoodjs` packages, since these are processed by the workspace.
-      if (name.startsWith('@redwoodjs/')) {
+      // Skip `@cedarjs` packages, since these are processed by the workspace.
+      if (name.startsWith('@cedarjs/')) {
         continue
       }
 
       // Skip storybook packages because they're installed manually by the user.
-      if (name.startsWith('storybook-framework-redwoodjs-vite')) {
+      if (name.startsWith('storybook-framework-cedarjs')) {
         continue
       }
 
@@ -100,7 +100,7 @@ export function getFrameworkDependencies(
 }
 
 /**
- * The files included in all the `@redwoodjs` packages.
+ * The files included in all the `@cedarjs` packages.
  * The packages must be built for this to work.
  *
  * @returns {Promise<{ [key: string]: string[] }>} A map of package names to files.
@@ -121,7 +121,7 @@ export async function getFrameworkPackagesFiles(
 }
 
 /**
- * Returns execute files for `@redwoodjs` packages.
+ * Returns execute files for `@cedarjs` packages.
  **/
 export function getFrameworkPackagesBins(
   packageJsonPaths = getFrameworkPackageJsonPaths(),
@@ -161,7 +161,7 @@ export function resolvePackageJsonPathFromFilePath(filePath) {
   }
 
   // There's some directories that have their own package.json, but aren't published to npm,
-  // like @redwoodjs/web/apollo. We want the path to @redwoodjs/web's package.json, not @redwoodjs/web/apollo's.
+  // like @cedarjs/web/apollo. We want the path to @cedarjs/web's package.json, not @cedarjs/web/apollo's.
   return findUp('package.json', path.resolve(filePath, '../../'))
 }
 
@@ -174,7 +174,7 @@ export function getPackageName(packageJsonPath) {
 }
 
 /**
- * Find a file by walking up parent directories. Taken from @redwoodjs/project-config.
+ * Find a file by walking up parent directories. Taken from @cedarjs/project-config.
  *
  * @param {string} file The file to find.
  * @param {string} startingDirectory The directory to start searching from.

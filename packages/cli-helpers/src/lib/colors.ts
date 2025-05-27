@@ -2,7 +2,7 @@ import chalk from 'chalk'
 
 /**
  * To keep a consistent color/style palette between cli packages, such as
- * @redwood/cli and @redwood/create-redwood-app, please only use the colors
+ * @redwood/cli and @redwood/create-cedar-app, please only use the colors
  * defined here. If you *really* can't find a color that fits your needs,
  * it's better to add it here than to introduce a new one-off color in whatever
  * package you're going to use it in.

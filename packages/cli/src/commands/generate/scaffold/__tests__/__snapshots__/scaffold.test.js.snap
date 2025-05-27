@@ -3,10 +3,10 @@
 exports[`'use client' directive > creates a new EditPostCell cell with the 'use client' directive 1`] = `
 "'use client'
 
-import { navigate, routes } from '@redwoodjs/router'
+import { navigate, routes } from '@cedarjs/router'
 
-import { useMutation } from '@redwoodjs/web'
-import { toast } from '@redwoodjs/web/toast'
+import { useMutation } from '@cedarjs/web'
+import { toast } from '@cedarjs/web/toast'
 
 import PostForm from 'src/components/Post/PostForm'
 
@@ -90,10 +90,10 @@ export const Success = ({ post }) => {
 exports[`'use client' directive > creates a new NewPost component with the 'use client' directive 1`] = `
 "'use client'
 
-import { navigate, routes } from '@redwoodjs/router'
-import { useMutation } from '@redwoodjs/web'
+import { navigate, routes } from '@cedarjs/router'
+import { useMutation } from '@cedarjs/web'
 
-import { toast } from '@redwoodjs/web/toast'
+import { toast } from '@cedarjs/web/toast'
 
 import PostForm from 'src/components/Post/PostForm'
 
@@ -178,7 +178,7 @@ export const Success = ({ post }) => {
 exports[`'use client' directive > creates a new PostsCell cell with the 'use client' directive 1`] = `
 "'use client'
 
-import { Link, routes } from '@redwoodjs/router'
+import { Link, routes } from '@cedarjs/router'
 
 import Posts from 'src/components/Post/Posts'
 
@@ -225,6 +225,111 @@ export const Success = ({ posts }) => {
 "
 `;
 
+exports[`custom templates > creates a layout 1`] = `
+"import { Link, routes } from '@cedarjs/router'
+import { Toaster } from '@cedarjs/web/toast'
+
+type LayoutProps = {
+  title: string
+  titleTo: keyof typeof routes
+  buttonLabel: string
+  buttonTo: keyof typeof routes
+  children: React.ReactNode
+}
+
+const ScaffoldLayout = ({
+  title,
+  titleTo,
+  buttonLabel,
+  buttonTo,
+  children,
+}: LayoutProps) => {
+  return (
+    <div className="rw-scaffold">
+      <Toaster toastOptions={{ className: 'rw-toast', duration: 6000 }} />
+      <header className="rw-header">
+        <h1 className="rw-heading rw-heading-primary">
+          <Link to={routes[titleTo]()} className="rw-link">
+            {title}
+          </Link>
+        </h1>
+        <Link to={routes[buttonTo]()} className="rw-button rw-button-green">
+          <div className="rw-button-icon">+</div> {buttonLabel}
+        </Link>
+      </header>
+      <main className="rw-main">{children}</main>
+    </div>
+  )
+}
+
+export default ScaffoldLayout
+"
+`;
+
+exports[`custom templates > creates an sdl 1`] = `
+"export const schema = gql\`
+  type Post {
+    id: Int!
+    title: String!
+    slug: String!
+    author: String!
+    body: String!
+    image: String
+    postedAt: DateTime
+    isPinned: Boolean!
+    readTime: Float!
+    rating: Float
+    upvotes: Int!
+    metadata: JSON!
+    hugeNumber: BigInt!
+    favorites: [Favorite]!
+    tag: [Tag]!
+  }
+
+  type Query {
+    posts: [Post!]! @requireAuth
+    post(id: Int!): Post @requireAuth
+  }
+
+  input CreatePostInput {
+    title: String!
+    slug: String!
+    author: String!
+    body: String!
+    image: String
+    postedAt: DateTime
+    isPinned: Boolean!
+    readTime: Float!
+    rating: Float
+    upvotes: Int!
+    metadata: JSON!
+    hugeNumber: BigInt!
+  }
+
+  input UpdatePostInput {
+    title: String
+    slug: String
+    author: String
+    body: String
+    image: String
+    postedAt: DateTime
+    isPinned: Boolean
+    readTime: Float
+    rating: Float
+    upvotes: Int
+    metadata: JSON
+    hugeNumber: BigInt
+  }
+
+  type Mutation {
+    createPost(input: CreatePostInput!): Post! @requireAuth
+    updatePost(id: Int!, input: UpdatePostInput!): Post! @requireAuth
+    deletePost(id: Int!): Post! @requireAuth
+  }
+\`
+"
+`;
+
 exports[`in javascript (default) mode > creates a edit page 1`] = `
 "import EditPostCell from 'src/components/Post/EditPostCell'
 
@@ -248,7 +353,7 @@ exports[`in javascript (default) mode > creates a form component 1`] = `
   NumberField,
   TextAreaField,
   Submit,
-} from '@redwoodjs/forms'
+} from '@cedarjs/forms'
 
 const formatDatetime = (value) => {
   if (value) {
@@ -561,7 +666,7 @@ export const checkboxInputTag = (checked) => {
 `;
 
 exports[`in javascript (default) mode > creates a formatters function test file 1`] = `
-"import { render, waitFor, screen } from '@redwoodjs/testing/web'
+"import { render, waitFor, screen } from '@cedarjs/testing/web'
 
 import {
   formatEnum,
@@ -768,8 +873,8 @@ export default PostsPage
 `;
 
 exports[`in javascript (default) mode > creates a layout 1`] = `
-"import { Link, routes } from '@redwoodjs/router'
-import { Toaster } from '@redwoodjs/web/toast'
+"import { Link, routes } from '@cedarjs/router'
+import { Toaster } from '@cedarjs/web/toast'
 
 const ScaffoldLayout = ({
   title,
@@ -801,10 +906,10 @@ export default ScaffoldLayout
 `;
 
 exports[`in javascript (default) mode > creates a new component 1`] = `
-"import { navigate, routes } from '@redwoodjs/router'
-import { useMutation } from '@redwoodjs/web'
+"import { navigate, routes } from '@cedarjs/router'
+import { useMutation } from '@cedarjs/web'
 
-import { toast } from '@redwoodjs/web/toast'
+import { toast } from '@cedarjs/web/toast'
 
 import PostForm from 'src/components/Post/PostForm'
 
@@ -848,10 +953,10 @@ export default NewPost
 `;
 
 exports[`in javascript (default) mode > creates a new component with int foreign keys converted in onSave 1`] = `
-"import { navigate, routes } from '@redwoodjs/router'
-import { useMutation } from '@redwoodjs/web'
+"import { navigate, routes } from '@cedarjs/router'
+import { useMutation } from '@cedarjs/web'
 
-import { toast } from '@redwoodjs/web/toast'
+import { toast } from '@cedarjs/web/toast'
 
 import UserProfileForm from 'src/components/UserProfile/UserProfileForm'
 
@@ -946,10 +1051,10 @@ export const Success = ({ post }) => {
 `;
 
 exports[`in javascript (default) mode > creates a show component 1`] = `
-"import { Link, routes, navigate } from '@redwoodjs/router'
-import { useMutation } from '@redwoodjs/web'
+"import { Link, routes, navigate } from '@cedarjs/router'
+import { useMutation } from '@cedarjs/web'
 
-import { toast } from '@redwoodjs/web/toast'
+import { toast } from '@cedarjs/web/toast'
 
 import { checkboxInputTag, jsonDisplay, timeTag } from 'src/lib/formatters'
 
@@ -1127,9 +1232,10 @@ exports[`in javascript (default) mode > creates a stylesheet 1`] = `
 .rw-scaffold,
 .rw-toast {
   background-color: #fff;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
-    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+    Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
 }
 .rw-header {
   display: flex;
@@ -1481,10 +1587,10 @@ exports[`in javascript (default) mode > creates a stylesheet 1`] = `
 exports[`in javascript (default) mode > creates an edit cell 1`] = `undefined`;
 
 exports[`in javascript (default) mode > creates an edit component with int foreign keys converted in onSave 1`] = `
-"import { navigate, routes } from '@redwoodjs/router'
+"import { navigate, routes } from '@cedarjs/router'
 
-import { useMutation } from '@redwoodjs/web'
-import { toast } from '@redwoodjs/web/toast'
+import { useMutation } from '@cedarjs/web'
+import { toast } from '@cedarjs/web/toast'
 
 import UserProfileForm from 'src/components/UserProfile/UserProfileForm'
 
@@ -1557,7 +1663,7 @@ export const Success = ({ userProfile }) => {
 `;
 
 exports[`in javascript (default) mode > creates an index cell 1`] = `
-"import { Link, routes } from '@redwoodjs/router'
+"import { Link, routes } from '@cedarjs/router'
 
 import Posts from 'src/components/Post/Posts'
 
@@ -1605,10 +1711,10 @@ export const Success = ({ posts }) => {
 `;
 
 exports[`in javascript (default) mode > creates an index component 1`] = `
-"import { Link, routes } from '@redwoodjs/router'
-import { useMutation } from '@redwoodjs/web'
+"import { Link, routes } from '@cedarjs/router'
+import { useMutation } from '@cedarjs/web'
 
-import { toast } from '@redwoodjs/web/toast'
+import { toast } from '@cedarjs/web/toast'
 
 import { QUERY } from 'src/components/Post/PostsCell'
 import {
@@ -1730,7 +1836,7 @@ exports[`in javascript (default) mode > generated form matches expectations 1`] 
   Label,
   RadioField,
   Submit,
-} from '@redwoodjs/forms'
+} from '@cedarjs/forms'
 
 const PixelForm = (props) => {
   const onSubmit = (data) => {
@@ -1894,7 +2000,7 @@ export default EditPostPage
 exports[`in typescript mode > creates a form component 1`] = `
 "import type { EditPostById, UpdatePostInput } from 'types/graphql'
 
-import type { RWGqlError } from '@redwoodjs/forms'
+import type { RWGqlError } from '@cedarjs/forms'
 import {
   Form,
   FormError,
@@ -1906,7 +2012,7 @@ import {
   NumberField,
   TextAreaField,
   Submit,
-} from '@redwoodjs/forms'
+} from '@cedarjs/forms'
 
 const formatDatetime = (value) => {
   if (value) {
@@ -2228,7 +2334,7 @@ export const checkboxInputTag = (checked: boolean) => {
 `;
 
 exports[`in typescript mode > creates a formatters function test file 1`] = `
-"import { render, waitFor, screen } from '@redwoodjs/testing/web'
+"import { render, waitFor, screen } from '@cedarjs/testing/web'
 
 import {
   formatEnum,
@@ -2435,8 +2541,8 @@ export default PostsPage
 `;
 
 exports[`in typescript mode > creates a layout 1`] = `
-"import { Link, routes } from '@redwoodjs/router'
-import { Toaster } from '@redwoodjs/web/toast'
+"import { Link, routes } from '@cedarjs/router'
+import { Toaster } from '@cedarjs/web/toast'
 
 type LayoutProps = {
   title: string
@@ -2482,10 +2588,10 @@ exports[`in typescript mode > creates a new component 1`] = `
   CreatePostMutationVariables,
 } from 'types/graphql'
 
-import { navigate, routes } from '@redwoodjs/router'
-import { useMutation } from '@redwoodjs/web'
-import type { TypedDocumentNode } from '@redwoodjs/web'
-import { toast } from '@redwoodjs/web/toast'
+import { navigate, routes } from '@cedarjs/router'
+import { useMutation } from '@cedarjs/web'
+import type { TypedDocumentNode } from '@cedarjs/web'
+import { toast } from '@cedarjs/web/toast'
 
 import PostForm from 'src/components/Post/PostForm'
 
@@ -2538,10 +2644,10 @@ exports[`in typescript mode > creates a new component with int foreign keys conv
   CreateUserProfileMutationVariables,
 } from 'types/graphql'
 
-import { navigate, routes } from '@redwoodjs/router'
-import { useMutation } from '@redwoodjs/web'
-import type { TypedDocumentNode } from '@redwoodjs/web'
-import { toast } from '@redwoodjs/web/toast'
+import { navigate, routes } from '@cedarjs/router'
+import { useMutation } from '@cedarjs/web'
+import type { TypedDocumentNode } from '@cedarjs/web'
+import { toast } from '@cedarjs/web/toast'
 
 import UserProfileForm from 'src/components/UserProfile/UserProfileForm'
 
@@ -2608,7 +2714,7 @@ import type {
   CellSuccessProps,
   CellFailureProps,
   TypedDocumentNode,
-} from '@redwoodjs/web'
+} from '@cedarjs/web'
 
 import Post from 'src/components/Post/Post'
 
@@ -2656,10 +2762,10 @@ exports[`in typescript mode > creates a show component 1`] = `
   FindPostById,
 } from 'types/graphql'
 
-import { Link, routes, navigate } from '@redwoodjs/router'
-import { useMutation } from '@redwoodjs/web'
-import type { TypedDocumentNode } from '@redwoodjs/web'
-import { toast } from '@redwoodjs/web/toast'
+import { Link, routes, navigate } from '@cedarjs/router'
+import { useMutation } from '@cedarjs/web'
+import type { TypedDocumentNode } from '@cedarjs/web'
+import { toast } from '@cedarjs/web/toast'
 
 import { checkboxInputTag, jsonDisplay, timeTag } from 'src/lib/formatters'
 
@@ -2848,9 +2954,10 @@ exports[`in typescript mode > creates a stylesheet 1`] = `
 .rw-scaffold,
 .rw-toast {
   background-color: #fff;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
-    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+    Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
 }
 .rw-header {
   display: flex;
@@ -3206,14 +3313,14 @@ exports[`in typescript mode > creates an edit cell 1`] = `
   UpdatePostMutationVariables,
 } from 'types/graphql'
 
-import { navigate, routes } from '@redwoodjs/router'
+import { navigate, routes } from '@cedarjs/router'
 import type {
   CellSuccessProps,
   CellFailureProps,
   TypedDocumentNode,
-} from '@redwoodjs/web'
-import { useMutation } from '@redwoodjs/web'
-import { toast } from '@redwoodjs/web/toast'
+} from '@cedarjs/web'
+import { useMutation } from '@cedarjs/web'
+import { toast } from '@cedarjs/web/toast'
 
 import PostForm from 'src/components/Post/PostForm'
 
@@ -3304,14 +3411,14 @@ exports[`in typescript mode > creates an edit component with int foreign keys co
   UpdateUserProfileMutationVariables,
 } from 'types/graphql'
 
-import { navigate, routes } from '@redwoodjs/router'
+import { navigate, routes } from '@cedarjs/router'
 import type {
   CellSuccessProps,
   CellFailureProps,
   TypedDocumentNode,
-} from '@redwoodjs/web'
-import { useMutation } from '@redwoodjs/web'
-import { toast } from '@redwoodjs/web/toast'
+} from '@cedarjs/web'
+import { useMutation } from '@cedarjs/web'
+import { toast } from '@cedarjs/web/toast'
 
 import UserProfileForm from 'src/components/UserProfile/UserProfileForm'
 
@@ -3394,12 +3501,12 @@ export const Success = ({
 exports[`in typescript mode > creates an index cell 1`] = `
 "import type { FindPosts, FindPostsVariables } from 'types/graphql'
 
-import { Link, routes } from '@redwoodjs/router'
+import { Link, routes } from '@cedarjs/router'
 import type {
   CellSuccessProps,
   CellFailureProps,
   TypedDocumentNode,
-} from '@redwoodjs/web'
+} from '@cedarjs/web'
 
 import Posts from 'src/components/Post/Posts'
 
@@ -3455,10 +3562,10 @@ exports[`in typescript mode > creates an index component 1`] = `
   FindPosts,
 } from 'types/graphql'
 
-import { Link, routes } from '@redwoodjs/router'
-import { useMutation } from '@redwoodjs/web'
-import type { TypedDocumentNode } from '@redwoodjs/web'
-import { toast } from '@redwoodjs/web/toast'
+import { Link, routes } from '@cedarjs/router'
+import { useMutation } from '@cedarjs/web'
+import type { TypedDocumentNode } from '@cedarjs/web'
+import { toast } from '@cedarjs/web/toast'
 
 import { QUERY } from 'src/components/Post/PostsCell'
 import {
@@ -3578,7 +3685,7 @@ export default PostsList
 exports[`in typescript mode > generated form matches expectations 1`] = `
 "import type { EditPixelById, UpdatePixelInput } from 'types/graphql'
 
-import type { RWGqlError } from '@redwoodjs/forms'
+import type { RWGqlError } from '@cedarjs/forms'
 import {
   Form,
   FormError,
@@ -3586,7 +3693,7 @@ import {
   Label,
   RadioField,
   Submit,
-} from '@redwoodjs/forms'
+} from '@cedarjs/forms'
 
 type FormPixel = NonNullable<EditPixelById['pixel']>
 
@@ -3784,9 +3891,10 @@ exports[`tailwind flag > set to \`false\` generates a scaffold.css with raw CSS 
 .rw-scaffold,
 .rw-toast {
   background-color: #fff;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
-    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+    Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
 }
 .rw-header {
   display: flex;

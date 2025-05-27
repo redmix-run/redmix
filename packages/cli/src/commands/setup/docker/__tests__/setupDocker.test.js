@@ -1,12 +1,12 @@
 import { vi, test, describe, expect } from 'vitest'
 
-import { recordTelemetryAttributes } from '@redwoodjs/cli-helpers'
+import { recordTelemetryAttributes } from '@cedarjs/cli-helpers'
 
-import { command, description, builder, handler } from '../docker'
+import { command, description, builder, handler } from '../docker.js'
 
 vi.mock('../dockerHandler.js')
 
-vi.mock('@redwoodjs/cli-helpers', () => {
+vi.mock('@cedarjs/cli-helpers', () => {
   return {
     recordTelemetryAttributes: vi.fn(),
   }

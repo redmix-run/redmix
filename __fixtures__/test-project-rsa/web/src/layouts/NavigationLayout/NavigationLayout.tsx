@@ -1,4 +1,4 @@
-import { namedRoutes as routes } from '@redwoodjs/router/namedRoutes'
+import { namedRoutes as routes } from '@cedarjs/router/namedRoutes'
 
 import './NavigationLayout.css'
 

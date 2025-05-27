@@ -4,8 +4,13 @@
 
 echo "//registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN}" > .npmrc
 
+if [[ -z "$NPM_AUTH_TOKEN" ]]; then
+  echo "Error: NPM_AUTH_TOKEN is not set or is empty"
+  exit 1
+fi
+
 TAG='canary' && [[ "$GITHUB_REF_NAME" = 'next' ]] && TAG='next'
-echo "Publishing $TAG"
+echo "Publishing $TAG from $GITHUB_REF_NAME using npm token ${NPM_AUTH_TOKEN:0:5}"
 
 args=()
 
@@ -29,8 +34,8 @@ args+=(
 # `2>&1` to pipe both stdout and stderr to grep. Mostly do this keep the github
 #   action output clean.
 # At the end we use awk to increase the commit count by 1, because we'll commit
-#   updated package.jsons in the next step, which will increase increase the
-#   final number that lerna will use when publishing the canary packages.
+#   updated package.jsons in the next step, which will increase the final
+#   number that lerna will use when publishing the canary packages.
 echo 'n' \
   | yarn lerna publish "${args[@]}" 2>&1 \
     > publish_output
@@ -52,27 +57,27 @@ if [ ! -s canary_version ]; then
   exit 1
 fi
 
-# Update create-redwood-app templates to use canary packages
+# Update create-cedar-app templates to use canary packages
 
-sed "s/\"@redwoodjs\/\(.*\)\": \".*\"/\"@redwoodjs\/\1\": \"$(cat canary_version)\"/" \
-  packages/create-redwood-app/templates/js/package.json > tmpfile \
-  && mv tmpfile packages/create-redwood-app/templates/js/package.json
-sed "s/\"@redwoodjs\/\(.*\)\": \".*\"/\"@redwoodjs\/\1\": \"$(cat canary_version)\"/" \
-  packages/create-redwood-app/templates/js/api/package.json > tmpfile \
-  && mv tmpfile packages/create-redwood-app/templates/js/api/package.json
-sed "s/\"@redwoodjs\/\(.*\)\": \".*\"/\"@redwoodjs\/\1\": \"$(cat canary_version)\"/" \
-  packages/create-redwood-app/templates/js/web/package.json > tmpfile \
-  && mv tmpfile packages/create-redwood-app/templates/js/web/package.json
+sed "s/\"@cedarjs\/\(.*\)\": \".*\"/\"@cedarjs\/\1\": \"$(cat canary_version)\"/" \
+  packages/create-cedar-app/templates/js/package.json > tmpfile \
+  && mv tmpfile packages/create-cedar-app/templates/js/package.json
+sed "s/\"@cedarjs\/\(.*\)\": \".*\"/\"@cedarjs\/\1\": \"$(cat canary_version)\"/" \
+  packages/create-cedar-app/templates/js/api/package.json > tmpfile \
+  && mv tmpfile packages/create-cedar-app/templates/js/api/package.json
+sed "s/\"@cedarjs\/\(.*\)\": \".*\"/\"@cedarjs\/\1\": \"$(cat canary_version)\"/" \
+  packages/create-cedar-app/templates/js/web/package.json > tmpfile \
+  && mv tmpfile packages/create-cedar-app/templates/js/web/package.json
 
-sed "s/\"@redwoodjs\/\(.*\)\": \".*\"/\"@redwoodjs\/\1\": \"$(cat canary_version)\"/" \
-  packages/create-redwood-app/templates/ts/package.json > tmpfile \
-  && mv tmpfile packages/create-redwood-app/templates/ts/package.json
-sed "s/\"@redwoodjs\/\(.*\)\": \".*\"/\"@redwoodjs\/\1\": \"$(cat canary_version)\"/" \
-  packages/create-redwood-app/templates/ts/api/package.json > tmpfile \
-  && mv tmpfile packages/create-redwood-app/templates/ts/api/package.json
-sed "s/\"@redwoodjs\/\(.*\)\": \".*\"/\"@redwoodjs\/\1\": \"$(cat canary_version)\"/" \
-  packages/create-redwood-app/templates/ts/web/package.json > tmpfile \
-  && mv tmpfile packages/create-redwood-app/templates/ts/web/package.json
+sed "s/\"@cedarjs\/\(.*\)\": \".*\"/\"@cedarjs\/\1\": \"$(cat canary_version)\"/" \
+  packages/create-cedar-app/templates/ts/package.json > tmpfile \
+  && mv tmpfile packages/create-cedar-app/templates/ts/package.json
+sed "s/\"@cedarjs\/\(.*\)\": \".*\"/\"@cedarjs\/\1\": \"$(cat canary_version)\"/" \
+  packages/create-cedar-app/templates/ts/api/package.json > tmpfile \
+  && mv tmpfile packages/create-cedar-app/templates/ts/api/package.json
+sed "s/\"@cedarjs\/\(.*\)\": \".*\"/\"@cedarjs\/\1\": \"$(cat canary_version)\"/" \
+  packages/create-cedar-app/templates/ts/web/package.json > tmpfile \
+  && mv tmpfile packages/create-cedar-app/templates/ts/web/package.json
 
 # Update all packages to replace any "workspace:*" with this canary version
 
@@ -108,7 +113,7 @@ done
 git config user.name "GitHub Actions"
 git config user.email "<>"
 
-git commit -am "Update create-redwood-app templates to use canary packages"
+git commit -am "Update create-cedar-app templates to use canary packages"
 
 args+=(--yes)
 yarn lerna publish "${args[@]}"

@@ -1,5 +1,5 @@
-import { Link, routes } from '@redwoodjs/router'
-import { Toaster } from '@redwoodjs/web/toast'
+import { Link, routes } from '@cedarjs/router'
+import { Toaster } from '@cedarjs/web/toast'
 
 import { useAuth } from '../../auth'
 

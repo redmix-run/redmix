@@ -111,7 +111,7 @@ afterAll(() => {
 const createDbUser = async (attributes = {}) => {
   return await db.user.create({
     data: {
-      email: 'rob@redwoodjs.com',
+      email: 'rob@cedarjs.com',
       // default hashedPassword is from `node:crypto`
       hashedPassword:
         '230847bea5154b6c7d281d09593ad1be26fa03a93c04a73bcc2b608c073a8213|16384|8|1',
@@ -256,7 +256,7 @@ describe('dbAuth', () => {
   afterEach(async () => {
     vi.spyOn(console, 'warn').mockRestore()
     await db.user.deleteMany({
-      where: { email: 'rob@redwoodjs.com' },
+      where: { email: 'rob@cedarjs.com' },
     })
     await db.userCredential.deleteMany()
   })
@@ -770,7 +770,7 @@ describe('dbAuth', () => {
   describe('forgotPassword', () => {
     it('throws default error when not enabled', async () => {
       const body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'password',
         name: 'Rob',
       })
@@ -794,7 +794,7 @@ describe('dbAuth', () => {
 
     it('throws custom error when not enabled and message provided', async () => {
       const body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'password',
         name: 'Rob',
       })
@@ -1028,7 +1028,7 @@ describe('dbAuth', () => {
   describe('login', () => {
     it('throws default error when not enabled', async () => {
       const body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'password',
         name: 'Rob',
       })
@@ -1052,7 +1052,7 @@ describe('dbAuth', () => {
 
     it('throws custom error when not enabled and message provided', async () => {
       const body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'password',
         name: 'Rob',
       })
@@ -1083,7 +1083,7 @@ describe('dbAuth', () => {
 
       await createDbUser()
       const body = JSON.stringify({
-        username: 'missing@redwoodjs.com',
+        username: 'missing@cedarjs.com',
         password: 'password',
       })
 
@@ -1106,7 +1106,7 @@ describe('dbAuth', () => {
     it('throws an error if password is wrong', async () => {
       await createDbUser()
       const body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'incorrect',
       })
       const req = new Request('http://localhost:8910/_rw_mw', {
@@ -1128,7 +1128,7 @@ describe('dbAuth', () => {
     it('throws an error if login.handler throws', async () => {
       const _user = await createDbUser()
       const body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'password',
       })
       options.login.handler = () => {
@@ -1153,7 +1153,7 @@ describe('dbAuth', () => {
     it('passes the found user to login.handler', async () => {
       const user = await createDbUser()
       const body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'password',
       })
       options.login.handler = () => {
@@ -1172,7 +1172,7 @@ describe('dbAuth', () => {
     it('throws an error if login.handler returns null', async () => {
       const _user = await createDbUser()
       const body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'password',
       })
       options.login.handler = () => {
@@ -1196,7 +1196,7 @@ describe('dbAuth', () => {
     it('throws an error if login.handler returns an object without an id', async () => {
       const _user = await createDbUser()
       const body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'password',
       })
       options.login.handler = () => {
@@ -1219,7 +1219,7 @@ describe('dbAuth', () => {
     it('returns a JSON body of the user that is logged in', async () => {
       const user = await createDbUser()
       const body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'password',
       })
       const req = new Request('http://localhost:8910/_rw_mw', {
@@ -1237,7 +1237,7 @@ describe('dbAuth', () => {
     it('returns a CSRF token in the header', async () => {
       await createDbUser()
       const body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'password',
       })
       const req = new Request('http://localhost:8910/_rw_mw', {
@@ -1255,7 +1255,7 @@ describe('dbAuth', () => {
     it('returns a set-cookie header to create session', async () => {
       await createDbUser()
       const body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'password',
       })
       const req = new Request('http://localhost:8910/_rw_mw', {
@@ -1273,7 +1273,7 @@ describe('dbAuth', () => {
     it('returns a CSRF token in the header', async () => {
       await createDbUser()
       const body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'password',
       })
       const req = new Request('http://localhost:8910/_rw_mw', {
@@ -1297,7 +1297,7 @@ describe('dbAuth', () => {
 
       await createDbUser()
       const body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'password',
       })
 
@@ -1331,7 +1331,7 @@ describe('dbAuth', () => {
 
       await createDbUser()
       const body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'password',
       })
 
@@ -1366,7 +1366,7 @@ describe('dbAuth', () => {
   describe('resetPassword', () => {
     it('throws default error when not enabled', async () => {
       const body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'password',
         name: 'Rob',
       })
@@ -1390,7 +1390,7 @@ describe('dbAuth', () => {
 
     it('throws custom error when not enabled and message provided', async () => {
       const body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'password',
         name: 'Rob',
       })
@@ -1762,7 +1762,7 @@ describe('dbAuth', () => {
   describe('signup', () => {
     it('bubbles up any error that is raised', async () => {
       const body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'password',
         name: 'Rob',
       })
@@ -1783,7 +1783,7 @@ describe('dbAuth', () => {
 
     it('throws default error when not enabled', async () => {
       const body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'password',
         name: 'Rob',
       })
@@ -1806,7 +1806,7 @@ describe('dbAuth', () => {
 
     it('throws custom error when not enabled and message provided', async () => {
       const body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'password',
         name: 'Rob',
       })
@@ -1833,7 +1833,7 @@ describe('dbAuth', () => {
 
     it('throws password validation error if password invalid', async () => {
       const body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'pass',
         name: 'Rob',
       })
@@ -1860,7 +1860,7 @@ describe('dbAuth', () => {
 
     it('throws no error if password valid', async () => {
       const body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'password',
         name: 'Rob',
       })
@@ -1882,7 +1882,7 @@ describe('dbAuth', () => {
 
     it('throws no error if passwordValidation function is undefined', async () => {
       const body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'password',
         name: 'Rob',
       })
@@ -1900,7 +1900,7 @@ describe('dbAuth', () => {
 
     it('creates a new user and logs them in', async () => {
       const body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'password',
         name: 'Rob',
       })
@@ -1926,7 +1926,7 @@ describe('dbAuth', () => {
 
     it('returns a message if a string is returned and does not log in', async () => {
       const reqBody = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'password',
         name: 'Rob',
       })
@@ -2568,7 +2568,7 @@ describe('dbAuth', () => {
             attributes: {
               Path: '/',
               HttpOnly: true,
-              SameSite: 'Strict',
+              SameSite: 'Lax',
               Secure: true,
               Domain: 'example.com',
             },
@@ -2580,7 +2580,7 @@ describe('dbAuth', () => {
       expect(attributes.length).toEqual(6)
       expect(attributes[0]).toEqual('Path=/')
       expect(attributes[1]).toEqual('HttpOnly')
-      expect(attributes[2]).toEqual('SameSite=Strict')
+      expect(attributes[2]).toEqual('SameSite=Lax')
       expect(attributes[3]).toEqual('Secure')
       expect(attributes[4]).toEqual('Domain=example.com')
       expect(attributes[5]).toMatch(`Expires=`)
@@ -3246,7 +3246,7 @@ describe('dbAuth', () => {
     it('creates a new user', async () => {
       const headers = { 'Content-Type': 'application/json' }
       const body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'password',
         name: 'Rob',
       })
@@ -3262,7 +3262,7 @@ describe('dbAuth', () => {
 
       try {
         const user = await dbAuth._createUser()
-        expect(user.email).toEqual('rob@redwoodjs.com')
+        expect(user.email).toEqual('rob@cedarjs.com')
         expect(user.hashedPassword).not.toBeNull()
         expect(user.salt).not.toBeNull()
         expect(user.name).toEqual('Rob')

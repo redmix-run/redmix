@@ -5,9 +5,9 @@
     "web"
   ],
   "devDependencies": {
-    "@redwoodjs/core": "canary"
+    "@cedarjs/core": "canary"
   },
   "eslintConfig": {
-    "extends": "@redwoodjs/eslint-config"
+    "extends": "@cedarjs/eslint-config"
   }
 }

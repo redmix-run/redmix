@@ -3,7 +3,7 @@ import type { ReadableStream } from 'node:stream/web'
 
 import type { Request } from 'express'
 
-import { getConfig, getRawConfig } from '@redwoodjs/project-config'
+import { getConfig, getRawConfig } from '@cedarjs/project-config'
 
 import { renderRscToStream } from './rscRenderer.js'
 import type { RenderInput } from './rscRenderer.js'

@@ -6,14 +6,14 @@ import type { HTTPMethod } from 'find-my-way'
 import { createIsbotFromList, list as isbotList } from 'isbot'
 import type { ViteDevServer } from 'vite'
 
-import { middlewareDefaultAuthProviderState } from '@redwoodjs/auth/dist/AuthProvider/AuthProviderState.js'
-import type { ServerAuthState } from '@redwoodjs/auth/dist/AuthProvider/ServerAuthProvider.js'
-import type { RouteSpec, RWRouteManifestItem } from '@redwoodjs/internal'
-import { getAppRouteHook, getConfig, getPaths } from '@redwoodjs/project-config'
-import { matchPath } from '@redwoodjs/router/util'
-import type { TagDescriptor } from '@redwoodjs/web'
-import { MiddlewareResponse } from '@redwoodjs/web/middleware'
-import type { Middleware } from '@redwoodjs/web/middleware'
+import { middlewareDefaultAuthProviderState } from '@cedarjs/auth/dist/AuthProvider/AuthProviderState.js'
+import type { ServerAuthState } from '@cedarjs/auth/dist/AuthProvider/ServerAuthProvider.js'
+import type { RouteSpec, RWRouteManifestItem } from '@cedarjs/internal'
+import { getAppRouteHook, getConfig, getPaths } from '@cedarjs/project-config'
+import { matchPath } from '@cedarjs/router/util'
+import type { TagDescriptor } from '@cedarjs/web'
+import { MiddlewareResponse } from '@cedarjs/web/middleware'
+import type { Middleware } from '@cedarjs/web/middleware'
 
 import { invoke } from '../middleware/invokeMiddleware.js'
 import type { EntryServer } from '../types.js'
@@ -41,11 +41,11 @@ export const createReactStreamingHandler = async (
     getStylesheetLinks,
     getMiddlewareRouter,
   }: CreateReactStreamingHandlerOptions,
-  viteDevServer?: ViteDevServer,
+  viteSsrDevServer?: ViteDevServer,
 ) => {
   const rwPaths = getPaths()
   const rwConfig = getConfig()
-  const isProd = !viteDevServer
+  const isProd = !viteSsrDevServer
   const middlewareRouter: Router.Instance<any> = await getMiddlewareRouter()
   let entryServerImport: EntryServer
   let fallbackDocumentImport: Record<string, any>
@@ -115,7 +115,7 @@ export const createReactStreamingHandler = async (
           route: currentRoute,
           cssPaths: cssLinks,
           params: matchedMw?.params,
-          viteDevServer,
+          viteSsrDevServer,
         },
       )
 
@@ -144,8 +144,8 @@ export const createReactStreamingHandler = async (
     // Do this inside the handler for **dev-only**.
     // This makes sure that changes to entry-server are picked up on refresh
     if (!isProd) {
-      entryServerImport = await ssrLoadEntryServer(viteDevServer)
-      fallbackDocumentImport = await viteDevServer.ssrLoadModule(
+      entryServerImport = await ssrLoadEntryServer(viteSsrDevServer)
+      fallbackDocumentImport = await viteSsrDevServer.ssrLoadModule(
         rwPaths.web.document,
       )
     }
@@ -173,13 +173,15 @@ export const createReactStreamingHandler = async (
         req,
         parsedParams,
       },
-      viteDevServer,
+      viteSsrDevServer,
     })
 
     metaTags = routeHookOutput.meta
 
     // On dev, we don't need to add the slash (for windows support) any more
-    const jsBundles = [viteDevServer ? clientEntryPath : '/' + clientEntryPath]
+    const jsBundles = [
+      viteSsrDevServer ? clientEntryPath : '/' + clientEntryPath,
+    ]
     if (currentRoute.bundle) {
       jsBundles.push('/' + currentRoute.bundle)
     }
@@ -201,14 +203,14 @@ export const createReactStreamingHandler = async (
       {
         waitForAllReady: isSeoCrawler,
         onError: (err) => {
-          if (!isProd && viteDevServer) {
-            viteDevServer.ssrFixStacktrace(err)
+          if (!isProd && viteSsrDevServer) {
+            viteSsrDevServer.ssrFixStacktrace(err)
           }
 
           console.error(err)
         },
       },
-      viteDevServer,
+      viteSsrDevServer,
     )
 
     return reactResponse

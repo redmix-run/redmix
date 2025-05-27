@@ -2,10 +2,10 @@ import path from 'path'
 
 import chalk from 'chalk'
 
-import { getPaths, getRouteHookForPage } from '@redwoodjs/project-config'
-import { getRouteRegexAndParams } from '@redwoodjs/router/dist/util'
-import { getProject } from '@redwoodjs/structure/dist/index.js'
-import type { RWRoute } from '@redwoodjs/structure/dist/model/RWRoute'
+import { getPaths, getRouteHookForPage } from '@cedarjs/project-config'
+import { getRouteRegexAndParams } from '@cedarjs/router/dist/util'
+import { getProject } from '@cedarjs/structure/dist/index.js'
+import type { RWRoute } from '@cedarjs/structure/dist/model/RWRoute'
 
 export interface RouteInformation {
   name?: string

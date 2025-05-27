@@ -1,4 +1,4 @@
-import type { Logger } from '@redwoodjs/api/logger'
+import type { Logger } from '@cedarjs/api/logger'
 
 import type { AbstractMailHandler } from './handler'
 import type {
@@ -68,13 +68,13 @@ export class Mailer<
       // Attempt to use a default in-memory handler if the required package is installed
       try {
         this.fallbackTestHandler =
-          new (require('@redwoodjs/mailer-handler-in-memory').InMemoryMailHandler)()
+          new (require('@cedarjs/mailer-handler-in-memory').InMemoryMailHandler)()
         this.logger.warn(
-          "Automatically loaded the '@redwoodjs/mailer-handler-in-memory' handler, this will be used to process mail in test mode",
+          "Automatically loaded the '@cedarjs/mailer-handler-in-memory' handler, this will be used to process mail in test mode",
         )
       } catch {
         this.logger.warn(
-          "No test handler specified and could not load the '@redwoodjs/mailer-handler-in-memory' handler automatically, this will prevent mail from being processed in test mode",
+          "No test handler specified and could not load the '@cedarjs/mailer-handler-in-memory' handler automatically, this will prevent mail from being processed in test mode",
         )
       }
     } else if (testHandlerKey === null) {
@@ -93,13 +93,13 @@ export class Mailer<
       // Attempt to use a default studio handler if the required package is installed
       try {
         this.fallbackDevelopmentHandler =
-          new (require('@redwoodjs/mailer-handler-studio').StudioMailHandler)()
+          new (require('@cedarjs/mailer-handler-studio').StudioMailHandler)()
         this.logger.warn(
-          "Automatically loaded the '@redwoodjs/mailer-handler-studio' handler, this will be used to process mail in development mode",
+          "Automatically loaded the '@cedarjs/mailer-handler-studio' handler, this will be used to process mail in development mode",
         )
       } catch {
         this.logger.warn(
-          "No development handler specified and could not load the '@redwoodjs/mailer-handler-studio' handler automatically, this will prevent mail from being processed in development mode",
+          "No development handler specified and could not load the '@cedarjs/mailer-handler-studio' handler automatically, this will prevent mail from being processed in development mode",
         )
       }
     } else if (developmentHandlerKey === null) {

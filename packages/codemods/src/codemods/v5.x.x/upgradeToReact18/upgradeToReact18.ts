@@ -5,9 +5,11 @@ import { load } from 'cheerio'
 import execa from 'execa'
 import type { TaskInnerAPI } from 'tasuku'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@cedarjs/project-config'
 
-function checkAndTransformReactRoot(taskContext: TaskInnerAPI) {
+function checkAndTransformReactRoot(
+  taskContext: Pick<TaskInnerAPI, 'setWarning'>,
+) {
   const indexHTMLFilepath = path.join(getPaths().web.src, 'index.html')
 
   const indexHTML = load(fs.readFileSync(indexHTMLFilepath, 'utf-8'))

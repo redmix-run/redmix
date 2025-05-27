@@ -6,10 +6,10 @@ vi.mock('listr2')
 import { Listr } from 'listr2'
 import { vi, test, expect } from 'vitest'
 
-import * as helpers from '../helpers'
+import { createYargsForComponentGeneration } from '../yargsHandlerHelpers.js'
 
 test('createYargsForComponentGeneration generates a yargs handler as expected', async () => {
-  const result = helpers.createYargsForComponentGeneration({
+  const result = createYargsForComponentGeneration({
     componentName: 'bazinga',
     filesFn: () => [],
     includeAdditionalTasks: () => {

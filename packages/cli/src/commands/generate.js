@@ -1,7 +1,25 @@
 import execa from 'execa'
 import terminalLink from 'terminal-link'
 
-import { recordTelemetryAttributes } from '@redwoodjs/cli-helpers'
+import { recordTelemetryAttributes } from '@cedarjs/cli-helpers'
+
+import * as generateCell from './generate/cell/cell.js'
+import * as generateComponent from './generate/component/component.js'
+import * as generateDataMigration from './generate/dataMigration/dataMigration.js'
+import * as generateDbAuth from './generate/dbAuth/dbAuth.js'
+import * as generateDirective from './generate/directive/directive.js'
+import * as generateFunction from './generate/function/function.js'
+import * as generateJob from './generate/job/job.js'
+import * as generateLayout from './generate/layout/layout.js'
+import * as generateModel from './generate/model/model.js'
+import * as generateOgImage from './generate/ogImage/ogImage.js'
+import * as generatePage from './generate/page/page.js'
+import * as generateRealtime from './generate/realtime/realtime.js'
+import * as generateScaffold from './generate/scaffold/scaffold.js'
+import * as generateScript from './generate/script/script.js'
+import * as generateSdl from './generate/sdl/sdl.js'
+import * as generateSecret from './generate/secret/secret.js'
+import * as generateService from './generate/service/service.js'
 
 export const command = 'generate <type>'
 export const aliases = ['g']
@@ -21,17 +39,23 @@ export const builder = (yargs) =>
         process.exitCode = error.exitCode ?? 1
       }
     })
-    .commandDir('./generate', {
-      recurse: true,
-      // @NOTE This regex will ignore all commands nested more than two
-      // levels deep.
-      // e.g. /generate/hi.js & setup/hi/hi.js are picked up, but
-      // generate/hi/hello/bazinga.js will be ignored
-      // The [/\\] bit is for supporting both windows and unix style paths
-      // Also take care to not trip up on paths that have "setup" earlier
-      // in the path by eagerly matching in the start of the regexp
-      exclude: /.*[/\\]generate[/\\].*[/\\].*[/\\]/,
-    })
+    .command(generateCell)
+    .command(generateComponent)
+    .command(generateDataMigration)
+    .command(generateDbAuth)
+    .command(generateDirective)
+    .command(generateFunction)
+    .command(generateJob)
+    .command(generateLayout)
+    .command(generateModel)
+    .command(generateOgImage)
+    .command(generatePage)
+    .command(generateRealtime)
+    .command(generateScaffold)
+    .command(generateScript)
+    .command(generateSdl)
+    .command(generateSecret)
+    .command(generateService)
     .demandCommand()
     .epilogue(
       `Also see the ${terminalLink(

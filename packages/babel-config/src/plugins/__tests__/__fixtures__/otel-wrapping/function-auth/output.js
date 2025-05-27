@@ -1,5 +1,5 @@
 import { trace as RW_OTEL_WRAPPER_TRACE } from '@opentelemetry/api'
-import { DbAuthHandler, DbAuthHandlerOptions } from '@redwoodjs/auth-dbauth-api'
+import { DbAuthHandler, DbAuthHandlerOptions } from '@cedarjs/auth-dbauth-api'
 import { db } from 'src/lib/db'
 export const handler = async (event, context) => {
   const __handler = async (event, context) => {

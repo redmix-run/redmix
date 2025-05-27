@@ -1,7 +1,7 @@
 import terminalLink from 'terminal-link'
 import type { Argv } from 'yargs'
 
-import { recordTelemetryAttributes } from '@redwoodjs/cli-helpers'
+import { recordTelemetryAttributes } from '@cedarjs/cli-helpers'
 
 import type { StorybookYargsOptions } from '../types'
 

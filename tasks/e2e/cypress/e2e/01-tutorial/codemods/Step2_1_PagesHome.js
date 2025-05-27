@@ -1,5 +1,5 @@
 export default `
-import { Link, routes } from '@redwoodjs/router'
+import { Link, routes } from '@cedarjs/router'
 
 const HomePage = () => {
   return (

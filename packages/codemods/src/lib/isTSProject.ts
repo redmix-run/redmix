@@ -1,6 +1,6 @@
 import fg from 'fast-glob'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@cedarjs/project-config'
 
 const isTSProject =
   fg.sync(`${getPaths().base}/**/tsconfig.json`, {

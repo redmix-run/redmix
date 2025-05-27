@@ -1,4 +1,4 @@
-import { recordTelemetryAttributes } from '@redwoodjs/cli-helpers'
+import { recordTelemetryAttributes } from '@cedarjs/cli-helpers'
 
 export const command = 'vite'
 
@@ -20,7 +20,7 @@ export const builder = (yargs) => {
   yargs.option('add-package', {
     default: true,
     description:
-      'Allows you to skip adding the @redwoodjs/vite package. Useful for testing',
+      'Allows you to skip adding the @cedarjs/vite package. Useful for testing',
     type: 'boolean',
   })
 }

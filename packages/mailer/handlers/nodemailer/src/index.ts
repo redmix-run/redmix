@@ -1,12 +1,12 @@
 import nodemailer from 'nodemailer'
 import type SMTPTransport from 'nodemailer/lib/smtp-transport'
 
-import { AbstractMailHandler } from '@redwoodjs/mailer-core'
+import { AbstractMailHandler } from '@cedarjs/mailer-core'
 import type {
   MailRenderedContent,
   MailResult,
   MailSendOptionsComplete,
-} from '@redwoodjs/mailer-core'
+} from '@cedarjs/mailer-core'
 
 export type HandlerConfig = {
   transport: SMTPTransport | SMTPTransport.Options | string

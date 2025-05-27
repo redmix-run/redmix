@@ -5,11 +5,11 @@ import type { FastifyInstance } from 'fastify'
 import Fastify from 'fastify'
 import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@cedarjs/project-config'
 
 import { redwoodFastifyWeb } from './web'
 
-let original_RWJS_CWD: string
+let original_RWJS_CWD: string | undefined
 
 beforeAll(() => {
   original_RWJS_CWD = process.env.RWJS_CWD

@@ -4,12 +4,13 @@ import path from 'path'
 import type { TransformOptions } from '@babel/core'
 
 // This import is for types safety. Its just a type, no harm importing from src.
-import type { PluginOptions as RoutesAutoLoaderOptions } from '@redwoodjs/babel-config/src/plugins/babel-plugin-redwood-routes-auto-loader'
-import { getConfig, getPaths } from '@redwoodjs/project-config'
+import type { PluginOptions as RoutesAutoLoaderOptions } from '@cedarjs/babel-config/src/plugins/babel-plugin-redwood-routes-auto-loader'
+import { getConfig, getPaths } from '@cedarjs/project-config'
 
 import type { RegisterHookOptions } from './common'
 import {
   CORE_JS_VERSION,
+  getCommonPlugins,
   registerBabel,
   parseTypeScriptConfigFiles,
   getPathsFromTypeScriptConfig,
@@ -17,7 +18,11 @@ import {
 
 // These flags toggle on/off certain features
 export interface Flags {
-  forJest?: boolean // will change the alias for module-resolver plugin
+  /**
+   * Will change the alias for module-resolver plugin and include a few extra
+   * babel plugins
+   */
+  forJest?: boolean // will change the alias for module-resolver plugin and
   forPrerender?: boolean // changes what babel-plugin-redwood-routes-auto-loader does
   forJavaScriptLinting?: boolean // will enable presets to supporting linting in the absence of typescript related presets/plugins/parsers
 }
@@ -43,12 +48,8 @@ export const getWebSideBabelPlugins = (
 
   const plugins = [
     // It is important that this plugin run first, as noted here: https://react.dev/learn/react-compiler
-    useReactCompiler && [
-      'babel-plugin-react-compiler',
-      {
-        // No specific config at this time...
-      },
-    ],
+    useReactCompiler && ['babel-plugin-react-compiler', { target: '19' }],
+    ...(forJest ? getCommonPlugins() : []),
     // === Import path handling
     [
       'babel-plugin-module-resolver',

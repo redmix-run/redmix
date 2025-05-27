@@ -6,12 +6,12 @@ import fs from 'fs-extra'
 import latestVersion from 'latest-version'
 import semver from 'semver'
 
-import { getConfig } from '@redwoodjs/project-config'
+import { getConfig } from '@cedarjs/project-config'
 
-import { spawnBackgroundProcess } from './background'
-import { isLockSet, setLock, unsetLock } from './locking'
+import { spawnBackgroundProcess } from './background.js'
+import { isLockSet, setLock, unsetLock } from './locking.js'
 
-import { getPaths } from './index'
+import { getPaths } from './index.js'
 
 /**
  * @typedef {{
@@ -53,7 +53,8 @@ export const SHOW_LOCK_IDENTIFIER = 'UPDATE_CHECK_SHOW'
 export const EXCLUDED_COMMANDS = ['upgrade', 'ts-to-js']
 
 /**
- * @const {string} Filepath of the file which persists update check data within the .redwood directory
+ * @const {string} Filepath of the file which persists update check data within
+ * the .redwood directory
  */
 let persistenceDirectory
 
@@ -68,23 +69,24 @@ function getPersistenceDirectory() {
 }
 
 /**
- * Performs an update check to detect if a newer version of redwood is available and records the result to a file within .redwood for persistence
+ * Performs an update check to detect if a newer version of Cedar is available
+ * and records the result to a file within .redwood for persistence
  */
 export async function check() {
   try {
     console.time('Update Check')
 
-    // Read package.json and extract the @redwood/core version
+    // Read package.json and extract the @cedarjs/core version
     const packageJson = JSON.parse(
       fs.readFileSync(path.join(getPaths().base, 'package.json')),
     )
-    let localVersion = packageJson.devDependencies['@redwoodjs/core']
+    let localVersion = packageJson.devDependencies['@cedarjs/core']
 
     // Remove any leading non-digits, i.e. ^ or ~
     while (!/\d/.test(localVersion.charAt(0))) {
       localVersion = localVersion.substring(1)
     }
-    console.log(`Detected the current version of RedwoodJS: '${localVersion}'`)
+    console.log(`Detected the current version of Cedar: '${localVersion}'`)
 
     const remoteVersions = new Map()
     for (const tag of getConfig().notifications.versionUpdates) {
@@ -92,7 +94,7 @@ export async function check() {
       try {
         remoteVersions.set(
           tag,
-          await latestVersion('@redwoodjs/core', { version: tag }),
+          await latestVersion('@cedarjs/core', { version: tag }),
         )
       } catch (error) {
         // This error may result as the ability of the user to specify arbitrary tags within their config file
@@ -100,7 +102,7 @@ export async function check() {
         console.error(error)
       }
     }
-    console.log(`Detected the latest versions of RedwoodJS as:`)
+    console.log(`Detected the latest versions of Cedar as:`)
     console.log(JSON.stringify([...remoteVersions.entries()], undefined, 2))
 
     // Save the latest update information
@@ -117,7 +119,8 @@ export async function check() {
 }
 
 /**
- * Determines if background checks are enabled. Checks are enabled within the redwood.toml notifications config.
+ * Determines if background checks are enabled. Checks are enabled within the
+ * redwood.toml notifications config.
  */
 export function isEnabled() {
   return getConfig().notifications.versionUpdates.length > 0
@@ -180,7 +183,7 @@ function getUpdateMessage() {
 
   let updateCount = 0
   let message =
-    ' New updates to Redwood are available via `yarn rw upgrade#REPLACEME#` '
+    ' New updates to Cedar are available via `yarn rw upgrade#REPLACEME#` '
   data.remoteVersions.forEach((version, tag) => {
     if (semver.gt(version, data.localVersion)) {
       updateCount += 1
@@ -195,13 +198,13 @@ function getUpdateMessage() {
     }
   })
   message +=
-    '\n\n See release notes at: https://github.com/redwoodjs/redwood/releases '
+    '\n\n See release notes at: https://github.com/cedarjs/cedar/releases '
   message = message.replace('#REPLACEME#', updateCount > 1 ? ' -t [tag]' : '')
 
   return boxen(message, {
     padding: 0,
     margin: 1,
-    title: `Redwood Update${updateCount > 1 ? 's ' : ' '}available 🎉`,
+    title: `Cedar Update${updateCount > 1 ? 's ' : ' '}available 🎉`,
     borderColor: '#0b8379', // The RedwoodJS colour
     borderStyle: 'round',
   })
@@ -296,7 +299,7 @@ export function updateCheckMiddleware(argv) {
     setLock(CHECK_LOCK_IDENTIFIER)
     spawnBackgroundProcess('updateCheck', 'yarn', [
       'node',
-      path.join(__dirname, 'updateCheckExecute.js'),
+      path.join(import.meta.dirname, 'updateCheckExecute.js'),
     ])
   }
 }

@@ -1,11 +1,11 @@
 import type { FindContacts, FindContactsVariables } from 'types/graphql'
 
-import { Link, routes } from '@redwoodjs/router'
+import { Link, routes } from '@cedarjs/router'
 import type {
   CellSuccessProps,
   CellFailureProps,
   TypedDocumentNode,
-} from '@redwoodjs/web'
+} from '@cedarjs/web'
 
 import Contacts from 'src/components/Contact/Contacts'
 

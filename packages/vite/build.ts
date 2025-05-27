@@ -7,7 +7,7 @@ import {
   build,
   defaultBuildOptions,
   defaultIgnorePatterns,
-} from '@redwoodjs/framework-tools'
+} from '@cedarjs/framework-tools'
 
 // CJS Build
 await build({

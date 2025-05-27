@@ -7,9 +7,9 @@ import { vi, describe, beforeAll, test, expect } from 'vitest'
 // Load mocks
 import '../../../../lib/test'
 
-import { getDefaultArgs } from '../../../../lib'
-import { yargsDefaults as defaults } from '../../helpers'
-import * as scaffold from '../scaffold'
+import { getDefaultArgs } from '../../../../lib/index.js'
+import { getYargsDefaults } from '../../yargsCommandHelpers.js'
+import * as scaffoldHandler from '../scaffoldHandler.js'
 
 vi.mock('fs', async () => ({ default: (await import('memfs')).fs }))
 vi.mock('execa')
@@ -20,8 +20,8 @@ describe('support custom @id name', () => {
   beforeAll(async () => {
     vol.fromJSON({ 'redwood.toml': '' }, '/')
 
-    files = await scaffold.files({
-      ...getDefaultArgs(defaults),
+    files = await scaffoldHandler.files({
+      ...getDefaultArgs(getYargsDefaults()),
       typescript: true,
       model: 'CustomIdField',
       tests: true,
@@ -30,7 +30,7 @@ describe('support custom @id name', () => {
   })
 
   test('creates routes with the custom id name', async () => {
-    const customIdFieldRoutes = await scaffold.routes({
+    const customIdFieldRoutes = await scaffoldHandler.routes({
       model: 'CustomIdField',
       nestScaffoldByModel: true,
     })

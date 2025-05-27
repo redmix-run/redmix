@@ -224,10 +224,10 @@ import {
   PasswordField,
   Submit,
   FieldError,
-} from '@redwoodjs/forms'
-import { navigate, routes, Link } from '@redwoodjs/router'
-import { Metadata, useMutation } from '@redwoodjs/web'
-import { Toaster, toast } from '@redwoodjs/web/toast'
+} from '@cedarjs/forms'
+import { navigate, routes, Link } from '@cedarjs/router'
+import { Metadata, useMutation } from '@cedarjs/web'
+import { Toaster, toast } from '@cedarjs/web/toast'
 const GENERATE_LOGIN_TOKEN = gql`
   mutation generateLoginToken($email: String!) {
     generateLoginToken(email: $email) {
@@ -337,10 +337,10 @@ import {
   PasswordField,
   Submit,
   FieldError,
-} from '@redwoodjs/forms'
-import { navigate, routes, Link } from '@redwoodjs/router'
-import { Metadata, useMutation } from '@redwoodjs/web'
-import { Toaster, toast } from '@redwoodjs/web/toast'
+} from '@cedarjs/forms'
+import { navigate, routes, Link } from '@cedarjs/router'
+import { Metadata, useMutation } from '@cedarjs/web'
+import { Toaster, toast } from '@cedarjs/web/toast'
 
 import { useAuth } from 'src/auth'
 
@@ -459,8 +459,8 @@ yarn rw g page LoginPasswordless
 ```jsx title="/web/pages/LoginPasswordlessPage/LoginPasswordlessPage.js"
 import { useEffect, useState } from 'react'
 
-import { useLocation } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
+import { useLocation } from '@cedarjs/router'
+import { Metadata } from '@cedarjs/web'
 
 import LoginPasswordlessForm from 'src/components/LoginPasswordlessForm/LoginPasswordlessForm'
 import LoginPasswordlessTokenForm from 'src/components/LoginPasswordlessTokenForm/LoginPasswordlessTokenForm'
@@ -528,10 +528,10 @@ import {
   PasswordField,
   FieldError,
   Submit,
-} from '@redwoodjs/forms'
-import { Link, navigate, routes } from '@redwoodjs/router'
-import { Metadata } from '@redwoodjs/web'
-import { toast, Toaster } from '@redwoodjs/web/toast'
+} from '@cedarjs/forms'
+import { Link, navigate, routes } from '@cedarjs/router'
+import { Metadata } from '@cedarjs/web'
+import { toast, Toaster } from '@cedarjs/web/toast'
 
 import { useAuth } from 'src/auth'
 

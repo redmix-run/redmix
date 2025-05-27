@@ -2,10 +2,10 @@ import {
   ensurePosixPath,
   getPaths,
   importStatementPath,
-} from '@redwoodjs/project-config'
-import { getProject } from '@redwoodjs/structure/dist/index.js'
-import type { RWPage } from '@redwoodjs/structure/dist/model/RWPage.js'
-import type { RWRoute } from '@redwoodjs/structure/dist/model/RWRoute.js'
+} from '@cedarjs/project-config'
+import { getProject } from '@cedarjs/structure/dist/index.js'
+import type { RWPage } from '@cedarjs/structure/dist/model/RWPage.js'
+import type { RWRoute } from '@cedarjs/structure/dist/model/RWRoute.js'
 
 import { makeFilePath } from '../utils.js'
 

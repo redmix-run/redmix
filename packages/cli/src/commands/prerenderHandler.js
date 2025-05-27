@@ -3,14 +3,14 @@ import path from 'path'
 import fs from 'fs-extra'
 import { Listr } from 'listr2'
 
-import { recordTelemetryAttributes } from '@redwoodjs/cli-helpers'
-import { runPrerender, writePrerenderedHtmlFile } from '@redwoodjs/prerender'
-import { detectPrerenderRoutes } from '@redwoodjs/prerender/detection'
-import { getConfig, getPaths } from '@redwoodjs/project-config'
-import { errorTelemetry } from '@redwoodjs/telemetry'
+import { recordTelemetryAttributes } from '@cedarjs/cli-helpers'
+import { runPrerender, writePrerenderedHtmlFile } from '@cedarjs/prerender'
+import { detectPrerenderRoutes } from '@cedarjs/prerender/detection'
+import { getConfig, getPaths } from '@cedarjs/project-config'
+import { errorTelemetry } from '@cedarjs/telemetry'
 
-import c from '../lib/colors'
-import { configureBabel, runScriptFunction } from '../lib/exec'
+import c from '../lib/colors.js'
+import { configureBabel, runScriptFunction } from '../lib/exec.js'
 
 class PathParamError extends Error {}
 
@@ -251,9 +251,9 @@ const diagnosticCheck = () => {
       ),
     },
     {
-      message: 'Duplicate @redwoodjs/web version found in web/node_modules',
+      message: 'Duplicate @cedarjs/web version found in web/node_modules',
       failure: fs.existsSync(
-        path.join(getPaths().web.base, 'node_modules/@redwoodjs/web'),
+        path.join(getPaths().web.base, 'node_modules/@cedarjs/web'),
       ),
     },
   ]

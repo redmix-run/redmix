@@ -3,12 +3,9 @@ import path from 'node:path'
 import { describe, it, expect, beforeAll, afterAll } from 'vitest'
 import { vi } from 'vitest'
 
-import { middlewareDefaultAuthProviderState } from '@redwoodjs/auth'
-import { authDecoder } from '@redwoodjs/auth-supabase-api'
-import {
-  MiddlewareRequest,
-  MiddlewareResponse,
-} from '@redwoodjs/web/middleware'
+import { middlewareDefaultAuthProviderState } from '@cedarjs/auth'
+import { authDecoder } from '@cedarjs/auth-supabase-api'
+import { MiddlewareRequest, MiddlewareResponse } from '@cedarjs/web/middleware'
 
 import initSupabaseAuthMiddleware from '../index.js'
 import type { SupabaseAuthMiddlewareOptions } from '../index.js'
@@ -31,7 +28,7 @@ vi.mock('jsonwebtoken', () => {
   }
 })
 
-vi.mock('@redwoodjs/auth-supabase-api', () => {
+vi.mock('@cedarjs/auth-supabase-api', () => {
   return {
     authDecoder: vi.fn(() => {
       return {

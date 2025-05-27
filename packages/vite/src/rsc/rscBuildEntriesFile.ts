@@ -3,7 +3,7 @@ import fs from 'fs/promises'
 import type { OutputChunk } from 'rollup'
 import { normalizePath } from 'vite'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@cedarjs/project-config'
 
 import type { rscBuildClient } from './rscBuildClient.js'
 import type { rscBuildForServer } from './rscBuildForServer.js'

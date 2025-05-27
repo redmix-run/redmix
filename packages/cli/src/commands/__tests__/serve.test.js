@@ -1,15 +1,15 @@
 import { vi, describe, afterEach, it, expect } from 'vitest'
 import yargs from 'yargs/yargs'
 
-import * as apiServerCLIConfig from '@redwoodjs/api-server/dist/apiCLIConfig'
-import * as bothServerCLIConfig from '@redwoodjs/api-server/dist/bothCLIConfig'
+import * as apiServerCLIConfig from '@cedarjs/api-server/dist/apiCLIConfig.js'
+import * as bothServerCLIConfig from '@cedarjs/api-server/dist/bothCLIConfig.js'
 
-import { builder } from '../serve'
+import { builder } from '../serve.js'
 
 globalThis.__dirname = __dirname
 
 // We mock these to skip the check for web/dist and api/dist
-vi.mock('@redwoodjs/project-config', async (importOriginal) => {
+vi.mock('@cedarjs/project-config', async (importOriginal) => {
   const originalProjectConfig = await importOriginal()
   return {
     ...originalProjectConfig,
@@ -50,7 +50,7 @@ vi.mock('fs-extra', async (importOriginal) => {
   }
 })
 
-vi.mock('@redwoodjs/api-server/dist/apiCLIConfig', async (importOriginal) => {
+vi.mock('@cedarjs/api-server/dist/apiCLIConfig', async (importOriginal) => {
   const originalAPICLIConfig = await importOriginal()
   return {
     description: originalAPICLIConfig.description,
@@ -58,7 +58,7 @@ vi.mock('@redwoodjs/api-server/dist/apiCLIConfig', async (importOriginal) => {
     handler: vi.fn(),
   }
 })
-vi.mock('@redwoodjs/api-server/dist/bothCLIConfig', async (importOriginal) => {
+vi.mock('@cedarjs/api-server/dist/bothCLIConfig', async (importOriginal) => {
   const originalBothCLIConfig = await importOriginal()
   return {
     description: originalBothCLIConfig.description,

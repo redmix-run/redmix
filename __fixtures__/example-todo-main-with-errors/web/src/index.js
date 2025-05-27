@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom'
-import { RedwoodProvider, FatalErrorBoundary } from '@redwoodjs/web'
+import { RedwoodProvider, FatalErrorBoundary } from '@cedarjs/web'
 import FatalErrorPage from 'src/pages/FatalErrorPage'
 
 import Routes from './Routes'

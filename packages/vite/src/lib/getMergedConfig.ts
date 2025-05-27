@@ -4,8 +4,8 @@ import type { InputOption } from 'rollup'
 import type { ConfigEnv, UserConfig } from 'vite'
 import { mergeConfig } from 'vite'
 
-import type { Config, Paths } from '@redwoodjs/project-config'
-import { getConfig, getPaths } from '@redwoodjs/project-config'
+import type { Config, Paths } from '@cedarjs/project-config'
+import { getConfig, getPaths } from '@cedarjs/project-config'
 
 import { getEnvVarDefinitions } from './envVarDefinitions.js'
 

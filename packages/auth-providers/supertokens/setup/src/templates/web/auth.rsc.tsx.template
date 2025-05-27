@@ -9,8 +9,8 @@ import ThirdPartyEmailPassword, {
 } from 'supertokens-auth-react/recipe/thirdpartyemailpassword'
 import { ThirdPartyEmailPasswordPreBuiltUI } from 'supertokens-auth-react/recipe/thirdpartyemailpassword/prebuiltui'
 
-import { createAuth } from '@redwoodjs/auth-supertokens-web'
-import { isBrowser } from '@redwoodjs/prerender/browserUtils'
+import { createAuth } from '@cedarjs/auth-supertokens-web'
+import { isBrowser } from '@cedarjs/prerender/browserUtils'
 
 const websiteDomain =
   process.env.SUPERTOKENS_WEBSITE_DOMAIN || 'http://localhost:8910'

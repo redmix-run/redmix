@@ -1,6 +1,6 @@
 export const webAppTsx =
-  "import { FatalErrorBoundary, RedwoodProvider } from '@redwoodjs/web'\n" +
-  `import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
+  "import { FatalErrorBoundary, RedwoodProvider } from '@cedarjs/web'\n" +
+  `import { RedwoodApolloProvider } from '@cedarjs/web/apollo'
 
 import FatalErrorPage from 'src/pages/FatalErrorPage'
 import Routes from 'src/Routes'
@@ -21,7 +21,7 @@ export default App
 `
 
 export const graphqlTs =
-  "import { createGraphQLHandler } from '@redwoodjs/graphql-server'\n" +
+  "import { createGraphQLHandler } from '@cedarjs/graphql-server'\n" +
   `
 import directives from 'src/directives/**/*.{js,ts}'
 import sdls from 'src/graphql/**/*.sdl.{js,ts}'
@@ -45,7 +45,7 @@ export const handler = createGraphQLHandler({
 export const auth0WebAuthTsTemplate =
   "import { Auth0Client } from '@auth0/auth0-spa-js'\n" +
   `
-import { createAuth } from '@redwoodjs/auth-auth0-web'
+import { createAuth } from '@cedarjs/auth-auth0-web'
 
 const auth0 = new Auth0Client({
   domain: process.env.AUTH0_DOMAIN || '',
@@ -74,7 +74,7 @@ export const clerkWebAuthTsTemplate =
   `
 import { ClerkLoaded, ClerkProvider, useUser } from '@clerk/clerk-react'
 
-import { createAuth } from '@redwoodjs/auth-clerk-web'
+import { createAuth } from '@cedarjs/auth-clerk-web'
 
 // You can set user roles in a "roles" array on the public metadata in Clerk.
 //
@@ -135,7 +135,7 @@ export const routesTsx =
 // 'src/pages/HomePage/HomePage.js'         -> HomePage
 // 'src/pages/Admin/BooksPage/BooksPage.js' -> AdminBooksPage
 
-import { Router, Route } from '@redwoodjs/router'
+import { Router, Route } from '@cedarjs/router'
 
 const Routes = () => {
   return (
@@ -151,10 +151,10 @@ export default Routes
 export const legacyAuthWebAppTsx =
   "import netlifyIdentity from 'netlify-identity-widget'\n" +
   `
-import { AuthProvider } from '@redwoodjs/auth'
-import { isBrowser } from '@redwoodjs/prerender/browserUtils'
-import { FatalErrorBoundary, RedwoodProvider } from '@redwoodjs/web'
-import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
+import { AuthProvider } from '@cedarjs/auth'
+import { isBrowser } from '@cedarjs/prerender/browserUtils'
+import { FatalErrorBoundary, RedwoodProvider } from '@cedarjs/web'
+import { RedwoodApolloProvider } from '@cedarjs/web/apollo'
 
 import FatalErrorPage from 'src/pages/FatalErrorPage'
 import Routes from 'src/Routes'
@@ -179,8 +179,8 @@ export default App
 `
 
 export const customApolloAppTsx =
-  "import { FatalErrorBoundary, RedwoodProvider } from '@redwoodjs/web'\n" +
-  `import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
+  "import { FatalErrorBoundary, RedwoodProvider } from '@cedarjs/web'\n" +
+  `import { RedwoodApolloProvider } from '@cedarjs/web/apollo'
 
 import FatalErrorPage from 'src/pages/FatalErrorPage'
 import Routes from 'src/Routes'
@@ -210,7 +210,7 @@ export const customPropsRoutesTsx =
 // 'src/pages/HomePage/HomePage.js'         -> HomePage
 // 'src/pages/Admin/BooksPage/BooksPage.js' -> AdminBooksPage
 
-import { Router, Route } from '@redwoodjs/router'
+import { Router, Route } from '@cedarjs/router'
 
 const Routes = () => {
   return (
@@ -242,7 +242,7 @@ export const useAuthRoutesTsx =
 // 'src/pages/HomePage/HomePage.js'         -> HomePage
 // 'src/pages/Admin/BooksPage/BooksPage.js' -> AdminBooksPage
 
-import { Router, Route } from '@redwoodjs/router'
+import { Router, Route } from '@cedarjs/router'
 
 const Routes = () => {
   return (
@@ -270,8 +270,8 @@ export default Routes
 
 export const explicitReturnAppTsx =
   "import { useEffect } from 'react'\n" +
-  `import { FatalErrorBoundary, RedwoodProvider } from '@redwoodjs/web'
-import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
+  `import { FatalErrorBoundary, RedwoodProvider } from '@cedarjs/web'
+import { RedwoodApolloProvider } from '@cedarjs/web/apollo'
 
 import FatalErrorPage from 'src/pages/FatalErrorPage'
 import Routes from 'src/Routes'
@@ -302,7 +302,7 @@ export default App
 `
 
 export const withoutRedwoodApolloAppTsx =
-  "import { FatalErrorBoundary, RedwoodProvider } from '@redwoodjs/web'\n" +
+  "import { FatalErrorBoundary, RedwoodProvider } from '@cedarjs/web'\n" +
   `
 import FatalErrorPage from 'src/pages/FatalErrorPage'
 import Routes from 'src/Routes'
@@ -327,8 +327,8 @@ export default App
 `
 
 export const withAuthDecoderGraphqlTs =
-  "import { authDecoder } from '@redwoodjs/auth-dbauth-api'\n" +
-  `import { createGraphQLHandler } from '@redwoodjs/graphql-server'
+  "import { authDecoder } from '@cedarjs/auth-dbauth-api'\n" +
+  `import { createGraphQLHandler } from '@cedarjs/graphql-server'
 
 import directives from 'src/directives/**/*.{js,ts}'
 import sdls from 'src/graphql/**/*.sdl.{js,ts}'
@@ -353,8 +353,8 @@ export const handler = createGraphQLHandler({
 `
 
 export const nonStandardAuthDecoderGraphqlTs =
-  "import { authDecoder as dbAuthAuthDecoder } from '@redwoodjs/auth-dbauth-api'\n" +
-  `import { createGraphQLHandler } from '@redwoodjs/graphql-server'
+  "import { authDecoder as dbAuthAuthDecoder } from '@cedarjs/auth-dbauth-api'\n" +
+  `import { createGraphQLHandler } from '@cedarjs/graphql-server'
 
 import directives from 'src/directives/**/*.{js,ts}'
 import sdls from 'src/graphql/**/*.sdl.{js,ts}'

@@ -366,7 +366,7 @@ export const QUERY = gql`
 And then update the display component that shows an Article:
 
 ```jsx title="web/src/components/Article/Article.js"
-import { Link, routes } from '@redwoodjs/router'
+import { Link, routes } from '@cedarjs/router'
 
 const Article = ({ article }) => {
   return (
@@ -669,7 +669,7 @@ We could select the record first, make sure the user owns it, and only then let 
 
 ```javascript title="api/src/services/adminPosts/adminPosts.js"
 // highlight-next-line
-import { ForbiddenError } from '@redwoodjs/graphql-server'
+import { ForbiddenError } from '@cedarjs/graphql-server'
 
 // highlight-start
 export const updatePost = async ({ id, input }) => {
@@ -714,7 +714,7 @@ export const updatePost = async ({ id, input }) => {
 Simple! Our final `adminPosts` service ends up looking like:
 
 ```javascript title="api/src/services/adminPosts/adminPosts.js"
-import { ForbiddenError } from '@redwoodjs/graphql-server'
+import { ForbiddenError } from '@cedarjs/graphql-server'
 
 import { db } from 'src/lib/db'
 

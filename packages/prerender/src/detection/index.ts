@@ -1,5 +1,5 @@
-import { getPaths } from '@redwoodjs/project-config'
-import { getProject } from '@redwoodjs/structure'
+import { getPaths } from '@cedarjs/project-config'
+import { getProject } from '@cedarjs/structure'
 
 export const detectPrerenderRoutes = () => {
   const rwProject = getProject(getPaths().base)

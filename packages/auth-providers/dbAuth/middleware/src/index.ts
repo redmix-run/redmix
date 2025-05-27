@@ -1,12 +1,12 @@
 import type { APIGatewayProxyEvent, Context } from 'aws-lambda'
 
-import type { DbAuthResponse } from '@redwoodjs/auth-dbauth-api'
-import dbAuthApi from '@redwoodjs/auth-dbauth-api'
+import type { DbAuthResponse } from '@cedarjs/auth-dbauth-api'
+import dbAuthApi from '@cedarjs/auth-dbauth-api'
 // ^^ above package is still CJS, and named exports aren't supported in import statements
-const { dbAuthSession, cookieName: cookieNameCreator } = dbAuthApi
-import type { GetCurrentUser } from '@redwoodjs/graphql-server'
-import { MiddlewareResponse } from '@redwoodjs/web/middleware'
-import type { Middleware, MiddlewareRequest } from '@redwoodjs/web/middleware'
+const { dbAuthSession, generateCookieName } = dbAuthApi
+import type { GetCurrentUser } from '@cedarjs/graphql-server'
+import { MiddlewareResponse } from '@cedarjs/web/middleware'
+import type { Middleware, MiddlewareRequest } from '@cedarjs/web/middleware'
 
 import { defaultGetRoles } from './defaultGetRoles.js'
 
@@ -117,7 +117,7 @@ export const initDbAuthMiddleware = ({
 
       // Note we have to use ".unset" and not ".clear"
       // because we want to remove these cookies from the browser
-      res.cookies.unset(cookieNameCreator(cookieName))
+      res.cookies.unset(generateCookieName(cookieName))
       res.cookies.unset('auth-provider')
     }
 
@@ -148,7 +148,7 @@ async function validateSession({
     // be thrown
     decryptedSession = dbAuthSession(
       req as Request,
-      cookieNameCreator(cookieName),
+      generateCookieName(cookieName),
     )
   } catch (e) {
     if (process.env.NODE_ENV === 'development') {

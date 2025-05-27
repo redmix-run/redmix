@@ -1,5 +1,5 @@
 import type { FC } from 'react'
-import { Link, routes } from '@redwoodjs/router'
+import { Link, routes } from '@cedarjs/router'
 
 const ShowcaseLayout: FC = ({ children }) => {
   return (

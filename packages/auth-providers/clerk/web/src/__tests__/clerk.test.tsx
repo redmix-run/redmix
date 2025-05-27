@@ -7,7 +7,7 @@ import type {
 import { renderHook, act } from '@testing-library/react'
 import { vi, expect, describe, it, beforeAll, beforeEach } from 'vitest'
 
-import type { CurrentUser } from '@redwoodjs/auth'
+import type { CurrentUser } from '@cedarjs/auth'
 
 import { createAuth } from '../clerk.js'
 

@@ -1,17 +1,18 @@
-import path from 'path'
+import { createRequire } from 'node:module'
+import path from 'node:path'
 
 import execa from 'execa'
 import fs from 'fs-extra'
 import { Listr } from 'listr2'
 
-import { writeFile } from '@redwoodjs/cli-helpers'
-import { getConfig, getConfigPath, getPaths } from '@redwoodjs/project-config'
-import { errorTelemetry } from '@redwoodjs/telemetry'
+import { writeFile } from '@cedarjs/cli-helpers'
+import { getConfig, getConfigPath, getPaths } from '@cedarjs/project-config'
+import { errorTelemetry } from '@cedarjs/telemetry'
 
-import c from '../../../lib/colors'
+import c from '../../../lib/colors.js'
 
 export async function handler({ force }) {
-  const TEMPLATE_DIR = path.join(__dirname, 'templates')
+  const TEMPLATE_DIR = path.join(import.meta.dirname, 'templates')
 
   let dockerfileTemplateContent = fs.readFileSync(
     path.resolve(TEMPLATE_DIR, 'Dockerfile'),
@@ -69,16 +70,16 @@ export async function handler({ force }) {
         },
       },
       {
-        title: 'Adding @redwoodjs/api-server and @redwoodjs/web-server...',
+        title: 'Adding @cedarjs/api-server and @cedarjs/web-server...',
         task: async (_ctx, task) => {
-          const apiServerPackageName = '@redwoodjs/api-server'
+          const apiServerPackageName = '@cedarjs/api-server'
           const { dependencies: apiDependencies } = fs.readJSONSync(
             path.join(getPaths().api.base, 'package.json'),
           )
           const hasApiServerPackage =
             Object.keys(apiDependencies).includes(apiServerPackageName)
 
-          const webServerPackageName = '@redwoodjs/web-server'
+          const webServerPackageName = '@cedarjs/web-server'
           const { dependencies: webDependencies } = fs.readJSONSync(
             path.join(getPaths().web.base, 'package.json'),
           )
@@ -284,7 +285,8 @@ export async function handler({ force }) {
 }
 
 export async function getVersionOfRedwoodPackageToInstall(module) {
-  const packageJsonPath = require.resolve('@redwoodjs/cli/package.json', {
+  const createdRequire = createRequire(import.meta.url)
+  const packageJsonPath = createdRequire.resolve('@cedarjs/cli/package.json', {
     paths: [getPaths().base],
   })
   let { version } = fs.readJSONSync(packageJsonPath)

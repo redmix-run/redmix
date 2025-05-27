@@ -7,9 +7,9 @@ import { vi, describe, beforeAll, test, expect } from 'vitest'
 // Load mocks
 import '../../../../lib/test'
 
-import { getDefaultArgs } from '../../../../lib'
-import { yargsDefaults as defaults } from '../../helpers'
-import * as scaffold from '../scaffold'
+import { getDefaultArgs } from '../../../../lib/index.js'
+import { getYargsDefaults } from '../../yargsCommandHelpers.js'
+import * as scaffoldHandler from '../scaffoldHandler.js'
 
 vi.mock('fs', async () => ({ default: (await import('memfs')).fs }))
 vi.mock('execa')
@@ -19,8 +19,8 @@ describe('in javascript (default) mode', () => {
 
   beforeAll(async () => {
     vol.fromJSON({ 'redwood.toml': '' }, '/')
-    files = await scaffold.files({
-      ...getDefaultArgs(defaults),
+    files = await scaffoldHandler.files({
+      ...getDefaultArgs(getYargsDefaults()),
       model: 'Post',
       tests: true,
       nestScaffoldByModel: false,
@@ -184,7 +184,10 @@ describe('in javascript (default) mode', () => {
 
   test('creates a single-word name routes', async () => {
     expect(
-      await scaffold.routes({ model: 'Post', nestScaffoldByModel: false }),
+      await scaffoldHandler.routes({
+        model: 'Post',
+        nestScaffoldByModel: false,
+      }),
     ).toEqual([
       '<Route path="/posts/new" page={NewPostPage} name="newPost" />',
       '<Route path="/posts/{id:Int}/edit" page={EditPostPage} name="editPost" />',
@@ -195,7 +198,7 @@ describe('in javascript (default) mode', () => {
 
   test('creates a multi-word name routes', async () => {
     expect(
-      await scaffold.routes({
+      await scaffoldHandler.routes({
         model: 'UserProfile',
         nestScaffoldByModel: false,
       }),
@@ -210,7 +213,7 @@ describe('in javascript (default) mode', () => {
   // GraphQL queries
 
   test('the GraphQL in the index query does not contain object types', async () => {
-    const userProfileFiles = await scaffold.files({
+    const userProfileFiles = await scaffoldHandler.files({
       model: 'UserProfile',
       tests: false,
       nestScaffoldByModel: false,
@@ -227,7 +230,7 @@ describe('in javascript (default) mode', () => {
   })
 
   test('the GraphQL in the show query does not contain object types', async () => {
-    const userProfileFiles = await scaffold.files({
+    const userProfileFiles = await scaffoldHandler.files({
       model: 'UserProfile',
       tests: false,
       nestScaffoldByModel: false,
@@ -244,7 +247,7 @@ describe('in javascript (default) mode', () => {
   })
 
   test('the GraphQL in the edit query does not contain object types', async () => {
-    const userProfileFiles = await scaffold.files({
+    const userProfileFiles = await scaffoldHandler.files({
       model: 'UserProfile',
       tests: false,
       nestScaffoldByModel: false,
@@ -263,7 +266,7 @@ describe('in javascript (default) mode', () => {
   // Foreign key casting
 
   test('creates a new component with int foreign keys converted in onSave', async () => {
-    const foreignKeyFiles = await scaffold.files({
+    const foreignKeyFiles = await scaffoldHandler.files({
       model: 'UserProfile',
       tests: false,
       nestScaffoldByModel: false,
@@ -279,7 +282,7 @@ describe('in javascript (default) mode', () => {
   })
 
   test('creates an edit component with int foreign keys converted in onSave', async () => {
-    const foreignKeyFiles = await scaffold.files({
+    const foreignKeyFiles = await scaffoldHandler.files({
       model: 'UserProfile',
       tests: false,
       nestScaffoldByModel: false,
@@ -299,8 +302,8 @@ describe('in typescript mode', () => {
   let tsFiles
 
   beforeAll(async () => {
-    tsFiles = await scaffold.files({
-      ...getDefaultArgs(defaults),
+    tsFiles = await scaffoldHandler.files({
+      ...getDefaultArgs(getYargsDefaults()),
       model: 'Post',
       typescript: true,
       tests: true,
@@ -466,7 +469,10 @@ describe('in typescript mode', () => {
 
   test('creates a single-word name routes', async () => {
     expect(
-      await scaffold.routes({ model: 'Post', nestScaffoldByModel: false }),
+      await scaffoldHandler.routes({
+        model: 'Post',
+        nestScaffoldByModel: false,
+      }),
     ).toEqual([
       '<Route path="/posts/new" page={NewPostPage} name="newPost" />',
       '<Route path="/posts/{id:Int}/edit" page={EditPostPage} name="editPost" />',
@@ -477,7 +483,7 @@ describe('in typescript mode', () => {
 
   test('creates a multi-word name routes', async () => {
     expect(
-      await scaffold.routes({
+      await scaffoldHandler.routes({
         model: 'UserProfile',
         nestScaffoldByModel: false,
       }),
@@ -492,7 +498,7 @@ describe('in typescript mode', () => {
   // GraphQL queries
 
   test('the GraphQL in the index query does not contain object types', async () => {
-    const userProfileFiles = await scaffold.files({
+    const userProfileFiles = await scaffoldHandler.files({
       model: 'UserProfile',
       tests: false,
       nestScaffoldByModel: false,
@@ -509,7 +515,7 @@ describe('in typescript mode', () => {
   })
 
   test('the GraphQL in the show query does not contain object types', async () => {
-    const userProfileFiles = await scaffold.files({
+    const userProfileFiles = await scaffoldHandler.files({
       model: 'UserProfile',
       tests: false,
       nestScaffoldByModel: false,
@@ -526,7 +532,7 @@ describe('in typescript mode', () => {
   })
 
   test('the GraphQL in the edit query does not contain object types', async () => {
-    const userProfileFiles = await scaffold.files({
+    const userProfileFiles = await scaffoldHandler.files({
       model: 'UserProfile',
       typescript: true,
       tests: false,
@@ -546,7 +552,7 @@ describe('in typescript mode', () => {
   // Foreign key casting
 
   test('creates a new component with int foreign keys converted in onSave', async () => {
-    const foreignKeyFiles = await scaffold.files({
+    const foreignKeyFiles = await scaffoldHandler.files({
       model: 'UserProfile',
       typescript: true,
       tests: false,
@@ -563,7 +569,7 @@ describe('in typescript mode', () => {
   })
 
   test('creates an edit component with int foreign keys converted in onSave', async () => {
-    const foreignKeyFiles = await scaffold.files({
+    const foreignKeyFiles = await scaffoldHandler.files({
       model: 'UserProfile',
       typescript: true,
       tests: false,

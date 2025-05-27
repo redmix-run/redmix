@@ -2,7 +2,7 @@ type BlogLayoutProps = {
   children?: React.ReactNode
 }
 
-import { Link, NavLink, routes } from '@redwoodjs/router'
+import { Link, NavLink, routes } from '@cedarjs/router'
 
 import { useAuth } from 'src/auth'
 

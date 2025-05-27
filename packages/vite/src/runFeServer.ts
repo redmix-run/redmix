@@ -1,8 +1,8 @@
-// TODO (STREAMING) Move this to a new package called @redwoodjs/fe-server (goes
-// well in naming with @redwoodjs/api-server)
-// Only things used during dev can be in @redwoodjs/vite. Everything else has
+// TODO (STREAMING) Move this to a new package called @cedarjs/fe-server (goes
+// well in naming with @cedarjs/api-server)
+// Only things used during dev can be in @cedarjs/vite. Everything else has
 // to go in fe-server
-// UPDATE: We decided to name the package @redwoodjs/web-server instead of
+// UPDATE: We decided to name the package @cedarjs/web-server instead of
 // fe-server. And it's already created, but this hasn't been moved over yet.
 
 import path from 'node:path'
@@ -15,13 +15,10 @@ import type { HTTPMethod } from 'find-my-way'
 import { createProxyMiddleware } from 'http-proxy-middleware'
 import type { Manifest as ViteBuildManifest } from 'vite'
 
-import { getConfig, getPaths } from '@redwoodjs/project-config'
-import { getRscStylesheetLinkGenerator } from '@redwoodjs/router/rscCss'
-import {
-  createPerRequestMap,
-  createServerStorage,
-} from '@redwoodjs/server-store'
-import type { Middleware } from '@redwoodjs/web/dist/server/middleware'
+import { getConfig, getPaths } from '@cedarjs/project-config'
+import { getRscStylesheetLinkGenerator } from '@cedarjs/router/rscCss'
+import { createPerRequestMap, createServerStorage } from '@cedarjs/server-store'
+import type { Middleware } from '@cedarjs/web/dist/server/middleware'
 
 import { registerFwGlobalsAndShims } from './lib/registerFwGlobalsAndShims.js'
 import { invoke } from './middleware/invokeMiddleware.js'

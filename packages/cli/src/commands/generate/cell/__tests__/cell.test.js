@@ -5,9 +5,9 @@ import { vi, describe, it, expect, test, beforeAll } from 'vitest'
 
 // Load mocks
 import '../../../../lib/test'
-import * as cell from '../cell'
+import * as cellHandler from '../cellHandler.js'
 
-vi.mock('@redwoodjs/structure', () => {
+vi.mock('@cedarjs/structure', () => {
   return {
     getProject: () => ({
       cells: [{ queryOperationName: 'AlreadyDefinedQueryName' }],
@@ -19,7 +19,7 @@ describe('Single word files', () => {
   let singleWordFiles
 
   beforeAll(async () => {
-    singleWordFiles = await cell.files({
+    singleWordFiles = await cellHandler.files({
       name: 'User',
       tests: true,
       stories: true,
@@ -75,7 +75,7 @@ describe('Single word files', () => {
 // Single Word Scenario: User
 
 test('trims Cell from end of name', async () => {
-  const files = await cell.files({
+  const files = await cellHandler.files({
     name: 'BazingaCell',
     tests: true,
     stories: true,
@@ -98,7 +98,7 @@ describe('Multiword files', () => {
   let multiWordFiles
 
   beforeAll(async () => {
-    multiWordFiles = await cell.files({
+    multiWordFiles = await cellHandler.files({
       name: 'UserProfile',
       tests: true,
       stories: true,
@@ -152,7 +152,7 @@ describe('Snake case words', () => {
   let snakeCaseWordFiles
 
   beforeAll(async () => {
-    snakeCaseWordFiles = await cell.files({
+    snakeCaseWordFiles = await cellHandler.files({
       name: 'user_profile',
       tests: true,
       stories: true,
@@ -205,7 +205,7 @@ describe('Snake case words', () => {
 describe('Kebab case words', () => {
   let kebabCaseWordFiles
   beforeAll(async () => {
-    kebabCaseWordFiles = await cell.files({
+    kebabCaseWordFiles = await cellHandler.files({
       name: 'user-profile',
       tests: true,
       stories: true,
@@ -259,7 +259,7 @@ describe('camelCase words', () => {
   let camelCaseWordFiles
 
   beforeAll(async () => {
-    camelCaseWordFiles = await cell.files({
+    camelCaseWordFiles = await cellHandler.files({
       name: 'userProfile',
       tests: true,
       stories: true,
@@ -310,7 +310,7 @@ describe('camelCase words', () => {
 })
 
 test("doesn't include test file when --tests is set to false", async () => {
-  const withoutTestFiles = await cell.files({
+  const withoutTestFiles = await cellHandler.files({
     name: 'User',
     tests: false,
     stories: true,
@@ -329,7 +329,7 @@ test("doesn't include test file when --tests is set to false", async () => {
 })
 
 test("doesn't include storybook file when --stories is set to false", async () => {
-  const withoutStoryFiles = await cell.files({
+  const withoutStoryFiles = await cellHandler.files({
     name: 'User',
     tests: true,
     stories: false,
@@ -348,7 +348,7 @@ test("doesn't include storybook file when --stories is set to false", async () =
 })
 
 test("doesn't include storybook and test files when --stories and --tests is set to false", async () => {
-  const withoutTestAndStoryFiles = await cell.files({
+  const withoutTestAndStoryFiles = await cellHandler.files({
     name: 'User',
     tests: false,
     stories: false,
@@ -361,7 +361,7 @@ test("doesn't include storybook and test files when --stories and --tests is set
 })
 
 test('generates list cells if list flag passed in', async () => {
-  const listFlagPassedIn = await cell.files({
+  const listFlagPassedIn = await cellHandler.files({
     name: 'Member',
     tests: true,
     stories: true,
@@ -400,7 +400,7 @@ test('generates list cells if list flag passed in', async () => {
 })
 
 test('generates list cells if name is plural', async () => {
-  const listInferredFromName = await cell.files({
+  const listInferredFromName = await cellHandler.files({
     name: 'Members',
     tests: true,
     stories: true,
@@ -435,7 +435,7 @@ test('generates list cells if name is plural', async () => {
 })
 
 test('TypeScript: generates list cells if list flag passed in', async () => {
-  const findDataByIdTypeScript = await cell.files({
+  const findDataByIdTypeScript = await cellHandler.files({
     name: 'Bazinga',
     tests: true,
     stories: true,
@@ -474,7 +474,7 @@ test('TypeScript: generates list cells if list flag passed in', async () => {
 })
 
 test('TypeScript: generates list cells if name is plural', async () => {
-  const listInferredFromNameTypeScript = await cell.files({
+  const listInferredFromNameTypeScript = await cellHandler.files({
     name: 'Members',
     tests: true,
     stories: true,
@@ -510,7 +510,7 @@ test('TypeScript: generates list cells if name is plural', async () => {
 })
 
 test('"equipment" with list flag', async () => {
-  const modelPluralMatchesSingularWithList = await cell.files({
+  const modelPluralMatchesSingularWithList = await cellHandler.files({
     name: 'equipment',
     tests: true,
     stories: true,
@@ -546,7 +546,7 @@ test('"equipment" with list flag', async () => {
 })
 
 test('"equipment" withOUT list flag should find equipment by id', async () => {
-  const modelPluralMatchesSingularWithoutList = await cell.files({
+  const modelPluralMatchesSingularWithoutList = await cellHandler.files({
     name: 'equipment',
     tests: true,
     stories: true,
@@ -582,7 +582,7 @@ test('"equipment" withOUT list flag should find equipment by id', async () => {
 })
 
 test('generates a cell with a string primary id key', async () => {
-  const modelWithStringId = await cell.files({
+  const modelWithStringId = await cellHandler.files({
     name: 'address',
     tests: true,
     stories: true,
@@ -621,7 +621,7 @@ test('generates a cell with a string primary id key', async () => {
 })
 
 test('generates list a cell with a string primary id keys', async () => {
-  const modelWithStringIdList = await cell.files({
+  const modelWithStringIdList = await cellHandler.files({
     name: 'address',
     tests: true,
     stories: true,
@@ -661,7 +661,7 @@ test('generates list a cell with a string primary id keys', async () => {
 
 describe('Custom query names', () => {
   test('Accepts custom query names', async () => {
-    const generatedFiles = await cell.files({
+    const generatedFiles = await cellHandler.files({
       name: 'Clues',
       tests: false,
       stories: false,
@@ -677,7 +677,7 @@ describe('Custom query names', () => {
 
   test('Throws if a duplicated query name is used', async () => {
     await expect(
-      cell.files({
+      cellHandler.files({
         name: 'Clues',
         tests: false,
         stories: false,
@@ -695,7 +695,7 @@ describe('Custom Id Field files', () => {
 
   describe('Single cell', () => {
     beforeAll(async () => {
-      customIdFieldFiles = await cell.files({
+      customIdFieldFiles = await cellHandler.files({
         name: 'CustomIdField',
         tests: true,
         stories: true,
@@ -750,7 +750,7 @@ describe('Custom Id Field files', () => {
 
   describe('List cell', () => {
     beforeAll(async () => {
-      customIdFieldListFiles = await cell.files({
+      customIdFieldListFiles = await cellHandler.files({
         name: 'CustomIdField',
         tests: true,
         stories: true,

@@ -3,17 +3,17 @@ import { argv } from 'process'
 import concurrently from 'concurrently'
 import fs from 'fs-extra'
 
-import { recordTelemetryAttributes } from '@redwoodjs/cli-helpers'
-import { shutdownPort } from '@redwoodjs/internal/dist/dev'
-import { getConfig, getConfigPath } from '@redwoodjs/project-config'
-import { errorTelemetry } from '@redwoodjs/telemetry'
+import { recordTelemetryAttributes } from '@cedarjs/cli-helpers'
+import { shutdownPort } from '@cedarjs/internal/dist/dev'
+import { getConfig, getConfigPath } from '@cedarjs/project-config'
+import { errorTelemetry } from '@cedarjs/telemetry'
 
-import { getPaths } from '../lib'
-import c from '../lib/colors'
-import { exitWithError } from '../lib/exit'
-import { generatePrismaClient } from '../lib/generatePrismaClient'
-import { getFreePort } from '../lib/ports'
-import { serverFileExists } from '../lib/project'
+import c from '../lib/colors.js'
+import { exitWithError } from '../lib/exit.js'
+import { generatePrismaClient } from '../lib/generatePrismaClient.js'
+import { getPaths } from '../lib/index.js'
+import { getFreePort } from '../lib/ports.js'
+import { serverFileExists } from '../lib/project.js'
 
 const defaultApiDebugPort = 18911
 
@@ -186,7 +186,9 @@ export const handler = async ({
         `    --port ${apiAvailablePort}`,
         `    ${getApiDebugFlag()}`,
         '    | rw-log-formatter"',
-      ].join(' '),
+      ]
+        .join(' ')
+        .replace(/\s+/g, ' '),
       env: {
         NODE_ENV: 'development',
         NODE_OPTIONS: getDevNodeOptions(),

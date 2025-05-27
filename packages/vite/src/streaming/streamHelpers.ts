@@ -9,13 +9,13 @@ import type {
 import type { default as RDServerModule } from 'react-dom/server.edge'
 import type { ViteDevServer } from 'vite'
 
-import type { ServerAuthState } from '@redwoodjs/auth/dist/AuthProvider/ServerAuthProvider.js'
-import type * as ServerAuthProviderModule from '@redwoodjs/auth/dist/AuthProvider/ServerAuthProvider.js'
-import { getConfig, getPaths } from '@redwoodjs/project-config'
-import type * as LocationModule from '@redwoodjs/router/location'
-import type { TagDescriptor } from '@redwoodjs/web'
-import type { MiddlewareResponse } from '@redwoodjs/web/middleware'
-import type * as ServerInjectModule from '@redwoodjs/web/serverInject'
+import type { ServerAuthState } from '@cedarjs/auth/dist/AuthProvider/ServerAuthProvider.js'
+import type * as ServerAuthProviderModule from '@cedarjs/auth/dist/AuthProvider/ServerAuthProvider.js'
+import { getConfig, getPaths } from '@cedarjs/project-config'
+import type * as LocationModule from '@cedarjs/router/location'
+import type { TagDescriptor } from '@cedarjs/web'
+import type { MiddlewareResponse } from '@cedarjs/web/middleware'
+import type * as ServerInjectModule from '@cedarjs/web/serverInject'
 
 import type { ServerEntryType } from '../types.js'
 import { makeFilePath } from '../utils.js'
@@ -113,7 +113,7 @@ export async function reactRenderToStreamResponse(
     ServerInjectedHtml,
   }: ServerInjectType = rscEnabled
     ? await importModule('__rwjs__server_inject', !!viteDevServer)
-    : await import('@redwoodjs/web/serverInject')
+    : await import('@cedarjs/web/serverInject')
   const { renderToString }: RDServerType = rscEnabled
     ? await importModule('rd-server', !!viteDevServer)
     : await import('react-dom/server')
@@ -144,10 +144,10 @@ export async function reactRenderToStreamResponse(
 
   const { ServerAuthProvider }: ServerAuthProviderType = rscEnabled
     ? await importModule('__rwjs__server_auth_provider', !!viteDevServer)
-    : await import('@redwoodjs/auth/dist/AuthProvider/ServerAuthProvider.js')
+    : await import('@cedarjs/auth/dist/AuthProvider/ServerAuthProvider.js')
   const { LocationProvider }: LocationType = rscEnabled
     ? await importModule('__rwjs__location', !!viteDevServer)
-    : await import('@redwoodjs/router/location')
+    : await import('@cedarjs/router/location')
 
   const renderRoot = (url: URL) => {
     return createElement(
@@ -310,15 +310,15 @@ async function importModule(
       const loadedMod = await import('react')
       return loadedMod.default
     } else if (mod === '__rwjs__location') {
-      const loadedMod = await import('@redwoodjs/router/location')
+      const loadedMod = await import('@cedarjs/router/location')
       return loadedMod
     } else if (mod === '__rwjs__server_auth_provider') {
       const loadedMod = await import(
-        '@redwoodjs/auth/dist/AuthProvider/ServerAuthProvider.js'
+        '@cedarjs/auth/dist/AuthProvider/ServerAuthProvider.js'
       )
       return loadedMod
     } else if (mod === '__rwjs__server_inject') {
-      const loadedMod = await import('@redwoodjs/web/serverInject')
+      const loadedMod = await import('@cedarjs/web/serverInject')
       return loadedMod
     }
   } else {

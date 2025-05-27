@@ -1,6 +1,16 @@
 globalThis.__dirname = __dirname
 
-vi.mock('fs-extra')
+import { vol, fs as memfs } from 'memfs'
+import { vi, beforeEach, afterEach, test, expect } from 'vitest'
+
+import '../../../../lib/test'
+
+import { files } from '../../../generate/cell/cellHandler.js'
+import { tasks } from '../cellHandler.js'
+
+vi.mock('node:fs', async () => ({ ...memfs, default: memfs }))
+vi.mock('fs-extra', async () => ({ ...memfs, default: memfs }))
+
 vi.mock('../../../../lib', async (importOriginal) => {
   const originalLib = await importOriginal()
   return {
@@ -9,22 +19,13 @@ vi.mock('../../../../lib', async (importOriginal) => {
   }
 })
 
-vi.mock('@redwoodjs/structure', () => {
+vi.mock('@cedarjs/structure', () => {
   return {
     getProject: () => ({
       cells: [{ queryOperationName: undefined }],
     }),
   }
 })
-
-import fs from 'fs-extra'
-import { vol } from 'memfs'
-import { vi, beforeEach, afterEach, test, expect } from 'vitest'
-
-import '../../../../lib/test'
-
-import { files } from '../../../generate/cell/cell'
-import { tasks } from '../cell'
 
 beforeEach(() => {
   vi.spyOn(console, 'info').mockImplementation(() => {})
@@ -39,7 +40,9 @@ afterEach(() => {
 
 test('destroys cell files', async () => {
   vol.fromJSON(await files({ name: 'User' }))
-  const unlinkSpy = vi.spyOn(fs, 'unlinkSync')
+
+  const unlinkSpy = vi.spyOn(memfs, 'unlinkSync')
+
   const t = tasks({
     componentName: 'cell',
     filesFn: files,
@@ -56,7 +59,7 @@ test('destroys cell files', async () => {
 
 test('destroys cell files with stories and tests', async () => {
   vol.fromJSON(await files({ name: 'User', stories: true, tests: true }))
-  const unlinkSpy = vi.spyOn(fs, 'unlinkSync')
+  const unlinkSpy = vi.spyOn(memfs, 'unlinkSync')
   const t = tasks({
     componentName: 'cell',
     filesFn: files,

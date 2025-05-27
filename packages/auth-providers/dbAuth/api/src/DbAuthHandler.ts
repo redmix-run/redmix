@@ -10,26 +10,26 @@ import type {
 import type {
   AuthenticationResponseJSON,
   RegistrationResponseJSON,
-} from '@simplewebauthn/typescript-types'
+} from '@simplewebauthn/types'
 import type { APIGatewayProxyEvent, Context as LambdaContext } from 'aws-lambda'
 import base64url from 'base64url'
 import md5 from 'md5'
 import { v4 as uuidv4 } from 'uuid'
 
-import type { CorsConfig, CorsContext, PartialRequest } from '@redwoodjs/api'
+import type { CorsConfig, CorsContext, PartialRequest } from '@cedarjs/api'
 import {
   createCorsContext,
   isFetchApiRequest,
   normalizeRequest,
-} from '@redwoodjs/api'
+} from '@cedarjs/api'
 
 import * as DbAuthError from './errors'
 import {
-  cookieName,
   decryptSession,
   encryptSession,
   extractCookie,
   extractHashingOptions,
+  generateCookieName,
   getDbAuthResponseBuilder,
   getSession,
   hashPassword,
@@ -414,7 +414,7 @@ export class DbAuthHandler<
     deleteHeaders.append(
       'set-cookie',
       [
-        `${cookieName(this.options.cookie?.name)}=`,
+        `${generateCookieName(this.options.cookie?.name)}=`,
         ...this._cookieAttributes({ expires: 'now' }),
       ].join(';'),
     )
@@ -948,7 +948,7 @@ export class DbAuthHandler<
       rpID: webAuthnOptions.domain,
     }
 
-    const authOptions = generateAuthenticationOptions(someOptions)
+    const authOptions = await generateAuthenticationOptions(someOptions)
 
     await this._saveChallenge(
       user[this.options.authFields.id],
@@ -994,7 +994,7 @@ export class DbAuthHandler<
       )
     }
 
-    const regOptions = generateRegistrationOptions(options)
+    const regOptions = await generateRegistrationOptions(options)
 
     await this._saveChallenge(
       user[this.options.authFields.id],
@@ -1245,7 +1245,7 @@ export class DbAuthHandler<
     const session = JSON.stringify(data) + ';' + csrfToken
     const encrypted = encryptSession(session)
     const sessionCookieString = [
-      `${cookieName(this.options.cookie?.name)}=${encrypted}`,
+      `${generateCookieName(this.options.cookie?.name)}=${encrypted}`,
       ...this._cookieAttributes({ expires: this.sessionExpiresDate }),
     ].join(';')
 

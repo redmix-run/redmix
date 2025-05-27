@@ -2,7 +2,7 @@ import { generate } from '@graphql-codegen/cli'
 import type { CodegenConfig } from '@graphql-codegen/cli'
 import { addTypenameSelectionDocumentTransform } from '@graphql-codegen/client-preset'
 
-import { getConfig, getPaths } from '@redwoodjs/project-config'
+import { getConfig, getPaths } from '@cedarjs/project-config'
 
 import {
   trustedDocumentsStore,

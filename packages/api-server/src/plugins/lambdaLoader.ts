@@ -11,7 +11,7 @@ import type {
 } from 'fastify'
 import { escape } from 'lodash'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@cedarjs/project-config'
 
 import { requestHandler } from '../requestHandlers/awsLambdaFastify'
 
@@ -74,8 +74,8 @@ export const loadFunctionsFromDist = async (
   await setLambdaFunctions(serverFunctions)
 }
 
-// NOTE: Copied from @redwoodjs/internal/dist/files to avoid depending on @redwoodjs/internal.
-// import { findApiDistFunctions } from '@redwoodjs/internal/dist/files'
+// NOTE: Copied from @cedarjs/internal/dist/files to avoid depending on @cedarjs/internal.
+// import { findApiDistFunctions } from '@cedarjs/internal/dist/files'
 function findApiDistFunctions(
   cwd: string = getPaths().api.base,
   options: FastGlobOptions = {},

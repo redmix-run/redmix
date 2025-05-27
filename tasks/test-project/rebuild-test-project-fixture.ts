@@ -5,17 +5,18 @@ import path from 'node:path'
 import chalk from 'chalk'
 import fse from 'fs-extra'
 import { rimraf } from 'rimraf'
+import semver from 'semver'
 import { hideBin } from 'yargs/helpers'
 import yargs from 'yargs/yargs'
 
-import { RedwoodTUI, ReactiveTUIContent, RedwoodStyling } from '@redwoodjs/tui'
+import { RedwoodTUI, ReactiveTUIContent, RedwoodStyling } from '@cedarjs/tui'
 
 import {
   addFrameworkDepsToProject,
   copyFrameworkPackages,
 } from './frameworkLinking'
 import { webTasks, apiTasks } from './tui-tasks'
-import { isAwaitable } from './typing'
+import { isAwaitable, isTuiError } from './typing'
 import type { TuiTaskDef } from './typing'
 import {
   getExecaOptions as utilGetExecaOptions,
@@ -23,6 +24,21 @@ import {
   ExecaError,
   exec,
 } from './util'
+
+// If the current Node.js version is outside of the recommended range the Cedar
+// setup command will pause and ask the user if they want to continue. This
+// hangs this script without any information to the user that tries to rebuild
+// the test-project. It's better to fail early so the correct node version can
+// be installed.
+if (
+  semver.lt(process.version, '20.0.0') ||
+  semver.gte(process.version, '21.0.0')
+) {
+  console.error('Unsupported Node.js version')
+  console.error('  You are using:', process.version)
+  console.error('  Supported version:', 'v20')
+  process.exit(1)
+}
 
 const args = yargs(hideBin(process.argv))
   .usage('Usage: $0 [option]')
@@ -54,7 +70,7 @@ const OUTPUT_PROJECT_PATH = resumePath
   ? /* path.resolve(String(resumePath)) */ resumePath
   : path.join(
       os.tmpdir(),
-      'redwood-test-project',
+      'cedar-test-project',
       // ":" is problematic with paths
       new Date().toISOString().split(':').join('-'),
     )
@@ -140,13 +156,16 @@ async function tuiTask({ step, title, content, task, parent }: TuiTaskDef) {
         'stdout:\n' + e.stdout + '\n\n' + 'stderr:\n' + e.stderr,
       )
     } else {
+      const message = isTuiError(e) ? e.message : ''
+
       tui.displayError(
         'Failed ' + title.toLowerCase().replace('...', ''),
-        e.message,
+        message || '',
       )
     }
 
-    process.exit(e.exitCode)
+    const exitCode = isTuiError(e) ? e.exitCode : undefined
+    process.exit(exitCode)
   }
 
   if (isAwaitable(promise)) {
@@ -197,11 +216,8 @@ async function tuiTask({ step, title, content, task, parent }: TuiTaskDef) {
 /**
  * Function that returns a string to show when skipping the task, or just
  * true|false to indicate whether the task should be skipped or not.
- *
- * @param {string} startStep
- * @param {string} currentStep
  */
-function skipFn(startStep, currentStep) {
+function skipFn(startStep: string, currentStep: string) {
   const startStepNrs = startStep.split('.').map((s) => parseInt(s, 10))
   const currentStepNrs = currentStep.split('.').map((s) => parseInt(s, 10))
 
@@ -237,7 +253,7 @@ if (resumePath && !fs.existsSync(path.join(resumePath, 'redwood.toml'))) {
 }
 
 const createProject = () => {
-  const cmd = `yarn node ./packages/create-redwood-app/dist/create-redwood-app.js ${OUTPUT_PROJECT_PATH}`
+  const cmd = `yarn node ./packages/create-cedar-app/dist/create-cedar-app.js ${OUTPUT_PROJECT_PATH}`
 
   const subprocess = exec(
     cmd,
@@ -279,9 +295,11 @@ async function runCommand() {
     task: createProject,
   })
 
+  // TODO: See if this is needed now with tarsync. Maybe just keep the
+  // build:clean part (and/or combine it with the tarsync)
   await tuiTask({
     step: 1,
-    title: '[link] Building Redwood framework',
+    title: '[link] Building Cedar framework',
     content: 'yarn build:clean && yarn build',
     task: async () => {
       return exec(
@@ -292,6 +310,7 @@ async function runCommand() {
     },
   })
 
+  // TODO: See if this is needed now with tarsync
   await tuiTask({
     step: 2,
     title: '[link] Adding framework dependencies to project',
@@ -309,8 +328,15 @@ async function runCommand() {
     step: 3,
     title: 'Installing node_modules',
     content: 'yarn install',
-    task: () => {
-      return exec('yarn install', getExecaOptions(OUTPUT_PROJECT_PATH))
+    task: async () => {
+      // TODO: See if this is needed now with tarsync
+      await exec('yarn install', getExecaOptions(OUTPUT_PROJECT_PATH))
+
+      // TODO: Now that I've added this, I wonder what other steps I can remove
+      return exec(
+        'yarn rwfw project:tarsync',
+        getExecaOptions(OUTPUT_PROJECT_PATH),
+      )
     },
   })
 
@@ -389,7 +415,7 @@ async function runCommand() {
   await tuiTask({
     step: 9,
     title: 'Add scripts',
-    task: () => {
+    task: async () => {
       const nestedPath = path.join(OUTPUT_PROJECT_PATH, 'scripts', 'one', 'two')
 
       fs.mkdirSync(nestedPath, { recursive: true })
@@ -399,6 +425,57 @@ async function runCommand() {
           "  console.log('Hello from myNestedScript.ts')\n" +
           '}\n\n',
       )
+
+      await exec(
+        'yarn rw g script i/am/nested',
+        [],
+        getExecaOptions(OUTPUT_PROJECT_PATH),
+      )
+
+      // Verify that the scripts are added and included in the list of
+      // available scripts
+      const list = await exec(
+        'yarn rw exec',
+        [],
+        getExecaOptions(OUTPUT_PROJECT_PATH),
+      )
+
+      if (
+        !list.stdout.includes('seed') ||
+        !list.stdout.includes('i/am/nested') ||
+        !list.stdout.includes('one/two/myNestedScript')
+      ) {
+        console.error('yarn rw exec output', list.stdout, list.stderr)
+
+        throw new Error('Scripts not included in list')
+      }
+
+      // Verify that the scripts can be executed
+      const runFromRoot = await exec(
+        'yarn rw exec one/two/myNestedScript',
+        [],
+        getExecaOptions(OUTPUT_PROJECT_PATH),
+      )
+
+      if (!runFromRoot.stdout.includes('Hello from myNestedScript')) {
+        console.error('`yarn rw exec one/two/myNestedScript` output')
+        console.error(runFromRoot.stdout, runFromRoot.stderr)
+
+        throw new Error('Script not executed successfully')
+      }
+
+      const runFromScripts = await exec(
+        'yarn rw exec one/two/myNestedScript',
+        [],
+        getExecaOptions(path.join(OUTPUT_PROJECT_PATH, 'scripts', 'one')),
+      )
+
+      if (!runFromScripts.stdout.includes('Hello from myNestedScript')) {
+        console.error('`yarn rw exec one/two/myNestedScript` output')
+        console.error(runFromRoot.stdout, runFromRoot.stderr)
+
+        throw new Error('Script not executed successfully')
+      }
     },
   })
 
@@ -466,16 +543,27 @@ async function runCommand() {
       await rimraf(`${OUTPUT_PROJECT_PATH}/yarn.lock`)
       await rimraf(`${OUTPUT_PROJECT_PATH}/step.txt`)
       await rimraf(`${OUTPUT_PROJECT_PATH}/.nx`)
+      await rimraf(`${OUTPUT_PROJECT_PATH}/tarballs`)
 
       // Copy over package.json from template, so we remove the extra dev dependencies, and rwfw postinstall script
       // that we added in "Adding framework dependencies to project"
-      await rimraf(`${OUTPUT_PROJECT_PATH}/package.json`)
-      fs.copyFileSync(
-        path.join(
-          __dirname,
-          '../../packages/create-redwood-app/templates/ts/package.json',
-        ),
+      // There's one devDep we actually do want in there though, and that's the
+      // prettier plugin for Tailwind CSS
+      const rootPackageJson = JSON.parse(
+        fs.readFileSync(path.join(OUTPUT_PROJECT_PATH, 'package.json'), 'utf8'),
+      )
+      const templateRootPackageJsonPath = path.join(
+        __dirname,
+        '../../packages/create-cedar-app/templates/ts/package.json',
+      )
+      const newRootPackageJson = JSON.parse(
+        fs.readFileSync(templateRootPackageJsonPath, 'utf8'),
+      )
+      newRootPackageJson.devDependencies['prettier-plugin-tailwindcss'] =
+        rootPackageJson.devDependencies['prettier-plugin-tailwindcss']
+      fs.writeFileSync(
         path.join(OUTPUT_PROJECT_PATH, 'package.json'),
+        JSON.stringify(newRootPackageJson, null, 2),
       )
 
       // removes existing Fixture and replaces with newly built project,

@@ -2,14 +2,15 @@ import fs from 'fs'
 import path from 'path'
 
 import type { PluginItem, PluginOptions, TransformOptions } from '@babel/core'
+import type { RegisterOptions } from '@babel/register'
 import { parseConfigFileTextToJson } from 'typescript'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@cedarjs/project-config'
+
+import pkgJson from '../package.json'
 
 import { getWebSideBabelPlugins } from './web'
 import type { Flags as WebFlags } from './web'
-
-const pkgJson = require('../package.json')
 
 export interface RegisterHookOptions {
   /**
@@ -21,25 +22,34 @@ export interface RegisterHookOptions {
   options?: WebFlags
 }
 
-interface BabelRegisterOptions extends TransformOptions {
+/** @deprecated Please use `RegisterOptions` from `@babel/register` */
+export interface BabelRegisterOptions extends TransformOptions {
   extensions?: string[]
   cache?: boolean
 }
 
-/** NOTE:
- * We do this so we still get types, but don't import babel/register
- * Importing babel/register in typescript (instead of requiring) has dire consequences..
-
-  Lets say we use the import syntax: import babelRequireHook from '@babel/register'
-  - if your import in a JS file (like we used to in the cli project) - not a problem, and it would only invoke the register function when you called babelRequireHook
-  - if you import in a TS file, the transpile process modifies it when we build the framework -
-    so it will invoke it once as soon as you import, and another time when you use babelRequireHook...
-    BUTTT!!! you won't notice it if your project is TS because by default it ignore .ts and .tsx files, but if its a JS project, it would try to transpile twice
- *
- *
- *
-**/
-export const registerBabel = (options: BabelRegisterOptions) => {
+// NOTE:
+// We do this so we still get types, but don't import babel/register
+// Importing babel/register in typescript (instead of requiring) has dire
+// consequences..
+//
+// Lets say we use the import syntax:
+// `import babelRequireHook from '@babel/register'`
+// - if you import in a JS file (like we used to in the cli project) - not a
+//   problem, and it would only invoke the register function when you called
+//   babelRequireHook
+// - if you import in a TS file, the transpile process modifies it when we build
+//   the framework – so it will invoke it once as soon as you import, and
+//   another time when you use babelRequireHook...
+//   BUTTT!!! you won't notice it if your project is TS because by default it
+//   ignores .ts and .tsx files, but if its a JS project, it would try to
+//   transpile twice
+export const registerBabel = (options: RegisterOptions) => {
+  // One of the ways you can use Babel is through the require hook. The require
+  // hook will bind itself to node's require and automatically compile files on
+  // the fly. After this `require`, all subsequent files required by node with
+  // the extensions .es6, .es, .jsx, .mjs, and .js will be transformed by Babel
+  // (unless options.extensions override the default exensions).
   require('@babel/register')(options)
 }
 
@@ -162,8 +172,8 @@ export const getPathsFromTypeScriptConfig = (
     // "src/*"
     // "$api/*"
     // "types/*"
-    // "@redwoodjs/testing"
-    if (key.match(/src\/|\$api\/\*|types\/\*|\@redwoodjs\/.*/g)) {
+    // "@cedarjs/testing"
+    if (key.match(/src\/|\$api\/\*|types\/\*|\@cedarjs\/.*/g)) {
       continue
     }
     const aliasKey = key.replace('/*', '')

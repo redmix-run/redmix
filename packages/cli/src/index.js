@@ -7,37 +7,36 @@ import fs from 'fs-extra'
 import { hideBin, Parser } from 'yargs/helpers'
 import yargs from 'yargs/yargs'
 
-import { recordTelemetryAttributes } from '@redwoodjs/cli-helpers'
-import { telemetryMiddleware } from '@redwoodjs/telemetry'
+import { loadEnvFiles, recordTelemetryAttributes } from '@cedarjs/cli-helpers'
+import { telemetryMiddleware } from '@cedarjs/telemetry'
 
-import * as buildCommand from './commands/build'
-import * as checkCommand from './commands/check'
-import * as consoleCommand from './commands/console'
-import * as deployCommand from './commands/deploy'
-import * as destroyCommand from './commands/destroy'
-import * as devCommand from './commands/dev'
-import * as execCommand from './commands/exec'
-import * as experimentalCommand from './commands/experimental'
-import * as generateCommand from './commands/generate'
-import * as infoCommand from './commands/info'
-import * as jobsCommand from './commands/jobs'
-import * as lintCommand from './commands/lint'
-import * as prerenderCommand from './commands/prerender'
-import * as prismaCommand from './commands/prisma'
-import * as recordCommand from './commands/record'
-import * as serveCommand from './commands/serve'
-import * as setupCommand from './commands/setup'
-import * as studioCommand from './commands/studio'
-import * as testCommand from './commands/test'
-import * as tstojsCommand from './commands/ts-to-js'
-import * as typeCheckCommand from './commands/type-check'
-import * as upgradeCommand from './commands/upgrade'
-import { findUp } from './lib'
-import { exitWithError } from './lib/exit'
-import { loadEnvFiles } from './lib/loadEnvFiles'
-import * as updateCheck from './lib/updateCheck'
-import { loadPlugins } from './plugin'
-import { startTelemetry, shutdownTelemetry } from './telemetry/index'
+import * as buildCommand from './commands/build.js'
+import * as checkCommand from './commands/check.js'
+import * as consoleCommand from './commands/console.js'
+import * as deployCommand from './commands/deploy.js'
+import * as destroyCommand from './commands/destroy.js'
+import * as devCommand from './commands/dev.js'
+import * as execCommand from './commands/exec.js'
+import * as experimentalCommand from './commands/experimental.js'
+import * as generateCommand from './commands/generate.js'
+import * as infoCommand from './commands/info.js'
+import * as jobsCommand from './commands/jobs.js'
+import * as lintCommand from './commands/lint.js'
+import * as prerenderCommand from './commands/prerender.js'
+import * as prismaCommand from './commands/prisma.js'
+import * as recordCommand from './commands/record.js'
+import * as serveCommand from './commands/serve.js'
+import * as setupCommand from './commands/setup.js'
+import * as studioCommand from './commands/studio.js'
+import * as testCommand from './commands/test.js'
+import * as tstojsCommand from './commands/ts-to-js.js'
+import * as typeCheckCommand from './commands/type-check.js'
+import * as upgradeCommand from './commands/upgrade.js'
+import { exitWithError } from './lib/exit.js'
+import { findUp } from './lib/index.js'
+import * as updateCheck from './lib/updateCheck.js'
+import { loadPlugins } from './plugin.js'
+import { startTelemetry, shutdownTelemetry } from './telemetry/index.js'
 
 // # Setting the CWD
 //
@@ -101,6 +100,10 @@ try {
 }
 
 process.env.RWJS_CWD = cwd
+
+if (process.cwd() !== cwd) {
+  process.chdir(cwd)
+}
 
 // Load .env.* files.
 //
@@ -227,9 +230,12 @@ async function runYargs() {
   // Load any CLI plugins
   await loadPlugins(yarg)
 
+  const pkgJson = await import('../package.json', {
+    with: { type: 'json' },
+  })
+
   // We explicitly set the version here so that it's always available
-  const pkgJson = require('../package.json')
-  yarg.version(pkgJson['version'])
+  yarg.version(pkgJson.default['version'])
 
   // Run
   await yarg.parse(process.argv.slice(2), {}, (err, _argv, output) => {

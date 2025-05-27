@@ -33,4 +33,4 @@ export {
 export * as rootSchema from './rootSchema'
 
 // Note: We re-export here for convenience and backwards compatibility
-export { context, setContext } from '@redwoodjs/context'
+export { context, setContext } from '@cedarjs/context'

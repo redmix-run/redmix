@@ -1,8 +1,8 @@
-import OgImageMiddleware from "@redwoodjs/ogimage-gen/middleware";
-import type { TagDescriptor } from '@redwoodjs/web'
+import OgImageMiddleware from "@cedarjs/ogimage-gen/middleware";
+import type { TagDescriptor } from '@cedarjs/web'
 
-import App from './App'
-import { Document } from './Document'
+import App from './App.js'
+import { Document } from './Document.js'
 
 interface Props {
   css: string[]

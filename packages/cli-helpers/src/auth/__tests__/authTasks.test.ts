@@ -3,7 +3,7 @@ vi.mock('../../lib', () => ({
 }))
 
 // mock Telemetry for CLI commands so they don't try to spawn a process
-vi.mock('@redwoodjs/telemetry', () => {
+vi.mock('@cedarjs/telemetry', () => {
   return {
     errorTelemetry: () => vi.fn(),
     timedTelemetry: () => vi.fn(),

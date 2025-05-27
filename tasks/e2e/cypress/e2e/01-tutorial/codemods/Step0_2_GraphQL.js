@@ -1,5 +1,5 @@
 export default `
-import { createGraphQLHandler } from '@redwoodjs/graphql-server'
+import { createGraphQLHandler } from '@cedarjs/graphql-server'
 
 import directives from 'src/directives/**/*.{js,ts}'
 import sdls from 'src/graphql/**/*.sdl.{js,ts}'

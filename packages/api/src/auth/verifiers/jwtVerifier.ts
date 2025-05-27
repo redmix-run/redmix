@@ -4,8 +4,8 @@ import {
   WebhookSignError,
   WebhookVerificationError,
   DEFAULT_WEBHOOK_SECRET,
-} from './common'
-import type { WebhookVerifier, VerifyOptions } from './common'
+} from './common.js'
+import type { WebhookVerifier, VerifyOptions } from './common.js'
 
 export interface JwtVerifier extends WebhookVerifier {
   type: 'jwtVerifier'

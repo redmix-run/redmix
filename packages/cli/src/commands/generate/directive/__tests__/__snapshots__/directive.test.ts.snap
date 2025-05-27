@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`creates a JavaScript validator directive > js directive 1`] = `
-"import { createValidatorDirective } from '@redwoodjs/graphql-server'
+"import { createValidatorDirective } from '@cedarjs/graphql-server'
 
 import { logger } from 'src/lib/logger'
 
@@ -43,7 +43,7 @@ export default requireAdmin
 `;
 
 exports[`creates a JavaScript validator directive > js directive test 1`] = `
-"import { mockRedwoodDirective, getDirectiveName } from '@redwoodjs/testing/api'
+"import { mockRedwoodDirective, getDirectiveName } from '@cedarjs/testing/api'
 
 import requireAdmin from './requireAdmin'
 
@@ -68,7 +68,7 @@ exports[`creates a TypeScript transformer directive > ts directive 1`] = `
 "import {
   createTransformerDirective,
   TransformerDirectiveFunc,
-} from '@redwoodjs/graphql-server'
+} from '@cedarjs/graphql-server'
 import { logger } from 'src/lib/logger'
 
 export const schema = gql\`
@@ -110,7 +110,7 @@ export default bazingaFooBar
 `;
 
 exports[`creates a TypeScript transformer directive > ts directive test 1`] = `
-"import { mockRedwoodDirective, getDirectiveName } from '@redwoodjs/testing/api'
+"import { mockRedwoodDirective, getDirectiveName } from '@cedarjs/testing/api'
 
 import bazingaFooBar from './bazingaFooBar'
 

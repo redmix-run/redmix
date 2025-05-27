@@ -26,7 +26,7 @@ We can put a link to Contact in our layout's header:
 <TabItem value="js" label="JavaScript">
 
 ```jsx title="web/src/layouts/BlogLayout/BlogLayout.jsx"
-import { Link, routes } from '@redwoodjs/router'
+import { Link, routes } from '@cedarjs/router'
 
 const BlogLayout = ({ children }) => {
   return (
@@ -63,7 +63,7 @@ export default BlogLayout
 <TabItem value="ts" label="TypeScript">
 
 ```tsx title="web/src/layouts/BlogLayout/BlogLayout.tsx"
-import { Link, routes } from '@redwoodjs/router'
+import { Link, routes } from '@cedarjs/router'
 
 type BlogLayoutProps = {
   children?: React.ReactNode
@@ -109,7 +109,7 @@ And then use the `BlogLayout` for the `ContactPage` by making sure its wrapped b
 <TabItem value="js" label="JavaScript">
 
 ```jsx title="web/src/Routes.jsx"
-import { Router, Route, Set } from '@redwoodjs/router'
+import { Router, Route, Set } from '@cedarjs/router'
 import ScaffoldLayout from 'src/layouts/ScaffoldLayout'
 import BlogLayout from 'src/layouts/BlogLayout'
 
@@ -141,7 +141,7 @@ export default Routes
 <TabItem value="ts" label="TypeScript">
 
 ```tsx title="web/src/Routes.tsx"
-import { Router, Route, Set } from '@redwoodjs/router'
+import { Router, Route, Set } from '@cedarjs/router'
 import ScaffoldLayout from 'src/layouts/ScaffoldLayout'
 import BlogLayout from 'src/layouts/BlogLayout'
 
@@ -196,9 +196,9 @@ We won't be pulling any data from the database on our Contact page so we won't c
 <TabItem value="js" label="JavaScript">
 
 ```jsx title="web/src/pages/ContactPage/ContactPage.jsx"
-import { Metadata } from '@redwoodjs/web'
+import { Metadata } from '@cedarjs/web'
 // highlight-next-line
-import { Form } from '@redwoodjs/forms'
+import { Form } from '@cedarjs/forms'
 
 const ContactPage = () => {
   return (
@@ -218,9 +218,9 @@ export default ContactPage
 <TabItem value="ts" label="TypeScript">
 
 ```tsx title="web/src/pages/ContactPage/ContactPage.tsx"
-import { Metadata } from '@redwoodjs/web'
+import { Metadata } from '@cedarjs/web'
 // highlight-next-line
-import { Form } from '@redwoodjs/forms'
+import { Form } from '@cedarjs/forms'
 
 const ContactPage = () => {
   return (
@@ -244,9 +244,9 @@ Well that was anticlimactic. You can't even see it in the browser. Let's add a f
 <TabItem value="js" label="JavaScript">
 
 ```jsx title="web/src/pages/ContactPage/ContactPage.jsx"
-import { Metadata } from '@redwoodjs/web'
+import { Metadata } from '@cedarjs/web'
 // highlight-next-line
-import { Form, TextField } from '@redwoodjs/forms'
+import { Form, TextField } from '@cedarjs/forms'
 
 const ContactPage = () => {
   return (
@@ -268,9 +268,9 @@ export default ContactPage
 <TabItem value="ts" label="TypeScript">
 
 ```tsx title="web/src/pages/ContactPage/ContactPage.tsx"
-import { Metadata } from '@redwoodjs/web'
+import { Metadata } from '@cedarjs/web'
 // highlight-next-line
-import { Form, TextField } from '@redwoodjs/forms'
+import { Form, TextField } from '@cedarjs/forms'
 
 const ContactPage = () => {
   return (
@@ -299,9 +299,9 @@ Something is showing! Still, pretty boring. How about adding a submit button?
 <TabItem value="js" label="JavaScript">
 
 ```jsx title="web/src/pages/ContactPage/ContactPage.jsx"
-import { Metadata } from '@redwoodjs/web'
+import { Metadata } from '@cedarjs/web'
 // highlight-next-line
-import { Form, TextField, Submit } from '@redwoodjs/forms'
+import { Form, TextField, Submit } from '@cedarjs/forms'
 
 const ContactPage = () => {
   return (
@@ -324,9 +324,9 @@ export default ContactPage
 <TabItem value="ts" label="TypeScript">
 
 ```tsx title="web/src/pages/ContactPage/ContactPage.tsx"
-import { Metadata } from '@redwoodjs/web'
+import { Metadata } from '@cedarjs/web'
 // highlight-next-line
-import { Form, TextField, Submit } from '@redwoodjs/forms'
+import { Form, TextField, Submit } from '@cedarjs/forms'
 
 const ContactPage = () => {
   return (
@@ -360,8 +360,8 @@ Similar to a plain HTML form we'll give `<Form>` an `onSubmit` handler. That han
 <TabItem value="js" label="JavaScript">
 
 ```jsx title="web/src/pages/ContactPage/ContactPage.jsx"
-import { Metadata } from '@redwoodjs/web'
-import { Form, TextField, Submit } from '@redwoodjs/forms'
+import { Metadata } from '@cedarjs/web'
+import { Form, TextField, Submit } from '@cedarjs/forms'
 
 const ContactPage = () => {
   // highlight-start
@@ -390,9 +390,9 @@ export default ContactPage
 <TabItem value="ts" label="TypeScript">
 
 ```tsx title="web/src/pages/ContactPage/ContactPage.tsx"
-import { Metadata } from '@redwoodjs/web'
+import { Metadata } from '@cedarjs/web'
 // highlight-next-line
-import { Form, TextField, Submit, SubmitHandler } from '@redwoodjs/forms'
+import { Form, TextField, Submit, SubmitHandler } from '@cedarjs/forms'
 
 // highlight-start
 interface FormValues {
@@ -435,9 +435,9 @@ Great! Let's turn this into a more useful form by adding a couple fields. We'll 
 <TabItem value="js" label="JavaScript">
 
 ```jsx title="web/src/pages/ContactPage/ContactPage.jsx"
-import { Metadata } from '@redwoodjs/web'
+import { Metadata } from '@cedarjs/web'
 // highlight-next-line
-import { Form, TextField, TextAreaField, Submit } from '@redwoodjs/forms'
+import { Form, TextField, TextAreaField, Submit } from '@cedarjs/forms'
 
 const ContactPage = () => {
   const onSubmit = (data) => {
@@ -467,7 +467,7 @@ export default ContactPage
 <TabItem value="ts" label="TypeScript">
 
 ```tsx title="web/src/pages/ContactPage/ContactPage.tsx"
-import { Metadata } from '@redwoodjs/web'
+import { Metadata } from '@cedarjs/web'
 // highlight-start
 import {
   Form,
@@ -475,7 +475,7 @@ import {
   TextAreaField,
   Submit,
   SubmitHandler,
-} from '@redwoodjs/forms'
+} from '@cedarjs/forms'
 // highlight-end
 
 interface FormValues {
@@ -523,8 +523,8 @@ Let's add some labels:
 <TabItem value="js" label="JavaScript">
 
 ```jsx title="web/src/pages/ContactPage/ContactPage.jsx"
-import { Metadata } from '@redwoodjs/web'
-import { Form, TextField, TextAreaField, Submit } from '@redwoodjs/forms'
+import { Metadata } from '@cedarjs/web'
+import { Form, TextField, TextAreaField, Submit } from '@cedarjs/forms'
 
 const ContactPage = () => {
   const onSubmit = (data) => {
@@ -561,14 +561,14 @@ export default ContactPage
 <TabItem value="ts" label="TypeScript">
 
 ```tsx title="web/src/pages/ContactPage/ContactPage.tsx"
-import { Metadata } from '@redwoodjs/web'
+import { Metadata } from '@cedarjs/web'
 import {
   Form,
   TextField,
   TextAreaField,
   Submit,
   SubmitHandler,
-} from '@redwoodjs/forms'
+} from '@cedarjs/forms'
 
 interface FormValues {
   name: string
@@ -725,7 +725,7 @@ Introducing `<FieldError>` (don't forget to include it in the `import` statement
 <TabItem value="js" label="JavaScript">
 
 ```jsx title="web/src/pages/ContactPage/ContactPage.jsx"
-import { Metadata } from '@redwoodjs/web'
+import { Metadata } from '@cedarjs/web'
 import {
   // highlight-next-line
   FieldError,
@@ -733,7 +733,7 @@ import {
   TextField,
   TextAreaField,
   Submit,
-} from '@redwoodjs/forms'
+} from '@cedarjs/forms'
 
 const ContactPage = () => {
   const onSubmit = (data) => {
@@ -773,7 +773,7 @@ export default ContactPage
 <TabItem value="ts" label="TypeScript">
 
 ```tsx title="web/src/pages/ContactPage/ContactPage.tsx"
-import { Metadata } from '@redwoodjs/web'
+import { Metadata } from '@cedarjs/web'
 import {
   // highlight-next-line
   FieldError,
@@ -782,7 +782,7 @@ import {
   TextAreaField,
   Submit,
   SubmitHandler,
-} from '@redwoodjs/forms'
+} from '@cedarjs/forms'
 
 interface FormValues {
   name: string
@@ -834,14 +834,14 @@ But this is just the beginning. Let's make sure folks realize this is an error m
 <TabItem value="js" label="JavaScript">
 
 ```jsx title="web/src/pages/ContactPage/ContactPage.jsx"
-import { Metadata } from '@redwoodjs/web'
+import { Metadata } from '@cedarjs/web'
 import {
   FieldError,
   Form,
   TextField,
   TextAreaField,
   Submit,
-} from '@redwoodjs/forms'
+} from '@cedarjs/forms'
 
 const ContactPage = () => {
   const onSubmit = (data) => {
@@ -881,7 +881,7 @@ export default ContactPage
 <TabItem value="ts" label="TypeScript">
 
 ```tsx title="web/src/pages/ContactPage/ContactPage.tsx"
-import { Metadata } from '@redwoodjs/web'
+import { Metadata } from '@cedarjs/web'
 import {
   FieldError,
   Form,
@@ -889,7 +889,7 @@ import {
   TextAreaField,
   Submit,
   SubmitHandler,
-} from '@redwoodjs/forms'
+} from '@cedarjs/forms'
 
 interface FormValues {
   name: string
@@ -939,14 +939,14 @@ You know what would be nice? If the input itself somehow displayed the fact that
 <TabItem value="js" label="JavaScript">
 
 ```jsx title="web/src/pages/ContactPage/ContactPage.jsx"
-import { Metadata } from '@redwoodjs/web'
+import { Metadata } from '@cedarjs/web'
 import {
   FieldError,
   Form,
   TextField,
   TextAreaField,
   Submit,
-} from '@redwoodjs/forms'
+} from '@cedarjs/forms'
 
 const ContactPage = () => {
   const onSubmit = (data) => {
@@ -998,7 +998,7 @@ export default ContactPage
 <TabItem value="ts" label="TypeScript">
 
 ```tsx title="web/src/pages/ContactPage/ContactPage.tsx"
-import { Metadata } from '@redwoodjs/web'
+import { Metadata } from '@cedarjs/web'
 import {
   FieldError,
   Form,
@@ -1006,7 +1006,7 @@ import {
   TextAreaField,
   Submit,
   SubmitHandler,
-} from '@redwoodjs/forms'
+} from '@cedarjs/forms'
 
 interface FormValues {
   name: string
@@ -1071,7 +1071,7 @@ Oooo, what if the _label_ could change as well? It can, but we'll need Redwood's
 <TabItem value="js" label="JavaScript">
 
 ```jsx title="web/src/pages/ContactPage/ContactPage.jsx"
-import { Metadata } from '@redwoodjs/web'
+import { Metadata } from '@cedarjs/web'
 import {
   FieldError,
   Form,
@@ -1080,7 +1080,7 @@ import {
   TextField,
   TextAreaField,
   Submit,
-} from '@redwoodjs/forms'
+} from '@cedarjs/forms'
 
 const ContactPage = () => {
   const onSubmit = (data) => {
@@ -1141,7 +1141,7 @@ export default ContactPage
 <TabItem value="ts" label="TypeScript">
 
 ```tsx title="web/src/pages/ContactPage/ContactPage.tsx"
-import { Metadata } from '@redwoodjs/web'
+import { Metadata } from '@cedarjs/web'
 import {
   FieldError,
   Form,
@@ -1151,7 +1151,7 @@ import {
   TextAreaField,
   Submit,
   SubmitHandler,
-} from '@redwoodjs/forms'
+} from '@cedarjs/forms'
 
 interface FormValues {
   name: string

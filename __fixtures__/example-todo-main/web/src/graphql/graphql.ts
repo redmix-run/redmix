@@ -59,9 +59,9 @@ export type Query = {
 };
 
 /**
- * The RedwoodJS Root Schema
+ * The Cedar Root Schema
  *
- * Defines details about RedwoodJS such as the current user and version information.
+ * Defines details about Cedar such as the current user and version information.
  */
 export type Redwood = {
   __typename?: 'Redwood';

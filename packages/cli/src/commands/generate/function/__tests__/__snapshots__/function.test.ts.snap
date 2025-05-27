@@ -9,7 +9,7 @@ exports[`Single word default files > creates a single word function file > Scena
 `;
 
 exports[`Single word default files > creates a single word function file > Test snapshot 1`] = `
-"import { mockHttpEvent, mockContext } from '@redwoodjs/testing/api'
+"import { mockHttpEvent, mockContext } from '@cedarjs/testing/api'
 
 import { handler } from './foo'
 
@@ -126,8 +126,6 @@ import { logger } from 'src/lib/logger'
  * @see {@link https://redwoodjs.com/docs/serverless-functions#security-considerations|Serverless Function Considerations}
  * in the RedwoodJS documentation for more information.
  *
- * @typedef { import('aws-lambda').APIGatewayEvent } APIGatewayEvent
- * @typedef { import('aws-lambda').Context } Context
  * @param { APIGatewayEvent } event - an object which contains information from the invoker.
  * @param { Context } _context - contains information about the invocation,
  * function, and execution environment.

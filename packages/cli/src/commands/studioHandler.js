@@ -3,40 +3,40 @@ import path from 'node:path'
 import fs from 'fs-extra'
 import semver from 'semver'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@cedarjs/project-config'
 
-import { isModuleInstalled, installModule } from '../lib/packages'
+import { isModuleInstalled, installModule } from '../lib/packages.js'
 
 export const handler = async (options) => {
   try {
     // Check the module is installed
-    if (!isModuleInstalled('@redwoodjs/studio')) {
+    if (!isModuleInstalled('@cedarjs/studio')) {
       const minVersions = ['7.0.0-canary.889', '7.x', '8.0.0-0']
       assertRedwoodVersion(minVersions)
 
       console.log(
         'The studio package is not installed, installing it for you, this may take a moment...',
       )
-      await installModule('@redwoodjs/studio', '12')
+      await installModule('@cedarjs/studio', '12')
       console.log('Studio package installed successfully.')
 
-      const installedRealtime = await installModule('@redwoodjs/realtime')
+      const installedRealtime = await installModule('@cedarjs/realtime')
       if (installedRealtime) {
         console.log(
-          "Added @redwoodjs/realtime to your project, as it's used by Studio",
+          "Added @cedarjs/realtime to your project, as it's used by Studio",
         )
       }
 
-      const installedApiServer = await installModule('@redwoodjs/api-server')
+      const installedApiServer = await installModule('@cedarjs/api-server')
       if (installedApiServer) {
         console.log(
-          "Added @redwoodjs/api-server to your project, as it's used by Studio",
+          "Added @cedarjs/api-server to your project, as it's used by Studio",
         )
       }
     }
 
     // Import studio and start it
-    const { serve } = await import('@redwoodjs/studio')
+    const { serve } = await import('@cedarjs/studio')
     await serve({ open: options.open, enableWeb: true })
   } catch (e) {
     console.log('Cannot start the development studio')
@@ -90,5 +90,5 @@ function getProjectRedwoodVersion() {
     path.join(getPaths().base, 'package.json'),
   )
 
-  return devDependencies['@redwoodjs/core']
+  return devDependencies['@cedarjs/core']
 }

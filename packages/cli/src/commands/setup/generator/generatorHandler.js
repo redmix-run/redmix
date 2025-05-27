@@ -3,8 +3,8 @@ import path from 'path'
 import fse from 'fs-extra'
 import { Listr } from 'listr2'
 
-import { getPaths } from '../../../lib'
-import c from '../../../lib/colors'
+import c from '../../../lib/colors.js'
+import { getPaths } from '../../../lib/index.js'
 
 const SIDE_MAP = {
   web: ['cell', 'component', 'layout', 'page', 'scaffold'],
@@ -13,7 +13,12 @@ const SIDE_MAP = {
 
 const copyGenerator = (name, { force }) => {
   const side = SIDE_MAP['web'].includes(name) ? 'web' : 'api'
-  const from = path.join(__dirname, '../../generate', name, 'templates')
+  const from = path.join(
+    import.meta.dirname,
+    '../../generate',
+    name,
+    'templates',
+  )
   const to = path.join(getPaths()[side].generators, name)
 
   // copy entire template directory contents to appropriate side in app

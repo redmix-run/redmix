@@ -1,6 +1,6 @@
 import type { EditContactById, UpdateContactInput } from 'types/graphql'
 
-import type { RWGqlError } from '@redwoodjs/forms'
+import type { RWGqlError } from '@cedarjs/forms'
 import {
   Form,
   FormError,
@@ -8,7 +8,7 @@ import {
   Label,
   TextField,
   Submit,
-} from '@redwoodjs/forms'
+} from '@cedarjs/forms'
 
 type FormContact = NonNullable<EditContactById['contact']>
 

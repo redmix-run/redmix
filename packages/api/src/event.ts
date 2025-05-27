@@ -1,6 +1,6 @@
 import type { APIGatewayProxyEvent } from 'aws-lambda'
 
-import { isFetchApiRequest } from './transforms'
+import { isFetchApiRequest } from './transforms.js'
 
 // Extracts the header from an event, handling lower and upper case header names.
 export const getEventHeader = (

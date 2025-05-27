@@ -1,9 +1,11 @@
-import { recordTelemetryAttributes } from '@redwoodjs/cli-helpers'
-import { parseDatamodel } from '@redwoodjs/record'
+import { recordTelemetryAttributes } from '@cedarjs/cli-helpers'
 
 export const handler = async () => {
   recordTelemetryAttributes({
     command: 'record',
   })
-  await parseDatamodel()
+
+  const { parseDatamodel } = await import('@cedarjs/record')
+
+  parseDatamodel()
 }

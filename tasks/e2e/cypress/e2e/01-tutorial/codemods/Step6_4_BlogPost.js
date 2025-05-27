@@ -1,7 +1,7 @@
 export default `
 // web/src/components/BlogPost/BlogPost.js
 
-import { Link, routes } from '@redwoodjs/router'
+import { Link, routes } from '@cedarjs/router'
 
 const BlogPost = ({ post }) => {
   return (

@@ -7,45 +7,48 @@ import yargs from 'yargs/yargs'
 // Shared mocks for paths, etc.
 import '../../../../lib/test'
 
-import * as component from '../component'
+// @ts-expect-error - importing js
+import * as component from '../component.js'
+// @ts-expect-error - importing js
+import * as componentHandler from '../componentHandler.js'
 
-let singleWordDefaultFiles,
-  multiWordDefaultFiles,
-  javascriptFiles,
-  typescriptFiles,
-  withoutTestFiles,
-  withoutStoryFiles
+let singleWordDefaultFiles: Record<string, string>
+let multiWordDefaultFiles: Record<string, string>
+let javascriptFiles: Record<string, string>
+let typescriptFiles: Record<string, string>
+let withoutTestFiles: Record<string, string>
+let withoutStoryFiles: Record<string, string>
 
 beforeAll(async () => {
-  singleWordDefaultFiles = await component.files({
+  singleWordDefaultFiles = await componentHandler.files({
     name: 'User',
     tests: true,
     stories: true,
   })
-  multiWordDefaultFiles = await component.files({
+  multiWordDefaultFiles = await componentHandler.files({
     name: 'UserProfile',
     tests: true,
     stories: true,
   })
-  javascriptFiles = await component.files({
+  javascriptFiles = await componentHandler.files({
     name: 'JavascriptUser',
     typescript: false,
     stories: true,
     tests: true,
   })
-  typescriptFiles = await component.files({
+  typescriptFiles = await componentHandler.files({
     name: 'TypescriptUser',
     typescript: true,
     stories: true,
     tests: true,
   })
-  withoutTestFiles = await component.files({
+  withoutTestFiles = await componentHandler.files({
     name: 'withoutTests',
     javascript: true,
     stories: true,
     tests: false,
   })
-  withoutStoryFiles = await component.files({
+  withoutStoryFiles = await componentHandler.files({
     name: 'withoutStories',
     javascript: true,
     tests: true,
@@ -57,10 +60,22 @@ test('returns exactly 3 files', () => {
   expect(Object.keys(singleWordDefaultFiles).length).toEqual(3)
 })
 
-test('keeps Component in name', () => {
-  const { name } = yargs()
+test('keeps Component in name', async () => {
+  const isPromiseLike = <T>(obj: unknown): obj is Promise<T> => {
+    if (!!obj && typeof obj === 'object') {
+      if ('then' in obj) {
+        return true
+      }
+    }
+
+    return false
+  }
+
+  const argv = yargs()
     .command('component <name>', false, component.builder)
     .parse('component BazingaComponent')
+
+  const name = isPromiseLike(argv) ? (await argv).name : argv.name
 
   expect(name).toEqual('BazingaComponent')
 })

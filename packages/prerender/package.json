@@ -1,10 +1,10 @@
 {
-  "name": "@redwoodjs/prerender",
-  "version": "8.0.0",
+  "name": "@cedarjs/prerender",
+  "version": "0.0.5",
   "description": "RedwoodJS prerender",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/redwoodjs/redwood.git",
+    "url": "git+https://github.com/cedarjs/cedar.git",
     "directory": "packages/prerender"
   },
   "license": "MIT",
@@ -30,7 +30,7 @@
   ],
   "scripts": {
     "build": "tsx ./build.mts && yarn build:types",
-    "build:pack": "yarn pack -o redwoodjs-prerender.tgz",
+    "build:pack": "yarn pack -o cedarjs-prerender.tgz",
     "build:types": "tsc --build --verbose ./tsconfig.build.json",
     "build:watch": "nodemon --watch src --ext \"js,jsx,ts,tsx,template\" --ignore dist --exec \"yarn build\"",
     "check:attw": "yarn rw-fwtools-attw",
@@ -40,11 +40,11 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@redwoodjs/babel-config": "workspace:*",
-    "@redwoodjs/project-config": "workspace:*",
-    "@redwoodjs/router": "workspace:*",
-    "@redwoodjs/structure": "workspace:*",
-    "@redwoodjs/web": "workspace:*",
+    "@cedarjs/babel-config": "workspace:*",
+    "@cedarjs/project-config": "workspace:*",
+    "@cedarjs/router": "workspace:*",
+    "@cedarjs/structure": "workspace:*",
+    "@cedarjs/web": "workspace:*",
     "@whatwg-node/fetch": "0.9.21",
     "babel-plugin-ignore-html-and-css-imports": "0.1.0",
     "cheerio": "1.0.0",
@@ -52,14 +52,14 @@
     "mime-types": "2.1.35"
   },
   "devDependencies": {
-    "@redwoodjs/framework-tools": "workspace:*",
+    "@cedarjs/framework-tools": "workspace:*",
     "@types/mime-types": "2.1.4",
     "babel-plugin-tester": "11.0.4",
     "concurrently": "8.2.2",
-    "publint": "0.2.11",
-    "tsx": "4.19.1",
+    "publint": "0.3.12",
+    "tsx": "4.19.3",
     "typescript": "5.6.2",
-    "vitest": "2.0.5"
+    "vitest": "2.1.9"
   },
   "peerDependencies": {
     "react": "19.0.0-rc-f2df5694-20240916",

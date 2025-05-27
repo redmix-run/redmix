@@ -3,7 +3,7 @@
 import { PrismaClient } from '@prisma/client'
 import pascalcase from 'pascalcase'
 
-import * as ValidationErrors from './errors'
+import * as ValidationErrors from './errors.js'
 
 type WithOptionalMessage<T = Record<string, unknown>> = T & {
   /**
@@ -648,19 +648,19 @@ export const validateWith = async (func: () => Promise<any>) => {
 // check that it is only unique among a subset of records with the same
 // `companyId`.
 //
-// return validateUniqueness('user', { email: 'rob@redwoodjs.com' }, { message: '...'}, (db) => {
+// return validateUniqueness('user', { email: 'rob@cedarjs.com' }, { message: '...'}, (db) => {
 //   return db.create(data: { email })
 // })
 //
 // return validateUniqueness('user', {
-//   email: 'rob@redwoodjs.com',
+//   email: 'rob@cedarjs.com',
 //   $self: { id: 123 }
 // }, (db) => {
 //   return db.create(data: { email })
 // })
 //
 // return validateUniqueness('user', {
-//   email: 'rob@redwoodjs.com',
+//   email: 'rob@cedarjs.com',
 //   $scope: { companyId: input.companyId }
 // }, (db) => {
 //   return db.create(data: { email })
@@ -674,7 +674,7 @@ export const validateWith = async (func: () => Promise<any>) => {
 //     },
 //   },
 // })
-// return validateUniqueness('user', { email: 'rob@redwoodjs.com' }, { prismaClient: myCustomDb}, (db) => {
+// return validateUniqueness('user', { email: 'rob@cedarjs.com' }, { prismaClient: myCustomDb}, (db) => {
 //   return db.create(data: { email })
 // })
 export async function validateUniqueness(

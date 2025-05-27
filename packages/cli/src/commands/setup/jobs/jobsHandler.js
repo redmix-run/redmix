@@ -1,14 +1,14 @@
 import * as fs from 'node:fs'
 import * as path from 'node:path'
 
-import { getDMMF } from '@prisma/internals'
+import prismaInternals from '@prisma/internals'
 import { Listr } from 'listr2'
 
-import { addApiPackages } from '@redwoodjs/cli-helpers'
+import { addApiPackages } from '@cedarjs/cli-helpers'
 
-import { getPaths, transformTSToJS, writeFile } from '../../../lib'
-import c from '../../../lib/colors'
-import { isTypeScriptProject } from '../../../lib/project'
+import c from '../../../lib/colors.js'
+import { getPaths, transformTSToJS, writeFile } from '../../../lib/index.js'
+import { isTypeScriptProject } from '../../../lib/project.js'
 
 const MODEL_SCHEMA = `
 model BackgroundJob {
@@ -28,7 +28,9 @@ model BackgroundJob {
 `
 
 const getModelNames = async () => {
-  const schema = await getDMMF({ datamodelPath: getPaths().api.dbSchema })
+  const schema = await prismaInternals.getDMMF({
+    datamodelPath: getPaths().api.dbSchema,
+  })
 
   return schema.datamodel.models.map((model) => model.name)
 }
@@ -48,8 +50,8 @@ const tasks = async ({ force }) => {
   const packageJsonPath = path.join(getPaths().base, 'package.json')
   const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8'))
   const redwoodVersion =
-    packageJson.devDependencies?.['@redwoodjs/core'] ?? 'latest'
-  const jobsPackage = `@redwoodjs/jobs@${redwoodVersion}`
+    packageJson.devDependencies?.['@cedarjs/core'] ?? 'latest'
+  const jobsPackage = `@cedarjs/jobs@${redwoodVersion}`
 
   return new Listr(
     [
@@ -75,7 +77,11 @@ const tasks = async ({ force }) => {
           )
           let template = fs
             .readFileSync(
-              path.resolve(__dirname, 'templates', 'jobs.ts.template'),
+              path.resolve(
+                import.meta.dirname,
+                'templates',
+                'jobs.ts.template',
+              ),
             )
             .toString()
 

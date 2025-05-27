@@ -20,7 +20,7 @@ Check out our [Roadmap](https://redwoodjs.com/roadmap) to see where we're headed
 
 What do you think of Redwood? Is it the Next Step for JS frameworks? What can it do better? We've got a lot more planned. Want to help us build these upcoming features?
 
-- [Open a PR](https://github.com/redwoodjs/redwood/pulls)
+- [Open a PR](https://github.com/cedarjs/cedar/pulls)
 - [Write some docs](https://redwoodjs.com/docs/introduction)
 - [Join the community](https://community.redwoodjs.com)
 

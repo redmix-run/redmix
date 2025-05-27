@@ -1,10 +1,10 @@
-import { parseJWT } from '@redwoodjs/api'
-import { AuthenticationError, ForbiddenError } from '@redwoodjs/graphql-server'
+import { parseJWT } from '@cedarjs/api'
+import { AuthenticationError, ForbiddenError } from '@cedarjs/graphql-server'
 import type { APIGatewayEvent } from 'aws-lambda'
 
 interface Context extends Record<string, any> {}
 
-import { context } from '@redwoodjs/context'
+import { context } from '@cedarjs/context'
 
 /**
  * Represents the user attributes returned by the decoding the
@@ -28,7 +28,7 @@ type RedwoodUser = Record<string, unknown> & { roles?: string[] }
  * fields to the return object only once you've decided they are safe to be seen
  * if someone were to open the Web Inspector in their browser.
  *
- * @see https://github.com/redwoodjs/redwood/tree/main/packages/auth for examples
+ * @see https://github.com/cedarjs/cedar/tree/main/packages/auth for examples
  *
  * @returns RedwoodUser
  */
@@ -123,7 +123,7 @@ export const hasRole = (roles: AllowedRoles): boolean => {
  * @throws {@link AuthenticationError} - If the currentUser is not authenticated
  * @throws {@link ForbiddenError} - If the currentUser is not allowed due to role permissions
  *
- * @see https://github.com/redwoodjs/redwood/tree/main/packages/auth for examples
+ * @see https://github.com/cedarjs/cedar/tree/main/packages/auth for examples
  */
 export const requireAuth = ({ roles }: { roles?: AllowedRoles } = {}) => {
   if (!isAuthenticated()) {

@@ -6,9 +6,9 @@ import { config } from 'dotenv-defaults'
 import fg from 'fast-glob'
 import fastify from 'fastify'
 
-import type { GlobalContext } from '@redwoodjs/context'
-import { getAsyncStoreInstance } from '@redwoodjs/context/dist/store'
-import { getConfig, getPaths } from '@redwoodjs/project-config'
+import type { GlobalContext } from '@cedarjs/context'
+import { getAsyncStoreInstance } from '@cedarjs/context/dist/store'
+import { getConfig, getPaths } from '@cedarjs/project-config'
 
 import { resolveOptions } from './createServerHelpers'
 import type {
@@ -22,7 +22,7 @@ import { redwoodFastifyAPI } from './plugins/api'
 //
 // ```js
 // # Loads dotenv...
-// import { createServer } from '@redwoodjs/api-server'
+// import { createServer } from '@cedarjs/api-server'
 // ```
 //
 // We do it here and not in the function below so that users can access env vars before calling `createServer`
@@ -40,7 +40,7 @@ if (!process.env.REDWOOD_ENV_FILES_LOADED) {
  * Creates a server for api functions:
  *
  * ```js
- * import { createServer } from '@redwoodjs/api-server'
+ * import { createServer } from '@cedarjs/api-server'
  *
  * import { logger } from 'src/lib/logger'
  *
@@ -131,7 +131,8 @@ export async function createServer(options: CreateServerOptions = {}) {
 
   if (graphqlFunctionPath) {
     const { redwoodFastifyGraphQLServer } = await import('./plugins/graphql.js')
-    // This comes from a babel plugin that's applied to api/dist/functions/graphql.{ts,js} in user projects
+    // This comes from a babel plugin that's applied to
+    // api/dist/functions/graphql.{ts,js} in user projects
     const { __rw_graphqlOptions } = await import(
       `file://${graphqlFunctionPath}`
     )

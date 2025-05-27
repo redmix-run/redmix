@@ -1,9 +1,9 @@
 {
-  "name": "@redwoodjs/cli-helpers",
-  "version": "8.0.0",
+  "name": "@cedarjs/cli-helpers",
+  "version": "0.0.5",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/redwoodjs/redwood.git",
+    "url": "git+https://github.com/cedarjs/cedar.git",
     "directory": "packages/cli-helpers"
   },
   "license": "MIT",
@@ -46,7 +46,7 @@
   ],
   "scripts": {
     "build": "tsx ./build.ts && yarn build:types",
-    "build:pack": "yarn pack -o redwoodjs-cli-helpers.tgz",
+    "build:pack": "yarn pack -o cedarjs-cli-helpers.tgz",
     "build:types": "tsc --build --verbose ./tsconfig.build.json ./tsconfig.cjs.json",
     "build:watch": "nodemon --watch src --ext \"js,jsx,ts,tsx\" --ignore dist --exec \"yarn build\"",
     "prepublishOnly": "NODE_ENV=production yarn build",
@@ -54,35 +54,35 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@babel/core": "^7.22.20",
+    "@babel/core": "^7.26.10",
+    "@cedarjs/project-config": "workspace:*",
+    "@cedarjs/telemetry": "workspace:*",
     "@opentelemetry/api": "1.8.0",
-    "@redwoodjs/project-config": "workspace:*",
-    "@redwoodjs/telemetry": "workspace:*",
     "chalk": "4.1.2",
-    "dotenv": "16.4.5",
+    "dotenv": "16.4.7",
     "dotenv-defaults": "5.0.2",
     "execa": "5.1.1",
-    "listr2": "6.6.1",
+    "listr2": "7.0.2",
     "lodash": "4.17.21",
     "pascalcase": "1.0.0",
-    "prettier": "3.3.3",
+    "prettier": "3.5.3",
     "prompts": "2.4.2",
     "semver": "7.6.3",
-    "smol-toml": "1.3.0",
+    "smol-toml": "1.3.1",
     "terminal-link": "2.1.1",
     "yargs-parser": "21.1.1"
   },
   "devDependencies": {
-    "@redwoodjs/framework-tools": "workspace:*",
+    "@cedarjs/framework-tools": "workspace:*",
     "@types/dotenv-defaults": "^2.0.4",
-    "@types/lodash": "4.17.10",
+    "@types/lodash": "4.17.15",
     "@types/pascalcase": "1.0.3",
     "@types/semver": "^7",
     "@types/yargs": "17.0.33",
     "@types/yargs-parser": "21.0.3",
-    "tsx": "4.19.1",
+    "tsx": "4.19.3",
     "typescript": "5.6.2",
-    "vitest": "2.0.5"
+    "vitest": "2.1.9"
   },
   "gitHead": "3905ed045508b861b495f8d5630d76c7a157d8f1"
 }

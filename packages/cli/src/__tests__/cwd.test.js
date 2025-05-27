@@ -3,18 +3,34 @@ import path from 'path'
 
 import { describe, it, expect } from 'vitest'
 
+const BASE_DIR = path.resolve(import.meta.dirname, '..', '..', '..', '..')
+const CLI = path.join(BASE_DIR, 'packages', 'cli', 'dist', 'index.js')
+
+function rw(args, options) {
+  const { status, stdout, stderr } = spawnSync('node', [CLI, ...args], {
+    cwd: BASE_DIR,
+    ...options,
+  })
+
+  return {
+    status,
+    stdout: stdout.toString().trim(),
+    stderr: stderr.toString().trim(),
+  }
+}
+
+// Support '11.0.75-canary.234' if we ever do something like that
+const VERSION = /^\d+\.\d+\.\d/
+
 describe('The CLI sets `cwd` correctly', () => {
   describe('--cwd', () => {
     it('lets the user set the cwd via the `--cwd` option', async () => {
-      const { status, stdout, stderr } = rw([
-        '--cwd',
-        path.join('__fixtures__', 'test-project'),
-        '--version',
-      ])
+      const cwd = path.join('__fixtures__', 'test-project')
+      const { status, stdout, stderr } = rw(['--cwd', cwd, '--version'])
 
-      expect(status).toBe(0)
-      expect(stdout).toMatch(VERSION)
-      expect(stderr).toBe('')
+      expect(status, 'status').toBe(0)
+      expect(stdout, 'stdout').toMatch(VERSION)
+      expect(stderr, 'stderr').toBe('')
     })
 
     it(`throws if set via --cwd and there's no "redwood.toml"`, () => {
@@ -121,21 +137,3 @@ describe('The CLI sets `cwd` correctly', () => {
     })
   })
 })
-
-const BASE_DIR = path.resolve(__dirname, '..', '..', '..', '..')
-const CLI = path.join(BASE_DIR, 'packages', 'cli', 'dist', 'index.js')
-
-function rw(args, options) {
-  const { status, stdout, stderr } = spawnSync('node', [CLI, ...args], {
-    cwd: BASE_DIR,
-    ...options,
-  })
-
-  return {
-    status,
-    stdout: stdout.toString().trim(),
-    stderr: stderr.toString().trim(),
-  }
-}
-
-const VERSION = /\d.\d.\d/

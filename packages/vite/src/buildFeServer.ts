@@ -1,4 +1,4 @@
-import { getConfig, getPaths } from '@redwoodjs/project-config'
+import { getConfig, getPaths } from '@cedarjs/project-config'
 
 import { buildWeb } from './build/build.js'
 import { buildRouteHooks } from './buildRouteHooks.js'

@@ -3,7 +3,7 @@ import path from 'path'
 
 import prompts from 'prompts'
 
-import { getGraphqlPath, standardAuthHandler } from '@redwoodjs/cli-helpers'
+import { getGraphqlPath, standardAuthHandler } from '@cedarjs/cli-helpers'
 
 import type { Args } from './setup'
 import {
@@ -81,14 +81,14 @@ export async function handler({
     forceArg,
     provider: 'dbAuth',
     authDecoderImport:
-      "import { createAuthDecoder } from '@redwoodjs/auth-dbauth-api'",
+      "import { createAuthDecoder } from '@cedarjs/auth-dbauth-api'",
     webAuthn,
     webPackages: [
-      `@redwoodjs/auth-dbauth-web@${version}`,
+      `@cedarjs/auth-dbauth-web@${version}`,
       ...(webAuthn ? webAuthnWebPackages : []),
     ],
     apiPackages: [
-      `@redwoodjs/auth-dbauth-api@${version}`,
+      `@cedarjs/auth-dbauth-api@${version}`,
       ...(webAuthn ? webAuthnApiPackages : []),
     ],
     extraTasks: [

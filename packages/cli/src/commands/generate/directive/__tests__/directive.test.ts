@@ -7,10 +7,13 @@ import path from 'path'
 import { test, expect } from 'vitest'
 import yargs from 'yargs/yargs'
 
-import * as directive from '../directive'
+// @ts-expect-error - importing js
+import * as directive from '../directive.js'
+// @ts-expect-error - importing js
+import * as directiveHandler from '../directiveHandler.js'
 
 test('creates a JavaScript validator directive', async () => {
-  const output = await directive.files({
+  const output = await directiveHandler.files({
     name: 'require-admin', // checking camel casing too!
     typescript: false,
     tests: true,
@@ -31,7 +34,7 @@ test('creates a JavaScript validator directive', async () => {
 })
 
 test('creates a TypeScript transformer directive', async () => {
-  const output = await directive.files({
+  const output = await directiveHandler.files({
     name: 'bazinga-foo_bar', // checking camel casing too!
     typescript: true,
     tests: true,
@@ -51,10 +54,22 @@ test('creates a TypeScript transformer directive', async () => {
   expect(output[expectedTestOutputPath]).toMatchSnapshot('ts directive test')
 })
 
-test('keeps Directive in name', () => {
-  const { name } = yargs()
+test('keeps Directive in name', async () => {
+  const isPromiseLike = <T>(obj: unknown): obj is Promise<T> => {
+    if (!!obj && typeof obj === 'object') {
+      if ('then' in obj) {
+        return true
+      }
+    }
+
+    return false
+  }
+
+  const argv = yargs()
     .command('directive <name>', false, directive.builder)
     .parse('directive BazingaDirective')
+
+  const name = isPromiseLike(argv) ? (await argv).name : argv.name
 
   expect(name).toEqual('BazingaDirective')
 })

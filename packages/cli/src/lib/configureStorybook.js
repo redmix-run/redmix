@@ -3,16 +3,16 @@ import path from 'path'
 import fse from 'fs-extra'
 import prettier from 'prettier'
 
-import { merge } from './merge'
+import { merge } from './merge/index.js'
 import {
   interleave,
   concatUnique,
   keepBoth,
   keepBothStatementParents,
-} from './merge/strategy'
-import { isTypeScriptProject } from './project'
+} from './merge/strategy.js'
+import { isTypeScriptProject } from './project.js'
 
-import { getPaths, transformTSToJS, writeFile } from '.'
+import { getPaths, transformTSToJS, writeFile } from './index.js'
 
 /**
  * Extends the Storybook configuration file with the new configuration file
@@ -25,13 +25,17 @@ export default async function extendStorybookConfiguration(
   const ts = isTypeScriptProject()
   const sbPreviewConfigPath =
     webPaths.storybookPreviewConfig ??
-    `${webPaths.config}/storybook.preview.${ts ? 'tsx' : 'js'}`
+    `${webPaths.storybook}/preview.${ts ? 'tsx' : 'js'}`
   const read = (path) => fse.readFileSync(path, { encoding: 'utf-8' })
 
   if (!fse.existsSync(sbPreviewConfigPath)) {
     // If the Storybook preview config file doesn't exist, create it from the template
     const templateContent = read(
-      path.resolve(__dirname, 'templates', 'storybook.preview.tsx.template'),
+      path.resolve(
+        import.meta.dirname,
+        'templates',
+        'storybook.preview.tsx.template',
+      ),
     )
     const storybookPreviewContent = ts
       ? templateContent

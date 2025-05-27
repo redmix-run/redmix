@@ -1,6 +1,6 @@
 import { build as viteBuild } from 'vite'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@cedarjs/project-config'
 
 import { getEntries } from '../lib/entries.js'
 import { onWarn } from '../lib/onWarn.js'
@@ -56,9 +56,9 @@ export async function rscBuildAnalyze() {
         '@prisma/client',
         '@prisma/fetch-engine',
         '@prisma/internals',
-        '@redwoodjs/auth-dbauth-api',
-        '@redwoodjs/cookie-jar',
-        '@redwoodjs/server-store',
+        '@cedarjs/auth-dbauth-api',
+        '@cedarjs/cookie-jar',
+        '@cedarjs/server-store',
         '@simplewebauthn/server',
         'graphql-scalars',
         'minimatch',

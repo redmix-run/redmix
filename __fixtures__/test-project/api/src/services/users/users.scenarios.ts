@@ -1,12 +1,12 @@
 import type { Prisma, User } from '@prisma/client'
 
-import type { ScenarioData } from '@redwoodjs/testing/api'
+import type { ScenarioData } from '@cedarjs/testing/api'
 
 export const standard = defineScenario<Prisma.UserCreateArgs>({
   user: {
     one: {
       data: {
-        email: 'String8',
+        email: 'String9',
         hashedPassword: 'String',
         fullName: 'String',
         salt: 'String',
@@ -14,7 +14,7 @@ export const standard = defineScenario<Prisma.UserCreateArgs>({
     },
     two: {
       data: {
-        email: 'String16',
+        email: 'String17',
         hashedPassword: 'String',
         fullName: 'String',
         salt: 'String',

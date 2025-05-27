@@ -4,8 +4,8 @@ import {
   createGraphQLError,
 } from 'graphql-yoga'
 
-import { RedwoodError } from '@redwoodjs/api'
-import type { Logger } from '@redwoodjs/api/logger'
+import { RedwoodError } from '@cedarjs/api'
+import type { Logger } from '@cedarjs/api/logger'
 
 import type { RedwoodGraphQLContext } from '../types'
 

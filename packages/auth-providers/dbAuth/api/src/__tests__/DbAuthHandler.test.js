@@ -111,7 +111,7 @@ afterAll(() => {
 const createDbUser = async (attributes = {}) => {
   return await db.user.create({
     data: {
-      email: 'rob@redwoodjs.com',
+      email: 'rob@cedarjs.com',
       // default hashedPassword is from `node:crypto`
       hashedPassword:
         '230847bea5154b6c7d281d09593ad1be26fa03a93c04a73bcc2b608c073a8213|16384|8|1',
@@ -256,7 +256,7 @@ describe('dbAuth', () => {
   afterEach(async () => {
     vi.spyOn(console, 'warn').mockRestore()
     await db.user.deleteMany({
-      where: { email: 'rob@redwoodjs.com' },
+      where: { email: 'rob@cedarjs.com' },
     })
     await db.userCredential.deleteMany()
   })
@@ -315,6 +315,21 @@ describe('dbAuth', () => {
       await dbAuth.init()
       const expiresAt = new Date()
       expiresAt.setSeconds(expiresAt.getSeconds() + options.webAuthn.expires)
+
+      // The test originally just looked like this:
+      // expect(dbAuth.webAuthnExpiresDate).toEqual(expiresAt.toUTCString())
+      // But we've had some flakyness because of timing, like
+      // Expected: "Sat, 15 Mar 2025 07:30:03 GMT"
+      // Received: "Sat, 15 Mar 2025 07:30:02 GMT"
+      // This happens when the test runs right at the flip of one second to the
+      // next
+
+      // If the expiration dates don't match, try subtracting one second from
+      // the time we compare to since that time is set after the webAuthn
+      // expiration date is set in the DbAuthHandler constructor
+      if (expiresAt.toUTCString() !== dbAuth.webAuthnExpiresDate) {
+        expiresAt.setSeconds(expiresAt.getSeconds() - 1)
+      }
 
       expect(dbAuth.webAuthnExpiresDate).toEqual(expiresAt.toUTCString())
     })
@@ -781,7 +796,7 @@ describe('dbAuth', () => {
   describe('forgotPassword', () => {
     it('throws default error when not enabled', async () => {
       event.body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'password',
         name: 'Rob',
       })
@@ -799,7 +814,7 @@ describe('dbAuth', () => {
 
     it('throws custom error when not enabled and message provided', async () => {
       event.body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'password',
         name: 'Rob',
       })
@@ -976,7 +991,7 @@ describe('dbAuth', () => {
   describe('login', () => {
     it('throws default error when not enabled', async () => {
       event.body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'password',
         name: 'Rob',
       })
@@ -994,7 +1009,7 @@ describe('dbAuth', () => {
 
     it('throws custom error when not enabled and message provided', async () => {
       event.body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'password',
         name: 'Rob',
       })
@@ -1019,7 +1034,7 @@ describe('dbAuth', () => {
 
       await createDbUser()
       event.body = JSON.stringify({
-        username: 'missing@redwoodjs.com',
+        username: 'missing@cedarjs.com',
         password: 'password',
       })
       const dbAuth = new DbAuthHandler(event, context, options)
@@ -1037,7 +1052,7 @@ describe('dbAuth', () => {
     it('throws an error if password is wrong', async () => {
       await createDbUser()
       event.body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'incorrect',
       })
       const dbAuth = new DbAuthHandler(event, context, options)
@@ -1055,7 +1070,7 @@ describe('dbAuth', () => {
     it('throws an error if login.handler throws', async () => {
       const _user = await createDbUser()
       event.body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'password',
       })
       options.login.handler = () => {
@@ -1076,7 +1091,7 @@ describe('dbAuth', () => {
     it('passes the found user to login.handler', async () => {
       const user = await createDbUser()
       event.body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'password',
       })
       options.login.handler = () => {
@@ -1091,7 +1106,7 @@ describe('dbAuth', () => {
     it('throws an error if login.handler returns null', async () => {
       const _user = await createDbUser()
       event.body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'password',
       })
       options.login.handler = () => {
@@ -1111,7 +1126,7 @@ describe('dbAuth', () => {
     it('throws an error if login.handler returns an object without an id', async () => {
       const _user = await createDbUser()
       event.body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'password',
       })
       options.login.handler = () => {
@@ -1130,7 +1145,7 @@ describe('dbAuth', () => {
     it('returns a JSON body of the user that is logged in', async () => {
       const user = await createDbUser()
       event.body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'password',
       })
       const dbAuth = new DbAuthHandler(event, context, options)
@@ -1144,7 +1159,7 @@ describe('dbAuth', () => {
     it('returns a CSRF token in the header', async () => {
       await createDbUser()
       event.body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'password',
       })
       const dbAuth = new DbAuthHandler(event, context, options)
@@ -1158,7 +1173,7 @@ describe('dbAuth', () => {
     it('returns a set-cookie header to create session', async () => {
       await createDbUser()
       event.body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'password',
       })
       const dbAuth = new DbAuthHandler(event, context, options)
@@ -1172,7 +1187,7 @@ describe('dbAuth', () => {
     it('returns a CSRF token in the header', async () => {
       await createDbUser()
       event.body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'password',
       })
       const dbAuth = new DbAuthHandler(event, context, options)
@@ -1192,7 +1207,7 @@ describe('dbAuth', () => {
 
       await createDbUser()
       event.body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'password',
       })
 
@@ -1221,7 +1236,7 @@ describe('dbAuth', () => {
 
       await createDbUser()
       event.body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'password',
       })
 
@@ -1251,7 +1266,7 @@ describe('dbAuth', () => {
   describe('resetPassword', () => {
     it('throws default error when not enabled', async () => {
       event.body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'password',
         name: 'Rob',
       })
@@ -1269,7 +1284,7 @@ describe('dbAuth', () => {
 
     it('throws custom error when not enabled and message provided', async () => {
       event.body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'password',
         name: 'Rob',
       })
@@ -1636,7 +1651,7 @@ describe('dbAuth', () => {
   describe('signup', () => {
     it('bubbles up any error that is raised', async () => {
       event.body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'password',
         name: 'Rob',
       })
@@ -1652,7 +1667,7 @@ describe('dbAuth', () => {
 
     it('throws default error when not enabled', async () => {
       event.body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'password',
         name: 'Rob',
       })
@@ -1670,7 +1685,7 @@ describe('dbAuth', () => {
 
     it('throws custom error when not enabled and message provided', async () => {
       event.body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'password',
         name: 'Rob',
       })
@@ -1692,7 +1707,7 @@ describe('dbAuth', () => {
 
     it('throws password validation error if password invalid', async () => {
       event.body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'pass',
         name: 'Rob',
       })
@@ -1714,7 +1729,7 @@ describe('dbAuth', () => {
 
     it('throws no error if password valid', async () => {
       event.body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'password',
         name: 'Rob',
       })
@@ -1731,7 +1746,7 @@ describe('dbAuth', () => {
 
     it('throws no error if passwordValidation function is undefined', async () => {
       event.body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'password',
         name: 'Rob',
       })
@@ -1744,7 +1759,7 @@ describe('dbAuth', () => {
 
     it('creates a new user and logs them in', async () => {
       event.body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'password',
         name: 'Rob',
       })
@@ -1765,7 +1780,7 @@ describe('dbAuth', () => {
 
     it('returns a message if a string is returned and does not log in', async () => {
       event.body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'password',
         name: 'Rob',
       })
@@ -2367,7 +2382,7 @@ describe('dbAuth', () => {
             attributes: {
               Path: '/',
               HttpOnly: true,
-              SameSite: 'Strict',
+              SameSite: 'Lax',
               Secure: true,
               Domain: 'example.com',
             },
@@ -2380,7 +2395,7 @@ describe('dbAuth', () => {
       expect(attributes.length).toEqual(6)
       expect(attributes[0]).toEqual('Path=/')
       expect(attributes[1]).toEqual('HttpOnly')
-      expect(attributes[2]).toEqual('SameSite=Strict')
+      expect(attributes[2]).toEqual('SameSite=Lax')
       expect(attributes[3]).toEqual('Secure')
       expect(attributes[4]).toEqual('Domain=example.com')
       expect(attributes[5]).toMatch(`Expires=`)
@@ -2974,7 +2989,7 @@ describe('dbAuth', () => {
     it('creates a new user', async () => {
       event.headers = { 'Content-Type': 'application/json' }
       event.body = JSON.stringify({
-        username: 'rob@redwoodjs.com',
+        username: 'rob@cedarjs.com',
         password: 'password',
         name: 'Rob',
       })
@@ -2983,7 +2998,7 @@ describe('dbAuth', () => {
 
       try {
         const user = await dbAuth._createUser()
-        expect(user.email).toEqual('rob@redwoodjs.com')
+        expect(user.email).toEqual('rob@cedarjs.com')
         expect(user.hashedPassword).not.toBeNull()
         expect(user.salt).not.toBeNull()
         expect(user.name).toEqual('Rob')
@@ -3147,7 +3162,7 @@ describe('dbAuth', () => {
       await dbAuth.init()
       const user = {
         id: 1,
-        email: 'rob@redwoodjs.com',
+        email: 'rob@cedarjs.com',
         password: 'secret',
       }
 
@@ -3162,7 +3177,7 @@ describe('dbAuth', () => {
       await dbAuth.init()
       const user = {
         id: 1,
-        email: 'rob@redwoodjs.com',
+        email: 'rob@cedarjs.com',
         foo: 'bar',
       }
 

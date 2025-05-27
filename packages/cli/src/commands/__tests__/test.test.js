@@ -11,9 +11,9 @@ vi.mock('execa', () => ({
 import execa from 'execa'
 import { vi, afterEach, test, expect } from 'vitest'
 
-import { handler } from '../test'
+import { handler } from '../test.js'
 
-vi.mock('@redwoodjs/structure', () => {
+vi.mock('@cedarjs/structure', () => {
   return {
     getProject: () => ({
       sides: ['web', 'api'],

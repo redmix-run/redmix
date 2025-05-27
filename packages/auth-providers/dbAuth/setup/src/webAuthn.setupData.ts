@@ -1,7 +1,7 @@
 import path from 'path'
 
-import { getPaths, colors } from '@redwoodjs/cli-helpers'
-import type { AuthGeneratorCtx } from '@redwoodjs/cli-helpers/src/auth/authTasks.js'
+import { getPaths, colors } from '@cedarjs/cli-helpers'
+import type { AuthGeneratorCtx } from '@cedarjs/cli-helpers/src/auth/authTasks.js'
 
 import { addModels, functionsPath, hasModel, libPath } from './shared'
 
@@ -9,10 +9,10 @@ import { addModels, functionsPath, hasModel, libPath } from './shared'
 export { extraTask } from './setupData'
 
 // required packages to install on the web side
-export const webPackages = ['@simplewebauthn/browser@^7']
+export const webPackages = ['@simplewebauthn/browser@^9']
 
 // required packages to install on the api side
-export const apiPackages = ['@simplewebauthn/server@^7']
+export const apiPackages = ['@simplewebauthn/server@^9']
 
 export const createUserModelTask = {
   title: 'Creating model `User`...',

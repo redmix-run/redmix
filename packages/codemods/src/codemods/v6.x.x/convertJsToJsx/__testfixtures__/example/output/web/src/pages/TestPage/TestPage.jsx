@@ -1,5 +1,5 @@
-import { Link, routes } from '@redwoodjs/router'
-import { MetaTags } from '@redwoodjs/web'
+import { Link, routes } from '@cedarjs/router'
+import { MetaTags } from '@cedarjs/web'
 
 const TestPage = () => {
   return (

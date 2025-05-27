@@ -1,6 +1,6 @@
 import type * as yargs from 'yargs'
 
-import { standardAuthBuilder } from '@redwoodjs/cli-helpers'
+import { standardAuthBuilder } from '@cedarjs/cli-helpers'
 
 export const command = 'auth0'
 export const description = 'Set up auth for for Auth0'

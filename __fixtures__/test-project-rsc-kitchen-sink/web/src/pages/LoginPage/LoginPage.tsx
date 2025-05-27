@@ -1,7 +1,7 @@
-import { Link } from '@redwoodjs/router/Link'
-import { namedRoutes as routes } from '@redwoodjs/router/namedRoutes'
-import { Metadata } from '@redwoodjs/web/dist/components/Metadata'
-// import { Toaster } from '@redwoodjs/web/toast'
+import { Link } from '@cedarjs/router/Link'
+import { namedRoutes as routes } from '@cedarjs/router/namedRoutes'
+import { Metadata } from '@cedarjs/web/dist/components/Metadata'
+// import { Toaster } from '@cedarjs/web/toast'
 
 import { LoginForm } from './LoginForm'
 

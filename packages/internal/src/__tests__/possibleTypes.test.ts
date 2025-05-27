@@ -3,7 +3,7 @@ import path from 'path'
 
 import { afterEach, describe, test, expect, vi } from 'vitest'
 
-import { getPaths } from '@redwoodjs/project-config'
+import { getPaths } from '@cedarjs/project-config'
 
 import { generateGraphQLSchema } from '../generate/graphqlSchema'
 import { generatePossibleTypes } from '../generate/possibleTypes'

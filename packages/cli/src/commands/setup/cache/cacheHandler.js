@@ -3,12 +3,12 @@ import path from 'path'
 import fs from 'fs-extra'
 import { Listr } from 'listr2'
 
-import { addEnvVarTask } from '@redwoodjs/cli-helpers'
-import { errorTelemetry } from '@redwoodjs/telemetry'
+import { addEnvVarTask } from '@cedarjs/cli-helpers'
+import { errorTelemetry } from '@cedarjs/telemetry'
 
-import { addPackagesTask, getPaths, writeFile } from '../../../lib'
-import c from '../../../lib/colors'
-import { isTypeScriptProject } from '../../../lib/project'
+import c from '../../../lib/colors.js'
+import { addPackagesTask, getPaths, writeFile } from '../../../lib/index.js'
+import { isTypeScriptProject } from '../../../lib/project.js'
 
 const CLIENT_PACKAGE_MAP = {
   memcached: 'memjs',
@@ -24,7 +24,7 @@ export const handler = async ({ client, force }) => {
   const extension = isTypeScriptProject ? 'ts' : 'js'
 
   const tasks = new Listr([
-    addPackagesTask({
+    await addPackagesTask({
       packages: [CLIENT_PACKAGE_MAP[client]],
       side: 'api',
     }),
@@ -33,7 +33,11 @@ export const handler = async ({ client, force }) => {
       task: () => {
         const template = fs
           .readFileSync(
-            path.join(__dirname, 'templates', `${client}.ts.template`),
+            path.join(
+              import.meta.dirname,
+              'templates',
+              `${client}.ts.template`,
+            ),
           )
           .toString()
 

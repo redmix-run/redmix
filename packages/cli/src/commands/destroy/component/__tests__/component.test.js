@@ -14,8 +14,8 @@ import { vi, beforeEach, afterEach, test, expect } from 'vitest'
 
 import '../../../../lib/test'
 
-import { files } from '../../../generate/component/component'
-import { tasks } from '../component'
+import { files } from '../../../generate/component/componentHandler.js'
+import { tasks } from '../componentHandler.js'
 
 beforeEach(async () => {
   vol.fromJSON(await files({ name: 'About' }))

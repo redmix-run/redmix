@@ -2,7 +2,7 @@ import { renderHook, act } from '@testing-library/react'
 import type * as NetlifyIdentityNS from 'netlify-identity-widget'
 import { vi, expect, it, beforeAll, beforeEach, describe } from 'vitest'
 
-import type { CurrentUser } from '@redwoodjs/auth'
+import type { CurrentUser } from '@cedarjs/auth'
 
 import { createAuth } from '../netlify.js'
 

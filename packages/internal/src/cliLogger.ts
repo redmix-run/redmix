@@ -1,4 +1,4 @@
-import { defaultLoggerOptions } from '@redwoodjs/api/logger'
+import { defaultLoggerOptions } from '@cedarjs/api/logger'
 
 // Can't use color in the createLogger logger - so use a simpler set of log fns
 const logLevel = defaultLoggerOptions.level

@@ -4,8 +4,8 @@ import path from 'path'
 import type { PrismaClient } from '@prisma/client'
 import { Listr } from 'listr2'
 
-import { registerApiSideBabelHook } from '@redwoodjs/babel-config'
-import { getPaths } from '@redwoodjs/project-config'
+import { registerApiSideBabelHook } from '@cedarjs/babel-config'
+import { getPaths } from '@cedarjs/project-config'
 
 import c from '../lib/colors'
 import type { DataMigrateUpOptions, DataMigration } from '../types'
@@ -187,7 +187,7 @@ function sortDataMigrationsByVersion(
 }
 
 async function runDataMigration(db: PrismaClient, dataMigrationPath: string) {
-  const dataMigration = require(dataMigrationPath)
+  const dataMigration = await import(dataMigrationPath)
 
   const startedAt = new Date()
   await dataMigration.default({ db })

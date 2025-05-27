@@ -1,12 +1,14 @@
 import fs from 'node:fs'
 import path from 'node:path'
+import process from 'node:process'
 
 import type { ExecaError } from 'execa'
 import execa from 'execa'
+import semver from 'semver'
 
-import { isTypeScriptProject, transformTSToJS } from '@redwoodjs/cli-helpers'
-import { getPaths } from '@redwoodjs/project-config'
-import { errorTelemetry } from '@redwoodjs/telemetry'
+import { isTypeScriptProject, transformTSToJS } from '@cedarjs/cli-helpers'
+import { getPaths } from '@cedarjs/project-config'
+import { errorTelemetry } from '@cedarjs/telemetry'
 
 import c from '../lib/colors'
 import type { StorybookYargsOptions } from '../types'
@@ -158,8 +160,18 @@ export async function handler({
       .join(' ')}`
   }
 
+  const env: Record<string, string> = {}
+
+  if (
+    semver.parse(process.version) !== null &&
+    semver.lt(process.version, '22.0.0') &&
+    semver.gte(process.version, '20.19.0')
+  ) {
+    env.NODE_OPTIONS = '--no-experimental-require-module'
+  }
+
   try {
-    await execa.command(command, execaOptions)
+    await execa.command(command, { ...execaOptions, env })
   } catch (e) {
     if ((e as ExecaError).signal !== 'SIGINT') {
       console.log(c.error((e as Error).message))

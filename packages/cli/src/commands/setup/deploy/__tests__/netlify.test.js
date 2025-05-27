@@ -6,10 +6,11 @@ import fs from 'fs-extra'
 import { vol } from 'memfs'
 import { vi, describe, it, expect, beforeEach } from 'vitest'
 
-import '../../../../lib/test'
-import { getPaths } from '../../../../lib'
-import { updateApiURLTask } from '../helpers'
 // Mock telemetry and other things
+import '../../../../lib/test'
+
+import { getPaths } from '../../../../lib/index.js'
+import { updateApiURLTask } from '../helpers/index.js'
 
 vi.mock('../../../../lib', async (importOriginal) => {
   const { printSetupNotes } = await importOriginal()
@@ -65,7 +66,7 @@ beforeEach(() => {
 
 describe('netlify', () => {
   it('should call the handler without error', async () => {
-    const netlify = await import('../providers/netlify')
+    const netlify = await import('../providers/netlifyHandler')
 
     let error = undefined
     try {

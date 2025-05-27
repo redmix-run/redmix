@@ -2,21 +2,21 @@
 
 import path from 'path'
 
-import Configstore from 'configstore/index'
+import Configstore from 'configstore'
 import execa from 'execa'
 import fs from 'fs-extra'
 import TerminalLink from 'terminal-link'
 
-import { getConfigPath } from '@redwoodjs/project-config'
+import { getConfigPath } from '@cedarjs/project-config'
 
-const config = new Configstore('@redwoodjs/cli')
+const config = new Configstore('@cedarjs/cli')
 
 const RWFW_PATH =
   process.env.RWFW_PATH || process.env.RW_PATH || config.get('RWFW_PATH')
 
 if (!RWFW_PATH) {
   console.error('Error: You must specify the path to Redwood Framework')
-  console.error('Usage: `RWFW_PATH=~/gh/redwoodjs/redwood yarn rwfw <command>')
+  console.error('Usage: `RWFW_PATH=~/gh/cedarjs/cedar yarn rwfw <command>')
   process.exit(1)
 }
 
@@ -24,7 +24,7 @@ if (!fs.existsSync(RWFW_PATH)) {
   console.error(
     `Error: The specified path to Redwood Framework (${RWFW_PATH}) does not exist.`,
   )
-  console.error('Usage: `RWFW_PATH=~/gh/redwoodjs/redwood yarn rwfw <command>')
+  console.error('Usage: `RWFW_PATH=~/gh/cedarjs/cedar yarn rwfw <command>')
   process.exit(1)
 }
 

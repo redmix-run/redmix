@@ -1,4 +1,4 @@
-import path from 'path'
+import path from 'node:path'
 
 import execa from 'execa'
 import fs from 'fs-extra'
@@ -7,9 +7,9 @@ import terminalLink from 'terminal-link'
 import {
   recordTelemetryAttributes,
   standardAuthBuilder,
-} from '@redwoodjs/cli-helpers'
+} from '@cedarjs/cli-helpers'
 
-import { getPaths } from '../../../lib/'
+import { getPaths } from '../../../lib/index.js'
 
 export const command = 'auth <provider>'
 
@@ -25,11 +25,11 @@ export async function builder(yargs) {
       )}`,
     )
     // Command "redirects" for auth providers we used to support
-    .command(...redirectCommand('ethereum'))
-    .command(...redirectCommand('goTrue'))
-    .command(...redirectCommand('magicLink'))
-    .command(...redirectCommand('nhost'))
-    .command(...redirectCommand('okta'))
+    .command(...directToCustomAuthCommand('ethereum'))
+    .command(...directToCustomAuthCommand('goTrue'))
+    .command(...directToCustomAuthCommand('magicLink'))
+    .command(...directToCustomAuthCommand('nhost'))
+    .command(...directToCustomAuthCommand('okta'))
     // Auth providers we support
     .command(
       'auth0',
@@ -41,7 +41,7 @@ export async function builder(yargs) {
           force: args.force,
           verbose: args.verbose,
         })
-        const handler = await getAuthHandler('@redwoodjs/auth-auth0-setup')
+        const handler = await getAuthSetupHandler('@cedarjs/auth-auth0-setup')
         console.log()
         handler(args)
       },
@@ -56,8 +56,8 @@ export async function builder(yargs) {
           force: args.force,
           verbose: args.verbose,
         })
-        const handler = await getAuthHandler(
-          '@redwoodjs/auth-azure-active-directory-setup',
+        const handler = await getAuthSetupHandler(
+          '@cedarjs/auth-azure-active-directory-setup',
         )
         console.log()
         handler(args)
@@ -73,7 +73,7 @@ export async function builder(yargs) {
           force: args.force,
           verbose: args.verbose,
         })
-        const handler = await getAuthHandler('@redwoodjs/auth-clerk-setup')
+        const handler = await getAuthSetupHandler('@cedarjs/auth-clerk-setup')
         console.log()
         handler(args)
       },
@@ -88,7 +88,7 @@ export async function builder(yargs) {
           force: args.force,
           verbose: args.verbose,
         })
-        const handler = await getAuthHandler('@redwoodjs/auth-custom-setup')
+        const handler = await getAuthSetupHandler('@cedarjs/auth-custom-setup')
         console.log()
         handler(args)
       },
@@ -124,7 +124,7 @@ export async function builder(yargs) {
           verbose: args.verbose,
           webauthn: args.webauthn,
         })
-        const handler = await getAuthHandler('@redwoodjs/auth-dbauth-setup')
+        const handler = await getAuthSetupHandler('@cedarjs/auth-dbauth-setup')
         console.log()
         handler(args)
       },
@@ -139,7 +139,9 @@ export async function builder(yargs) {
           force: args.force,
           verbose: args.verbose,
         })
-        const handler = await getAuthHandler('@redwoodjs/auth-firebase-setup')
+        const handler = await getAuthSetupHandler(
+          '@cedarjs/auth-firebase-setup',
+        )
         console.log()
         handler(args)
       },
@@ -154,7 +156,7 @@ export async function builder(yargs) {
           force: args.force,
           verbose: args.verbose,
         })
-        const handler = await getAuthHandler('@redwoodjs/auth-netlify-setup')
+        const handler = await getAuthSetupHandler('@cedarjs/auth-netlify-setup')
         console.log()
         handler(args)
       },
@@ -169,7 +171,9 @@ export async function builder(yargs) {
           force: args.force,
           verbose: args.verbose,
         })
-        const handler = await getAuthHandler('@redwoodjs/auth-supabase-setup')
+        const handler = await getAuthSetupHandler(
+          '@cedarjs/auth-supabase-setup',
+        )
         console.log()
         handler(args)
       },
@@ -184,8 +188,8 @@ export async function builder(yargs) {
           force: args.force,
           verbose: args.verbose,
         })
-        const handler = await getAuthHandler(
-          '@redwoodjs/auth-supertokens-setup',
+        const handler = await getAuthSetupHandler(
+          '@cedarjs/auth-supertokens-setup',
         )
         console.log()
         handler(args)
@@ -197,7 +201,8 @@ export async function builder(yargs) {
  * @param {string} provider
  * @returns {[string, boolean, () => void, () => void]}
  */
-function redirectCommand(provider) {
+function directToCustomAuthCommand(provider) {
+  // cmd, description, builder, handler
   return [
     provider,
     false,
@@ -206,29 +211,44 @@ function redirectCommand(provider) {
       recordTelemetryAttributes({
         command: `setup auth ${provider}`,
       })
-      console.log(getRedirectMessage(provider))
+
+      const customAuthLink = terminalLink(
+        'Custom Auth',
+        'https://redwoodjs.com/docs/auth/custom',
+      )
+
+      console.log(
+        `${provider} is no longer supported out of the box. But you can ` +
+          `still integrate it yourself with ${customAuthLink}`,
+      )
     },
   ]
 }
 
 /**
- * Get a stock message for one of our removed auth providers
- * directing the user to the Custom Auth docs.
- *
- * @param {string} provider
- */
-function getRedirectMessage(provider) {
-  return `${provider} is no longer supported out of the box. But you can still integrate it yourself with ${terminalLink(
-    'Custom Auth',
-    'https://redwoodjs.com/docs/canary/auth/custom',
-  )}`
-}
-
-/**
  * @param {string} module
  */
-async function getAuthHandler(module) {
-  const packageJsonPath = require.resolve('@redwoodjs/cli/package.json')
+async function getAuthSetupHandler(module) {
+  // Conditionally create a require function that works in ESM or use the
+  // native one in CJS
+  // TODO (ESM): Remove this once we've fully moved to ESM
+  let customRequire
+
+  try {
+    // Check if we're in an ESM context
+    if (typeof require === 'undefined') {
+      const { createRequire } = await import('node:module')
+      customRequire = createRequire(import.meta.url)
+    } else {
+      // We're in a CJS context, so we use the native require
+      customRequire = require
+    }
+  } catch (error) {
+    // Fallback to native require if something goes wrong
+    customRequire = require
+  }
+
+  const packageJsonPath = customRequire.resolve('@cedarjs/cli/package.json')
   let { version } = fs.readJSONSync(packageJsonPath)
 
   if (!isInstalled(module)) {
@@ -296,14 +316,19 @@ function isInstalled(module) {
     return true
   }
 
-  // Check any of the places require would look for this module.
-  // This enables testing auth setup packages with `yarn rwfw project:copy`.
-  //
-  // We can't use require.resolve here because it caches the exception
-  // Making it impossible to require when we actually do install it...
-  return require.resolve
-    .paths(`${module}/package.json`)
-    .some((requireResolvePath) => {
-      return fs.existsSync(path.join(requireResolvePath, module))
+  try {
+    const possiblePaths = [
+      path.join(getPaths().base, 'node_modules', module),
+      path.join(getPaths().base, '..', 'node_modules', module),
+      path.join(getPaths().api.base, 'node_modules', module),
+      path.join(getPaths().web.base, 'node_modules', module),
+    ]
+
+    return possiblePaths.some((modulePath) => {
+      return fs.existsSync(path.join(modulePath, 'package.json'))
     })
+  } catch (error) {
+    // If there's an error checking, assume it's not installed
+    return false
+  }
 }

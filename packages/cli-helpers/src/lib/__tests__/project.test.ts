@@ -30,7 +30,7 @@ const getRedwoodToml = () => {
   return defaultRedwoodToml
 }
 
-vi.mock('@redwoodjs/project-config', () => {
+vi.mock('@cedarjs/project-config', () => {
   return {
     getPaths: () => {
       return {
