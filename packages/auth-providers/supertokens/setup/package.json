@@ -42,11 +42,11 @@
     "@cedarjs/cli-helpers": "workspace:*"
   },
   "devDependencies": {
-    "@arethetypeswrong/cli": "0.16.4",
+    "@arethetypeswrong/cli": "0.18.1",
     "@cedarjs/framework-tools": "workspace:*",
     "@types/yargs": "17.0.33",
     "concurrently": "8.2.2",
-    "memfs": "4.17.1",
+    "memfs": "4.17.2",
     "publint": "0.3.12",
     "tsx": "4.19.3",
     "typescript": "5.6.2",
