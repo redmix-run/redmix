@@ -1,6 +1,3 @@
-import type { CurrentUser } from '@cedarjs/auth'
-import { createAuthentication } from '@cedarjs/auth'
-
 import type {
   SignInProps,
   SignUpProps,
@@ -8,7 +5,10 @@ import type {
   Clerk as ClerkClient,
   GetTokenOptions,
   SignOutOptions,
-} from './ClerkTypes.js'
+} from '@clerk/types'
+
+import type { CurrentUser } from '@cedarjs/auth'
+import { createAuthentication } from '@cedarjs/auth'
 
 type Clerk = ClerkClient | undefined | null
 
