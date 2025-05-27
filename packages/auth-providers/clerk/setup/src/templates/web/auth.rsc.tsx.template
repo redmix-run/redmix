@@ -38,7 +38,7 @@ const ClerkProviderWrapper = ({
     <ClerkProvider
       {...clerkOptions}
       routerPush={(to) => reauthenticate().then(() => navigate(to))}
-      routerPush={(to) => reauthenticate().then(() => navigate(to, { replace: true }))}
+      routerReplace={(to) => reauthenticate().then(() => navigate(to, { replace: true }))}
     >
       {children}
       <ClerkStatusUpdater />

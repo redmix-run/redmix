@@ -8,7 +8,7 @@ export const authDecoder: Decoder = async (token: string, type: string) => {
     return null
   }
 
-  const { verifyToken, createClerkClient } = await import(
+  const { createClerkClient, verifyToken } = await import(
     '@clerk/clerk-sdk-node'
   )
 
