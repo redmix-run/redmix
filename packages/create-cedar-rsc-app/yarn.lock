@@ -1480,7 +1480,7 @@ __metadata:
     node-fetch: "npm:3.3.2"
     prettier: "npm:3.5.3"
     prettier-plugin-curly: "npm:^0.3.0"
-    prettier-plugin-packagejson: "npm:^2.5.1"
+    prettier-plugin-packagejson: "npm:2.5.14"
     prettier-plugin-sh: "npm:^0.14.0"
     publint: "npm:0.3.12"
     rimraf: "npm:^6.0.1"
@@ -3462,7 +3462,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier-plugin-packagejson@npm:^2.5.1":
+"prettier-plugin-packagejson@npm:2.5.14":
   version: 2.5.14
   resolution: "prettier-plugin-packagejson@npm:2.5.14"
   dependencies:
