@@ -74,13 +74,15 @@ const HomePage = () => {
       {/* MetaTags, h1, paragraphs, etc. */}
 
       <p>{JSON.stringify({ isAuthenticated })}</p>
-      <button onClick={signUp}>sign up</button>
+      <button onClick={() => signUp()}>Sign Up</button>
     </>
   )
 }
+
+export default HomePage
 ```
 
-Clicking sign up should open a sign-up box and after you sign up, you should see `{"isAuthenticated":true}` on the page.
+Clicking Sign Up should open a sign-up box and after you sign up, you should see `{"isAuthenticated":true}` on the page.
 
 ## Customizing the session token
 
