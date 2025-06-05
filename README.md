@@ -3,7 +3,10 @@
   <h1 align="center">CedarJS</h1>
   <p align="center">
     <a href="https://discord.gg/8mNkAgby5m">
-      <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Join our Discord server!" />
+      <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Join our Discord server!"
+    /></a>
+    <a href="https://redwoodjs.com/docs">
+      <img src="https://img.shields.io/badge/Documentation-3ECC5F?style=for-the-badge&logo=readthedocs&logoColor=white" alt="Documentation" />
     </a>
   </p>
 </p>
