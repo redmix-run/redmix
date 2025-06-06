@@ -8,8 +8,6 @@ import redwood from '@cedarjs/vite'
 // See: https://vitejs.dev/config/server-options.html#server-host.
 dns.setDefaultResultOrder('verbatim')
 
-const viteConfig = {
+export default defineConfig({
   plugins: [redwood()],
-}
-
-export default defineConfig(viteConfig)
+})
