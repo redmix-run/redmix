@@ -1,3 +1,5 @@
+/// <reference types="vitest/config" />
+
 import dns from 'dns'
 
 import { defineConfig } from 'vite'
