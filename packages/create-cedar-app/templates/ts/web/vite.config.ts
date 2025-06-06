@@ -1,6 +1,7 @@
+/// <reference types="vitest/config" />
+
 import dns from 'dns'
 
-import type { UserConfig } from 'vite'
 import { defineConfig } from 'vite'
 
 import redwood from '@cedarjs/vite'
@@ -9,8 +10,10 @@ import redwood from '@cedarjs/vite'
 // See: https://vitejs.dev/config/server-options.html#server-host.
 dns.setDefaultResultOrder('verbatim')
 
-const viteConfig: UserConfig = {
+export default defineConfig({
   plugins: [redwood()],
-}
-
-export default defineConfig(viteConfig)
+  test: {
+    environment: 'jsdom',
+    globals: true,
+  },
+})
