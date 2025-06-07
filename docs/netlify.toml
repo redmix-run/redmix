@@ -1,4 +1,5 @@
 [build]
+NODE_OPTIONS = "--max-old-space-size=4096"
 base = "docs"
 publish = "build"
 command = "yarn build"
