@@ -15,13 +15,13 @@ const config: Config = {
     },
   },
   // ?
-  title: 'Cedar Docs',
+  title: 'CedarJS Docs',
   // ?
   tagline:
-    'Built on React, GraphQL, and Prisma, Cedar works with the components and development workflow you love, but with simple conventions and helpers to make your experience even better.',
+    'Built on React, GraphQL, and Prisma, CedarJS works with the components and development workflow you love, but with simple conventions and helpers to make your experience even better.',
   // ?
-  url: 'https://cedar.run',
-  baseUrl: '/redwood-docs',
+  url: 'https://cedarjs.netlify.app',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'https://redwoodjs.com/favicon.png',
@@ -38,11 +38,11 @@ const config: Config = {
       // externalUrlRegex: 'https://learn-redwood.netlify.app',
     },
     navbar: {
-      title: 'Cedar',
+      title: 'CedarJS',
       logo: {
-        alt: 'Cedar logo',
-        src: 'https://d33wubrfki0l68.cloudfront.net/72b0d56596a981835c18946d6c4f8a968b08e694/82254/images/logo.svg',
-        href: 'https://cedar.run/redwood-docs',
+        alt: 'CedarJS logo',
+        src: 'https://avatars.githubusercontent.com/u/211931789?s=200&v=4',
+        href: 'https://cedarjs.com',
         target: '_self',
       },
       items: [
@@ -78,24 +78,24 @@ const config: Config = {
           items: [
             {
               label: 'Discord',
-              href: 'https://discord.com/invite/redwoodjs',
+              href: 'https://discord.gg/8mNkAgby5m',
             },
-            {
-              label: 'Discourse',
-              href: 'https://community.redwoodjs.com/',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/redwoodjs',
-            },
+            // {
+            //   label: 'Discourse',
+            //   href: 'https://community.redwoodjs.com/',
+            // },
+            // {
+            //   label: 'Twitter',
+            //   href: 'https://twitter.com/redwoodjs',
+            // },
           ],
         },
         {
           title: 'More',
           items: [
             {
-              label: 'cedar.run',
-              to: 'https://cedar.run/',
+              label: 'cedarjs.com',
+              to: 'https://cedarjs.com/',
             },
             {
               label: 'GitHub',
@@ -104,7 +104,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Cedar. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} CedarJS. Built with Docusaurus.`,
     },
   } satisfies PresetClassic.ThemeConfig,
   themes: [
