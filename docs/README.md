@@ -1,4 +1,4 @@
-# RedwoodJS Docs
+# CedarJS Docs
 
 Deployment URL: https://redwoodjs.com/docs
 
