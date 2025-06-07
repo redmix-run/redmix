@@ -20,7 +20,7 @@ const config: Config = {
   tagline:
     'Built on React, GraphQL, and Prisma, Cedar works with the components and development workflow you love, but with simple conventions and helpers to make your experience even better.',
   // ?
-  url: 'https://cedar.run',
+  url: 'https://cedarjs.netlify.app',
   baseUrl: '/redwood-docs',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',

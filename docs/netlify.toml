@@ -5,6 +5,9 @@ publish = "build"
 command = "yarn build"
 ignore = "node ignore_build.mjs"
 
+[build.environment]
+NODE_OPTIONS = "--max-old-space-size=4096"
+
 [[redirects]]
 from = "/docs"
 to = "/docs/introduction"
