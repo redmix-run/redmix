@@ -29,7 +29,7 @@ efforts of the RedwoodJS founders, maintainers and community.
 ## Migrating from RedwoodJS to CedarJS
 
 Search and replace all instances of `"@redwoodjs/(.*)": "\d+\.\d+\.\d+"`
-with `"@cedarjs/$1": "0.0.3"` (or whatever the latest version of Cedar is when
+with `"@cedarjs/$1": "0.1.1"` (or whatever the latest version of Cedar is when
 you run this) in all three `package.json` files. Run `yarn install` to update
 your lock file.
 
