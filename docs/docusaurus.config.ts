@@ -15,13 +15,13 @@ const config: Config = {
     },
   },
   // ?
-  title: 'Cedar Docs',
+  title: 'CedarJS Docs',
   // ?
   tagline:
     'Built on React, GraphQL, and Prisma, Cedar works with the components and development workflow you love, but with simple conventions and helpers to make your experience even better.',
   // ?
   url: 'https://cedarjs.netlify.app',
-  baseUrl: '/redwood-docs',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'https://redwoodjs.com/favicon.png',
