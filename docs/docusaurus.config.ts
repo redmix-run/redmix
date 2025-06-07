@@ -24,7 +24,7 @@ const config: Config = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'https://redwoodjs.com/favicon.png',
+  favicon: '/img/favicon.ico',
   organizationName: 'cedarjs', // Usually your GitHub org/user name.
   // ?
   projectName: 'cedar', // Usually your repo name.,
