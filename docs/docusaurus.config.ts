@@ -20,7 +20,7 @@ const config: Config = {
   tagline:
     'Built on React, GraphQL, and Prisma, CedarJS works with the components and development workflow you love, but with simple conventions and helpers to make your experience even better.',
   // ?
-  url: 'https://cedarjs.netlify.app',
+  url: 'https://cedarjs.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -84,10 +84,10 @@ const config: Config = {
             //   label: 'Discourse',
             //   href: 'https://community.redwoodjs.com/',
             // },
-            // {
-            //   label: 'Twitter',
-            //   href: 'https://twitter.com/redwoodjs',
-            // },
+            {
+              label: 'Twitter/X',
+              href: 'https://x.com/cedarjs',
+            },
           ],
         },
         {
