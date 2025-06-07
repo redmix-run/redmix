@@ -331,7 +331,7 @@ export const SplashPage = ({
                   <div className="resource">
                     <a
                       className="resource-link"
-                      href="https://redwoodjs.com/tutorial"
+                      href="https://cedarjs.com/docs/tutorial"
                       target="_blank"
                       rel="noreferrer"
                     ></a>
@@ -357,7 +357,7 @@ export const SplashPage = ({
                   <div className="resource">
                     <a
                       className="resource-link"
-                      href="https://redwoodjs.com/docs"
+                      href="https://cedarjs.com/docs"
                       target="_blank"
                       rel="noreferrer"
                     ></a>
@@ -378,14 +378,14 @@ export const SplashPage = ({
                     </div>
 
                     <p className="resource-description">
-                      Find in-depth information about Cedar features and API.
+                      Find in-depth information about CedarJS features and API.
                     </p>
                   </div>
 
                   <div className="resource">
                     <a
                       className="resource-link"
-                      href="https://redwoodjs.com/community"
+                      href="https://discord.gg/8mNkAgby5m"
                       target="_blank"
                       rel="noreferrer"
                     ></a>
@@ -410,7 +410,7 @@ export const SplashPage = ({
                   <div className="resource">
                     <a
                       className="resource-link"
-                      href="https://redwoodjs.com/docs/contributing"
+                      href="https://cedarjs.com/docs/contributing"
                       target="_blank"
                       rel="noreferrer"
                     ></a>
@@ -439,7 +439,7 @@ export const SplashPage = ({
                       <h2 className="resource-title">Become a Contributor</h2>
                     </div>
                     <p className="resource-description">
-                      Love Cedar and want to get involved? Contribute today!
+                      Love CedarJS and want to get involved? Contribute today!
                     </p>
                   </div>
                 </div>
@@ -453,7 +453,7 @@ export const SplashPage = ({
                   href="https://github.com/cedarjs/cedar"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Go to the Cedar GitHub repo"
+                  aria-label="Go to the CedarJS GitHub repo"
                 >
                   <svg viewBox="0 0 32 32" focusable="false">
                     <path
@@ -464,10 +464,10 @@ export const SplashPage = ({
                 </a>
                 <a
                   className="social-link"
-                  href="https://twitter.com/redwoodjs"
+                  href="https://x.com/cedarjs"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Go to the RedwoodJS Twitter profile"
+                  aria-label="Go to the CedarJS Twitter/X profile"
                 >
                   <svg viewBox="0 0 34 34" focusable="false">
                     <path
@@ -478,24 +478,10 @@ export const SplashPage = ({
                 </a>
                 <a
                   className="social-link"
-                  href="https://community.redwoodjs.com/"
+                  href="https://discord.gg/8mNkAgby5m"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Go to the RedwoodJS community forum"
-                >
-                  <svg viewBox="0 0 32 32" focusable="false">
-                    <path
-                      fill="currentColor"
-                      d="M16.1357143,0 C7.37857143,0 0,7.03571429 0,15.7214286 C0,16 0.00714285714,32 0.00714285714,32 L16.1357143,31.9857143 C24.9,31.9857143 32,24.6785714 32,15.9928571 C32,7.30714286 24.9,0 16.1357143,0 Z M16,25.1428571 C14.6142857,25.1428571 13.2928571,24.8357143 12.1142857,24.2785714 L6.32142857,25.7142857 L7.95714286,20.3571429 C7.25714286,19.0642857 6.85714286,17.5785714 6.85714286,16 C6.85714286,10.95 10.95,6.85714286 16,6.85714286 C21.05,6.85714286 25.1428571,10.95 25.1428571,16 C25.1428571,21.05 21.05,25.1428571 16,25.1428571 Z"
-                    ></path>
-                  </svg>
-                </a>
-                <a
-                  className="social-link"
-                  href="https://discord.gg/redwoodjs"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Go to the RedwoodJS Discord server"
+                  aria-label="Go to the CedarJS Discord server"
                 >
                   <svg viewBox="0 0 36 36" focusable="false">
                     <path
@@ -546,7 +532,7 @@ const useVersion = () => {
         const versionData = await response.json()
         setVersion(versionData?.data?.redwood?.version || null)
       } catch (err) {
-        console.error('Unable to get Cedar version: ', err)
+        console.error('Unable to get CedarJS version: ', err)
       }
     }
 
