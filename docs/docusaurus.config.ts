@@ -1,6 +1,7 @@
 import type * as PresetClassic from '@docusaurus/preset-classic'
 import type { Config } from '@docusaurus/types'
-import type { PluginOptions } from '@easyops-cn/docusaurus-search-local'
+import type { PluginOptions as SearchLocalPluginOptions } from '@easyops-cn/docusaurus-search-local'
+import type { PluginOptions as LlmsTxtPluginOptions } from '@signalwire/docusaurus-plugin-llms-txt'
 
 import autoImportTabs from './src/remark/auto-import-tabs.mjs'
 import fileExtSwitcher from './src/remark/file-ext-switcher.mjs'
@@ -108,7 +109,25 @@ const config: Config = {
       '@easyops-cn/docusaurus-search-local',
       {
         hashed: true,
-      } satisfies PluginOptions,
+      } satisfies SearchLocalPluginOptions,
+    ],
+  ],
+  plugins: [
+    [
+      '@signalwire/docusaurus-plugin-llms-txt',
+      {
+        depth: 2,
+        logLevel: 1,
+        content: {
+          excludeRoutes: [
+            '/canary/**',
+            '/docs/0.0.*/**',
+            '/docs/8.*/**',
+            '/search',
+          ],
+          enableMarkdownFiles: true,
+        },
+      } satisfies LlmsTxtPluginOptions,
     ],
   ],
   presets: [
