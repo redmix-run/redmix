@@ -120,7 +120,7 @@ const config: Config = {
         logLevel: 1,
         content: {
           excludeRoutes: [
-            '/canary/**',
+            '/docs/canary/**',
             '/docs/0.0.*/**',
             '/docs/8.*/**',
             '/search',
