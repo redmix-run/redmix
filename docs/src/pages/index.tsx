@@ -1,10 +1,24 @@
 import React from 'react'
 
+import Head from '@docusaurus/Head'
 import Layout from '@theme/Layout'
 
 export default function Home() {
   return (
-    <Layout title="CedarJS" description="The React + GraphQL Web App Framework">
+    <Layout
+      description={
+        'CedarJS is a reliable, modern, and actively maintained full-stack ' +
+        "React framework. CedarJS's DX is unmatched by any other JavaScript " +
+        'React + GraphQL framework.'
+      }
+    >
+      <Head>
+        <title>CedarJS | The React + GraphQL Web App Framework</title>
+        <meta
+          property="og:title"
+          content="CedarJS | The React + GraphQL Web App Framework"
+        />
+      </Head>
       <div
         style={{
           maxWidth: '1024px',

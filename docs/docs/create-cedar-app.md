@@ -1,11 +1,11 @@
 ---
 slug: create-cedar-app
-description: Instructions and usage examples for Create Redwood App
+description: Instructions and usage examples for Create Cedar App
 ---
 
-# Create Redwood App
+# Create Cedar App
 
-To get up and running with Redwood, you can use Create Redwood App:
+To get up and running with CedarJS, you can use Create Cedar App:
 
 ```terminal
 yarn create cedar-app <your-app-name>
@@ -13,9 +13,9 @@ yarn create cedar-app <your-app-name>
 
 ## Set up for success
 
-Redwood requires that you're running Node version 20 or higher.
+CedarJS requires that you're running Node version 20 or higher.
 
-If you're running Node version 21.0.0 or higher, you can still use Create Redwood App, but it may make your project incompatible with some deploy targets, such as AWS Lambdas.
+If you're running Node version 21.0.0 or higher, you can still use Create Cedar App, but it may make your project incompatible with some deploy targets, such as AWS Lambdas.
 
 To see what version of Node you're running, you can run the following command in your terminal:
 
@@ -75,7 +75,7 @@ yarn install
 
 ## Running the development server
 
-Once the Create Redwood app has finished running, you can start your development server by running the following command:
+Once the Create Cedar app has finished running, you can start your development server by running the following command:
 
 ```terminal
 cd <your-app-name>
@@ -84,7 +84,7 @@ yarn rw dev
 
 - This will start your development server at `http://localhost:8910`.
 - Your API will be available at `http://localhost:8911`.
-- You can visit the Redwood GraphQL Playground at `http://localhost:8911/graphql`.
+- You can visit the CedarJS GraphQL Playground at `http://localhost:8911/graphql`.
 
 ## Flags
 
