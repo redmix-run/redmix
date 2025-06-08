@@ -8,7 +8,7 @@ module.exports = {
       items: [
         { type: 'doc', label: 'Foreword', id: 'tutorial/foreword' },
         {
-          'Chapter 0': ['tutorial/chapter0/what-is-redwood'],
+          'Chapter 0': ['tutorial/chapter0/what-is-cedarjs'],
         },
         {
           'Chapter 1': [
@@ -105,7 +105,7 @@ module.exports = {
         'contributing-overview',
         'contributing-walkthrough',
         'cors',
-        'create-redwood-app',
+        'create-cedar-app',
         'data-migrations',
         {
           type: 'category',

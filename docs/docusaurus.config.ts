@@ -15,7 +15,7 @@ const config: Config = {
       tutorial: 'forward',
     },
   },
-  title: 'CedarJS Docs',
+  title: 'CedarJS',
   tagline: 'The React + GraphQL Web App Framework',
   url: 'https://cedarjs.com',
   baseUrl: '/',
@@ -26,14 +26,7 @@ const config: Config = {
   // ?
   projectName: 'cedar', // Usually your repo name.,
   themeConfig: {
-    algolia: {
-      appId: '__37B3LHULK0',
-      apiKey: '__1d7f2f299d9a38c157501c301425f090',
-      indexName: 'learn-cedar',
-      contextualSearch: true,
-      searchParameters: {},
-      // externalUrlRegex: 'https://learn-redwood.netlify.app',
-    },
+    image: 'img/og-image.png',
     navbar: {
       title: 'CedarJS',
       logo: {
@@ -109,6 +102,7 @@ const config: Config = {
       '@easyops-cn/docusaurus-search-local',
       {
         hashed: true,
+        indexBlog: false,
       } satisfies SearchLocalPluginOptions,
     ],
   ],
@@ -119,8 +113,9 @@ const config: Config = {
         depth: 2,
         logLevel: 1,
         content: {
+          includeBlog: false,
           excludeRoutes: [
-            '/canary/**',
+            '/docs/canary/**',
             '/docs/0.0.*/**',
             '/docs/8.*/**',
             '/search',
@@ -148,6 +143,7 @@ const config: Config = {
             },
           },
         },
+        blog: false,
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
