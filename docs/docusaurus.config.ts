@@ -14,12 +14,8 @@ const config: Config = {
       tutorial: 'forward',
     },
   },
-  // ?
   title: 'CedarJS Docs',
-  // ?
-  tagline:
-    'Built on React, GraphQL, and Prisma, CedarJS works with the components and development workflow you love, but with simple conventions and helpers to make your experience even better.',
-  // ?
+  tagline: 'The React + GraphQL Web App Framework',
   url: 'https://cedarjs.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
