@@ -70,7 +70,7 @@
     "lodash": "4.17.21",
     "pascalcase": "1.0.0",
     "pluralize": "8.0.0",
-    "portfinder": "1.0.32",
+    "portfinder": "1.0.37",
     "prettier": "3.5.3",
     "prisma": "5.20.0",
     "prompts": "2.4.2",
