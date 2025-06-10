@@ -88,11 +88,12 @@ what you use so I know what to keep and what to remove!
   - [ ] `prisma`
   - [ ] `apollo`
   - [ ] `vite`
-  - [ ] `fastify`
+  - [x] `fastify`
 
 ### Docs
 
-- [ ] Mirror the RedwoodJS docs to make sure they don't get deleted
+- [x] Mirror the RedwoodJS docs to make sure they don't get deleted
+  - Done. See https://cedarjs.com/docs
 - [ ] Document where CedarJS diverges from RedwoodJS. (Future major version.)
 
 ### New Features
