@@ -4,7 +4,7 @@ import babelGenerator from '@babel/generator'
 import { parse } from '@babel/parser'
 import babelTraverse from '@babel/traverse'
 import type * as t from '@babel/types'
-import type { PluginOption } from 'vite'
+import type { Plugin } from 'vite'
 
 const traverse = babelTraverse.default
 const generate = babelGenerator.default
@@ -41,7 +41,7 @@ const EXPECTED_EXPORTS_FROM_CELL = [
  * export default createCell({ QUERY, Loading, Success, displayName: 'MyCell' })
  * ```
  */
-export function redwoodCellTransform(): PluginOption {
+export function redwoodCellTransform(): Plugin {
   return {
     name: 'vite-plugin-redwood-cell',
     transform(code: string, id: string) {
