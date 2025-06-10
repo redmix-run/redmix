@@ -4,7 +4,7 @@ import path from 'node:path'
 import type { TransformPluginContext, TransformResult } from 'rollup'
 import { describe, it, expect } from 'vitest'
 
-import { redwoodCellTransform } from '../vite-plugin-redwood-cell.js'
+import { cedarCellTransform } from '../vite-plugin-cedar-cell.js'
 
 type TransformResultWithCode = Exclude<
   TransformResult,
@@ -23,7 +23,7 @@ export function expectToBeResultWithCode(
 }
 
 describe('redwoodCellTransform', () => {
-  const plugin = redwoodCellTransform()
+  const plugin = cedarCellTransform()
   const pluginTransform = plugin.transform
   const fixturesDir = path.join(import.meta.dirname, '__fixtures__', 'cell')
 

@@ -1,9 +1,9 @@
 import { describe, it, expect } from 'vitest'
 
-import { redwoodCellTransform } from '../vite-plugin-redwood-cell.js'
+import { cedarCellTransform } from '../vite-plugin-cedar-cell.js'
 
 describe('redwoodCellTransform', () => {
-  const plugin = redwoodCellTransform()
+  const plugin = cedarCellTransform()
 
   it('should transform a basic cell with QUERY export', async () => {
     const input = `

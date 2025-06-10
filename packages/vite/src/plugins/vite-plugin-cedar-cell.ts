@@ -41,14 +41,17 @@ const EXPECTED_EXPORTS_FROM_CELL = [
  * export default createCell({ QUERY, Loading, Success, displayName: 'MyCell' })
  * ```
  */
-export function redwoodCellTransform(): Plugin {
+export function cedarCellTransform(): Plugin {
   return {
-    name: 'vite-plugin-redwood-cell',
+    name: 'vite-plugin-cedar-cell',
     transform(code: string, id: string) {
+      console.log('vite-plugin-cedar-cell id', id)
       // Only process files that end with 'Cell' (e.g., UserCell.tsx, PostCell.js)
       if (!id.match(/Cell\.[jt]sx?$/)) {
         return null
       }
+
+      console.log('vite-plugin-cedar-cell found cell', id)
 
       try {
         // Parse the code into an AST
