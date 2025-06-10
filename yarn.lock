@@ -3505,7 +3505,7 @@ __metadata:
     "@cedarjs/project-config": "workspace:*"
     "@cedarjs/server-store": "workspace:*"
     "@cedarjs/web": "workspace:*"
-    "@hyrious/esbuild-plugin-commonjs": "npm:0.2.4"
+    "@hyrious/esbuild-plugin-commonjs": "npm:0.2.6"
     "@swc/core": "npm:1.7.28"
     "@types/busboy": "npm:^1"
     "@types/express": "npm:4"
@@ -6577,16 +6577,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hyrious/esbuild-plugin-commonjs@npm:0.2.4":
-  version: 0.2.4
-  resolution: "@hyrious/esbuild-plugin-commonjs@npm:0.2.4"
+"@hyrious/esbuild-plugin-commonjs@npm:0.2.6":
+  version: 0.2.6
+  resolution: "@hyrious/esbuild-plugin-commonjs@npm:0.2.6"
   peerDependencies:
     cjs-module-lexer: "*"
     esbuild: "*"
   peerDependenciesMeta:
     cjs-module-lexer:
       optional: true
-  checksum: 10c0/f8466056c28914351b04cbc3a0eb4397b83d2b6ea1b2adb5ce524ecd193b42aef9865d71ed417b4d8bf5a1ebc14ced1ea67e84b7558120abb461b3f6e09c789e
+  checksum: 10c0/b5827fb873138a4e9032da645a3c7faf032f2edb2de7b309805585864813497a50e554e5a1549becd2d4c51468ecaebe9bbf6c7741313a1868bcc84ee49d44fe
   languageName: node
   linkType: hard
 
