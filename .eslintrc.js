@@ -60,6 +60,7 @@ module.exports = {
     'packages/codemods/**/__testfixtures__/**/*',
     'packages/cli/**/__testfixtures__/**/*',
     'packages/storage/src/__tests__/prisma-client/*',
+    'packages/vite/src/plugins/__tests__/__fixtures__/**/*',
   ],
   rules: {
     curly: 'error',
