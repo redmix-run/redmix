@@ -7,25 +7,25 @@ describe('redwoodCellTransform', () => {
 
   it('should transform a basic cell with QUERY export', async () => {
     const input = `
-export const QUERY = gql\`
-  query UserQuery($id: Int!) {
-    user(id: $id) {
-      id
-      name
-    }
-  }
-\`
+      export const QUERY = gql\`
+        query UserQuery($id: Int!) {
+          user(id: $id) {
+            id
+            name
+          }
+        }
+      \`
 
-export const Loading = () => <div>Loading...</div>
+      export const Loading = () => <div>Loading...</div>
 
-export const Success = ({ user }) => {
-  return <div>Hello {user.name}</div>
-}
+      export const Success = ({ user }) => {
+        return <div>Hello {user.name}</div>
+      }
 
-export const Failure = ({ error }) => {
-  return <div>Error: {error.message}</div>
-}
-`
+      export const Failure = ({ error }) => {
+        return <div>Error: {error.message}</div>
+      }
+    `
 
     // @ts-expect-error The PluginOption type doesn't guarantee transform method exists
     const result = await plugin.transform(input, '/path/to/UserCell.tsx')
@@ -42,16 +42,16 @@ export const Failure = ({ error }) => {
 
   it('should transform a server cell with data export', async () => {
     const input = `
-export const data = async ({ id }) => {
-  return { user: { id, name: 'John' } }
-}
+      export const data = async ({ id }) => {
+        return { user: { id, name: 'John' } }
+      }
 
-export const Loading = () => <div>Loading...</div>
+      export const Loading = () => <div>Loading...</div>
 
-export const Success = ({ user }) => {
-  return <div>Hello {user.name}</div>
-}
-`
+      export const Success = ({ user }) => {
+        return <div>Hello {user.name}</div>
+      }
+    `
 
     // @ts-expect-error The PluginOption type doesn't guarantee transform method exists
     const result = await plugin.transform(input, '/path/to/ServerUserCell.tsx')
@@ -69,9 +69,9 @@ export const Success = ({ user }) => {
 
   it('should not transform files that do not end with Cell', async () => {
     const input = `
-export const QUERY = gql\`query { users { id } }\`
-export const Success = ({ users }) => <div>{users.length}</div>
-`
+      export const QUERY = gql\`query { users { id } }\`
+      export const Success = ({ users }) => <div>{users.length}</div>
+    `
 
     // @ts-expect-error The PluginOption type doesn't guarantee transform method exists
     const result = await plugin.transform(input, '/path/to/UserComponent.tsx')
@@ -81,10 +81,10 @@ export const Success = ({ users }) => <div>{users.length}</div>
 
   it('should not transform cells that already have a default export', async () => {
     const input = `
-export const QUERY = gql\`query { users { id } }\`
-export const Success = ({ users }) => <div>{users.length}</div>
-export default function MyCell() { return null }
-`
+      export const QUERY = gql\`query { users { id } }\`
+      export const Success = ({ users }) => <div>{users.length}</div>
+      export default function MyCell() { return null }
+    `
 
     // @ts-expect-error The PluginOption type doesn't guarantee transform method exists
     const result = await plugin.transform(input, '/path/to/MyCell.tsx')
@@ -94,9 +94,9 @@ export default function MyCell() { return null }
 
   it('should not transform files without QUERY or data exports', async () => {
     const input = `
-export const Loading = () => <div>Loading...</div>
-export const Success = () => <div>Success</div>
-`
+      export const Loading = () => <div>Loading...</div>
+      export const Success = () => <div>Success</div>
+    `
 
     // @ts-expect-error The PluginOption type doesn't guarantee transform method exists
     const result = await plugin.transform(input, '/path/to/NotACell.tsx')
@@ -106,20 +106,20 @@ export const Success = () => <div>Success</div>
 
   it('should handle function declarations', async () => {
     const input = `
-export const QUERY = gql\`query { users { id } }\`
+      export const QUERY = gql\`query { users { id } }\`
 
-export function Loading() {
-  return <div>Loading...</div>
-}
+      export function Loading() {
+        return <div>Loading...</div>
+      }
 
-export function Success({ users }) {
-  return <div>{users.length}</div>
-}
+      export function Success({ users }) {
+        return <div>{users.length}</div>
+      }
 
-export function Failure({ error }) {
-  return <div>Error: {error.message}</div>
-}
-`
+      export function Failure({ error }) {
+        return <div>Error: {error.message}</div>
+      }
+    `
 
     // @ts-expect-error The PluginOption type doesn't guarantee transform method exists
     const result = await plugin.transform(input, '/path/to/UsersCell.tsx')
@@ -136,15 +136,15 @@ export function Failure({ error }) {
 
   it('should handle all possible cell exports', async () => {
     const input = `
-export const beforeQuery = (props) => ({ ...props, enhanced: true })
-export const QUERY = gql\`query { users { id } }\`
-export const isEmpty = (data) => !data.users.length
-export const afterQuery = (data) => ({ ...data, processed: true })
-export const Loading = () => <div>Loading...</div>
-export const Success = ({ users }) => <div>{users.length}</div>
-export const Failure = ({ error }) => <div>Error</div>
-export const Empty = () => <div>No data</div>
-`
+      export const beforeQuery = (props) => ({ ...props, enhanced: true })
+      export const QUERY = gql\`query { users { id } }\`
+      export const isEmpty = (data) => !data.users.length
+      export const afterQuery = (data) => ({ ...data, processed: true })
+      export const Loading = () => <div>Loading...</div>
+      export const Success = ({ users }) => <div>{users.length}</div>
+      export const Failure = ({ error }) => <div>Error</div>
+      export const Empty = () => <div>No data</div>
+    `
 
     // @ts-expect-error The PluginOption type doesn't guarantee transform method exists
     const result = await plugin.transform(input, '/path/to/CompleteCell.tsx')
@@ -163,9 +163,9 @@ export const Empty = () => <div>No data</div>
 
   it('should handle cells with .js extension', async () => {
     const input = `
-export const QUERY = gql\`query { users { id } }\`
-export const Success = ({ users }) => <div>{users.length}</div>
-`
+      export const QUERY = gql\`query { users { id } }\`
+      export const Success = ({ users }) => <div>{users.length}</div>
+    `
 
     // @ts-expect-error The PluginOption type doesn't guarantee transform method exists
     const result = await plugin.transform(input, '/path/to/UsersCell.js')
@@ -176,9 +176,9 @@ export const Success = ({ users }) => <div>{users.length}</div>
 
   it('should handle cells with .jsx extension', async () => {
     const input = `
-export const QUERY = gql\`query { users { id } }\`
-export const Success = ({ users }) => <div>{users.length}</div>
-`
+      export const QUERY = gql\`query { users { id } }\`
+      export const Success = ({ users }) => <div>{users.length}</div>
+    `
 
     // @ts-expect-error The PluginOption type doesn't guarantee transform method exists
     const result = await plugin.transform(input, '/path/to/UsersCell.jsx')
@@ -189,11 +189,11 @@ export const Success = ({ users }) => <div>{users.length}</div>
 
   it('should gracefully handle parse errors', async () => {
     const input = `
-export const QUERY = gql\`query { users { id } }\`
-export const Success = ({ users }) => <div>{users.length}</div>
-// This is invalid syntax
-export const Invalid = {{{
-`
+      export const QUERY = gql\`query { users { id } }\`
+      export const Success = ({ users }) => <div>{users.length}</div>
+      // This is invalid syntax
+      export const Invalid = {{{
+    `
 
     // @ts-expect-error The PluginOption type doesn't guarantee transform method exists
     const result = await plugin.transform(input, '/path/to/BrokenCell.tsx')
