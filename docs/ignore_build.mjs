@@ -1,6 +1,7 @@
-// We only want Netlify to build the site if a PR changes files in this directory (./docs).
+// We only want Netlify to build the site if a PR changes files in this
+// directory (./docs).
 // See https://docs.netlify.com/configure-builds/ignore-builds.
-// Netlify runs this via Node.js v16.
+// Netlify runs this via Node.js v18.
 
 import { execSync } from 'node:child_process'
 
@@ -20,6 +21,8 @@ async function main() {
   }
 
   // Query the GithHub API to get the changed files in the PR
+  // See below for REVIEW_ID
+  // https://docs.netlify.com/configure-builds/environment-variables/#git-metadata
   const url = `https://api.github.com/repos/cedarjs/cedar/pulls/${process.env.REVIEW_ID}/files?per_page=100`
   const resp = await fetch(url, {
     headers: {
