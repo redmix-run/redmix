@@ -2000,7 +2000,7 @@ __metadata:
     pretty-ms: "npm:7.0.1"
     qs: "npm:6.13.0"
     split2: "npm:4.2.0"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     vitest: "npm:2.1.9"
     yargs: "npm:17.7.2"
@@ -2040,7 +2040,7 @@ __metadata:
     split2: "npm:4.2.0"
     title-case: "npm:3.0.3"
     ts-toolbelt: "npm:9.6.0"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     vitest: "npm:2.1.9"
   peerDependencies:
@@ -2071,7 +2071,7 @@ __metadata:
     jsonwebtoken: "npm:9.0.2"
     jwks-rsa: "npm:3.1.0"
     publint: "npm:0.3.12"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     vitest: "npm:2.1.9"
   languageName: unknown
@@ -2087,7 +2087,7 @@ __metadata:
     "@types/yargs": "npm:17.0.33"
     concurrently: "npm:8.2.2"
     publint: "npm:0.3.12"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     vitest: "npm:2.1.9"
   languageName: unknown
@@ -2104,7 +2104,7 @@ __metadata:
     concurrently: "npm:8.2.2"
     publint: "npm:0.3.12"
     react: "npm:19.0.0-rc-f2df5694-20240916"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     vitest: "npm:2.1.9"
   peerDependencies:
@@ -2125,7 +2125,7 @@ __metadata:
     jsonwebtoken: "npm:9.0.2"
     jwks-rsa: "npm:3.1.0"
     publint: "npm:0.3.12"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     vitest: "npm:2.1.9"
   languageName: unknown
@@ -2141,7 +2141,7 @@ __metadata:
     "@types/yargs": "npm:17.0.33"
     concurrently: "npm:8.2.2"
     publint: "npm:0.3.12"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     vitest: "npm:2.1.9"
   languageName: unknown
@@ -2159,7 +2159,7 @@ __metadata:
     concurrently: "npm:8.2.2"
     publint: "npm:0.3.12"
     react: "npm:19.0.0-rc-f2df5694-20240916"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     vitest: "npm:2.1.9"
   peerDependencies:
@@ -2178,7 +2178,7 @@ __metadata:
     "@types/aws-lambda": "npm:8.10.145"
     concurrently: "npm:8.2.2"
     publint: "npm:0.3.12"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     vitest: "npm:2.1.9"
   languageName: unknown
@@ -2194,7 +2194,7 @@ __metadata:
     "@types/yargs": "npm:17.0.33"
     concurrently: "npm:8.2.2"
     publint: "npm:0.3.12"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
   languageName: unknown
   linkType: soft
@@ -2211,7 +2211,7 @@ __metadata:
     concurrently: "npm:8.2.2"
     publint: "npm:0.3.12"
     react: "npm:19.0.0-rc-f2df5694-20240916"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     vitest: "npm:2.1.9"
   peerDependencies:
@@ -2229,7 +2229,7 @@ __metadata:
     "@types/yargs": "npm:17.0.33"
     concurrently: "npm:8.2.2"
     publint: "npm:0.3.12"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     vitest: "npm:2.1.9"
   languageName: unknown
@@ -2250,7 +2250,7 @@ __metadata:
     concurrently: "npm:8.2.2"
     md5: "npm:2.3.0"
     publint: "npm:0.3.12"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     uuid: "npm:10.0.0"
     vitest: "npm:2.1.9"
@@ -2271,7 +2271,7 @@ __metadata:
     concurrently: "npm:8.2.2"
     publint: "npm:0.3.12"
     ts-toolbelt: "npm:9.6.0"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     vitest: "npm:2.1.9"
   languageName: unknown
@@ -2326,7 +2326,7 @@ __metadata:
     concurrently: "npm:8.2.2"
     firebase-admin: "npm:12.6.0"
     publint: "npm:0.3.12"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     vitest: "npm:2.1.9"
   languageName: unknown
@@ -2342,7 +2342,7 @@ __metadata:
     "@types/yargs": "npm:17.0.33"
     concurrently: "npm:8.2.2"
     publint: "npm:0.3.12"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     vitest: "npm:2.1.9"
   languageName: unknown
@@ -2359,7 +2359,7 @@ __metadata:
     firebase: "npm:10.14.1"
     publint: "npm:0.3.12"
     react: "npm:19.0.0-rc-f2df5694-20240916"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     vitest: "npm:2.1.9"
   peerDependencies:
@@ -2379,7 +2379,7 @@ __metadata:
     concurrently: "npm:8.2.2"
     jsonwebtoken: "npm:9.0.2"
     publint: "npm:0.3.12"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     vitest: "npm:2.1.9"
   languageName: unknown
@@ -2395,7 +2395,7 @@ __metadata:
     "@types/yargs": "npm:17.0.33"
     concurrently: "npm:8.2.2"
     publint: "npm:0.3.12"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     vitest: "npm:2.1.9"
   languageName: unknown
@@ -2412,7 +2412,7 @@ __metadata:
     concurrently: "npm:8.2.2"
     publint: "npm:0.3.12"
     react: "npm:19.0.0-rc-f2df5694-20240916"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     vitest: "npm:2.1.9"
   peerDependencies:
@@ -2433,7 +2433,7 @@ __metadata:
     concurrently: "npm:8.2.2"
     jsonwebtoken: "npm:9.0.2"
     publint: "npm:0.3.12"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     vitest: "npm:2.1.9"
   languageName: unknown
@@ -2455,7 +2455,7 @@ __metadata:
     concurrently: "npm:8.2.2"
     publint: "npm:0.3.12"
     ts-toolbelt: "npm:9.6.0"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     vitest: "npm:2.1.9"
   languageName: unknown
@@ -2471,7 +2471,7 @@ __metadata:
     "@types/yargs": "npm:17.0.33"
     concurrently: "npm:8.2.2"
     publint: "npm:0.3.12"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
   languageName: unknown
   linkType: soft
@@ -2488,7 +2488,7 @@ __metadata:
     concurrently: "npm:8.2.2"
     publint: "npm:0.3.12"
     react: "npm:19.0.0-rc-f2df5694-20240916"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     vitest: "npm:2.1.9"
   peerDependencies:
@@ -2508,7 +2508,7 @@ __metadata:
     jsonwebtoken: "npm:9.0.2"
     jwks-rsa: "npm:3.1.0"
     publint: "npm:0.3.12"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     vitest: "npm:2.1.9"
   peerDependencies:
@@ -2527,7 +2527,7 @@ __metadata:
     concurrently: "npm:8.2.2"
     memfs: "npm:4.17.2"
     publint: "npm:0.3.12"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     vitest: "npm:2.1.9"
   languageName: unknown
@@ -2544,7 +2544,7 @@ __metadata:
     publint: "npm:0.3.12"
     react: "npm:19.0.0-rc-f2df5694-20240916"
     supertokens-auth-react: "npm:0.39.1"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     vitest: "npm:2.1.9"
   peerDependencies:
@@ -2565,7 +2565,7 @@ __metadata:
     msw: "npm:1.3.4"
     publint: "npm:0.3.12"
     react: "npm:19.0.0-rc-f2df5694-20240916"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     type-fest: "npm:4.26.1"
     typescript: "npm:5.6.2"
     vitest: "npm:2.1.9"
@@ -2602,7 +2602,7 @@ __metadata:
     core-js: "npm:3.42.0"
     fast-glob: "npm:3.3.2"
     graphql: "npm:16.9.0"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     vitest: "npm:2.1.9"
   languageName: unknown
@@ -2625,7 +2625,7 @@ __metadata:
     listr2: "npm:7.0.2"
     memfs: "npm:4.17.2"
     terminal-link: "npm:2.1.1"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     vitest: "npm:2.1.9"
     yargs: "npm:17.7.2"
@@ -2661,7 +2661,7 @@ __metadata:
     semver: "npm:7.6.3"
     smol-toml: "npm:1.3.1"
     terminal-link: "npm:2.1.1"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     vitest: "npm:2.1.9"
     yargs-parser: "npm:21.1.1"
@@ -2684,7 +2684,7 @@ __metadata:
     storybook: "npm:7.6.20"
     storybook-framework-cedarjs: "workspace:*"
     terminal-link: "npm:2.1.1"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     vitest: "npm:2.1.9"
     yargs: "npm:17.7.2"
@@ -2753,7 +2753,7 @@ __metadata:
     systeminformation: "npm:5.23.8"
     terminal-link: "npm:2.1.1"
     title-case: "npm:3.0.3"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     unionfs: "npm:4.5.4"
     uuid: "npm:10.0.0"
@@ -2799,7 +2799,7 @@ __metadata:
     publint: "npm:0.3.12"
     tasuku: "npm:2.0.1"
     tempy: "npm:1.0.1"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     vitest: "npm:2.1.9"
     yargs: "npm:17.7.2"
@@ -2816,7 +2816,7 @@ __metadata:
     "@cedarjs/framework-tools": "workspace:*"
     concurrently: "npm:8.2.2"
     publint: "npm:0.3.12"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
   languageName: unknown
   linkType: soft
@@ -2831,7 +2831,7 @@ __metadata:
     esbuild: "npm:0.25.0"
     fast-glob: "npm:3.3.2"
     fs-extra: "npm:11.2.0"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     vitest: "npm:2.1.9"
   languageName: unknown
@@ -2857,7 +2857,7 @@ __metadata:
     publint: "npm:0.3.12"
     react-refresh: "npm:0.14.0"
     rimraf: "npm:6.0.1"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
   bin:
     cross-env: ./dist/bins/cross-env.js
@@ -2919,7 +2919,7 @@ __metadata:
     "@typescript-eslint/rule-tester": "npm:8.19.1"
     "@typescript-eslint/utils": "npm:8.19.1"
     eslint: "npm:8.57.1"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     vitest: "npm:2.1.9"
   languageName: unknown
@@ -2936,7 +2936,7 @@ __metadata:
     "@fastify/url-data": "npm:6.0.3"
     fast-glob: "npm:3.3.2"
     fastify: "npm:5.3.3"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     vitest: "npm:2.1.9"
   languageName: unknown
@@ -2962,7 +2962,7 @@ __metadata:
     react: "npm:19.0.0-rc-f2df5694-20240916"
     react-dom: "npm:19.0.0-rc-f2df5694-20240916"
     react-hook-form: "npm:7.54.2"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     vitest: "npm:2.1.9"
   peerDependencies:
@@ -2979,7 +2979,7 @@ __metadata:
     esbuild: "npm:0.25.0"
     fast-glob: "npm:3.3.2"
     fs-extra: "npm:11.2.0"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     type-fest: "npm:4.26.1"
     typescript: "npm:5.6.2"
     zx: "npm:8.1.9"
@@ -3025,7 +3025,7 @@ __metadata:
     graphql-yoga: "npm:5.7.0"
     jsonwebtoken: "npm:9.0.2"
     lodash: "npm:4.17.21"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     uuid: "npm:10.0.0"
     vitest: "npm:2.1.9"
@@ -3080,7 +3080,7 @@ __metadata:
     systeminformation: "npm:5.23.8"
     terminal-link: "npm:2.1.1"
     ts-node: "npm:10.9.2"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     vitest: "npm:2.1.9"
   bin:
@@ -3099,7 +3099,7 @@ __metadata:
     "@prisma/client": "npm:5.20.0"
     concurrently: "npm:8.2.2"
     publint: "npm:0.3.12"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     type-fest: "npm:4.26.1"
     typescript: "npm:5.6.2"
     vitest: "npm:2.1.9"
@@ -3115,7 +3115,7 @@ __metadata:
   dependencies:
     "@cedarjs/api": "workspace:*"
     "@cedarjs/framework-tools": "workspace:*"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     vitest: "npm:2.1.9"
   languageName: unknown
@@ -3127,7 +3127,7 @@ __metadata:
   dependencies:
     "@cedarjs/framework-tools": "workspace:*"
     "@cedarjs/mailer-core": "workspace:*"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
   languageName: unknown
   linkType: soft
@@ -3140,7 +3140,7 @@ __metadata:
     "@cedarjs/mailer-core": "workspace:*"
     "@types/nodemailer": "npm:^6"
     nodemailer: "npm:6.9.16"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
   languageName: unknown
   linkType: soft
@@ -3152,7 +3152,7 @@ __metadata:
     "@cedarjs/framework-tools": "workspace:*"
     "@cedarjs/mailer-core": "workspace:*"
     resend: "npm:3.5.0"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
   languageName: unknown
   linkType: soft
@@ -3165,7 +3165,7 @@ __metadata:
     "@cedarjs/mailer-core": "workspace:*"
     "@cedarjs/mailer-handler-nodemailer": "workspace:*"
     "@types/nodemailer": "npm:^6"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
   languageName: unknown
   linkType: soft
@@ -3179,7 +3179,7 @@ __metadata:
     "@faire/mjml-react": "npm:3.4.0"
     "@types/mjml": "npm:4"
     mjml: "npm:4.15.3"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
   languageName: unknown
   linkType: soft
@@ -3191,7 +3191,7 @@ __metadata:
     "@cedarjs/framework-tools": "workspace:*"
     "@cedarjs/mailer-core": "workspace:*"
     "@react-email/render": "npm:0.0.17"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
   languageName: unknown
   linkType: soft
@@ -3211,7 +3211,7 @@ __metadata:
     react: "npm:19.0.0-rc-f2df5694-20240916"
     react-dom: "npm:19.0.0-rc-f2df5694-20240916"
     ts-toolbelt: "npm:9.6.0"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     vite: "npm:5.4.16"
     vitest: "npm:2.1.9"
@@ -3237,7 +3237,7 @@ __metadata:
     graphql: "npm:16.9.0"
     mime-types: "npm:2.1.35"
     publint: "npm:0.3.12"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     vitest: "npm:2.1.9"
   peerDependencies:
@@ -3259,7 +3259,7 @@ __metadata:
     rimraf: "npm:6.0.1"
     smol-toml: "npm:1.3.1"
     string-env-interpolation: "npm:1.0.1"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     vitest: "npm:2.1.9"
   languageName: unknown
@@ -3285,7 +3285,7 @@ __metadata:
     graphql: "npm:16.9.0"
     ioredis: "npm:5.6.0"
     nodemon: "npm:3.1.9"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     vitest: "npm:2.1.9"
   peerDependencies:
@@ -3308,7 +3308,7 @@ __metadata:
     camelcase: "npm:6.3.0"
     esbuild: "npm:0.25.0"
     publint: "npm:0.3.12"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     vitest: "npm:2.1.9"
   languageName: unknown
   linkType: soft
@@ -3334,7 +3334,7 @@ __metadata:
     react-dom: "npm:19.0.0-rc-f2df5694-20240916"
     react-server-dom-webpack: "npm:19.0.0-rc-f2df5694-20240916"
     tstyche: "npm:3.0.0"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     vitest: "npm:2.1.9"
   peerDependencies:
@@ -3354,7 +3354,7 @@ __metadata:
     esbuild: "npm:0.25.0"
     fast-glob: "npm:3.3.2"
     fs-extra: "npm:11.2.0"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
   languageName: unknown
   linkType: soft
@@ -3373,7 +3373,7 @@ __metadata:
     mime-types: "npm:2.1.35"
     publint: "npm:0.3.12"
     tstyche: "npm:3.0.0"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     ulid: "npm:2.3.0"
     vitest: "npm:2.1.9"
@@ -3432,7 +3432,7 @@ __metadata:
     ci-info: "npm:4.0.0"
     envinfo: "npm:7.14.0"
     systeminformation: "npm:5.23.8"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     uuid: "npm:10.0.0"
     vitest: "npm:2.1.9"
@@ -3469,7 +3469,7 @@ __metadata:
     msw: "npm:1.3.4"
     publint: "npm:0.3.12"
     ts-toolbelt: "npm:9.6.0"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     vitest: "npm:2.1.9"
     whatwg-fetch: "npm:3.6.20"
@@ -3485,7 +3485,7 @@ __metadata:
     chalk: "npm:4.1.2"
     enquirer: "npm:2.4.1"
     stdout-update: "npm:1.6.8"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
   languageName: unknown
   linkType: soft
@@ -3536,7 +3536,7 @@ __metadata:
     react-server-dom-webpack: "npm:19.0.0-rc-f2df5694-20240916"
     rimraf: "npm:6.0.1"
     rollup: "npm:4.24.0"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     vite: "npm:5.4.16"
     vite-plugin-cjs-interop: "npm:2.2.0"
@@ -3564,7 +3564,7 @@ __metadata:
     dotenv-defaults: "npm:5.0.2"
     fastify: "npm:5.3.3"
     fs-extra: "npm:11.2.0"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     yargs: "npm:17.7.2"
   bin:
@@ -3611,7 +3611,7 @@ __metadata:
     stacktracey: "npm:2.1.8"
     ts-toolbelt: "npm:9.6.0"
     tstyche: "npm:3.0.0"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     vitest: "npm:2.1.9"
   peerDependencies:
@@ -14661,7 +14661,7 @@ __metadata:
     semver: "npm:7.6.3"
     systeminformation: "npm:5.23.8"
     terminal-link: "npm:2.1.1"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     untildify: "npm:4.0.0"
     uuid: "npm:10.0.0"
     vitest: "npm:2.1.9"
@@ -26537,7 +26537,7 @@ __metadata:
     prompts: "npm:2.4.2"
     rimraf: "npm:6.0.1"
     tstyche: "npm:3.0.0"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     vitest: "npm:2.1.9"
     yargs: "npm:17.7.2"
@@ -27483,7 +27483,7 @@ __metadata:
     "@types/node": "npm:20.17.10"
     magic-string: "npm:0.30.11"
     react-docgen: "npm:7.0.3"
-    tsx: "npm:4.19.3"
+    tsx: "npm:4.19.4"
     typescript: "npm:5.6.2"
     unplugin-auto-import: "npm:0.18.3"
     vite: "npm:5.4.16"
@@ -28612,9 +28612,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tsx@npm:4.19.3":
-  version: 4.19.3
-  resolution: "tsx@npm:4.19.3"
+"tsx@npm:4.19.4":
+  version: 4.19.4
+  resolution: "tsx@npm:4.19.4"
   dependencies:
     esbuild: "npm:~0.25.0"
     fsevents: "npm:~2.3.3"
@@ -28624,7 +28624,7 @@ __metadata:
       optional: true
   bin:
     tsx: dist/cli.mjs
-  checksum: 10c0/cacfb4cf1392ae10e8e4fe032ad26ccb07cd8a3b32e5a0da270d9c48d06ee74f743e4a84686cbc9d89b48032d59bbc56cd911e076f53cebe61dc24fa525ff790
+  checksum: 10c0/f7b8d44362343fbde1f2ecc9832d243a450e1168dd09702a545ebe5f699aa6912e45b431a54b885466db414cceda48e5067b36d182027c43b2c02a4f99d8721e
   languageName: node
   linkType: hard
 
