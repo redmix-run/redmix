@@ -57,7 +57,9 @@ export const Success = ({ user }) => {
     const result = await plugin.transform(input, '/path/to/ServerUserCell.tsx')
 
     expect(result).toBeTruthy()
-    expect(result.code).toContain('import { createServerCell } from "@cedarjs/web/dist/components/cell/createServerCell"')
+    expect(result.code).toContain(
+      'import { createServerCell } from "@cedarjs/web/dist/components/cell/createServerCell"',
+    )
     expect(result.code).toContain('export default createServerCell({')
     expect(result.code).toContain('data,')
     expect(result.code).toContain('Loading,')
