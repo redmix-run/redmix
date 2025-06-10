@@ -61,7 +61,7 @@
     "enquirer": "2.4.1",
     "envinfo": "7.14.0",
     "execa": "5.1.1",
-    "fast-glob": "3.3.2",
+    "fast-glob": "3.3.3",
     "fs-extra": "11.2.0",
     "humanize-string": "2.1.0",
     "jscodeshift": "17.0.0",
