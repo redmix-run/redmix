@@ -6,7 +6,7 @@
 # https://redwoodjs.com/docs/app-configuration-redwood-toml
 
 [web]
-  title = "Redwood App"
+  title = "Cedar App"
   port = "${WEB_DEV_PORT:8910}"
   apiUrl = "/.redwood/functions"
   includeEnvironmentVariables = [
