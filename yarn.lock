@@ -2914,7 +2914,7 @@ __metadata:
   dependencies:
     "@cedarjs/framework-tools": "workspace:*"
     "@types/eslint": "npm:8.56.12"
-    "@types/estree": "npm:1.0.6"
+    "@types/estree": "npm:1.0.8"
     "@typescript-eslint/parser": "npm:8.19.1"
     "@typescript-eslint/rule-tester": "npm:8.19.1"
     "@typescript-eslint/utils": "npm:8.19.1"
@@ -3505,7 +3505,7 @@ __metadata:
     "@cedarjs/project-config": "workspace:*"
     "@cedarjs/server-store": "workspace:*"
     "@cedarjs/web": "workspace:*"
-    "@hyrious/esbuild-plugin-commonjs": "npm:0.2.4"
+    "@hyrious/esbuild-plugin-commonjs": "npm:0.2.6"
     "@swc/core": "npm:1.7.28"
     "@types/busboy": "npm:^1"
     "@types/express": "npm:4"
@@ -6577,16 +6577,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hyrious/esbuild-plugin-commonjs@npm:0.2.4":
-  version: 0.2.4
-  resolution: "@hyrious/esbuild-plugin-commonjs@npm:0.2.4"
+"@hyrious/esbuild-plugin-commonjs@npm:0.2.6":
+  version: 0.2.6
+  resolution: "@hyrious/esbuild-plugin-commonjs@npm:0.2.6"
   peerDependencies:
     cjs-module-lexer: "*"
     esbuild: "*"
   peerDependenciesMeta:
     cjs-module-lexer:
       optional: true
-  checksum: 10c0/f8466056c28914351b04cbc3a0eb4397b83d2b6ea1b2adb5ce524ecd193b42aef9865d71ed417b4d8bf5a1ebc14ced1ea67e84b7558120abb461b3f6e09c789e
+  checksum: 10c0/b5827fb873138a4e9032da645a3c7faf032f2edb2de7b309805585864813497a50e554e5a1549becd2d4c51468ecaebe9bbf6c7741313a1868bcc84ee49d44fe
   languageName: node
   linkType: hard
 
@@ -10526,11 +10526,11 @@ __metadata:
   linkType: hard
 
 "@types/archiver@npm:^6":
-  version: 6.0.2
-  resolution: "@types/archiver@npm:6.0.2"
+  version: 6.0.3
+  resolution: "@types/archiver@npm:6.0.3"
   dependencies:
     "@types/readdir-glob": "npm:*"
-  checksum: 10c0/01ca91d76c57b38ae030a24a07b46664bf3ae9d303c0cdd2b342e06a4b53dccd0d0c375ff3f9af966a93512554f82ef97c515fcc47536e7dbb29a7d9bc09a540
+  checksum: 10c0/59c6be3d81da240a35f7e4a70348012ee462a74c56fb37c86add2e11562fae46a8e243dcca29a34ed2dc401239b6f3dd9623584570ca5b07c2aa61ee7822f91f
   languageName: node
   linkType: hard
 
@@ -10794,7 +10794,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/estree@npm:*, @types/estree@npm:1.0.6, @types/estree@npm:^1.0.0":
+"@types/estree@npm:*, @types/estree@npm:1.0.8, @types/estree@npm:^1.0.0":
+  version: 1.0.8
+  resolution: "@types/estree@npm:1.0.8"
+  checksum: 10c0/39d34d1afaa338ab9763f37ad6066e3f349444f9052b9676a7cc0252ef9485a41c6d81c9c4e0d26e9077993354edf25efc853f3224dd4b447175ef62bdcc86a5
+  languageName: node
+  linkType: hard
+
+"@types/estree@npm:1.0.6":
   version: 1.0.6
   resolution: "@types/estree@npm:1.0.6"
   checksum: 10c0/cdfd751f6f9065442cd40957c07fd80361c962869aa853c1c2fd03e101af8b9389d8ff4955a43a6fcfa223dd387a089937f95be0f3eec21ca527039fd2d9859a
