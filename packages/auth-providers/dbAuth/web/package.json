@@ -24,7 +24,7 @@
     "test:watch": "yarn test --watch"
   },
   "dependencies": {
-    "@babel/runtime-corejs3": "7.27.1",
+    "@babel/runtime-corejs3": "7.27.6",
     "@cedarjs/auth": "workspace:*",
     "@simplewebauthn/browser": "9.0.1",
     "core-js": "3.42.0"

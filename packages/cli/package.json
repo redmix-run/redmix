@@ -28,7 +28,7 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@babel/runtime-corejs3": "7.27.1",
+    "@babel/runtime-corejs3": "7.27.6",
     "@cedarjs/api-server": "workspace:*",
     "@cedarjs/cli-helpers": "workspace:*",
     "@cedarjs/fastify-web": "workspace:*",
