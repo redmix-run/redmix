@@ -39,7 +39,7 @@
     "chalk": "4.1.2",
     "chokidar": "3.6.0",
     "dotenv-defaults": "5.0.2",
-    "fast-glob": "3.3.2",
+    "fast-glob": "3.3.3",
     "fast-json-parse": "1.0.3",
     "fastify": "5.3.3",
     "fastify-raw-body": "5.0.0",

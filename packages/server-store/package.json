@@ -25,7 +25,7 @@
     "@cedarjs/auth": "workspace:*",
     "@cedarjs/cookie-jar": "workspace:*",
     "esbuild": "0.25.0",
-    "fast-glob": "3.3.2",
+    "fast-glob": "3.3.3",
     "fs-extra": "11.2.0"
   },
   "devDependencies": {
