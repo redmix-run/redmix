@@ -176,7 +176,7 @@ describe('api', () => {
             proposals: true,
             version: 3,
           },
-          version: '7.27.1',
+          version: '7.27.6',
         },
       ])
 

@@ -75,11 +75,11 @@
   },
   "dependencies": {
     "@babel/core": "^7.26.10",
-    "@babel/parser": "7.27.2",
+    "@babel/parser": "7.27.5",
     "@babel/plugin-transform-react-jsx": "7.27.1",
     "@babel/plugin-transform-typescript": "^7.26.8",
-    "@babel/runtime-corejs3": "7.27.1",
-    "@babel/traverse": "7.27.1",
+    "@babel/runtime-corejs3": "7.27.6",
+    "@babel/traverse": "7.27.4",
     "@cedarjs/babel-config": "workspace:*",
     "@cedarjs/graphql-server": "workspace:*",
     "@cedarjs/project-config": "workspace:*",
@@ -101,7 +101,7 @@
     "core-js": "3.42.0",
     "deepmerge": "4.3.1",
     "esbuild": "0.25.0",
-    "fast-glob": "3.3.2",
+    "fast-glob": "3.3.3",
     "fs-extra": "11.2.0",
     "graphql": "16.9.0",
     "kill-port": "1.6.1",
@@ -121,7 +121,7 @@
     "concurrently": "8.2.2",
     "graphql-tag": "2.12.6",
     "publint": "0.3.12",
-    "tsx": "4.19.3",
+    "tsx": "4.19.4",
     "vitest": "2.1.9"
   },
   "gitHead": "3905ed045508b861b495f8d5630d76c7a157d8f1"

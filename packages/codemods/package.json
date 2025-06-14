@@ -26,10 +26,10 @@
   "dependencies": {
     "@babel/cli": "7.27.2",
     "@babel/core": "^7.26.10",
-    "@babel/parser": "7.27.2",
+    "@babel/parser": "7.27.5",
     "@babel/plugin-transform-typescript": "^7.26.8",
-    "@babel/runtime-corejs3": "7.27.1",
-    "@babel/traverse": "7.27.1",
+    "@babel/runtime-corejs3": "7.27.6",
+    "@babel/traverse": "7.27.4",
     "@cedarjs/project-config": "workspace:*",
     "@svgr/core": "8.1.0",
     "@svgr/plugin-jsx": "8.1.0",
@@ -39,7 +39,7 @@
     "core-js": "3.42.0",
     "deepmerge": "4.3.1",
     "execa": "5.1.1",
-    "fast-glob": "3.3.2",
+    "fast-glob": "3.3.3",
     "graphql": "16.9.0",
     "jscodeshift": "17.0.0",
     "pascalcase": "1.0.0",
@@ -57,7 +57,7 @@
     "fs-extra": "11.2.0",
     "publint": "0.3.12",
     "tempy": "1.0.1",
-    "tsx": "4.19.3",
+    "tsx": "4.19.4",
     "vitest": "2.1.9"
   },
   "gitHead": "3905ed045508b861b495f8d5630d76c7a157d8f1"

@@ -55,7 +55,7 @@
     "eslint-plugin-perfectionist": "^3.0.0",
     "eslint-plugin-regexp": "^2.6.0",
     "eslint-plugin-yml": "^1.14.0",
-    "fast-glob": "3.3.2",
+    "fast-glob": "3.3.3",
     "fs-extra": "11.2.0",
     "jsonc-eslint-parser": "^2.4.0",
     "knip": "^5.26.0",
@@ -65,7 +65,7 @@
     "prettier-plugin-sh": "^0.14.0",
     "publint": "0.3.12",
     "rimraf": "^6.0.1",
-    "tsx": "4.19.3",
+    "tsx": "4.19.4",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.0",
     "zx": "^8.1.4"
