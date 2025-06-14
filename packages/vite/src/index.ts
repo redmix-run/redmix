@@ -10,6 +10,7 @@ import { getWebSideDefaultBabelConfig } from '@cedarjs/babel-config'
 import { getConfig, getPaths } from '@cedarjs/project-config'
 
 import { getMergedConfig } from './lib/getMergedConfig.js'
+import { cedarCellTransform } from './plugins/vite-plugin-cedar-cell.js'
 import { handleJsAsJsx } from './plugins/vite-plugin-jsx-loader.js'
 import { removeFromBundle } from './plugins/vite-plugin-remove-from-bundle.js'
 import { swapApolloProvider } from './plugins/vite-plugin-swap-apollo-provider.js'
@@ -165,6 +166,8 @@ export default function redwoodPluginVite(): PluginOption[] {
     },
     // We can remove when streaming is stable
     streamingEnabled && swapApolloProvider(),
+    // Transform files ending with 'Cell' to wrap them in createCell HOC
+    cedarCellTransform(),
     handleJsAsJsx(),
     // Remove the splash-page from the bundle.
     removeFromBundle(

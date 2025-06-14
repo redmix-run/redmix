@@ -122,10 +122,6 @@ export const getWebSideOverrides = (
   // Have to use a readonly array here because of a limitation in TS
   // See https://stackoverflow.com/a/70763406/88106
   const overrides: readonly (false | TransformOptions)[] = [
-    {
-      test: /.+Cell.(js|tsx|jsx)$/,
-      plugins: [require('./plugins/babel-plugin-redwood-cell').default],
-    },
     // Automatically import files in `./web/src/pages/*` in to
     // the `./web/src/Routes.[ts|jsx]` file.
     {

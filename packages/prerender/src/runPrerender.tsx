@@ -17,6 +17,7 @@ import { LocationProvider } from '@cedarjs/router'
 import { matchPath } from '@cedarjs/router/dist/util'
 import type { QueryInfo } from '@cedarjs/web'
 
+import redwoodCellsPlugin from './babelPlugins/babel-plugin-redwood-cell'
 import mediaImportsPlugin from './babelPlugins/babel-plugin-redwood-prerender-media-imports'
 import { detectPrerenderRoutes } from './detection'
 import {
@@ -284,6 +285,10 @@ export const runPrerender = async ({
           ['ignore-html-and-css-imports'], // webpack/postcss handles CSS imports
           [mediaImportsPlugin],
         ],
+      },
+      {
+        test: /.+Cell.(js|tsx|jsx)$/,
+        plugins: [redwoodCellsPlugin],
       },
     ],
     options: {
