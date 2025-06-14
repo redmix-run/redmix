@@ -7,8 +7,8 @@ import type projectConfig from '@cedarjs/project-config'
 
 import plugin from '../babel-plugin-redwood-prerender-media-imports'
 
-let mockDistDir
-let mockSrcDir
+let mockDistDir: string
+let mockSrcDir: string
 
 vi.mock('@cedarjs/project-config', async (importOriginal) => {
   const originalProjectConfig = await importOriginal<typeof projectConfig>()
@@ -27,7 +27,7 @@ vi.mock('@cedarjs/project-config', async (importOriginal) => {
 
 vi.mock('../utils', () => {
   return {
-    convertToDataUrl: (assetPath) => {
+    convertToDataUrl: (assetPath: string) => {
       return `data:image/jpg;base64,xxx-mock-b64-${assetPath}`
     },
   }
