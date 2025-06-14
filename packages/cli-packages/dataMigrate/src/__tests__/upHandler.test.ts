@@ -1,15 +1,4 @@
-import { fs as memfs, vol } from 'memfs'
-import {
-  afterAll,
-  afterEach,
-  beforeAll,
-  beforeEach,
-  vi,
-  describe,
-  expect,
-  it,
-} from 'vitest'
-import type { MockInstance } from 'vitest'
+import { vol } from 'memfs'
 
 import { getPaths } from '@cedarjs/project-config'
 
@@ -19,16 +8,16 @@ import { handler, NO_PENDING_MIGRATIONS_MESSAGE } from '../commands/upHandler'
 
 const redwoodProjectPath = '/redwood-app'
 
-let consoleLogMock: MockInstance
-let consoleInfoMock: MockInstance
-let consoleErrorMock: MockInstance
-let consoleWarnMock: MockInstance
+let consoleLogMock: jest.SpyInstance
+let consoleInfoMock: jest.SpyInstance
+let consoleErrorMock: jest.SpyInstance
+let consoleWarnMock: jest.SpyInstance
 
 beforeEach(() => {
-  consoleLogMock = vi.spyOn(console, 'log').mockImplementation(() => {})
-  consoleInfoMock = vi.spyOn(console, 'info').mockImplementation(() => {})
-  consoleErrorMock = vi.spyOn(console, 'error').mockImplementation(() => {})
-  consoleWarnMock = vi.spyOn(console, 'warn').mockImplementation(() => {})
+  consoleLogMock = jest.spyOn(console, 'log').mockImplementation()
+  consoleInfoMock = jest.spyOn(console, 'info').mockImplementation()
+  consoleErrorMock = jest.spyOn(console, 'error').mockImplementation()
+  consoleWarnMock = jest.spyOn(console, 'warn').mockImplementation()
 })
 
 afterEach(() => {
@@ -38,81 +27,117 @@ afterEach(() => {
   consoleWarnMock.mockRestore()
 })
 
-vi.mock('fs', () => ({ ...memfs, default: { ...memfs } }))
-vi.mock('node:fs', () => ({ default: memfs }))
+jest.mock('fs', () => require('memfs').fs)
 
 const mockDataMigrations: { current: any[] } = { current: [] }
 
-interface DataMigrationRow {
-  version: string
-  name: string
-  startedAt: Date | string
-  finishedAt: Date | string
-}
-
-vi.mock('/redwood-app/api/dist/lib/db.js', () => {
-  return {
-    db: {
-      rW_DataMigration: {
-        create(dataMigration: { data: DataMigrationRow }) {
-          mockDataMigrations.current.push(dataMigration)
+jest.mock(
+  '/redwood-app/api/dist/lib/db.js',
+  () => {
+    return {
+      db: {
+        rW_DataMigration: {
+          create(dataMigration) {
+            mockDataMigrations.current.push(dataMigration)
+          },
+          findMany() {
+            return mockDataMigrations.current
+          },
         },
-        findMany() {
-          return mockDataMigrations.current
-        },
+        $disconnect: () => {},
       },
-      $disconnect: () => {},
-    },
-  }
-})
+    }
+  },
+  { virtual: true },
+)
 
-vi.mock(`\\redwood-app\\api\\dist\\lib\\db.js`, () => {
-  return {
-    db: {
-      rW_DataMigration: {
-        create(dataMigration: { data: DataMigrationRow }) {
-          mockDataMigrations.current.push(dataMigration)
+jest.mock(
+  `\\redwood-app\\api\\dist\\lib\\db.js`,
+  () => {
+    return {
+      db: {
+        rW_DataMigration: {
+          create(dataMigration) {
+            mockDataMigrations.current.push(dataMigration)
+          },
+          findMany() {
+            return mockDataMigrations.current
+          },
         },
-        findMany() {
-          return mockDataMigrations.current
-        },
+        $disconnect: () => {},
       },
-      $disconnect: () => {},
-    },
-  }
-})
+    }
+  },
+  { virtual: true },
+)
 
-vi.mock('/redwood-app/api/db/dataMigrations/20230822075442-wip.ts', () => {
-  return { default: () => {} }
-})
+jest.mock(
+  '/redwood-app/api/db/dataMigrations/20230822075442-wip.ts',
+  () => {
+    return { default: () => {} }
+  },
+  {
+    virtual: true,
+  },
+)
 
-vi.mock('\\redwood-app\\api\\db\\dataMigrations\\20230822075442-wip.ts', () => {
-  return { default: () => {} }
-})
+jest.mock(
+  '\\redwood-app\\api\\db\\dataMigrations\\20230822075442-wip.ts',
+  () => {
+    return { default: () => {} }
+  },
+  {
+    virtual: true,
+  },
+)
 
-vi.mock('/redwood-app/api/db/dataMigrations/20230822075443-wip.ts', () => {
-  return {
-    default: () => {
-      throw new Error('oops')
-    },
-  }
-})
+jest.mock(
+  '/redwood-app/api/db/dataMigrations/20230822075443-wip.ts',
+  () => {
+    return {
+      default: () => {
+        throw new Error('oops')
+      },
+    }
+  },
+  {
+    virtual: true,
+  },
+)
 
-vi.mock('\\redwood-app\\api\\db\\dataMigrations\\20230822075443-wip.ts', () => {
-  return {
-    default: () => {
-      throw new Error('oops')
-    },
-  }
-})
+jest.mock(
+  '\\redwood-app\\api\\db\\dataMigrations\\20230822075443-wip.ts',
+  () => {
+    return {
+      default: () => {
+        throw new Error('oops')
+      },
+    }
+  },
+  {
+    virtual: true,
+  },
+)
 
-vi.mock('/redwood-app/api/db/dataMigrations/20230822075444-wip.ts', () => {
-  return { default: () => {} }
-})
+jest.mock(
+  '/redwood-app/api/db/dataMigrations/20230822075444-wip.ts',
+  () => {
+    return { default: () => {} }
+  },
+  {
+    virtual: true,
+  },
+)
 
-vi.mock('\\redwood-app\\api\\db\\dataMigrations\\20230822075444-wip.ts', () => {
-  return { default: () => {} }
-})
+jest.mock(
+  '\\redwood-app\\api\\db\\dataMigrations\\20230822075444-wip.ts',
+  () => {
+    return { default: () => {} }
+  },
+  {
+    virtual: true,
+  },
+)
 
 const RWJS_CWD = process.env.RWJS_CWD
 
@@ -213,14 +238,24 @@ describe('upHandler', () => {
       },
     ]
 
-    vol.fromJSON(
+    vol.fromNestedJSON(
       {
         'redwood.toml': '',
-        'api/package.json': '{}',
-        'api/dist/lib/db.js': '',
-        'api/db/dataMigrations/20230822075442-wip.ts': '',
-        'api/db/dataMigrations/20230822075443-wip.ts': '',
-        'api/db/dataMigrations/20230822075444-wip.ts': '',
+        api: {
+          'package.json': '{}',
+          dist: {
+            lib: {
+              'db.js': '',
+            },
+          },
+          db: {
+            dataMigrations: {
+              '20230822075442-wip.ts': '',
+              '20230822075443-wip.ts': '',
+              '20230822075444-wip.ts': '',
+            },
+          },
+        },
       },
       redwoodProjectPath,
     )
