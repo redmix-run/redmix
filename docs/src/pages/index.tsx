@@ -92,6 +92,10 @@ export default function Home() {
             </a>
           </cite>
         </blockquote>
+
+        <h1>Documentation</h1>
+
+        <a href="https://cedarjs.com/docs">https://cedarjs.com/docs</a>
       </div>
     </Layout>
   )
