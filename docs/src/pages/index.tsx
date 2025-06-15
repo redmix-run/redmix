@@ -84,7 +84,11 @@ export default function Home() {
           <cite style={{ display: 'block' }}>
             —{' '}
             <a href="https://indigenousfoundations.arts.ubc.ca/cedar/">
-              https://indigenousfoundations.arts.ubc.ca/cedar/
+              https://indigenousfoundations.
+              <wbr />
+              arts.
+              <wbr />
+              ubc.ca/cedar/
             </a>
           </cite>
         </blockquote>
