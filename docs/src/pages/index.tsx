@@ -1,9 +1,14 @@
 import React from 'react'
 
 import Head from '@docusaurus/Head'
+import Link from '@docusaurus/Link'
 import Layout from '@theme/Layout'
 
+import sidebars from '../../sidebars'
+
 export default function Home() {
+  console.log('main sidebar', sidebars.main)
+
   return (
     <Layout
       description={
@@ -95,8 +100,32 @@ export default function Home() {
 
         <h1>Documentation</h1>
 
-        <a href="https://cedarjs.com/docs">https://cedarjs.com/docs</a>
+        <ul>
+          {sidebars.main.map((section: string | Record<string, any>) => {
+            const linkText =
+              typeof section === 'string' ? toTitleCase(section) : section.label
+            const linkTarget =
+              typeof section === 'string'
+                ? section
+                : section.link?.slug?.replace(/^\//, '') ||
+                  section.items?.at(0)?.id
+
+            return (
+              <li key={linkTarget}>
+                <Link to={'docs/' + linkTarget}>{linkText}</Link>
+              </li>
+            )
+          })}
+        </ul>
       </div>
     </Layout>
   )
+}
+
+function toTitleCase(str: string) {
+  return str
+    .replaceAll('-', ' ')
+    .split(' ')
+    .map((w) => w[0].toUpperCase() + w.substring(1))
+    .join(' ')
 }
